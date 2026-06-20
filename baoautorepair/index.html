@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAO Auto Repair — Knoxville, TN</title>
+  <meta name="description" content="Family-owned full-service auto repair in Knoxville, TN. ASE-certified technicians, honest pricing, domestic & foreign vehicles. Call 865-688-8695.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       BAO AUTO REPAIR
+       Theme: Industrial Steel + Ignition Orange
+       Mechanical, bold, trustworthy — nothing like the others
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:       #f97316;
+      --orange-deep:  #c2410c;
+      --orange-glow:  rgba(249,115,22,0.2);
+      --steel:        #0d1117;
+      --steel-mid:    #161b22;
+      --steel-light:  #21262d;
+      --steel-border: #30363d;
+      --plate:        #f0f2f5;
+      --plate-dark:   #e2e5ea;
+      --text-dark:    #0d1117;
+      --text-mid:     #4a5568;
+      --text-light:   #e6edf3;
+      --text-muted:   #8b949e;
+      --white:        #ffffff;
+      --green:        #22c55e;
+      --radius:       6px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--plate);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--steel); }
+    ::-webkit-scrollbar-thumb { background: var(--orange-deep); border-radius: 3px; }
+
+    /* ══════════════════════════════════════════
+       TOP BAR
+    ══════════════════════════════════════════ */
+    .topbar {
+      background: var(--orange);
+      padding: 0.45rem 2rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .topbar-item {
+      display: flex; align-items: center; gap: 0.45rem;
+      font-size: 0.8rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.03em;
+    }
+    .topbar-item svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════
+       HEADER / NAV
+    ══════════════════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--steel);
+      border-bottom: 3px solid var(--orange);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+    .logo-badge {
+      width: 44px; height: 44px;
+      background: var(--orange);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem; font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.05em;
+      flex-shrink: 0;
+    }
+    .logo-text { line-height: 1.15; }
+    .logo-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem; font-weight: 800;
+      color: var(--white); letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .logo-sub {
+      font-size: 0.65rem; font-weight: 500;
+      color: var(--orange); letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    nav { display: flex; align-items: center; gap: 0.25rem; }
+    nav a {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-muted);
+      text-decoration: none; padding: 0.5rem 0.9rem;
+      border-radius: var(--radius);
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--white); background: var(--steel-light); }
+    .nav-phone {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--orange);
+      color: var(--white) !important;
+      padding: 0.55rem 1.1rem !important;
+      border-radius: var(--radius) !important;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+    }
+    .nav-phone:hover { background: var(--orange-deep) !important; }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: var(--steel);
+    }
+
+    /* Mechanical grid overlay */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(105deg, rgba(13,17,23,0.97) 0%, rgba(13,17,23,0.75) 55%, rgba(13,17,23,0.3) 100%),
+        url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 2rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem; align-items: center;
+      width: 100%;
+    }
+
+    .hero-left {}
+
+    /* Pill */
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+    .hero-pill::before { content: '●'; font-size: 0.5rem; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line-white { display: block; color: var(--white); }
+    .hero-title .line-orange { display: block; color: var(--orange); }
+    .hero-title .line-outline {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 400;
+      color: var(--text-muted); line-height: 1.7;
+      max-width: 500px; margin-bottom: 2.5rem;
+    }
+    .hero-sub strong { color: var(--text-light); font-weight: 600; }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-orange {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.85rem 2rem; border-radius: var(--radius);
+      border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(249,115,22,0.35);
+    }
+    .btn-orange:hover {
+      background: var(--orange-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(249,115,22,0.45);
+    }
+    .btn-ghost-white {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: transparent;
+      color: var(--text-light);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.85rem 2rem; border-radius: var(--radius);
+      border: 1px solid var(--steel-border);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost-white:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* Trust badges */
+    .hero-trust {
+      display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .trust-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .trust-text { line-height: 1.2; }
+    .trust-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--orange);
+    }
+    .trust-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem; font-weight: 700; color: var(--white);
+    }
+
+    /* Hero right — info card */
+    .hero-card {
+      background: rgba(22,27,34,0.95);
+      border: 1px solid var(--steel-border);
+      border-top: 3px solid var(--orange);
+      border-radius: var(--radius);
+      padding: 2rem;
+      min-width: 280px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--orange); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-card-title::before {
+      content: ''; display: inline-block;
+      width: 20px; height: 2px; background: var(--orange);
+    }
+    .info-row {
+      display: flex; gap: 0.8rem; margin-bottom: 1.2rem;
+      align-items: flex-start;
+    }
+    .info-icon {
+      font-size: 1.1rem; margin-top: 0.1rem; flex-shrink: 0;
+    }
+    .info-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .info-val {
+      font-size: 0.9rem; font-weight: 500; color: var(--text-light);
+      line-height: 1.4;
+    }
+    .info-val a { color: var(--orange); text-decoration: none; }
+    .info-val a:hover { text-decoration: underline; }
+
+    .open-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 100px; padding: 0.25rem 0.7rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green);
+      margin-bottom: 1.2rem;
+    }
+    .open-badge::before { content: '●'; font-size: 0.45rem; animation: blink 1.5s infinite; }
+
+    .card-divider { height: 1px; background: var(--steel-border); margin: 1.2rem 0; }
+
+    .rating-row { display: flex; align-items: center; gap: 0.5rem; }
+    .stars { color: #fbbf24; font-size: 0.9rem; letter-spacing: 0.05em; }
+    .rating-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 800; color: var(--white);
+    }
+    .rating-count { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* ══════════════════════════════════════════
+       SECTION SHELL
+    ══════════════════════════════════════════ */
+    .section-light { background: var(--plate); padding: 5rem 2rem; }
+    .section-dark  { background: var(--steel-mid); padding: 5rem 2rem; }
+    .section-steel { background: var(--steel); padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 0.8rem;
+    }
+    .section-tag::before, .section-tag::after {
+      content: ''; display: inline-block;
+      width: 24px; height: 2px; background: var(--orange);
+    }
+    .section-title-dark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900; text-transform: uppercase;
+      letter-spacing: 0.02em; line-height: 1.05;
+      color: var(--text-dark); margin-bottom: 0.5rem;
+    }
+    .section-title-light {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900; text-transform: uppercase;
+      letter-spacing: 0.02em; line-height: 1.05;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .section-title-dark span, .section-title-light span { color: var(--orange); }
+    .section-sub-dark {
+      font-size: 1rem; color: var(--text-mid); line-height: 1.7;
+      max-width: 560px;
+    }
+    .section-sub-light {
+      font-size: 1rem; color: var(--text-muted); line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ══════════════════════════════════════════
+       STAT STRIP
+    ══════════════════════════════════════════ */
+    .stat-strip {
+      background: var(--orange);
+      padding: 1.8rem 2rem;
+    }
+    .stat-strip-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-around;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .stat-strip-item { text-align: center; }
+    .stat-strip-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.4rem; font-weight: 900;
+      color: var(--white); line-height: 1;
+    }
+    .stat-strip-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      margin-top: 0.3rem;
+    }
+
+    /* ══════════════════════════════════════════
+       SERVICES GRID
+    ══════════════════════════════════════════ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--steel-border);
+      border: 1px solid var(--steel-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+    .service-tile {
+      background: var(--steel-mid);
+      padding: 2rem 1.8rem;
+      position: relative;
+      transition: background 0.25s;
+      cursor: default;
+    }
+    .service-tile::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0;
+      width: 0; height: 3px;
+      background: var(--orange);
+      transition: width 0.3s;
+    }
+    .service-tile:hover { background: var(--steel-light); }
+    .service-tile:hover::after { width: 100%; }
+    .service-tile-icon {
+      font-size: 2rem; margin-bottom: 1rem; display: block;
+    }
+    .service-tile-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .service-tile-text {
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* ══════════════════════════════════════════
+       WHY CHOOSE US — split layout
+    ══════════════════════════════════════════ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      margin-top: 3rem;
+    }
+    .why-photo-wrap {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+    }
+    .why-photo-wrap img {
+      width: 100%; height: 420px;
+      object-fit: cover; display: block;
+      filter: brightness(0.85);
+    }
+    .why-photo-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: var(--orange);
+      border-radius: var(--radius);
+      padding: 0.8rem 1.2rem;
+    }
+    .why-badge-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem; font-weight: 900; color: var(--white);
+      line-height: 1;
+    }
+    .why-badge-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.8);
+    }
+    .why-points { display: flex; flex-direction: column; gap: 1.5rem; }
+    .why-point {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .why-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.8rem; font-weight: 900; color: var(--orange);
+      line-height: 1; min-width: 2rem;
+    }
+    .why-point-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text-dark); margin-bottom: 0.3rem;
+    }
+    .why-point-text {
+      font-size: 0.88rem; color: var(--text-mid); line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════════════ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--steel-light);
+      border: 1px solid var(--steel-border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute; top: 1rem; right: 1.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 5rem; font-weight: 900;
+      color: rgba(249,115,22,0.12); line-height: 1;
+      pointer-events: none;
+    }
+    .testimonial-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .testimonial-text {
+      font-size: 0.9rem; color: var(--text-light);
+      line-height: 1.7; margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .author-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; color: var(--white);
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-size: 0.85rem; font-weight: 600; color: var(--white);
+    }
+    .author-note { font-size: 0.72rem; color: var(--text-muted); }
+
+    /* Savings callout */
+    .savings-callout {
+      background: rgba(249,115,22,0.08);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      margin-top: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .savings-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .savings-text { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .savings-text strong { color: var(--orange); font-weight: 700; }
+
+    /* ══════════════════════════════════════════
+       PAYMENT + HOURS SECTION
+    ══════════════════════════════════════════ */
+    .info-strip {
+      background: var(--steel-light);
+      border-top: 1px solid var(--steel-border);
+      border-bottom: 1px solid var(--steel-border);
+      padding: 3rem 2rem;
+    }
+    .info-strip-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2.5rem; align-items: start;
+    }
+    .info-block-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--orange); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .info-block-title::before {
+      content: ''; width: 16px; height: 2px; background: var(--orange);
+    }
+    .hours-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--steel-border);
+      font-size: 0.88rem;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--text-muted); font-weight: 500; }
+    .hours-time { color: var(--text-light); font-weight: 600; }
+    .hours-closed { color: #ef4444; font-weight: 600; }
+    .payment-icons { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .payment-chip {
+      background: var(--steel);
+      border: 1px solid var(--steel-border);
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--text-light); letter-spacing: 0.05em;
+    }
+    .cert-list { list-style: none; }
+    .cert-list li {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--steel-border);
+      font-size: 0.88rem; color: var(--text-light);
+    }
+    .cert-list li:last-child { border-bottom: none; }
+    .cert-list li::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+    /* ══════════════════════════════════════════
+       CTA BANNER
+    ══════════════════════════════════════════ */
+    .cta-banner {
+      background:
+        linear-gradient(135deg, var(--orange-deep) 0%, var(--orange) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cta-banner-content { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900; text-transform: uppercase;
+      color: var(--white); line-height: 1.05;
+      margin-bottom: 0.8rem;
+    }
+    .cta-banner p {
+      font-size: 1rem; color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+    }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--white);
+      color: var(--orange-deep);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2.5rem; border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--steel);
+      border-top: 3px solid var(--orange);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2rem;
+      border-bottom: 1px solid var(--steel-border);
+    }
+    .footer-tagline {
+      font-size: 0.85rem; color: var(--text-muted);
+      line-height: 1.7; margin-top: 0.8rem; max-width: 300px;
+    }
+    .footer-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--orange); margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-bottom {
+      max-width: 1200px; margin: 1.5rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ══════════════════════════════════════════
+       MAP EMBED PLACEHOLDER
+    ══════════════════════════════════════════ */
+    .map-section {
+      background: var(--steel-mid);
+      padding: 4rem 2rem;
+    }
+    .map-wrap {
+      max-width: 1200px; margin: 2rem auto 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--steel-border);
+      height: 360px;
+    }
+    .map-wrap iframe {
+      width: 100%; height: 100%; border: none;
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-card { min-width: unset; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      nav a:not(.nav-phone) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .topbar { gap: 1rem; }
+      .hero-title { font-size: 3rem; }
+      .stat-strip-num { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══════════════════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-item">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    <a href="tel:8656888695" style="color:white;text-decoration:none;">865-688-8695</a>
+  </div>
+  <div class="topbar-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    1100 Bradshaw Garden Rd, Knoxville, TN
+  </div>
+  <div class="topbar-item">
+    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+    Mon–Sat: 8:00 AM – 6:00 PM
+  </div>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════ -->
+<header>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-badge">BAO</div>
+      <div class="logo-text">
+        <div class="logo-name">Auto Repair</div>
+        <div class="logo-sub">Knoxville, Tennessee</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#hours">Hours</a>
+      <a href="tel:8656888695" class="nav-phone">📞 Call Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-pill">Now Accepting New Customers</div>
+      <h1 class="hero-title">
+        <span class="line-white">Knoxville's</span>
+        <span class="line-orange">Most Trusted</span>
+        <span class="line-outline">Auto Repair</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>Family-owned. ASE-certified.</strong> We fix your car right the first time — at a price that's fair. Domestic and foreign vehicles, all makes and models.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:8656888695" class="btn-orange">📞 Call 865-688-8695</a>
+        <a href="#services" class="btn-ghost-white">View Services ↓</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-icon">🔧</div>
+          <div class="trust-text">
+            <div class="trust-label">Certified</div>
+            <div class="trust-val">ASE Technicians</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⭐</div>
+          <div class="trust-text">
+            <div class="trust-label">Rated</div>
+            <div class="trust-val">5.0 / 5 Stars</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <div class="trust-text">
+            <div class="trust-label">Service</div>
+            <div class="trust-val">Guaranteed Work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Card -->
+    <div class="hero-card">
+      <div class="hero-card-title">Shop Info</div>
+      <div class="open-badge">Open Today</div>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Address</div>
+          <div class="info-val">1100 Bradshaw Garden Rd<br>Knoxville, TN</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Phone</div>
+          <div class="info-val"><a href="tel:8656888695">(865) 688-8695</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Hours</div>
+          <div class="info-val">Mon–Sat: 8:00 AM – 6:00 PM<br>Sunday: Closed</div>
+        </div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="rating-row">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num">5.0</div>
+        <div class="rating-count">Highly Rated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ══════════════════════════════════════════ -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">5.0★</div>
+      <div class="stat-strip-label">Customer Rating</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">ASE</div>
+      <div class="stat-strip-label">Certified Technicians</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">6 Days</div>
+      <div class="stat-strip-label">A Week, We're Open</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">100%</div>
+      <div class="stat-strip-label">Satisfaction Guaranteed</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">All</div>
+      <div class="stat-strip-label">Makes & Models</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ════════════════════════════════════════════ -->
+<section class="section-dark" id="services">
+  <div class="container">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title-light">Full-Service <span>Auto Repair</span></h2>
+    <p class="section-sub-light">From routine maintenance to complex diagnostics — we handle it all with quality parts and certified expertise.</p>
+    <div class="services-grid">
+      <div class="service-tile">
+        <span class="service-tile-icon">🛢️</span>
+        <div class="service-tile-title">Oil Changes</div>
+        <p class="service-tile-text">Fast, affordable oil and filter changes using quality oil to keep your engine running smoothly for miles to come.</p>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🔍</span>
+        <div class="service-tile-title">Diagnostics</div>
+        <p class="service-tile-text">State-of-the-art diagnostic equipment to pinpoint exactly what's wrong — no guesswork, no unnecessary repairs.</p>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🛑</span>
+        <div class="service-tile-title">Brake Services</div>
+        <p class="service-tile-text">Complete brake inspections, pad replacements, rotor resurfacing, and hydraulic system repairs to keep you safe.</p>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">⚙️</span>
+        <div class="service-tile-title">Transmission</div>
+        <p class="service-tile-text">Expert automatic and manual transmission service, fluid flushes, and full rebuilds for domestic and foreign vehicles.</p>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">📅</span>
+        <div class="service-tile-title">Scheduled Maintenance</div>
+        <p class="service-tile-text">Follow your manufacturer's maintenance schedule with us — tune-ups, filter replacements, fluid checks, and more.</p>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🌡️</span>
+        <div class="service-tile-title">Preventive Care</div>
+        <p class="service-tile-text">Catch problems before they become expensive. We specialize in preventive maintenance that saves you money long-term.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══════════════════════════════════════════════ -->
+<section class="section-light" id="why">
+  <div class="container">
+    <div class="section-tag">Why BAO</div>
+    <h2 class="section-title-dark">Honest Work. <span>Fair Prices.</span></h2>
+    <p class="section-sub-dark">We've built our reputation one satisfied customer at a time — with transparency, skill, and a commitment to doing right by you.</p>
+    <div class="why-grid">
+      <div class="why-photo-wrap">
+        <img src="https://images.unsplash.com/photo-1632823471406-4c5c7e4c6f24?w=800&q=80" alt="Auto repair technician at work">
+        <div class="why-photo-badge">
+          <div class="why-badge-num">4.5–5★</div>
+          <div class="why-badge-label">Across All Platforms</div>
+        </div>
+      </div>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-num">01</div>
+          <div>
+            <div class="why-point-title">Honest Diagnostics — No Upsells</div>
+            <p class="why-point-text">We tell you what your car actually needs, not what maximizes the invoice. Our customers regularly save hundreds compared to dealership quotes.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-num">02</div>
+          <div>
+            <div class="why-point-title">Family-Owned & Community Focused</div>
+            <p class="why-point-text">We're not a chain. Every customer is treated like a neighbor because in Knoxville, they are. Your trust means everything to us.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-num">03</div>
+          <div>
+            <div class="why-point-title">Quality Parts. Guaranteed Results.</div>
+            <p class="why-point-text">We use quality OEM and aftermarket parts and stand behind every repair. If something isn't right, we make it right — period.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-num">04</div>
+          <div>
+            <div class="why-point-title">All Makes & Models Welcome</div>
+            <p class="why-point-text">Domestic or foreign, old or new — our ASE-certified technicians have the training and tools to service virtually any vehicle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
+<section class="section-steel">
+  <div class="container">
+    <div class="section-tag">Real Customers</div>
+    <h2 class="section-title-light">What Knoxville <span>Is Saying</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Another shop quoted me $1,500 for repairs. BAO diagnosed the real issue and fixed it for $180. I couldn't believe it. Honest, skilled, and incredibly fair."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <div class="author-name">Michael R.</div>
+            <div class="author-note">Knoxville, TN · Verified Customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Been taking my cars here for years. They never try to sell you something you don't need. Trustworthy mechanics are hard to find — BAO is the real deal."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Sarah T.</div>
+            <div class="author-note">Knoxville, TN · Repeat Customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Fast, professional, and genuinely cares about doing good work. Fixed my transmission issue quickly and for way less than the dealership wanted. Highly recommend."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div>
+            <div class="author-name">James K.</div>
+            <div class="author-note">Knoxville, TN · Verified Customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="savings-callout">
+      <div class="savings-icon">💰</div>
+      <div class="savings-text">Our customers regularly report saving <strong>50–90% vs. dealership quotes</strong>. We believe in fixing what's broken — not padding the bill with unnecessary repairs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOURS + PAYMENT + CERTS ═════════════════════════════ -->
+<div class="info-strip" id="hours">
+  <div class="info-strip-grid">
+    <div>
+      <div class="info-block-title">Shop Hours</div>
+      <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">8:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">8:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">8:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">8:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">8:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">8:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-closed">Closed</span></div>
+    </div>
+    <div>
+      <div class="info-block-title">We Accept</div>
+      <div class="payment-icons">
+        <div class="payment-chip">💳 Visa</div>
+        <div class="payment-chip">💳 Mastercard</div>
+        <div class="payment-chip">💳 Discover</div>
+        <div class="payment-chip">📝 Check</div>
+      </div>
+      <div style="margin-top:1.8rem;">
+        <div class="info-block-title">Certifications</div>
+        <ul class="cert-list">
+          <li>ASE-Certified Technicians</li>
+          <li>Domestic Vehicle Specialists</li>
+          <li>Foreign Vehicle Specialists</li>
+          <li>Quality Parts Guaranteed</li>
+          <li>All Repairs Warranted</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="info-block-title">Find Us</div>
+      <div class="info-row" style="margin-bottom:0.8rem;">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-val" style="color:var(--text-light);">1100 Bradshaw Garden Rd<br>Knoxville, TN</div>
+        </div>
+      </div>
+      <div class="info-row" style="margin-bottom:0.8rem;">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-val"><a href="tel:8656888695" style="color:var(--orange);text-decoration:none;font-weight:600;">(865) 688-8695</a></div>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=1100+Bradshaw+Garden+Rd+Knoxville+TN" target="_blank" class="btn-orange" style="margin-top:0.8rem;display:inline-flex;font-size:0.85rem;padding:0.65rem 1.2rem;">
+        🗺️ Get Directions
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAP ═══════════════════════════════════════════════════ -->
+<div class="map-section">
+  <div class="container">
+    <div class="section-tag">Location</div>
+    <h2 class="section-title-light">Come <span>See Us</span></h2>
+  </div>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.8!2d-83.9749!3d36.0346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1100+Bradshaw+Garden+Rd%2C+Knoxville%2C+TN!5e0!3m2!1sen!2sus!4v1"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+<!-- ═══ CTA BANNER ═══════════════════════════════════════════ -->
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2>Ready to Get Back on the Road?</h2>
+    <p>Call us today — honest diagnostics, fair pricing, and repairs done right the first time.</p>
+    <a href="tel:8656888695" class="btn-white">📞 Call (865) 688-8695</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <div class="logo-badge">BAO</div>
+        <div class="logo-text">
+          <div class="logo-name" style="color:white;">Auto Repair</div>
+          <div class="logo-sub">Knoxville, Tennessee</div>
+        </div>
+      </div>
+      <p class="footer-tagline">Family-owned, full-service automotive repair in Knoxville, TN. ASE-certified technicians, honest pricing, and guaranteed work on all makes and models.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Oil Changes</a></li>
+        <li><a href="#services">Brake Service</a></li>
+        <li><a href="#services">Diagnostics</a></li>
+        <li><a href="#services">Transmission</a></li>
+        <li><a href="#services">Scheduled Maintenance</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:8656888695">(865) 688-8695</a></li>
+        <li><a href="#">1100 Bradshaw Garden Rd</a></li>
+        <li><a href="#">Knoxville, TN</a></li>
+        <li><a href="#hours">Mon–Sat: 8AM–6PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 BAO Auto Repair. All rights reserved. · Knoxville, TN</div>
+    <div style="font-size:0.78rem;color:var(--text-muted);">ASE Certified · Family Owned · Est. Knoxville</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Build Your Website — Synprism</title>
+  <meta name="description" content="Tell us about your business in 3 minutes. We'll take it from there.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:    #0D1F35;
+      --aqua:    #00C8E8;
+      --aqua-dim: rgba(0,200,232,0.10);
+      --aqua-border: rgba(0,200,232,0.25);
+      --white:   #FFFFFF;
+      --off:     #F7F8FC;
+      --border:  #E4E8F0;
+      --text:    #1A2035;
+      --mid:     #4B5675;
+      --light:   #8892AA;
+      --green:   #10B981;
+      --r:       10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hdr-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .hdr-logo span { color: var(--aqua); }
+    .hdr-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 56px 32px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 48px;
+      background: var(--off);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      border: 1px solid var(--aqua-border);
+      background: var(--aqua-dim);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 22px;
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+    .hero-title span { color: var(--aqua); }
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.58);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+    }
+    .time-badge::before { content: '⏱'; }
+
+    /* ── FORM WRAPPER ── */
+    .form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 28px 80px;
+    }
+
+    /* ── QUESTION BLOCK ── */
+    .q-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px 28px 24px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .q-block:focus-within {
+      border-color: var(--aqua);
+      box-shadow: 0 0 0 3px rgba(0,200,232,0.10);
+    }
+    .q-num {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 6px;
+    }
+    .q-label {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .q-hint {
+      font-size: 0.8rem;
+      color: var(--light);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── INPUTS ── */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.78rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--aqua);
+      box-shadow: 0 0 0 3px rgba(0,200,232,0.12);
+    }
+    textarea { resize: vertical; min-height: 90px; }
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ── PILL MULTI-SELECT ── */
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill-option {
+      display: none;
+    }
+    .pill-option + label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--mid);
+      cursor: pointer;
+      transition: all 0.18s;
+      background: var(--white);
+      user-select: none;
+    }
+    .pill-option:checked + label {
+      background: var(--aqua-dim);
+      border-color: var(--aqua);
+      color: #007A8F;
+      font-weight: 600;
+    }
+    .pill-option + label:hover {
+      border-color: var(--aqua);
+      color: var(--text);
+    }
+
+    /* ── COLOR SWATCHES ── */
+    .swatch-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .swatch-opt { display: none; }
+    .swatch-opt + label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px 7px 10px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--mid);
+      cursor: pointer;
+      transition: all 0.18s;
+      background: var(--white);
+      user-select: none;
+    }
+    .swatch-opt:checked + label {
+      border-color: var(--aqua);
+      background: var(--aqua-dim);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .swatch-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.10);
+      flex-shrink: 0;
+    }
+
+    /* ── SUBMIT ── */
+    .submit-block {
+      background: var(--navy);
+      border-radius: var(--r);
+      padding: 32px 28px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .submit-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .submit-sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+    .btn-submit {
+      background: var(--aqua);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.95rem 2.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-submit:hover {
+      background: #00e0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,200,232,0.4);
+    }
+    .btn-submit:disabled {
+      opacity: 0.6; cursor: not-allowed; transform: none;
+    }
+
+    /* ── SUCCESS ── */
+    #success {
+      display: none;
+      text-align: center;
+      padding: 60px 28px;
+    }
+    .success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+    .success-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .success-sub {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      text-align: center;
+      padding: 18px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+    }
+    footer a { color: var(--aqua); text-decoration: none; }
+
+    @media (max-width: 540px) {
+      .input-row { grid-template-columns: 1fr; }
+      .q-block { padding: 22px 18px 18px; }
+      .form-wrap { padding: 28px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="https://synprism.io" class="hdr-logo">Syn<span>prism</span></a>
+  <span class="hdr-tag">Web Design Intake</span>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">New Website Request</div>
+  <h1 class="hero-title">Tell us about<br>your <span>business.</span></h1>
+  <p class="hero-sub">A few quick questions so we can design something that actually looks like you — not a generic template.</p>
+  <div class="time-badge">Takes about 3 minutes</div>
+</div>
+
+<div class="form-wrap">
+  <form id="intakeForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="9aa1c57c-c649-462e-84c0-0695cf66b356">
+    <input type="hidden" name="subject" value="New Website Intake — Synprism">
+    <input type="hidden" name="botcheck" value="">
+    
+
+    <!-- Q1 — Business basics -->
+    <div class="q-block">
+      <div class="q-num">Question 1 of 8</div>
+      <div class="q-label">What's your business name, and what do you do?</div>
+      <div class="q-hint">One or two sentences is perfect.</div>
+      <div class="input-row" style="margin-bottom:12px;">
+        <input type="text" name="business_name" placeholder="Business name" required>
+        <input type="tel" name="phone" placeholder="Best phone number">
+      </div>
+      <input type="text" name="what_you_do" placeholder="e.g. We're a family-owned plumbing company serving Nashville since 1998" required>
+    </div>
+
+    <!-- Q2 — Contact -->
+    <div class="q-block">
+      <div class="q-num">Question 2 of 8</div>
+      <div class="q-label">How do we reach you?</div>
+      <div class="q-hint">We'll send a preview of your site here.</div>
+      <div class="input-row" style="margin-bottom:12px;">
+        <input type="text" name="contact_name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+      </div>
+      <input type="url" name="current_website" placeholder="Current website URL (if you have one) — e.g. https://mysite.com">
+    </div>
+
+    <!-- Q3 — Who are customers -->
+    <div class="q-block">
+      <div class="q-num">Question 3 of 8</div>
+      <div class="q-label">Who are your customers?</div>
+      <div class="q-hint">Pick all that apply.</div>
+      <div class="pill-group">
+        <input class="pill-option" type="checkbox" name="customers" value="Homeowners" id="c1"><label for="c1">🏠 Homeowners</label>
+        <input class="pill-option" type="checkbox" name="customers" value="Small businesses" id="c2"><label for="c2">🏪 Small Businesses</label>
+        <input class="pill-option" type="checkbox" name="customers" value="Commercial/Corporate" id="c3"><label for="c3">🏢 Commercial / Corporate</label>
+        <input class="pill-option" type="checkbox" name="customers" value="Industrial" id="c4"><label for="c4">🏭 Industrial</label>
+        <input class="pill-option" type="checkbox" name="customers" value="General public" id="c5"><label for="c5">👥 General Public</label>
+        <input class="pill-option" type="checkbox" name="customers" value="Other" id="c6"><label for="c6">Other</label>
+      </div>
+    </div>
+
+    <!-- Q4 — Tone/feel -->
+    <div class="q-block">
+      <div class="q-num">Question 4 of 8</div>
+      <div class="q-label">How do you want your site to feel?</div>
+      <div class="q-hint">Pick up to two that fit best.</div>
+      <div class="pill-group">
+        <input class="pill-option" type="checkbox" name="tone" value="Professional & trustworthy" id="t1"><label for="t1">🤝 Professional &amp; Trustworthy</label>
+        <input class="pill-option" type="checkbox" name="tone" value="Friendly & approachable" id="t2"><label for="t2">😊 Friendly &amp; Approachable</label>
+        <input class="pill-option" type="checkbox" name="tone" value="Bold & energetic" id="t3"><label for="t3">⚡ Bold &amp; Energetic</label>
+        <input class="pill-option" type="checkbox" name="tone" value="Clean & minimal" id="t4"><label for="t4">✨ Clean &amp; Minimal</label>
+        <input class="pill-option" type="checkbox" name="tone" value="Premium & upscale" id="t5"><label for="t5">💎 Premium &amp; Upscale</label>
+        <input class="pill-option" type="checkbox" name="tone" value="Rugged & industrial" id="t6"><label for="t6">🔧 Rugged &amp; Industrial</label>
+      </div>
+    </div>
+
+    <!-- Q5 — Brand colors -->
+    <div class="q-block">
+      <div class="q-num">Question 5 of 8</div>
+      <div class="q-label">Do you have brand colors?</div>
+      <div class="q-hint">Pick the closest match, or tell us below. If you have a logo, share it in Q7.</div>
+      <div class="swatch-group">
+        <input class="swatch-opt" type="radio" name="brand_color" value="Navy Blue" id="col1"><label for="col1"><span class="swatch-dot" style="background:#1B3799;"></span>Navy Blue</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Sky Blue" id="col2"><label for="col2"><span class="swatch-dot" style="background:#0EA5E9;"></span>Sky Blue</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Forest Green" id="col3"><label for="col3"><span class="swatch-dot" style="background:#166534;"></span>Forest Green</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Red" id="col4"><label for="col4"><span class="swatch-dot" style="background:#DC2626;"></span>Red</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Orange" id="col5"><label for="col5"><span class="swatch-dot" style="background:#EA580C;"></span>Orange</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Black & White" id="col6"><label for="col6"><span class="swatch-dot" style="background:#111;"></span>Black &amp; White</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Gold / Yellow" id="col7"><label for="col7"><span class="swatch-dot" style="background:#CA8A04;"></span>Gold / Yellow</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Purple" id="col8"><label for="col8"><span class="swatch-dot" style="background:#7C3AED;"></span>Purple</label>
+        <input class="swatch-opt" type="radio" name="brand_color" value="Not sure" id="col9"><label for="col9"><span class="swatch-dot" style="background:linear-gradient(135deg,#f43f5e,#3b82f6,#10b981);"></span>Not Sure</label>
+      </div>
+      <input type="text" name="brand_color_detail" placeholder="Specific color codes or 'we use blue and orange' — optional">
+    </div>
+
+    <!-- Q6 — #1 goal -->
+    <div class="q-block">
+      <div class="q-num">Question 6 of 8</div>
+      <div class="q-label">What's the #1 thing you want a visitor to do on your site?</div>
+      <div class="q-hint">Pick one — this shapes everything about the design.</div>
+      <div class="pill-group">
+        <input class="pill-option" type="radio" name="primary_goal" value="Call us" id="g1"><label for="g1">📞 Call Us</label>
+        <input class="pill-option" type="radio" name="primary_goal" value="Fill out a contact form" id="g2"><label for="g2">📝 Fill Out a Form</label>
+        <input class="pill-option" type="radio" name="primary_goal" value="Request a quote/estimate" id="g3"><label for="g3">💰 Request a Quote</label>
+        <input class="pill-option" type="radio" name="primary_goal" value="Book an appointment" id="g4"><label for="g4">📅 Book an Appointment</label>
+        <input class="pill-option" type="radio" name="primary_goal" value="Shop / buy something" id="g5"><label for="g5">🛒 Shop / Buy</label>
+        <input class="pill-option" type="radio" name="primary_goal" value="Learn about us / trust us" id="g6"><label for="g6">🤝 Just Learn About Us</label>
+      </div>
+    </div>
+
+    <!-- Q7 — Photos + logo -->
+    <div class="q-block">
+      <div class="q-num">Question 7 of 8</div>
+      <div class="q-label">Do you have a logo and photos of your work?</div>
+      <div class="q-hint">Pick what you have — it helps us know whether to use your real stuff or placeholder images.</div>
+      <div class="pill-group" style="margin-bottom:14px;">
+        <input class="pill-option" type="checkbox" name="assets" value="Yes, I have a logo" id="a1"><label for="a1">✅ I have a logo</label>
+        <input class="pill-option" type="checkbox" name="assets" value="Yes, I have photos of my work" id="a2"><label for="a2">📸 I have work photos</label>
+        <input class="pill-option" type="checkbox" name="assets" value="I have a Facebook/Instagram page with photos" id="a3"><label for="a3">📱 Facebook / Instagram photos</label>
+        <input class="pill-option" type="checkbox" name="assets" value="No, use stock photos for now" id="a4"><label for="a4">🖼 Use stock photos for now</label>
+      </div>
+      <input type="url" name="social_url" placeholder="Facebook, Instagram, or Google Business URL (optional — we'll pull photos from here)">
+    </div>
+
+    <!-- Q8 — What's wrong with current site / free notes -->
+    <div class="q-block">
+      <div class="q-num">Question 8 of 8</div>
+      <div class="q-label">Anything else we should know?</div>
+      <div class="q-hint">What's wrong with your current site? Anything you love or hate on other websites? Completely optional — even one sentence helps.</div>
+      <textarea name="notes" placeholder="e.g. Our current site is from 2012 and looks terrible on phones. We love how clean Apple.com looks. We really want people to be able to find our phone number fast."></textarea>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-block">
+      <div class="submit-title">That's it — you're done. 🎉</div>
+      <div class="submit-sub">Hit send and we'll be in touch within one business day with a custom demo built around your answers.</div>
+      <button type="submit" class="btn-submit" id="submitBtn">Send It to Synprism →</button>
+    </div>
+  </form>
+
+  <div id="success">
+    <div class="success-icon">🚀</div>
+    <div class="success-title">We've got it — thank you!</div>
+    <p class="success-sub">Expect to hear from us within one business day. We'll reach out with questions if we need anything else, then get to work on your demo site.</p>
+    <p class="success-sub" style="margin-top:14px;font-size:0.82rem;color:var(--light);">— The Synprism Team</p>
+  </div>
+</div>
+
+<footer>
+  <a href="https://synprism.io">synprism.io</a> &nbsp;·&nbsp; AI-Powered Web &amp; Integration Consulting &nbsp;·&nbsp; info@synprism.io
+</footer>
+
+<script>
+  document.getElementById('intakeForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { 'Accept': 'application/json' }
+      });
+      const data = await res.json();
+      if (data.success) {
+        e.target.style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.textContent = 'Something went wrong — please try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — please try again';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

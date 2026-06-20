@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HotRods Towing — 24/7 Towing & Roadside Rescue Knoxville, TN</title>
+  <meta name="description" content="Knoxville's most trusted towing company. 24/7 emergency towing, roadside assistance, lockouts, jump-starts. 15+ years serving Knoxville, TN. Call (865) 830-1811.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       HOTRODS TOWING
+       Theme: Asphalt Black + Crimson Red + Chrome Silver
+       Gritty, badass, hot rod culture + emergency responder energy
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:          #dc2626;
+      --red-deep:     #991b1b;
+      --red-glow:     rgba(220,38,38,0.2);
+      --chrome:       #d1d5db;
+      --chrome-bright:#f3f4f6;
+      --asphalt:      #080808;
+      --asphalt2:     #111111;
+      --asphalt3:     #1a1a1a;
+      --asphalt4:     #222222;
+      --border:       rgba(255,255,255,0.08);
+      --border-red:   rgba(220,38,38,0.3);
+      --text:         #f3f4f6;
+      --text-mid:     #9ca3af;
+      --text-dim:     #4b5563;
+      --white:        #ffffff;
+      --yellow:       #fbbf24;
+      --radius:       4px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--asphalt);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--asphalt); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+    /* ══════════════════════════════════════════
+       EMERGENCY BANNER
+    ══════════════════════════════════════════ */
+    .emergency-bar {
+      background: var(--red);
+      padding: 0.5rem 2rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+      position: relative; z-index: 200;
+    }
+    .emergency-bar::before, .emergency-bar::after {
+      content: '🚨';
+      font-size: 0.8rem;
+      animation: flash 1s infinite alternate;
+    }
+    @keyframes flash { from{opacity:1} to{opacity:0.3} }
+    .ebar-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--white);
+    }
+    .ebar-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.05em;
+      color: var(--white); text-decoration: none;
+      background: rgba(0,0,0,0.25);
+      padding: 0.2rem 0.8rem; border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+    .ebar-phone:hover { background: rgba(0,0,0,0.45); }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--asphalt);
+      border-bottom: 2px solid var(--red);
+      box-shadow: 0 4px 30px rgba(220,38,38,0.15);
+    }
+    .nav-wrap {
+      max-width: 1300px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+    .logo-flame {
+      font-size: 1.8rem; line-height: 1;
+      filter: drop-shadow(0 0 8px rgba(220,38,38,0.6));
+    }
+    .logo-text-wrap { line-height: 1.1; }
+    .logo-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; color: var(--white);
+      letter-spacing: 0.06em; line-height: 1;
+    }
+    .logo-main span { color: var(--red); }
+    .logo-sub {
+      font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-mid);
+    }
+    nav { display: flex; align-items: center; gap: 0.2rem; }
+    nav a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-mid);
+      text-decoration: none; padding: 0.5rem 0.85rem;
+      border-radius: var(--radius);
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--white); background: var(--asphalt3); }
+    .nav-call {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--red) !important;
+      color: var(--white) !important;
+      font-weight: 600 !important;
+      box-shadow: 0 0 20px rgba(220,38,38,0.3);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s !important;
+    }
+    .nav-call:hover {
+      background: var(--red-deep) !important;
+      box-shadow: 0 0 30px rgba(220,38,38,0.5) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    .hero {
+      min-height: 95vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(105deg, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.82) 50%, rgba(8,8,8,0.5) 100%),
+        url('https://images.unsplash.com/photo-1570221622224-3bb8f08f166c?w=1800&q=80') center/cover no-repeat;
+    }
+
+    /* Diagonal red slice */
+    .hero-slice {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 45%;
+      background: linear-gradient(135deg, transparent 0%, rgba(220,38,38,0.06) 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+      pointer-events: none;
+    }
+
+    /* Scanline texture */
+    .hero-scan {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.08) 2px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1300px; margin: 0 auto;
+      padding: 6rem 2rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem; align-items: center;
+    }
+
+    /* Badge */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      border: 1px solid var(--border-red);
+      background: rgba(220,38,38,0.08);
+      border-radius: var(--radius);
+      padding: 0.4rem 1rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+    .badge-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 8px var(--red);
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100%{ box-shadow: 0 0 6px var(--red); }
+      50%{ box-shadow: 0 0 16px var(--red), 0 0 30px rgba(220,38,38,0.4); }
+    }
+
+    .hero-h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 11vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 60px rgba(220,38,38,0.15);
+    }
+    .hero-h1 .red { color: var(--red); }
+    .hero-h1 .chrome {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300;
+      color: var(--text-mid); line-height: 1.75;
+      max-width: 540px; margin-bottom: 2.5rem;
+    }
+    .hero-sub strong { color: var(--chrome); font-weight: 600; }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-red {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2.2rem; border-radius: var(--radius);
+      border: none; cursor: pointer;
+      box-shadow: 0 4px 25px rgba(220,38,38,0.4);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-red:hover {
+      background: var(--red-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 35px rgba(220,38,38,0.55);
+    }
+    .btn-chrome {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: transparent;
+      color: var(--chrome);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2.2rem; border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-chrome:hover { border-color: var(--red); color: var(--red); }
+
+    /* Stats row */
+    .hero-stats {
+      display: flex; gap: 0.1rem; flex-wrap: wrap;
+    }
+    .hstat {
+      background: var(--asphalt3);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius);
+      min-width: 120px;
+    }
+    .hstat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; color: var(--red); line-height: 1;
+    }
+    .hstat-label {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-mid);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Right panel — emergency call card ── */
+    .emergency-card {
+      background: var(--asphalt2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(220,38,38,0.1);
+    }
+    .ecard-head {
+      background: var(--red);
+      padding: 1.2rem 1.5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .ecard-head-icon { font-size: 1.6rem; }
+    .ecard-head-text {}
+    .ecard-head-label {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+    }
+    .ecard-head-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem; color: var(--white); letter-spacing: 0.06em;
+    }
+    .ecard-body { padding: 1.5rem; }
+    .ecard-phone {
+      display: flex; align-items: center; gap: 0.8rem;
+      background: rgba(220,38,38,0.08);
+      border: 1px solid var(--border-red);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .ecard-phone:hover { background: rgba(220,38,38,0.15); }
+    .ecard-phone-icon { font-size: 1.4rem; }
+    .ecard-phone-label {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.2rem;
+    }
+    .ecard-phone-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; color: var(--red); letter-spacing: 0.05em; line-height: 1;
+    }
+    .ecard-row {
+      display: flex; gap: 0.8rem; align-items: flex-start;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ecard-row:last-child { border-bottom: none; }
+    .ecard-icon {
+      font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .ecard-rlabel {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.2rem;
+    }
+    .ecard-rval {
+      font-size: 0.88rem; font-weight: 500; color: var(--text); line-height: 1.4;
+    }
+    .ecard-foot {
+      padding: 0 1.5rem 1.5rem;
+    }
+    .ecard-cta {
+      display: block; width: 100%; text-align: center;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(220,38,38,0.35);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .ecard-cta:hover { background: var(--red-deep); transform: translateY(-1px); }
+
+    /* ══════════════════════════════════════════
+       SERVICES SECTION
+    ══════════════════════════════════════════ */
+    #services { background: var(--asphalt2); padding: 6rem 2rem; }
+    .container { max-width: 1300px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--red);
+      margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .section-label::before {
+      content: ''; width: 30px; height: 2px; background: var(--red);
+    }
+    .section-h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 0.95; letter-spacing: 0.04em;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .section-h2 .red { color: var(--red); }
+    .section-p {
+      font-size: 1rem; font-weight: 300;
+      color: var(--text-mid); line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .svc-card {
+      background: var(--asphalt3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      cursor: default;
+    }
+    .svc-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--red);
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform 0.3s;
+    }
+    .svc-card:hover {
+      border-color: rgba(220,38,38,0.3);
+      transform: translateY(-4px);
+    }
+    .svc-card:hover::before { transform: scaleY(1); }
+    .svc-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem; color: rgba(220,38,38,0.08);
+      line-height: 1; position: absolute; right: 1rem; top: 0.5rem;
+      pointer-events: none; letter-spacing: 0.04em;
+    }
+    .svc-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .svc-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .svc-text { font-size: 0.84rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* ══════════════════════════════════════════
+       WHY 15 YEARS — split section
+    ══════════════════════════════════════════ */
+    #about { background: var(--asphalt); padding: 6rem 2rem; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; margin-top: 3rem;
+    }
+    .about-img-wrap { position: relative; }
+    .about-img {
+      width: 100%; height: 460px;
+      object-fit: cover; display: block;
+      border-radius: var(--radius);
+      filter: brightness(0.75) saturate(0.9);
+    }
+    /* Red corner accent */
+    .about-img-wrap::before {
+      content: '';
+      position: absolute; top: -10px; left: -10px;
+      width: 80px; height: 80px;
+      border-top: 3px solid var(--red);
+      border-left: 3px solid var(--red);
+      pointer-events: none;
+    }
+    .about-img-wrap::after {
+      content: '';
+      position: absolute; bottom: -10px; right: -10px;
+      width: 80px; height: 80px;
+      border-bottom: 3px solid var(--red);
+      border-right: 3px solid var(--red);
+      pointer-events: none;
+    }
+    .about-years-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: var(--red);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+    }
+    .ayb-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem; color: var(--white); line-height: 1;
+    }
+    .ayb-label {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+    }
+    .about-points { display: flex; flex-direction: column; gap: 1.5rem; }
+    .about-point {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-point:last-child { border-bottom: none; padding-bottom: 0; }
+    .ap-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(220,38,38,0.1);
+      border: 1px solid var(--border-red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .ap-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--white); margin-bottom: 0.3rem;
+    }
+    .ap-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* ══════════════════════════════════════════
+       24/7 STRIP
+    ══════════════════════════════════════════ */
+    .always-strip {
+      background: var(--red);
+      padding: 2.5rem 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .always-strip::before {
+      content: '24/7 24/7 24/7 24/7 24/7 24/7 24/7 24/7 24/7 24/7';
+      position: absolute; left: 0; right: 0; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem; color: rgba(0,0,0,0.1);
+      letter-spacing: 0.1em; white-space: nowrap;
+      pointer-events: none;
+    }
+    .always-inner {
+      max-width: 1300px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .always-left {}
+    .always-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem; color: var(--white); line-height: 1;
+      letter-spacing: 0.06em;
+    }
+    .always-sub {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem; font-weight: 400; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+    }
+    .always-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .always-stat {
+      text-align: center;
+      background: rgba(0,0,0,0.15);
+      padding: 0.8rem 1.4rem;
+      border-radius: var(--radius);
+    }
+    .astat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; color: var(--white); line-height: 1;
+    }
+    .astat-label {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+    }
+
+    /* ══════════════════════════════════════════
+       SPECIALTY VEHICLES
+    ══════════════════════════════════════════ */
+    #specialty {
+      background: var(--asphalt2);
+      padding: 6rem 2rem;
+    }
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 3rem;
+    }
+    .spec-tile {
+      background: var(--asphalt3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .spec-tile:hover {
+      border-color: var(--border-red);
+      transform: translateY(-3px);
+    }
+    .spec-icon { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+    .spec-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--white); margin-bottom: 0.4rem;
+    }
+    .spec-text { font-size: 0.78rem; color: var(--text-mid); line-height: 1.5; }
+
+    /* ══════════════════════════════════════════
+       MAP + CONTACT
+    ══════════════════════════════════════════ */
+    #contact {
+      background: var(--asphalt);
+      padding: 6rem 2rem;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start; margin-top: 3rem;
+    }
+    .contact-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 380px;
+    }
+    .contact-map iframe { width: 100%; height: 100%; border: none; }
+    .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+    .cd-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.2rem;
+      background: var(--asphalt3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s;
+    }
+    .cd-item:hover { border-color: var(--border-red); }
+    .cd-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(220,38,38,0.1);
+      border: 1px solid var(--border-red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .cd-label {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 0.3rem;
+    }
+    .cd-val {
+      font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.5;
+    }
+    .cd-val a { color: var(--red); text-decoration: none; }
+    .cd-val a:hover { text-decoration: underline; }
+    .hours-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 1rem;
+    }
+    .hours-item {
+      font-size: 0.82rem;
+      display: flex; justify-content: space-between;
+      padding: 0.2rem 0;
+    }
+    .hours-day { color: var(--text-mid); }
+    .hours-open { color: var(--red); font-weight: 600; }
+    .social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .social-chip {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--asphalt4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem; font-weight: 500; color: var(--text-mid);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-chip:hover { border-color: var(--red); color: var(--red); }
+
+    /* ══════════════════════════════════════════
+       CTA FINALE
+    ══════════════════════════════════════════ */
+    .cta-finale {
+      background: var(--asphalt2);
+      position: relative; overflow: hidden;
+      padding: 5rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .cta-finale::before {
+      content: 'CALL NOW';
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15vw; color: rgba(220,38,38,0.03);
+      letter-spacing: 0.1em; white-space: nowrap;
+      pointer-events: none;
+    }
+    .cta-finale-content { position: relative; z-index: 1; }
+    .cta-finale h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95; letter-spacing: 0.04em;
+      color: var(--white); margin-bottom: 0.8rem;
+    }
+    .cta-finale h2 span { color: var(--red); }
+    .cta-finale p {
+      font-size: 1rem; color: var(--text-mid); line-height: 1.7;
+      max-width: 500px; margin: 0 auto 2.5rem;
+    }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--asphalt);
+      border-top: 2px solid var(--red);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-grid {
+      max-width: 1300px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem; padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-about { }
+    .footer-tagline {
+      font-size: 0.83rem; color: var(--text-mid); line-height: 1.7;
+      margin-top: 0.8rem; max-width: 280px;
+    }
+    .footer-col-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      font-size: 0.83rem; color: var(--text-mid); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--red); }
+    .footer-bottom {
+      max-width: 1300px; margin: 1.5rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 1000px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .emergency-card { max-width: 460px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      nav a:not(.nav-call) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero-h1 { font-size: 4.5rem; }
+      .always-inner { flex-direction: column; text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 0.5rem; }
+      .hstat { min-width: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ EMERGENCY BAR ════════════════════════════════════ -->
+<div class="emergency-bar">
+  <span class="ebar-text">24/7 Emergency Towing — We Never Close</span>
+  <a href="tel:8658301811" class="ebar-phone">📞 (865) 830-1811</a>
+  <span class="ebar-text">Knoxville, TN · 15+ Years Serving You</span>
+</div>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
+<header>
+  <div class="nav-wrap">
+    <a href="#" class="nav-logo">
+      <div class="logo-flame">🔥</div>
+      <div class="logo-text-wrap">
+        <div class="logo-main"><span>HotRods</span> Towing</div>
+        <div class="logo-sub">Knoxville, TN · Since 15+ Years</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#specialty">Specialty</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:8658301811" class="nav-call">🚨 (865) 830-1811</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-slice"></div>
+  <div class="hero-scan"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        24/7 Emergency Response · Knoxville, TN
+      </div>
+      <h1 class="hero-h1">
+        <span class="red">Your</span><br>
+        Roadside<br>
+        <span class="chrome">Rescue.</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>15+ years. Family-owned. Always open.</strong> When your car breaks down, HotRods Towing is the team Knoxville trusts to show up fast, handle it right, and get you moving again — day or night, rain or shine.
+      </p>
+      <div class="hero-btns">
+        <a href="tel:8658301811" class="btn-red">🚨 Call Now — We're Ready</a>
+        <a href="#services" class="btn-chrome">Our Services ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num">15+</div>
+          <div class="hstat-label">Years in Business</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">24/7</div>
+          <div class="hstat-label">Always Available</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">All</div>
+          <div class="hstat-label">Vehicle Types</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">Knox</div>
+          <div class="hstat-label">& Surrounding Areas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emergency Card -->
+    <div class="emergency-card">
+      <div class="ecard-head">
+        <div class="ecard-head-icon">🚨</div>
+        <div class="ecard-head-text">
+          <div class="ecard-head-label">Emergency Line</div>
+          <div class="ecard-head-title">We Answer 24/7</div>
+        </div>
+      </div>
+      <div class="ecard-body">
+        <a href="tel:8658301811" class="ecard-phone">
+          <div class="ecard-phone-icon">📞</div>
+          <div>
+            <div class="ecard-phone-label">Call or Text Anytime</div>
+            <div class="ecard-phone-num">(865) 830-1811</div>
+          </div>
+        </a>
+        <div class="ecard-row">
+          <div class="ecard-icon">📍</div>
+          <div>
+            <div class="ecard-rlabel">Address</div>
+            <div class="ecard-rval">6601 Maynardville Pike<br>Knoxville, TN 37918</div>
+          </div>
+        </div>
+        <div class="ecard-row">
+          <div class="ecard-icon">🕐</div>
+          <div>
+            <div class="ecard-rlabel">Hours</div>
+            <div class="ecard-rval">Open 24 Hours — 7 Days a Week</div>
+          </div>
+        </div>
+        <div class="ecard-row">
+          <div class="ecard-icon">📡</div>
+          <div>
+            <div class="ecard-rlabel">Service Area</div>
+            <div class="ecard-rval">Knoxville &amp; Surrounding Areas</div>
+          </div>
+        </div>
+        <div class="ecard-row">
+          <div class="ecard-icon">🚛</div>
+          <div>
+            <div class="ecard-rlabel">Specialty</div>
+            <div class="ecard-rval">All vehicles incl. vintage, luxury &amp; motorcycles</div>
+          </div>
+        </div>
+      </div>
+      <div class="ecard-foot">
+        <a href="tel:8658301811" class="ecard-cta">🚨 Call for Immediate Help</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-h2">Full Roadside <span class="red">Arsenal</span></h2>
+    <p class="section-p">From a dead battery to a long-haul tow — we've got the equipment, training, and experience to handle any situation on any vehicle.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <span class="svc-icon">🚛</span>
+        <div class="svc-title">Emergency Towing</div>
+        <p class="svc-text">Accident, breakdown, or mechanical failure — our flatbeds and wheel-lifts respond fast, any time of day or night.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <span class="svc-icon">🔐</span>
+        <div class="svc-title">Lockout Services</div>
+        <p class="svc-text">Locked your keys inside? Keys broken off in the ignition? Our techs handle any lockout situation quickly and without damage.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <span class="svc-icon">⚡</span>
+        <div class="svc-title">Jump-Starts</div>
+        <p class="svc-text">Dead battery keeping you stuck? We'll have you fired up and back on the road in minutes — no waiting, no hassle.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <span class="svc-icon">⛽</span>
+        <div class="svc-title">Gas Delivery</div>
+        <p class="svc-text">Ran out of fuel? Stay put and stay safe — we'll bring enough gas to get you to the nearest station.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <span class="svc-icon">🏍️</span>
+        <div class="svc-title">Motorcycle Towing</div>
+        <p class="svc-text">Specialized equipment and trained handlers for motorcycles of all types — transported safely without scratches or damage.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <span class="svc-icon">⚙️</span>
+        <div class="svc-title">Winch Out Services</div>
+        <p class="svc-text">Stuck in mud, a ditch, or off-road terrain? Our winch recovery gear gets your vehicle out safely — no matter the situation.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">07</div>
+        <span class="svc-icon">🛣️</span>
+        <div class="svc-title">Long Distance Towing</div>
+        <p class="svc-text">Need a tow across the state or further? We offer reliable long-distance towing with full care for your vehicle the entire route.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">08</div>
+        <span class="svc-icon">🏢</span>
+        <div class="svc-title">Car Lot Transportation</div>
+        <p class="svc-text">Dealerships and car lots trust us for reliable multi-vehicle transportation. Professional, on-time, and damage-free delivery.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">09</div>
+        <span class="svc-icon">💥</span>
+        <div class="svc-title">Wrecked Car Towing</div>
+        <p class="svc-text">Post-accident recovery handled with care. We coordinate with insurance, work safely at the scene, and clear the road fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 24/7 STRIP ════════════════════════════════════ -->
+<div class="always-strip">
+  <div class="always-inner">
+    <div class="always-left">
+      <div class="always-title">We Never Close.</div>
+      <div class="always-sub">Open 24/7 · Every Day · Rain or Shine · No Holidays Off</div>
+    </div>
+    <div class="always-right">
+      <div class="always-stat">
+        <div class="astat-num">24/7</div>
+        <div class="astat-label">Every Day</div>
+      </div>
+      <div class="always-stat">
+        <div class="astat-num">365</div>
+        <div class="astat-label">Days a Year</div>
+      </div>
+      <div class="always-stat">
+        <div class="astat-num">15+</div>
+        <div class="astat-label">Years Strong</div>
+      </div>
+      <a href="tel:8658301811" class="btn-chrome" style="background:rgba(0,0,0,0.2);border-color:rgba(255,255,255,0.3);color:white;">
+        📞 Call Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-h2">15 Years of <span class="red">Never Letting You Down</span></h2>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img class="about-img" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80" alt="HotRods Towing truck in Knoxville">
+        <div class="about-years-badge">
+          <div class="ayb-num">15+</div>
+          <div class="ayb-label">Years Serving Knoxville</div>
+        </div>
+      </div>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="ap-icon">🏠</div>
+          <div>
+            <div class="ap-title">Family-Owned & Operated</div>
+            <p class="ap-text">We're not a corporate chain — we're your neighbors. A small, family-owned operation that's been part of the Knoxville community for over 15 years. Every job gets personal attention.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">🚨</div>
+          <div>
+            <div class="ap-title">True 24/7 Response</div>
+            <p class="ap-text">We understand how stressful car troubles can be. That's why we answer every hour, every day — holidays, weekends, 3am. When you call, a real person picks up.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">🛡️</div>
+          <div>
+            <div class="ap-title">Specialized Vehicle Experts</div>
+            <p class="ap-text">We take special pride in handling vintage cars, luxury vehicles, and unique automobiles with the extra care they deserve. Your prized possession is treated like our own.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">💪</div>
+          <div>
+            <div class="ap-title">State-of-the-Art Equipment</div>
+            <p class="ap-text">Latest towing and recovery tools, maintained to the highest standards. From light-duty passenger vehicles to heavy equipment — we've got the right rig for every job.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECIALTY VEHICLES ══════════════════════════════ -->
+<section id="specialty">
+  <div class="container">
+    <div class="section-label">Specialty Towing</div>
+    <h2 class="section-h2">We Handle <span class="red">Every Vehicle</span></h2>
+    <p class="section-p">From compact cars to classics, motorcycles to heavy loads — HotRods Towing has the equipment and expertise to move any vehicle safely.</p>
+    <div class="specialty-grid">
+      <div class="spec-tile">
+        <span class="spec-icon">🏎️</span>
+        <div class="spec-title">Vintage Cars</div>
+        <p class="spec-text">Classic and antique vehicles handled with the white-glove care they deserve.</p>
+      </div>
+      <div class="spec-tile">
+        <span class="spec-icon">💎</span>
+        <div class="spec-title">Luxury Vehicles</div>
+        <p class="spec-text">BMWs, Mercedes, Ferraris — premium transport without a scratch.</p>
+      </div>
+      <div class="spec-tile">
+        <span class="spec-icon">🏍️</span>
+        <div class="spec-title">Motorcycles</div>
+        <p class="spec-text">Specialized motorcycle cradles for safe, damage-free transport.</p>
+      </div>
+      <div class="spec-tile">
+        <span class="spec-icon">🚐</span>
+        <div class="spec-title">SUVs & Trucks</div>
+        <p class="spec-text">Full-size trucks and heavy SUVs — no job too big for our equipment.</p>
+      </div>
+      <div class="spec-tile">
+        <span class="spec-icon">🔧</span>
+        <div class="spec-title">Special Vehicles</div>
+        <p class="spec-text">Custom builds, one-of-a-kind rides, and anything unique — handled with expertise.</p>
+      </div>
+      <div class="spec-tile">
+        <span class="spec-icon">🏢</span>
+        <div class="spec-title">Fleet / Car Lots</div>
+        <p class="spec-text">Multi-vehicle dealer transport and car lot logistics — reliable and on-time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / MAP ════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-h2">Get in <span class="red">Touch</span></h2>
+    <div class="contact-grid">
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3228!2d-83.9549!3d36.0646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s6601+Maynardville+Pike+Knoxville+TN+37918!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="contact-details">
+        <div class="cd-item">
+          <div class="cd-icon">📞</div>
+          <div>
+            <div class="cd-label">Phone</div>
+            <div class="cd-val"><a href="tel:8658301811">(865) 830-1811</a></div>
+          </div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-label">Address</div>
+            <div class="cd-val">6601 Maynardville Pike<br>Knoxville, TN 37918</div>
+          </div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">🕐</div>
+          <div>
+            <div class="cd-label">Hours</div>
+            <div class="cd-val">
+              <div class="hours-grid">
+                <div class="hours-item"><span class="hours-day">Monday</span><span class="hours-open">24 Hours</span></div>
+                <div class="hours-item"><span class="hours-day">Tuesday</span><span class="hours-open">24 Hours</span></div>
+                <div class="hours-item"><span class="hours-day">Wednesday</span><span class="hours-open">24 Hours</span></div>
+                <div class="hours-item"><span class="hours-day">Thursday</span><span class="hours-open">24 Hours</span></div>
+                <div class="hours-item"><span class="hours-day">Friday</span><span class="hours-open">24 Hours</span></div>
+                <div class="hours-item"><span class="hours-day">Saturday</span><span class="hours-open">24 Hours</span></div>
+                <div class="hours-item"><span class="hours-day">Sunday</span><span class="hours-open">24 Hours</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-icon">🌐</div>
+          <div>
+            <div class="cd-label">Find Us Online</div>
+            <div class="cd-val">
+              <div class="social-row">
+                <a href="https://www.facebook.com" class="social-chip">📘 Facebook</a>
+                <a href="https://www.instagram.com" class="social-chip">📸 Instagram</a>
+                <a href="#" class="social-chip">⭐ Google</a>
+                <a href="#" class="social-chip">★ Yelp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINALE ═══════════════════════════════════════ -->
+<div class="cta-finale">
+  <div class="cta-finale-content">
+    <h2>Stranded? <span>We Got You.</span></h2>
+    <p>Don't wait on the side of the road. HotRods Towing responds fast — 24 hours a day, 7 days a week, 365 days a year. One call and we're on our way.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:8658301811" class="btn-red" style="font-size:1.05rem;padding:1rem 2.8rem;">🚨 Call (865) 830-1811</a>
+      <a href="https://maps.google.com/?q=6601+Maynardville+Pike+Knoxville+TN+37918" target="_blank" class="btn-chrome">🗺️ Get Directions</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem;">
+        <span style="font-size:1.5rem;filter:drop-shadow(0 0 6px rgba(220,38,38,0.5));">🔥</span>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;letter-spacing:0.04em;line-height:1;"><span style="color:var(--red)">HotRods</span> Towing</div>
+          <div style="font-size:0.58rem;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;">Knoxville, TN · 15+ Years</div>
+        </div>
+      </div>
+      <p class="footer-tagline">Family-owned, 24/7 towing and roadside assistance in Knoxville, TN. 15+ years of getting people back on the road — fast, safe, and affordable.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Emergency Towing</a></li>
+        <li><a href="#services">Lockout Services</a></li>
+        <li><a href="#services">Jump-Starts</a></li>
+        <li><a href="#services">Gas Delivery</a></li>
+        <li><a href="#services">Winch Out</a></li>
+        <li><a href="#services">Long Distance Towing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Specialty</div>
+      <ul class="footer-links">
+        <li><a href="#specialty">Vintage Cars</a></li>
+        <li><a href="#specialty">Luxury Vehicles</a></li>
+        <li><a href="#specialty">Motorcycles</a></li>
+        <li><a href="#specialty">Car Lot Transport</a></li>
+        <li><a href="#specialty">Wrecked Cars</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:8658301811">(865) 830-1811</a></li>
+        <li><a href="#">6601 Maynardville Pike</a></li>
+        <li><a href="#">Knoxville, TN 37918</a></li>
+        <li><a href="#">Open 24/7 · 365 Days</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 HotRods Towing. All rights reserved. · Knoxville, TN 37918</div>
+    <div style="font-size:0.72rem;color:var(--text-dim);">24/7 Towing & Roadside Assistance · Est. 15+ Years</div>
+  </div>
+</footer>
+
+</body>
+</html>

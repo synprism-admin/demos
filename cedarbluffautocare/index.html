@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cedar Bluff Auto Care — Knoxville, TN</title>
+  <meta name="description" content="Cedar Bluff Auto Care in Knoxville, TN. Brake repair, tires, alignment, AC service, and full auto repair. 9133 Executive Park Dr. Call (865) 691-4853.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       CEDAR BLUFF AUTO CARE
+       Theme: Executive Navy + Warm Gold + Crisp White
+       Upscale, professional, Executive Park Dr energy
+       Matched to the gold ribbon badge logo
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:         #c8960c;
+      --gold-light:   #e0aa14;
+      --gold-pale:    #fdf3d8;
+      --gold-border:  rgba(200,150,12,0.25);
+      --navy:         #0d1b2e;
+      --navy-mid:     #142035;
+      --navy-light:   #1d2f4a;
+      --navy-border:  rgba(13,27,46,0.12);
+      --white:        #ffffff;
+      --off-white:    #fafbfc;
+      --light:        #f4f6f9;
+      --border:       #e4e8ef;
+      --text:         #0d1b2e;
+      --text-mid:     #4a5568;
+      --text-light:   #94a3b8;
+      --green:        #16a34a;
+      --radius:       8px;
+      --radius-lg:    14px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--light); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ══════════════════════════════════════════
+       TOP ANNOUNCEMENT BAR
+    ══════════════════════════════════════════ */
+    .topbar {
+      background: var(--navy);
+      padding: 0.5rem 2rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .topbar-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.55);
+    }
+    .topbar-item a { color: var(--gold-light); text-decoration: none; transition: color 0.2s; }
+    .topbar-item a:hover { color: var(--white); }
+    .topbar-sep { color: rgba(255,255,255,0.15); }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 16px rgba(13,27,46,0.08);
+    }
+    .nav-wrap {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 70px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+    .logo-emblem {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 3px 10px rgba(200,150,12,0.35);
+      flex-shrink: 0;
+    }
+    .logo-emblem-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.02em;
+    }
+    .logo-words { line-height: 1.15; }
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--navy); letter-spacing: 0.01em;
+    }
+    .logo-name span { color: var(--gold); }
+    .logo-sub {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    nav { display: flex; align-items: center; gap: 0.25rem; }
+    nav a {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-mid);
+      text-decoration: none; padding: 0.5rem 0.85rem;
+      border-radius: var(--radius);
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--navy); background: var(--gold-pale); }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      font-weight: 800 !important;
+      box-shadow: 0 3px 14px rgba(200,150,12,0.35);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--gold-light) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 5px 20px rgba(200,150,12,0.45) !important;
+    }
+
+    /* ══════════════════════════════════════════
+       HERO — full navy with gold accents
+    ══════════════════════════════════════════ */
+    .hero {
+      background: var(--navy);
+      min-height: 88vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+
+    /* Subtle noise/texture */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 70% 50%, rgba(200,150,12,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(200,150,12,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Subtle grid */
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(13,27,46,1) 35%, rgba(13,27,46,0.75) 65%, rgba(13,27,46,0.4) 100%),
+        url('https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 400px;
+      gap: 5rem; align-items: center;
+      width: 100%;
+    }
+
+    /* Gold badge ribbon */
+    .hero-ribbon {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: linear-gradient(135deg, rgba(200,150,12,0.15), rgba(200,150,12,0.08));
+      border: 1px solid rgba(200,150,12,0.35);
+      border-radius: 100px;
+      padding: 0.45rem 1.2rem;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 2rem;
+    }
+    .ribbon-gem {
+      width: 7px; height: 7px;
+      background: var(--gold-light);
+      border-radius: 1px;
+      transform: rotate(45deg);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 .gold { color: var(--gold-light); }
+    .hero-h1 .italic { font-style: italic; }
+
+    .hero-p {
+      font-size: 0.98rem; font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.85; max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-p strong { color: rgba(255,255,255,0.8); font-weight: 700; }
+
+    .hero-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--navy);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(200,150,12,0.4);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,12,0.5); }
+    .btn-ghost-light {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.12);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost-light:hover { border-color: var(--gold-border); color: var(--gold-light); }
+
+    /* Hours quick-view */
+    .hero-hours-row {
+      display: flex; gap: 0.8rem; flex-wrap: wrap;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .hh-pill {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.5);
+    }
+    .hh-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .hh-pill .open { color: var(--gold-light); font-weight: 700; }
+
+    /* ── Right Card ── */
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .hc-gold-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+    }
+    .hc-head {
+      background: var(--navy);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .hc-head-eyebrow {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+      margin-bottom: 0.4rem;
+    }
+    .hc-head-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--white); line-height: 1.1;
+    }
+    .hc-head-name span { color: var(--gold-light); }
+    .hc-body { padding: 1.5rem; }
+    .hc-row {
+      display: flex; gap: 0.8rem; align-items: flex-start;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hc-row:last-child { border-bottom: none; }
+    .hc-icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; flex-shrink: 0;
+    }
+    .hc-label {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 0.15rem;
+    }
+    .hc-val {
+      font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.45;
+    }
+    .hc-val a { color: var(--gold); text-decoration: none; }
+    .hc-val a:hover { text-decoration: underline; }
+    .hc-foot { padding: 0 1.5rem 1.5rem; }
+    .hc-cta {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.88rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 16px rgba(200,150,12,0.35);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .hc-cta:hover { transform: translateY(-1px); box-shadow: 0 7px 24px rgba(200,150,12,0.5); }
+    .hc-note {
+      text-align: center; font-size: 0.68rem; color: var(--text-light); margin-top: 0.6rem;
+    }
+
+    /* ══════════════════════════════════════════
+       GOLD DIVIDER
+    ══════════════════════════════════════════ */
+    .gold-bar {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      padding: 1.8rem 2rem;
+    }
+    .gold-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .gb-item { text-align: center; }
+    .gb-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1;
+    }
+    .gb-label {
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(13,27,46,0.6);
+      margin-top: 0.2rem;
+    }
+    .gb-sep { width: 1px; background: rgba(13,27,46,0.15); align-self: stretch; }
+
+    /* ══════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════ */
+    #services { background: var(--off-white); padding: 6rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .section-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--gold); }
+    .section-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.15; margin-bottom: 0.5rem;
+    }
+    .section-h2 em { color: var(--gold); font-style: italic; }
+    .section-p {
+      font-size: 0.93rem; color: var(--text-mid); line-height: 1.8;
+      max-width: 540px; margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .svc-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .svc-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s;
+    }
+    .svc-card:hover {
+      border-color: var(--gold-border);
+      box-shadow: 0 12px 40px rgba(200,150,12,0.1), 0 2px 8px rgba(0,0,0,0.05);
+      transform: translateY(-5px);
+    }
+    .svc-card:hover::after { transform: scaleX(1); }
+    .svc-icon {
+      width: 58px; height: 58px; border-radius: var(--radius);
+      background: var(--gold-pale);
+      border: 1.5px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.3rem;
+    }
+    .svc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .svc-text { font-size: 0.83rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* ══════════════════════════════════════════
+       ABOUT / TRUST SECTION
+    ══════════════════════════════════════════ */
+    #about { background: var(--white); padding: 6rem 2rem; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-photo-side { position: relative; }
+    .about-photo {
+      width: 100%; height: 460px;
+      object-fit: cover; display: block;
+      border-radius: var(--radius-lg);
+      filter: brightness(0.9);
+    }
+    /* Gold accent frame corner */
+    .about-photo-side::before {
+      content: '';
+      position: absolute; top: -14px; right: -14px;
+      width: 80px; height: 80px;
+      border-top: 3px solid var(--gold);
+      border-right: 3px solid var(--gold);
+      border-radius: 0 var(--radius-lg) 0 0;
+    }
+    .about-photo-side::after {
+      content: '';
+      position: absolute; bottom: -14px; left: -14px;
+      width: 80px; height: 80px;
+      border-bottom: 3px solid var(--gold);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 0 0 var(--radius-lg);
+    }
+    .about-badge {
+      position: absolute; bottom: 1.5rem; right: 1.5rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: var(--radius);
+      padding: 1rem 1.3rem; text-align: center;
+      box-shadow: 0 6px 20px rgba(200,150,12,0.4);
+    }
+    .ab-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--navy); line-height: 1.1;
+    }
+    .ab-label {
+      font-size: 0.58rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(13,27,46,0.6);
+    }
+
+    .about-text-side {}
+    .about-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.2; margin-bottom: 1.2rem;
+    }
+    .about-headline em { color: var(--gold); font-style: italic; }
+    .about-body {
+      font-size: 0.93rem; color: var(--text-mid); line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+    .about-points { display: flex; flex-direction: column; gap: 1rem; }
+    .ap-row {
+      display: flex; gap: 0.9rem; align-items: flex-start;
+    }
+    .ap-check {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--gold-pale);
+      border: 1.5px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; color: var(--gold); font-weight: 800;
+      flex-shrink: 0;
+    }
+    .ap-title {
+      font-size: 0.88rem; font-weight: 800; color: var(--navy); margin-bottom: 0.2rem;
+    }
+    .ap-text { font-size: 0.8rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════
+       HOURS & LOCATION
+    ══════════════════════════════════════════ */
+    #contact { background: var(--light); padding: 6rem 2rem; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: start; margin-top: 3rem;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
+    .ci-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(13,27,46,0.04);
+    }
+    .ci-card-head {
+      background: var(--navy);
+      padding: 1rem 1.4rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .ci-head-icon { font-size: 1.1rem; }
+    .ci-head-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-weight: 700; color: var(--white);
+    }
+    .ci-head-title span { color: var(--gold-light); }
+    .ci-body { padding: 1.2rem 1.4rem; }
+    .ci-row {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ci-row:last-child { border-bottom: none; }
+    .ci-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .ci-label {
+      font-size: 0.58rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 0.18rem;
+    }
+    .ci-val {
+      font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.45;
+    }
+    .ci-val a { color: var(--gold); text-decoration: none; }
+    .ci-val a:hover { text-decoration: underline; }
+
+    /* Hours table */
+    .hours-tbl { width: 100%; border-collapse: collapse; }
+    .hours-tbl tr td {
+      font-size: 0.82rem; padding: 0.3rem 0;
+    }
+    .hours-tbl tr td:first-child { color: var(--text-mid); font-weight: 500; }
+    .hours-tbl tr td:last-child { text-align: right; font-weight: 700; }
+    .open-t { color: var(--navy); }
+    .closed-t { color: var(--text-light); }
+
+    .ci-cta-wrap { padding: 0 1.4rem 1.4rem; }
+    .ci-cta {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.85rem;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 14px rgba(200,150,12,0.3);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .ci-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(200,150,12,0.45); }
+
+    .contact-map {
+      border-radius: var(--radius-lg); overflow: hidden;
+      border: 1.5px solid var(--border); height: 460px;
+      box-shadow: 0 4px 20px rgba(13,27,46,0.08);
+    }
+    .contact-map iframe { width: 100%; height: 100%; border: none; }
+
+    /* ══════════════════════════════════════════
+       CTA FINALE — navy + gold
+    ══════════════════════════════════════════ */
+    .cta-finale {
+      background: var(--navy-mid);
+      padding: 5.5rem 2rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-finale::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,150,12,0.08) 0%, transparent 65%);
+    }
+    /* Gold top/bottom lines */
+    .cta-finale::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .cta-finale-inner { position: relative; z-index: 1; }
+    .cta-finale h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.15; margin-bottom: 0.8rem;
+    }
+    .cta-finale h2 em { color: var(--gold-light); font-style: italic; }
+    .cta-finale p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.45);
+      line-height: 1.8; max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+    .cta-finale-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white-navy {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2.2rem; border-radius: var(--radius);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-white-navy:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--navy);
+      padding: 3rem 2rem 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-tagline {
+      font-size: 0.82rem; color: rgba(255,255,255,0.3);
+      line-height: 1.8; margin-top: 0.8rem; max-width: 280px;
+    }
+    .footer-col-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-weight: 700; color: var(--gold-light);
+      margin-bottom: 1rem; font-style: italic;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.3); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      max-width: 1200px; margin: 1.5rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { max-width: 460px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      nav a:not(.nav-cta) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .topbar { gap: 0.8rem; }
+      .gold-bar-inner { gap: 1rem; }
+      .gb-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ══════════════════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-item">
+    <span>📍</span>
+    <span>9133 Executive Park Dr, Knoxville, TN 37923</span>
+  </div>
+  <span class="topbar-sep">|</span>
+  <div class="topbar-item">
+    <span>📞</span>
+    <a href="tel:8656914853">(865) 691-4853</a>
+  </div>
+  <span class="topbar-sep">|</span>
+  <div class="topbar-item">
+    <span>🕐</span>
+    <span>Mon–Fri 7AM–6PM · Sat 7AM–5PM</span>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
+<header>
+  <div class="nav-wrap">
+    <a href="#" class="nav-logo">
+      <div class="logo-emblem">
+        <div class="logo-emblem-text">CB</div>
+      </div>
+      <div class="logo-words">
+        <div class="logo-name"><span>Cedar Bluff</span> Auto Care</div>
+        <div class="logo-sub">Executive Park Dr · Knoxville, TN</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Hours</a>
+      <a href="tel:8656914853" class="nav-cta">📞 (865) 691-4853</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-ribbon">
+        <div class="ribbon-gem"></div>
+        Knoxville's Executive Auto Care Specialists
+      </div>
+      <h1 class="hero-h1">
+        Premium Auto Care<br>
+        <em class="italic">You Can</em><br>
+        <span class="gold">Count On.</span>
+      </h1>
+      <p class="hero-p">
+        <strong>Cedar Bluff Auto Care</strong> brings dealership-level expertise to an independent, customer-focused shop on Knoxville's Executive Park Drive. Brakes, tires, alignment, AC, and full-service repair — done right, every time.
+      </p>
+      <div class="hero-btns">
+        <a href="tel:8656914853" class="btn-gold">📞 Call (865) 691-4853</a>
+        <a href="#services" class="btn-ghost-light">View Services ↓</a>
+      </div>
+      <div class="hero-hours-row">
+        <div class="hh-pill">
+          <div class="hh-dot"></div>
+          <span>Mon–Fri: <span class="open">7:00 AM – 6:00 PM</span></span>
+        </div>
+        <div class="hh-pill">
+          <div class="hh-dot"></div>
+          <span>Saturday: <span class="open">7:00 AM – 5:00 PM</span></span>
+        </div>
+        <div class="hh-pill">
+          <div class="hh-dot" style="background:var(--text-light);"></div>
+          <span>Sunday: Closed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Card -->
+    <div class="hero-card">
+      <div class="hc-gold-bar"></div>
+      <div class="hc-head">
+        <div class="hc-head-eyebrow">Knoxville Auto Care</div>
+        <div class="hc-head-name"><span>Cedar Bluff</span> Auto Care</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-row">
+          <div class="hc-icon">📞</div>
+          <div>
+            <div class="hc-label">Phone</div>
+            <div class="hc-val"><a href="tel:8656914853">(865) 691-4853</a></div>
+          </div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-icon">📍</div>
+          <div>
+            <div class="hc-label">Address</div>
+            <div class="hc-val">9133 Executive Park Dr<br>Knoxville, TN 37923</div>
+          </div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-icon">🕐</div>
+          <div>
+            <div class="hc-label">Hours</div>
+            <div class="hc-val">Mon–Fri: 7:00 AM – 6:00 PM<br>Saturday: 7:00 AM – 5:00 PM<br>Sunday: Closed</div>
+          </div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-icon">🔧</div>
+          <div>
+            <div class="hc-label">Specialties</div>
+            <div class="hc-val">Brakes · Tires · Alignment · AC · Full Service</div>
+          </div>
+        </div>
+      </div>
+      <div class="hc-foot">
+        <a href="tel:8656914853" class="hc-cta">📞 Schedule Service Today</a>
+        <div class="hc-note">Walk-ins welcome · Knoxville, TN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GOLD STATS BAR ═══════════════════════════════════ -->
+<div class="gold-bar">
+  <div class="gold-bar-inner">
+    <div class="gb-item">
+      <div class="gb-num">6 Days</div>
+      <div class="gb-label">A Week, Open</div>
+    </div>
+    <div class="gb-sep"></div>
+    <div class="gb-item">
+      <div class="gb-num">7 AM</div>
+      <div class="gb-label">Early Open Daily</div>
+    </div>
+    <div class="gb-sep"></div>
+    <div class="gb-item">
+      <div class="gb-num">Full</div>
+      <div class="gb-label">Service Shop</div>
+    </div>
+    <div class="gb-sep"></div>
+    <div class="gb-item">
+      <div class="gb-num">Knoxville</div>
+      <div class="gb-label">Executive Park Dr</div>
+    </div>
+    <div class="gb-sep"></div>
+    <div class="gb-item">
+      <div class="gb-num">All</div>
+      <div class="gb-label">Makes &amp; Models</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-h2">Expert Service, <em>Every Visit.</em></h2>
+    <p class="section-p">From your morning commute vehicle to the family SUV — Cedar Bluff Auto Care handles all makes and models with precision and care.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🛑</div>
+        <div class="svc-title">Brake Repair</div>
+        <p class="svc-text">Complete brake system inspections, pad and rotor replacement, caliper service, and brake fluid exchanges. Your safety is our first priority.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔘</div>
+        <div class="svc-title">Tire Sales &amp; Service</div>
+        <p class="svc-text">New tire sales, rotations, flat repairs, and pressure checks. We carry a wide selection of brands for every vehicle type and budget.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">⚙️</div>
+        <div class="svc-title">Wheel Alignment &amp; Balancing</div>
+        <p class="svc-text">Precision alignment and wheel balancing using state-of-the-art equipment. Extend your tire life and improve handling and fuel economy.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">❄️</div>
+        <div class="svc-title">Auto AC Service &amp; Repair</div>
+        <p class="svc-text">AC system diagnostics, refrigerant recharge, compressor repair, and full climate control service — stay cool all summer long.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔧</div>
+        <div class="svc-title">Full Auto Repair</div>
+        <p class="svc-text">Engine diagnostics, oil changes, belts and hoses, suspension, and all routine and complex repairs for domestic and foreign vehicles.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔍</div>
+        <div class="svc-title">Diagnostics</div>
+        <p class="svc-text">Check engine light? Warning indicators? Our advanced diagnostic tools identify the root cause — no guessing, no unnecessary repairs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-side">
+        <img class="about-photo"
+          src="https://images.unsplash.com/photo-1632823471406-4c5c7e4c6f24?w=800&q=80"
+          alt="Cedar Bluff Auto Care technician">
+        <div class="about-badge">
+          <div class="ab-text">Executive<br>Park Dr</div>
+          <div class="ab-label">Knoxville, TN</div>
+        </div>
+      </div>
+      <div class="about-text-side">
+        <div class="section-eyebrow">Who We Are</div>
+        <div class="about-headline">
+          Professional Service.<br>
+          <em>Without the Dealership Price.</em>
+        </div>
+        <p class="about-body">
+          Cedar Bluff Auto Care is a full-service automotive shop located on Executive Park Drive in Knoxville, TN. We believe every driver deserves expert, honest auto care — and that you shouldn't have to pay dealership prices to get it.
+          <br><br>
+          From brake jobs to AC repairs, tire service to complete diagnostics, our experienced technicians treat your vehicle — and your time — with the respect they deserve.
+        </p>
+        <div class="about-points">
+          <div class="ap-row">
+            <div class="ap-check">✓</div>
+            <div>
+              <div class="ap-title">Open Early, 6 Days a Week</div>
+              <p class="ap-text">Doors open at 7:00 AM Monday through Saturday — before most shops even start the coffee. We work around your schedule.</p>
+            </div>
+          </div>
+          <div class="ap-row">
+            <div class="ap-check">✓</div>
+            <div>
+              <div class="ap-title">All Makes &amp; Models</div>
+              <p class="ap-text">Domestic or imported, older or brand new — our technicians are trained and equipped to service virtually any vehicle on the road.</p>
+            </div>
+          </div>
+          <div class="ap-row">
+            <div class="ap-check">✓</div>
+            <div>
+              <div class="ap-title">Straight Talk, Fair Prices</div>
+              <p class="ap-text">We diagnose the real problem and give you an honest quote. No upsells, no manufactured urgency, no surprises on the bill.</p>
+            </div>
+          </div>
+          <div class="ap-row">
+            <div class="ap-check">✓</div>
+            <div>
+              <div class="ap-title">Conveniently Located</div>
+              <p class="ap-text">Right on Executive Park Drive — easy access from I-40, easy to drop off on the way to work and pick up on the way home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOURS + MAP ══════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-eyebrow">Find Us</div>
+    <h2 class="section-h2">Hours &amp; <em>Location</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="ci-card">
+          <div class="ci-card-head">
+            <div class="ci-head-icon">🕐</div>
+            <div class="ci-head-title"><span>Cedar Bluff</span> Auto Care Hours</div>
+          </div>
+          <div class="ci-body">
+            <div class="ci-row">
+              <div class="ci-icon">📅</div>
+              <div>
+                <div class="ci-label">Weekly Hours</div>
+                <div class="ci-val">
+                  <table class="hours-tbl">
+                    <tr><td>Monday</td><td class="open-t">7:00 AM – 6:00 PM</td></tr>
+                    <tr><td>Tuesday</td><td class="open-t">7:00 AM – 6:00 PM</td></tr>
+                    <tr><td>Wednesday</td><td class="open-t">7:00 AM – 6:00 PM</td></tr>
+                    <tr><td>Thursday</td><td class="open-t">7:00 AM – 6:00 PM</td></tr>
+                    <tr><td>Friday</td><td class="open-t">7:00 AM – 6:00 PM</td></tr>
+                    <tr><td>Saturday</td><td class="open-t">7:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Sunday</td><td class="closed-t">Closed</td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">📞</div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-val"><a href="tel:8656914853">(865) 691-4853</a></div>
+              </div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">📍</div>
+              <div>
+                <div class="ci-label">Address</div>
+                <div class="ci-val">9133 Executive Park Dr<br>Knoxville, TN 37923</div>
+              </div>
+            </div>
+          </div>
+          <div class="ci-cta-wrap">
+            <a href="tel:8656914853" class="ci-cta">📞 Call to Schedule</a>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=9133+Executive+Park+Dr+Knoxville+TN+37923"
+           target="_blank"
+           class="btn-ghost-light"
+           style="border-color:var(--border);color:var(--text-mid);justify-content:center;display:flex;">
+          🗺️ Get Directions
+        </a>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231!2d-84.1049!3d36.0046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s9133+Executive+Park+Dr+Knoxville+TN+37923!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINALE ════════════════════════════════════════ -->
+<div class="cta-finale">
+  <div class="cta-finale-inner">
+    <h2>Your Car Deserves<br><em>Cedar Bluff Care.</em></h2>
+    <p>Professional, honest, full-service auto repair in Knoxville — open early, 6 days a week. Give us a call and let's get you taken care of.</p>
+    <div class="cta-finale-btns">
+      <a href="tel:8656914853" class="btn-gold">📞 Call (865) 691-4853</a>
+      <a href="https://maps.google.com/?q=9133+Executive+Park+Dr+Knoxville+TN+37923"
+         target="_blank" class="btn-white-navy">🗺️ Get Directions</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <div class="logo-emblem" style="width:38px;height:38px;border-radius:8px;">
+          <div class="logo-emblem-text" style="font-size:1rem;">CB</div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:white;">
+            <span style="color:var(--gold-light)">Cedar Bluff</span> Auto Care
+          </div>
+          <div style="font-size:0.58rem;color:rgba(255,255,255,0.25);letter-spacing:0.15em;text-transform:uppercase;">
+            Executive Park Dr · Knoxville, TN 37923
+          </div>
+        </div>
+      </div>
+      <p class="footer-tagline">Full-service auto care on Executive Park Drive in Knoxville, TN. Brakes, tires, alignment, AC, and complete repair — done right, every time.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Brake Repair</a></li>
+        <li><a href="#services">Tire Sales &amp; Service</a></li>
+        <li><a href="#services">Wheel Alignment</a></li>
+        <li><a href="#services">AC Service &amp; Repair</a></li>
+        <li><a href="#services">Full Auto Repair</a></li>
+        <li><a href="#services">Diagnostics</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Visit Us</div>
+      <ul class="footer-links">
+        <li><a href="tel:8656914853">(865) 691-4853</a></li>
+        <li><a href="#">9133 Executive Park Dr</a></li>
+        <li><a href="#">Knoxville, TN 37923</a></li>
+        <li><a href="#contact">Mon–Fri: 7:00 AM – 6:00 PM</a></li>
+        <li><a href="#contact">Saturday: 7:00 AM – 5:00 PM</a></li>
+        <li><a href="#contact">Sunday: Closed</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Cedar Bluff Auto Care. All rights reserved. · Knoxville, TN 37923</div>
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.2);">Brakes · Tires · Alignment · AC · Full Service</div>
+  </div>
+</footer>
+
+</body>
+</html>

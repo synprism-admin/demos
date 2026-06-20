@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Well Drilling | Auburn, CA | Water Wells, Pumps & Lab Testing</title>
+  <meta name="description" content="Diamond Well Drilling — 35+ years serving Placer, Nevada, El Dorado & Yuba Counties. Water well drilling, pump installation, filtration, and certified laboratory services. Call (530) 823-0354.">
+  <link rel="canonical" href="https://diamondwelldrilling.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diamond Well Drilling | Auburn, CA">
+  <meta property="og:description" content="35+ years, 10,000+ wells drilled. Water wells, pumps, filtration & lab testing in Placer, Nevada, El Dorado & Yuba Counties.">
+  <meta property="og:url" content="https://diamondwelldrilling.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Diamond Well Drilling Company, Inc.","url":"https://diamondwelldrilling.com","telephone":"(530) 823-0354","address":{"@type":"PostalAddress","streetAddress":"1660 Old Airport Rd","addressLocality":"Auburn","addressRegion":"CA","postalCode":"95602"},"areaServed":["Placer County","Nevada County","El Dorado County","Yuba County"],"foundingDate":"1989","hasCredential":"California Contractors License #970862"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════
+       TOKENS — Diamond Well brand: navy + white
+    ══════════════════════════════════════════ */
+    :root {
+      --navy:        #1B3799;
+      --navy-dark:   #122880;
+      --navy-deeper: #0D1E60;
+      --navy-light:  #2548C2;
+      --blue-mid:    #3A5FD9;
+      --blue-tint:   #EEF3FF;
+      --blue-tint2:  #F5F8FF;
+      --white:       #FFFFFF;
+      --off-white:   #F9FAFF;
+      --text:        #121A3E;
+      --text-mid:    #3D4870;
+      --text-light:  #6B75A0;
+      --border:      #D4DCF5;
+      --shadow:      0 4px 24px rgba(27,55,153,0.10);
+      --shadow-lg:   0 16px 56px rgba(27,55,153,0.16);
+      --r:           8px;
+      --r-lg:        16px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── UTILITY ─────────────────────────────────── */
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--blue-mid);
+    }
+    .eyebrow::before { content:''; width:28px; height:1.5px; background:var(--navy); }
+    .eyebrow.light { color: rgba(255,255,255,0.7); }
+    .eyebrow.light::before { background: rgba(255,255,255,0.5); }
+
+    h2.section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+    h2.section-title span { color: var(--blue-mid); }
+    h2.section-title.light { color: var(--white); }
+    h2.section-title.light span { color: rgba(255,255,255,0.7); }
+
+    .section-body {
+      font-size: 1rem; color: var(--text-mid);
+      line-height: 1.78; max-width: 600px; margin-top: 14px;
+    }
+
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
+    .reveal.left { transform:translateX(-24px); }
+    .reveal.right { transform:translateX(24px); }
+    .reveal.visible { opacity:1; transform:none; }
+
+    .btn {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600;
+      letter-spacing:0.05em; text-transform:uppercase;
+      padding:0.9rem 2rem; border-radius:5px; border:none; cursor:pointer;
+      transition:all 0.22s;
+    }
+    .btn-navy { background:var(--navy); color:var(--white); }
+    .btn-navy:hover { background:var(--navy-dark); transform:translateY(-2px); box-shadow:0 8px 28px rgba(27,55,153,0.35); }
+    .btn-white { background:var(--white); color:var(--navy); }
+    .btn-white:hover { background:var(--blue-tint); transform:translateY(-2px); }
+    .btn-outline-white { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,0.55); }
+    .btn-outline-white:hover { border-color:var(--white); background:rgba(255,255,255,0.08); }
+    .btn-outline-navy { background:transparent; color:var(--navy); border:2px solid var(--navy); }
+    .btn-outline-navy:hover { background:var(--navy); color:var(--white); }
+
+    /* ── WAVE SVG divider ────────────────────────── */
+    .wave-down { display:block; width:100%; overflow:hidden; line-height:0; }
+    .wave-down svg { display:block; width:100%; }
+    .wave-up { display:block; width:100%; overflow:hidden; line-height:0; transform:rotate(180deg); }
+    .wave-up svg { display:block; width:100%; }
+
+    /* ══════════════════════════════════════════
+       NAV
+    ══════════════════════════════════════════ */
+    #nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      background:var(--white);
+      border-bottom:1px solid var(--border);
+      transition:box-shadow 0.3s;
+    }
+    #nav.scrolled { box-shadow:0 2px 20px rgba(27,55,153,0.12); }
+    .nav-wrap {
+      display:flex; align-items:center; justify-content:space-between;
+      height:72px;
+    }
+    .nav-logo img {
+      height:46px; width:auto;
+      mix-blend-mode:multiply;
+    }
+    .nav-links {
+      display:flex; align-items:center; gap:2px; list-style:none;
+    }
+    .nav-links a {
+      font-size:0.8rem; font-weight:500; letter-spacing:0.04em;
+      color:var(--text-mid); padding:6px 13px; border-radius:5px;
+      transition:color 0.2s,background 0.2s;
+    }
+    .nav-links a:hover { color:var(--navy); background:var(--blue-tint); }
+    .nav-cta { background:var(--navy) !important; color:var(--white) !important; }
+    .nav-cta:hover { background:var(--navy-dark) !important; }
+    .nav-phone {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.05rem; font-weight:700; color:var(--navy);
+      display:flex; align-items:center; gap:6px; letter-spacing:0.03em;
+    }
+    .burger {
+      display:none; flex-direction:column; gap:5px;
+      background:none; border:none; cursor:pointer; padding:4px;
+    }
+    .burger span { display:block; width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all 0.25s; }
+    .mob-nav { display:none; background:var(--white); border-top:1px solid var(--border); }
+    .mob-nav.open { display:block; }
+    .mob-nav a {
+      display:block; padding:14px 28px;
+      font-size:0.92rem; font-weight:500; color:var(--text-mid);
+      border-bottom:1px solid var(--border); transition:background 0.15s;
+    }
+    .mob-nav a:hover { background:var(--blue-tint); color:var(--navy); }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    #hero {
+      padding-top:72px;
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      display:flex; align-items:center;
+      background: linear-gradient(150deg, var(--navy-deeper) 0%, var(--navy) 45%, var(--navy-light) 100%);
+    }
+    /* Subtle radial water-glow behind content */
+    #hero::before {
+      content:'';
+      position:absolute; top:-20%; left:-10%;
+      width:70%; height:140%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    /* Radiating lines motif — echoes the logo wave */
+    .hero-rays {
+      position:absolute; bottom:-40px; right:-60px;
+      width:600px; height:600px;
+      opacity:0.06; pointer-events:none;
+    }
+    .hero-content {
+      position:relative; z-index:2;
+      padding:80px 0 120px;
+      max-width:700px;
+    }
+    .hero-logo-lockup {
+      display:flex; align-items:center; gap:0;
+      margin-bottom:44px;
+    }
+    .hero-logo-lockup img {
+      height:56px; width:auto;
+      filter:brightness(0) invert(1);
+      opacity:0.92;
+    }
+    .hero-h1 {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:clamp(3rem,6.5vw,5.2rem);
+      font-weight:700;
+      color:var(--white);
+      line-height:1.0;
+      letter-spacing:0.01em;
+      margin-bottom:24px;
+    }
+    .hero-h1 span { color:rgba(255,255,255,0.55); }
+    .hero-sub {
+      font-size:1.08rem; color:rgba(255,255,255,0.72);
+      line-height:1.72; max-width:520px; margin-bottom:38px;
+    }
+    .hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:60px; }
+    .hero-stats {
+      display:flex; gap:40px; flex-wrap:wrap;
+      padding-top:36px;
+      border-top:1px solid rgba(255,255,255,0.15);
+    }
+    .hero-stat-n {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:2.8rem; font-weight:700;
+      color:var(--white); line-height:1;
+    }
+    .hero-stat-l {
+      font-size:0.72rem; font-weight:600;
+      letter-spacing:0.12em; text-transform:uppercase;
+      color:rgba(255,255,255,0.45); margin-top:5px;
+    }
+    /* Hero right — photo panel */
+    .hero-photo-panel {
+      position:absolute; top:72px; right:0; bottom:0;
+      width:42%; overflow:hidden;
+    }
+    .hero-photo-panel img {
+      width:100%; height:100%; object-fit:cover; object-position:center;
+    }
+    .hero-photo-panel::before {
+      content:'';
+      position:absolute; inset:0; z-index:1;
+      background:linear-gradient(to right, var(--navy) 0%, transparent 40%);
+    }
+    /* Bottom wave */
+    .hero-wave {
+      position:absolute; bottom:-1px; left:0; right:0; z-index:3;
+    }
+
+    /* ══════════════════════════════════════════
+       TRUST BAR
+    ══════════════════════════════════════════ */
+    #trust {
+      background:var(--navy-deeper);
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .trust-row {
+      display:flex; align-items:center; justify-content:center;
+      gap:10px; flex-wrap:wrap;
+    }
+    .trust-item {
+      display:flex; align-items:center; gap:7px;
+      font-size:0.78rem; font-weight:500; letter-spacing:0.04em;
+      color:rgba(255,255,255,0.65); white-space:nowrap;
+    }
+    .trust-item::before {
+      content:'✓'; width:18px; height:18px; border-radius:50%;
+      background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25);
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.65rem; font-weight:800; color:rgba(255,255,255,0.9); flex-shrink:0;
+    }
+    .trust-sep { width:1px; height:20px; background:rgba(255,255,255,0.12); }
+
+    /* ══════════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════════ */
+    #about { padding:100px 0; background:var(--white); }
+    .about-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:72px; align-items:center;
+    }
+    .about-img-wrap { position:relative; }
+    .about-img-main {
+      width:100%; height:460px; object-fit:cover;
+      border-radius:var(--r-lg);
+      box-shadow:var(--shadow-lg);
+    }
+    .about-badge {
+      position:absolute; bottom:-20px; right:-20px;
+      background:var(--navy); color:var(--white);
+      border-radius:var(--r); padding:20px 24px;
+      box-shadow:var(--shadow-lg); text-align:center;
+    }
+    .about-badge-n {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:2.4rem; font-weight:700; line-height:1;
+    }
+    .about-badge-l {
+      font-size:0.68rem; font-weight:600;
+      letter-spacing:0.1em; text-transform:uppercase;
+      opacity:0.8; margin-top:5px;
+    }
+    .about-certs {
+      display:flex; flex-direction:column; gap:10px;
+      margin-top:28px; padding-top:28px; border-top:1px solid var(--border);
+    }
+    .cert-row {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:0.88rem; color:var(--text-mid);
+    }
+    .cert-row::before {
+      content:'◆'; color:var(--navy); font-size:0.55rem;
+      flex-shrink:0; margin-top:5px;
+    }
+
+    /* ══════════════════════════════════════════
+       SERVICES — 4 cards
+    ══════════════════════════════════════════ */
+    #services { padding:100px 0; background:var(--blue-tint2); }
+    .services-header { text-align:center; margin-bottom:56px; }
+    .services-header .section-body { margin:14px auto 0; text-align:center; }
+    .services-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
+    }
+    .svc-card {
+      background:var(--white);
+      border-radius:var(--r-lg);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      transition:transform 0.25s,box-shadow 0.25s;
+      display:flex; flex-direction:column;
+      position:relative;
+    }
+    .svc-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .svc-card-top {
+      height:5px;
+      background:linear-gradient(90deg, var(--navy), var(--blue-mid));
+    }
+    .svc-card-body { padding:30px; flex:1; }
+    .svc-icon {
+      width:50px; height:50px; border-radius:10px;
+      background:var(--blue-tint);
+      border:1.5px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:18px;
+    }
+    .svc-icon svg { width:24px; height:24px; stroke:var(--navy); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .svc-name {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.25rem; font-weight:700;
+      color:var(--navy); margin-bottom:10px; letter-spacing:0.01em;
+    }
+    .svc-desc { font-size:0.88rem; color:var(--text-light); line-height:1.65; }
+    .svc-list {
+      list-style:none; margin-top:14px;
+      display:flex; flex-direction:column; gap:7px;
+    }
+    .svc-list li {
+      font-size:0.82rem; color:var(--text-mid);
+      display:flex; align-items:center; gap:8px;
+    }
+    .svc-list li::before {
+      content:''; width:5px; height:5px; border-radius:50%;
+      background:var(--navy); flex-shrink:0;
+    }
+
+    /* ══════════════════════════════════════════
+       WELL DRILLING DETAIL
+    ══════════════════════════════════════════ */
+    #drilling { padding:100px 0; background:var(--white); }
+    .drilling-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:64px; align-items:start;
+    }
+    .drilling-img {
+      width:100%; height:500px; object-fit:cover;
+      border-radius:var(--r-lg); box-shadow:var(--shadow-lg);
+    }
+    .detail-list {
+      list-style:none; margin-top:24px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .detail-list li {
+      display:flex; align-items:flex-start; gap:12px;
+      font-size:0.92rem; color:var(--text-mid); line-height:1.5;
+      padding:12px 16px;
+      background:var(--blue-tint2);
+      border-radius:7px;
+      border-left:3px solid var(--navy);
+    }
+    .detail-list li::before { content:'◆'; color:var(--navy); font-size:0.55rem; flex-shrink:0; margin-top:4px; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+    .chip {
+      background:var(--navy); color:var(--white);
+      font-size:0.78rem; font-weight:500;
+      padding:5px 14px; border-radius:100px;
+    }
+
+    /* ══════════════════════════════════════════
+       PUMPS & FILTRATION — dark navy section
+    ══════════════════════════════════════════ */
+    #pumping { padding:100px 0; background:var(--navy-deeper); position:relative; }
+    .pumping-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:28px; margin-top:52px;
+    }
+    .pump-card {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:var(--r-lg); padding:36px;
+      transition:background 0.25s,border-color 0.25s;
+    }
+    .pump-card:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2); }
+    .pump-card-title {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.3rem; font-weight:700;
+      color:var(--white); margin-bottom:6px;
+      display:flex; align-items:center; gap:10px; letter-spacing:0.02em;
+    }
+    .pump-card-title svg { width:22px; height:22px; stroke:rgba(255,255,255,0.5); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .pump-card-sub { font-size:0.82rem; color:rgba(255,255,255,0.4); margin-bottom:20px; }
+    .pump-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+    .pump-list li {
+      font-size:0.88rem; color:rgba(255,255,255,0.65);
+      display:flex; align-items:flex-start; gap:10px; line-height:1.45;
+    }
+    .pump-list li::before { content:'→'; color:rgba(255,255,255,0.35); font-weight:700; flex-shrink:0; }
+    .avail-bar {
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:var(--r); padding:22px 28px;
+      display:flex; align-items:center; gap:16px;
+      margin-top:32px;
+    }
+    .avail-bar svg { width:28px; height:28px; stroke:rgba(255,255,255,0.6); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+    .avail-bar strong { font-family:'Barlow Condensed',sans-serif; font-size:1.05rem; font-weight:700; color:var(--white); letter-spacing:0.02em; }
+    .avail-bar p { font-size:0.83rem; color:rgba(255,255,255,0.45); margin-top:3px; }
+
+    /* ══════════════════════════════════════════
+       LABORATORY — white section
+    ══════════════════════════════════════════ */
+    #laboratory { padding:100px 0; background:var(--blue-tint2); }
+    .lab-intro { color:var(--text-mid); font-size:1rem; line-height:1.75; max-width:700px; margin-top:14px; }
+    .lab-tabs {
+      display:flex; gap:6px; flex-wrap:wrap;
+      margin-top:44px; margin-bottom:28px;
+      border-bottom:2px solid var(--border); padding-bottom:0;
+    }
+    .lab-tab {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:0.9rem; font-weight:600; letter-spacing:0.05em;
+      color:var(--text-light); padding:10px 20px;
+      border-radius:6px 6px 0 0;
+      cursor:pointer; border:none; background:none;
+      transition:color 0.2s, background 0.2s;
+      border-bottom:3px solid transparent; margin-bottom:-2px;
+    }
+    .lab-tab.active { color:var(--navy); border-bottom-color:var(--navy); background:var(--white); }
+    .lab-tab:hover:not(.active) { color:var(--text-mid); background:var(--blue-tint); }
+    .lab-panel { display:none; }
+    .lab-panel.active { display:block; }
+    .lab-table { width:100%; border-collapse:collapse; background:var(--white); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow); }
+    .lab-table tr { border-bottom:1px solid var(--border); transition:background 0.15s; }
+    .lab-table tr:hover { background:var(--blue-tint); }
+    .lab-table th {
+      text-align:left; padding:14px 18px;
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:0.75rem; font-weight:700; letter-spacing:0.14em;
+      text-transform:uppercase; color:var(--text-light);
+      background:var(--blue-tint2); border-bottom:2px solid var(--border);
+    }
+    .lab-table td { padding:14px 18px; font-size:0.88rem; vertical-align:top; }
+    .lab-table td:first-child { color:var(--text); font-weight:500; }
+    .lab-table td:nth-child(2) { color:var(--text-light); font-size:0.82rem; font-style:italic; }
+    .lab-table td:last-child {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.1rem; font-weight:700; color:var(--navy); white-space:nowrap;
+    }
+    .lab-note {
+      background:var(--blue-tint); border:1px solid var(--border);
+      border-radius:var(--r); padding:18px 22px;
+      margin-top:24px; font-size:0.87rem; color:var(--text-mid); line-height:1.65;
+    }
+    .lab-note strong { color:var(--navy); }
+    .lab-note a { color:var(--navy); font-weight:600; }
+    .lab-note a:hover { text-decoration:underline; }
+
+    /* ══════════════════════════════════════════
+       SERVICE AREA
+    ══════════════════════════════════════════ */
+    #service-area { padding:80px 0; background:var(--white); }
+    .counties-grid {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:18px; margin-top:44px;
+    }
+    .county-card {
+      background:var(--navy); color:var(--white);
+      border-radius:var(--r); padding:28px 22px;
+      text-align:center;
+      transition:background 0.2s,transform 0.2s;
+    }
+    .county-card:hover { background:var(--navy-dark); transform:translateY(-4px); }
+    .county-name {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.15rem; font-weight:700;
+      margin-bottom:6px; letter-spacing:0.03em;
+    }
+    .county-sub { font-size:0.78rem; color:rgba(255,255,255,0.55); line-height:1.5; }
+
+    /* ══════════════════════════════════════════
+       EMPLOYMENT
+    ══════════════════════════════════════════ */
+    #employment { padding:100px 0; background:var(--blue-tint2); }
+    .employment-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:60px; align-items:center;
+    }
+    .job-list { display:flex; flex-direction:column; gap:12px; margin-top:28px; }
+    .job-item {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 20px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+    }
+    .job-title {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.05rem; font-weight:700; color:var(--navy); letter-spacing:0.02em;
+    }
+    .job-badge {
+      background:#22C55E; color:var(--white);
+      font-size:0.68rem; font-weight:700; letter-spacing:0.1em;
+      text-transform:uppercase; padding:4px 10px; border-radius:100px;
+    }
+    .employment-right {
+      background:var(--navy); border-radius:var(--r-lg);
+      padding:44px; color:var(--white);
+    }
+    .employment-right h3 {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.7rem; font-weight:700; margin-bottom:14px; letter-spacing:0.02em;
+    }
+    .employment-right p { color:rgba(255,255,255,0.65); font-size:0.93rem; line-height:1.72; margin-bottom:28px; }
+    .emp-address {
+      background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);
+      border-radius:var(--r); padding:18px 20px;
+      font-size:0.88rem; color:rgba(255,255,255,0.65); line-height:1.75;
+    }
+    .emp-address strong { color:var(--white); }
+
+    /* ══════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════ */
+    #contact { padding:100px 0; background:var(--white); }
+    .contact-grid {
+      display:grid; grid-template-columns:1fr 1.5fr;
+      gap:64px; align-items:start;
+    }
+    .contact-detail {
+      display:flex; align-items:flex-start; gap:14px;
+      padding:18px 0; border-bottom:1px solid var(--border);
+    }
+    .contact-detail:last-of-type { border-bottom:none; }
+    .cd-icon {
+      width:42px; height:42px; background:var(--blue-tint);
+      border:1.5px solid var(--border); border-radius:8px;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .cd-icon svg { width:18px; height:18px; stroke:var(--navy); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .cd-lbl { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-light); margin-bottom:3px; }
+    .cd-val { font-size:0.92rem; font-weight:500; color:var(--text); }
+    .cd-val a { color:var(--navy); }
+    .cd-val a:hover { text-decoration:underline; }
+    .dept-emails {
+      background:var(--blue-tint2); border:1px solid var(--border);
+      border-radius:var(--r); padding:22px; margin-top:24px;
+    }
+    .dept-title {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1rem; font-weight:700; color:var(--navy);
+      margin-bottom:14px; letter-spacing:0.03em;
+    }
+    .dept-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:9px 0; border-bottom:1px solid var(--border);
+      gap:12px; flex-wrap:wrap;
+    }
+    .dept-row:last-child { border-bottom:none; }
+    .dept-lbl { font-size:0.78rem; font-weight:600; color:var(--text-light); text-transform:uppercase; letter-spacing:0.08em; }
+    .dept-addr { font-size:0.83rem; color:var(--navy); }
+    .dept-addr:hover { text-decoration:underline; }
+    .form-card {
+      background:var(--blue-tint2); border-radius:var(--r-lg);
+      padding:44px; box-shadow:var(--shadow);
+      border:1px solid var(--border);
+    }
+    .form-title {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.6rem; font-weight:700; color:var(--navy);
+      margin-bottom:4px; letter-spacing:0.02em;
+    }
+    .form-sub { font-size:0.83rem; color:var(--text-light); margin-bottom:26px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .fg { display:flex; flex-direction:column; gap:5px; margin-bottom:14px; }
+    .fg label { font-size:0.78rem; font-weight:600; color:var(--text); letter-spacing:0.04em; }
+    .fg input, .fg select, .fg textarea {
+      padding:0.78rem 1rem; border:1.5px solid var(--border); border-radius:6px;
+      font-family:'Inter',sans-serif; font-size:0.9rem; color:var(--text);
+      background:var(--white); outline:none; transition:border-color 0.2s,box-shadow 0.2s;
+      -webkit-appearance:none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      border-color:var(--navy); box-shadow:0 0 0 3px rgba(27,55,153,0.12);
+    }
+    .fg textarea { resize:vertical; min-height:106px; }
+    .form-submit {
+      width:100%; background:var(--navy); color:var(--white);
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+      padding:1rem; border:none; border-radius:6px; cursor:pointer; margin-top:4px;
+      transition:background 0.2s,transform 0.2s,box-shadow 0.2s;
+    }
+    .form-submit:hover { background:var(--navy-dark); transform:translateY(-2px); box-shadow:0 10px 28px rgba(27,55,153,0.35); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer { background:var(--navy-deeper); padding:64px 0 28px; color:rgba(255,255,255,0.5); }
+    .footer-top {
+      display:grid; grid-template-columns:2fr 1fr 1fr;
+      gap:48px; padding-bottom:48px;
+      border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:28px;
+    }
+    .footer-logo img {
+      height:40px; width:auto;
+      filter:brightness(0) invert(1); opacity:0.85; margin-bottom:14px;
+    }
+    .footer-blurb { font-size:0.84rem; line-height:1.72; max-width:300px; }
+    .footer-lic { font-size:0.75rem; color:rgba(255,255,255,0.2); margin-top:14px; }
+    .f-col-title {
+      font-size:0.68rem; font-weight:600; letter-spacing:0.2em;
+      text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:18px;
+    }
+    .f-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .f-links a { font-size:0.86rem; color:rgba(255,255,255,0.5); transition:color 0.2s; }
+    .f-links a:hover { color:var(--white); }
+    .footer-bottom {
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:12px; font-size:0.78rem;
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width:960px) {
+      .nav-links, .nav-phone { display:none; }
+      .burger { display:flex; }
+      .hero-photo-panel { display:none; }
+      .hero-content { max-width:100%; }
+      .about-grid, .drilling-grid, .employment-grid, .contact-grid { grid-template-columns:1fr; }
+      .about-badge { right:16px; bottom:16px; }
+      .pumping-grid { grid-template-columns:1fr; }
+      .counties-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-top { grid-template-columns:1fr; gap:32px; }
+      .form-row { grid-template-columns:1fr; }
+    }
+    @media (max-width:580px) {
+      .counties-grid { grid-template-columns:1fr 1fr; }
+      .trust-sep { display:none; }
+      .hero-btns { flex-direction:column; }
+      .form-card { padding:28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ██ NAV ████████████████████████████████████████████ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-wrap">
+      <a href="#hero" class="nav-logo">
+        <img src="https://www.diamondwelldrilling.com/wp-content/uploads/2026/01/diamond-well-drilling-header-logo5b.png"
+             alt="Diamond Well Drilling Company">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#laboratory">Lab Testing</a></li>
+        <li><a href="#service-area">Service Area</a></li>
+        <li><a href="#employment">Careers</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <a href="tel:5308230354" class="nav-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (530) 823-0354
+      </a>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#drilling">Well Drilling</a>
+    <a href="#pumping">Pumps &amp; Filtration</a>
+    <a href="#laboratory">Lab Testing</a>
+    <a href="#service-area">Service Area</a>
+    <a href="#employment">Careers</a>
+    <a href="#contact">Contact Us</a>
+    <a href="tel:5308230354" style="color:var(--navy);font-weight:700;">(530) 823-0354</a>
+  </div>
+</nav>
+
+<!-- ██ HERO ███████████████████████████████████████████ -->
+<section id="hero">
+  <!-- Radiating lines echoing the logo wave motif -->
+  <svg class="hero-rays" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="white" stroke-width="1" fill="none">
+      <line x1="300" y1="600" x2="600" y2="0"/>
+      <line x1="300" y1="600" x2="560" y2="0"/>
+      <line x1="300" y1="600" x2="520" y2="0"/>
+      <line x1="300" y1="600" x2="480" y2="0"/>
+      <line x1="300" y1="600" x2="440" y2="0"/>
+      <line x1="300" y1="600" x2="400" y2="0"/>
+      <line x1="300" y1="600" x2="360" y2="0"/>
+      <line x1="300" y1="600" x2="320" y2="0"/>
+      <line x1="300" y1="600" x2="280" y2="0"/>
+      <line x1="300" y1="600" x2="240" y2="0"/>
+      <line x1="300" y1="600" x2="200" y2="0"/>
+      <line x1="300" y1="600" x2="160" y2="0"/>
+      <line x1="300" y1="600" x2="120" y2="0"/>
+      <line x1="300" y1="600" x2="80" y2="0"/>
+      <line x1="300" y1="600" x2="40" y2="0"/>
+      <line x1="300" y1="600" x2="0" y2="0"/>
+    </g>
+  </svg>
+
+  <!-- Right side photo -->
+  <div class="hero-photo-panel">
+    <img src="https://images.unsplash.com/photo-1712069951097-b37e02e372fb?w=1200&q=85" alt="Drill rig in the field">
+  </div>
+
+  <div class="wrap">
+    <div class="hero-content reveal">
+      <!-- Real logo, inverted white for dark background -->
+      <div class="hero-logo-lockup">
+        <img src="https://www.diamondwelldrilling.com/wp-content/uploads/2026/01/diamond-well-drilling-header-logo5b.png"
+             alt="Diamond Well Drilling Company">
+      </div>
+      <h1 class="hero-h1">
+        Your Water.<br>
+        Our Expertise.<br>
+        <span>Start to Finish.</span>
+      </h1>
+      <p class="hero-sub">From new well construction to pump service, water treatment, and certified laboratory testing — Diamond Well Drilling is your complete water solution in Placer, Nevada, El Dorado &amp; Yuba Counties.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-white">Get In Touch</a>
+        <a href="#services" class="btn btn-outline-white">See Our Services →</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-n">35+</div><div class="hero-stat-l">Years in Business</div></div>
+        <div><div class="hero-stat-n">10K+</div><div class="hero-stat-l">Wells Drilled</div></div>
+        <div><div class="hero-stat-n">4</div><div class="hero-stat-l">Counties Served</div></div>
+        <div><div class="hero-stat-n">7/365</div><div class="hero-stat-l">Days Available</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave bottom -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ██ TRUST BAR ██████████████████████████████████████ -->
+<div id="trust">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="trust-item">CA Contractors License #970862</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">A, B, C57, C55, C61-D17, C36</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">ELAP Certified Laboratory</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">CDPH T1 &amp; D2 Operators</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">CA Groundwater Association Since 1988</div>
+    </div>
+  </div>
+</div>
+
+<!-- ██ ABOUT ██████████████████████████████████████████ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal left">
+        <img src="https://images.unsplash.com/photo-1675060968711-d71df010a91f?w=800&q=85"
+             alt="Diamond Well Drilling rig in operation" class="about-img-main">
+        <div class="about-badge">
+          <div class="about-badge-n">35+</div>
+          <div class="about-badge-l">Years Under<br>One Management</div>
+        </div>
+      </div>
+      <div class="reveal right">
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="section-title" style="margin-top:14px;">Northern California's<br><span>Most Trusted</span> Water Well Company</h2>
+        <p class="section-body">Diamond Well Drilling has been serving northern California for over 35 years. From new water well construction to pump and filtration installation and service, to water testing, we offer complete services to any water well owner — residential or commercial.</p>
+        <p class="section-body" style="margin-top:14px;">Our drillers specialize in air rotary drilling for the Sierra Nevada Foothills and ODEX drilling for the Tahoe Basin. Our state-certified laboratory quickly identifies any contaminants and designs a custom treatment system — then retests to confirm it worked.</p>
+        <div class="about-certs">
+          <div class="cert-row">CA Contractors License: A, B, C57, C55, C61-D17, C36 — CSL #970862</div>
+          <div class="cert-row">California ELAP Certified Water and Soil Laboratory</div>
+          <div class="cert-row">T1 and D2 Certified System Operators (CDPH Certified)</div>
+          <div class="cert-row">Member of CA Groundwater Association — State Board Since 1988</div>
+          <div class="cert-row">Over 10,000 Wells Drilled Across Four Counties</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ SERVICES ████████████████████████████████████████ -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-header reveal">
+      <div class="eyebrow" style="justify-content:center;">What We Do</div>
+      <h2 class="section-title" style="margin-top:14px;">Complete Water Solutions,<br><span>One Company</span></h2>
+      <p class="section-body" style="margin:14px auto 0; text-align:center;">We handle every aspect of your water needs so you never have to coordinate between multiple contractors.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-card-top"></div>
+        <div class="svc-card-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div class="svc-name">Well Drilling</div>
+          <p class="svc-desc">Domestic, commercial, and municipal water wells using air rotary and ODEX methods. Expert site location from our 10,000+ well database.</p>
+          <ul class="svc-list">
+            <li>Air rotary &amp; ODEX drilling</li>
+            <li>2" – 16" diameter completions</li>
+            <li>Expert site location</li>
+            <li>Downhole video capabilities</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-top"></div>
+        <div class="svc-card-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div>
+          <div class="svc-name">Pump Installation &amp; Service</div>
+          <p class="svc-desc">Domestic through commercial submersible pumps, constant pressure systems, single and three-phase troubleshooting. 7 days a week.</p>
+          <ul class="svc-list">
+            <li>½ – 150 HP pump systems</li>
+            <li>Constant pressure &amp; VSD</li>
+            <li>Single &amp; three-phase service</li>
+            <li>NSF certified holding tanks</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-top"></div>
+        <div class="svc-card-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg></div>
+          <div class="svc-name">Water Filtration &amp; Treatment</div>
+          <p class="svc-desc">Custom treatment systems for any contamination problem — from simple softeners to heavy metal removal and whole-house reverse osmosis.</p>
+          <ul class="svc-list">
+            <li>Neutralizers &amp; softeners</li>
+            <li>Reverse osmosis systems</li>
+            <li>UV light filtration</li>
+            <li>Heavy metal removal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card-top"></div>
+        <div class="svc-card-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+          <div class="svc-name">Laboratory Testing</div>
+          <p class="svc-desc">ELAP-certified testing from $32 — bacteria, heavy metals, pesticides, VOCs, and more. We diagnose the problem, then fix it.</p>
+          <ul class="svc-list">
+            <li>Bacteria &amp; coliform panels</li>
+            <li>Heavy metal analysis</li>
+            <li>Organic chemical testing</li>
+            <li>VA &amp; FHA loan panels</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ DRILLING DETAIL ████████████████████████████████ -->
+<section id="drilling">
+  <div class="wrap">
+    <div class="drilling-grid">
+      <div class="reveal left">
+        <img src="https://images.unsplash.com/photo-1780415493102-9d9fbb669bf4?w=800&q=85"
+             alt="Well drilling equipment and drill pipes" class="drilling-img">
+      </div>
+      <div class="reveal right">
+        <div class="eyebrow">Drilling Capabilities</div>
+        <h2 class="section-title" style="margin-top:14px;">State-of-the-Art<br><span>Drilling Equipment</span></h2>
+        <p class="section-body" style="max-width:100%;">Our drilling superintendent has been with Diamond Well Drilling for over 35 years, bringing unmatched expertise to every project in the Sierra Nevada Foothills and Tahoe Basin.</p>
+        <div style="margin-top:20px;">
+          <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-light);margin-bottom:10px;">Our Drill Rigs</p>
+          <div class="chips">
+            <span class="chip">Schram 450 WS</span>
+            <span class="chip">Schram 660 WS</span>
+            <span class="chip">Air Rotary</span>
+            <span class="chip">ODEX System</span>
+            <span class="chip">Mud Rotary</span>
+          </div>
+        </div>
+        <ul class="detail-list">
+          <li>Air Rotary Hard Rock — Sierra Nevada Foothills</li>
+          <li>ODEX Casing Advance (5", 6", 10", 16") — Tahoe Basin &amp; loose formations</li>
+          <li>Mud Rotary — alluvial and loose formations</li>
+          <li>Well completions from 2" to 16" diameter</li>
+          <li>Expert site location from 10,000+ well database</li>
+          <li>Fracture trace, fault trace &amp; water-bearing structure analysis</li>
+          <li>Downhole video and recording capabilities</li>
+          <li>Well destructions — commercial, residential &amp; environmental</li>
+          <li>Permit procurement &amp; Best Management Practices</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ PUMPING & FILTRATION ██████████████████████████ -->
+<section id="pumping">
+  <!-- Top wave -->
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;background:var(--white);margin-bottom:-1px;">
+    <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#0D1E60"/>
+  </svg>
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <div class="eyebrow light" style="justify-content:center;">Pumps &amp; Filtration</div>
+      <h2 class="section-title light" style="margin-top:14px;">Pump Installation, Service<br><span style="color:rgba(255,255,255,0.55);">&amp; Water Treatment</span></h2>
+    </div>
+    <div class="pumping-grid">
+      <div class="pump-card reveal">
+        <div class="pump-card-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          Pump Services
+        </div>
+        <p class="pump-card-sub">Domestic through commercial — all sizes, all phases</p>
+        <ul class="pump-list">
+          <li>Domestic well pump systems (½ – 10 HP)</li>
+          <li>Commercial &amp; irrigation submersible pumps (10–150 HP)</li>
+          <li>Constant pressure and variable speed drive systems</li>
+          <li>Expert single and three-phase troubleshooting</li>
+          <li>Pitless adaptors and freeze zone installations</li>
+          <li>NSF certified holding tank sales and installation</li>
+          <li>One 8-ton and one 5-ton boom truck</li>
+          <li>Hand pump and solar-powered pump installation</li>
+        </ul>
+      </div>
+      <div class="pump-card reveal">
+        <div class="pump-card-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+          Filtration &amp; Treatment
+        </div>
+        <p class="pump-card-sub">Custom solutions for every water quality problem</p>
+        <ul class="pump-list">
+          <li>Neutralizer and softening systems</li>
+          <li>Reverse osmosis — whole house and single tap</li>
+          <li>Polyphosphate units for aggressive water</li>
+          <li>UV light filtration units</li>
+          <li>Heavy metal removal (arsenic, mercury, lead)</li>
+          <li>Whole-house filtration design and installation</li>
+          <li>Post-installation retesting to confirm results</li>
+        </ul>
+      </div>
+    </div>
+    <div class="avail-bar reveal">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div>
+        <strong>Available 7 Days a Week, 365 Days a Year</strong>
+        <p>We have technicians ready when you need them — no waiting until Monday for an emergency pump failure.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom wave -->
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
+    <path d="M0,30 C240,0 480,60 720,30 C960,0 1200,60 1440,30 L1440,0 L0,0 Z" fill="#0D1E60"/>
+  </svg>
+</section>
+
+<!-- ██ LABORATORY ██████████████████████████████████████ -->
+<section id="laboratory">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Lab Testing &amp; Pricing</div>
+      <h2 class="section-title" style="margin-top:14px;">ELAP-Certified <span>Water Testing</span></h2>
+      <p class="lab-intro">Our fully operational laboratory serves residential, commercial, and municipal testing needs throughout northern California. We diagnose your water, then fix it.</p>
+    </div>
+    <div class="lab-tabs reveal" id="labTabs">
+      <button class="lab-tab active" data-panel="bacteria">Bacteria &amp; Minerals</button>
+      <button class="lab-tab" data-panel="metals">Heavy Metals</button>
+      <button class="lab-tab" data-panel="organic">Organic Chemicals</button>
+      <button class="lab-tab" data-panel="loans">VA &amp; FHA Loans</button>
+    </div>
+    <div class="lab-panel active reveal" id="panel-bacteria">
+      <table class="lab-table">
+        <thead><tr><th>Test</th><th>Notes</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Total Coliform &amp; E. Coli (drinking water)</td><td>Indicators of microbial contamination — 120mL bottle</td><td>$55</td></tr>
+          <tr><td>Total Coliform &amp; E. Coli (irrigation/recreation)</td><td>Surface water or non-potable use — 120mL</td><td>$65</td></tr>
+          <tr><td>Iron Related &amp; Sulfate Reducing Bacteria</td><td>Red staining, rotten egg odors, oily sheens — 120mL</td><td>$70</td></tr>
+          <tr><td>General Minerals Panel</td><td>pH, TDS, Iron, Manganese, Total Hardness — 500mL</td><td>$70</td></tr>
+          <tr><td>Irrigation Water Panel</td><td>Alkalinity, pH, Conductivity, Iron, Mn, Hardness, Nitrate, Sulfate, Zinc, Boron, Copper — 1L</td><td>$275</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="lab-panel" id="panel-metals">
+      <table class="lab-table">
+        <thead><tr><th>Test</th><th>Notes</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Mine Panel</td><td>Arsenic, Lead, Nickel, Mercury — 500mL</td><td>$150</td></tr>
+          <tr><td>General Heavy Metals</td><td>Arsenic, Lead, Copper, Chromium — 500mL</td><td>$140</td></tr>
+          <tr><td>Drinking Water Metals (Full)</td><td>18 metals incl. Aluminum, Barium, Cadmium, Iron, Mercury, Selenium, Silver — 1L</td><td>$297</td></tr>
+          <tr><td>Individual Metal</td><td>Single metal analysis — 125mL</td><td>$35</td></tr>
+          <tr><td>Nitrate</td><td>125mL</td><td>$32.40</td></tr>
+          <tr><td>Nitrite</td><td>125mL</td><td>$32.40</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="lab-panel" id="panel-organic">
+      <table class="lab-table">
+        <thead><tr><th>Test</th><th>Notes</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Volatile Organic Compounds (VOCs)</td><td>3 VOA vials</td><td>$198</td></tr>
+          <tr><td>TPH — Gas / Diesel / Motor Oil</td><td>3 VOAs + 250mL</td><td>$162</td></tr>
+          <tr><td>Organochlorine Pesticides</td><td>1L</td><td>$155</td></tr>
+          <tr><td>Organophosphate Pesticides</td><td>1L</td><td>$300</td></tr>
+          <tr><td>Herbicides</td><td>1L</td><td>$355</td></tr>
+          <tr><td>Glyphosate</td><td>1L</td><td>$234</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="lab-panel" id="panel-loans">
+      <div class="lab-note" style="margin-top:0; margin-bottom:24px;">
+        <strong>VA &amp; FHA Loan Testing:</strong> Since local authorities in Placer and neighboring counties do not set standards for private real estate transactions, lenders set their own. The most commonly requested tests are listed below.
+      </div>
+      <table class="lab-table">
+        <thead><tr><th>Test</th><th>Notes</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Total Coliform &amp; E. Coli</td><td>Standard bacteria panel — 120mL</td><td>$55</td></tr>
+          <tr><td>Nitrate</td><td>Required by most lenders — 125mL</td><td>$32.40</td></tr>
+          <tr><td>Lead</td><td>Individual metal test — 125mL</td><td>$35</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="lab-note reveal" style="margin-top:28px;">
+      <strong>Not sure which tests you need?</strong> Call us at <a href="tel:5308230354">(530) 823-0354</a> or email our lab technician at <a href="mailto:shane@diamondwelldrilling.com">shane@diamondwelldrilling.com</a> — we'll recommend exactly what you need.
+    </div>
+  </div>
+</section>
+
+<!-- ██ SERVICE AREA ████████████████████████████████████ -->
+<section id="service-area">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">Where We Work</div>
+      <h2 class="section-title" style="margin-top:14px;">Serving Four Counties <span>Across Northern California</span></h2>
+      <p class="section-body" style="margin:14px auto 0; text-align:center;">Based in Auburn, CA — we've drilled over 10,000 wells across the region and know the geology of every formation.</p>
+    </div>
+    <div class="counties-grid">
+      <div class="county-card reveal">
+        <div class="county-name">Placer County</div>
+        <div class="county-sub">Auburn, Rocklin, Roseville, Lincoln &amp; surrounding areas</div>
+      </div>
+      <div class="county-card reveal">
+        <div class="county-name">Nevada County</div>
+        <div class="county-sub">Grass Valley, Nevada City, Truckee &amp; surrounding areas</div>
+      </div>
+      <div class="county-card reveal">
+        <div class="county-name">El Dorado County</div>
+        <div class="county-sub">Placerville, South Lake Tahoe, El Dorado Hills &amp; surrounding areas</div>
+      </div>
+      <div class="county-card reveal">
+        <div class="county-name">Yuba County</div>
+        <div class="county-sub">Marysville, Linda, Wheatland &amp; surrounding areas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ EMPLOYMENT ██████████████████████████████████████ -->
+<section id="employment">
+  <div class="wrap">
+    <div class="employment-grid">
+      <div class="reveal">
+        <div class="eyebrow">Now Hiring</div>
+        <h2 class="section-title" style="margin-top:14px;">Join the <span>Diamond Team</span></h2>
+        <p class="section-body" style="max-width:100%;">We're a family-run company with 35+ years of history. If you're skilled, dependable, and ready to work, we want to hear from you.</p>
+        <div class="job-list">
+          <div class="job-item"><div class="job-title">Drillers</div><span class="job-badge">Hiring Now</span></div>
+          <div class="job-item"><div class="job-title">Driller's Helpers</div><span class="job-badge">Hiring Now</span></div>
+          <div class="job-item"><div class="job-title">Laborers</div><span class="job-badge">Hiring Now</span></div>
+          <div class="job-item"><div class="job-title">Pump Technicians</div><span class="job-badge">Hiring Now</span></div>
+        </div>
+      </div>
+      <div class="employment-right reveal">
+        <h3>How to Apply</h3>
+        <p>Download and complete our employment application, then mail or drop it off at our Auburn office. We look forward to welcoming you to the team.</p>
+        <a href="https://diamondwelldrilling.com/Employment%20Application.pdf" target="_blank" class="btn btn-white" style="margin-bottom:28px; display:inline-flex;">📄 Download Application (PDF)</a>
+        <div class="emp-address">
+          <strong>Mail or Drop Off Applications:</strong><br>
+          Diamond Well Drilling, Inc.<br>
+          Attn: Human Resources<br>
+          1660 Old Airport Road<br>
+          Auburn, CA 95602<br><br>
+          <strong>HR Email:</strong> <a href="mailto:atranle@diamondwelldrilling.com" style="color:rgba(255,255,255,0.7);">atranle@diamondwelldrilling.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CONTACT ████████████████████████████████████████ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:52px;">
+      <div class="eyebrow">Get In Touch</div>
+      <h2 class="section-title" style="margin-top:14px;">We're Just a <span>Phone Call Away</span></h2>
+      <p class="section-body">Questions about your well, water quality, or a new project? Call us anytime, stop by the office, or send a message below.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal left">
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div>
+            <div class="cd-lbl">Phone</div>
+            <div class="cd-val"><a href="tel:5308230354">(530) 823-0354</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="cd-lbl">Office</div>
+            <div class="cd-val">1660 Old Airport Rd<br>Auburn, CA 95602</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="cd-lbl">Hours</div>
+            <div class="cd-val">Monday – Friday, 8AM – 5PM<br><span style="font-size:0.82rem;color:var(--text-light);">Pump service available 7 days/365</span></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+          <div>
+            <div class="cd-lbl">Fax</div>
+            <div class="cd-val">(530) 823-2377</div>
+          </div>
+        </div>
+        <div class="dept-emails">
+          <div class="dept-title">Email by Department</div>
+          <div class="dept-row"><span class="dept-lbl">Drilling / Sales</span><a href="mailto:Di@diamondwelldrilling.com" class="dept-addr">Di@diamondwelldrilling.com</a></div>
+          <div class="dept-row"><span class="dept-lbl">Pumps &amp; Filtration</span><a href="mailto:tim@diamondwelldrilling.com" class="dept-addr">tim@diamondwelldrilling.com</a></div>
+          <div class="dept-row"><span class="dept-lbl">Laboratory</span><a href="mailto:shane@diamondwelldrilling.com" class="dept-addr">shane@diamondwelldrilling.com</a></div>
+          <div class="dept-row"><span class="dept-lbl">Human Resources</span><a href="mailto:atranle@diamondwelldrilling.com" class="dept-addr">atranle@diamondwelldrilling.com</a></div>
+        </div>
+      </div>
+      <div class="form-card reveal right">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-sub">We'll get back to you as quickly as possible.</div>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="New Inquiry — Diamond Well Drilling">
+          <input type="hidden" name="botcheck" value="">
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
+          </div>
+          <div class="form-row">
+            <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(530) 000-0000"></div>
+            <div class="fg"><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
+          </div>
+          <div class="fg">
+            <label>How Can We Help?</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Well Drilling — New Construction</option>
+              <option>Well Drilling — Repair / Service</option>
+              <option>Pump Installation</option>
+              <option>Pump Repair / Service</option>
+              <option>Water Filtration / Treatment</option>
+              <option>Laboratory Testing</option>
+              <option>Employment / Application</option>
+              <option>Other / General Question</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Message</label>
+            <textarea name="message" placeholder="Describe your project, question, or concern…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ FOOTER ████████████████████████████████████████ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img src="https://www.diamondwelldrilling.com/wp-content/uploads/2026/01/diamond-well-drilling-header-logo5b.png"
+               alt="Diamond Well Drilling Company">
+        </div>
+        <p class="footer-blurb">Serving Placer, Nevada, El Dorado &amp; Yuba Counties since 1989. Complete water solutions from well construction to certified laboratory testing.</p>
+        <div class="footer-lic">CA Contractors License: A, B, C57, C55, C61-D17, C36 — CSL #970862</div>
+      </div>
+      <div>
+        <div class="f-col-title">Quick Links</div>
+        <ul class="f-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#drilling">Well Drilling</a></li>
+          <li><a href="#pumping">Pumps &amp; Filtration</a></li>
+          <li><a href="#laboratory">Lab Testing</a></li>
+          <li><a href="#employment">Careers</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">Contact</div>
+        <ul class="f-links">
+          <li><a href="tel:5308230354">(530) 823-0354</a></li>
+          <li style="color:rgba(255,255,255,0.3);font-size:0.85rem;">Fax: (530) 823-2377</li>
+          <li style="color:rgba(255,255,255,0.3);font-size:0.85rem;margin-top:8px;">1660 Old Airport Rd</li>
+          <li style="color:rgba(255,255,255,0.3);font-size:0.85rem;">Auburn, CA 95602</li>
+          <li style="margin-top:16px;"><a href="https://www.facebook.com/pages/Diamond-Well-Drilling/824599207552945" target="_blank" style="display:flex;align-items:center;gap:8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook
+          </a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Diamond Well Drilling Company, Inc. All rights reserved.</span>
+      <span style="color:rgba(255,255,255,0.2);">Website by Synprism</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav shadow on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  // Burger
+  const burger = document.getElementById('burger');
+  const mobNav = document.getElementById('mobNav');
+  burger.addEventListener('click', () => mobNav.classList.toggle('open'));
+  mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobNav.classList.remove('open')));
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Lab tabs
+  document.querySelectorAll('.lab-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.lab-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.lab-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

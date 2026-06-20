@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capitol City Statues — Premium Collectibles</title>
+  <meta name="description" content="Premium comic book statues and collectibles. Marvel, DC, and more. Collector-grade pieces at competitive prices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       CAPITOL CITY STATUES — DEMO THEME
+       Deep Obsidian + Gold — Premium Collector Gallery Aesthetic
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #c9a84c;
+      --gold-light:  #e8c96a;
+      --gold-dim:    #8a6a1f;
+      --obsidian:    #07070d;
+      --surface:     #0f0f1a;
+      --surface2:    #161625;
+      --surface3:    #1e1e32;
+      --border:      rgba(201,168,76,0.18);
+      --border-glow: rgba(201,168,76,0.45);
+      --text:        #e8e4d9;
+      --text-muted:  #8a8270;
+      --red-badge:   #e53935;
+      --green-badge: #2e7d32;
+      --amber-badge: #f57f17;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--obsidian);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--obsidian); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+    /* ══════════════════════════════════════════
+       HEADER / NAV
+    ══════════════════════════════════════════ */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(7,7,13,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1300px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 70px;
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem; font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .nav-logo .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    nav a {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--obsidian) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(100,60,180,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(180,60,60,0.06) 0%, transparent 60%),
+        linear-gradient(180deg, var(--obsidian) 0%, #0a0818 50%, var(--obsidian) 100%);
+    }
+    /* Particle dust */
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(201,168,76,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 15%, rgba(201,168,76,0.3) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 45% 60%, rgba(201,168,76,0.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 70%, rgba(201,168,76,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 80%, rgba(201,168,76,0.2) 0%, transparent 100%);
+    }
+    /* Gold divider line */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center;
+      max-width: 900px; padding: 0 2rem;
+      padding-top: 70px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+      padding: 0.35rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: rgba(201,168,76,0.05);
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '◆'; font-size: 0.45rem; opacity: 0.6;
+    }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line1 { display: block; color: var(--text); }
+    .hero-title .line2 {
+      display: block;
+      background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.1rem; font-weight: 300;
+      color: var(--text-muted); line-height: 1.7;
+      max-width: 560px; margin: 0 auto 2.5rem;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      color: var(--obsidian);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2rem; border-radius: 5px;
+      border: none; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 30px rgba(201,168,76,0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(201,168,76,0.4);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.9rem 2rem; border-radius: 5px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 4rem; padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem; font-weight: 700; color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION SHELL
+    ══════════════════════════════════════════ */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1300px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-eyebrow {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; color: var(--text);
+      line-height: 1.2;
+    }
+    .section-title span {
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .section-rule {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      margin: 1.2rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* ══════════════════════════════════════════
+       FILTER TABS
+    ══════════════════════════════════════════ */
+    #collection { background: var(--surface); }
+    .filters {
+      display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.4rem; border-radius: 4px;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--text-muted);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--obsidian);
+    }
+
+    /* Search bar */
+    .search-bar {
+      display: flex; justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .search-bar input {
+      width: 100%; max-width: 400px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.2rem 0.7rem 2.8rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-bar input::placeholder { color: var(--text-muted); }
+    .search-bar input:focus { border-color: var(--gold); }
+    .search-wrap {
+      position: relative; width: 100%; max-width: 400px;
+    }
+    .search-wrap::before {
+      content: '🔍';
+      position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%);
+      font-size: 0.8rem; pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════
+       PRODUCT GRID
+    ══════════════════════════════════════════ */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .product-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px var(--border-glow);
+      border-color: var(--gold-dim);
+    }
+    .product-card.hidden { display: none; }
+
+    .card-img-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--surface3);
+    }
+    .card-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+      filter: brightness(0.95);
+    }
+    .product-card:hover .card-img-wrap img {
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+
+    /* Status badge */
+    .status-badge {
+      position: absolute; top: 12px; left: 12px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 0.3rem 0.7rem;
+      border-radius: 3px;
+    }
+    .badge-available { background: var(--green-badge); color: #fff; }
+    .badge-sold {
+      background: var(--red-badge); color: #fff;
+    }
+    .badge-reserved { background: var(--amber-badge); color: #fff; }
+
+    /* Limited badge */
+    .limited-badge {
+      position: absolute; top: 12px; right: 12px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+    }
+
+    /* Franchise tag */
+    .franchise-tag {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0.5rem 0.8rem;
+      background: linear-gradient(0deg, rgba(7,7,13,0.9) 0%, transparent 100%);
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold-dim);
+    }
+
+    .card-body { padding: 1.2rem 1.4rem 1.4rem; }
+    .card-brand {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-dim);
+      margin-bottom: 0.35rem;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--text); line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .card-scale {
+      font-size: 0.75rem; color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .card-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--gold);
+    }
+    .card-price.sold-price {
+      color: var(--text-muted);
+      text-decoration: line-through;
+      font-size: 1rem;
+    }
+    .card-btn {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem; border-radius: 4px;
+      border: 1px solid var(--gold-dim);
+      background: transparent; color: var(--gold);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .card-btn:hover { background: var(--gold); color: var(--obsidian); }
+    .card-btn.sold-btn {
+      border-color: var(--border);
+      color: var(--text-muted);
+      cursor: default;
+    }
+    .card-btn.sold-btn:hover { background: transparent; color: var(--text-muted); }
+
+    /* ══════════════════════════════════════════
+       LIGHTBOX MODAL
+    ══════════════════════════════════════════ */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 900px; width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      animation: modalIn 0.25s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-img {
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 12px 0 0 12px;
+      width: 100%; height: 100%;
+    }
+    .modal-body {
+      padding: 2.5rem;
+      display: flex; flex-direction: column;
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.08);
+      border: none; color: var(--text);
+      width: 36px; height: 36px; border-radius: 50%;
+      font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.15); }
+    .modal-brand {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-dim);
+      margin-bottom: 0.5rem;
+    }
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--text);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .modal-status { margin-bottom: 1rem; }
+    .modal-price {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem; font-weight: 700; color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .modal-details {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.8rem; margin-bottom: 1.5rem;
+    }
+    .detail-item { }
+    .detail-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .detail-value {
+      font-size: 0.88rem; color: var(--text); margin-top: 0.2rem;
+    }
+    .modal-desc {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;
+      flex: 1; margin-bottom: 1.5rem;
+    }
+    .modal-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .modal-cta {
+      flex: 1; min-width: 120px;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      border: none; color: var(--obsidian);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.85rem 1rem;
+      border-radius: 5px; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .modal-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 25px rgba(201,168,76,0.35);
+    }
+    .modal-cta.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .modal-cta.secondary:hover {
+      border-color: var(--gold); color: var(--gold);
+      box-shadow: none;
+    }
+
+    @media (max-width: 650px) {
+      .modal { grid-template-columns: 1fr; }
+      .modal-img { border-radius: 12px 12px 0 0; aspect-ratio: 4/3; }
+    }
+
+    /* ══════════════════════════════════════════
+       WHY US SECTION
+    ══════════════════════════════════════════ */
+    #why { background: var(--obsidian); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .why-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .why-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); }
+    .why-icon {
+      font-size: 2rem; margin-bottom: 1rem;
+      display: block;
+    }
+    .why-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem; font-weight: 600; color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .why-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ══════════════════════════════════════════
+       BUILD / PAINTING SERVICES SECTION
+    ══════════════════════════════════════════ */
+    #services {
+      background: var(--surface);
+      position: relative; overflow: hidden;
+    }
+    #services::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 70%);
+      pointer-events: none;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.8rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .service-card:hover { border-color: var(--gold-dim); }
+    .service-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+    .service-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem; font-weight: 600; color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .service-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════
+       CONTACT / CTA SECTION
+    ══════════════════════════════════════════ */
+    #contact {
+      background: var(--obsidian);
+      text-align: center;
+    }
+    .contact-box {
+      max-width: 640px; margin: 3rem auto 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+    }
+    .contact-box p {
+      font-size: 0.95rem; color: var(--text-muted);
+      line-height: 1.7; margin-bottom: 2rem;
+    }
+    .contact-channels {
+      display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 2rem; padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .contact-channel {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; color: var(--text-muted);
+    }
+    .contact-channel span:first-child { font-size: 1.1rem; }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1300px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .footer-tagline {
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.7;
+      max-width: 300px;
+    }
+    .footer-col-title {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-dim);
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1300px; margin: 2rem auto 0;
+      padding-top: 1.5rem; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .footer-social { display: flex; gap: 0.8rem; }
+    .social-link {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; text-decoration: none;
+      color: var(--text-muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      nav { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.6rem; }
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    /* No-results message */
+    .no-results {
+      grid-column: 1 / -1; text-align: center;
+      padding: 4rem 0; color: var(--text-muted);
+      font-family: 'Cinzel', serif; font-size: 1.1rem;
+      display: none;
+    }
+    .no-results.visible { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
+<header>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">🏛️</div>
+      Capitol City Statues
+    </a>
+    <nav>
+      <a href="#collection">Collection</a>
+      <a href="#why">Why Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-cta">Inquire Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Premium Collectibles</div>
+    <h1 class="hero-title">
+      <span class="line1">Where Fandom Becomes</span>
+      <span class="line2">A Masterpiece</span>
+    </h1>
+    <p class="hero-sub">
+      Museum-grade statues from Marvel, DC, and the world's greatest franchises. 
+      Curated by collectors, for collectors.
+    </p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn-primary">Browse Collection ↓</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Pieces Available</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Marvel · DC</div>
+        <div class="stat-label">Franchises</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1:4 – 1:6</div>
+        <div class="stat-label">Scale Range</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">★ 5.0</div>
+        <div class="stat-label">Collector Rated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COLLECTION ═══════════════════════════════════════════ -->
+<section id="collection">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">For Sale</div>
+      <h2 class="section-title">Current <span>Collection</span></h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Pieces</button>
+      <button class="filter-btn" data-filter="Marvel">Marvel</button>
+      <button class="filter-btn" data-filter="DC">DC</button>
+      <button class="filter-btn" data-filter="Other">Other</button>
+      <button class="filter-btn" data-filter="available">Available Only</button>
+    </div>
+
+    <div class="search-bar">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Search by name, character, scale…">
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- Cards injected by JS -->
+      <div class="no-results" id="noResults">No statues found matching your search.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══════════════════════════════════════════════ -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">The Difference</div>
+      <h2 class="section-title">Why Capitol City <span>Statues</span></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🔍</span>
+        <div class="why-title">Collector Expertise</div>
+        <p class="why-text">We're not a warehouse — we're collectors ourselves. Every piece is personally vetted, authenticated, and described with the detail only an enthusiast can provide.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📦</span>
+        <div class="why-title">Museum-Grade Packaging</div>
+        <p class="why-text">Every statue ships with original box, COA, and collector-safe packaging. Your piece arrives exactly as it left our display.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💬</span>
+        <div class="why-title">White-Glove Service</div>
+        <p class="why-text">Questions before you buy? We'll walk you through every detail — dimensions, paint application, edition numbers — whatever you need.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🏆</span>
+        <div class="why-title">Investment-Grade Pieces</div>
+        <p class="why-text">Limited edition runs from Sideshow, XM Studios, Prime 1, and more. The statues we carry hold — and grow — in value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Beyond the Shelf</div>
+      <h2 class="section-title">Build &amp; Painting <span>Services</span></h2>
+      <div class="section-rule"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-muted);font-size:0.95rem;max-width:560px;margin:0 auto 0.5rem;">
+      Don't just display your collection — elevate it. We offer professional custom painting, diorama building, and display consultation.
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🎨</span>
+        <div class="service-title">Custom Paint</div>
+        <p class="service-text">Full repaint, panel-line enhancement, battle damage, or weathering. Your vision, our brushwork.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏗️</span>
+        <div class="service-title">Diorama Build</div>
+        <p class="service-text">Scene-accurate bases, environment builds, and multi-figure dioramas crafted to museum standards.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💡</span>
+        <div class="service-title">LED Integration</div>
+        <p class="service-text">Eyes, arc reactors, energy effects — seamless LED installs that bring your statue to life after dark.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🛡️</span>
+        <div class="service-title">Restoration</div>
+        <p class="service-text">Chips, cracks, faded paint? We restore older pieces to display-ready condition with invisible repairs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Let's Talk</div>
+      <h2 class="section-title">Interested in a <span>Piece?</span></h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="contact-box">
+      <p>
+        Every collector has different needs. Whether you're looking to purchase, inquire about a custom piece, 
+        or just want to nerd out about statues — we're always happy to chat.
+      </p>
+      <a href="mailto:info@capitolcitystatues.com" class="btn-primary" style="display:inline-flex;">
+        📧 &nbsp;Send Us a Message
+      </a>
+      <div class="contact-channels">
+        <div class="contact-channel"><span>📍</span><span>West Sacramento, CA</span></div>
+        <div class="contact-channel"><span>🕐</span><span>Mon–Fri, 9am–5pm</span></div>
+        <div class="contact-channel"><span>📘</span><span>Facebook: Capitol City Statues</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">🏛️ Capitol City Statues</div>
+      <p class="footer-tagline">Passionate collectors serving fellow collectors. Premium statues from Marvel, DC, and the world's greatest franchises.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#services">Build Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Franchises</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="filterBy('Marvel')">Marvel</a></li>
+        <li><a href="#" onclick="filterBy('DC')">DC</a></li>
+        <li><a href="#" onclick="filterBy('Other')">Other</a></li>
+        <li><a href="#" onclick="filterBy('available')">Available Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Capitol City Statues. All rights reserved.</div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com" class="social-link" title="Facebook">f</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ LIGHTBOX MODAL ═══════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <img class="modal-img" id="modalImg" src="" alt="">
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModalBtn()">✕</button>
+      <div class="modal-brand" id="modalBrand"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-status" id="modalStatus"></div>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-details" id="modalDetails"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRODUCT DATA — Edit this array to add/remove/update items
+     Each item: { id, franchise, title, manufacturer, scale,
+                  edition, status ("available"|"sold"|"reserved"),
+                  price, img, desc, limited }
+═══════════════════════════════════════════════════════════ -->
+<script>
+const PRODUCTS = [
+  {
+    id: 1,
+    franchise: "Marvel",
+    title: "Spider-Man vs Venom Maquette",
+    manufacturer: "Sideshow Collectibles",
+    scale: "Maquette Scale",
+    edition: "Limited Edition",
+    status: "available",
+    price: "$1,450",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/2005611/spider-man-vs-venom_marvel_silo_sm.png",
+    desc: "Epic battle maquette depicting Spider-Man locked in combat with the alien symbiote Venom. Breathtaking dual-figure composition on a shared base. Hand-painted polystone, mint condition with COA and original packaging."
+  },
+  {
+    id: 2,
+    franchise: "Marvel",
+    title: "Deadpool Quarter Scale Statue",
+    manufacturer: "Iron Studios",
+    scale: "1:4 Scale",
+    edition: "Standard Edition",
+    status: "available",
+    price: "$549",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/913617/deadpool_marvel_silo_sm.png",
+    desc: "The Merc with a Mouth in full deadpan glory. Iron Studios' 1:4 scale Deadpool with dual katanas, perfectly capturing his irreverent pose and iconic red suit. Never displayed, pristine condition."
+  },
+  {
+    id: 3,
+    franchise: "Marvel",
+    title: "Thor Unleashed Quarter Scale Statue",
+    manufacturer: "Iron Studios",
+    scale: "1:4 Scale",
+    edition: "Limited Edition 750",
+    status: "available",
+    price: "$699",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/913618/iron-studios-marvel-thor-unleashed-quarter-scale-statue-silo_sm.png",
+    desc: "Thor in full berserker mode, lightning crackling around Mjolnir as he charges into battle. Stunning 1:4 scale quarter-scale statue with incredible stormcloud base. Mint in sealed box."
+  },
+  {
+    id: 4,
+    franchise: "Marvel",
+    title: "Wolverine 1:3 Scale Statue",
+    manufacturer: "PCS Collectibles",
+    scale: "1:3 Scale",
+    edition: "Limited Edition 500",
+    status: "available",
+    price: "$1,299",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/909387/wolverine_marvel_silo_sm.png",
+    desc: "One of the most impressive Wolverine pieces ever produced — 1:3 scale, full adamantium claws extended, iconic yellow suit. Museum-quality resin sculpt with hand-applied paint. Box and COA included."
+  },
+  {
+    id: 5,
+    franchise: "Marvel",
+    title: "Wolverine: Berserker Rage Statue",
+    manufacturer: "Sideshow Collectibles",
+    scale: "Premium Format",
+    edition: "Limited Edition 1000",
+    status: "available",
+    price: "$895",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/300847/sideshow-collectibles-marvel-wolverine-berserker-rage-statue-silo_sm.png",
+    desc: "Logan unleashed — snarling, claws out, in the heat of berserker fury. Sideshow's legendary Berserker Rage sculpt with incredible fabric elements and polystone body. A grail piece for any X-Men collection."
+  },
+  {
+    id: 6,
+    franchise: "Marvel",
+    title: "Ghost Rider 1:3 Scale Statue",
+    manufacturer: "PCS Collectibles",
+    scale: "1:3 Scale",
+    edition: "Limited Edition 400",
+    status: "reserved",
+    price: "$1,650",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/914773/pcs-marvel-ghost-rider-1-3-scale-statue-silo_sm.png",
+    desc: "The Spirit of Vengeance blazes to life in this massive 1:3 scale masterpiece. Flame effects sculpted in translucent resin, chain of penance in real metal links. RESERVED — inquire for availability."
+  },
+  {
+    id: 7,
+    franchise: "Marvel",
+    title: "Knull 1:3 Scale Statue",
+    manufacturer: "PCS Collectibles",
+    scale: "1:3 Scale",
+    edition: "Limited Edition 350",
+    status: "available",
+    price: "$1,850",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/914958/pcs-marvel-knull-1-3-scale-statue-silo_sm.png",
+    desc: "The God of the Symbiotes rendered in terrifying 1:3 scale. All-Black the Necrosword crackles with void energy in translucent dark resin. One of the most striking villain pieces in any collection."
+  },
+  {
+    id: 8,
+    franchise: "Marvel",
+    title: "Venom 1:10 Scale Statue",
+    manufacturer: "Iron Studios",
+    scale: "1:10 Scale",
+    edition: "Standard Edition",
+    status: "available",
+    price: "$349",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/913506/venom_marvel_silo_sm.png",
+    desc: "Eddie Brock in full symbiote eruption — tongue out, tendrils flared. Iron Studios nailed every horrifying detail in this 1:10 scale piece. Perfect desk display at a collector-friendly price point."
+  },
+  {
+    id: 9,
+    franchise: "Marvel",
+    title: "Rogue & Gambit Statue",
+    manufacturer: "Sideshow Collectibles",
+    scale: "Premium Format",
+    edition: "Limited Edition 600",
+    status: "available",
+    price: "$1,100",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/300851/rogue-gambit_marvel_silo_sm.png",
+    desc: "Marvel's most iconic couple together on one stunning base. Rogue and Gambit in a charged, dynamic pose — fabric elements, glowing playing cards, and incredible face sculpts. A true centerpiece piece."
+  },
+  {
+    id: 10,
+    franchise: "Marvel",
+    title: "Gambit & Wolverine Deluxe 1:10 Scale",
+    manufacturer: "Iron Studios",
+    scale: "1:10 Scale",
+    edition: "Deluxe Edition",
+    status: "available",
+    price: "$425",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/913753/gambit-wolverine-deluxe_marvel_silo_sm.png",
+    desc: "Two of the X-Men's most badass mutants on one base — Gambit with charged cards ready, Wolverine claws drawn. Deluxe edition with extra accessories and premium base detail."
+  },
+  {
+    id: 11,
+    franchise: "Marvel",
+    title: "Silver Surfer Deluxe 1:10 Scale",
+    manufacturer: "Iron Studios",
+    scale: "1:10 Scale",
+    edition: "Deluxe Edition",
+    status: "sold",
+    price: "$385",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/915104/iron-studios-marvel-silver-surfer-deluxe-1-10-scale-statues-silo_sm.png",
+    desc: "Norrin Radd surfs the cosmos on his gleaming board in this stunning deluxe edition. Chrome-finish polystone with dynamic energy base. SOLD — contact us to join the waitlist for next availability."
+  },
+  {
+    id: 12,
+    franchise: "Marvel",
+    title: "Blade 1:10 Scale Statue",
+    manufacturer: "Iron Studios",
+    scale: "1:10 Scale",
+    edition: "Standard Edition",
+    status: "available",
+    price: "$299",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/915038/iron-studios-marvel-blade-1-10-scale-statues-silo_sm.png",
+    desc: "The Daywalker ready for battle — trenchcoat, sword drawn, shades on. Iron Studios captures every detail of Blade's iconic look at an accessible price point. Great addition to any Marvel villain-hunter display."
+  },
+  {
+    id: 13,
+    franchise: "Marvel",
+    title: "Dr. Doom 1:3 Scale Statue",
+    manufacturer: "PCS Collectibles",
+    scale: "1:3 Scale",
+    edition: "Limited Edition 450",
+    status: "available",
+    price: "$1,750",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/914902/pcs-marvel-dr-doom-1-3-scale-statue-silo_sm.png",
+    desc: "Doom stands imperious in this massive 1:3 scale statement piece. Green hooded cape sculpted in flowing detail, iron mask, gauntlets crackled with stolen power. Commands any room it enters."
+  },
+  {
+    id: 14,
+    franchise: "Marvel",
+    title: "Sabretooth 1:10 Scale Statue",
+    manufacturer: "Iron Studios",
+    scale: "1:10 Scale",
+    edition: "Standard Edition",
+    status: "available",
+    price: "$319",
+    limited: false,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/913169/sabretooth_marvel_silo_sm.png",
+    desc: "Victor Creed snarling and feral in full 1:10 scale fury. Pairs beautifully with Wolverine for a display showdown. Hand-painted resin with incredible musculature and claw detail."
+  },
+  {
+    id: 15,
+    franchise: "Marvel",
+    title: "Spider-Man 1:3 Scale Statue",
+    manufacturer: "PCS Collectibles",
+    scale: "1:3 Scale",
+    edition: "Limited Edition 600",
+    status: "available",
+    price: "$1,350",
+    limited: true,
+    img: "https://www.sideshow.com/cdn-cgi/image/height=350,quality=75,f=auto/https://www.sideshow.com/storage/product-images/915793/pcs-marvel-spider-man-1-3-scale-statue-silo_sm.png",
+    desc: "Your friendly neighborhood Spider-Man in a stunning 1:3 scale wall-crawling pose. Web effects in translucent resin, every suit panel line crisp. One of the best Spidey statues ever made."
+  }
+];
+
+// ═══════════════════════════════════════════
+// RENDER + FILTER LOGIC
+// ═══════════════════════════════════════════
+let currentFilter = 'all';
+let currentSearch = '';
+
+function statusLabel(status) {
+  if (status === 'available') return '<span class="status-badge badge-available">Available</span>';
+  if (status === 'sold')      return '<span class="status-badge badge-sold">Sold</span>';
+  if (status === 'reserved')  return '<span class="status-badge badge-reserved">Reserved</span>';
+  return '';
+}
+
+function renderCards() {
+  const grid = document.getElementById('productGrid');
+  const noResults = document.getElementById('noResults');
+
+  // Clear existing cards (keep no-results div)
+  [...grid.querySelectorAll('.product-card')].forEach(c => c.remove());
+
+  const q = currentSearch.toLowerCase();
+
+  const visible = PRODUCTS.filter(p => {
+    const matchFilter =
+      currentFilter === 'all' ? true :
+      currentFilter === 'available' ? p.status === 'available' :
+      p.franchise === currentFilter;
+
+    const matchSearch =
+      !q ||
+      p.title.toLowerCase().includes(q) ||
+      p.franchise.toLowerCase().includes(q) ||
+      p.manufacturer.toLowerCase().includes(q) ||
+      p.scale.toLowerCase().includes(q);
+
+    return matchFilter && matchSearch;
+  });
+
+  noResults.classList.toggle('visible', visible.length === 0);
+
+  visible.forEach(p => {
+    const isSold = p.status === 'sold';
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.dataset.id = p.id;
+    card.innerHTML = `
+      <div class="card-img-wrap">
+        <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://placehold.co/400x533/0f0f1a/c9a84c?text=Statue+Photo'">
+        ${statusLabel(p.status)}
+        ${p.limited ? '<div class="limited-badge">Limited Ed.</div>' : ''}
+        <div class="franchise-tag">${p.franchise}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-brand">${p.manufacturer}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-scale">${p.scale} · ${p.edition}</div>
+        <div class="card-footer">
+          <div class="card-price ${isSold ? 'sold-price' : ''}">${p.price}</div>
+          <button class="card-btn ${isSold ? 'sold-btn' : ''}" onclick="openModal(${p.id}, event)">
+            ${isSold ? 'Sold' : 'View Details'}
+          </button>
+        </div>
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(p.id));
+    grid.insertBefore(card, noResults);
+  });
+}
+
+function filterBy(f) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === f);
+  });
+  renderCards();
+  document.getElementById('collection').scrollIntoView({ behavior: 'smooth' });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => filterBy(btn.dataset.filter));
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  renderCards();
+});
+
+// ═══════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════
+function openModal(id, e) {
+  if (e) e.stopPropagation();
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+
+  const isSold = p.status === 'sold';
+  const isReserved = p.status === 'reserved';
+
+  document.getElementById('modalImg').src = p.img;
+  document.getElementById('modalImg').alt = p.title;
+  document.getElementById('modalImg').onerror = function() {
+    this.src = 'https://placehold.co/400x533/0f0f1a/c9a84c?text=Statue+Photo';
+  };
+  document.getElementById('modalBrand').textContent = p.manufacturer + ' · ' + p.franchise;
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalStatus').innerHTML = statusLabel(p.status) + (p.limited ? ' &nbsp;<span class="limited-badge" style="position:static;display:inline-block;">Limited Ed.</span>' : '');
+  document.getElementById('modalPrice').textContent = p.price;
+  document.getElementById('modalDetails').innerHTML = `
+    <div class="detail-item"><div class="detail-label">Scale</div><div class="detail-value">${p.scale}</div></div>
+    <div class="detail-item"><div class="detail-label">Edition</div><div class="detail-value">${p.edition}</div></div>
+    <div class="detail-item"><div class="detail-label">Manufacturer</div><div class="detail-value">${p.manufacturer}</div></div>
+    <div class="detail-item"><div class="detail-label">Franchise</div><div class="detail-value">${p.franchise}</div></div>
+  `;
+  document.getElementById('modalDesc').textContent = p.desc;
+
+  let actions = '';
+  if (isSold) {
+    actions = `<button class="modal-cta secondary" disabled>Sold — Join Waitlist</button>`;
+  } else if (isReserved) {
+    actions = `<a href="mailto:info@capitolcitystatues.com?subject=Inquiry: ${encodeURIComponent(p.title)}" class="modal-cta">📧 Check Availability</a>`;
+  } else {
+    actions = `
+      <a href="mailto:info@capitolcitystatues.com?subject=Purchase Inquiry: ${encodeURIComponent(p.title)}&body=I'm interested in purchasing the ${encodeURIComponent(p.title)} listed at ${p.price}. Please let me know next steps." class="modal-cta">💰 Purchase Inquiry</a>
+      <a href="mailto:info@capitolcitystatues.com?subject=Question: ${encodeURIComponent(p.title)}" class="modal-cta secondary">Ask a Question</a>
+    `;
+  }
+  document.getElementById('modalActions').innerHTML = actions;
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+}
+function closeModalBtn() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+
+// Init
+renderCards();
+</script>
+</body>
+</html>

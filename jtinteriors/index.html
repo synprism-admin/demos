@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JT Interiors | Interior Remodeling Vancouver, WA | Kitchens · Baths · Renovations</title>
+  <meta name="description" content="JT Interiors — Vancouver, WA's premier interior remodeling contractor. 25+ years crafting dream kitchens, bathrooms, and whole-home renovations. Licensed, bonded & insured. Free estimates.">
+  <link rel="canonical" href="https://jtinteriorsremodeling.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JT Interiors | Interior Remodeling Vancouver, WA">
+  <meta property="og:description" content="25+ years transforming homes across SW Washington. Kitchens, bathrooms, whole-home renovations. Licensed, bonded & insured.">
+  <meta property="og:url" content="https://jtinteriorsremodeling.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"JT Interiors Remodeling","url":"https://jtinteriorsremodeling.com","telephone":"360-600-8273","email":"info@jtinteriorsremodeling.com","address":{"@type":"PostalAddress","streetAddress":"5305 NE 121st Ave STE 709","addressLocality":"Vancouver","addressRegion":"WA","postalCode":"98682"},"openingHours":"Mo-Fr 08:00-17:00","areaServed":"Southwest Washington"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════
+       TOKENS
+    ═══════════════════════════════════════════════ */
+    :root {
+      --teal:        #1CBFB8;
+      --teal-dark:   #0F9D97;
+      --teal-dim:    rgba(28,191,184,0.12);
+      --teal-glow:   rgba(28,191,184,0.25);
+      --charcoal:    #1E2022;
+      --charcoal-2:  #2A2D30;
+      --charcoal-3:  #383C3F;
+      --off-white:   #F8F7F5;
+      --warm-gray:   #EDEBE8;
+      --mid-gray:    #9A9A9A;
+      --text:        #1E2022;
+      --text-mid:    #555759;
+      --border:      #E4E2DE;
+      --white:       #FFFFFF;
+      --r:           10px;
+      --r-lg:        20px;
+      --shadow:      0 6px 32px rgba(0,0,0,0.08);
+      --shadow-lg:   0 20px 64px rgba(0,0,0,0.14);
+      --shadow-xl:   0 32px 96px rgba(0,0,0,0.20);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ═══════════════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════════════ */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+    }
+    .label::before {
+      content: '';
+      width: 28px; height: 1.5px;
+      background: var(--teal);
+    }
+    .label.light { color: var(--teal); }
+    .label.light::before { background: var(--teal); }
+
+    .display {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+    .display em { font-style: italic; color: var(--teal-dark); }
+    .display.light { color: var(--white); }
+    .display.light em { color: var(--teal); }
+
+    .subhead {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.78;
+      font-weight: 400;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.95rem 2.2rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-teal { background: var(--teal); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 10px 36px var(--teal-glow); }
+    .btn-charcoal { background: var(--charcoal); color: var(--white); }
+    .btn-charcoal:hover { background: var(--charcoal-2); transform: translateY(-2px); }
+    .btn-ghost-white {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+    .btn-ghost-white:hover { border-color: var(--white); background: rgba(255,255,255,0.07); }
+    .btn-ghost-teal {
+      background: transparent;
+      color: var(--teal-dark);
+      border: 1.5px solid var(--teal);
+    }
+    .btn-ghost-teal:hover { background: var(--teal); color: var(--white); }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.up { transform: translateY(30px); }
+    .reveal.left { transform: translateX(-30px); }
+    .reveal.right { transform: translateX(30px); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ═══════════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════════ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      transition: background 0.4s, box-shadow 0.4s;
+      padding: 0;
+    }
+    #nav.solid {
+      background: rgba(30,32,34,0.97);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 40px;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-logo-mark span { color: var(--teal); }
+    .nav-logo-sub {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-top: 3px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+      padding: 7px 14px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+    .nav-links .nav-cta { background: var(--teal); color: var(--white); }
+    .nav-links .nav-cta:hover { background: var(--teal-dark); }
+    .nav-phone-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.25s; }
+    .mob-nav { display: none; background: var(--charcoal); border-top: 1px solid rgba(255,255,255,0.07); }
+    .mob-nav.open { display: block; }
+    .mob-nav a {
+      display: block; padding: 15px 28px;
+      font-size: 0.9rem; font-weight: 500;
+      color: rgba(255,255,255,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: color 0.2s, background 0.2s;
+    }
+    .mob-nav a:hover { color: var(--white); background: rgba(255,255,255,0.04); }
+
+    /* ═══════════════════════════════════════════════
+       HERO  — full-bleed cinematic
+    ═══════════════════════════════════════════════ */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(30,32,34,0.92) 0%, rgba(30,32,34,0.6) 55%, rgba(30,32,34,0.15) 100%),
+        url('https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/L1.jpg') center/cover no-repeat;
+    }
+    /* teal diagonal accent */
+    .hero-diag {
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 0 320px 220px 0;
+      border-color: transparent var(--teal) transparent transparent;
+      opacity: 0.85;
+    }
+    .hero-diag-inner {
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 0 240px 160px 0;
+      border-color: transparent var(--charcoal) transparent transparent;
+      opacity: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 64px 96px;
+      max-width: 780px;
+    }
+    .hero-pre {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--teal-dim);
+      border: 1px solid rgba(28,191,184,0.35);
+      color: var(--teal);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.4rem, 7vw, 6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.015em;
+      margin-bottom: 28px;
+    }
+    .hero-h1 em { font-style: italic; color: var(--teal); }
+    .hero-sub {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.72;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .hero-stat-l {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 5px;
+    }
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 32px; right: 48px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .scroll-cue-line {
+      width: 1px;
+      height: 56px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollLine { 0%,100%{transform:scaleY(1);opacity:1} 50%{transform:scaleY(0.4);opacity:0.4} }
+
+    /* ticker removed */
+
+    /* ═══════════════════════════════════════════════
+       PORTFOLIO MOSAIC
+    ═══════════════════════════════════════════════ */
+    #portfolio { padding: 120px 0 0; background: var(--white); }
+    .portfolio-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 340px 280px;
+      gap: 12px;
+    }
+    .mosaic-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r);
+      cursor: pointer;
+    }
+    .mosaic-item:first-child { grid-row: 1 / 3; }
+    .mosaic-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .mosaic-item:hover img { transform: scale(1.06); }
+    .mosaic-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(30,32,34,0.7) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .mosaic-item:hover .mosaic-overlay { opacity: 1; }
+    .mosaic-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(30,32,34,0.7);
+      padding: 5px 12px;
+      border-radius: 100px;
+      backdrop-filter: blur(6px);
+    }
+    .mosaic-teal-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+      margin-top: 12px;
+    }
+
+    /* ═══════════════════════════════════════════════
+       ABOUT / STATS BAND
+    ═══════════════════════════════════════════════ */
+    #about {
+      background: var(--charcoal);
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #about::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(28,191,184,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-text .subhead { color: rgba(255,255,255,0.62); }
+    .about-body p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.82;
+      margin-bottom: 18px;
+    }
+    .trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid rgba(28,191,184,0.25);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      background: rgba(28,191,184,0.06);
+    }
+    .trust-pill::before { content: '✓'; color: var(--teal); font-weight: 700; }
+    .stats-side { display: flex; flex-direction: column; gap: 0; }
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-row:first-child { padding-top: 0; }
+    .stat-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      min-width: 130px;
+    }
+    .stat-label { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .stat-label strong { display: block; font-size: 1.05rem; font-weight: 600; color: rgba(255,255,255,0.88); margin-bottom: 4px; }
+
+    /* ═══════════════════════════════════════════════
+       SERVICES — alternating editorial rows
+    ═══════════════════════════════════════════════ */
+    #services { padding: 120px 0; background: var(--off-white); }
+    .services-intro { text-align: center; max-width: 680px; margin: 0 auto 80px; }
+    .services-intro .subhead { margin-top: 16px; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 4px;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .service-row.flip { direction: rtl; }
+    .service-row.flip > * { direction: ltr; }
+    .service-img {
+      width: 100%; height: 420px;
+      object-fit: cover;
+    }
+    .service-body {
+      background: var(--white);
+      padding: 56px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--teal-dim);
+      line-height: 1;
+      margin-bottom: 20px;
+      border-left: 3px solid var(--teal);
+      padding-left: 18px;
+      color: var(--charcoal);
+      opacity: 0.12;
+    }
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .service-desc {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+    }
+    .service-features li::before {
+      content: '';
+      width: 18px; height: 18px;
+      background: var(--teal-dim);
+      border: 1.5px solid var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231CBFB8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 11px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .service-rows-gap { margin-bottom: 4px; }
+
+    /* ═══════════════════════════════════════════════
+       WAYNE — cinematic bio
+    ═══════════════════════════════════════════════ */
+    #wayne {
+      position: relative;
+      padding: 0;
+      background: var(--white);
+      overflow: hidden;
+    }
+    .wayne-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+    }
+    .wayne-img-side {
+      position: relative;
+      overflow: hidden;
+    }
+    .wayne-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top;
+      min-height: 640px;
+    }
+    .wayne-teal-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+    }
+    .wayne-badge {
+      position: absolute;
+      top: 36px; right: -1px;
+      background: var(--teal);
+      color: var(--white);
+      padding: 12px 20px 12px 16px;
+      border-radius: 6px 0 0 6px;
+      box-shadow: var(--shadow);
+    }
+    .wayne-badge-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .wayne-badge-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+    .wayne-text-side {
+      background: var(--charcoal);
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .wayne-text-side .label { color: var(--teal); }
+    .wayne-text-side .label::before { background: var(--teal); }
+    .wayne-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.45;
+      border-left: 3px solid var(--teal);
+      padding-left: 20px;
+      margin: 28px 0 32px;
+    }
+    .wayne-bio p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.82;
+      margin-bottom: 16px;
+    }
+
+    /* ═══════════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════════ */
+    #testimonials {
+      padding: 120px 0;
+      background: var(--off-white);
+    }
+    .test-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .test-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .test-card::after {
+      content: '"';
+      position: absolute;
+      bottom: -20px; right: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem;
+      font-weight: 700;
+      color: var(--teal-dim);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .test-card:hover {
+      border-top-color: var(--teal);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .test-stars {
+      display: flex; gap: 3px; margin-bottom: 20px;
+    }
+    .test-stars span { color: var(--teal); font-size: 1.1rem; }
+    .test-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.68;
+      margin-bottom: 28px;
+      position: relative; z-index: 1;
+    }
+    .test-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .test-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .test-name { font-size: 0.9rem; font-weight: 600; color: var(--charcoal); }
+    .test-loc { font-size: 0.75rem; color: var(--mid-gray); margin-top: 2px; }
+
+    /* ═══════════════════════════════════════════════
+       PROCESS — horizontal timeline
+    ═══════════════════════════════════════════════ */
+    #process {
+      padding: 120px 0;
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+    #process::after {
+      content: 'PROCESS';
+      position: absolute;
+      bottom: -20px; right: -10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.02);
+      pointer-events: none;
+      letter-spacing: -0.02em;
+    }
+    .process-header { margin-bottom: 72px; }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: calc(12.5% + 12px);
+      right: calc(12.5% + 12px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--teal), rgba(28,191,184,0.2));
+    }
+    .step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .step-circle {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--charcoal-2);
+      border: 2px solid var(--teal);
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--teal);
+      position: relative; z-index: 1;
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .step-desc { font-size: 0.85rem; color: rgba(255,255,255,0.48); line-height: 1.7; }
+
+    /* ═══════════════════════════════════════════════
+       CTA BANNER
+    ═══════════════════════════════════════════════ */
+    #cta-banner {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(28,191,184,0.92) 0%, rgba(15,157,151,0.88) 60%, rgba(30,32,34,0.9) 100%),
+        url('https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/BATHREMODEL.jpg') center/cover no-repeat;
+    }
+    .cta-content {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 80px 32px;
+    }
+    .cta-content .display {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .cta-content .display em { color: rgba(255,255,255,0.75); }
+    .cta-content p { color: rgba(255,255,255,0.8); font-size: 1.05rem; max-width: 540px; margin: 0 auto 36px; }
+    .cta-content .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════════ */
+    #contact { padding: 120px 0; background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-left { display: flex; flex-direction: column; gap: 0; }
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-detail:last-of-type { border-bottom: none; }
+    .cd-icon {
+      width: 42px; height: 42px;
+      background: var(--teal-dim);
+      border: 1.5px solid rgba(28,191,184,0.25);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cd-icon svg { width: 18px; height: 18px; stroke: var(--teal-dark); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .cd-lbl { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mid-gray); margin-bottom: 3px; }
+    .cd-val { font-size: 0.93rem; font-weight: 500; color: var(--charcoal); }
+    .cd-val a { color: var(--teal-dark); }
+    .cd-val a:hover { text-decoration: underline; }
+    .form-card {
+      background: var(--off-white);
+      border-radius: var(--r-lg);
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+    .form-sub { font-size: 0.85rem; color: var(--mid-gray); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .fg label { font-size: 0.78rem; font-weight: 600; color: var(--text); letter-spacing: 0.04em; }
+    .fg input, .fg select, .fg textarea {
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px var(--teal-dim);
+    }
+    .fg textarea { resize: vertical; min-height: 106px; }
+    .form-submit {
+      width: 100%;
+      background: var(--teal);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .form-submit:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 10px 32px var(--teal-glow); }
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════ */
+    footer {
+      background: var(--charcoal);
+      padding: 72px 0 32px;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 28px;
+    }
+    .footer-logo-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .footer-logo-mark span { color: var(--teal); }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .footer-blurb { font-size: 0.85rem; line-height: 1.72; max-width: 300px; }
+    .f-col-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 20px;
+    }
+    .f-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .f-links a { font-size: 0.87rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .f-links a:hover { color: var(--teal); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+    .footer-lic { font-size: 0.75rem; color: rgba(255,255,255,0.22); }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .nav-links, .nav-phone-pill { display: none; }
+      .burger { display: flex; }
+      .portfolio-header { grid-template-columns: 1fr; }
+      .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
+      .mosaic-item:first-child { grid-row: auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .wayne-grid { grid-template-columns: 1fr; }
+      .wayne-img { min-height: 380px; }
+      .service-row, .service-row.flip { direction: ltr; grid-template-columns: 1fr; }
+      .service-img { height: 280px; }
+      .service-body { padding: 40px 32px; }
+      .steps-row { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .steps-row::before { display: none; }
+      .test-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .hero-content { padding: 0 32px 80px; }
+      .hero-diag { border-width: 0 180px 120px 0; }
+    }
+    @media (max-width: 600px) {
+      .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
+      .hero-h1 { font-size: 2.8rem; }
+      .hero-stats { gap: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+      .hero-actions { flex-direction: column; }
+      .steps-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ██ NAV ██████████████████████████████████████████████ -->
+<nav id="nav" class="solid">
+  <div class="nav-wrap">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-mark">JT <span>INTERIORS</span></div>
+      <div class="nav-logo-sub">Vancouver, WA · Est. 1999</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#portfolio">Our Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#wayne">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+    </ul>
+    <a href="tel:3606008273" class="nav-phone-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      360-600-8273
+    </a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#portfolio">Our Work</a>
+    <a href="#services">Services</a>
+    <a href="#wayne">About Wayne</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#process">Our Process</a>
+    <a href="#contact">Free Estimate</a>
+    <a href="tel:3606008273" style="color:var(--teal);font-weight:600;">📞 360-600-8273</a>
+  </div>
+</nav>
+
+<!-- ██ HERO ██████████████████████████████████████████████ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-diag"></div>
+  <div class="hero-diag-inner"></div>
+  <div class="hero-content">
+    <div class="hero-pre">Vancouver, WA &amp; Southwest Washington</div>
+    <h1 class="hero-h1">
+      Your Home.<br>
+      <em>Reimagined.</em><br>
+      Perfected.
+    </h1>
+    <p class="hero-sub">JT Interiors brings 25+ years of craftsmanship to every kitchen, bathroom, and whole-home renovation — treating your project with the same care and precision we'd give our own.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-teal">Get a Free Estimate</a>
+      <a href="#portfolio" class="btn btn-ghost-white">See Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-n">25+</div>
+        <div class="hero-stat-l">Years of Experience</div>
+      </div>
+      <div>
+        <div class="hero-stat-n">100%</div>
+        <div class="hero-stat-l">Client Satisfaction</div>
+      </div>
+      <div>
+        <div class="hero-stat-n">Family</div>
+        <div class="hero-stat-l">Owned &amp; Operated</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <div class="scroll-cue-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ██ PORTFOLIO MOSAIC ███████████████████████████████████ -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="portfolio-header">
+      <div class="reveal left">
+        <div class="label">Our Work</div>
+        <h2 class="display" style="margin-top:14px;">Spaces We've<br><em>Transformed</em></h2>
+      </div>
+      <div class="reveal right" style="text-align:right;">
+        <p class="subhead" style="max-width:360px; margin-left:auto;">Every project tells a story. Here are a few of the homes we've had the privilege to reimagine across Vancouver and SW Washington.</p>
+      </div>
+    </div>
+    <div class="mosaic reveal up">
+      <div class="mosaic-item">
+        <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/csm_siematic-classic-033-slider_401e94ef6e.jpg" alt="Custom kitchen remodel with island and stone countertops">
+        <div class="mosaic-overlay"><span class="mosaic-tag">Kitchen Remodel</span></div>
+      </div>
+      <div class="mosaic-item">
+        <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/B3.jpg" alt="Custom glass shower with designer tile — JT Interiors">
+        <div class="mosaic-overlay"><span class="mosaic-tag">Bathroom Renovation</span></div>
+      </div>
+      <div class="mosaic-item">
+        <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/BATHTUBS.jpg" alt="Freestanding bathtub installation — JT Interiors">
+        <div class="mosaic-overlay"><span class="mosaic-tag">Bath &amp; Fixtures</span></div>
+      </div>
+      <div class="mosaic-item">
+        <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/SINK-2.jpg" alt="Custom vanity and sink installation — JT Interiors">
+        <div class="mosaic-overlay"><span class="mosaic-tag">Custom Vanity</span></div>
+      </div>
+      <div class="mosaic-item">
+        <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/FLOORING.jpg" alt="Custom tile and flooring installation — JT Interiors">
+        <div class="mosaic-overlay"><span class="mosaic-tag">Tile &amp; Flooring</span></div>
+      </div>
+    </div>
+    <div class="mosaic-teal-bar reveal"></div>
+  </div>
+</section>
+
+<!-- ██ ABOUT / STATS ██████████████████████████████████████ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text reveal left">
+        <div class="label light">Why JT Interiors</div>
+        <h2 class="display light" style="margin-top:14px; margin-bottom:28px;">Built on <em>Trust.</em><br>Delivered with Pride.</h2>
+        <div class="about-body">
+          <p>JT Interiors has been the trusted name in residential remodeling across Vancouver, Washington and the greater southwest Washington area for over 25 years. We are family owned and operated, and we treat your home project as if it were our own — every time, without exception.</p>
+          <p>When you work with our team, we take the time to listen and learn what your needs truly are. We can provide the know-how to turn your ideas into a plan, or we can start at the very beginning and help you create a brand-new design for your home.</p>
+        </div>
+        <div class="trust-pills">
+          <span class="trust-pill">Licensed &amp; Bonded</span>
+          <span class="trust-pill">Insured</span>
+          <span class="trust-pill">Family Owned</span>
+          <span class="trust-pill">25+ Years Experience</span>
+          <span class="trust-pill">Free Estimates</span>
+        </div>
+        <a href="#contact" class="btn btn-teal" style="margin-top: 36px;">Schedule a Free Estimate</a>
+      </div>
+      <div class="stats-side reveal right">
+        <div class="stat-row">
+          <div class="stat-num">25+</div>
+          <div class="stat-label"><strong>Years in the Industry</strong>Experience like that gives our team an unmatched edge on every project.</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">100%</div>
+          <div class="stat-label"><strong>Client-First Philosophy</strong>We don't finish until you're completely satisfied — that's our promise.</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">M–F</div>
+          <div class="stat-label"><strong>8AM – 5PM Available</strong>Call or email us anytime to schedule your free in-home estimate.</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">SW<span style="font-size:2rem;">WA</span></div>
+          <div class="stat-label"><strong>Vancouver &amp; Surrounding Areas</strong>Proudly serving all of southwest Washington and the greater Portland metro.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ SERVICES ███████████████████████████████████████████ -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-intro reveal">
+      <div class="label" style="justify-content:center;">What We Do</div>
+      <h2 class="display" style="margin-top:14px;">Complete Interior<br><em>Remodeling Services</em></h2>
+      <p class="subhead">From a single bathroom refresh to a full home transformation — we handle every detail, every time.</p>
+    </div>
+
+    <div class="service-row reveal up">
+      <img class="service-img" src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/thd-kitchens-promo-ox-hill_horiz.jpg" alt="Kitchen remodel with island and cabinetry — JT Interiors">
+      <div class="service-body">
+        <div class="label">Service 01</div>
+        <h3 class="service-title" style="margin-top:14px;">Kitchen Remodeling &amp; Upgrades</h3>
+        <p class="service-desc">The kitchen is the heart of your home. We craft kitchens that are as beautiful as they are functional — from custom cabinetry and stone countertops to complete layout redesigns.</p>
+        <ul class="service-features">
+          <li>Custom cabinet installation &amp; refinishing</li>
+          <li>Granite, quartz &amp; stone countertops</li>
+          <li>Hardwood, tile &amp; laminate flooring</li>
+          <li>Full kitchen layout redesigns</li>
+          <li>Appliance installation &amp; integration</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-teal">Get a Kitchen Estimate</a>
+      </div>
+    </div>
+
+    <div style="height:4px;"></div>
+
+    <div class="service-row flip reveal up">
+      <img class="service-img" src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/SHOWER2.jpg" alt="Custom walk-in shower renovation — JT Interiors">
+      <div class="service-body">
+        <div class="label">Service 02</div>
+        <h3 class="service-title" style="margin-top:14px;">Bathroom Renovations &amp; Upgrades</h3>
+        <p class="service-desc">From elegant master bath retreats to crisp guest bath refreshes — we specialize in level-entry showers, tile work, vanities, glass doors, and complete gut renovations.</p>
+        <ul class="service-features">
+          <li>Level-entry &amp; custom walk-in showers</li>
+          <li>Tubs, toilets, vanities &amp; fixtures</li>
+          <li>Glass shower door installation</li>
+          <li>Full tile work &amp; waterproofing</li>
+          <li>Complete bathroom redesigns</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-teal">Get a Bathroom Estimate</a>
+      </div>
+    </div>
+
+    <div style="height:4px;"></div>
+
+    <div class="service-row reveal up">
+      <img class="service-img" src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/HW3.jpg" alt="Hardwood flooring installation — JT Interiors whole home renovation">
+      <div class="service-body">
+        <div class="label">Service 03</div>
+        <h3 class="service-title" style="margin-top:14px;">Whole Home Renovations</h3>
+        <p class="service-desc">Thinking bigger? We coordinate large-scale transformations that reimagine your entire living space — managing every detail so your project runs smoothly, on time, on budget.</p>
+        <ul class="service-features">
+          <li>Full interior renovation coordination</li>
+          <li>Multi-room flooring throughout</li>
+          <li>Drywall, finishing &amp; painting</li>
+          <li>Smart home integration</li>
+          <li>Windows &amp; appliance upgrades</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-teal">Discuss Your Project</a>
+      </div>
+    </div>
+
+    <div style="height:4px;"></div>
+
+    <div class="service-row flip reveal up">
+      <img class="service-img" src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/B5.jpg" alt="Bathroom upgrade for rental or investment property — JT Interiors">
+      <div class="service-body">
+        <div class="label">Service 04</div>
+        <h3 class="service-title" style="margin-top:14px;">Rentals, Flippers &amp; Smart Upgrades</h3>
+        <p class="service-desc">Maximize ROI on investment properties with efficient, market-ready renovations. We also bring homes into the future with smart lighting, appliances, and modern window installations.</p>
+        <ul class="service-features">
+          <li>Investment property renovations</li>
+          <li>Flip-ready upgrades on budget</li>
+          <li>Smart lighting &amp; switch systems</li>
+          <li>Appliance upgrades &amp; installation</li>
+          <li>Energy-efficient window replacements</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-teal">Get an Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ WAYNE ███████████████████████████████████████████████ -->
+<section id="wayne">
+  <div class="wayne-grid">
+    <div class="wayne-img-side reveal left">
+      <img class="wayne-img"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=85"
+        alt="Skilled craftsman at work on a remodel">
+      <div class="wayne-badge">
+        <div class="wayne-badge-name">Wayne</div>
+        <div class="wayne-badge-title">Owner &amp; Operator</div>
+      </div>
+      <div class="wayne-teal-bar"></div>
+    </div>
+    <div class="wayne-text-side reveal right">
+      <div class="label light" style="margin-bottom:14px;">Meet the Owner</div>
+      <h2 class="display light">A Lifetime of<br><em>Craft &amp; Character</em></h2>
+      <blockquote class="wayne-quote">
+        "There is no substitute for experience. I bring everything I've learned to every project I take on."
+      </blockquote>
+      <div class="wayne-bio">
+        <p>Wayne is the owner and operator of JT Interiors. He began his career in the 1980s working at his father's sheetrock company, mastering the precision and attention to detail that would define everything he does.</p>
+        <p>When he moved to the Pacific Northwest, he launched his own sheetrock company — then steadily expanded his expertise to tile, granite, hardwood flooring, cabinets, level-entry showers, glass shower doors, and eventually full kitchen, bathroom, and whole-home renovations.</p>
+        <p>Wayne is part of every project at JT Interiors. He's well respected by fellow contractors and beloved by clients for his straightforward honesty, can-do attitude, and unwavering commitment to quality.</p>
+      </div>
+      <a href="#contact" class="btn btn-teal" style="margin-top:32px; align-self:flex-start;">Start Your Project with Wayne</a>
+    </div>
+  </div>
+</section>
+
+<!-- ██ TESTIMONIALS ████████████████████████████████████████ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="test-header">
+      <div class="reveal left">
+        <div class="label">Client Reviews</div>
+        <h2 class="display" style="margin-top:14px;">What Our Clients<br><em>Are Saying</em></h2>
+      </div>
+      <div class="reveal right">
+        <p class="subhead" style="max-width:320px; text-align:right;">Every review represents a family whose home — and life — we helped improve.</p>
+      </div>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal up">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Thank you for such an amazing job. We are absolutely thrilled with how everything turned out. Wayne and his team were professional, timely, and the quality of work exceeded our expectations from start to finish."</p>
+        <div class="test-author">
+          <div class="test-avatar">LG</div>
+          <div><div class="test-name">Laura &amp; Greg</div><div class="test-loc">Vancouver, WA</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal up">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"JT Interiors completely transformed our bathroom. Wayne was straightforward and honest from day one — no surprises, no runaround. The finished product looks like something out of a design magazine."</p>
+        <div class="test-author">
+          <div class="test-avatar">AB</div>
+          <div><div class="test-name">A. Binegar</div><div class="test-loc">Vancouver, WA</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal up">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Our kitchen remodel was a huge project and Wayne managed every single detail. He was kind, courteous, and genuinely cared about getting it right. The team was respectful of our home throughout."</p>
+        <div class="test-author">
+          <div class="test-avatar">NH</div>
+          <div><div class="test-name">N. Hobbs</div><div class="test-loc">Vancouver, WA</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal up">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Highly recommend JT Interiors for any remodeling project. They finished on time, on budget, and the quality is excellent. Wayne's experience really shows — this is clearly his life's work and passion."</p>
+        <div class="test-author">
+          <div class="test-avatar">BG</div>
+          <div><div class="test-name">B. Goforth</div><div class="test-loc">Vancouver, WA</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ PROCESS ████████████████████████████████████████████ -->
+<section id="process">
+  <div class="wrap">
+    <div class="process-header reveal">
+      <div class="label light">How It Works</div>
+      <h2 class="display light" style="margin-top:14px;">Simple. <em>Transparent.</em><br>Done Right.</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step reveal up">
+        <div class="step-circle">1</div>
+        <div class="step-title">Free Estimate</div>
+        <p class="step-desc">We come to your home, listen carefully to your vision, and provide a clear, honest, no-obligation estimate. No pressure. No surprises.</p>
+      </div>
+      <div class="step reveal up">
+        <div class="step-circle">2</div>
+        <div class="step-title">Design &amp; Plan</div>
+        <p class="step-desc">We turn your ideas into a concrete plan — or help you build one from scratch. Wayne brings decades of design knowledge to every consultation.</p>
+      </div>
+      <div class="step reveal up">
+        <div class="step-circle">3</div>
+        <div class="step-title">Build</div>
+        <p class="step-desc">Our experienced team gets to work. Wayne is hands-on throughout, ensuring the highest quality craftsmanship at every stage of the build.</p>
+      </div>
+      <div class="step reveal up">
+        <div class="step-circle">4</div>
+        <div class="step-title">Love Your Home</div>
+        <p class="step-desc">We do a final walk-through together, address every finishing detail, and hand you back a home you're proud to live in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CTA BANNER █████████████████████████████████████████ -->
+<section id="cta-banner">
+  <div class="cta-bg"></div>
+  <div class="wrap cta-content reveal up">
+    <h2 class="display" style="color:var(--white); margin-bottom:20px;">Ready to <em style="color:rgba(255,255,255,0.8);">Love</em><br>Where You Live?</h2>
+    <p>Call us today or fill out the form below. We offer free in-home estimates and are happy to talk through your project, big or small.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn btn-charcoal">Request a Free Estimate</a>
+      <a href="tel:3606008273" class="btn btn-ghost-white">📞 360-600-8273</a>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CONTACT █████████████████████████████████████████████ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:52px;">
+      <div class="label">Get In Touch</div>
+      <h2 class="display" style="margin-top:14px;">Let's Start Your<br><em>Project</em></h2>
+      <p class="subhead" style="margin-top:14px;">Call, email, or fill out the form — we respond within one business day and are happy to answer any questions.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-left reveal left">
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div>
+            <div class="cd-lbl">Phone</div>
+            <div class="cd-val"><a href="tel:3606008273">360-600-8273</a> &nbsp;·&nbsp; <a href="tel:3609367449">360-936-7449</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="cd-lbl">Email</div>
+            <div class="cd-val"><a href="mailto:info@jtinteriorsremodeling.com">info@jtinteriorsremodeling.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="cd-lbl">Office</div>
+            <div class="cd-val">5305 NE 121st Ave STE 709<br>Vancouver, WA 98682</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="cd-lbl">Hours</div>
+            <div class="cd-val">Monday – Friday, 8:00 AM – 5:00 PM</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+          <div>
+            <div class="cd-lbl">Fax</div>
+            <div class="cd-val">360-896-5491</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card reveal right">
+        <div class="form-title">Request a Free Estimate</div>
+        <div class="form-sub">Tell us about your project and we'll be in touch promptly.</div>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="New Estimate Request — JT Interiors Remodeling">
+          <input type="hidden" name="redirect" value="https://web3forms.com/success">
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
+          </div>
+          <div class="form-row">
+            <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="360-000-0000"></div>
+            <div class="fg"><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
+          </div>
+          <div class="fg">
+            <label>Service Needed</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Kitchen Remodeling</option>
+              <option>Bathroom Renovation</option>
+              <option>Whole Home Renovation</option>
+              <option>Smart Home Upgrades</option>
+              <option>Rental / Investment Property</option>
+              <option>Windows &amp; Appliances</option>
+              <option>Other / Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Tell Us About Your Project</label>
+            <textarea name="message" placeholder="Describe your project, timeline, budget range, or any questions you have…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Estimate Request →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ FOOTER ██████████████████████████████████████████████ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-mark">JT <span>INTERIORS</span></div>
+        <div class="footer-tagline">"Transforming Spaces, Elevating Your Home."</div>
+        <p class="footer-blurb">Serving Vancouver, WA and all of southwest Washington since 1999. Family owned, fully licensed, bonded, and insured.</p>
+        <div style="margin-top:16px; font-size:0.75rem; color:rgba(255,255,255,0.22);">Licensed · Bonded · Insured · Washington State</div>
+      </div>
+      <div>
+        <div class="f-col-title">Services</div>
+        <ul class="f-links">
+          <li><a href="#services">Kitchen Remodeling</a></li>
+          <li><a href="#services">Bathroom Renovations</a></li>
+          <li><a href="#services">Whole Home Renovations</a></li>
+          <li><a href="#services">Smart Home Upgrades</a></li>
+          <li><a href="#services">Rentals &amp; Flippers</a></li>
+          <li><a href="#services">Windows &amp; Appliances</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">Company</div>
+        <ul class="f-links">
+          <li><a href="#portfolio">Our Work</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#wayne">Meet Wayne</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#contact">Free Estimate</a></li>
+          <li><a href="tel:3606008273">360-600-8273</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 JT Interiors Remodeling. All rights reserved.</span>
+      <span class="footer-lic">Website by Synprism</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav solidify on scroll
+  const nav = document.getElementById('nav');
+  // Already solid, just keep shadow
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Burger
+  const burger = document.getElementById('burger');
+  const mobNav = document.getElementById('mobNav');
+  burger.addEventListener('click', () => mobNav.classList.toggle('open'));
+  mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobNav.classList.remove('open')));
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

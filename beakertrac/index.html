@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BeakerTrac: First Call to Final Result</title>
+  <meta name="description" content="The all-in-one CRM, LIMS, and billing platform purpose-built for water testing and sample collection companies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+  /* ============================================================
+     BEAKERTRAC — Redesign Demo
+     Theme: Deep Ocean Navy + Crystal Aqua + Lab Glass
+     Interactive water / beaker aesthetic throughout
+  ============================================================ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:      #050f1f;
+    --navy2:     #071428;
+    --navy3:     #0a1d3a;
+    --navy4:     #0d2550;
+    --aqua:      #00c8e8;
+    --aqua2:     #00a8c8;
+    --aqua3:     #0088a8;
+    --aqua-glow: rgba(0,200,232,0.18);
+    --teal:      #00e8c8;
+    --foam:      #e8f8ff;
+    --white:     #ffffff;
+    --offwhite:  #f0f8ff;
+    --border:    rgba(0,200,232,0.15);
+    --text:      #0a1d3a;
+    --text-mid:  #3a5a7a;
+    --text-light:#6a8aaa;
+    --glass:     rgba(255,255,255,0.06);
+    --glass2:    rgba(255,255,255,0.10);
+    --radius:    12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--aqua3); border-radius: 3px; }
+
+  /* ── CANVAS FOR BUBBLES ── */
+  #bubbleCanvas {
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none; opacity: 0.35;
+  }
+
+
+
+  /* ══════════════════════════════════════════
+     HEADER
+  ══════════════════════════════════════════ */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(5,15,31,0.88);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 64px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.65rem;
+    text-decoration: none;
+  }
+  /* Animated beaker logo mark */
+  .logo-beaker {
+    width: 36px; height: 42px;
+    position: relative; flex-shrink: 0;
+  }
+  .logo-beaker svg { width: 100%; height: 100%; }
+  .logo-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem; font-weight: 800;
+    color: var(--white); letter-spacing: -0.02em;
+  }
+  .logo-name span { color: var(--aqua); }
+  nav { display: flex; align-items: center; gap: 0.3rem; }
+  nav a {
+    font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.6);
+    text-decoration: none; padding: 0.48rem 0.9rem;
+    border-radius: 8px; transition: color 0.2s, background 0.2s;
+  }
+  nav a:hover { color: var(--aqua); background: var(--aqua-glow); }
+  .nav-demo {
+    background: var(--aqua) !important;
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 16px rgba(0,200,232,0.35);
+    transition: transform 0.15s, box-shadow 0.2s !important;
+  }
+  .nav-demo:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(0,200,232,0.5) !important;
+  }
+
+  /* ══════════════════════════════════════════
+     HERO
+  ══════════════════════════════════════════ */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+
+  /* Animated wave background */
+  .hero-waves {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 220px; overflow: hidden; z-index: 1;
+  }
+  .hero-waves svg { width: 200%; height: 100%; animation: wave-slide 12s linear infinite; }
+  @keyframes wave-slide { to { transform: translateX(-50%); } }
+
+  /* Deep ocean gradient */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 30%, rgba(0,200,232,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 10% 70%, rgba(0,232,200,0.07) 0%, transparent 55%),
+      linear-gradient(180deg, #050f1f 0%, #071c38 60%, #093050 100%);
+  }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 4rem 2rem 10rem;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 4rem; align-items: center;
+    width: 100%;
+  }
+
+  /* ── EYEBROW PILL ── */
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(0,200,232,0.1);
+    border: 1px solid rgba(0,200,232,0.3);
+    border-radius: 100px;
+    padding: 0.38rem 1rem;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--aqua);
+    margin-bottom: 1.5rem;
+  }
+  .pill-drop { width: 6px; height: 9px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: var(--aqua); animation: drip 2s ease-in-out infinite; }
+  @keyframes drip { 0%,100%{ transform: scaleY(1); } 50%{ transform: scaleY(1.3) scaleX(0.85); } }
+
+  .hero-h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em; color: var(--white);
+    margin-bottom: 1.4rem;
+  }
+  .hero-h1 .aqua { color: var(--aqua); }
+
+  .hero-p {
+    font-size: 1.05rem; font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8; max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--aqua);
+    color: var(--navy);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 800;
+    text-decoration: none; padding: 0.88rem 2rem;
+    border-radius: var(--radius); border: none; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,200,232,0.4);
+    transition: transform 0.15s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,200,232,0.55); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--glass2);
+    color: rgba(255,255,255,0.7);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 600;
+    text-decoration: none; padding: 0.88rem 2rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.12);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--aqua); color: var(--aqua); background: var(--aqua-glow); }
+
+  /* Trust badges */
+  .hero-trust { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.45rem;
+    font-size: 0.8rem; color: rgba(255,255,255,0.45);
+  }
+  .trust-item::before { content: '◆'; color: var(--aqua); font-size: 0.45rem; }
+
+  /* ── HERO RIGHT — BEAKER ── */
+  .hero-right {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 1.5rem;
+  }
+
+  /* Pure SVG beaker — no div overlays needed */
+  .beaker-wrap {
+    width: 260px; height: 360px; flex-shrink: 0;
+    filter: drop-shadow(0 20px 60px rgba(0,200,232,0.3));
+  }
+  .beaker-svg { width: 100%; height: 100%; overflow: visible; }
+
+  /* Water animations inside SVG */
+  @keyframes svg-wave    { to { transform: translateX(-200px); } }
+  @keyframes svg-water-sway { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+  @keyframes svg-bubble-1 { 0%{opacity:.8;transform:translate(0,0)} 100%{opacity:0;transform:translate(5px,-120px)} }
+  @keyframes svg-bubble-2 { 0%{opacity:.7;transform:translate(0,0)} 100%{opacity:0;transform:translate(-4px,-100px)} }
+  @keyframes svg-bubble-3 { 0%{opacity:.6;transform:translate(0,0)} 100%{opacity:0;transform:translate(3px,-80px)} }
+  .svg-wave-path   { animation: svg-wave 3s linear infinite; }
+  .svg-water-group { animation: svg-water-sway 4s ease-in-out infinite; }
+  .svg-b1 { animation: svg-bubble-1 2.8s ease-in infinite; }
+  .svg-b2 { animation: svg-bubble-2 3.5s ease-in infinite 0.9s; }
+  .svg-b3 { animation: svg-bubble-3 2.2s ease-in infinite 1.7s; }
+
+  /* Dashboard card floating next to beaker */
+  .hero-dash-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0,200,232,0.2);
+    border-radius: var(--radius-lg);
+    padding: 1.2rem 1.4rem;
+    width: 100%;
+    max-width: 340px;
+  }
+  .dash-card-title {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .dash-live { display: flex; align-items: center; gap: 0.35rem; font-size: 0.65rem; color: var(--teal); }
+  .dash-live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .dash-stats {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .dash-stat {
+    background: rgba(0,200,232,0.08);
+    border: 1px solid rgba(0,200,232,0.15);
+    border-radius: 8px; padding: 0.6rem; text-align: center;
+  }
+  .dash-stat-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem; font-weight: 700; color: var(--aqua); line-height: 1;
+  }
+  .dash-stat-label { font-size: 0.6rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+  .dash-items { display: flex; flex-direction: column; gap: 0.45rem; }
+  .dash-item {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px; padding: 0.5rem 0.7rem;
+    font-size: 0.75rem; color: rgba(255,255,255,0.6);
+  }
+  .dash-badge {
+    font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+  }
+  .badge-paid    { background: rgba(0,232,200,0.15); color: var(--teal); border: 1px solid rgba(0,232,200,0.3); }
+  .badge-new     { background: rgba(0,200,232,0.15); color: var(--aqua); border: 1px solid rgba(0,200,232,0.3); }
+  .badge-done    { background: rgba(100,200,100,0.15); color: #6dc87c; border: 1px solid rgba(100,200,100,0.3); }
+
+  /* ══════════════════════════════════════════
+     WAVE DIVIDER
+  ══════════════════════════════════════════ */
+  .wave-divider {
+    position: relative; overflow: hidden;
+    height: 80px; margin-top: -2px;
+  }
+  .wave-divider svg { width: 100%; height: 100%; }
+  .wave-divider.flip { transform: scaleY(-1); }
+
+  /* ══════════════════════════════════════════
+     FEATURES SECTION
+  ══════════════════════════════════════════ */
+  #features { background: var(--offwhite); padding: 6rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--aqua2);
+    margin-bottom: 0.8rem;
+  }
+  .section-eyebrow::before { content: '◆'; font-size: 0.45rem; vertical-align: middle; background: none; width: auto; height: auto; display: inline; }
+
+  .section-h2 {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 800; color: var(--text);
+    line-height: 1.15; letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+  .section-h2 span { color: var(--aqua2); }
+  .section-p { font-size: 1rem; color: var(--text-mid); line-height: 1.75; max-width: 560px; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .feat-card {
+    background: var(--white);
+    border: 1.5px solid #e0eef8;
+    border-radius: var(--radius-lg);
+    padding: 2.2rem;
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .feat-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--aqua), var(--teal));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s;
+  }
+  .feat-card:hover {
+    border-color: rgba(0,168,200,0.3);
+    box-shadow: 0 12px 48px rgba(0,168,200,0.12);
+    transform: translateY(-5px);
+  }
+  .feat-card:hover::after { transform: scaleX(1); }
+
+  .feat-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(0,200,232,0.12), rgba(0,232,200,0.08));
+    border: 1.5px solid rgba(0,200,232,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.3rem;
+  }
+  .feat-title {
+    font-size: 1.05rem; font-weight: 800; color: var(--text);
+    margin-bottom: 0.5rem; letter-spacing: -0.01em;
+  }
+  .feat-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* ══════════════════════════════════════════
+     HOW IT WORKS — dark water section
+  ══════════════════════════════════════════ */
+  #how { background: var(--navy2); padding: 6rem 2rem; position: relative; overflow: hidden; }
+  #how::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(0,200,232,0.06) 0%, transparent 65%);
+  }
+
+  .steps-flow {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; margin-top: 3.5rem; position: relative;
+  }
+  .steps-flow::before {
+    content: '';
+    position: absolute; top: 52px; left: 16.7%; right: 16.7%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--aqua), var(--teal), var(--aqua));
+    background-size: 200% 100%; animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+  .step { text-align: center; position: relative; z-index: 1; }
+  .step-circle {
+    width: 104px; height: 104px; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0,200,232,0.12), rgba(0,232,200,0.08));
+    border: 2px solid rgba(0,200,232,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem; position: relative;
+    font-size: 2.5rem;
+    box-shadow: 0 0 40px rgba(0,200,232,0.12);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .step:hover .step-circle {
+    border-color: var(--aqua);
+    box-shadow: 0 0 60px rgba(0,200,232,0.25);
+  }
+  .step-num {
+    position: absolute; top: -8px; right: -8px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--aqua); color: var(--navy);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-title {
+    font-size: 1.1rem; font-weight: 800; color: var(--white);
+    margin-bottom: 0.6rem; letter-spacing: -0.01em;
+  }
+  .step-text { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+  /* ══════════════════════════════════════════
+     LIMS SPOTLIGHT — split layout
+  ══════════════════════════════════════════ */
+  #lims { background: var(--offwhite); padding: 6rem 2rem; }
+  .lims-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; margin-top: 3rem;
+  }
+
+  /* Animated sample tracker mockup */
+  .sample-tracker {
+    background: var(--white);
+    border: 1.5px solid #e0eef8;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,168,200,0.1);
+  }
+  .tracker-header {
+    background: var(--navy2);
+    padding: 0.85rem 1.3rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .win-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .tracker-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.72rem; color: rgba(255,255,255,0.4);
+    margin-left: 0.5rem; flex: 1;
+  }
+  .tracker-body { padding: 1.2rem; }
+  .sample-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 0.8rem; align-items: center;
+    padding: 0.7rem 0.8rem; border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: rgba(0,200,232,0.03);
+    border: 1px solid rgba(0,200,232,0.08);
+    font-size: 0.78rem; color: var(--text-mid);
+    transition: background 0.2s;
+    animation: slide-in 0.5s ease both;
+  }
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .sample-row:hover { background: rgba(0,200,232,0.07); }
+  .sample-id {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem; color: var(--aqua2); font-weight: 700;
+  }
+  .sample-name { font-weight: 600; color: var(--text); }
+  .stage-pill {
+    font-size: 0.62rem; font-weight: 700; padding: 0.18rem 0.55rem;
+    border-radius: 100px; white-space: nowrap;
+  }
+  .stage-dropoff  { background: rgba(0,200,232,0.12); color: var(--aqua2); border: 1px solid rgba(0,200,232,0.25); }
+  .stage-inlab    { background: rgba(255,180,0,0.12);  color: #d4a800; border: 1px solid rgba(255,180,0,0.25); }
+  .stage-analysis { background: rgba(180,100,255,0.12); color: #b464ff; border: 1px solid rgba(180,100,255,0.25); }
+  .stage-complete { background: rgba(50,200,100,0.12); color: #32c864; border: 1px solid rgba(50,200,100,0.25); }
+  .sample-date { font-size: 0.68rem; color: var(--text-light); }
+
+  .lims-points { display: flex; flex-direction: column; gap: 1.3rem; }
+  .lims-pt {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .lims-pt-icon {
+    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(0,200,232,0.12), rgba(0,232,200,0.06));
+    border: 1px solid rgba(0,200,232,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .lims-pt-title { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 0.2rem; }
+  .lims-pt-text  { font-size: 0.85rem; color: var(--text-mid); line-height: 1.65; }
+
+  /* ══════════════════════════════════════════
+     INTEGRATIONS
+  ══════════════════════════════════════════ */
+  #integrations { background: var(--navy3); padding: 6rem 2rem; position: relative; overflow: hidden; }
+  #integrations::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,200,232,0.05) 0%, transparent 65%);
+  }
+
+  .int-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem; margin-top: 3rem;
+  }
+  .int-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .int-card:hover { border-color: rgba(0,200,232,0.35); transform: translateY(-3px); }
+  .int-icon { font-size: 2.2rem; display: block; margin-bottom: 0.8rem; }
+  .int-name { font-size: 0.95rem; font-weight: 800; color: var(--white); margin-bottom: 0.3rem; }
+  .int-desc { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.55; }
+  .int-badge {
+    display: inline-block; margin-top: 0.8rem;
+    font-size: 0.62rem; font-weight: 700; padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+    background: rgba(0,200,232,0.12); color: var(--aqua);
+    border: 1px solid rgba(0,200,232,0.25);
+  }
+
+  /* ══════════════════════════════════════════
+     PRICING
+  ══════════════════════════════════════════ */
+  #pricing { background: var(--offwhite); padding: 6rem 2rem; }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem; margin-top: 3.5rem; align-items: start;
+  }
+  .price-card {
+    background: var(--white);
+    border: 1.5px solid #e0eef8;
+    border-radius: var(--radius-lg);
+    padding: 2.2rem;
+    position: relative; overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .price-card.featured {
+    border-color: var(--aqua2);
+    box-shadow: 0 0 0 1px var(--aqua2), 0 16px 48px rgba(0,168,200,0.18);
+    transform: translateY(-8px);
+  }
+  .price-badge {
+    position: absolute; top: 0; right: 1.5rem;
+    background: var(--aqua2); color: var(--navy);
+    font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 0.25rem 0.75rem;
+    border-radius: 0 0 8px 8px;
+  }
+  .price-tier {
+    font-size: 1.1rem; font-weight: 800; color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .price-desc { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 1.4rem; }
+  .price-cta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--aqua2); text-align: left; letter-spacing: 0;
+    margin-bottom: 1.4rem;
+  }
+  .price-rule { height: 1px; background: #e0eef8; margin-bottom: 1.2rem; }
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .price-features li {
+    display: flex; align-items: flex-start; gap: 0.55rem;
+    font-size: 0.85rem; color: var(--text-mid);
+  }
+  .price-features li::before { content: '✓'; color: var(--aqua2); font-weight: 800; flex-shrink: 0; }
+  .price-btn {
+    display: block; width: 100%; text-align: center; margin-top: 1.8rem;
+    background: var(--navy2); color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    text-decoration: none; padding: 0.85rem;
+    border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+  .price-btn:hover { background: var(--navy4); }
+  .price-btn.featured-btn {
+    background: linear-gradient(135deg, var(--aqua2), var(--teal));
+    color: var(--navy);
+    box-shadow: 0 4px 16px rgba(0,168,200,0.35);
+  }
+  .price-btn.featured-btn:hover { opacity: 0.9; }
+
+  /* ══════════════════════════════════════════
+     DEMO CTA — dark water
+  ══════════════════════════════════════════ */
+  #demo { background: var(--navy); padding: 6rem 2rem; position: relative; overflow: hidden; }
+  #demo::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,200,232,0.1) 0%, transparent 60%);
+  }
+  .demo-inner {
+    max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 1;
+  }
+  .demo-form {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0,200,232,0.2);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin-top: 2.5rem; text-align: left;
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45);
+  }
+  .form-group input, .form-group textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,200,232,0.2);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem; padding: 0.75rem 1rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--aqua); }
+  .form-group textarea { resize: none; height: 100px; }
+  .form-submit {
+    width: 100%; background: var(--aqua);
+    color: var(--navy);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    border: none; padding: 0.95rem;
+    border-radius: var(--radius); cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,200,232,0.4);
+    transition: transform 0.15s, box-shadow 0.2s;
+    margin-top: 1rem;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,200,232,0.55); }
+
+  /* ══════════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════════ */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(0,200,232,0.12);
+    padding: 3rem 2rem 1.5rem;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem; padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-tagline {
+    font-size: 0.85rem; color: rgba(255,255,255,0.3);
+    line-height: 1.75; margin-top: 0.8rem; max-width: 280px;
+  }
+  .footer-col-title {
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--aqua2); margin-bottom: 1rem;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.55rem; }
+  .footer-links a {
+    font-size: 0.85rem; color: rgba(255,255,255,0.3); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--aqua); }
+  .footer-bottom {
+    max-width: 1200px; margin: 1.5rem auto 0;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.75rem; color: rgba(255,255,255,0.2);
+  }
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-right { align-items: center; }
+    .hero-p, .hero-btns, .hero-trust { justify-content: center; }
+    .hero-p { margin: 0 auto 2.5rem; }
+    .lims-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: none; }
+    .steps-flow { grid-template-columns: 1fr; }
+    .steps-flow::before { display: none; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    nav a:not(.nav-demo) { display: none; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s, transform 0.65s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- Bubble canvas -->
+<canvas id="bubbleCanvas"></canvas>
+
+<!-- ═══ HEADER ════════════════════════════════════════════ -->
+<header>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-beaker">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="navClip"><rect x="2" y="2" width="32" height="32" rx="8"/></clipPath>
+          </defs>
+          <!-- Badge background -->
+          <rect x="2" y="2" width="32" height="32" rx="8" fill="rgba(0,200,232,0.1)" stroke="rgba(0,200,232,0.5)" stroke-width="1.5"/>
+          <!-- Water fill bottom portion, clipped to badge -->
+          <rect x="2" y="22" width="32" height="12" fill="rgba(0,200,232,0.38)" clip-path="url(#navClip)"/>
+          <!-- Wave line on water surface -->
+          <path d="M3 22 Q9 19.5 15 22 Q21 24.5 27 22 Q30 20.5 33 22" stroke="rgba(255,255,255,0.4)" stroke-width="1.1" fill="none"/>
+          <!-- Beaker silhouette (top area) -->
+          <path d="M13 6 L13 17 L8 27" stroke="rgba(0,200,232,0.75)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <path d="M23 6 L23 17 L28 27" stroke="rgba(0,200,232,0.75)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <line x1="11" y1="6" x2="25" y2="6" stroke="rgba(0,200,232,0.75)" stroke-width="1.6" stroke-linecap="round"/>
+          <!-- Small bubble in water -->
+          <circle cx="14" cy="27" r="1.8" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="0.9"/>
+        </svg>
+      </div>
+      <div class="logo-name">Beaker<span>Trac</span></div>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#demo" class="nav-demo">Request a Demo</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <!-- Left -->
+    <div>
+      <div class="hero-pill"><div class="pill-drop"></div>Purpose-built for laboratory teams</div>
+      <h1 class="hero-h1">
+        Run your laboratory testing<br>business from <span class="aqua">one dashboard.</span>
+      </h1>
+      <p class="hero-p">
+        Beaker brings your deal pipeline, lab samples, payments, and customer calls into a single CRM, purpose-built for state-certified water testing and sample collection companies.
+      </p>
+      <div class="hero-btns">
+        <a href="#demo" class="btn-primary">💧 Request a Demo</a>
+        <a href="#features" class="btn-ghost">See Features →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">No spreadsheets</div>
+        <div class="trust-item">No long-term contracts</div>
+        <div class="trust-item">Built-in LIMS</div>
+      </div>
+    </div>
+
+    <!-- Right — Beaker + Dashboard -->
+    <div class="hero-right">
+      <!-- Giant animated beaker — pure SVG, water clipped perfectly to interior -->
+      <div class="beaker-wrap">
+        <svg class="beaker-svg" viewBox="0 0 260 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Interior of beaker: rim bottom to rounded base -->
+            <clipPath id="waterClip">
+              <path d="M68 38 L68 158 L12 295 Q4 328 34 332 L226 332 Q256 328 248 295 L192 158 L192 38 Z"/>
+            </clipPath>
+
+            <!-- Gradient for water body -->
+            <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#00c8e8" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#006888" stop-opacity="0.80"/>
+            </linearGradient>
+
+            <!-- Glare gradient -->
+            <linearGradient id="glareGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="white" stop-opacity="0.10"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0.00"/>
+            </linearGradient>
+          </defs>
+
+          <!-- ── WATER GROUP (clipped to beaker interior) ── -->
+          <g clip-path="url(#waterClip)" class="svg-water-group">
+            <!-- Water body fill -->
+            <rect x="0" y="185" width="260" height="160" fill="url(#waterGrad)"/>
+
+            <!-- Animated wave surface — two waves offset for depth -->
+            <g class="svg-wave-path">
+              <!-- Wave 1 -->
+              <path d="M-200 185 Q-170 175 -140 185 Q-110 195 -80 185 Q-50 175 -20 185 Q10 195 40 185 Q70 175 100 185 Q130 195 160 185 Q190 175 220 185 Q250 195 280 185 Q310 175 340 185 Q370 195 400 185 Q430 175 460 185 V200 H-200 Z"
+                fill="rgba(0,200,232,0.35)"/>
+              <!-- Wave 2 (deeper, offset) -->
+              <path d="M-200 190 Q-155 180 -110 190 Q-65 200 -20 190 Q25 180 70 190 Q115 200 160 190 Q205 180 250 190 Q295 200 340 190 Q385 180 430 190 Q475 200 460 190 V205 H-200 Z"
+                fill="rgba(0,180,210,0.25)"/>
+            </g>
+
+            <!-- Bubbles rising inside water -->
+            <circle class="svg-b1" cx="90"  cy="290" r="5" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <circle class="svg-b2" cx="155" cy="310" r="4" fill="rgba(255,255,255,0.2)"  stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <circle class="svg-b3" cx="120" cy="270" r="3" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+
+            <!-- Shimmer / caustic light inside water -->
+            <ellipse cx="110" cy="240" rx="22" ry="5" fill="rgba(255,255,255,0.08)" transform="rotate(-15 110 240)"/>
+            <ellipse cx="160" cy="280" rx="14" ry="3" fill="rgba(255,255,255,0.06)" transform="rotate(10 160 280)"/>
+          </g>
+
+          <!-- ── BEAKER GLASS OUTLINE (drawn on top so it frames everything) ── -->
+          <!-- Body -->
+          <path d="M68 38 L68 158 L12 295 Q4 328 34 332 L226 332 Q256 328 248 295 L192 158 L192 38 Z"
+            fill="rgba(0,200,232,0.03)"
+            stroke="rgba(0,200,232,0.45)"
+            stroke-width="2.5"
+            stroke-linejoin="round"/>
+
+          <!-- Rim / lip -->
+          <rect x="44" y="14" width="172" height="28" rx="12"
+            fill="rgba(0,200,232,0.07)"
+            stroke="rgba(0,200,232,0.45)"
+            stroke-width="2"/>
+
+          <!-- Pouring spout notch -->
+          <path d="M188 14 Q196 14 200 22 L196 30 L186 30" fill="none" stroke="rgba(0,200,232,0.35)" stroke-width="1.5"/>
+
+          <!-- Measurement tick marks + labels -->
+          <line x1="68"  y1="240" x2="88"  y2="240" stroke="rgba(0,200,232,0.35)" stroke-width="1.5"/>
+          <line x1="68"  y1="205" x2="84"  y2="205" stroke="rgba(0,200,232,0.25)" stroke-width="1"/>
+          <line x1="68"  y1="170" x2="84"  y2="170" stroke="rgba(0,200,232,0.25)" stroke-width="1"/>
+          <line x1="68"  y1="135" x2="84"  y2="135" stroke="rgba(0,200,232,0.20)" stroke-width="1"/>
+
+          <text x="60" y="244" font-family="monospace" font-size="9" fill="rgba(0,200,232,0.45)" text-anchor="end">300</text>
+          <text x="60" y="209" font-family="monospace" font-size="9" fill="rgba(0,200,232,0.35)" text-anchor="end">200</text>
+          <text x="60" y="174" font-family="monospace" font-size="9" fill="rgba(0,200,232,0.30)" text-anchor="end">100</text>
+          <text x="60" y="139" font-family="monospace" font-size="9" fill="rgba(0,200,232,0.25)" text-anchor="end">50</text>
+
+          <!-- Glass glare / highlight -->
+          <path d="M82 42 L76 185" stroke="rgba(255,255,255,0.07)" stroke-width="8" stroke-linecap="round"/>
+          <path d="M90 42 L86 130" stroke="rgba(255,255,255,0.04)" stroke-width="4" stroke-linecap="round"/>
+
+          <!-- Water level label -->
+          <text x="175" y="190" font-family="monospace" font-size="8" fill="rgba(0,200,232,0.55)" text-anchor="middle">~68%</text>
+          <line x1="155" y1="188" x2="190" y2="188" stroke="rgba(0,200,232,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+        </svg>
+      </div>
+
+      <!-- Dashboard card -->
+      <div class="hero-dash-card">
+        <div class="dash-card-title">
+          Pipeline Overview
+          <div class="dash-live">Live</div>
+        </div>
+        <div class="dash-stats">
+          <div class="dash-stat"><div class="dash-stat-num">38</div><div class="dash-stat-label">Discovery</div></div>
+          <div class="dash-stat"><div class="dash-stat-num">14</div><div class="dash-stat-label">In Lab</div></div>
+          <div class="dash-stat"><div class="dash-stat-num">112</div><div class="dash-stat-label">Close Won</div></div>
+        </div>
+        <div class="dash-items">
+          <div class="dash-item">🧾 Invoice matched &amp; synced<span class="dash-badge badge-paid">Paid</span></div>
+          <div class="dash-item">📞 Inbound call logged to deal<span class="dash-badge badge-new">New</span></div>
+          <div class="dash-item">🧪 Lab batch results delivered<span class="dash-badge badge-done">Complete</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated wave at bottom of hero -->
+  <div class="hero-waves">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 80 Q180 20 360 80 Q540 140 720 80 Q900 20 1080 80 Q1260 140 1440 80 Q1620 20 1800 80 Q1980 140 2160 80 V220 H0 Z" fill="#f0f8ff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ══════════════════════════════════════════ -->
+<section id="features">
+  <div class="container">
+    <div class="section-eyebrow">Everything You Need</div>
+    <h2 class="section-h2">One platform. <span>Zero compromises.</span></h2>
+    <p class="section-p">Stop juggling spreadsheets, sticky notes, and disconnected apps. Beaker is your single pane of glass, from first call to final result.</p>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔬</div>
+        <div class="feat-title">Lab Manager (LIMS)</div>
+        <p class="feat-text">Track samples from drop-off to results with a built-in lab information management system. Batch workbenches, storage locations, package expansion, and stage-gated workflows. No separate LIMS subscription required.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">📋</div>
+        <div class="feat-title">Deal Pipeline</div>
+        <p class="feat-text">Kanban-style pipeline from Discovery to Close Won, with weighted forecasting, recurring deal tracking, and instant search & filtering. Every deal, every stage, always visible.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔌</div>
+        <div class="feat-title">Prebuilt Integrations</div>
+        <p class="feat-text">Your payment and communication tools sync automatically, matched to the right deal or contact. Payment status, balances, and call history appear right alongside your notes. No manual entry.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">Reporting & Analytics</div>
+        <p class="feat-text">See revenue, outstanding balances, and pipeline health at a glance. Export to CSV for your accountant in one click. No data science degree required.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">👥</div>
+        <div class="feat-title">Contacts & Companies</div>
+        <p class="feat-text">A full CRM for contacts, companies, and properties with role-based access for your whole team. Everyone sees what they need, nothing more, nothing less.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">📱</div>
+        <div class="feat-title">Works on Any Device</div>
+        <p class="feat-text">Fully responsive on phones and tablets. Field staff can check schedules, update deals, and log samples on the go. No separate app to install. Just open a browser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider" style="background:var(--offwhite);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q360 0 720 40 Q1080 80 1440 40 V80 H0 Z" fill="#071428"/>
+  </svg>
+</div>
+
+<!-- ═══ HOW IT WORKS ════════════════════════════════════ -->
+<section id="how">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-eyebrow" style="color:var(--aqua);">The Flow</div>
+    <h2 class="section-h2" style="color:var(--white);">From first call to <span style="color:var(--aqua);">final report.</span></h2>
+    <p class="section-p" style="color:rgba(255,255,255,0.5);">Beaker keeps every deal moving through a clear, repeatable pipeline. No dropped samples, no missed follow-ups.</p>
+    <div class="steps-flow">
+      <div class="step reveal">
+        <div class="step-circle">📲<div class="step-num">1</div></div>
+        <div class="step-title">Capture the Lead</div>
+        <p class="step-text">Calls, web inquiries, and referrals land directly in your pipeline, automatically matched to existing customers when possible.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-circle">🧪<div class="step-num">2</div></div>
+        <div class="step-title">Schedule & Collect</div>
+        <p class="step-text">Schedule the sample pickup, track it through your lab workflow, and keep customers updated automatically as it progresses.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-circle">✅<div class="step-num">3</div></div>
+        <div class="step-title">Deliver & Get Paid</div>
+        <p class="step-text">Results come in, the deal advances automatically, and payment status syncs straight from your payment processor. No spreadsheets required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider" style="background:var(--navy2);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q360 80 720 40 Q1080 0 1440 40 V80 H0 Z" fill="#f0f8ff"/>
+  </svg>
+</div>
+
+<!-- ═══ LIMS SPOTLIGHT ════════════════════════════════════ -->
+<section id="lims">
+  <div class="container">
+    <div class="lims-grid">
+      <!-- Sample tracker mockup -->
+      <div class="sample-tracker reveal">
+        <div class="tracker-header">
+          <div class="win-dot" style="background:#ff5f57;"></div>
+          <div class="win-dot" style="background:#febc2e;"></div>
+          <div class="win-dot" style="background:#28c840;"></div>
+          <div class="tracker-title">Lab Manager: Active Samples</div>
+        </div>
+        <div class="tracker-body">
+          <div class="sample-row" style="animation-delay:0.1s">
+            <div class="sample-id">#BT-0441</div>
+            <div class="sample-name">Riverside Municipal</div>
+            <div class="stage-pill stage-complete">Complete</div>
+            <div class="sample-date">Jun 10</div>
+          </div>
+          <div class="sample-row" style="animation-delay:0.2s">
+            <div class="sample-id">#BT-0442</div>
+            <div class="sample-name">Clearwater HOA</div>
+            <div class="stage-pill stage-analysis">Analysis</div>
+            <div class="sample-date">Jun 11</div>
+          </div>
+          <div class="sample-row" style="animation-delay:0.3s">
+            <div class="sample-id">#BT-0443</div>
+            <div class="sample-name">Blue Ridge Corp</div>
+            <div class="stage-pill stage-inlab">In Lab</div>
+            <div class="sample-date">Jun 11</div>
+          </div>
+          <div class="sample-row" style="animation-delay:0.4s">
+            <div class="sample-id">#BT-0444</div>
+            <div class="sample-name">Lakeview Schools</div>
+            <div class="stage-pill stage-inlab">In Lab</div>
+            <div class="sample-date">Jun 12</div>
+          </div>
+          <div class="sample-row" style="animation-delay:0.5s">
+            <div class="sample-id">#BT-0445</div>
+            <div class="sample-name">Summit Water Dist.</div>
+            <div class="stage-pill stage-dropoff">Drop-off</div>
+            <div class="sample-date">Jun 12</div>
+          </div>
+          <div class="sample-row" style="animation-delay:0.6s">
+            <div class="sample-id">#BT-0446</div>
+            <div class="sample-name">Greenfield Farm</div>
+            <div class="stage-pill stage-dropoff">Drop-off</div>
+            <div class="sample-date">Jun 13</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Points -->
+      <div>
+        <div class="section-eyebrow">Built-in LIMS</div>
+        <h2 class="section-h2">Your lab. <span>Without the separate subscription.</span></h2>
+        <p class="section-p" style="margin-bottom:2rem;">No bolt-on LIMS. No CSV imports. BeakerTrac's lab manager is built right in and stays in sync with your pipeline automatically.</p>
+        <div class="lims-points">
+          <div class="lims-pt reveal">
+            <div class="lims-pt-icon">📦</div>
+            <div><div class="lims-pt-title">Batch Workbenches</div><p class="lims-pt-text">Group samples into batches, run them together, and track their progress through each lab stage with full audit history.</p></div>
+          </div>
+          <div class="lims-pt reveal">
+            <div class="lims-pt-icon">📍</div>
+            <div><div class="lims-pt-title">Storage Locations</div><p class="lims-pt-text">Know exactly where every sample is: shelf, freezer, or batch at all times. No sticky notes, no guessing.</p></div>
+          </div>
+          <div class="lims-pt reveal">
+            <div class="lims-pt-icon">⚙️</div>
+            <div><div class="lims-pt-title">Stage-Gated Workflows</div><p class="lims-pt-text">Samples can only advance when the required steps are complete. Prevent errors before they happen.</p></div>
+          </div>
+          <div class="lims-pt reveal">
+            <div class="lims-pt-icon">🔔</div>
+            <div><div class="lims-pt-title">Automatic Customer Updates</div><p class="lims-pt-text">Customers are notified as their sample progresses, reducing inbound calls and building trust with every update.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider" style="background:var(--offwhite);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q360 0 720 40 Q1080 80 1440 40 V80 H0 Z" fill="#0a1d3a"/>
+  </svg>
+</div>
+
+<!-- ═══ INTEGRATIONS ══════════════════════════════════════ -->
+<section id="integrations">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-eyebrow" style="color:var(--aqua);">Plug & Play</div>
+    <h2 class="section-h2" style="color:var(--white);">Works with the tools <span style="color:var(--aqua);">you already use.</span></h2>
+    <p class="section-p" style="color:rgba(255,255,255,0.5);">No ripping out your current stack. BeakerTrac connects to the tools your team already relies on, automatically.</p>
+    <div class="int-grid">
+      <div class="int-card reveal">
+        <span class="int-icon">💳</span>
+        <div class="int-name">Payment Processing</div>
+        <p class="int-desc">Invoices sync automatically. Payment status, balances, and history live right inside your deal view.</p>
+        <div class="int-badge">Auto-sync</div>
+      </div>
+      <div class="int-card reveal">
+        <span class="int-icon">📞</span>
+        <div class="int-name">Phone &amp; Communications</div>
+        <p class="int-desc">Every inbound and outbound call is logged to the right deal or contact automatically. No manual notes needed.</p>
+        <div class="int-badge">Call logging</div>
+      </div>
+      <div class="int-card reveal">
+        <span class="int-icon">📤</span>
+        <div class="int-name">CSV Export</div>
+        <p class="int-desc">One-click export of revenue, samples, and pipeline data. Hand it straight to your accountant or compliance team.</p>
+        <div class="int-badge">One click</div>
+      </div>
+      <div class="int-card reveal">
+        <span class="int-icon">🌐</span>
+        <div class="int-name">Web Forms</div>
+        <p class="int-desc">Inbound web inquiries drop directly into your pipeline, matched to existing customers when possible.</p>
+        <div class="int-badge">Auto-match</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider" style="background:var(--navy3);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q360 80 720 40 Q1080 0 1440 40 V80 H0 Z" fill="#f0f8ff"/>
+  </svg>
+</div>
+
+<!-- ═══ PRICING ══════════════════════════════════════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h2">Simple, <span>transparent pricing.</span></h2>
+    <p class="section-p">Whether you're a single-truck operation or running multiple crews, there's a plan that fits. Contact us for exact pricing and onboarding.</p>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-tier">Starter</div>
+        <div class="price-desc">For small teams getting started</div>
+        <div class="price-cta">Contact us</div>
+        <div class="price-rule"></div>
+        <ul class="price-features">
+          <li>Deal pipeline &amp; Kanban board</li>
+          <li>Contacts, companies &amp; properties</li>
+          <li>Basic reporting &amp; CSV export</li>
+          <li>Up to 3 users</li>
+        </ul>
+        <a href="#demo" class="price-btn">Get Started</a>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-tier">Professional</div>
+        <div class="price-desc">For growing testing companies</div>
+        <div class="price-cta">Contact us</div>
+        <div class="price-rule"></div>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>Lab Manager (LIMS)</li>
+          <li>Prebuilt integrations into your systems</li>
+          <li>Role-based access control</li>
+          <li>Unlimited users</li>
+        </ul>
+        <a href="#demo" class="price-btn featured-btn">Get Started</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tier">Enterprise</div>
+        <div class="price-desc">For multi-location operations</div>
+        <div class="price-cta">Contact us</div>
+        <div class="price-rule"></div>
+        <ul class="price-features">
+          <li>Everything in Professional</li>
+          <li>Custom lab portal integrations</li>
+          <li>Priority support</li>
+          <li>Custom onboarding &amp; training</li>
+        </ul>
+        <a href="#demo" class="price-btn">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider -->
+<div class="wave-divider" style="background:var(--offwhite);">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q360 0 720 40 Q1080 80 1440 40 V80 H0 Z" fill="#050f1f"/>
+  </svg>
+</div>
+
+<!-- ═══ DEMO CTA ══════════════════════════════════════════ -->
+<section id="demo">
+  <div class="demo-inner">
+    <div class="section-eyebrow" style="color:var(--aqua);justify-content:center;">Get Started</div>
+    <h2 class="section-h2" style="color:var(--white);">See <span style="color:var(--aqua);">BeakerTrac</span> in action.</h2>
+    <p class="section-p" style="color:rgba(255,255,255,0.5);margin:0 auto;">Tell us a bit about your business and we'll set up a personalized walkthrough, no obligation.</p>
+    <div class="demo-form reveal">
+      <div class="form-grid">
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Jane Smith"></div>
+        <div class="form-group"><label>Company</label><input type="text" placeholder="Clearwater Testing"></div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="jane@clearwater.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(555) 000-0000"></div>
+      </div>
+      <div class="form-group">
+        <label>What are you hoping to solve?</label>
+        <textarea placeholder="Tell us about your current workflow, team size, or biggest pain points…"></textarea>
+      </div>
+      <button class="form-submit">💧 Request a Demo</button>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+      <div class="trust-item" style="color:rgba(255,255,255,0.35);">Live demo with your own sample data</div>
+      <div class="trust-item" style="color:rgba(255,255,255,0.35);">Onboarding &amp; migration support</div>
+      <div class="trust-item" style="color:rgba(255,255,255,0.35);">No long-term contracts</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:0.65rem;">
+        <div style="width:28px;height:32px;">
+          <svg viewBox="0 0 36 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 4 L10 22 L3 38 Q2 42 6 42 L30 42 Q34 42 33 38 L26 22 L26 4 Z" fill="rgba(0,200,232,0.08)" stroke="rgba(0,200,232,0.6)" stroke-width="1.5"/>
+            <rect x="7" y="2" width="22" height="4" rx="2" fill="rgba(0,200,232,0.15)" stroke="rgba(0,200,232,0.5)" stroke-width="1.5"/>
+            <rect x="0" y="30" width="40" height="16" fill="rgba(0,200,232,0.35)" clip-path="url(#beakerClip)"/>
+          </svg>
+        </div>
+        <div style="font-size:1rem;font-weight:800;color:white;">Beaker<span style="color:var(--aqua);">Trac</span></div>
+      </div>
+      <p class="footer-tagline">From first call to final result. The all-in-one platform for water testing and sample collection companies.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Product</div>
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#lims">Lab Manager</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@beakertrac.com">hello@beakertrac.com</a></li>
+        <li><a href="#demo">Request a Demo</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 BeakerTrac. All rights reserved.</span>
+    <span>From first call to final result.</span>
+  </div>
+</footer>
+
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════ -->
+<script>
+// ── BUBBLE CANVAS ──────────────────────────────────────────
+const canvas = document.getElementById('bubbleCanvas');
+const ctx = canvas.getContext('2d');
+let bubbles = [];
+
+function resizeCanvas() {
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+class Bubble {
+  constructor() { this.reset(); }
+  reset() {
+    this.x    = Math.random() * canvas.width;
+    this.y    = canvas.height + Math.random() * 100;
+    this.r    = 2 + Math.random() * 6;
+    this.vy   = -(0.3 + Math.random() * 0.7);
+    this.vx   = (Math.random() - 0.5) * 0.4;
+    this.alpha= 0.15 + Math.random() * 0.3;
+    this.life = 0;
+    this.maxLife = 300 + Math.random() * 400;
+  }
+  update() {
+    this.x += this.vx + Math.sin(this.life * 0.02) * 0.4;
+    this.y += this.vy;
+    this.life++;
+    if (this.y < -this.r * 2 || this.life > this.maxLife) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(0,200,232,${this.alpha})`;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(this.x - this.r * 0.3, this.y - this.r * 0.3, this.r * 0.25, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${this.alpha * 0.6})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 60; i++) {
+  const b = new Bubble();
+  b.y = Math.random() * canvas.height; // spread initial positions
+  bubbles.push(b);
+}
+
+function animateBubbles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  bubbles.forEach(b => { b.update(); b.draw(); });
+  requestAnimationFrame(animateBubbles);
+}
+animateBubbles();
+
+
+
+// ── SCROLL REVEAL ─────────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── SMOOTH NAV ────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
