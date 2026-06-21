@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synprism — Demo Site Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #07090f;
+      --surface:  #0d1117;
+      --surface2: #161b22;
+      --border:   rgba(255,255,255,0.07);
+      --cyan:     #00d4ff;
+      --purple:   #7b2fff;
+      --magenta:  #ff00cc;
+      --text:     #e6edf3;
+      --muted:    #8b949e;
+      --green:    #3fb950;
+      --yellow:   #d29922;
+      --red:      #f85149;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── LIGHT MODE ── */
+    html.light {
+      --bg:       #f0f4fa;
+      --surface:  #ffffff;
+      --surface2: #e4eaf5;
+      --border:   rgba(0,0,0,0.10);
+      --text:     #0d1117;
+      --muted:    #57606a;
+      --cyan:     #0369a1;
+      --purple:   #6d28d9;
+      --magenta:  #be185d;
+      --green:    #15803d;
+      --yellow:   #b45309;
+      --red:      #dc2626;
+    }
+    html.light header {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid rgba(0,0,0,0.09);
+    }
+    html.light .card:hover {
+      border-color: rgba(3,105,161,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+    }
+    html.light .btn-view {
+      background: linear-gradient(135deg, rgba(3,105,161,0.10), rgba(109,40,217,0.10));
+      border: 1px solid rgba(3,105,161,0.25);
+    }
+    html.light .btn-view:hover {
+      background: linear-gradient(135deg, rgba(3,105,161,0.18), rgba(109,40,217,0.18));
+      border-color: rgba(3,105,161,0.45);
+    }
+    html.light .status-live    { background: rgba(21,128,61,0.10);  border-color: rgba(21,128,61,0.3); }
+    html.light .status-pending { background: rgba(180,83,9,0.10);   border-color: rgba(180,83,9,0.3); }
+    html.light .status-pitched { background: rgba(3,105,161,0.10);  border-color: rgba(3,105,161,0.25); }
+    html.light .page-footer    { border-top: 1px solid rgba(0,0,0,0.09); }
+
+    /* ── TOGGLE ── */
+    .theme-toggle {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.32rem 0.9rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+    .theme-toggle:hover { color: var(--text); border-color: var(--cyan); }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,17,23,0.95);
+      backdrop-filter: blur(16px);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; position: sticky; top: 0; z-index: 10;
+    }
+    .header-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      text-decoration: none;
+    }
+    .logo-gem {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+    }
+    .header-meta {
+      font-size: 0.75rem; color: var(--muted);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .live-dot {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; font-weight: 600; color: var(--green);
+    }
+    .live-dot::before {
+      content: '';
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 3.5rem 2rem 2rem;
+      max-width: 1100px; margin: 0 auto;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--cyan);
+      border: 1px solid rgba(0,212,255,0.2);
+      background: rgba(0,212,255,0.05);
+      border-radius: 100px; padding: 0.35rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; color: var(--text);
+      line-height: 1.1; margin-bottom: 0.7rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 0.92rem; color: var(--muted); line-height: 1.7;
+      max-width: 500px; margin: 0 auto 2.5rem;
+    }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 3rem;
+    }
+    .stat-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.6rem 1.2rem;
+      text-align: center; min-width: 100px;
+    }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700; line-height: 1;
+    }
+    .stat-num.cyan   { color: var(--cyan); }
+    .stat-num.purple { color: var(--purple); }
+    .stat-num.green  { color: var(--green); }
+    .stat-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-top: 0.3rem;
+    }
+
+    /* ── QUICK LINKS ── */
+    .quick-links {
+      display: flex; gap: 0.6rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+    .quick-link {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: 6px;
+      border: 1px solid var(--border);
+      color: var(--muted); background: var(--surface2);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .quick-link:hover { color: var(--cyan); border-color: rgba(0,212,255,0.3); }
+
+    /* ── GRID ── */
+    .grid {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.2rem;
+    }
+
+    /* ── LOADING ── */
+    .loading {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .loading-spinner {
+      width: 32px; height: 32px;
+      border: 2px solid var(--surface2);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover {
+      border-color: rgba(0,212,255,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .card-accent { height: 3px; background: linear-gradient(90deg, var(--cyan), var(--purple)); }
+    .card-accent.purple-mag { background: linear-gradient(90deg, var(--purple), var(--magenta)); }
+    .card-accent.mag-cyan   { background: linear-gradient(90deg, var(--magenta), var(--cyan)); }
+    .card-accent.cyan-purp  { background: linear-gradient(90deg, var(--cyan), var(--purple)); }
+
+    .card-body { padding: 1.4rem; flex: 1; }
+    .card-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 0.9rem; gap: 0.5rem;
+    }
+    .card-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .status-badge {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 100px;
+    }
+    .status-live    { background: rgba(63,185,80,0.12);  border: 1px solid rgba(63,185,80,0.3);  color: var(--green); }
+    .status-pending { background: rgba(210,153,34,0.12); border: 1px solid rgba(210,153,34,0.3); color: var(--yellow); }
+    .status-pitched { background: rgba(0,212,255,0.1);   border: 1px solid rgba(0,212,255,0.25); color: var(--cyan); }
+
+    .card-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.25rem; line-height: 1.2;
+    }
+    .card-category {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.7rem;
+    }
+    .card-meta { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+    .meta-row {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .meta-row span:first-child { font-size: 0.8rem; }
+    .meta-row .val { color: var(--text); font-weight: 500; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .tag {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 4px; padding: 0.2rem 0.55rem; color: var(--muted);
+    }
+
+    .card-footer {
+      padding: 1rem 1.4rem;
+      border-top: 1px solid var(--border);
+      display: flex; gap: 0.6rem; align-items: center;
+    }
+    .btn-view {
+      flex: 1; text-align: center;
+      background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,47,255,0.12));
+      border: 1px solid rgba(0,212,255,0.2); color: var(--cyan);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.6rem 0.8rem; border-radius: 6px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-view:hover {
+      background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(123,47,255,0.2));
+      border-color: rgba(0,212,255,0.4);
+    }
+    .btn-copy {
+      background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.6rem 0.75rem; border-radius: 6px;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s; white-space: nowrap;
+    }
+    .btn-copy:hover { border-color: var(--cyan); color: var(--cyan); }
+    .btn-copy.copied { border-color: var(--green); color: var(--green); }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem; text-align: center;
+      font-size: 0.72rem; color: var(--muted);
+    }
+    .page-footer a { color: var(--cyan); text-decoration: none; }
+    .page-footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; padding: 0 1rem 3rem; }
+      .hero { padding: 2rem 1rem 1.5rem; }
+      header { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="header-logo">
+    <div class="logo-gem">◈</div>
+    Synprism <span style="color:var(--muted);font-weight:400;margin-left:0.3rem;">/ Demo Hub</span>
+  </a>
+  <div class="header-meta">
+    <div class="live-dot">Live</div>
+    <span>demos.synprism.io</span>
+    <button class="theme-toggle" id="themeToggle">☀️ Light Mode</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">🎯 Prospect Pipeline</div>
+  <h1 class="hero-title">Demo Site <span>Dashboard</span></h1>
+  <p class="hero-sub">All active client demos in one place. Click to preview, copy the link to send, or share the intake form with new prospects.</p>
+  <div class="stats-row">
+    <div class="stat-chip">
+      <div class="stat-num cyan" id="count-live">—</div>
+      <div class="stat-label">Live Demos</div>
+    </div>
+    <div class="stat-chip">
+      <div class="stat-num purple" id="count-total">—</div>
+      <div class="stat-label">Total Built</div>
+    </div>
+    <div class="stat-chip">
+      <div class="stat-num green">100%</div>
+      <div class="stat-label">Uptime</div>
+    </div>
+  </div>
+  <div class="quick-links">
+    <a href="/questionnaire/" class="quick-link">📋 Client Intake Form</a>
+    <a href="https://synprism.io" target="_blank" class="quick-link">🌐 synprism.io</a>
+    <a href="https://github.com/synprism-admin" target="_blank" class="quick-link">🐙 GitHub</a>
+  </div>
+</div>
+
+<div class="grid" id="demoGrid">
+  <div class="loading">
+    <div class="loading-spinner"></div>
+    Loading demos…
+  </div>
+</div>
+
+<div class="page-footer">
+  <a href="https://synprism.io" target="_blank">synprism.io</a> &nbsp;·&nbsp;
+  Powered by Cloudflare Pages &nbsp;·&nbsp;
+  <span id="last-updated"></span>
+</div>
+
+<script>
+// ── Theme toggle ────────────────────────────────────────────
+(function() {
+  const root   = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  function applyTheme(light) {
+    if (light) { root.classList.add('light'); toggle.innerHTML = '🌙 Dark Mode'; }
+    else        { root.classList.remove('light'); toggle.innerHTML = '☀️ Light Mode'; }
+  }
+  applyTheme(localStorage.getItem('synprism-theme') === 'light');
+  toggle.addEventListener('click', function() {
+    const goLight = !root.classList.contains('light');
+    localStorage.setItem('synprism-theme', goLight ? 'light' : 'dark');
+    applyTheme(goLight);
+  });
+})();
+
+// ── Accent cycle ─────────────────────────────────────────────
+const ACCENTS = ['cyan-purp', 'purple-mag', 'mag-cyan'];
+const statusLabel = { live: 'Live', pending: 'Pending', pitched: 'Pitched' };
+const statusClass = { live: 'status-live', pending: 'status-pending', pitched: 'status-pitched' };
+
+// ── Load & render demos from demos.json ──────────────────────
+async function loadDemos() {
+  const grid = document.getElementById('demoGrid');
+  try {
+    const res  = await fetch('/demos.json?v=' + Date.now());
+    const demos = await res.json();
+
+    grid.innerHTML = '';
+    demos.forEach((d, i) => {
+      const url    = 'https://demos.synprism.io' + d.path;
+      const accent = d.accent || ACCENTS[i % ACCENTS.length];
+      const tags   = (d.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+      const phone  = d.phone  ? `<div class="meta-row"><span>📞</span><span class="val">${d.phone}</span></div>` : '';
+      const added  = d.added  ? `<div class="meta-row"><span>📅</span><span class="val">Added ${d.added}</span></div>` : '';
+
+      grid.innerHTML += `
+        <div class="card">
+          <div class="card-accent ${accent}"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <div class="card-icon">${d.icon || '🌐'}</div>
+              <span class="status-badge ${statusClass[d.status] || 'status-live'}">${statusLabel[d.status] || 'Live'}</span>
+            </div>
+            <div class="card-name">${d.name}</div>
+            <div class="card-category">${d.category || ''}</div>
+            <div class="card-meta">
+              <div class="meta-row"><span>📍</span><span class="val">${d.location || d.category || ''}</span></div>
+              ${phone}
+              <div class="meta-row"><span>🔗</span><span class="val" style="color:var(--cyan);font-size:0.72rem;">${url}</span></div>
+              ${added}
+            </div>
+            <div class="card-tags">${tags}</div>
+          </div>
+          <div class="card-footer">
+            <a href="${url}" target="_blank" class="btn-view">🔍 Preview Demo</a>
+            <button class="btn-copy" onclick="copyLink(this, '${url}')">📋 Copy Link</button>
+          </div>
+        </div>`;
+    });
+
+    document.getElementById('count-live').textContent  = demos.filter(d => d.status === 'live').length;
+    document.getElementById('count-total').textContent = demos.length;
+  } catch(e) {
+    grid.innerHTML = '<div class="loading">⚠️ Could not load demos.json</div>';
+  }
+}
+
+function copyLink(btn, url) {
+  navigator.clipboard.writeText(url).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Copy Link'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+document.getElementById('last-updated').textContent =
+  'Updated ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+loadDemos();
+</script>
+</body>
+</html>
