@@ -157,6 +157,24 @@
     "added": "2025-06-15"
   },
   {
+    "slug": "petspanw",
+    "name": "Pet Spa NW",
+    "category": "Pet Grooming \u00b7 Washougal, WA",
+    "icon": "\ud83d\udc3e",
+    "path": "/petspanw/",
+    "status": "live",
+    "location": "2241 E St A, Washougal, WA 98671",
+    "phone": "(360) 835-2241",
+    "tags": [
+      "Pet Grooming",
+      "Bath & Brush",
+      "Full Groom",
+      "De-Shedding"
+    ],
+    "accent": "rose-plum",
+    "added": "2025-06-23"
+  },
+  {
     "slug": "chatbot-demo",
     "name": "Synprism Chatbot Demo",
     "category": "Interactive Demo \u00b7 AI Chatbot Services",
