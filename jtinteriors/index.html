@@ -1015,11 +1015,17 @@
     }
     @media (max-width: 600px) {
       .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
-      .hero-h1 { font-size: 2.8rem; }
-      .hero-stats { gap: 28px; }
+      #hero { align-items: center; min-height: 100svh; }
+      .hero-content { padding: 80px 24px 40px; }
+      .hero-pre { font-size: 0.65rem; }
+      .hero-h1 { font-size: 2rem; margin-bottom: 12px; }
+      .hero-sub { font-size: 0.9rem; margin-bottom: 24px; }
+      .hero-stats { gap: 20px; margin-top: 24px; }
+      .hero-stat-n { font-size: 1.6rem; }
+      .hero-diag, .hero-diag-inner { display: none; }
       .form-row { grid-template-columns: 1fr; }
       .form-card { padding: 28px 20px; }
-      .hero-actions { flex-direction: column; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
       .steps-row { grid-template-columns: 1fr; }
     }
   </style>
