@@ -153,6 +153,33 @@
       height: 72px;
       padding: 0 40px;
     }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .nav-logo-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.18);
+    }
+    .nav-phone-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-phone-left:hover { color: var(--teal-dark); }
     .nav-logo {
       display: flex;
       flex-direction: column;
@@ -967,7 +994,7 @@
        RESPONSIVE
     ═══════════════════════════════════════════════ */
     @media (max-width: 960px) {
-      .nav-links, .nav-phone-pill { display: none; }
+      .nav-links, .nav-social { display: none; }
       .burger { display: flex; }
       .portfolio-header { grid-template-columns: 1fr; }
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
@@ -1002,10 +1029,16 @@
 <!-- ██ NAV ██████████████████████████████████████████████ -->
 <nav id="nav" class="solid">
   <div class="nav-wrap">
-    <a href="#hero" class="nav-logo">
-      <div class="nav-logo-mark">JT <span>INTERIORS</span></div>
-      <div class="nav-logo-sub">Vancouver, WA · Est. 1999</div>
-    </a>
+    <div class="nav-left">
+      <a href="#hero" class="nav-logo">
+        <img src="jt-logo.png" alt="JT Interiors Remodeling" class="nav-logo-img">
+      </a>
+      <div class="nav-logo-divider"></div>
+      <a href="tel:3606008273" class="nav-phone-left">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        360-600-8273
+      </a>
+    </div>
     <ul class="nav-links">
       <li><a href="#portfolio">Our Work</a></li>
       <li><a href="#services">Services</a></li>
@@ -1013,10 +1046,6 @@
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
     </ul>
-    <a href="tel:3606008273" class="nav-phone-pill">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      360-600-8273
-    </a>
     <div class="nav-social">
       <!-- Instagram -->
       <a href="https://www.instagram.com/jtinteriors_remodeling/" target="_blank" rel="noopener" aria-label="JT Interiors on Instagram">
