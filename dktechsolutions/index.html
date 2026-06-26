@@ -391,7 +391,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 3rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
 
@@ -407,6 +407,19 @@
     .partner-logo:hover { opacity: 1; filter: none; }
 
     .partner-logo img { height: 32px; width: auto; }
+
+    .partner-text {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .partner-divider {
+      color: rgba(255,255,255,0.2);
+      font-size: 0.85rem;
+    }
 
     /* ─── SECTION COMMONS ─── */
     section { padding: 6rem 2.5rem; }
@@ -1005,15 +1018,29 @@
 <div class="partners-strip">
   <div class="partners-label">Trusted Technology Partners</div>
   <div class="partners-logos">
-    <div class="partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/d145b2ae-c589-498c-9880-3958e69e3d2d/DT_GoldPartner_4C.jpg" alt="Dell Technologies Gold Partner">
-    </div>
-    <div class="partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/36c395d9-2efa-4e4d-a926-5aae4702afb0/cisco-logo.png" alt="Cisco">
-    </div>
-    <div class="partner-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/9535971e-273b-4041-9969-86d5dda6b02c/PANW_Parent_Brand_Primary_Logo_RGB.png" alt="Palo Alto Networks">
-    </div>
+    <span class="partner-text">Dell Technologies</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Cisco</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Palo Alto Networks</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Microsoft</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">IBM</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Veeam</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Varonis</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Infoblox</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Citrix</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Cohesity</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Eaton</span>
+    <span class="partner-divider">·</span>
+    <span class="partner-text">Schneider Electric</span>
   </div>
 </div>
 
