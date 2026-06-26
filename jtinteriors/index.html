@@ -153,6 +153,33 @@
       height: 72px;
       padding: 0 40px;
     }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .nav-logo-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.18);
+    }
+    .nav-phone-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-phone-left:hover { color: var(--teal-dark); }
     .nav-logo {
       display: flex;
       flex-direction: column;
@@ -193,6 +220,24 @@
     .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
     .nav-links .nav-cta { background: var(--teal); color: var(--white); }
     .nav-links .nav-cta:hover { background: var(--teal-dark); }
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 4px;
+    }
+    .nav-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .nav-social a:hover { color: var(--white); background: rgba(255,255,255,0.09); }
     .nav-phone-pill {
       display: flex;
       align-items: center;
@@ -949,7 +994,7 @@
        RESPONSIVE
     ═══════════════════════════════════════════════ */
     @media (max-width: 960px) {
-      .nav-links, .nav-phone-pill { display: none; }
+      .nav-links, .nav-social { display: none; }
       .burger { display: flex; }
       .portfolio-header { grid-template-columns: 1fr; }
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
@@ -970,11 +1015,17 @@
     }
     @media (max-width: 600px) {
       .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
-      .hero-h1 { font-size: 2.8rem; }
-      .hero-stats { gap: 28px; }
+      #hero { align-items: center; min-height: 100svh; }
+      .hero-content { padding: 80px 24px 40px; }
+      .hero-pre { font-size: 0.65rem; }
+      .hero-h1 { font-size: 2rem; margin-bottom: 12px; }
+      .hero-sub { font-size: 0.9rem; margin-bottom: 24px; }
+      .hero-stats { gap: 20px; margin-top: 24px; }
+      .hero-stat-n { font-size: 1.6rem; }
+      .hero-diag, .hero-diag-inner { display: none; }
       .form-row { grid-template-columns: 1fr; }
       .form-card { padding: 28px 20px; }
-      .hero-actions { flex-direction: column; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
       .steps-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -984,10 +1035,16 @@
 <!-- ██ NAV ██████████████████████████████████████████████ -->
 <nav id="nav" class="solid">
   <div class="nav-wrap">
-    <a href="#hero" class="nav-logo">
-      <div class="nav-logo-mark">JT <span>INTERIORS</span></div>
-      <div class="nav-logo-sub">Vancouver, WA · Est. 1999</div>
-    </a>
+    <div class="nav-left">
+      <a href="#hero" class="nav-logo">
+        <img src="jt-logo.png" alt="JT Interiors Remodeling" class="nav-logo-img">
+      </a>
+      <div class="nav-logo-divider"></div>
+      <a href="tel:3606008273" class="nav-phone-left">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        360-600-8273
+      </a>
+    </div>
     <ul class="nav-links">
       <li><a href="#portfolio">Our Work</a></li>
       <li><a href="#services">Services</a></li>
@@ -995,10 +1052,22 @@
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
     </ul>
-    <a href="tel:3606008273" class="nav-phone-pill">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      360-600-8273
-    </a>
+    <div class="nav-social">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/jtinteriors_remodeling/" target="_blank" rel="noopener" aria-label="JT Interiors on Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/profile.php?id=100054438852257" target="_blank" rel="noopener" aria-label="JT Interiors on Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+        </svg>
+      </a>
+    </div>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
   <div class="mob-nav" id="mobNav">
@@ -1009,6 +1078,16 @@
     <a href="#process">Our Process</a>
     <a href="#contact">Free Estimate</a>
     <a href="tel:3606008273" style="color:var(--teal);font-weight:600;">📞 360-600-8273</a>
+    <div style="display:flex;gap:16px;padding:12px 20px;border-top:1px solid rgba(255,255,255,0.07);">
+      <a href="https://www.instagram.com/jtinteriors_remodeling/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:6px;font-size:0.8rem;letter-spacing:0.05em;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100054438852257" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:6px;font-size:0.8rem;letter-spacing:0.05em;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
   </div>
 </nav>
 

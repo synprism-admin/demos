@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DK Tech Solutions — IT Services for Hawai'i</title>
+  <meta name="description" content="DK Tech Solutions is a Hawai'i based Information Technology team delivering personalized enterprise solutions — Hybrid-cloud, DevOps, On-premises, Staff Augmentation, and more.">
+  <link rel="canonical" href="https://demos.synprism.io/dktechsolutions/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DK Tech Solutions — IT Services for Hawai'i">
+  <meta property="og:description" content="Hawai'i based IT team delivering personalized enterprise solutions through collaboration.">
+  <meta property="og:url" content="https://demos.synprism.io/dktechsolutions/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DK Tech Solutions — IT Services for Hawai'i">
+  <meta name="twitter:description" content="Personalized technology solutions built through collaboration.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"DK Tech Solutions","description":"Hawai'i based Information Technology team providing personalized enterprise solutions.","url":"https://www.dktechsolutions.com","areaServed":"Hawai'i"}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #0066CC;
+      --blue-light: #1A8FFF;
+      --blue-pale:  #E8F2FF;
+      --cyan:       #00B4D8;
+      --cyan-light: #90E0EF;
+      --dark:       #0A0F1E;
+      --dark-mid:   #111827;
+      --dark-card:  #161D2E;
+      --slate:      #1E2A3A;
+      --white:      #FFFFFF;
+      --off-white:  #F8FAFF;
+      --text:       #1A202C;
+      --text-mid:   #4A5568;
+      --text-light: #718096;
+      --border:     rgba(255,255,255,0.08);
+      --teal-glow:  rgba(0,180,216,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 15, 30, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 68px;
+      display: flex;
+      align-items: center;
+      padding: 0 2.5rem;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.83rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-linkedin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-linkedin:hover { color: var(--cyan); background: rgba(255,255,255,0.07); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.83rem;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .burger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.25s; }
+
+    .mob-nav {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: var(--dark-mid);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      z-index: 99;
+    }
+
+    .mob-nav.open { display: block; }
+
+    .mob-nav a {
+      display: block;
+      padding: 0.75rem 2rem;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .mob-nav a:hover { color: var(--cyan); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100svh;
+      background:
+        linear-gradient(160deg, rgba(10,15,30,0.96) 0%, rgba(10,15,30,0.80) 50%, rgba(0,102,204,0.25) 100%),
+        url('https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/7259baf4-a2ee-4be7-acef-493dd4c8dace/IMG_7688.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Animated grid overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,180,216,0.12);
+      border: 1px solid rgba(0,180,216,0.3);
+      color: var(--cyan);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span { color: var(--cyan); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 2.25rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(0,102,204,0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,102,204,0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    /* Hero visual — floating card */
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+
+    .hero-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .hero-tag {
+      background: rgba(0,102,204,0.2);
+      border: 1px solid rgba(0,102,204,0.35);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+    }
+
+    /* ─── PARTNERS STRIP ─── */
+    .partners-strip {
+      background: var(--dark-mid);
+      padding: 2.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .partners-label {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.75rem;
+    }
+
+    .partners-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      opacity: 0.6;
+      filter: grayscale(1) brightness(1.5);
+      transition: opacity 0.3s, filter 0.3s;
+    }
+
+    .partner-logo:hover { opacity: 1; filter: none; }
+
+    .partner-logo img { height: 32px; width: auto; }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 6rem 2.5rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--off-white); }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.07);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      border-color: var(--blue-pale);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--blue-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.4rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ─── ABOUT / APPROACH ─── */
+    .about { background: var(--dark); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about .section-title { color: var(--white); }
+    .about .section-label { color: var(--cyan); }
+
+    .about-text p {
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .about-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .pillar-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(0,180,216,0.12);
+      border: 1px solid rgba(0,180,216,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pillar-text h4 {
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .pillar-text p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* About visual */
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(10,15,30,0.7) 100%);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: rgba(10,15,30,0.85);
+      border: 1px solid rgba(0,180,216,0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .about-img-badge-icon {
+      font-size: 1.5rem;
+    }
+
+    .about-img-badge-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .about-img-badge-text span {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+    }
+
+    /* ─── SOLUTIONS ─── */
+    .solutions { background: var(--off-white); }
+
+    .solutions-header { text-align: center; margin-bottom: 3.5rem; }
+    .solutions-header .section-sub { margin: 0 auto; }
+
+    .solutions-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .solution-item {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      border: 1px solid rgba(0,0,0,0.07);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: all 0.25s;
+    }
+
+    .solution-item:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 30px rgba(0,102,204,0.08);
+      transform: translateY(-3px);
+    }
+
+    .solution-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue-pale);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 48px;
+    }
+
+    .solution-item h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .solution-item p {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ─── PARTNERS FULL ─── */
+    .partners-section { background: var(--dark-mid); }
+
+    .partners-section .section-title { color: var(--white); }
+    .partners-section .section-label { color: var(--cyan); }
+    .partners-section .section-sub { color: rgba(255,255,255,0.55); }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .partner-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      min-height: 140px;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .partner-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(0,180,216,0.3);
+      transform: translateY(-3px);
+    }
+
+    .partner-card img {
+      max-height: 36px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.3);
+      opacity: 0.7;
+      transition: opacity 0.3s, filter 0.3s;
+    }
+
+    .partner-card:hover img { opacity: 1; filter: none; }
+
+    .partner-card-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue) 0%, #0044AA 50%, #003388 100%);
+      text-align: center;
+      padding: 7rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .btn-white:hover {
+      background: var(--off-white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-outline-white:hover {
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 4rem 2.5rem 2.5rem;
+    }
+
+    .footer-top {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .footer-brand img { height: 40px; margin-bottom: 1rem; }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--cyan);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .footer-linkedin:hover { opacity: 0.7; }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.87rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--cyan); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.78rem;
+    }
+
+    /* ─── DEMO BANNER ─── */
+    .demo-banner {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10,15,30,0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,180,216,0.3);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.45rem 1.25rem;
+      border-radius: 50px;
+      z-index: 999;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .demo-banner strong { color: var(--cyan); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .nav-cta { display: none; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-header { grid-template-columns: 1fr; gap: 1rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .solutions-row { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      section { padding: 4rem 1.25rem; }
+      .hero { padding: 6rem 1.25rem 3rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .demo-banner { font-size: 0.68rem; padding: 0.4rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#hero" class="nav-logo">
+      <img src="dk-logo.png" alt="DK Tech Solutions">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Our Services</a></li>
+      <li><a href="#about">Company</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <a href="https://www.linkedin.com/company/dk-tech-solutions/" target="_blank" rel="noopener" class="nav-linkedin" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="#services">Our Services</a>
+  <a href="#about">Company</a>
+  <a href="#partners">Partners</a>
+  <a href="#contact">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">Hawai'i Based IT Solutions</div>
+      <h1>Delivering Personalized Technology Solutions for <span>Hawai'i</span></h1>
+      <p class="hero-sub">DK Tech Solutions is a Hawai'i based Information Technology Team providing value to our customers by sharing our unique capabilities, services, and partner network.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Explore Our Services</a>
+        <a href="#contact" class="btn btn-outline">Work With Us</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-title">Enterprise Solutions</div>
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-label">Services</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">3+</div>
+            <div class="hero-stat-label">Key Partners</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">HI</div>
+            <div class="hero-stat-label">Local Team</div>
+          </div>
+        </div>
+        <div class="hero-tags">
+          <span class="hero-tag">Hybrid Cloud</span>
+          <span class="hero-tag">DevOps</span>
+          <span class="hero-tag">On-Premises</span>
+          <span class="hero-tag">Staff Augmentation</span>
+          <span class="hero-tag">Workstations</span>
+        </div>
+      </div>
+      <div class="hero-card" style="background: rgba(0,102,204,0.12); border-color: rgba(0,102,204,0.25);">
+        <div class="hero-card-title" style="color: var(--blue-light);">Trusted Partners</div>
+        <div style="display:flex; gap: 1rem; align-items: center; flex-wrap: wrap; opacity: 0.75;">
+          <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/36c395d9-2efa-4e4d-a926-5aae4702afb0/cisco-logo.png" alt="Cisco" style="height:22px; width:auto; filter: grayscale(1) brightness(1.5);">
+          <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/9535971e-273b-4041-9969-86d5dda6b02c/PANW_Parent_Brand_Primary_Logo_RGB.png" alt="Palo Alto Networks" style="height:16px; width:auto; filter: grayscale(1) brightness(1.5);">
+          <span style="color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 600;">+ more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS STRIP -->
+<div class="partners-strip">
+  <div class="partners-label">Trusted Technology Partners</div>
+  <div class="partners-logos">
+    <div class="partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/d145b2ae-c589-498c-9880-3958e69e3d2d/DT_GoldPartner_4C.jpg" alt="Dell Technologies Gold Partner">
+    </div>
+    <div class="partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/36c395d9-2efa-4e4d-a926-5aae4702afb0/cisco-logo.png" alt="Cisco">
+    </div>
+    <div class="partner-logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/9535971e-273b-4041-9969-86d5dda6b02c/PANW_Parent_Brand_Primary_Logo_RGB.png" alt="Palo Alto Networks">
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Building Solutions Through Collaboration</h2>
+      </div>
+      <p class="section-sub">We work with our customers to understand their challenges and business goals — then deliver personalized enterprise solutions that actually fit.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>DevOps</h3>
+        <p>Optimize delivery of infrastructure operations to provide improved resiliency, security and compliance. We help teams ship faster while keeping environments stable and secure.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <h3>Server, Storage, Data Protection, Security Networking & HCI</h3>
+        <p>Best-of-breed solutions for your on-premises needs that meet your business goals, budgets, and timelines — from hyperconverged infrastructure to enterprise storage and data protection.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>Managed Services & Staff Augmentation</h3>
+        <p>Let us help you achieve your long-term business goals. We can help your team focus on more meaningful work and be there when you suddenly lose key staff.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Workstations & Accessories</h3>
+        <p>Being able to work from anywhere has never been more important. Let us help with selecting the perfect end user devices — procurement, configuration, and local Hawai'i delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/291b58e5-f6e1-4b2c-abb2-44859d6ffcd6/loi.jpg" alt="Hawai'i landscape — DK Tech Solutions">
+          <div class="about-img-overlay"></div>
+          <div class="about-img-badge">
+            <div class="about-img-badge-icon">🌺</div>
+            <div class="about-img-badge-text">
+              <strong>Proudly Hawai'i Based</strong>
+              <span>Local team, enterprise-grade results</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Our Company</p>
+        <h2 class="section-title">Continuously Learning and Evolving</h2>
+        <p>Founded in 2013, DK Tech Solutions began by supporting the traditional data center. As technology has transformed — so have we. Today we're not only supporting on-premises infrastructure, but helping Hawai'i businesses with their journey into private, public, and hybrid cloud.</p>
+        <p>We're a local team with deep enterprise roots — built on the belief that technology partnerships should be personal. We take the time to understand your business before recommending a solution, and we stick around long after go-live.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🤝</div>
+            <div class="pillar-text">
+              <h4>Collaborative by Design</h4>
+              <p>We start every engagement by listening — understanding your goals before we ever propose a solution.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🎯</div>
+            <div class="pillar-text">
+              <h4>Personalized Approach</h4>
+              <p>No one-size-fits-all playbooks. Every solution is sized and scoped to fit your specific environment.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏝️</div>
+            <div class="pillar-text">
+              <h4>Locally Rooted</h4>
+              <p>We understand the unique challenges of running IT in Hawai'i — and we're here on the ground with you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions" id="solutions">
+  <div class="container">
+    <div class="solutions-header">
+      <p class="section-label">Our Approach</p>
+      <h2 class="section-title">How We Work With You</h2>
+      <p class="section-sub">From the first conversation to full deployment — a straightforward process built around your outcomes.</p>
+    </div>
+    <div class="solutions-row">
+      <div class="solution-item">
+        <div class="solution-num">01</div>
+        <div>
+          <h3>Understand Your Challenges</h3>
+          <p>We start with a discovery conversation — no jargon, no sales pitch. Just an honest look at where you are and where you want to go.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">02</div>
+        <div>
+          <h3>Define the Right Solution</h3>
+          <p>Leveraging our partner network and deep technical expertise, we design a solution tailored specifically to your environment and budget.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">03</div>
+        <div>
+          <h3>Deploy with Precision</h3>
+          <p>Our team handles implementation from end to end — minimizing disruption and keeping your team informed every step of the way.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">04</div>
+        <div>
+          <h3>Support & Grow Together</h3>
+          <p>Technology evolves and so do your needs. We remain a long-term partner — available to scale, adapt, and support as your business grows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS FULL -->
+<section class="partners-section" id="partners">
+  <div class="container">
+    <p class="section-label">Partner Network</p>
+    <h2 class="section-title">Some of Our Partners</h2>
+    <p class="section-sub">We bring enterprise-grade technology to Hawai'i through relationships with the world's leading IT vendors.</p>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/d145b2ae-c589-498c-9880-3958e69e3d2d/DT_GoldPartner_4C.jpg" alt="Dell Technologies">
+        <div class="partner-card-name">Dell Technologies · Gold Partner</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/36c395d9-2efa-4e4d-a926-5aae4702afb0/cisco-logo.png" alt="Cisco">
+        <div class="partner-card-name">Cisco · Partner</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://images.squarespace-cdn.com/content/v1/6269c22b08b7b06831b4bf20/9535971e-273b-4041-9969-86d5dda6b02c/PANW_Parent_Brand_Primary_Logo_RGB.png" alt="Palo Alto Networks">
+        <div class="partner-card-name">Palo Alto Networks</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">🪟</div>
+        <div class="partner-card-name">Microsoft</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">🔐</div>
+        <div class="partner-card-name">Varonis</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">💾</div>
+        <div class="partner-card-name">Veeam</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">🔵</div>
+        <div class="partner-card-name">IBM</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">🌐</div>
+        <div class="partner-card-name">Infoblox · Control Your Network</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">⚡</div>
+        <div class="partner-card-name">Eaton · Certified Power Advantage Partner</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">🖥️</div>
+        <div class="partner-card-name">Citrix</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">📦</div>
+        <div class="partner-card-name">Cohesity</div>
+      </div>
+      <div class="partner-card">
+        <div style="font-size:1.5rem;">🔋</div>
+        <div class="partner-card-name">Schneider Electric · APC Select Partner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <h2>Learn How We Can Work Together.</h2>
+    <p>Ready to explore what personalized IT solutions can do for your organization? Let's start the conversation.</p>
+    <div class="cta-actions">
+      <a href="mailto:sales@dktechsolutions.com" class="btn btn-white">Email Us → sales@dktechsolutions.com</a>
+      <a href="https://www.linkedin.com/company/dk-tech-solutions/" target="_blank" rel="noopener" class="btn btn-outline-white">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="dk-logo.png" alt="DK Tech Solutions" style="filter: brightness(0) invert(1); opacity: 0.85;">
+      <p>A Hawai'i based Information Technology Team providing value to our customers by sharing our unique capabilities, services, and partner network.</p>
+      <a href="https://www.linkedin.com/company/dk-tech-solutions/" target="_blank" rel="noopener" class="footer-linkedin">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        Follow on LinkedIn
+      </a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">DevOps</a></li>
+        <li><a href="#services">Server, Storage & HCI</a></li>
+        <li><a href="#services">Managed Services</a></li>
+        <li><a href="#services">Staff Augmentation</a></li>
+        <li><a href="#services">Workstations & Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#solutions">Our Approach</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:sales@dktechsolutions.com">sales@dktechsolutions.com</a></li>
+        <li><a href="https://www.linkedin.com/company/dk-tech-solutions/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.dktechsolutions.com" target="_blank">dktechsolutions.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 DK Tech Solutions. All rights reserved. Hawai'i, USA.</p>
+    <p>Demo by <strong style="color: rgba(255,255,255,0.4);">Synprism</strong> · synprism.io</p>
+  </div>
+</footer>
+
+<!-- Demo Banner -->
+<div class="demo-banner">🚀 Demo by <strong>Synprism</strong> · synprism.io</div>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobNav = document.getElementById('mobNav');
+  burger.addEventListener('click', () => mobNav.classList.toggle('open'));
+  mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobNav.classList.remove('open')));
+</script>
+</body>
+</html>
