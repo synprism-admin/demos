@@ -175,6 +175,24 @@
     "added": "2025-06-23"
   },
   {
+    "slug": "dktechsolutions",
+    "name": "DK Tech Solutions",
+    "category": "IT Services · Hawai'i",
+    "icon": "💻",
+    "path": "/dktechsolutions/",
+    "status": "live",
+    "location": "Hawai'i",
+    "phone": null,
+    "tags": [
+      "IT Services",
+      "Cloud",
+      "DevOps",
+      "Enterprise"
+    ],
+    "accent": "cyan-purp",
+    "added": "2025-06-23"
+  },
+  {
     "slug": "chatbot-demo",
     "name": "Synprism Chatbot Demo",
     "category": "Interactive Demo \u00b7 AI Chatbot Services",
