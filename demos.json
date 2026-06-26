@@ -173,5 +173,25 @@
     ],
     "accent": "rose-plum",
     "added": "2025-06-23"
+  },
+  {
+    "slug": "dktechsolutions",
+    "name": "DK Tech Solutions",
+    "category": "IT Services \u00b7 Hawai'i",
+    "icon": "\ud83d\udcbb",
+    "path": "/dktechsolutions/",
+    "status": "live",
+    "location": "Hawai'i, USA",
+    "phone": null,
+    "tags": [
+      "IT Solutions",
+      "Hybrid Cloud",
+      "DevOps",
+      "Cisco",
+      "Dell",
+      "Palo Alto"
+    ],
+    "accent": "blue-cyan",
+    "added": "2025-06-23"
   }
 ]
