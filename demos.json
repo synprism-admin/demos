@@ -177,8 +177,8 @@
   {
     "slug": "dktechsolutions",
     "name": "DK Tech Solutions",
-    "category": "IT Services · Hawai'i",
-    "icon": "💻",
+    "category": "IT Services \u00b7 Hawai'i",
+    "icon": "\ud83d\udcbb",
     "path": "/dktechsolutions/",
     "status": "live",
     "location": "Hawai'i",
@@ -209,5 +209,23 @@
     ],
     "accent": "cyan-purp",
     "added": "2025-06-23"
+  },
+  {
+    "slug": "misterit",
+    "name": "MisterIT",
+    "category": "IT Staffing & Support \u00b7 Washington",
+    "icon": "\ud83d\udd27",
+    "path": "/misterit/",
+    "status": "live",
+    "location": "Vancouver, WA & Boise, ID",
+    "phone": "(844) 643-4948",
+    "tags": [
+      "IT Staffing",
+      "Outsourcing",
+      "Remote Support",
+      "Training"
+    ],
+    "accent": "teal-dark",
+    "added": "2025-06-26"
   }
 ]
