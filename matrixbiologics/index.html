@@ -288,30 +288,51 @@
             50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.04); }
         }
 
-        /* ── TICKER ── */
-        .ticker {
-            background: var(--pink);
-            padding: 0.9rem 0;
-            overflow: hidden;
-            white-space: nowrap;
+        /* ── TRUST BAR ── */
+        .trust-bar {
+            background: var(--black);
+            border-top: 1px solid rgba(255,29,142,0.15);
+            border-bottom: 1px solid rgba(255,29,142,0.15);
+            padding: 2.5rem 2.5rem;
         }
-        .ticker-track {
-            display: inline-flex;
-            animation: ticker-scroll 35s linear infinite;
-        }
-        .ticker-item {
-            display: inline-flex;
-            align-items: center;
+        .trust-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            padding: 0 2rem;
-            color: rgba(255,255,255,0.92);
-            font-weight: 600;
-            font-size: 0.82rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            align-items: center;
         }
-        .ticker-item::after { content: '✦'; font-size: 0.55rem; }
-        @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .trust-item + .trust-item {
+            padding-left: 1.5rem;
+            border-left: 1px solid rgba(255,255,255,0.07);
+        }
+        .trust-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .trust-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+        .trust-desc {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.42);
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .trust-bar-inner { grid-template-columns: 1fr 1fr; }
+            .trust-item + .trust-item { padding-left: 0; border-left: none; }
+        }
 
         /* ── LAYOUT HELPERS ── */
         section { padding: 100px 2.5rem; }
@@ -647,8 +668,7 @@
             flex-direction: column;
         }
         .rcard:hover { background: rgba(255,29,142,0.08); border-color: rgba(255,29,142,0.22); transform: translateY(-3px); }
-        .rcard-num { font-size: 0.7rem; font-weight: 700; color: var(--pink); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.65rem; }
-        .rcard-title { font-size: 0.9rem; font-weight: 600; color: white; line-height: 1.5; margin-bottom: 0.65rem; }
+        .rcard-num { font-size: 0.95rem; font-weight: 700; color: white; line-height: 1.4; margin-bottom: 0.65rem; }
         .rcard-topic { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.55; flex: 1; }
         .rcard-cta { margin-top: 1.2rem; color: var(--pink); font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; }
 
@@ -854,30 +874,37 @@
     </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-        <span class="ticker-item">MSC-Derived Exosomes</span>
-        <span class="ticker-item">FDA-Aligned Compliance</span>
-        <span class="ticker-item">Provider-First Distribution</span>
-        <span class="ticker-item">Integrated Safety Intelligence&trade;</span>
-        <span class="ticker-item">Matrix-Accredited Sourcing</span>
-        <span class="ticker-item">Regenerative Medicine</span>
-        <span class="ticker-item">Real-World Outcomes Tracking</span>
-        <span class="ticker-item">CME-Accredited Education</span>
-        <span class="ticker-item">Wharton&rsquo;s Jelly Exosomes</span>
-        <span class="ticker-item">Cellular Regeneration</span>
-        <!-- duplicate for seamless loop -->
-        <span class="ticker-item">MSC-Derived Exosomes</span>
-        <span class="ticker-item">FDA-Aligned Compliance</span>
-        <span class="ticker-item">Provider-First Distribution</span>
-        <span class="ticker-item">Integrated Safety Intelligence&trade;</span>
-        <span class="ticker-item">Matrix-Accredited Sourcing</span>
-        <span class="ticker-item">Regenerative Medicine</span>
-        <span class="ticker-item">Real-World Outcomes Tracking</span>
-        <span class="ticker-item">CME-Accredited Education</span>
-        <span class="ticker-item">Wharton&rsquo;s Jelly Exosomes</span>
-        <span class="ticker-item">Cellular Regeneration</span>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-bar-inner">
+        <div class="trust-item">
+            <div class="trust-icon">&#9989;</div>
+            <div>
+                <div class="trust-label">FDA-Aligned Distribution</div>
+                <div class="trust-desc">Every product distributed through Matrix-Accredited sourcing standards built for regulatory confidence</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">&#129504;</div>
+            <div>
+                <div class="trust-label">AI-Powered Safety Intelligence</div>
+                <div class="trust-desc">Integrated Safety Intelligence&trade; (ISI) is your FDA-approved compliance and outcomes backbone</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">&#128104;&#8205;&#9877;&#65039;</div>
+            <div>
+                <div class="trust-label">Built for Providers, by Experts</div>
+                <div class="trust-desc">Led by pharmacists, physicians, and healthcare innovators with decades of real clinical experience</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">&#127919;</div>
+            <div>
+                <div class="trust-label">Mission: 1 Million Lives</div>
+                <div class="trust-desc">Transforming patient outcomes through innovative, safe, and scalable regenerative therapies</div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -1225,74 +1252,62 @@
         </div>
         <div class="research-grid">
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 01</div>
-                <div class="rcard-title">Extracellular Vesicle-Based Therapy for ALS</div>
+                <div class="rcard-num">Extracellular Vesicle-Based Therapy for ALS</div>
                 <p class="rcard-topic">EVs from hBM-EPCs repairing the blood-CNS barrier in amyotrophic lateral sclerosis</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 02</div>
-                <div class="rcard-title">MSC-Derived Exosomes + Neurotrophic Factors for ALS</div>
+                <div class="rcard-num">MSC-Derived Exosomes + Neurotrophic Factors for ALS</div>
                 <p class="rcard-topic">Combining exosomes and neurotrophic factors as a novel cell-free intervention for ALS</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 03</div>
-                <div class="rcard-title">MSC Exosomes in Neurodegeneration</div>
+                <div class="rcard-num">Emerging Role of MSC Exosomes in Neurodegeneration</div>
                 <p class="rcard-topic">Groundbreaking cell-free approach for neurodegenerative conditions, crossing the blood-brain barrier</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 04</div>
-                <div class="rcard-title">Intra-Articular MSC Exosomes for Cartilage Repair</div>
+                <div class="rcard-num">Intra-Articular MSC Exosomes for Cartilage Repair</div>
                 <p class="rcard-topic">MSC Exosomes + Hyaluronic Acid improve structural and mechanical properties of repaired cartilage</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 05</div>
-                <div class="rcard-title">MSC Exosomes for Cardiovascular &amp; Neurological Disease</div>
+                <div class="rcard-num">MSC Exosomes for Cardiovascular &amp; Neurological Disease</div>
                 <p class="rcard-topic">Recent advances using MSC-derived exosomes as drug delivery vehicles for cardiac and neurological conditions</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 06</div>
-                <div class="rcard-title">MSC Therapy for Chronic Neurodegeneration</div>
-                <p class="rcard-topic">Therapeutic utility in Alzheimer&rsquo;s, Parkinson&rsquo;s, ALS, and Huntington&rsquo;s disease</p>
+                <div class="rcard-num">Therapeutic Utility of MSC Approaches in Chronic Neurodegeneration</div>
+                <p class="rcard-topic">MSC therapy for Alzheimer&rsquo;s, Parkinson&rsquo;s, ALS, and Huntington&rsquo;s disease</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 07</div>
-                <div class="rcard-title">MSCs &amp; Extracellular Vesicles in Infectious Disease</div>
+                <div class="rcard-num">MSCs &amp; Extracellular Vesicles in Infectious Disease</div>
                 <p class="rcard-topic">From basic research to clinical practice &mdash; EVs in the management of infectious disease</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 08</div>
-                <div class="rcard-title">Stem Cells for Neurodegenerative Disease</div>
+                <div class="rcard-num">Mesenchymal Stem Cells for Neurodegenerative Disease</div>
                 <p class="rcard-topic">Comprehensive overview of mesenchymal stem cell therapy across the neurodegenerative disease spectrum</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 09</div>
-                <div class="rcard-title">MSC Exosomes in Severe COVID-19</div>
+                <div class="rcard-num">Therapeutic Potential of MSCs &amp; Exosomes in Severe COVID-19</div>
                 <p class="rcard-topic">Therapeutic potential of MSCs and their exosomes as a treatment approach for severe COVID-19</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 10</div>
-                <div class="rcard-title">Immune Modulation by Exosomes &mdash; IMECOV19</div>
+                <div class="rcard-num">Immune Modulation by Exosomes in COVID-19 (IMECOV19)</div>
                 <p class="rcard-topic">Exosome-based immune modulation as a targeted pathway for COVID-19 treatment</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 11</div>
-                <div class="rcard-title">Cell Therapy for Neurological Disorders</div>
+                <div class="rcard-num">Cell Therapy for Neurological Disorders</div>
                 <p class="rcard-topic">The perspective of promising cells: an overview of cell therapy for neurological conditions</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
             <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
-                <div class="rcard-num">Study 12</div>
-                <div class="rcard-title">Extracellular Vesicles in Regenerative Medicine</div>
+                <div class="rcard-num">Extracellular Vesicles in Regenerative Medicine: Potentials &amp; Challenges</div>
                 <p class="rcard-topic">A broad review of EVs in regenerative medicine &mdash; potentials, challenges, and the road ahead</p>
                 <div class="rcard-cta">Read More <span>&rarr;</span></div>
             </a>
