@@ -177,8 +177,8 @@
   {
     "slug": "dktechsolutions",
     "name": "DK Tech Solutions",
-    "category": "IT Services · Hawai'i",
-    "icon": "💻",
+    "category": "IT Services \u00b7 Hawai'i",
+    "icon": "\ud83d\udcbb",
     "path": "/dktechsolutions/",
     "status": "live",
     "location": "Hawai'i",
@@ -209,5 +209,12 @@
     ],
     "accent": "cyan-purp",
     "added": "2025-06-23"
+  },
+  {
+    "name": "Matrix Biologics",
+    "slug": "matrixbiologics",
+    "description": "The Next reGeneration \u2014 Regenerative Medicine Distribution",
+    "industry": "Healthcare / Biotech",
+    "palette": "Hot Pink #FF1D8E + Black"
   }
 ]

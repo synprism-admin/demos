@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Biologics | The Next reGeneration</title>
+    <meta name="description" content="Matrix Biologics is a provider-first regenerative medicine distribution company delivering premium biologic products powered by FDA-aligned AI safety, compliance, and outcomes intelligence.">
+    <meta name="keywords" content="Regenerative medicine, Exosomes therapy, MSC exosomes, Stem cell research, Cellular regeneration, Anti-inflammatory therapy, Tissue repair and healing">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --pink: #FF1D8E;
+            --pink-dark: #C9006D;
+            --pink-light: #FF6BB0;
+            --black: #080808;
+            --dark: #111111;
+            --gray: #F7F7F7;
+            --gray-mid: #E4E4E4;
+            --text: #2D2D2D;
+            --text-light: #6B6B6B;
+            --white: #FFFFFF;
+            --font: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font); color: var(--text); background: var(--white); overflow-x: hidden; }
+
+        /* ── TYPOGRAPHY ── */
+        .section-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 0.9rem;
+            display: block;
+        }
+        .section-title {
+            font-size: clamp(2rem, 3.8vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--black);
+            margin-bottom: 1.25rem;
+        }
+        .section-title.light { color: var(--white); }
+        .section-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            max-width: 680px;
+        }
+
+        /* ── BUTTONS ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--pink);
+            color: var(--white);
+            box-shadow: 0 4px 22px rgba(255,29,142,0.38);
+        }
+        .btn-primary:hover {
+            background: var(--pink-dark);
+            box-shadow: 0 6px 32px rgba(255,29,142,0.55);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ── NAVIGATION ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(8,8,8,0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,29,142,0.15);
+            padding: 0 2.5rem;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo img { height: 42px; width: auto; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.25rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.25s;
+            letter-spacing: 0.3px;
+        }
+        .nav-links a:hover { color: var(--pink); }
+        .nav-cta {
+            background: var(--pink) !important;
+            color: white !important;
+            padding: 0.55rem 1.4rem !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: background 0.25s !important;
+        }
+        .nav-cta:hover { background: var(--pink-dark) !important; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span { width: 24px; height: 2px; background: white; display: block; transition: all 0.3s; }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px; left: 0; right: 0;
+            background: #0d0d0d;
+            z-index: 999;
+            padding: 2rem 2.5rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-bottom: 1px solid rgba(255,29,142,0.15);
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 1rem; font-weight: 500; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 2.5rem 90px;
+        }
+        .hero-glow-1 {
+            position: absolute;
+            width: 650px; height: 650px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,29,142,0.14) 0%, transparent 70%);
+            top: -120px; right: -80px;
+            animation: glow-pulse 7s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .hero-glow-2 {
+            position: absolute;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,29,142,0.07) 0%, transparent 70%);
+            bottom: -60px; left: 5%;
+            animation: glow-pulse 9s ease-in-out infinite reverse;
+            pointer-events: none;
+        }
+        @keyframes glow-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.25); opacity: 0.6; }
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,29,142,0.12);
+            border: 1px solid rgba(255,29,142,0.28);
+            color: var(--pink-light);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 7px; height: 7px;
+            background: var(--pink);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+        .hero h1 {
+            font-size: clamp(2.8rem, 5.5vw, 5rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.02;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .hero h1 .re { color: var(--pink); }
+        .hero-sub {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .hero-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin-bottom: 2rem;
+        }
+        .hero-stats { display: flex; gap: 2.5rem; }
+        .hero-stat-value {
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: var(--pink);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); line-height: 1.4; }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .hero-logo-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 380px;
+            height: 380px;
+        }
+        .hero-logo-wrap img {
+            width: 280px;
+            filter: drop-shadow(0 20px 70px rgba(255,29,142,0.45));
+            animation: float 5s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }
+        .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255,29,142,0.18);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .ring-1 { width: 310px; height: 310px; animation: ring-breathe 4s ease-in-out infinite; }
+        .ring-2 { width: 360px; height: 360px; animation: ring-breathe 4s ease-in-out infinite 1s; }
+        .ring-3 { width: 410px; height: 410px; animation: ring-breathe 4s ease-in-out infinite 2s; border-color: rgba(255,29,142,0.08); }
+        @keyframes ring-breathe {
+            0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.04); }
+        }
+
+        /* ── TICKER ── */
+        .ticker {
+            background: var(--pink);
+            padding: 0.9rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-track {
+            display: inline-flex;
+            animation: ticker-scroll 35s linear infinite;
+        }
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0 2rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .ticker-item::after { content: '✦'; font-size: 0.55rem; }
+        @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ── LAYOUT HELPERS ── */
+        section { padding: 100px 2.5rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .text-center { text-align: center; }
+        .section-intro { margin: 0 auto 3.5rem; text-align: center; }
+
+        /* ── NEED SECTION ── */
+        .need-section { background: var(--black); }
+        .need-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .problems { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+        .problem {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.1rem 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        .problem:hover { background: rgba(255,29,142,0.07); border-color: rgba(255,29,142,0.18); }
+        .prob-icon {
+            font-size: 1.1rem;
+            width: 34px;
+            height: 34px;
+            background: rgba(255,29,142,0.18);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .prob-text { font-size: 0.9rem; color: rgba(255,255,255,0.68); line-height: 1.6; }
+        .prob-text strong { color: rgba(255,255,255,0.9); }
+
+        .solution-box {
+            background: linear-gradient(140deg, rgba(255,29,142,0.1) 0%, rgba(255,29,142,0.02) 100%);
+            border: 1px solid rgba(255,29,142,0.2);
+            border-radius: 22px;
+            padding: 2.75rem;
+        }
+        .solution-box h3 { font-size: 1.6rem; font-weight: 800; color: white; margin-bottom: 1rem; }
+        .solution-box p { color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 1.25rem; font-size: 0.95rem; }
+
+        /* ── PLATFORM ── */
+        .platform-section { background: var(--gray); }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+            margin-top: 3.5rem;
+        }
+        .pcard {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem;
+            border: 1px solid var(--gray-mid);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pcard::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pink), var(--pink-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+        .pcard:hover { border-color: rgba(255,29,142,0.15); box-shadow: 0 12px 40px rgba(255,29,142,0.08); transform: translateY(-5px); }
+        .pcard:hover::after { transform: scaleX(1); }
+        .pcard-icon {
+            width: 52px; height: 52px;
+            background: rgba(255,29,142,0.1);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 1.25rem;
+        }
+        .pcard-title { font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 0.65rem; }
+        .pcard-body { font-size: 0.875rem; color: var(--text-light); line-height: 1.7; }
+
+        /* ── SERVE ── */
+        .serve-section { background: white; }
+        .serve-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-top: 3.5rem;
+        }
+        .scard {
+            border-radius: 22px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .scard:hover { transform: translateY(-5px); }
+        .scard-1 { background: var(--black); color: white; }
+        .scard-2 { background: var(--pink); color: white; }
+        .scard-3 { background: var(--gray); color: var(--text); }
+        .scard-emoji { font-size: 3rem; margin-bottom: 1.25rem; display: block; }
+        .scard-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.9rem; }
+        .scard-body { font-size: 0.875rem; line-height: 1.75; opacity: 0.78; }
+        .scard-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; margin-top: 1.5rem; }
+        .stag {
+            font-size: 0.72rem;
+            padding: 0.28rem 0.75rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        .scard-1 .stag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); }
+        .scard-2 .stag { background: rgba(255,255,255,0.2); color: white; }
+        .scard-3 .stag { background: white; color: var(--text); }
+
+        /* ── ISI SECTION ── */
+        .isi-section {
+            background: linear-gradient(135deg, #080808 0%, #180010 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .isi-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 80% 50%, rgba(255,29,142,0.13) 0%, transparent 55%),
+                radial-gradient(ellipse at 15% 85%, rgba(255,29,142,0.06) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        .isi-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .isi-badge {
+            display: inline-block;
+            background: rgba(255,29,142,0.14);
+            border: 1px solid rgba(255,29,142,0.32);
+            color: var(--pink-light);
+            padding: 0.65rem 1.4rem;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+        .isi-checks { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; }
+        .isi-check-item { display: flex; gap: 0.9rem; align-items: flex-start; }
+        .check-dot {
+            width: 20px; height: 20px;
+            background: var(--pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.6rem;
+            color: white;
+            font-weight: 700;
+        }
+        .check-text { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+        .check-text strong { color: white; font-weight: 600; }
+
+        .isi-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .istat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .istat:hover { background: rgba(255,29,142,0.08); border-color: rgba(255,29,142,0.2); }
+        .istat:first-child { grid-column: span 2; }
+        .istat-val { font-size: 2.4rem; font-weight: 900; color: var(--pink); margin-bottom: 0.4rem; line-height: 1; }
+        .istat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials-section { background: var(--gray); }
+        .tgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+        .tcard {
+            background: white;
+            border-radius: 22px;
+            padding: 2rem 1.75rem;
+            border: 1px solid var(--gray-mid);
+            position: relative;
+        }
+        .tcard-quote {
+            position: absolute;
+            top: -6px; left: 1.5rem;
+            font-size: 5rem;
+            color: var(--pink);
+            font-family: Georgia, serif;
+            line-height: 1;
+            opacity: 0.9;
+        }
+        .tcard-text { font-size: 0.9rem; line-height: 1.8; color: var(--text); font-style: italic; margin-top: 1.75rem; }
+        .tcard-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-mid);
+        }
+        .avatar {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .author-name { font-weight: 700; font-size: 0.9rem; color: var(--black); }
+        .author-role { font-size: 0.75rem; color: var(--text-light); margin-top: 1px; }
+        .stars { color: var(--pink); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+
+        /* ── MISSION BANNER ── */
+        .mission-banner {
+            background: var(--pink);
+            padding: 70px 2.5rem;
+            text-align: center;
+        }
+        .mission-banner h2 {
+            font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+            font-weight: 800;
+            color: white;
+            max-width: 780px;
+            margin: 0 auto 1rem;
+            line-height: 1.2;
+        }
+        .mission-banner p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 580px; margin: 0 auto 2rem; }
+
+        /* ── TEAM ── */
+        .team-section { background: white; }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+        }
+        .team-card { text-align: center; padding: 2rem 1.5rem; }
+        .team-avatar-wrap {
+            width: 110px; height: 110px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        .team-avatar-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 2px solid var(--pink);
+            opacity: 0.35;
+        }
+        .team-avatar {
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+        .team-name { font-size: 1.15rem; font-weight: 700; color: var(--black); margin-bottom: 0.25rem; }
+        .team-role { font-size: 0.75rem; color: var(--pink); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; }
+        .team-bio { font-size: 0.875rem; color: var(--text-light); line-height: 1.75; }
+
+        /* ── VALUES ── */
+        .values-section { background: var(--gray); }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+            margin-top: 3.5rem;
+        }
+        .vcard {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border-left: 4px solid var(--pink);
+        }
+        .vcard-num { font-size: 2rem; font-weight: 900; color: var(--pink); opacity: 0.25; margin-bottom: 0.4rem; line-height: 1; }
+        .vcard-title { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 0.6rem; }
+        .vcard-body { font-size: 0.85rem; color: var(--text-light); line-height: 1.65; }
+
+        /* ── RESEARCH ── */
+        .research-section { background: var(--black); }
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 3.5rem;
+        }
+        .rcard {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .rcard:hover { background: rgba(255,29,142,0.08); border-color: rgba(255,29,142,0.22); transform: translateY(-3px); }
+        .rcard-num { font-size: 0.7rem; font-weight: 700; color: var(--pink); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.65rem; }
+        .rcard-title { font-size: 0.9rem; font-weight: 600; color: white; line-height: 1.5; margin-bottom: 0.65rem; }
+        .rcard-topic { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.55; flex: 1; }
+        .rcard-cta { margin-top: 1.2rem; color: var(--pink); font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; }
+
+        /* ── CONTACT ── */
+        .contact-section { background: white; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3.5rem;
+            align-items: start;
+        }
+        .cinfo-title { font-size: 1.7rem; font-weight: 700; color: var(--black); margin-bottom: 1rem; }
+        .cinfo-body { color: var(--text-light); line-height: 1.8; margin-bottom: 2rem; font-size: 0.95rem; }
+        .cdetail { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; }
+        .cdetail-icon {
+            width: 40px; height: 40px;
+            background: rgba(255,29,142,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .cdetail-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 0.2rem; }
+        .cdetail-val { font-size: 0.9rem; color: var(--black); font-weight: 500; line-height: 1.5; }
+        .cdetail-val a { color: var(--pink); text-decoration: none; }
+        .cdetail-val a:hover { text-decoration: underline; }
+
+        .cform { background: var(--gray); border-radius: 22px; padding: 2.5rem; }
+        .cform-title { font-size: 1.4rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; }
+        .cform-sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 2rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.1rem; }
+        label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--black); margin-bottom: 0.4rem; }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid var(--gray-mid);
+            border-radius: 10px;
+            font-family: var(--font);
+            font-size: 0.875rem;
+            color: var(--black);
+            background: white;
+            transition: border-color 0.25s;
+            outline: none;
+        }
+        input:focus, select:focus, textarea:focus { border-color: var(--pink); }
+        textarea { resize: vertical; min-height: 110px; }
+        .submit-btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 0.95rem;
+            padding: 0.95rem;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--black);
+            color: rgba(255,255,255,0.6);
+            padding: 65px 2.5rem 32px;
+        }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .footer-logo-img { height: 48px; margin-bottom: 1rem; }
+        .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.42); line-height: 1.75; margin-bottom: 1rem; }
+        .footer-sub { font-size: 0.8rem; color: rgba(255,255,255,0.25); font-style: italic; }
+        .footer-heading { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--pink); margin-bottom: 1.25rem; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+        .footer-links a { color: rgba(255,255,255,0.48); text-decoration: none; font-size: 0.875rem; transition: color 0.25s; }
+        .footer-links a:hover { color: var(--pink); }
+        .footer-links li.addr { color: rgba(255,255,255,0.3); font-size: 0.82rem; line-height: 1.6; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.28);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom a { color: rgba(255,255,255,0.28); text-decoration: none; margin-left: 1.5rem; }
+        .footer-bottom a:hover { color: var(--pink); }
+        .footer-credit a { color: rgba(255,255,255,0.35) !important; }
+
+        /* ── ANIMATIONS ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .hero h1, .hero-sub, .hero-ctas, .hero-stats { max-width: 100%; }
+            .need-inner, .isi-inner, .contact-grid { grid-template-columns: 1fr; }
+            .platform-grid, .tgrid, .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .serve-grid, .team-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+            .research-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 72px 1.5rem; }
+            nav { padding: 0 1.5rem; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .platform-grid, .tgrid, .values-grid, .research-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; max-width: 340px; }
+            .footer-top { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1.25rem; }
+            .hero { padding: 100px 1.5rem 70px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+            .footer-bottom a { margin-left: 0; margin-right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+    <a href="#" class="nav-logo">
+        <img src="./logo.png" alt="Matrix Biologics">
+    </a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#partner" class="nav-cta">Partner With Us</a></li>
+    </ul>
+    <div class="hamburger" id="ham" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#platform" onclick="closeMenu()">Platform</a>
+    <a href="#team" onclick="closeMenu()">Team</a>
+    <a href="#research" onclick="closeMenu()">Research</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#partner" onclick="closeMenu()" style="color: var(--pink); font-weight: 700;">Partner With Us &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge">
+                <span class="dot"></span>
+                FDA-Aligned AI Safety &amp; Compliance
+            </div>
+            <h1>The Next<br><span class="re">re</span>Generation<br>of Medicine.</h1>
+            <p class="hero-sub">
+                Matrix Biologics is a provider-first regenerative medicine distribution company delivering premium biologic products backed by FDA-aligned AI safety, compliance, and outcomes intelligence.
+            </p>
+            <div class="hero-ctas">
+                <a href="#partner" class="btn btn-primary">
+                    Partner With Us
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#platform" class="btn btn-outline">Explore Platform</a>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-value">1M+</div>
+                    <div class="hero-stat-label">Lives to<br>Transform</div>
+                </div>
+                <div>
+                    <div class="hero-stat-value">ISI&trade;</div>
+                    <div class="hero-stat-label">Integrated Safety<br>Intelligence</div>
+                </div>
+                <div>
+                    <div class="hero-stat-value">100%</div>
+                    <div class="hero-stat-label">Provider-First<br>Focus</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-logo-wrap">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+                <img src="./logo.png" alt="Matrix Biologics Logo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+        <span class="ticker-item">MSC-Derived Exosomes</span>
+        <span class="ticker-item">FDA-Aligned Compliance</span>
+        <span class="ticker-item">Provider-First Distribution</span>
+        <span class="ticker-item">Integrated Safety Intelligence&trade;</span>
+        <span class="ticker-item">Matrix-Accredited Sourcing</span>
+        <span class="ticker-item">Regenerative Medicine</span>
+        <span class="ticker-item">Real-World Outcomes Tracking</span>
+        <span class="ticker-item">CME-Accredited Education</span>
+        <span class="ticker-item">Wharton&rsquo;s Jelly Exosomes</span>
+        <span class="ticker-item">Cellular Regeneration</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item">MSC-Derived Exosomes</span>
+        <span class="ticker-item">FDA-Aligned Compliance</span>
+        <span class="ticker-item">Provider-First Distribution</span>
+        <span class="ticker-item">Integrated Safety Intelligence&trade;</span>
+        <span class="ticker-item">Matrix-Accredited Sourcing</span>
+        <span class="ticker-item">Regenerative Medicine</span>
+        <span class="ticker-item">Real-World Outcomes Tracking</span>
+        <span class="ticker-item">CME-Accredited Education</span>
+        <span class="ticker-item">Wharton&rsquo;s Jelly Exosomes</span>
+        <span class="ticker-item">Cellular Regeneration</span>
+    </div>
+</div>
+
+<!-- INDUSTRY NEED -->
+<section class="need-section" id="about">
+    <div class="container">
+        <div class="need-inner">
+            <div class="fade-up">
+                <span class="section-tag">The Industry Need</span>
+                <h2 class="section-title light">Innovation Requires Infrastructure</h2>
+                <p class="section-body" style="color:rgba(255,255,255,0.6); margin-bottom:0;">
+                    Regenerative medicine is advancing rapidly, but many providers are left navigating product quality, regulatory uncertainty, and operational complexity on their own.
+                </p>
+                <div class="problems">
+                    <div class="problem">
+                        <div class="prob-icon">&#9888;&#65039;</div>
+                        <p class="prob-text"><strong>Product Quality Uncertainty</strong> &mdash; Providers struggle to vet manufacturers and verify biologic sourcing without expert guidance</p>
+                    </div>
+                    <div class="problem">
+                        <div class="prob-icon">&#128203;</div>
+                        <p class="prob-text"><strong>Regulatory Complexity</strong> &mdash; Evolving FDA compliance pathways create documentation gaps and legal exposure</p>
+                    </div>
+                    <div class="problem">
+                        <div class="prob-icon">&#128202;</div>
+                        <p class="prob-text"><strong>No Outcomes Infrastructure</strong> &mdash; Clinics lack structured data to prove results and build evidence bases</p>
+                    </div>
+                    <div class="problem">
+                        <div class="prob-icon">&#128736;&#65039;</div>
+                        <p class="prob-text"><strong>Operational Burden</strong> &mdash; Safety systems, consent workflows, and clinical documentation strain already-stretched teams</p>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-up">
+                <div class="solution-box">
+                    <h3>Matrix Biologics Fills the Gap</h3>
+                    <p>We address this critical gap by delivering both trusted biologic distribution and the intelligent infrastructure required to support responsible, scalable regenerative care.</p>
+                    <p>Matrix-Accredited sourcing standards combined with our AI-powered ISI&trade; platform remove risk, simplify adoption, and give providers the confidence to grow their practice.</p>
+                    <a href="#platform" class="btn btn-primary">See Our Solution</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="platform-section" id="platform">
+    <div class="container">
+        <div class="section-intro fade-up">
+            <span class="section-tag">The Matrix Biologics Platform</span>
+            <h2 class="section-title">A Unified Ecosystem for<br>Responsible Regenerative Care</h2>
+            <p class="section-body" style="margin: 0 auto; text-align: center;">
+                Fully integrated: premium biologic distribution paired with FDA-approved AI-powered safety and compliance systems &mdash; all in one partnership.
+            </p>
+        </div>
+        <div class="platform-grid">
+            <div class="pcard fade-up">
+                <div class="pcard-icon">&#129514;</div>
+                <div class="pcard-title">Matrix-Accredited Sourcing</div>
+                <p class="pcard-body">Rigorous, expert-led validation of biologic products across the US. Every product meets our proprietary quality and safety standards before reaching your practice.</p>
+            </div>
+            <div class="pcard fade-up">
+                <div class="pcard-icon">&#128737;&#65039;</div>
+                <div class="pcard-title">FDA-Aligned AI Compliance</div>
+                <p class="pcard-body">Integrated Safety Intelligence&trade; (ISI) powered by FDA-approved AI provides your digital safety and compliance backbone &mdash; from risk profiling to regulatory pathway alignment.</p>
+            </div>
+            <div class="pcard fade-up">
+                <div class="pcard-icon">&#128196;</div>
+                <div class="pcard-title">Clinical Documentation</div>
+                <p class="pcard-body">Structured clinical protocols, consent workflows, and documentation support so your team spends less time on paperwork and more time on patient outcomes.</p>
+            </div>
+            <div class="pcard fade-up">
+                <div class="pcard-icon">&#128200;</div>
+                <div class="pcard-title">Real-World Outcomes Tracking</div>
+                <p class="pcard-body">Outcomes intelligence that builds your evidence base, supports future research, and gives you and your patients a clear picture of treatment success over time.</p>
+            </div>
+            <div class="pcard fade-up">
+                <div class="pcard-icon">&#127891;</div>
+                <div class="pcard-title">CME-Accredited Education</div>
+                <p class="pcard-body">Ongoing provider education accredited for CME credit. Stay at the forefront of regenerative medicine science with our expert-led curriculum and continuing education.</p>
+            </div>
+            <div class="pcard fade-up">
+                <div class="pcard-icon">&#128176;</div>
+                <div class="pcard-title">Provider-First Pricing</div>
+                <p class="pcard-body">We negotiate industry-leading rates on your behalf. Premium biologics at competitive, provider-first pricing &mdash; so you can scale care without sacrificing margin.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="serve-section" id="serve">
+    <div class="container">
+        <div class="section-intro fade-up">
+            <span class="section-tag">Who We Serve</span>
+            <h2 class="section-title">Trusted by the Providers<br>Advancing Regenerative Care</h2>
+        </div>
+        <div class="serve-grid fade-up">
+            <div class="scard scard-1">
+                <span class="scard-emoji">&#128104;&#8205;&#9877;&#65039;</span>
+                <div class="scard-title">Medical &amp; Wellness Providers</div>
+                <p class="scard-body">Individual practitioners seeking premium regenerative biologics backed by safety infrastructure, clinical support, and ongoing education.</p>
+                <div class="scard-tags">
+                    <span class="stag">MDs &amp; DOs</span>
+                    <span class="stag">NPs &amp; PAs</span>
+                    <span class="stag">NMDs &amp; NDs</span>
+                    <span class="stag">Chiropractors</span>
+                    <span class="stag">Physical Therapists</span>
+                    <span class="stag">Pain Specialists</span>
+                    <span class="stag">Aestheticians</span>
+                    <span class="stag">Longevity Experts</span>
+                </div>
+            </div>
+            <div class="scard scard-2">
+                <span class="scard-emoji">&#127973;</span>
+                <div class="scard-title">Clinics &amp; Provider Networks</div>
+                <p class="scard-body">Multi-location organizations seeking consistent product quality, pricing leverage, operational structure, and intelligent compliance systems at scale.</p>
+                <div class="scard-tags">
+                    <span class="stag">Multi-Location Clinics</span>
+                    <span class="stag">Wellness Centers</span>
+                    <span class="stag">Longevity Practices</span>
+                    <span class="stag">Provider Networks</span>
+                </div>
+            </div>
+            <div class="scard scard-3">
+                <span class="scard-emoji">&#128302;</span>
+                <div class="scard-title">Clinical &amp; Research Organizations</div>
+                <p class="scard-body">Groups focused on responsible innovation, real-world evidence generation, and advancing the science of regenerative medicine through structured data.</p>
+                <div class="scard-tags">
+                    <span class="stag">Research Institutions</span>
+                    <span class="stag">Clinical Trial Sites</span>
+                    <span class="stag">Academic Medical Centers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ISI / AI SECTION -->
+<section class="isi-section">
+    <div class="container">
+        <div class="isi-inner">
+            <div class="fade-up">
+                <div class="isi-badge">ISI&trade;</div>
+                <span class="section-tag">AI-Powered Safety &amp; Compliance</span>
+                <h2 class="section-title light">Intelligent Infrastructure Built for Regenerative Medicine</h2>
+                <p class="section-body" style="color:rgba(255,255,255,0.62); margin-bottom:1.75rem;">
+                    Matrix Biologics integrates FDA-approved AI software as the digital safety and compliance backbone for every practice we serve &mdash; protecting providers, patients, and outcomes.
+                </p>
+                <div class="isi-checks">
+                    <div class="isi-check-item">
+                        <div class="check-dot">&#10003;</div>
+                        <p class="check-text"><strong>Safety &amp; Risk Profiling</strong> &mdash; AI-driven patient and product risk assessment for every treatment</p>
+                    </div>
+                    <div class="isi-check-item">
+                        <div class="check-dot">&#10003;</div>
+                        <p class="check-text"><strong>Regulatory Pathway Alignment</strong> &mdash; Stay aligned with evolving FDA guidelines automatically</p>
+                    </div>
+                    <div class="isi-check-item">
+                        <div class="check-dot">&#10003;</div>
+                        <p class="check-text"><strong>Clinical Protocol Support</strong> &mdash; Evidence-based protocols built for your specific practice type</p>
+                    </div>
+                    <div class="isi-check-item">
+                        <div class="check-dot">&#10003;</div>
+                        <p class="check-text"><strong>Consent Workflow Automation</strong> &mdash; Streamlined informed consent meeting legal and ethical standards</p>
+                    </div>
+                    <div class="isi-check-item">
+                        <div class="check-dot">&#10003;</div>
+                        <p class="check-text"><strong>Outcomes Intelligence</strong> &mdash; Structured real-world data collection from day one</p>
+                    </div>
+                    <div class="isi-check-item">
+                        <div class="check-dot">&#10003;</div>
+                        <p class="check-text"><strong>Research Readiness</strong> &mdash; Data infrastructure that supports future clinical publication and trials</p>
+                    </div>
+                </div>
+            </div>
+            <div class="isi-stats-grid fade-up">
+                <div class="istat">
+                    <div class="istat-val">ISI&trade;</div>
+                    <div class="istat-label">Integrated Safety Intelligence<br>FDA-Approved AI Backbone</div>
+                </div>
+                <div class="istat">
+                    <div class="istat-val">360&deg;</div>
+                    <div class="istat-label">Compliance<br>Coverage</div>
+                </div>
+                <div class="istat">
+                    <div class="istat-val">24/7</div>
+                    <div class="istat-label">Continuous<br>Monitoring</div>
+                </div>
+                <div class="istat">
+                    <div class="istat-val">100%</div>
+                    <div class="istat-label">Matrix-Accredited<br>Products</div>
+                </div>
+                <div class="istat">
+                    <div class="istat-val">1M</div>
+                    <div class="istat-label">Lives Our Mission<br>Is to Transform</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-intro fade-up">
+            <span class="section-tag">Provider Testimonials</span>
+            <h2 class="section-title">What Providers Are Saying</h2>
+        </div>
+        <div class="tgrid">
+            <div class="tcard fade-up">
+                <div class="tcard-quote">&ldquo;</div>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="tcard-text">Matrix Biologics takes the guesswork out of sourcing regenerative products. My patients see better results, and I feel confident about safety.</p>
+                <div class="tcard-author">
+                    <div class="avatar">RS</div>
+                    <div>
+                        <div class="author-name">Dr. R. Seller</div>
+                        <div class="author-role">Medical Provider</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tcard fade-up">
+                <div class="tcard-quote">&ldquo;</div>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="tcard-text">The exosomes from Matrix outperform anything we&rsquo;ve used before. The difference in recovery and inflammation is night and day.</p>
+                <div class="tcard-author">
+                    <div class="avatar">MG</div>
+                    <div>
+                        <div class="author-name">Dr. M. Green</div>
+                        <div class="author-role">Medical Provider</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tcard fade-up">
+                <div class="tcard-quote">&ldquo;</div>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="tcard-text">Working with Matrix has been a game-changer for our practice. Their level of service is truly unmatched &mdash; responsive, knowledgeable, and deeply supportive at every step.</p>
+                <div class="tcard-author">
+                    <div class="avatar">MH</div>
+                    <div>
+                        <div class="author-name">Dr. M. Hanish</div>
+                        <div class="author-role">Medical Provider</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION BANNER -->
+<div class="mission-banner">
+    <h2>Transforming 1 Million Lives Through Regenerative Medicine</h2>
+    <p>Our mission is to advance curative outcomes through innovative regenerative therapies &mdash; delivered safely, responsibly, and at scale.</p>
+    <a href="#partner" class="btn" style="background:white; color:var(--pink); font-weight:700; box-shadow:0 4px 20px rgba(0,0,0,0.15);">Become a Partner</a>
+</div>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+    <div class="container">
+        <div class="section-intro fade-up">
+            <span class="section-tag">Leadership Team</span>
+            <h2 class="section-title">The Minds Behind the Matrix</h2>
+            <p class="section-body" style="margin: 0 auto; text-align: center;">An expert team of pharmacists, physicians, and innovation leaders united by a single mission.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card fade-up">
+                <div class="team-avatar-wrap">
+                    <div class="team-avatar">SR</div>
+                </div>
+                <div class="team-name">Suzanne Robertson, Pharm.D.</div>
+                <div class="team-role">CEO &amp; Founder</div>
+                <p class="team-bio">Clinical pharmacist and healthcare strategist with ~20 years of experience. Clinical Informaticist at Phoenix Children&rsquo;s Hospital. B.S. Biochemistry &amp; Cellular Biology from UC San Diego, Pharm.D. from UC San Francisco, pediatric residency at Rady Children&rsquo;s Hospital.</p>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar-wrap">
+                    <div class="team-avatar">LB</div>
+                </div>
+                <div class="team-name">Dr. Lauren Beardsley, NMD</div>
+                <div class="team-role">Chief Medical Officer</div>
+                <p class="team-bio">Scottsdale-based Naturopathic Medical Doctor with nearly a decade at the forefront of Regenerative Medicine and Exosome Therapy. Deep expertise in endocrinology, autoimmune, and complex chronic conditions.</p>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar-wrap">
+                    <div class="team-avatar">LO</div>
+                </div>
+                <div class="team-name">Lindsay O&rsquo;Neill-O&rsquo;Keefe</div>
+                <div class="team-role">Chief Marketing &amp; Strategy Officer</div>
+                <p class="team-bio">20+ years across technology, data, media, and healthcare innovation. Creator of the Biohacking Index, author of Biohacking Breakfast, published contributor to Forbes and Entrepreneur. Global speaker: TEDx, Gaia, and international stages.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="values-section">
+    <div class="container">
+        <div class="section-intro fade-up">
+            <span class="section-tag">The Matrix Core 6</span>
+            <h2 class="section-title">Our Values</h2>
+        </div>
+        <div class="values-grid">
+            <div class="vcard fade-up">
+                <div class="vcard-num">01</div>
+                <div class="vcard-title">Above &amp; Beyond Partnership</div>
+                <p class="vcard-body">Going beyond product supply to be a true strategic partner &mdash; the gold standard in provider relationships and long-term growth.</p>
+            </div>
+            <div class="vcard fade-up">
+                <div class="vcard-num">02</div>
+                <div class="vcard-title">Provider-First Empowerment</div>
+                <p class="vcard-body">Education, protocols, technology, and support designed to make clinicians the most confident practitioners in their field.</p>
+            </div>
+            <div class="vcard fade-up">
+                <div class="vcard-num">03</div>
+                <div class="vcard-title">Integrity, Transparency &amp; Trust</div>
+                <p class="vcard-body">Uncompromising integrity and evidence-based standards &mdash; no shortcuts, no compromises, ever.</p>
+            </div>
+            <div class="vcard fade-up">
+                <div class="vcard-num">04</div>
+                <div class="vcard-title">Collaborative Growth &amp; Support</div>
+                <p class="vcard-body">Building outcomes together through shared knowledge, co-creation, and a culture of true partnership with every provider.</p>
+            </div>
+            <div class="vcard fade-up">
+                <div class="vcard-num">05</div>
+                <div class="vcard-title">Clinical Quality &amp; Safety Excellence</div>
+                <p class="vcard-body">The highest standards in sourcing, validation, and education &mdash; because patient safety is non-negotiable.</p>
+            </div>
+            <div class="vcard fade-up">
+                <div class="vcard-num">06</div>
+                <div class="vcard-title">Education-Driven Innovation</div>
+                <p class="vcard-body">A commitment to lifelong learning and responsible innovation that elevates the entire regenerative medicine field.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="research-section" id="research">
+    <div class="container">
+        <div class="section-intro fade-up" style="text-align:center;">
+            <span class="section-tag">Research &amp; Studies</span>
+            <h2 class="section-title light">The Science Behind the Solution</h2>
+            <p class="section-body" style="color:rgba(255,255,255,0.55); margin:0 auto; text-align:center;">
+                Our clinical approach is grounded in peer-reviewed science. Explore the research powering everything we do.
+            </p>
+        </div>
+        <div class="research-grid">
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 01</div>
+                <div class="rcard-title">Extracellular Vesicle-Based Therapy for ALS</div>
+                <p class="rcard-topic">EVs from hBM-EPCs repairing the blood-CNS barrier in amyotrophic lateral sclerosis</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 02</div>
+                <div class="rcard-title">MSC-Derived Exosomes + Neurotrophic Factors for ALS</div>
+                <p class="rcard-topic">Combining exosomes and neurotrophic factors as a novel cell-free intervention for ALS</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 03</div>
+                <div class="rcard-title">MSC Exosomes in Neurodegeneration</div>
+                <p class="rcard-topic">Groundbreaking cell-free approach for neurodegenerative conditions, crossing the blood-brain barrier</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 04</div>
+                <div class="rcard-title">Intra-Articular MSC Exosomes for Cartilage Repair</div>
+                <p class="rcard-topic">MSC Exosomes + Hyaluronic Acid improve structural and mechanical properties of repaired cartilage</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 05</div>
+                <div class="rcard-title">MSC Exosomes for Cardiovascular &amp; Neurological Disease</div>
+                <p class="rcard-topic">Recent advances using MSC-derived exosomes as drug delivery vehicles for cardiac and neurological conditions</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 06</div>
+                <div class="rcard-title">MSC Therapy for Chronic Neurodegeneration</div>
+                <p class="rcard-topic">Therapeutic utility in Alzheimer&rsquo;s, Parkinson&rsquo;s, ALS, and Huntington&rsquo;s disease</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 07</div>
+                <div class="rcard-title">MSCs &amp; Extracellular Vesicles in Infectious Disease</div>
+                <p class="rcard-topic">From basic research to clinical practice &mdash; EVs in the management of infectious disease</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 08</div>
+                <div class="rcard-title">Stem Cells for Neurodegenerative Disease</div>
+                <p class="rcard-topic">Comprehensive overview of mesenchymal stem cell therapy across the neurodegenerative disease spectrum</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 09</div>
+                <div class="rcard-title">MSC Exosomes in Severe COVID-19</div>
+                <p class="rcard-topic">Therapeutic potential of MSCs and their exosomes as a treatment approach for severe COVID-19</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 10</div>
+                <div class="rcard-title">Immune Modulation by Exosomes &mdash; IMECOV19</div>
+                <p class="rcard-topic">Exosome-based immune modulation as a targeted pathway for COVID-19 treatment</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 11</div>
+                <div class="rcard-title">Cell Therapy for Neurological Disorders</div>
+                <p class="rcard-topic">The perspective of promising cells: an overview of cell therapy for neurological conditions</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="rcard fade-up">
+                <div class="rcard-num">Study 12</div>
+                <div class="rcard-title">Extracellular Vesicles in Regenerative Medicine</div>
+                <p class="rcard-topic">A broad review of EVs in regenerative medicine &mdash; potentials, challenges, and the road ahead</p>
+                <div class="rcard-cta">Read More <span>&rarr;</span></div>
+            </a>
+        </div>
+        <div style="text-align:center; margin-top:3rem;">
+            <a href="https://matrixbiologics.com/research-studies" target="_blank" class="btn btn-primary">View Full Research Library</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT / PARTNER -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="section-intro fade-up">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title" id="partner">Bring Me Into the Matrix</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="fade-up">
+                <h3 class="cinfo-title">Ready to Transform Your Practice?</h3>
+                <p class="cinfo-body">Whether you&rsquo;re a solo provider, a multi-location clinic, or a research organization, Matrix Biologics has the products, platform, and people to elevate your regenerative medicine practice.</p>
+                <div class="cdetail">
+                    <div class="cdetail-icon">&#128205;</div>
+                    <div>
+                        <div class="cdetail-label">Corporate Office</div>
+                        <div class="cdetail-val">Raintree Corporate Center<br>15333 N. Pima Road, Suite #305<br>Scottsdale, AZ 85260</div>
+                    </div>
+                </div>
+                <div class="cdetail">
+                    <div class="cdetail-icon">&#128231;</div>
+                    <div>
+                        <div class="cdetail-label">Email</div>
+                        <div class="cdetail-val"><a href="mailto:info@matrixbiologics.com">info@matrixbiologics.com</a></div>
+                    </div>
+                </div>
+                <div class="cdetail">
+                    <div class="cdetail-icon">&#128222;</div>
+                    <div>
+                        <div class="cdetail-label">Phone</div>
+                        <div class="cdetail-val"><a href="tel:6024800486">602-480-0486</a></div>
+                    </div>
+                </div>
+                <div style="margin-top:2rem; padding:1.5rem; background:rgba(255,29,142,0.05); border:1px solid rgba(255,29,142,0.14); border-radius:14px;">
+                    <p style="font-size:0.875rem; color:var(--text-light); line-height:1.75;">
+                        <strong style="color:var(--black);">Stay current with our newsletter</strong> &mdash; the latest in regenerative medicine, compliance updates, and Matrix Biologics news delivered to your inbox.
+                    </p>
+                </div>
+            </div>
+            <div class="cform fade-up">
+                <div class="cform-title">Partner Inquiry</div>
+                <p class="cform-sub">Tell us about your practice and we&rsquo;ll be in touch promptly.</p>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="PLACEHOLDER">
+                    <input type="hidden" name="subject" value="Matrix Biologics Demo - Partner Inquiry">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="first_name" placeholder="Jane" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="last_name" placeholder="Smith" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="jane@yourpractice.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="(555) 000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>Practice Type</label>
+                        <select name="practice_type">
+                            <option value="">Select your specialty...</option>
+                            <option>MD / DO</option>
+                            <option>NP / PA</option>
+                            <option>Naturopathic Doctor (NMD/ND)</option>
+                            <option>Chiropractor (DC)</option>
+                            <option>Physical Therapist (PT)</option>
+                            <option>Aesthetician / Longevity Clinic</option>
+                            <option>Multi-Location Clinic / Network</option>
+                            <option>Research / Clinical Organization</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Tell us about your practice and what you're looking for..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        Submit Inquiry
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div>
+                <img src="./logo.png" alt="Matrix Biologics" class="footer-logo-img">
+                <p class="footer-tagline">A provider-first regenerative medicine distribution company delivering premium biologic products powered by FDA-aligned AI safety, compliance, and outcomes intelligence.</p>
+                <p class="footer-sub">The Next reGeneration.</p>
+            </div>
+            <div>
+                <div class="footer-heading">Company</div>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#platform">Platform</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#partner">Partner With Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Resources</div>
+                <ul class="footer-links">
+                    <li><a href="#research">Research &amp; Studies</a></li>
+                    <li><a href="#serve">Who We Serve</a></li>
+                    <li><a href="https://compliance.matrixbiologics.com/privacypolicy" target="_blank">Privacy Policy</a></li>
+                    <li><a href="https://compliance.matrixbiologics.com/termsandconditions" target="_blank">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Contact</div>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@matrixbiologics.com">info@matrixbiologics.com</a></li>
+                    <li><a href="tel:6024800486">602-480-0486</a></li>
+                    <li class="addr">15333 N. Pima Rd, Suite #305<br>Scottsdale, AZ 85260</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 Matrix Biologics&trade;. All rights reserved.</span>
+            <div>
+                <a href="https://compliance.matrixbiologics.com/privacypolicy" target="_blank">Privacy Policy</a>
+                <a href="https://compliance.matrixbiologics.com/termsandconditions" target="_blank">Terms of Use</a>
+            </div>
+            <span class="footer-credit">Web design by <a href="https://synprism.io" target="_blank">Synprism</a></span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    function closeMenu() {
+        document.getElementById('mobileMenu').classList.remove('open');
+    }
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('mobileMenu');
+        const ham = document.getElementById('ham');
+        if (!menu.contains(e.target) && !ham.contains(e.target)) {
+            menu.classList.remove('open');
+        }
+    });
+
+    // Intersection Observer for scroll-in animations
+    const observer = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Stagger card animations
+    document.querySelectorAll('.platform-grid .pcard').forEach((c, i) => c.style.transitionDelay = (i % 3 * 0.1) + 's');
+    document.querySelectorAll('.research-grid .rcard').forEach((c, i) => c.style.transitionDelay = (i % 3 * 0.08) + 's');
+    document.querySelectorAll('.values-grid .vcard').forEach((c, i) => c.style.transitionDelay = (i % 3 * 0.1) + 's');
+</script>
+</body>
+</html>
