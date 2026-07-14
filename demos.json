@@ -216,5 +216,20 @@
     "description": "The Next reGeneration \u2014 Regenerative Medicine Distribution",
     "industry": "Healthcare / Biotech",
     "palette": "Hot Pink #FF1D8E + Black"
+  },
+  {
+    "slug": "haultab",
+    "name": "HaulTab",
+    "category": "Invoicing & Statements \u00b7 SaaS",
+    "icon": "\ud83d\ude9b",
+    "path": "/haultab/",
+    "status": "live",
+    "tags": [
+      "SaaS",
+      "Invoicing",
+      "Freight",
+      "Trucking"
+    ],
+    "added": "2026-07-14"
   }
 ]
