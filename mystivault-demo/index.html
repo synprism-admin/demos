@@ -3,1210 +3,1197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mystical Mail LE 125 — Sorcerer Mickey Fantasy Pin | MystiVault</title>
+  <title>MystiVault — Mystical Mail LE 125 Sorcerer Mickey Fantasy Pin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap');
-
     :root {
-      --gold: #C9A84C;
-      --gold-light: #E8C76A;
-      --gold-dark: #8B6914;
-      --teal: #00E5CC;
-      --teal-dark: #00A896;
-      --dark: #0A0A14;
-      --dark-2: #10101E;
-      --dark-3: #181828;
-      --dark-4: #20203A;
-      --dark-5: #2A2A4A;
-      --text: #E8E0D0;
-      --text-muted: #9090A8;
-      --white: #FAFAF8;
+      --bg:       #0C0C12;
+      --s1:       #131320;
+      --s2:       #1A1A2A;
+      --s3:       #222235;
+      --gold:     #C4A35A;
+      --gold-l:   #DEC47A;
+      --gold-d:   #8C6E2E;
+      --purple:   #6B4FA0;
+      --purple-l: #9D7FCC;
+      --text:     #F0EBE1;
+      --muted:    #7A7590;
+      --dim:      #3A3752;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      background: var(--dark);
+      background: var(--bg);
       color: var(--text);
-      font-family: 'Raleway', sans-serif;
-      min-height: 100vh;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* ── Stars background ── */
-    body::before {
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ─── Grain overlay ─── */
+    body::after {
       content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
-        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 40% 8%, rgba(201,168,76,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 55% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 70% 12%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 85% 25%, rgba(0,229,204,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 15% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 60% 70%, rgba(201,168,76,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 80% 85%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 92% 55%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 5% 90%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(2px 2px at 48% 50%, rgba(0,229,204,0.15) 0%, transparent 100%);
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none;
-      z-index: 0;
+      z-index: 999;
+      opacity: 0.4;
     }
 
-    /* ── Header / Nav ── */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10, 10, 20, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .nav-left {
-      display: flex;
-      gap: 28px;
-      font-size: 13px;
-      font-weight: 500;
+    /* ══════════════════════════════
+       ANNOUNCEMENT BAR
+    ══════════════════════════════ */
+    .ann-bar {
+      background: linear-gradient(90deg, var(--purple) 0%, #4A2D80 50%, var(--purple) 100%);
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 12.5px;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .ann-bar span { color: var(--gold-l); }
+
+    /* ══════════════════════════════
+       HEADER
+    ══════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(12, 12, 18, 0.82);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(196,163,90,0.12);
     }
 
-    .nav-left a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-left a:hover { color: var(--gold); }
-
-    .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      text-decoration: none;
-    }
-
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      position: relative;
-    }
-
-    .logo-mark svg { width: 100%; height: 100%; }
-
-    .logo-name {
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-right a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-    .nav-right a:hover { color: var(--gold); }
-
-    .cart-icon {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-    .cart-icon:hover { color: var(--gold); }
-
-    /* ── Breadcrumb ── */
-    .breadcrumb {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 24px 0;
-      font-size: 12px;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--gold); }
-    .breadcrumb span { color: var(--gold); }
-
-    /* ── Product Layout ── */
-    .product-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 24px 80px;
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 32px;
+      height: 68px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── Image Gallery ── */
-    .gallery {
-      position: sticky;
-      top: 96px;
-    }
-
-    .main-image {
-      width: 100%;
-      aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-4) 50%, var(--dark-3) 100%);
-      border-radius: 16px;
-      border: 1px solid rgba(201,168,76,0.25);
-      display: flex;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .main-image::before {
+    .nav-links {
+      display: flex; gap: 32px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .nav-links a { color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    .logo-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+    }
+
+    /* MV monogram — inline SVG recreation of the real ornate logo */
+    .mv-logo {
+      width: 44px; height: 34px;
+      filter: invert(1) sepia(1) saturate(0.6) brightness(0.9);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-top: 1px;
+    }
+
+    .nav-actions {
+      display: flex; align-items: center; gap: 20px;
+      justify-content: flex-end;
+    }
+    .nav-actions a { font-size: 12px; letter-spacing: 0.08em; color: var(--muted); transition: color .2s; }
+    .nav-actions a:hover { color: var(--text); }
+
+    .cart-btn {
+      position: relative;
+      background: transparent; border: none; padding: 4px;
+      color: var(--muted); transition: color .2s;
+    }
+    .cart-btn:hover { color: var(--text); }
+    .cart-btn svg { width: 20px; height: 20px; }
+    .cart-count {
+      position: absolute; top: -2px; right: -4px;
+      width: 16px; height: 16px;
+      background: var(--gold); color: var(--bg);
+      border-radius: 50%; font-size: 9px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ══════════════════════════════
+       HERO BANNER
+    ══════════════════════════════ */
+    .hero {
+      position: relative; overflow: hidden;
+      height: min(90vh, 700px);
+      display: flex; align-items: center;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(107,79,160,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 70%, rgba(196,163,90,0.12) 0%, transparent 60%),
+        linear-gradient(160deg, #0E0E1C 0%, #0C0C12 55%, #0F0D18 100%);
+    }
+
+    /* Floating orb */
+    .hero-orb {
+      position: absolute;
+      right: 10%; top: 50%; transform: translateY(-50%);
+      width: min(480px, 45vw); height: min(480px, 45vw);
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 35% 35%,
+        rgba(107,79,160,0.5) 0%,
+        rgba(75,50,120,0.3) 40%,
+        rgba(12,12,18,0.05) 75%
+      );
+      box-shadow:
+        0 0 80px rgba(107,79,160,0.3),
+        0 0 160px rgba(107,79,160,0.1),
+        inset 0 0 60px rgba(196,163,90,0.08);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-orb::after {
       content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.12) 0%, transparent 70%);
+      position: absolute; inset: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,163,90,0.2);
     }
 
-    /* Sorcerer Mickey SVG art */
-    .pin-art {
-      width: 75%;
-      height: 75%;
-      position: relative;
-      z-index: 1;
+    @keyframes float {
+      0%, 100% { transform: translateY(-50%) translateX(0); }
+      50% { transform: translateY(-52%) translateX(-8px); }
     }
 
-    .image-badge {
+    /* Pin SVG in the orb */
+    .hero-pin {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-      color: var(--dark);
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
+      right: 10%; top: 50%; transform: translate(0, -50%);
+      width: min(480px, 45vw); height: min(480px, 45vw);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .hero-pin svg { width: 75%; height: 75%; filter: drop-shadow(0 0 24px rgba(107,79,160,0.6)); }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto; padding: 0 32px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; width: 28px; height: 1px; background: var(--gold); opacity: 0.6;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 64px);
       font-weight: 700;
-      letter-spacing: 0.12em;
-      padding: 5px 12px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      z-index: 2;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      max-width: 520px;
+      margin-bottom: 20px;
     }
 
-    .sold-count {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: rgba(10,10,20,0.85);
-      border: 1px solid rgba(201,168,76,0.3);
-      color: var(--text-muted);
-      font-size: 11px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      z-index: 2;
+    .hero-title em { color: var(--gold-l); font-style: italic; }
+
+    .hero-sub {
+      font-size: 15px; color: var(--muted);
+      max-width: 380px; line-height: 1.7;
+      margin-bottom: 36px;
     }
 
-    .sold-count strong { color: var(--gold); }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    .thumbnails {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 12px;
+    .btn-primary {
+      padding: 14px 32px;
+      background: linear-gradient(135deg, var(--gold-d), var(--gold), var(--gold-l));
+      border: none; border-radius: 4px;
+      color: #0C0C12;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      transition: all .3s;
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: translateX(-100%); transition: transform .5s;
+    }
+    .btn-primary:hover::after { transform: translateX(100%); }
+    .btn-primary:hover { box-shadow: 0 0 32px rgba(196,163,90,0.5); }
+
+    .btn-ghost {
+      padding: 14px 32px;
+      background: transparent;
+      border: 1px solid rgba(240,235,225,0.2);
+      border-radius: 4px; color: var(--text);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: all .2s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(196,163,90,0.4);
+      color: var(--gold-l);
     }
 
-    .thumb {
-      aspect-ratio: 1;
-      border-radius: 10px;
-      border: 1.5px solid rgba(201,168,76,0.2);
-      background: var(--dark-3);
-      cursor: pointer;
-      transition: border-color 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-badges {
+      margin-top: 48px;
+      display: flex; gap: 28px; align-items: center;
+    }
+    .hero-badge {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--muted);
+    }
+    .hero-badge svg { width: 14px; height: 14px; color: var(--gold); }
+
+    /* ══════════════════════════════
+       MARQUEE / TICKER
+    ══════════════════════════════ */
+    .ticker {
+      border-top: 1px solid rgba(196,163,90,0.1);
+      border-bottom: 1px solid rgba(196,163,90,0.1);
       overflow: hidden;
+      background: var(--s1);
+      padding: 12px 0;
     }
+    .ticker-track {
+      display: flex; gap: 0;
+      animation: ticker 28s linear infinite;
+      width: max-content;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      white-space: nowrap; padding: 0 36px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted);
+      display: flex; align-items: center; gap: 36px;
+    }
+    .ticker-item span { color: var(--gold); font-size: 8px; }
 
-    .thumb:hover, .thumb.active { border-color: var(--gold); }
-
-    .thumb svg { width: 60%; height: 60%; opacity: 0.7; }
-
-    /* ── Product Info ── */
-    .product-info { display: flex; flex-direction: column; gap: 24px; }
-
-    .product-series {
-      display: flex;
+    /* ══════════════════════════════
+       FEATURED PRODUCT
+    ══════════════════════════════ */
+    .featured {
+      max-width: 1280px; margin: 0 auto;
+      padding: 100px 32px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 80px;
       align-items: center;
-      gap: 8px;
     }
 
-    .series-tag {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--teal);
-      background: rgba(0,229,204,0.1);
-      border: 1px solid rgba(0,229,204,0.25);
-      padding: 4px 12px;
-      border-radius: 20px;
+    /* Left — Gallery */
+    .gallery-col { position: sticky; top: 88px; }
+
+    .main-img-wrap {
+      position: relative;
+      background: var(--s1);
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 1px solid rgba(196,163,90,0.12);
     }
 
-    .series-divider { width: 1px; height: 14px; background: rgba(201,168,76,0.3); }
-
-    .series-name {
-      font-size: 12px;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
+    .main-img-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 25%, rgba(107,79,160,0.18) 0%, transparent 65%);
+      pointer-events: none; z-index: 1;
     }
+
+    .img-badge-le {
+      position: absolute; top: 18px; left: 18px; z-index: 2;
+      background: rgba(12,12,18,0.85);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 2px;
+    }
+
+    .img-stock {
+      position: absolute; top: 18px; right: 18px; z-index: 2;
+      background: rgba(12,12,18,0.85);
+      border: 1px solid rgba(196,163,90,0.25);
+      color: var(--muted);
+      font-size: 11px; padding: 5px 12px; border-radius: 2px;
+    }
+    .img-stock strong { color: var(--gold-l); }
+
+    .pin-display {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px;
+    }
+    .pin-display svg { width: 85%; height: 85%; filter: drop-shadow(0 4px 40px rgba(107,79,160,0.4)); }
+
+    .thumb-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 8px; margin-top: 10px;
+    }
+    .thumb {
+      aspect-ratio: 1; border-radius: 6px;
+      background: var(--s1);
+      border: 1.5px solid transparent;
+      cursor: pointer; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s;
+    }
+    .thumb.active, .thumb:hover { border-color: var(--gold); }
+    .thumb-inner {
+      width: 55%; height: 55%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; opacity: 0.7;
+    }
+
+    /* Right — Product Info */
+    .info-col { display: flex; flex-direction: column; gap: 28px; }
+
+    .breadcrumb-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+    }
+    .breadcrumb-row a:hover { color: var(--gold); }
+    .breadcrumb-row svg { width: 10px; height: 10px; opacity: 0.4; }
+
+    .tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .tag {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .tag-series { background: rgba(107,79,160,0.18); border: 1px solid rgba(107,79,160,0.4); color: var(--purple-l); }
+    .tag-le { background: rgba(196,163,90,0.12); border: 1px solid rgba(196,163,90,0.3); color: var(--gold-l); }
 
     .product-title {
-      font-family: 'Cinzel', serif;
-      font-size: 28px;
-      font-weight: 600;
-      line-height: 1.25;
-      color: var(--white);
-      letter-spacing: 0.02em;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.01em;
     }
 
-    .product-title em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    /* Stars rating */
     .rating-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      display: flex; align-items: center; gap: 10px;
     }
-
-    .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
-    .rating-count { font-size: 13px; color: var(--text-muted); }
-    .rating-link { color: var(--teal); font-size: 13px; text-decoration: none; }
-    .rating-link:hover { text-decoration: underline; }
+    .stars { color: var(--gold); font-size: 13px; letter-spacing: 3px; }
+    .rating-ct { font-size: 13px; color: var(--muted); }
+    .rating-link { font-size: 13px; color: var(--gold); transition: opacity .2s; }
+    .rating-link:hover { opacity: 0.7; }
 
     /* Price */
-    .price-block {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
+    .price-row {
+      display: flex; align-items: baseline; gap: 14px;
     }
-
-    .price-current {
-      font-family: 'Cinzel', serif;
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--gold);
+    .price-now {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px; font-weight: 700; color: var(--text);
     }
-
-    .price-original {
-      font-size: 18px;
-      color: var(--text-muted);
+    .price-was {
+      font-size: 18px; color: var(--muted);
       text-decoration: line-through;
     }
-
-    .price-badge {
+    .price-save {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
       background: rgba(239,68,68,0.15);
       border: 1px solid rgba(239,68,68,0.3);
-      color: #FF6B6B;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 3px 10px;
-      border-radius: 20px;
-      text-transform: uppercase;
+      color: #F87171;
+      padding: 3px 10px; border-radius: 100px;
     }
 
-    /* Edition info */
-    .edition-info {
-      background: linear-gradient(135deg, rgba(201,168,76,0.07) 0%, rgba(10,10,20,0) 100%);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 12px;
-      padding: 16px 20px;
-      display: flex;
-      gap: 24px;
+    /* Edition stats */
+    .edition-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(196,163,90,0.12);
+      border-radius: 8px; overflow: hidden;
+    }
+    .ed-stat {
+      padding: 16px; text-align: center;
+      border-right: 1px solid rgba(196,163,90,0.1);
+    }
+    .ed-stat:last-child { border-right: none; }
+    .ed-label { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .ed-val { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--gold-l); }
+
+    /* Stock bar */
+    .stock-block { display: flex; flex-direction: column; gap: 8px; }
+    .stock-label {
+      display: flex; justify-content: space-between;
+      font-size: 12px; color: var(--muted);
+    }
+    .stock-label strong { color: #F87171; }
+    .stock-bar {
+      height: 3px; background: rgba(255,255,255,0.07);
+      border-radius: 100px; overflow: hidden;
+    }
+    .stock-fill {
+      height: 100%; width: 17%;
+      background: linear-gradient(90deg, var(--gold-d), var(--gold));
+      border-radius: 100px;
     }
 
-    .edition-stat { display: flex; flex-direction: column; gap: 2px; }
-    .edition-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
-    .edition-value { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--gold); }
-
-    /* Availability bar */
-    .availability {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    /* Variants */
+    .opt-group { display: flex; flex-direction: column; gap: 10px; }
+    .opt-label {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); display: flex; gap: 8px; align-items: center;
     }
-
-    .avail-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: var(--text-muted);
+    .opt-label span { color: var(--text); font-weight: 400; letter-spacing: 0; text-transform: none; }
+    .opt-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .opt-btn {
+      padding: 9px 20px; border-radius: 4px;
+      border: 1px solid rgba(196,163,90,0.2);
+      background: transparent; color: var(--text);
+      font-size: 13px; font-weight: 500;
+      transition: all .2s;
     }
+    .opt-btn:hover { border-color: rgba(196,163,90,0.5); }
+    .opt-btn.sel { border-color: var(--gold); background: rgba(196,163,90,0.08); color: var(--gold-l); }
 
-    .avail-label strong { color: var(--teal); }
-
-    .avail-bar {
-      height: 4px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 2px;
-      overflow: hidden;
+    /* Qty */
+    .qty-wrap {
+      display: inline-flex; align-items: center;
+      border: 1px solid rgba(196,163,90,0.2);
+      border-radius: 4px; overflow: hidden;
     }
-
-    .avail-fill {
-      height: 100%;
-      width: 18%;
-      background: linear-gradient(90deg, var(--teal-dark), var(--teal));
-      border-radius: 2px;
-    }
-
-    /* Variant / qty */
-    .option-section { display: flex; flex-direction: column; gap: 8px; }
-
-    .option-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .option-label span { color: var(--white); font-weight: 400; text-transform: none; letter-spacing: 0; }
-
-    .variant-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .variant-btn {
-      padding: 8px 20px;
-      border-radius: 8px;
-      border: 1.5px solid rgba(201,168,76,0.3);
-      background: transparent;
-      color: var(--text);
-      font-family: 'Raleway', sans-serif;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .variant-btn:hover { border-color: var(--gold); color: var(--gold); }
-    .variant-btn.selected {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.12);
-      color: var(--gold);
-    }
-
-    .qty-row {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      width: fit-content;
-      border: 1.5px solid rgba(201,168,76,0.3);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
     .qty-btn {
-      width: 42px;
-      height: 42px;
-      background: transparent;
-      border: none;
-      color: var(--text);
-      font-size: 20px;
-      cursor: pointer;
-      transition: background 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 44px; height: 44px;
+      background: transparent; border: none;
+      color: var(--text); font-size: 18px;
+      transition: background .2s;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .qty-btn:hover { background: rgba(201,168,76,0.1); color: var(--gold); }
-
-    .qty-val {
-      width: 48px;
-      text-align: center;
-      font-size: 15px;
-      font-weight: 500;
-      border-left: 1px solid rgba(201,168,76,0.2);
-      border-right: 1px solid rgba(201,168,76,0.2);
+    .qty-btn:hover { background: rgba(196,163,90,0.08); }
+    .qty-num {
+      width: 52px; text-align: center;
+      font-size: 15px; font-weight: 500;
+      border-left: 1px solid rgba(196,163,90,0.15);
+      border-right: 1px solid rgba(196,163,90,0.15);
+      line-height: 44px;
     }
 
     /* CTAs */
-    .cta-stack { display: flex; flex-direction: column; gap: 12px; }
-
-    .btn-add-to-cart {
-      width: 100%;
-      padding: 16px 32px;
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-      border: none;
-      border-radius: 12px;
-      color: var(--dark);
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
+    .cta-group { display: flex; flex-direction: column; gap: 10px; }
+    .cta-add {
+      width: 100%; padding: 17px 24px;
+      background: var(--gold);
+      border: none; border-radius: 4px;
+      color: #0C0C12;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      transition: all .3s; position: relative; overflow: hidden;
     }
-
-    .btn-add-to-cart::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.5s;
+    .cta-add::before {
+      content: '✦';
+      margin-right: 10px; font-size: 10px;
     }
+    .cta-add:hover { background: var(--gold-l); box-shadow: 0 0 40px rgba(196,163,90,0.35); }
 
-    .btn-add-to-cart:hover::after { transform: translateX(100%); }
-    .btn-add-to-cart:hover { box-shadow: 0 0 32px rgba(201,168,76,0.4); transform: translateY(-1px); }
-    .btn-add-to-cart:active { transform: translateY(0); }
-
-    .btn-buy-now {
-      width: 100%;
-      padding: 16px 32px;
+    .cta-buy {
+      width: 100%; padding: 17px 24px;
       background: transparent;
-      border: 1.5px solid rgba(201,168,76,0.5);
-      border-radius: 12px;
-      color: var(--gold);
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
+      border: 1px solid rgba(240,235,225,0.15); border-radius: 4px;
+      color: var(--muted);
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: all .2s;
     }
+    .cta-buy:hover { border-color: rgba(196,163,90,0.3); color: var(--text); }
 
-    .btn-buy-now:hover {
-      background: rgba(201,168,76,0.08);
-      border-color: var(--gold);
-      box-shadow: 0 0 20px rgba(201,168,76,0.2);
-    }
-
-    /* Trust icons */
+    /* Trust row */
     .trust-row {
-      display: flex;
-      gap: 20px;
-      padding-top: 4px;
+      display: flex; gap: 18px; flex-wrap: wrap;
+      border-top: 1px solid rgba(240,235,225,0.07);
+      padding-top: 20px;
     }
-
     .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
+      display: flex; align-items: center; gap: 7px;
+      font-size: 12px; color: var(--muted);
     }
+    .trust-icon { font-size: 14px; }
 
-    .trust-icon { color: var(--gold); font-size: 14px; }
-
-    /* Description accordions */
-    .accordions { display: flex; flex-direction: column; border-top: 1px solid rgba(201,168,76,0.15); }
-
-    .accordion-item {
-      border-bottom: 1px solid rgba(201,168,76,0.1);
+    /* Accordion */
+    .acc { border-top: 1px solid rgba(240,235,225,0.08); }
+    .acc-item { border-bottom: 1px solid rgba(240,235,225,0.08); }
+    .acc-btn {
+      width: 100%; background: none; border: none;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0; color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 600; text-align: left;
+      transition: color .2s;
     }
-
-    .accordion-trigger {
-      width: 100%;
-      background: transparent;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-      cursor: pointer;
-      color: var(--white);
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-align: left;
+    .acc-btn:hover { color: var(--gold-l); }
+    .acc-icon {
+      width: 16px; height: 16px; color: var(--gold);
+      transition: transform .3s; flex-shrink: 0;
     }
-
-    .accordion-trigger:hover { color: var(--gold); }
-
-    .accordion-chevron {
-      width: 16px;
-      height: 16px;
-      color: var(--gold);
-      transition: transform 0.3s;
-      flex-shrink: 0;
-    }
-
-    .accordion-content {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      padding-bottom: 18px;
+    .acc-btn.open .acc-icon { transform: rotate(45deg); }
+    .acc-body {
       display: none;
+      font-size: 14px; color: var(--muted);
+      line-height: 1.8; padding-bottom: 18px;
+    }
+    .acc-body.open { display: block; }
+    .acc-body ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .acc-body li { display: flex; gap: 10px; }
+    .acc-body li::before { content: '—'; color: var(--gold); opacity: 0.6; flex-shrink: 0; }
+
+    /* ══════════════════════════════
+       SECTION DIVIDER
+    ══════════════════════════════ */
+    .sec-divider {
+      max-width: 1280px; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .sec-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(196,163,90,0.2), transparent); }
+    .sec-ornament {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; color: rgba(196,163,90,0.4);
+      letter-spacing: 8px;
     }
 
-    .accordion-content.open { display: block; }
-    .accordion-trigger.open .accordion-chevron { transform: rotate(180deg); }
-
-    .accordion-content ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .accordion-content li::before { content: '✦ '; color: var(--gold); font-size: 10px; }
-
-    /* ── Magical divider ── */
-    .divider {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      position: relative;
-      z-index: 1;
+    /* ══════════════════════════════
+       COLLECTIONS GRID
+    ══════════════════════════════ */
+    .collections {
+      max-width: 1280px; margin: 0 auto;
+      padding: 80px 32px;
     }
 
-    .divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent); }
-
-    .divider-symbol {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 18px;
-      opacity: 0.6;
+    .sec-header {
+      text-align: center; margin-bottom: 48px;
+    }
+    .sec-eyebrow {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700; letter-spacing: -0.01em;
     }
 
-    /* ── You May Also Like ── */
-    .related-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 0.04em;
-    }
-
-    .related-grid {
+    .coll-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+
+    .coll-card {
+      position: relative; overflow: hidden;
+      border-radius: 8px; cursor: pointer;
+      background: var(--s1);
+      border: 1px solid rgba(196,163,90,0.08);
+      transition: border-color .3s;
+    }
+    .coll-card:hover { border-color: rgba(196,163,90,0.3); }
+    .coll-card.tall { grid-row: span 2; }
+
+    .coll-img {
+      width: 100%;
+      background: var(--s2);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .coll-card.tall .coll-img { height: 100%; min-height: 400px; }
+    .coll-card:not(.tall) .coll-img { height: 220px; }
+
+    .coll-bg-art {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .coll-bg-art svg { width: 65%; height: 65%; opacity: 0.65; }
+
+    .coll-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(12,12,18,0.85) 0%, transparent 60%);
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 24px;
+      transition: background .3s;
+    }
+    .coll-card:hover .coll-overlay {
+      background: linear-gradient(to top, rgba(12,12,18,0.92) 0%, rgba(12,12,18,0.15) 70%);
+    }
+
+    .coll-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .coll-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 700; line-height: 1.2;
+    }
+    .coll-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .coll-arrow {
+      margin-top: 12px; font-size: 12px;
+      color: var(--gold); opacity: 0;
+      transform: translateX(-6px);
+      transition: all .3s;
+      font-weight: 500; letter-spacing: 0.08em;
+    }
+    .coll-card:hover .coll-arrow { opacity: 1; transform: translateX(0); }
+
+    /* ══════════════════════════════
+       SOCIAL PROOF STRIP
+    ══════════════════════════════ */
+    .proof-strip {
+      background: var(--s1);
+      border-top: 1px solid rgba(196,163,90,0.1);
+      border-bottom: 1px solid rgba(196,163,90,0.1);
+      padding: 48px 32px;
+    }
+    .proof-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+    .proof-stat { text-align: center; }
+    .proof-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px; font-weight: 700; color: var(--gold-l);
+      line-height: 1;
+    }
+    .proof-label { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════
+       RELATED PRODUCTS
+    ══════════════════════════════ */
+    .related {
+      max-width: 1280px; margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .product-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
-    .product-card {
-      background: var(--dark-2);
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 14px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s;
+    .prod-card {
+      border-radius: 8px; overflow: hidden;
+      background: var(--s1);
+      border: 1px solid rgba(196,163,90,0.08);
+      transition: all .3s; cursor: pointer;
+    }
+    .prod-card:hover {
+      border-color: rgba(196,163,90,0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
     }
 
-    .product-card:hover {
-      border-color: rgba(201,168,76,0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(201,168,76,0.1);
-    }
-
-    .card-image {
+    .prod-img {
       aspect-ratio: 1;
-      background: var(--dark-3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      background: var(--s2);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .prod-img-art {
+      width: 65%; height: 65%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px; line-height: 1;
     }
 
-    .card-image svg { width: 65%; height: 65%; opacity: 0.85; }
-
-    .card-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 20px;
+    .prod-badge {
+      position: absolute; top: 12px; left: 12px;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 2px;
     }
+    .pb-sold { background: rgba(239,68,68,0.2); border: 1px solid rgba(239,68,68,0.35); color: #F87171; }
+    .pb-le { background: rgba(196,163,90,0.15); border: 1px solid rgba(196,163,90,0.3); color: var(--gold); }
+    .pb-new { background: rgba(107,79,160,0.18); border: 1px solid rgba(107,79,160,0.35); color: var(--purple-l); }
 
-    .badge-sold-out {
-      background: rgba(239,68,68,0.15);
-      border: 1px solid rgba(239,68,68,0.3);
-      color: #FF6B6B;
-    }
-
-    .badge-limited {
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.3);
-      color: var(--gold);
-    }
-
-    .badge-new {
-      background: rgba(0,229,204,0.12);
-      border: 1px solid rgba(0,229,204,0.25);
-      color: var(--teal);
-    }
-
-    .card-body { padding: 14px 16px 18px; }
-
-    .card-title {
-      font-family: 'Cinzel', serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .card-price {
-      font-family: 'Cinzel', serif;
-      font-size: 16px;
-      color: var(--gold);
-    }
-
-    /* ── Newsletter band ── */
-    .newsletter-band {
-      background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-4) 100%);
-      border-top: 1px solid rgba(201,168,76,0.2);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-      padding: 56px 24px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .newsletter-band::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 300px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .newsletter-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--teal);
+    .prod-body { padding: 16px 18px 20px; }
+    .prod-series { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .prod-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 600; line-height: 1.35;
       margin-bottom: 10px;
     }
+    .prod-price-row { display: flex; align-items: center; gap: 8px; }
+    .prod-price { font-size: 16px; font-weight: 600; color: var(--text); }
+    .prod-compare { font-size: 13px; color: var(--muted); text-decoration: line-through; }
 
-    .newsletter-title {
-      font-family: 'Cinzel', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 8px;
+    /* ══════════════════════════════
+       NEWSLETTER
+    ══════════════════════════════ */
+    .newsletter {
+      max-width: 680px; margin: 0 auto;
+      padding: 80px 32px;
+      text-align: center;
     }
-
-    .newsletter-sub {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
+    .nl-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .nl-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 40px); font-weight: 700;
+      line-height: 1.15; margin-bottom: 12px;
     }
-
-    .newsletter-form {
-      display: flex;
-      gap: 10px;
-      max-width: 420px;
-      margin: 0 auto;
+    .nl-sub { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+    .nl-form {
+      display: flex; gap: 0; border: 1px solid rgba(196,163,90,0.25);
+      border-radius: 4px; overflow: hidden; max-width: 440px; margin: 0 auto;
     }
-
-    .newsletter-input {
-      flex: 1;
-      padding: 13px 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1.5px solid rgba(201,168,76,0.25);
-      border-radius: 10px;
-      color: var(--white);
-      font-family: 'Raleway', sans-serif;
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.2s;
+    .nl-input {
+      flex: 1; padding: 14px 18px;
+      background: rgba(255,255,255,0.03);
+      border: none; outline: none;
+      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px;
     }
-
-    .newsletter-input::placeholder { color: var(--text-muted); }
-    .newsletter-input:focus { border-color: rgba(201,168,76,0.5); }
-
-    .newsletter-btn {
-      padding: 13px 24px;
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-      border: none;
-      border-radius: 10px;
-      color: var(--dark);
-      font-family: 'Cinzel', serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
+    .nl-input::placeholder { color: var(--muted); }
+    .nl-btn {
+      padding: 14px 24px;
+      background: var(--gold); border: none;
+      color: #0C0C12;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      white-space: nowrap; transition: background .2s;
     }
+    .nl-btn:hover { background: var(--gold-l); }
+    .nl-note { font-size: 11px; color: var(--muted); margin-top: 12px; }
 
-    .newsletter-btn:hover { box-shadow: 0 0 20px rgba(201,168,76,0.4); }
-
-    /* ── Footer ── */
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
     footer {
-      background: var(--dark-2);
-      border-top: 1px solid rgba(201,168,76,0.12);
-      padding: 48px 24px 32px;
-      position: relative;
-      z-index: 1;
+      background: var(--s1);
+      border-top: 1px solid rgba(196,163,90,0.1);
     }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+    .footer-top {
+      max-width: 1280px; margin: 0 auto;
+      padding: 64px 32px 48px;
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 40px;
+      gap: 56px;
     }
-
-    .footer-brand { display: flex; flex-direction: column; gap: 16px; }
-
-    .footer-logo-mark { width: 48px; height: 48px; }
-    .footer-logo-mark svg { width: 100%; height: 100%; }
-
-    .footer-brand-name {
-      font-family: 'Cinzel', serif;
-      font-size: 18px;
-      color: var(--gold);
-      letter-spacing: 0.08em;
+    .ft-brand { display: flex; flex-direction: column; gap: 18px; }
+    .ft-logo {
+      display: flex; flex-direction: column; gap: 6px;
     }
-
-    .footer-brand-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 260px;
+    .ft-mv { width: 52px; height: 40px; filter: invert(1) sepia(1) saturate(0.5) brightness(0.85); }
+    .ft-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--text); letter-spacing: 0.04em;
     }
-
-    .footer-socials { display: flex; gap: 12px; }
-
-    .social-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: 1px solid rgba(201,168,76,0.25);
+    .ft-tagline {
+      font-size: 13px; color: var(--muted); line-height: 1.7; max-width: 260px;
+      font-style: italic;
+    }
+    .ft-socials { display: flex; gap: 10px; }
+    .ft-social {
+      width: 36px; height: 36px;
+      border-radius: 4px; border: 1px solid rgba(196,163,90,0.18);
       background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      transition: all 0.2s;
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: all .2s; text-decoration: none;
     }
+    .ft-social:hover { border-color: rgba(196,163,90,0.4); color: var(--gold); }
+    .ft-social svg { width: 14px; height: 14px; }
 
-    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
-    .social-btn svg { width: 15px; height: 15px; }
-
-    .footer-col-title {
-      font-family: 'Cinzel', serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
+    .ft-col-head {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 18px;
     }
-
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 13px;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--text); }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .ft-links a { font-size: 13px; color: var(--muted); transition: color .2s; }
+    .ft-links a:hover { color: var(--text); }
 
     .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 20px 32px;
     }
-
-    .footer-copy {
-      font-size: 12px;
-      color: var(--text-muted);
+    .footer-bottom-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 12px; color: var(--muted);
     }
+    .footer-bottom-inner a { color: var(--muted); transition: color .2s; }
+    .footer-bottom-inner a:hover { color: var(--gold); }
+    .ft-legal { display: flex; gap: 20px; }
 
-    .footer-legal { display: flex; gap: 20px; }
-    .footer-legal a { font-size: 12px; color: var(--text-muted); text-decoration: none; }
-    .footer-legal a:hover { color: var(--gold); }
-
-    /* Mobile responsive */
-    @media (max-width: 900px) {
-      .product-section { grid-template-columns: 1fr; gap: 32px; }
-      .gallery { position: static; }
-      .related-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 960px) {
+      .featured { grid-template-columns: 1fr; gap: 48px; }
+      .gallery-col { position: static; }
+      .coll-grid { grid-template-columns: 1fr 1fr; }
+      .coll-card.tall { grid-row: span 1; }
+      .coll-card.tall .coll-img { min-height: 220px; }
+      .product-row { grid-template-columns: repeat(2, 1fr); }
+      .proof-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .edition-strip { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .nav-left { display: none; }
-      .related-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .product-title { font-size: 22px; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .newsletter-form { flex-direction: column; }
+      .header-inner { padding: 0 16px; }
+      .nav-links { display: none; }
+      .hero { height: auto; padding: 80px 0 40px; }
+      .hero-content { padding: 0 20px; }
+      .hero-orb, .hero-pin { display: none; }
+      .hero-title { font-size: 32px; }
+      .featured { padding: 48px 20px; }
+      .coll-grid { grid-template-columns: 1fr; }
+      .product-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .proof-inner { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <!-- ═══ ANNOUNCEMENT BAR ═══ -->
+  <div class="ann-bar">
+    Free US Shipping on orders over $75 &nbsp;·&nbsp; <span>LE 125 Sorcerer Mickey dropping now</span> &nbsp;·&nbsp; New Mystery Mail opens Friday
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
   <header>
-    <div class="nav-inner">
-      <nav class="nav-left">
+    <div class="header-inner">
+      <nav class="nav-links">
         <a href="#">Shop</a>
-        <a href="#">Collections</a>
         <a href="#">Mystery Mail</a>
+        <a href="#">Collections</a>
         <a href="#">About</a>
       </nav>
 
-      <a href="#" class="logo">
-        <div class="logo-mark">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Triangle -->
-            <polygon points="30,4 56,52 4,52" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="1.5"/>
-            <!-- Eye circles -->
-            <circle cx="30" cy="38" r="9" fill="rgba(201,168,76,0.08)" stroke="#C9A84C" stroke-width="1"/>
-            <circle cx="30" cy="38" r="5.5" fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="0.8"/>
-            <circle cx="30" cy="38" r="2.5" fill="#C9A84C"/>
-            <!-- Glow -->
-            <circle cx="30" cy="38" r="9" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="2" filter="url(#glow)"/>
-            <defs>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="2" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-          </svg>
-        </div>
-        <span class="logo-name">MystiVault</span>
+      <a href="#" class="logo-wrap">
+        <img src="https://mystivault.com/cdn/shop/files/MV_Black.png?v=1785137589&width=200"
+             alt="MystiVault" class="mv-logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-text" style="display:none">MystiVault</span>
+        <span class="logo-text">MystiVault</span>
       </a>
 
-      <div class="nav-right">
+      <div class="nav-actions">
         <a href="#">Sign In</a>
-        <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 01-8 0"/>
-        </svg>
+        <a href="#">Wishlist</a>
+        <button class="cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count">1</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ═══════════════════════ BREADCRUMB ═══════════════════ -->
-  <div class="breadcrumb">
-    <a href="#">Home</a> / <a href="#">Mystery Mail</a> / <a href="#">Fantasy Series</a> / <span>Sorcerer Mickey Fantasy Pin</span>
-  </div>
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
 
-  <!-- ═══════════════════════ PRODUCT ══════════════════════ -->
-  <section class="product-section">
+    <!-- Atmospheric orb -->
+    <div class="hero-orb"></div>
 
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="main-image">
-        <div class="image-badge">LE 125</div>
-        <div class="sold-count"><strong>22</strong> of 125 remaining</div>
+    <!-- Pin art floating in orb -->
+    <div class="hero-pin">
+      <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hpBase" cx="35%" cy="30%"><stop offset="0%" stop-color="#1e1048"/><stop offset="60%" stop-color="#0d0820"/><stop offset="100%" stop-color="#070512"/></radialGradient>
+          <radialGradient id="hpGlow" cx="50%" cy="50%"><stop offset="0%" stop-color="#C4A35A" stop-opacity="0.5"/><stop offset="100%" stop-color="#C4A35A" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hpHat" x1="130" y1="38" x2="190" y2="130" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0860"/><stop offset="100%" stop-color="#2a1080"/></linearGradient>
+          <linearGradient id="hpGoldRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#DEC47A"/><stop offset="50%" stop-color="#C4A35A"/><stop offset="100%" stop-color="#8C6E2E"/></linearGradient>
+          <filter id="hpGlowFilter"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <circle cx="160" cy="160" r="142" fill="url(#hpGlow)" opacity="0.4"/>
+        <circle cx="160" cy="160" r="132" fill="url(#hpBase)" stroke="url(#hpGoldRing)" stroke-width="3.5"/>
+        <circle cx="160" cy="160" r="126" fill="none" stroke="rgba(196,163,90,0.2)" stroke-width="1"/>
+        <!-- Stars -->
+        <circle cx="55" cy="68" r="2" fill="#C4A35A" opacity="0.7"/>
+        <circle cx="242" cy="82" r="1.5" fill="#fff" opacity="0.5"/>
+        <circle cx="76" cy="248" r="1.5" fill="#C4A35A" opacity="0.4"/>
+        <circle cx="258" cy="232" r="2" fill="#fff" opacity="0.5"/>
+        <circle cx="152" cy="42" r="1.2" fill="#9D7FCC" opacity="0.8"/>
+        <!-- Mickey Ears -->
+        <circle cx="112" cy="108" r="44" fill="#1a1a2e" stroke="#C4A35A" stroke-width="2"/>
+        <circle cx="208" cy="108" r="44" fill="#1a1a2e" stroke="#C4A35A" stroke-width="2"/>
+        <!-- Head -->
+        <ellipse cx="160" cy="176" rx="68" ry="70" fill="#1a1a2e" stroke="#C4A35A" stroke-width="2"/>
+        <ellipse cx="160" cy="185" rx="52" ry="45" fill="#2a1a0e"/>
+        <!-- Eyes -->
+        <ellipse cx="143" cy="168" rx="10" ry="12" fill="white"/>
+        <ellipse cx="177" cy="168" rx="10" ry="12" fill="white"/>
+        <circle cx="146" cy="170" r="6" fill="#111"/>
+        <circle cx="180" cy="170" r="6" fill="#111"/>
+        <circle cx="148" cy="167" r="2" fill="white"/>
+        <circle cx="182" cy="167" r="2" fill="white"/>
+        <!-- Nose & smile -->
+        <ellipse cx="160" cy="186" rx="13" ry="8.5" fill="#111"/>
+        <path d="M140 200 Q160 218 180 200" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Sorcerer Hat -->
+        <path d="M128 130 L160 36 L192 130 Z" fill="url(#hpHat)" stroke="#C4A35A" stroke-width="2"/>
+        <ellipse cx="160" cy="132" rx="36" ry="9" fill="#2a1060" stroke="#C4A35A" stroke-width="1.5"/>
+        <!-- Hat stars -->
+        <polygon points="160,56 162,63 169,63 163,67 166,74 160,70 154,74 157,67 151,63 158,63" fill="#C4A35A" opacity="0.95"/>
+        <circle cx="146" cy="80" r="3" fill="#9D7FCC" opacity="0.8"/>
+        <circle cx="172" cy="90" r="2" fill="#C4A35A" opacity="0.6"/>
+        <!-- Wand -->
+        <line x1="202" y1="154" x2="264" y2="102" stroke="#C4A35A" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="264" cy="102" r="8" fill="#C4A35A" opacity="0.95" filter="url(#hpGlowFilter)"/>
+        <line x1="278" y1="92" x2="283" y2="87" stroke="#9D7FCC" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="281" y1="102" x2="287" y2="102" stroke="#C4A35A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="278" y1="112" x2="283" y2="117" stroke="#9D7FCC" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Magic swirl -->
+        <path d="M80 222 Q95 195 75 180 Q55 165 72 147 Q85 135 102 143" stroke="#9D7FCC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+        <path d="M88 230 Q103 200 80 186 Q62 172 79 156" stroke="rgba(157,127,204,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Pin text -->
+        <text x="160" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C4A35A" letter-spacing="2.5" opacity="0.9">MYSTICAL MAIL</text>
+        <text x="160" y="292" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="rgba(196,163,90,0.55)" letter-spacing="3.5">FANTASY SERIES</text>
+      </svg>
+    </div>
 
-        <!-- Sorcerer Mickey Pin Art (SVG) -->
-        <svg class="pin-art" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Pin outer glow -->
-          <circle cx="160" cy="160" r="140" fill="url(#pinGlow)" opacity="0.3"/>
-
-          <!-- Pin base circle -->
-          <circle cx="160" cy="160" r="130" fill="url(#pinBase)" stroke="url(#goldStroke)" stroke-width="3"/>
-          <circle cx="160" cy="160" r="124" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
-
-          <!-- Stars in background -->
-          <circle cx="60" cy="70" r="2" fill="#C9A84C" opacity="0.6"/>
-          <circle cx="240" cy="90" r="1.5" fill="#fff" opacity="0.5"/>
-          <circle cx="80" cy="250" r="1.5" fill="#C9A84C" opacity="0.4"/>
-          <circle cx="260" cy="230" r="2" fill="#fff" opacity="0.5"/>
-          <circle cx="150" cy="45" r="1" fill="#00E5CC" opacity="0.6"/>
-          <circle cx="110" cy="270" r="1.5" fill="#fff" opacity="0.4"/>
-
-          <!-- Mickey ears -->
-          <circle cx="110" cy="108" r="44" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
-          <circle cx="208" cy="108" r="44" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
-
-          <!-- Mickey head -->
-          <ellipse cx="160" cy="175" rx="68" ry="72" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
-
-          <!-- Face -->
-          <ellipse cx="160" cy="185" rx="52" ry="45" fill="#2a1a0e"/>
-
-          <!-- Eyes -->
-          <ellipse cx="143" cy="168" rx="10" ry="12" fill="white"/>
-          <ellipse cx="177" cy="168" rx="10" ry="12" fill="white"/>
-          <circle cx="146" cy="170" r="6" fill="#111"/>
-          <circle cx="180" cy="170" r="6" fill="#111"/>
-          <circle cx="148" cy="167" r="2" fill="white"/>
-          <circle cx="182" cy="167" r="2" fill="white"/>
-
-          <!-- Nose -->
-          <ellipse cx="160" cy="186" rx="14" ry="9" fill="#111"/>
-
-          <!-- Smile -->
-          <path d="M140 200 Q160 218 180 200" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
-
-          <!-- Sorcerer Hat -->
-          <path d="M130 130 L160 38 L190 130 Z" fill="url(#hatGrad)" stroke="#C9A84C" stroke-width="2"/>
-          <!-- Hat brim -->
-          <ellipse cx="160" cy="132" rx="36" ry="8" fill="#2a1060" stroke="#C9A84C" stroke-width="1.5"/>
-          <!-- Hat stars -->
-          <polygon points="160,55 162,62 169,62 163,66 166,73 160,69 154,73 157,66 151,62 158,62" fill="#C9A84C" opacity="0.9"/>
-          <polygon points="175,82 176.5,87 181,87 177,90 178.5,95 175,92 171.5,95 173,90 169,87 173.5,87" fill="#00E5CC" opacity="0.8" transform="scale(0.7) translate(80,50)"/>
-          <circle cx="145" cy="78" r="3" fill="#C9A84C" opacity="0.7"/>
-
-          <!-- Magic wand / sparkles -->
-          <line x1="200" y1="155" x2="265" y2="105" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="265" cy="105" r="8" fill="#C9A84C" opacity="0.9"/>
-          <!-- Sparkles -->
-          <line x1="278" y1="95" x2="282" y2="91" stroke="#00E5CC" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="280" y1="104" x2="286" y2="104" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="278" y1="113" x2="282" y2="117" stroke="#00E5CC" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="270" y1="90" x2="270" y2="84" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-
-          <!-- Magic swirl / water -->
-          <path d="M80 220 Q95 195 75 180 Q55 165 72 148 Q85 136 100 142"
-                stroke="#00E5CC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"/>
-          <path d="M88 228 Q102 200 80 186 Q62 172 78 156"
-                stroke="rgba(0,229,204,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-
-          <!-- Pin name text -->
-          <text x="160" y="276" text-anchor="middle" font-family="serif" font-size="11" fill="#C9A84C" letter-spacing="2" opacity="0.9">MYSTICAL MAIL</text>
-          <text x="160" y="292" text-anchor="middle" font-family="serif" font-size="9" fill="rgba(201,168,76,0.6)" letter-spacing="3">FANTASY SERIES</text>
-
-          <defs>
-            <radialGradient id="pinBase" cx="35%" cy="30%">
-              <stop offset="0%" stop-color="#1e1040"/>
-              <stop offset="60%" stop-color="#0d0820"/>
-              <stop offset="100%" stop-color="#080510"/>
-            </radialGradient>
-            <linearGradient id="hatGrad" x1="130" y1="38" x2="190" y2="130" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#1a0860"/>
-              <stop offset="100%" stop-color="#2a1080"/>
-            </linearGradient>
-            <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#C9A84C"/>
-              <stop offset="50%" stop-color="#E8C76A"/>
-              <stop offset="100%" stop-color="#8B6914"/>
-            </linearGradient>
-            <radialGradient id="pinGlow" cx="50%" cy="50%">
-              <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.6"/>
-              <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-        </svg>
+    <div class="hero-content">
+      <div class="hero-eyebrow">New Drop · Fantasy Series</div>
+      <h1 class="hero-title">
+        Sorcerer Mickey<br>
+        <em>Fantasy Pin</em><br>
+        LE&nbsp;125
+      </h1>
+      <p class="hero-sub">
+        Hard enamel. Antique gold finish. Hand-numbered from an edition of 125.
+        The magic you've been waiting for.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="document.querySelector('.featured').scrollIntoView({behavior:'smooth'})">Shop the Drop</button>
+        <button class="btn-ghost" onclick="document.querySelector('.collections').scrollIntoView({behavior:'smooth'})">Browse All</button>
       </div>
-
-      <div class="thumbnails">
-        <!-- Thumb 1 – front view (active) -->
-        <div class="thumb active">
-          <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="24" fill="#0d0820" stroke="#C9A84C" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" font-size="14" fill="#C9A84C">🎩</text></svg>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Authenticity guaranteed</span>
         </div>
-        <!-- Thumb 2 – back view -->
-        <div class="thumb">
-          <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="24" fill="#0d0820" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" font-size="12" fill="#8B6914">BACK</text></svg>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>Ships in 2–5 days</span>
         </div>
-        <!-- Thumb 3 – box -->
-        <div class="thumb">
-          <svg viewBox="0 0 60 60" fill="none"><rect x="10" y="14" width="40" height="34" rx="4" fill="#0d0820" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" font-size="10" fill="#C9A84C">📦</text></svg>
-        </div>
-        <!-- Thumb 4 – detail -->
-        <div class="thumb">
-          <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="24" fill="#0d0820" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/><text x="30" y="35" text-anchor="middle" font-size="16" fill="#00E5CC">✦</text></svg>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Only 22 remaining</span>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Product Info -->
-    <div class="product-info">
-      <div class="product-series">
-        <span class="series-tag">Fantasy Series</span>
-        <div class="series-divider"></div>
-        <span class="series-name">Mystical Mail Collection</span>
+  <!-- ═══ TICKER ═══ -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <!-- First set -->
+      <div class="ticker-item">Mystery Mail <span>✦</span> Fantasy Series Drop <span>✦</span> Limited Edition Pins <span>✦</span> LE 125 Sorcerer Mickey <span>✦</span> Mystical Mail Subscription <span>✦</span> Collector Community <span>✦</span> Hard Enamel <span>✦</span> Antique Gold Finish <span>✦</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ticker-item">Mystery Mail <span>✦</span> Fantasy Series Drop <span>✦</span> Limited Edition Pins <span>✦</span> LE 125 Sorcerer Mickey <span>✦</span> Mystical Mail Subscription <span>✦</span> Collector Community <span>✦</span> Hard Enamel <span>✦</span> Antique Gold Finish <span>✦</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ FEATURED PRODUCT ═══ -->
+  <section class="featured" id="featured-product">
+
+    <!-- Gallery -->
+    <div class="gallery-col">
+      <div class="main-img-wrap">
+        <span class="img-badge-le">LE 125</span>
+        <div class="img-stock"><strong>22</strong> of 125 left</div>
+        <div class="pin-display">
+          <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="fpBase" cx="35%" cy="30%"><stop offset="0%" stop-color="#1e1048"/><stop offset="60%" stop-color="#0d0820"/><stop offset="100%" stop-color="#070512"/></radialGradient>
+              <radialGradient id="fpGlow" cx="50%" cy="50%"><stop offset="0%" stop-color="#C4A35A" stop-opacity="0.5"/><stop offset="100%" stop-color="#C4A35A" stop-opacity="0"/></radialGradient>
+              <linearGradient id="fpHat" x1="130" y1="38" x2="190" y2="130" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0860"/><stop offset="100%" stop-color="#2a1080"/></linearGradient>
+              <linearGradient id="fpRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#DEC47A"/><stop offset="50%" stop-color="#C4A35A"/><stop offset="100%" stop-color="#8C6E2E"/></linearGradient>
+            </defs>
+            <circle cx="160" cy="160" r="142" fill="url(#fpGlow)" opacity="0.45"/>
+            <circle cx="160" cy="160" r="132" fill="url(#fpBase)" stroke="url(#fpRing)" stroke-width="3.5"/>
+            <circle cx="160" cy="160" r="126" fill="none" stroke="rgba(196,163,90,0.2)" stroke-width="1"/>
+            <circle cx="55" cy="68" r="2" fill="#C4A35A" opacity="0.7"/>
+            <circle cx="242" cy="82" r="1.5" fill="#fff" opacity="0.5"/>
+            <circle cx="76" cy="248" r="1.5" fill="#C4A35A" opacity="0.4"/>
+            <circle cx="258" cy="232" r="2" fill="#fff" opacity="0.5"/>
+            <circle cx="152" cy="42" r="1.2" fill="#9D7FCC" opacity="0.8"/>
+            <circle cx="112" cy="108" r="44" fill="#1a1a2e" stroke="#C4A35A" stroke-width="2"/>
+            <circle cx="208" cy="108" r="44" fill="#1a1a2e" stroke="#C4A35A" stroke-width="2"/>
+            <ellipse cx="160" cy="176" rx="68" ry="70" fill="#1a1a2e" stroke="#C4A35A" stroke-width="2"/>
+            <ellipse cx="160" cy="185" rx="52" ry="45" fill="#2a1a0e"/>
+            <ellipse cx="143" cy="168" rx="10" ry="12" fill="white"/>
+            <ellipse cx="177" cy="168" rx="10" ry="12" fill="white"/>
+            <circle cx="146" cy="170" r="6" fill="#111"/>
+            <circle cx="180" cy="170" r="6" fill="#111"/>
+            <circle cx="148" cy="167" r="2" fill="white"/>
+            <circle cx="182" cy="167" r="2" fill="white"/>
+            <ellipse cx="160" cy="186" rx="13" ry="8.5" fill="#111"/>
+            <path d="M140 200 Q160 218 180 200" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M128 130 L160 36 L192 130 Z" fill="url(#fpHat)" stroke="#C4A35A" stroke-width="2"/>
+            <ellipse cx="160" cy="132" rx="36" ry="9" fill="#2a1060" stroke="#C4A35A" stroke-width="1.5"/>
+            <polygon points="160,56 162,63 169,63 163,67 166,74 160,70 154,74 157,67 151,63 158,63" fill="#C4A35A" opacity="0.95"/>
+            <circle cx="146" cy="80" r="3" fill="#9D7FCC" opacity="0.8"/>
+            <circle cx="172" cy="90" r="2" fill="#C4A35A" opacity="0.6"/>
+            <line x1="202" y1="154" x2="264" y2="102" stroke="#C4A35A" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="264" cy="102" r="8" fill="#C4A35A" opacity="0.95"/>
+            <line x1="278" y1="92" x2="283" y2="87" stroke="#9D7FCC" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="281" y1="102" x2="287" y2="102" stroke="#C4A35A" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="278" y1="112" x2="283" y2="117" stroke="#9D7FCC" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M80 222 Q95 195 75 180 Q55 165 72 147 Q85 135 102 143" stroke="#9D7FCC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+            <path d="M88 230 Q103 200 80 186 Q62 172 79 156" stroke="rgba(157,127,204,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <text x="160" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C4A35A" letter-spacing="2.5" opacity="0.9">MYSTICAL MAIL</text>
+            <text x="160" y="292" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="rgba(196,163,90,0.55)" letter-spacing="3.5">FANTASY SERIES</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="thumb-row">
+        <div class="thumb active"><div class="thumb-inner">🎩</div></div>
+        <div class="thumb"><div class="thumb-inner">🔮</div></div>
+        <div class="thumb"><div class="thumb-inner">📦</div></div>
+        <div class="thumb"><div class="thumb-inner">✨</div></div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="info-col">
+      <div class="breadcrumb-row">
+        <a href="#">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <a href="#">Mystery Mail</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span style="color:var(--muted)">Sorcerer Mickey Fantasy Pin</span>
+      </div>
+
+      <div class="tags-row">
+        <span class="tag tag-series">Fantasy Series</span>
+        <span class="tag tag-le">LE 125</span>
       </div>
 
       <h1 class="product-title">
-        Mystical Mail LE 125 —<br>
-        <em>Sorcerer Mickey</em><br>
-        Fantasy Pin
+        Mystical Mail — Sorcerer Mickey Fantasy Pin
       </h1>
 
       <div class="rating-row">
         <div class="stars">★★★★★</div>
-        <span class="rating-count">(47 reviews)</span>
-        <a href="#reviews" class="rating-link">Read reviews →</a>
+        <span class="rating-ct">47 reviews</span>
+        <a href="#" class="rating-link">View all →</a>
       </div>
 
-      <div class="price-block">
-        <span class="price-current">$38.00</span>
-        <span class="price-original">$48.00</span>
-        <span class="price-badge">21% off</span>
+      <div class="price-row">
+        <span class="price-now">$38.00</span>
+        <span class="price-was">$48.00</span>
+        <span class="price-save">Save 21%</span>
       </div>
 
-      <div class="edition-info">
-        <div class="edition-stat">
-          <span class="edition-label">Edition Size</span>
-          <span class="edition-value">LE 125</span>
+      <div class="edition-strip">
+        <div class="ed-stat">
+          <div class="ed-label">Edition</div>
+          <div class="ed-val">LE 125</div>
         </div>
-        <div class="edition-stat">
-          <span class="edition-label">Series</span>
-          <span class="edition-value">Fantasy</span>
+        <div class="ed-stat">
+          <div class="ed-label">Series</div>
+          <div class="ed-val">Fantasy</div>
         </div>
-        <div class="edition-stat">
-          <span class="edition-label">Year</span>
-          <span class="edition-value">2024</span>
+        <div class="ed-stat">
+          <div class="ed-label">Year</div>
+          <div class="ed-val">2024</div>
         </div>
-        <div class="edition-stat">
-          <span class="edition-label">Artist</span>
-          <span class="edition-value">Vault Co.</span>
-        </div>
-      </div>
-
-      <div class="availability">
-        <div class="avail-label">
-          <span>Availability</span>
-          <strong>Only 22 left — selling fast</strong>
-        </div>
-        <div class="avail-bar">
-          <div class="avail-fill"></div>
+        <div class="ed-stat">
+          <div class="ed-label">Finish</div>
+          <div class="ed-val">Hard</div>
         </div>
       </div>
 
-      <div class="option-section">
-        <p class="option-label">Variant: <span>Standard</span></p>
-        <div class="variant-grid">
-          <button class="variant-btn selected">Standard</button>
-          <button class="variant-btn">With Display Stand</button>
-          <button class="variant-btn">Collector Bundle</button>
+      <div class="stock-block">
+        <div class="stock-label">
+          <span>Stock</span>
+          <strong>Selling fast — only 22 left</strong>
+        </div>
+        <div class="stock-bar"><div class="stock-fill"></div></div>
+      </div>
+
+      <div class="opt-group">
+        <p class="opt-label">Variant: <span>Standard</span></p>
+        <div class="opt-btns">
+          <button class="opt-btn sel">Standard</button>
+          <button class="opt-btn">With Stand</button>
+          <button class="opt-btn">Collector Bundle</button>
         </div>
       </div>
 
-      <div class="option-section">
-        <p class="option-label">Quantity</p>
-        <div class="qty-row">
-          <button class="qty-btn" onclick="this.nextElementSibling.textContent=Math.max(1,+this.nextElementSibling.textContent-1)">−</button>
-          <span class="qty-val">1</span>
-          <button class="qty-btn" onclick="this.previousElementSibling.textContent=Math.min(3,+this.previousElementSibling.textContent+1)">+</button>
+      <div class="opt-group">
+        <p class="opt-label">Quantity</p>
+        <div class="qty-wrap">
+          <button class="qty-btn" onclick="let n=this.nextElementSibling;n.textContent=Math.max(1,+n.textContent-1)">−</button>
+          <span class="qty-num">1</span>
+          <button class="qty-btn" onclick="let n=this.previousElementSibling;n.textContent=Math.min(3,+n.textContent+1)">+</button>
         </div>
       </div>
 
-      <div class="cta-stack">
-        <button class="btn-add-to-cart">✦ Add to Vault</button>
-        <button class="btn-buy-now">Buy It Now</button>
+      <div class="cta-group">
+        <button class="cta-add">Add to Cart</button>
+        <button class="cta-buy">Buy It Now</button>
       </div>
 
       <div class="trust-row">
-        <div class="trust-item">
-          <span class="trust-icon">🔒</span>
-          <span>Secure checkout</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">📦</span>
-          <span>Ships in 2–5 days</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">✨</span>
-          <span>Auth. guaranteed</span>
-        </div>
+        <div class="trust-item"><span class="trust-icon">🔒</span> Secure checkout</div>
+        <div class="trust-item"><span class="trust-icon">📦</span> Ships in 2–5 days</div>
+        <div class="trust-item"><span class="trust-icon">🌟</span> Auth. guaranteed</div>
       </div>
 
-      <div class="accordions">
-        <div class="accordion-item">
-          <button class="accordion-trigger open" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      <div class="acc">
+        <div class="acc-item">
+          <button class="acc-btn open" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
             About This Pin
-            <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="accordion-content open">
-            Step into the enchanted halls of the sorcerer's realm with this stunning <strong>Limited Edition Mystical Mail — Sorcerer Mickey Fantasy Pin</strong>. Hand-numbered from an edition of only 125, this collectible celebrates the iconic Sorcerer's Apprentice sequence in breathtaking enamel detail.<br><br>
-            Each pin arrives in MystiVault's signature mystery packaging, making it the perfect gift for Disney pin collectors and fantasy enthusiasts alike.
+          <div class="acc-body open">
+            Step into the enchanted halls of the sorcerer's realm. This <strong>Limited Edition Mystical Mail — Sorcerer Mickey Fantasy Pin</strong> is hand-numbered from an edition of 125. Inspired by the iconic Sorcerer's Apprentice, it arrives in MystiVault's signature mystery packaging with a collector card and certificate of authenticity.
           </div>
         </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-            Pin Details
-            <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="acc-item">
+          <button class="acc-btn" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+            Pin Specifications
+            <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="accordion-content">
+          <div class="acc-body">
             <ul>
-              <li>Limited Edition of 125 pieces, individually hand-numbered</li>
-              <li>Hard enamel with antique gold metal finish</li>
-              <li>Approx. 2 inches tall with double rubber clutch backing</li>
+              <li>Limited Edition — 125 pieces, individually hand-numbered</li>
+              <li>Hard enamel with antique gold plated metal finish</li>
+              <li>Approximately 2 inches tall, double rubber clutch backing</li>
               <li>Glitter enamel accent on Sorcerer hat stars</li>
               <li>Glow-in-the-dark magic swirl detail</li>
               <li>Includes collector card &amp; certificate of authenticity</li>
             </ul>
           </div>
         </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+        <div class="acc-item">
+          <button class="acc-btn" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
             Shipping &amp; Returns
-            <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="accordion-content">
+          <div class="acc-body">
             <ul>
               <li>Orders ship within 2–5 business days</li>
-              <li>Free domestic shipping on orders over $50</li>
+              <li>Free US shipping on orders over $75</li>
               <li>International shipping available at checkout</li>
-              <li>Each pin is carefully inspected and packed for safe transit</li>
-              <li>Due to limited nature, all sales are final on LE pins</li>
+              <li>Limited edition items — all sales final</li>
             </ul>
           </div>
         </div>
@@ -1214,137 +1201,256 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════ DIVIDER ═══════════════════════ -->
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-symbol">✦ ✦ ✦</span>
-    <div class="divider-line"></div>
+  <!-- ═══ DIVIDER ═══ -->
+  <div class="sec-divider">
+    <div class="sec-line"></div>
+    <div class="sec-ornament">✦</div>
+    <div class="sec-line"></div>
   </div>
 
-  <!-- ═══════════════════════ RELATED ══════════════════════ -->
-  <section class="related-section">
-    <div class="section-header">
-      <p class="section-eyebrow">From the Vault</p>
-      <h2 class="section-title">You May Also Covet</h2>
+  <!-- ═══ COLLECTIONS ═══ -->
+  <section class="collections" id="collections">
+    <div class="sec-header">
+      <p class="sec-eyebrow">Explore the Vault</p>
+      <h2 class="sec-title">Browse the Collections</h2>
     </div>
 
-    <div class="related-grid">
-      <!-- Card 1 -->
-      <div class="product-card">
-        <div class="card-image" style="background: linear-gradient(135deg, #0d0820, #1a0840);">
-          <span class="card-badge badge-limited">LE 75</span>
-          <svg viewBox="0 0 120 120" fill="none"><text x="60" y="72" text-anchor="middle" font-size="52">🌊</text></svg>
-        </div>
-        <div class="card-body">
-          <p class="card-title">Fantasia Waves — Hippo Ballerina</p>
-          <p class="card-price">$44.00</p>
+    <div class="coll-grid">
+
+      <!-- Tall card — Mystery Mail -->
+      <div class="coll-card tall">
+        <div class="coll-img" style="background: linear-gradient(160deg,#0F0820 0%,#1A1040 100%);">
+          <div class="coll-bg-art">
+            <svg viewBox="0 0 200 200" fill="none">
+              <rect x="30" y="60" width="140" height="100" rx="6" fill="rgba(196,163,90,0.08)" stroke="rgba(196,163,90,0.25)" stroke-width="1.5"/>
+              <path d="M30 80 L100 118 L170 80" stroke="rgba(196,163,90,0.4)" stroke-width="1.5" fill="none"/>
+              <circle cx="100" cy="40" r="18" fill="rgba(107,79,160,0.3)" stroke="rgba(196,163,90,0.35)" stroke-width="1.5"/>
+              <text x="100" y="47" text-anchor="middle" font-size="16">🌙</text>
+              <circle cx="58" cy="148" r="8" fill="rgba(196,163,90,0.15)" stroke="rgba(196,163,90,0.3)" stroke-width="1"/>
+              <text x="58" y="152" text-anchor="middle" font-size="9">✦</text>
+              <circle cx="142" cy="148" r="8" fill="rgba(107,79,160,0.15)" stroke="rgba(107,79,160,0.35)" stroke-width="1"/>
+              <text x="142" y="152" text-anchor="middle" font-size="9">★</text>
+            </svg>
+          </div>
+          <div class="coll-overlay">
+            <div class="coll-label">Subscription</div>
+            <div class="coll-name">Mystical Mail</div>
+            <div class="coll-sub">Monthly mystery boxes</div>
+            <div class="coll-arrow">Explore →</div>
+          </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="product-card">
-        <div class="card-image" style="background: linear-gradient(135deg, #0a1020, #102040);">
-          <span class="card-badge badge-sold-out">Sold Out</span>
-          <svg viewBox="0 0 120 120" fill="none"><text x="60" y="72" text-anchor="middle" font-size="52">🧙</text></svg>
-        </div>
-        <div class="card-body">
-          <p class="card-title">Merlin's Menagerie — Wizard Series</p>
-          <p class="card-price">$42.00</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="product-card">
-        <div class="card-image" style="background: linear-gradient(135deg, #0a1808, #182a10);">
-          <span class="card-badge badge-new">New</span>
-          <svg viewBox="0 0 120 120" fill="none"><text x="60" y="72" text-anchor="middle" font-size="52">🌟</text></svg>
-        </div>
-        <div class="card-body">
-          <p class="card-title">Mystical Mail Box — Oct. 2024 Edition</p>
-          <p class="card-price">$28.00</p>
+      <!-- Top-right: Fantasy Series -->
+      <div class="coll-card">
+        <div class="coll-img" style="background: linear-gradient(140deg,#100820 0%,#1E1040 100%);">
+          <div class="coll-bg-art">
+            <svg viewBox="0 0 200 180" fill="none">
+              <circle cx="100" cy="88" r="55" fill="rgba(196,163,90,0.06)" stroke="rgba(196,163,90,0.2)" stroke-width="1.5"/>
+              <circle cx="100" cy="88" r="42" fill="none" stroke="rgba(107,79,160,0.25)" stroke-width="1"/>
+              <path d="M76 88 L100 38 L124 88 Z" fill="rgba(107,79,160,0.3)" stroke="rgba(196,163,90,0.4)" stroke-width="1.5"/>
+              <polygon points="100,60 102,67 109,67 103,71 106,78 100,74 94,78 97,71 91,67 98,67" fill="#C4A35A" opacity="0.8"/>
+            </svg>
+          </div>
+          <div class="coll-overlay">
+            <div class="coll-label">Limited Edition</div>
+            <div class="coll-name">Fantasy Series</div>
+            <div class="coll-sub">Enchanted pin drops</div>
+            <div class="coll-arrow">Explore →</div>
+          </div>
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="product-card">
-        <div class="card-image" style="background: linear-gradient(135deg, #180820, #2a1040);">
-          <span class="card-badge badge-limited">LE 100</span>
-          <svg viewBox="0 0 120 120" fill="none"><text x="60" y="72" text-anchor="middle" font-size="52">🔮</text></svg>
+      <!-- Bottom-right: Sold Out Archive -->
+      <div class="coll-card">
+        <div class="coll-img" style="background: linear-gradient(140deg,#0A0A14 0%,#141428 100%);">
+          <div class="coll-bg-art">
+            <svg viewBox="0 0 200 180" fill="none">
+              <rect x="55" y="50" width="90" height="80" rx="4" fill="rgba(107,79,160,0.1)" stroke="rgba(107,79,160,0.25)" stroke-width="1.5"/>
+              <line x1="55" y1="72" x2="145" y2="72" stroke="rgba(196,163,90,0.15)" stroke-width="1"/>
+              <circle cx="100" cy="60" r="6" fill="rgba(196,163,90,0.25)" stroke="rgba(196,163,90,0.4)" stroke-width="1"/>
+              <text x="100" y="100" text-anchor="middle" font-family="Georgia" font-size="10" fill="rgba(196,163,90,0.5)" letter-spacing="2">ARCHIVE</text>
+              <text x="100" y="116" text-anchor="middle" font-size="8" fill="rgba(107,79,160,0.7)" letter-spacing="1">SOLD OUT</text>
+            </svg>
+          </div>
+          <div class="coll-overlay">
+            <div class="coll-label">Archive</div>
+            <div class="coll-name">Sold Out Vault</div>
+            <div class="coll-sub">Past exclusives &amp; lore</div>
+            <div class="coll-arrow">Browse →</div>
+          </div>
         </div>
-        <div class="card-body">
-          <p class="card-title">Crystal Ball Oracle — Madame Leota</p>
-          <p class="card-price">$52.00</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PROOF STRIP ═══ -->
+  <div class="proof-strip">
+    <div class="proof-inner">
+      <div class="proof-stat">
+        <div class="proof-num">4,800+</div>
+        <div class="proof-label">Collectors worldwide</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">125</div>
+        <div class="proof-label">Max edition size</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">47</div>
+        <div class="proof-label">Reviews on this drop</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">100%</div>
+        <div class="proof-label">Authenticity guaranteed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DIVIDER ═══ -->
+  <div class="sec-divider" style="margin-top:0; padding-top:80px;">
+    <div class="sec-line"></div>
+    <div class="sec-ornament">✦</div>
+    <div class="sec-line"></div>
+  </div>
+
+  <!-- ═══ RELATED PRODUCTS ═══ -->
+  <section class="related">
+    <div class="sec-header">
+      <p class="sec-eyebrow">From the Collection</p>
+      <h2 class="sec-title">You May Also Covet</h2>
+    </div>
+
+    <div class="product-row">
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(145deg,#0F0820,#1A1040)">
+          <span class="prod-badge pb-le">LE 75</span>
+          <div class="prod-img-art">🌊</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-series">Fantasy Series</div>
+          <div class="prod-name">Fantasia Waves — Hippo Ballerina Pin</div>
+          <div class="prod-price-row">
+            <span class="prod-price">$44.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(145deg,#0A1020,#102040)">
+          <span class="prod-badge pb-sold">Sold Out</span>
+          <div class="prod-img-art">🧙</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-series">Wizard Series</div>
+          <div class="prod-name">Merlin's Menagerie — Enchanted Forest</div>
+          <div class="prod-price-row">
+            <span class="prod-price">$42.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(145deg,#0A1808,#182a10)">
+          <span class="prod-badge pb-new">New</span>
+          <div class="prod-img-art">🌟</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-series">Mystery Mail</div>
+          <div class="prod-name">Mystical Mail Box — October 2024</div>
+          <div class="prod-price-row">
+            <span class="prod-price">$28.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(145deg,#180820,#2a1040)">
+          <span class="prod-badge pb-le">LE 100</span>
+          <div class="prod-img-art">🔮</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-series">Haunted Series</div>
+          <div class="prod-name">Crystal Ball Oracle — Madame Leota</div>
+          <div class="prod-price-row">
+            <span class="prod-price">$52.00</span>
+            <span class="prod-compare">$60.00</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════ NEWSLETTER ════════════════════ -->
-  <div class="newsletter-band">
-    <p class="newsletter-eyebrow">Join the Vault</p>
-    <h2 class="newsletter-title">First to Know. First to Collect.</h2>
-    <p class="newsletter-sub">Get early access to new drops, exclusive LE releases, and mystery unboxings.</p>
-    <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="your@email.com" />
-      <button class="newsletter-btn">Unlock Access</button>
-    </div>
+  <!-- ═══ NEWSLETTER ═══ -->
+  <div class="sec-divider">
+    <div class="sec-line"></div>
+    <div class="sec-ornament">✦</div>
+    <div class="sec-line"></div>
   </div>
 
-  <!-- ═══════════════════════ FOOTER ════════════════════════ -->
+  <section class="newsletter">
+    <p class="nl-eyebrow">Join the Inner Circle</p>
+    <h2 class="nl-title">First to Know.<br><em style="font-style:italic;color:var(--gold-l)">First to Collect.</em></h2>
+    <p class="nl-sub">Get early access to LE drops, mystery unboxings, and exclusive collector news — before anyone else.</p>
+    <div class="nl-form">
+      <input type="email" class="nl-input" placeholder="your@email.com" />
+      <button class="nl-btn">Subscribe</button>
+    </div>
+    <p class="nl-note">No spam. Unsubscribe anytime. Your details are sacred.</p>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo-mark">
-          <svg viewBox="0 0 60 60" fill="none">
-            <polygon points="30,4 56,52 4,52" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="1.5"/>
-            <circle cx="30" cy="38" r="9" fill="none" stroke="#C9A84C" stroke-width="1"/>
-            <circle cx="30" cy="38" r="5" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
-            <circle cx="30" cy="38" r="2" fill="#C9A84C"/>
-          </svg>
+    <div class="footer-top">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <img src="https://mystivault.com/cdn/shop/files/MV_Black.png?v=1785137589&width=200"
+               alt="MystiVault" class="ft-mv"
+               onerror="this.style.display='none'">
+          <div class="ft-name">MystiVault</div>
         </div>
-        <div class="footer-brand-name">MystiVault</div>
-        <p class="footer-brand-desc">Delve into unseen realms of reality with Mystivault — your gateway to mysteries, alternate truths, and collectible magic.</p>
-        <div class="footer-socials">
+        <p class="ft-tagline">"Delve into unseen realms of reality — your gateway to mysteries, alternate truths, and the collectible magic of the unknown."</p>
+        <div class="ft-socials">
           <!-- Instagram -->
-          <a href="#" class="social-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          <a href="#" class="ft-social">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
           </a>
           <!-- TikTok -->
-          <a href="#" class="social-btn">
+          <a href="#" class="ft-social">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.15a8.16 8.16 0 004.78 1.52V7.21a4.85 4.85 0 01-1.01-.52z"/></svg>
           </a>
           <!-- Pinterest -->
-          <a href="#" class="social-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.23-5.21 1.23-5.21s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.57 2.25-.87 3.5-.25 1.05.52 1.9 1.54 1.9 1.84 0 3.08-2.37 3.08-5.18 0-2.14-1.44-3.74-4.05-3.74-2.95 0-4.78 2.2-4.78 4.66 0 .85.24 1.44.62 1.9.17.2.19.28.13.51-.04.17-.14.56-.18.72-.06.23-.24.31-.44.23-1.22-.5-1.79-1.85-1.79-3.36 0-2.5 2.11-5.52 6.3-5.52 3.38 0 5.63 2.44 5.63 5.06 0 3.47-1.93 6.08-4.75 6.08-.95 0-1.85-.51-2.16-1.09l-.59 2.27c-.22.83-.79 1.87-1.18 2.5.89.28 1.83.43 2.81.43 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          <a href="#" class="ft-social">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.23-5.21 1.23-5.21s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.57 2.25-.87 3.5-.25 1.05.52 1.9 1.54 1.9 1.84 0 3.08-2.37 3.08-5.18 0-2.14-1.44-3.74-4.05-3.74-2.95 0-4.78 2.2-4.78 4.66 0 .85.24 1.44.62 1.9.17.2.19.28.13.51-.04.17-.14.56-.18.72-.06.23-.24.31-.44.23-1.22-.5-1.79-1.85-1.79-3.36 0-2.5 2.11-5.52 6.3-5.52 3.38 0 5.63 2.44 5.63 5.06 0 3.47-1.93 6.08-4.75 6.08-.95 0-1.85-.51-2.16-1.09l-.59 2.27c-.22.83-.79 1.87-1.18 2.5.89.28 1.83.43 2.81.43 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
           </a>
         </div>
       </div>
 
       <div>
-        <p class="footer-col-title">Shop</p>
-        <ul class="footer-links">
+        <div class="ft-col-head">Shop</div>
+        <ul class="ft-links">
           <li><a href="#">New Arrivals</a></li>
           <li><a href="#">Mystery Mail</a></li>
-          <li><a href="#">Limited Editions</a></li>
           <li><a href="#">Fantasy Series</a></li>
+          <li><a href="#">Limited Editions</a></li>
           <li><a href="#">Sold Out Archive</a></li>
         </ul>
       </div>
 
       <div>
-        <p class="footer-col-title">The Vault</p>
-        <ul class="footer-links">
+        <div class="ft-col-head">The Vault</div>
+        <ul class="ft-links">
           <li><a href="#">Our Story</a></li>
           <li><a href="#">Pin Authentication</a></li>
           <li><a href="#">Collector Community</a></li>
-          <li><a href="#">Blog / Lore</a></li>
+          <li><a href="#">Lore &amp; Blog</a></li>
           <li><a href="#">Wholesale</a></li>
         </ul>
       </div>
 
       <div>
-        <p class="footer-col-title">Support</p>
-        <ul class="footer-links">
+        <div class="ft-col-head">Support</div>
+        <ul class="ft-links">
           <li><a href="#">FAQ</a></li>
           <li><a href="#">Shipping Info</a></li>
           <li><a href="#">Returns</a></li>
@@ -1355,11 +1461,13 @@
     </div>
 
     <div class="footer-bottom">
-      <span class="footer-copy">© 2024 MystiVault. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Settings</a>
+      <div class="footer-bottom-inner">
+        <span>© 2024 MystiVault. All rights reserved.</span>
+        <div class="ft-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
