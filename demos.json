@@ -231,5 +231,23 @@
       "Trucking"
     ],
     "added": "2026-07-14"
+  },
+  {
+    "slug": "mystivault-demo",
+    "name": "MystiVault",
+    "category": "E-Commerce \u00b7 Collectibles & Pins",
+    "icon": "\u2728",
+    "path": "/mystivault-demo/",
+    "status": "live",
+    "location": "mystivault.com",
+    "phone": null,
+    "tags": [
+      "E-Commerce",
+      "Limited Edition",
+      "Collectibles",
+      "Disney Pins"
+    ],
+    "accent": "gold-teal",
+    "added": "2026-07-29"
   }
 ]
