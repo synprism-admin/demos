@@ -272,8 +272,42 @@
 
     /* ── Responsive ── */
     @media (max-width:1024px) { .shop-grid { grid-template-columns:repeat(3,1fr); } }
-    @media (max-width:768px)  { .nav-left { display:none; } .shop-grid { grid-template-columns:repeat(2,1fr); } .footer-body { grid-template-columns:1fr 1fr; } .filter-bar { padding:20px; } .shop-grid-wrap { padding:0 20px 60px; } }
-    @media (max-width:480px)  { .shop-grid { grid-template-columns:repeat(2,1fr); } .header-inner { padding:0 20px; } }
+    @media (max-width:768px) {
+      .nav-left { display:none; }
+      .header-inner { padding:0 16px; grid-template-columns:auto 1fr; }
+      .shop-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-body { grid-template-columns:1fr 1fr; gap:28px; }
+      .filter-bar { padding:16px 16px; flex-direction:column; align-items:flex-start; gap:12px; }
+      .shop-grid-wrap { padding:0 12px 48px; }
+      .page-head { padding:28px 16px 24px; }
+      .ann-bar { flex-direction:column; gap:4px; padding:8px 16px; text-align:center; font-size:10.5px; }
+      .ann-sep { display:none; }
+    }
+    @media (max-width:480px) {
+      html, body { max-width:100vw; overflow-x:hidden; }
+      * { word-break:break-word; }
+      .header-inner { padding:0 14px; }
+      .shop-grid { grid-template-columns:repeat(2,1fr); gap:1px; }
+      .shop-grid-wrap { padding:0 0 40px; }
+      .filter-tags { gap:6px; }
+      .filter-tag { font-size:8px; padding:6px 10px; letter-spacing:0.12em; }
+      .sort-wrap { width:100%; justify-content:space-between; }
+      .prod-body { padding:10px 12px 14px; }
+      .prod-name { font-size:12px; }
+      .prod-price { font-size:13px; }
+      .prod-series { font-size:7px; }
+      .page-title { font-size:22px; }
+      .page-sub { font-size:12px; }
+      .footer-body { grid-template-columns:1fr; gap:28px; padding:32px 16px 24px; }
+      .footer-base { padding:14px 16px; }
+      .footer-base-inner { flex-direction:column; gap:8px; text-align:center; font-size:10px; }
+      .ft-legal { gap:12px; flex-wrap:wrap; justify-content:center; }
+      .pagination { padding:32px 0 48px; gap:4px; }
+      .pg-btn { width:30px; height:30px; font-size:11px; }
+    }
+    @media (max-width:360px) {
+      .shop-grid { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
