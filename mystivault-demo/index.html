@@ -191,6 +191,69 @@
     .hero-cta:hover { background:var(--gold-l); box-shadow:0 0 28px rgba(201,168,76,0.4); }
     .hero-cta:hover svg { transform:translateX(3px); }
 
+    /* ── Hero background-image + left overlay layout ── */
+    .hero {
+      background-image: url('https://mystivault.com/cdn/shop/files/Disney_Castle_2_a84dbe21-74d8-4c71-8b23-93022c6ed731.png?height=832&v=1785156667');
+      background-size: cover;
+      background-position: center right;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-left-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(14,15,43,0.93) 0%, rgba(14,15,43,0.78) 42%, rgba(14,15,43,0.25) 68%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 600px;
+      padding: 90px 52px;
+    }
+    .hero-heading {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 400; line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-body {
+      font-family: 'EB Garamond', serif;
+      font-size: 17px; color: rgba(255,255,255,0.65);
+      line-height: 1.75; margin-bottom: 32px;
+      max-width: 460px;
+    }
+    /* Collection card real-image art */
+    .coll-card-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    /* Spotlight product image on white bg */
+    .spot-frame-white {
+      background: #ffffff !important;
+    }
+    .spot-product-img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+      position: relative; z-index: 2;
+    }
+    /* Shop card product image */
+    .shop-img-real {
+      aspect-ratio: 1; position: relative;
+      background: #f5f5f5 !important;
+      overflow: hidden;
+    }
+    .shop-img-real img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .shop-img-real .shop-badge {
+      position: absolute; top: 10px; left: 10px; z-index: 2;
+    }
+
     /* ════════════════════════════════
        GOLD ORNAMENT DIVIDER
     ════════════════════════════════ */
@@ -745,11 +808,10 @@
 <header>
   <div class="header-inner">
     <nav class="nav-left">
-      <a href="#">Shop</a>
+      <a href="index.html">Home</a>
       <a href="shop-all.html">Shop All</a>
       <a href="#collections">Collections</a>
-      <a href="#drops">Drops</a>
-      <a href="#">About</a>
+      <a href="#">Contact Us</a>
     </nav>
 
     <a href="#" class="logo-center">
@@ -792,13 +854,14 @@
 
 <!-- ═══ HERO — Full image ═══ -->
 <section class="hero">
-  <img src="hero.png" alt="MystiVault — Original Fantasy Pins" class="hero-img">
-  <div class="hero-fade"></div>
+  <div class="hero-left-overlay"></div>
   <div class="hero-frame"></div>
-  <div class="hero-text-overlay">
-    <p class="hero-tagline">Original fantasy pins crafted for collectors.</p>
+  <div class="hero-content">
+    <p class="eyebrow" style="margin-bottom:16px;">WELCOME TO MYSTIVAULT</p>
+    <h1 class="hero-heading">Original Fantasy Pins<br>Crafted for Collectors.</h1>
+    <p class="hero-body">Every release from the vault is designed from the ground up as an original fantasy collectible with premium materials, limited editions, and storytelling in every detail.</p>
     <a href="#collections" class="hero-cta">
-      Explore the Vault
+      EXPLORE THE COLLECTIONS
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
@@ -818,184 +881,43 @@
 <section class="collections" id="collections">
   <div class="coll-grid">
 
-    <!-- 1: Heraldic MV Crest -->
+    <!-- 1: Shop All -->
     <div class="coll-card">
-      <div class="coll-card-art">
-        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="520" fill="#2830A8"/>
-          <!-- Background glow -->
-          <ellipse cx="200" cy="260" rx="180" ry="220" fill="rgba(201,168,76,0.04)"/>
-          <!-- Outer arch border -->
-          <path d="M60 480 L60 200 Q60 60 200 60 Q340 60 340 200 L340 480" fill="none" stroke="rgba(201,168,76,0.22)" stroke-width="2"/>
-          <path d="M72 472 L72 205 Q72 78 200 78 Q328 78 328 205 L328 472" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
-          <!-- Shield base -->
-          <path d="M110 240 L110 350 Q110 430 200 460 Q290 430 290 350 L290 240 Z" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-          <!-- Inner shield line -->
-          <path d="M120 248 L120 348 Q120 422 200 450 Q280 422 280 348 L280 248 Z" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
-          <!-- Castle in top circle -->
-          <circle cx="200" cy="170" r="50" fill="rgba(30,35,100,0.8)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-          <!-- Castle silhouette inside circle -->
-          <rect x="182" y="152" width="36" height="28" fill="rgba(201,168,76,0.55)"/>
-          <rect x="176" y="158" width="12" height="22" fill="rgba(201,168,76,0.55)"/>
-          <rect x="212" y="158" width="12" height="22" fill="rgba(201,168,76,0.55)"/>
-          <polygon points="200,138 210,152 190,152" fill="rgba(201,168,76,0.7)"/>
-          <polygon points="182,148 188,158 176,158" fill="rgba(201,168,76,0.6)"/>
-          <polygon points="218,148 224,158 212,158" fill="rgba(201,168,76,0.6)"/>
-          <rect x="194" y="164" width="12" height="16" rx="6" fill="rgba(30,35,100,0.8)"/>
-          <!-- Ornate MV letters -->
-          <text x="200" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="80" font-weight="bold" fill="rgba(201,168,76,0.85)" letter-spacing="-4">MV</text>
-          <!-- Scrollwork top left -->
-          <path d="M80 220 Q95 200 80 185 Q100 195 95 215" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-          <path d="M80 185 Q70 170 80 158 Q92 168 85 182" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.2"/>
-          <!-- Scrollwork top right -->
-          <path d="M320 220 Q305 200 320 185 Q300 195 305 215" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-          <path d="M320 185 Q330 170 320 158 Q308 168 315 182" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.2"/>
-          <!-- Fleur de lis bottom -->
-          <path d="M200 460 Q195 448 200 442 Q205 448 200 460" fill="rgba(201,168,76,0.6)"/>
-          <path d="M194 452 Q186 445 190 438 Q197 442 194 452" fill="rgba(201,168,76,0.45)"/>
-          <path d="M206 452 Q214 445 210 438 Q203 442 206 452" fill="rgba(201,168,76,0.45)"/>
-          <!-- Diamond ornaments -->
-          <path d="M200 478 L206 488 L200 498 L194 488 Z" fill="rgba(201,168,76,0.35)"/>
-          <path d="M180 478 L184 486 L180 494 L176 486 Z" fill="rgba(201,168,76,0.2)"/>
-          <path d="M220 478 L224 486 L220 494 L216 486 Z" fill="rgba(201,168,76,0.2)"/>
-        </svg>
-      </div>
+      <img src="https://mystivault.com/cdn/shop/files/Banner_1.png?v=1785215943&width=800" alt="Shop All" class="coll-card-img">
       <div class="coll-card-overlay">
-        <div class="coll-cat">Original Collection</div>
-        <div class="coll-name">MV Vault<br>Signature Series</div>
-        <div class="coll-arrow">Browse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="coll-cat">All Products</div>
+        <div class="coll-name">Shop All</div>
+        <div class="coll-arrow">EXPLORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
-    <!-- 2: Mystical Mail stamp -->
+    <!-- 2: Mystical Mail -->
     <div class="coll-card">
-      <div class="coll-card-art">
-        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="520" fill="#2838B8"/>
-          <!-- Deep background glow -->
-          <ellipse cx="200" cy="260" rx="160" ry="190" fill="rgba(201,168,76,0.03)"/>
-          <!-- Stamp perforated outline (simplified cleaner version) -->
-          <rect x="55" y="80" width="290" height="360" rx="3" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.7)" stroke-width="2" stroke-dasharray="8 5"/>
-          <!-- Stamp inner frame -->
-          <rect x="72" y="97" width="256" height="326" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
-          <rect x="80" y="105" width="240" height="310" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
-          <!-- Top ornament -->
-          <path d="M120 125 Q200 108 280 125" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" fill="none"/>
-          <circle cx="200" cy="115" r="5" fill="rgba(201,168,76,0.5)"/>
-          <!-- Corner diamonds -->
-          <path d="M84 109 L90 116 L84 123 L78 116 Z" fill="rgba(201,168,76,0.4)"/>
-          <path d="M316 109 L322 116 L316 123 L310 116 Z" fill="rgba(201,168,76,0.4)"/>
-          <path d="M84 393 L90 400 L84 407 L78 400 Z" fill="rgba(201,168,76,0.4)"/>
-          <path d="M316 393 L322 400 L316 407 L310 400 Z" fill="rgba(201,168,76,0.4)"/>
-          <!-- MYSTICAL text -->
-          <text x="200" y="228" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="rgba(201,168,76,0.88)" letter-spacing="5">MYSTICAL</text>
-          <!-- Decorative line pair -->
-          <line x1="88" y1="238" x2="312" y2="238" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
-          <line x1="88" y1="242" x2="312" y2="242" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-          <!-- Script "Mail" -->
-          <text x="200" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-style="italic" fill="rgba(201,168,76,0.9)" letter-spacing="2">Mail</text>
-          <!-- Diamond gem -->
-          <path d="M200 330 L218 345 L200 378 L182 345 Z" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
-          <path d="M182 345 L200 330 L218 345 L200 348 Z" fill="rgba(201,168,76,0.15)"/>
-          <!-- Stars side decoration -->
-          <text x="92" y="186" font-size="12" fill="rgba(201,168,76,0.5)" font-family="serif">✦</text>
-          <text x="296" y="186" font-size="12" fill="rgba(201,168,76,0.5)" font-family="serif">✦</text>
-          <!-- Bottom scroll -->
-          <path d="M110 392 Q200 380 290 392" stroke="rgba(201,168,76,0.35)" stroke-width="1" fill="none"/>
-        </svg>
-      </div>
+      <img src="https://mystivault.com/cdn/shop/files/Mystical_Mail_Banner_d9e55c2b-2a52-451f-98e5-9badff80c1fe.png?v=1785216395&width=800" alt="Mystical Stamp Series" class="coll-card-img">
       <div class="coll-card-overlay">
         <div class="coll-cat">Monthly Subscription</div>
-        <div class="coll-name">Mystical Mail<br>Mystery Box</div>
-        <div class="coll-arrow">Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="coll-name">Mystical Stamp Series</div>
+        <div class="coll-arrow">SHOP NOW <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
-    <!-- 3: Gold flowing sigil -->
+    <!-- 3: Signature D -->
     <div class="coll-card">
-      <div class="coll-card-art">
-        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="520" fill="#3040C0"/>
-          <!-- Radial glow rings -->
-          <circle cx="200" cy="260" r="180" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="30"/>
-          <circle cx="200" cy="260" r="140" fill="none" stroke="rgba(201,168,76,0.04)" stroke-width="15"/>
-          <!-- Main sweeping numeral/sigil shape — like the real one in the screenshot -->
-          <!-- Top circle / loop of the number -->
-          <path d="M200 90 C248 90 284 118 284 155 C284 192 256 212 228 212 C192 212 174 186 186 161 C194 144 212 140 226 148 C240 156 237 176 221 179 C208 181 202 168 208 160"
-                stroke="rgba(201,168,76,0.92)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Long sweeping tail descending left -->
-          <path d="M200 90 C174 90 144 108 136 142 C126 180 136 226 156 268 C172 306 182 344 176 384 C170 416 152 444 128 468"
-                stroke="rgba(201,168,76,0.92)" stroke-width="24" fill="none" stroke-linecap="round"/>
-          <!-- Curling flourish at bottom -->
-          <path d="M128 468 C106 487 96 504 104 516 C113 528 140 522 154 506 C165 494 160 477 148 474 C138 471 130 482 136 492"
-                stroke="rgba(201,168,76,0.88)" stroke-width="20" fill="none" stroke-linecap="round"/>
-          <!-- Small curl at top right end -->
-          <path d="M284 155 C302 152 314 162 311 178 C308 191 295 197 284 192"
-                stroke="rgba(201,168,76,0.78)" stroke-width="16" fill="none" stroke-linecap="round"/>
-          <!-- Sparkle constellation -->
-          <circle cx="310" cy="112" r="6" fill="rgba(201,168,76,0.65)"/>
-          <circle cx="328" cy="96" r="3.5" fill="rgba(201,168,76,0.45)"/>
-          <circle cx="294" cy="96" r="4" fill="rgba(201,168,76,0.5)"/>
-          <circle cx="340" cy="114" r="2.5" fill="rgba(201,168,76,0.35)"/>
-          <circle cx="112" cy="440" r="5" fill="rgba(201,168,76,0.55)"/>
-          <circle cx="96" cy="458" r="3" fill="rgba(201,168,76,0.35)"/>
-          <circle cx="100" cy="424" r="2.5" fill="rgba(201,168,76,0.35)"/>
-          <!-- Small star -->
-          <text x="318" y="104" font-size="14" fill="rgba(201,168,76,0.6)" font-family="serif">✦</text>
-        </svg>
-      </div>
+      <img src="https://mystivault.com/cdn/shop/files/Signature_D_Banner_a5749098-2750-4672-b77e-ea6184ba854a.png?v=1785217544&width=800" alt="Signature D Series" class="coll-card-img">
       <div class="coll-card-overlay">
         <div class="coll-cat">Limited Edition</div>
-        <div class="coll-name">Fantasy Series<br>Drop Collection</div>
-        <div class="coll-arrow">View Drops <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="coll-name">Signature D Series</div>
+        <div class="coll-arrow">SHOP NOW <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
-    <!-- 4: Land of Lions / fire character -->
+    <!-- 4: Legends Collide -->
     <div class="coll-card">
-      <div class="coll-card-art">
-        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="520" fill="#2030A0"/>
-          <!-- Flame base glow -->
-          <ellipse cx="200" cy="460" rx="140" ry="28" fill="rgba(201,168,76,0.18)"/>
-          <ellipse cx="200" cy="460" rx="100" ry="18" fill="rgba(201,168,76,0.12)"/>
-          <!-- Outer flames -->
-          <path d="M112 480 C112 452 124 430 116 404 C108 378 116 350 130 328 C114 346 108 372 118 400 C126 422 118 452 112 480Z" fill="rgba(201,168,76,0.6)"/>
-          <path d="M288 480 C288 452 276 430 284 404 C292 378 284 350 270 328 C286 346 292 372 282 400 C274 422 282 452 288 480Z" fill="rgba(201,168,76,0.6)"/>
-          <!-- Inner flames -->
-          <path d="M148 480 C148 454 158 435 150 410 C142 386 150 358 166 336 C150 354 144 382 154 408 C162 428 154 456 148 480Z" fill="rgba(201,168,76,0.78)"/>
-          <path d="M252 480 C252 454 242 435 250 410 C258 386 250 358 234 336 C250 354 256 382 246 408 C238 428 246 456 252 480Z" fill="rgba(201,168,76,0.78)"/>
-          <!-- Center flame -->
-          <path d="M200 480 C200 455 212 432 202 404 C196 382 192 355 208 332 C214 350 212 370 204 390 C196 412 198 446 200 480Z" fill="rgba(201,168,76,0.9)"/>
-          <!-- Lion body -->
-          <ellipse cx="200" cy="240" rx="68" ry="78" fill="rgba(201,168,76,0.9)"/>
-          <!-- Mane rings -->
-          <circle cx="200" cy="180" r="78" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="14"/>
-          <circle cx="200" cy="180" r="90" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="8"/>
-          <!-- Lion head -->
-          <circle cx="200" cy="180" r="60" fill="rgba(201,168,76,0.92)"/>
-          <!-- Face -->
-          <ellipse cx="183" cy="171" rx="10" ry="12" fill="rgba(28,30,90,0.85)"/>
-          <ellipse cx="217" cy="171" rx="10" ry="12" fill="rgba(28,30,90,0.85)"/>
-          <circle cx="185" cy="172" r="5" fill="rgba(14,15,43,0.9)"/>
-          <circle cx="219" cy="172" r="5" fill="rgba(14,15,43,0.9)"/>
-          <circle cx="183" cy="170" r="2" fill="white" opacity="0.7"/>
-          <circle cx="217" cy="170" r="2" fill="white" opacity="0.7"/>
-          <ellipse cx="200" cy="191" rx="14" ry="9" fill="rgba(28,30,90,0.7)"/>
-          <path d="M186 204 Q200 216 214 204" stroke="rgba(28,30,90,0.65)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <!-- Ears -->
-          <polygon points="152,136 164,166 140,166" fill="rgba(201,168,76,0.88)"/>
-          <polygon points="248,136 260,166 236,166" fill="rgba(201,168,76,0.88)"/>
-          <!-- Banner ribbon -->
-          <path d="M68 320 L332 320 L340 336 L332 352 L68 352 L60 336 Z" fill="rgba(28,30,90,0.88)"/>
-          <path d="M68 320 L332 320 L340 336 L332 352 L68 352 L60 336 Z" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
-          <text x="200" y="341" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="rgba(201,168,76,0.92)" letter-spacing="4.5">LAND OF LIONS</text>
-        </svg>
-      </div>
+      <img src="https://mystivault.com/cdn/shop/files/Legends_Collide_Banner.png?v=1785216679&width=800" alt="Legends Collide" class="coll-card-img">
       <div class="coll-card-overlay">
         <div class="coll-cat">New Collection</div>
-        <div class="coll-name">Land of Lions<br>Original Series</div>
-        <div class="coll-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="coll-name">Legends Collide</div>
+        <div class="coll-arrow">SHOP NOW <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
@@ -1014,71 +936,31 @@
   <div class="spotlight-inner">
 
     <div class="spot-visual">
-      <div class="spot-frame">
-        <span class="spot-badge">LE 125</span>
-        <span class="spot-stock-badge">22 of 125 remaining</span>
-        <svg class="spot-pin-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="sBase" cx="35%" cy="30%"><stop offset="0%" stop-color="#1e1048"/><stop offset="65%" stop-color="#0d0820"/><stop offset="100%" stop-color="#070512"/></radialGradient>
-            <radialGradient id="sGlow" cx="50%" cy="50%"><stop offset="0%" stop-color="#C9A84C" stop-opacity="0.55"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/></radialGradient>
-            <linearGradient id="sHat" x1="130" y1="38" x2="190" y2="130" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0860"/><stop offset="100%" stop-color="#2a1080"/></linearGradient>
-            <linearGradient id="sRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#DFC06A"/><stop offset="50%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#9A7A28"/></linearGradient>
-          </defs>
-          <circle cx="160" cy="160" r="142" fill="url(#sGlow)" opacity="0.5"/>
-          <circle cx="160" cy="160" r="132" fill="url(#sBase)" stroke="url(#sRing)" stroke-width="3.5"/>
-          <circle cx="160" cy="160" r="126" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
-          <circle cx="55" cy="68" r="2" fill="#C9A84C" opacity="0.7"/>
-          <circle cx="242" cy="82" r="1.5" fill="#fff" opacity="0.5"/>
-          <circle cx="76" cy="248" r="1.5" fill="#C9A84C" opacity="0.4"/>
-          <circle cx="258" cy="232" r="2" fill="#fff" opacity="0.5"/>
-          <circle cx="112" cy="108" r="44" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
-          <circle cx="208" cy="108" r="44" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
-          <ellipse cx="160" cy="176" rx="68" ry="70" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
-          <ellipse cx="160" cy="185" rx="52" ry="45" fill="#2a1a0e"/>
-          <ellipse cx="143" cy="168" rx="10" ry="12" fill="white"/>
-          <ellipse cx="177" cy="168" rx="10" ry="12" fill="white"/>
-          <circle cx="146" cy="170" r="6" fill="#111"/>
-          <circle cx="180" cy="170" r="6" fill="#111"/>
-          <circle cx="148" cy="167" r="2" fill="white"/>
-          <circle cx="182" cy="167" r="2" fill="white"/>
-          <ellipse cx="160" cy="186" rx="13" ry="8.5" fill="#111"/>
-          <path d="M140 200 Q160 218 180 200" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M128 130 L160 36 L192 130 Z" fill="url(#sHat)" stroke="#C9A84C" stroke-width="2"/>
-          <ellipse cx="160" cy="132" rx="36" ry="9" fill="#2a1060" stroke="#C9A84C" stroke-width="1.5"/>
-          <polygon points="160,56 162,63 169,63 163,67 166,74 160,70 154,74 157,67 151,63 158,63" fill="#C9A84C" opacity="0.95"/>
-          <circle cx="146" cy="80" r="3" fill="#9D7FCC" opacity="0.8"/>
-          <line x1="202" y1="154" x2="264" y2="102" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="264" cy="102" r="8" fill="#C9A84C"/>
-          <path d="M80 222 Q95 195 75 180 Q55 165 72 147 Q85 135 102 143" stroke="#9D7FCC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
-          <text x="160" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C9A84C" letter-spacing="2.5" opacity="0.9">MYSTICAL MAIL</text>
-          <text x="160" y="292" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="rgba(201,168,76,0.5)" letter-spacing="3.5">FANTASY SERIES</text>
-        </svg>
+      <div class="spot-frame spot-frame-white">
+        <span class="spot-badge">LE 75</span>
+        <span class="spot-stock-badge">Sale</span>
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_003555.jpg?v=1785224313&width=1200" alt="Legends Collide — LE 75 Sorcerer Vs. Mali Fantasy Pin" class="spot-product-img">
       </div>
     </div>
 
     <div class="spot-info">
-      <p class="eyebrow">Featured Drop · Fantasy Series</p>
-      <h2 class="spot-title">Mystical Mail LE 125 —<br>Sorcerer Mickey</h2>
-      <p class="spot-desc">Hard enamel with antique gold plating. Hand-numbered from an edition of 125. Glitter accent on the sorcerer hat stars, glow-in-the-dark magic swirl. Ships with collector card and certificate of authenticity.</p>
+      <p class="eyebrow">Featured Drop · Legends Collide</p>
+      <h2 class="spot-title">Legends Collide — LE 75<br>Sorcerer Vs. Mali Fantasy Pin</h2>
+      <p class="spot-desc">Two legends. One iconic clash. This LE 75 hard enamel pin captures the ultimate fantasy showdown — Sorcerer Mickey against the great Mali dragon. Gold metal finish, glitter accents, and a certificate of authenticity included.</p>
       <div class="spot-edition-row">
-        <div class="spot-ed"><div class="spot-ed-label">Edition</div><div class="spot-ed-val">LE 125</div></div>
-        <div class="spot-ed"><div class="spot-ed-label">Series</div><div class="spot-ed-val">Fantasy</div></div>
-        <div class="spot-ed"><div class="spot-ed-label">Year</div><div class="spot-ed-val">2024</div></div>
+        <div class="spot-ed"><div class="spot-ed-label">Edition</div><div class="spot-ed-val">LE 75</div></div>
+        <div class="spot-ed"><div class="spot-ed-label">Series</div><div class="spot-ed-val">Legends</div></div>
+        <div class="spot-ed"><div class="spot-ed-label">Year</div><div class="spot-ed-val">2026</div></div>
         <div class="spot-ed"><div class="spot-ed-label">Finish</div><div class="spot-ed-val">Hard</div></div>
       </div>
       <div class="spot-price-row">
-        <span class="spot-price">$38.00</span>
-        <span class="spot-was">$48.00</span>
-        <span class="spot-save">Save 21%</span>
+        <span class="spot-price">$140.00</span>
+        <span class="spot-was">$160.00</span>
+        <span class="spot-save">Sale</span>
       </div>
       <div class="spot-stock">
-        <div class="spot-stock-row"><span>Availability</span><strong>Only 22 left — selling fast</strong></div>
+        <div class="spot-stock-row"><span>Availability</span><strong>Limited — LE 75 only</strong></div>
         <div class="spot-bar"><div class="spot-fill"></div></div>
-      </div>
-      <div class="spot-variants">
-        <button class="spot-v sel" onclick="document.querySelectorAll('.spot-v').forEach(b=>b.classList.remove('sel'));this.classList.add('sel')">Standard</button>
-        <button class="spot-v" onclick="document.querySelectorAll('.spot-v').forEach(b=>b.classList.remove('sel'));this.classList.add('sel')">With Stand</button>
-        <button class="spot-v" onclick="document.querySelectorAll('.spot-v').forEach(b=>b.classList.remove('sel'));this.classList.add('sel')">Bundle</button>
       </div>
       <div class="spot-cta-row">
         <button class="btn-gold">✦ &nbsp; Add to Cart</button>
@@ -1108,21 +990,52 @@
       <h2 class="section-title">Shop All Pins</h2>
     </div>
     <div class="shop-grid">
+      <!-- Product 1: Legends Collide LE 75 -->
       <div class="shop-card">
-        <div class="shop-img"><span class="shop-badge sb-gold">LE 75</span>🌊</div>
-        <div class="shop-body"><div class="shop-series">Fantasy Series</div><div class="shop-name">Fantasia Waves — Hippo Ballerina</div><div class="shop-price">$44.00</div></div>
+        <div class="shop-img-real">
+          <span class="shop-badge sb-red">Sale</span>
+          <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_003555.jpg?v=1785224313&width=500" alt="Legends Collide — LE 75 Sorcerer Vs. Mali Fantasy Pin">
+        </div>
+        <div class="shop-body">
+          <div class="shop-series">Legends Collide</div>
+          <div class="shop-name">Legends Collide — LE 75 Sorcerer Vs. Mali Fantasy Pin</div>
+          <div class="shop-price"><span style="color:#FC8181;">$140.00</span> <span style="text-decoration:line-through;color:var(--text-dim);font-size:12px;">$160.00</span></div>
+        </div>
       </div>
+      <!-- Product 2: Mystical Mail LE 125 Sorcerer Mickey -->
       <div class="shop-card">
-        <div class="shop-img"><span class="shop-badge sb-red">Sold Out</span>🧙</div>
-        <div class="shop-body"><div class="shop-series">Wizard Series</div><div class="shop-name">Merlin's Menagerie — Enchanted Forest</div><div class="shop-price">$42.00</div></div>
+        <div class="shop-img-real">
+          <span class="shop-badge sb-red">Sale</span>
+          <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_003739.jpg?v=1785225656&width=500" alt="Mystical Mail LE 125 Sorcerer Mickey">
+        </div>
+        <div class="shop-body">
+          <div class="shop-series">Mystical Stamp Series</div>
+          <div class="shop-name">Mystical Mail LE 125 Sorcerer Mickey</div>
+          <div class="shop-price"><span style="color:#FC8181;">$60.00</span> <span style="text-decoration:line-through;color:var(--text-dim);font-size:12px;">$75.00</span></div>
+        </div>
       </div>
+      <!-- Product 3: Signature D LE 200 Wave 1 Complete Set -->
       <div class="shop-card">
-        <div class="shop-img"><span class="shop-badge sb-green">New</span>🔮</div>
-        <div class="shop-body"><div class="shop-series">Haunted Series</div><div class="shop-name">Crystal Ball Oracle — Madame Leota</div><div class="shop-price">$52.00</div></div>
+        <div class="shop-img-real">
+          <span class="shop-badge sb-red">Sale</span>
+          <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_081157.jpg?v=1785251760&width=500" alt="Signature D LE 200 Wave 1 Complete Set">
+        </div>
+        <div class="shop-body">
+          <div class="shop-series">Signature D Series</div>
+          <div class="shop-name">Signature D LE 200 Wave 1 Complete Set</div>
+          <div class="shop-price"><span style="color:#FC8181;">$240.00</span> <span style="text-decoration:line-through;color:var(--text-dim);font-size:12px;">$280.00</span></div>
+        </div>
       </div>
+      <!-- Product 4: Signature D LE 200 Ariel Fantasy Pin -->
       <div class="shop-card">
-        <div class="shop-img"><span class="shop-badge sb-gold">LE 50</span>🌙</div>
-        <div class="shop-body"><div class="shop-series">Mystery Mail</div><div class="shop-name">Midnight Enchantress — October Drop</div><div class="shop-price">$38.00</div></div>
+        <div class="shop-img-real">
+          <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260727_232804.jpg?v=1785225654&width=500" alt="Signature D LE 200 Ariel Fantasy Pin">
+        </div>
+        <div class="shop-body">
+          <div class="shop-series">Signature D Series</div>
+          <div class="shop-name">Signature D LE 200 Ariel Fantasy Pin</div>
+          <div class="shop-price">$35.00</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1155,11 +1068,11 @@
     <!-- Newsletter -->
     <div class="nl-side">
       <p class="eyebrow">Inner Circle</p>
-      <h2 class="nl-title">Be First<br>to the Vault.</h2>
-      <p class="nl-sub">Early access to LE drops, mystery mail reveals, and collector news before anyone else. Never miss a release.</p>
+      <h2 class="nl-title">Be the first to know when the next drop goes live</h2>
+      <p class="nl-sub">Join the vault for early access to LE drops, mystery mail reveals, and collector news.</p>
       <div class="nl-form">
         <input type="email" class="nl-input" placeholder="your@email.com">
-        <button class="nl-btn">Subscribe</button>
+        <button class="nl-btn">Notify Me</button>
       </div>
       <p class="nl-note">No spam. Unsubscribe anytime. Your details are sacred.</p>
       <div class="nl-perks">
@@ -1175,8 +1088,8 @@
 
     <!-- Drop Calendar -->
     <div class="cal-side">
-      <p class="eyebrow">Drop Schedule</p>
-      <h2 class="cal-title">Upcoming<br>Releases.</h2>
+      <p class="eyebrow">DROP CALENDAR</p>
+      <h2 class="cal-title">What's dropping next?</h2>
       <p class="cal-sub">Mark your calendar. Every drop is limited — once they're gone, they're gone.</p>
 
       <!-- Mini calendar widget -->

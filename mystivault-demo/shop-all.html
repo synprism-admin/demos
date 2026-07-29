@@ -153,8 +153,12 @@
 
     .prod-img {
       aspect-ratio:1; display:flex; align-items:center; justify-content:center;
-      background:var(--royal); position:relative; overflow:hidden;
+      background:#f8f8f8; position:relative; overflow:hidden;
       font-size:56px; line-height:1;
+    }
+    .prod-img img {
+      width:100%; height:100%; object-fit:contain; padding:14px;
+      display:block;
     }
     /* Subtle radial glow */
     .prod-img::before {
@@ -324,7 +328,7 @@
       <span style="color:var(--gold)">Shop All</span>
     </div>
     <h1 class="page-title">Shop All</h1>
-    <p class="page-sub">Every pin. Every series. All original fantasy collectibles.</p>
+    <p class="page-sub">Every pin in the vault has a story. Browse the full MystiVault collection of limited series, fantasy designs, and everything in between. Find your next obsession.</p>
   </div>
 </div>
 
@@ -333,14 +337,13 @@
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <div class="filter-tags">
       <button class="filter-tag active" onclick="setFilter(this,'all')">All</button>
-      <button class="filter-tag" onclick="setFilter(this,'fantasy')">Fantasy Series</button>
-      <button class="filter-tag" onclick="setFilter(this,'mystery')">Mystery Mail</button>
-      <button class="filter-tag" onclick="setFilter(this,'haunted')">Haunted Series</button>
-      <button class="filter-tag" onclick="setFilter(this,'wizard')">Wizard Series</button>
-      <button class="filter-tag" onclick="setFilter(this,'lions')">Land of Lions</button>
-      <button class="filter-tag" onclick="setFilter(this,'available')">In Stock Only</button>
+      <button class="filter-tag" onclick="setFilter(this,'legends-collide')">Legends Collide</button>
+      <button class="filter-tag" onclick="setFilter(this,'mystical-stamp')">Mystical Stamp</button>
+      <button class="filter-tag" onclick="setFilter(this,'signature-d')">Signature D</button>
+      <button class="filter-tag" onclick="setFilter(this,'on-sale')">On Sale</button>
+      <button class="filter-tag" onclick="setFilter(this,'available')">In Stock</button>
     </div>
-    <span class="result-count" id="result-count">16 products</span>
+    <span class="result-count" id="result-count">11 products</span>
   </div>
   <div class="sort-wrap">
     <span class="sort-label">Sort</span>
@@ -358,288 +361,191 @@
 <div class="shop-grid-wrap">
   <div class="shop-grid" id="shop-grid">
 
-    <!-- 1 -->
-    <div class="prod-card" data-series="fantasy" data-status="available">
-      <div class="prod-img" style="background:#2830A8">
-        <span class="prod-badge pb-gold">LE 125</span>
+    <!-- 1 — Legends Collide -->
+    <div class="prod-card" data-series="legends-collide" data-status="available" data-sale="true">
+      <div class="prod-img">
+        <span class="prod-badge pb-gold">Sale</span>
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🎩
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_003555.jpg?v=1785224313&width=500" alt="Legends Collide - LE 75 Sorcerer Vs. Mali Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Fantasy Series</div>
-        <div class="prod-name">Sorcerer Mickey Fantasy Pin</div>
+        <div class="prod-series">Legends Collide</div>
+        <div class="prod-name">Legends Collide — LE 75 Sorcerer Vs. Mali Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$38.00</span><span class="prod-compare">$48.00</span></div>
+          <div><span class="prod-price">$140.00</span><span class="prod-compare">$160.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 2 -->
-    <div class="prod-card" data-series="fantasy" data-status="available">
-      <div class="prod-img" style="background:#2838B8">
-        <span class="prod-badge pb-gold">LE 75</span>
+    <!-- 2 — Mystical Mail -->
+    <div class="prod-card" data-series="mystical-stamp" data-status="available" data-sale="true">
+      <div class="prod-img">
+        <span class="prod-badge pb-gold">Sale</span>
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🌊
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_003739.jpg?v=1785225656&width=500" alt="Mystical Mail - LE 125 Sorcerer Mickey Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Fantasy Series</div>
-        <div class="prod-name">Fantasia Waves — Hippo Ballerina</div>
+        <div class="prod-series">Mystical Stamp Series</div>
+        <div class="prod-name">Mystical Mail — LE 125 Sorcerer Mickey Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$44.00</span></div>
+          <div><span class="prod-price">$60.00</span><span class="prod-compare">$75.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 3 -->
-    <div class="prod-card" data-series="wizard" data-status="soldout">
-      <div class="prod-img" style="background:#2030A0">
-        <span class="prod-badge pb-red">Sold Out</span>
+    <!-- 3 — Signature D Wave 1 Complete Set -->
+    <div class="prod-card" data-series="signature-d" data-status="available" data-sale="true">
+      <div class="prod-img">
+        <span class="prod-badge pb-gold">Sale</span>
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🧙
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_081157.jpg?v=1785251760&width=500" alt="Signature D - LE 200 Wave 1 Fantasy Pins Complete Set">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Wizard Series</div>
-        <div class="prod-name">Merlin's Menagerie — Enchanted Forest</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Wave 1 Fantasy Pins Complete Set</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$42.00</span></div>
-          <button class="prod-add" disabled style="opacity:0.3;cursor:not-allowed">+</button>
-        </div>
-      </div>
-      <div class="quick-add" style="background:rgba(239,68,68,0.8)">Sold Out</div>
-    </div>
-
-    <!-- 4 -->
-    <div class="prod-card" data-series="haunted" data-status="available">
-      <div class="prod-img" style="background:#2830A8">
-        <span class="prod-badge pb-green">New</span>
-        <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🔮
-      </div>
-      <div class="prod-body">
-        <div class="prod-series">Haunted Series</div>
-        <div class="prod-name">Crystal Ball Oracle — Madame Leota</div>
-        <div class="prod-footer">
-          <div><span class="prod-price">$52.00</span></div>
+          <div><span class="prod-price">$240.00</span><span class="prod-compare">$280.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 5 -->
-    <div class="prod-card" data-series="mystery" data-status="available">
-      <div class="prod-img" style="background:#2838B8">
-        <span class="prod-badge pb-gold">LE 50</span>
+    <!-- 4 — Signature D Ariel -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🌙
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260727_232804.jpg?v=1785225654&width=500" alt="Signature D - LE 200 Ariel Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Mystery Mail</div>
-        <div class="prod-name">Midnight Enchantress — October Drop</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Ariel Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$38.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 6 -->
-    <div class="prod-card" data-series="lions" data-status="available">
-      <div class="prod-img" style="background:#2030A0">
-        <span class="prod-badge pb-green">New</span>
+    <!-- 5 — Signature D Hades -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🦁
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260727_235609.jpg?v=1785226547&width=500" alt="Signature D - LE 200 Hades Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Land of Lions</div>
-        <div class="prod-name">Land of Lions — Pride Rock LE Pin</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Hades Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$46.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 7 -->
-    <div class="prod-card" data-series="haunted" data-status="soldout">
-      <div class="prod-img" style="background:#2830A8">
-        <span class="prod-badge pb-red">Sold Out</span>
+    <!-- 6 — Signature D Harris Hubert Hamish -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        👻
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_054658.jpg?v=1785242914&width=500" alt="Signature D - LE 200 Harris, Hubert & Hamish Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Haunted Series</div>
-        <div class="prod-name">Haunted Mansion — Hitchhiking Ghosts</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Harris, Hubert &amp; Hamish Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$48.00</span></div>
-          <button class="prod-add" disabled style="opacity:0.3;cursor:not-allowed">+</button>
-        </div>
-      </div>
-      <div class="quick-add" style="background:rgba(239,68,68,0.8)">Sold Out</div>
-    </div>
-
-    <!-- 8 -->
-    <div class="prod-card" data-series="mystery" data-status="available">
-      <div class="prod-img" style="background:#2838B8">
-        <span class="prod-badge pb-purple">Mystery</span>
-        <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        📦
-      </div>
-      <div class="prod-body">
-        <div class="prod-series">Mystery Mail</div>
-        <div class="prod-name">Mystical Mail Box — November Edition</div>
-        <div class="prod-footer">
-          <div><span class="prod-price">$28.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 9 -->
-    <div class="prod-card" data-series="fantasy" data-status="soldout">
-      <div class="prod-img" style="background:#2030A0">
-        <span class="prod-badge pb-red">Sold Out</span>
+    <!-- 7 — Signature D Marie -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🌟
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_000559.jpg?v=1785228163&width=500" alt="Signature D - LE 200 Marie Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Fantasy Series</div>
-        <div class="prod-name">Cinderella's Bibbidi — Fairy Godmother</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Marie Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$40.00</span></div>
-          <button class="prod-add" disabled style="opacity:0.3;cursor:not-allowed">+</button>
-        </div>
-      </div>
-      <div class="quick-add" style="background:rgba(239,68,68,0.8)">Sold Out</div>
-    </div>
-
-    <!-- 10 -->
-    <div class="prod-card" data-series="wizard" data-status="available">
-      <div class="prod-img" style="background:#2830A8">
-        <span class="prod-badge pb-gold">LE 100</span>
-        <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        ⚗️
-      </div>
-      <div class="prod-body">
-        <div class="prod-series">Wizard Series</div>
-        <div class="prod-name">Yen Sid's Workshop — Brooms March</div>
-        <div class="prod-footer">
-          <div><span class="prod-price">$44.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 11 -->
-    <div class="prod-card" data-series="lions" data-status="available">
-      <div class="prod-img" style="background:#2838B8">
-        <span class="prod-badge pb-gold">LE 75</span>
+    <!-- 8 — Signature D Harris Hubert Hamish variant -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🌅
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_000446.jpg?v=1785227847&width=500" alt="Signature D - LE 200 Harris Hubert Hamish (variant)">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Land of Lions</div>
-        <div class="prod-name">Circle of Life — Sunrise Savanna</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Harris, Hubert &amp; Hamish Fantasy Pin (Variant)</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$50.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 12 -->
-    <div class="prod-card" data-series="haunted" data-status="available">
-      <div class="prod-img" style="background:#2030A0">
-        <span class="prod-badge pb-gold">LE 60</span>
+    <!-- 9 — Signature D Cinderella -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🕯️
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260727_232804.jpg?v=1785225654&width=500" alt="Signature D - LE 200 Cinderella Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Haunted Series</div>
-        <div class="prod-name">Séance Room — Candlelight Collection</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Cinderella Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$54.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 13 -->
-    <div class="prod-card" data-series="mystery" data-status="soldout">
-      <div class="prod-img" style="background:#2830A8">
-        <span class="prod-badge pb-red">Sold Out</span>
+    <!-- 10 — Signature D Belle -->
+    <div class="prod-card" data-series="signature-d" data-status="available">
+      <div class="prod-img">
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🗝️
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260727_235609.jpg?v=1785226547&width=500" alt="Signature D - LE 200 Belle Fantasy Pin">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Mystery Mail</div>
-        <div class="prod-name">Mystical Mail Box — September Edition</div>
+        <div class="prod-series">Signature D Series</div>
+        <div class="prod-name">Signature D — LE 200 Belle Fantasy Pin</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$28.00</span></div>
-          <button class="prod-add" disabled style="opacity:0.3;cursor:not-allowed">+</button>
-        </div>
-      </div>
-      <div class="quick-add" style="background:rgba(239,68,68,0.8)">Sold Out</div>
-    </div>
-
-    <!-- 14 -->
-    <div class="prod-card" data-series="fantasy" data-status="available">
-      <div class="prod-img" style="background:#2838B8">
-        <span class="prod-badge pb-gold">LE 90</span>
-        <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🧚
-      </div>
-      <div class="prod-body">
-        <div class="prod-series">Fantasy Series</div>
-        <div class="prod-name">Tinker Bell — Pixie Dust LE Pin</div>
-        <div class="prod-footer">
-          <div><span class="prod-price">$42.00</span></div>
+          <div><span class="prod-price">$35.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
       <div class="quick-add">✦ Quick Add</div>
     </div>
 
-    <!-- 15 -->
-    <div class="prod-card" data-series="lions" data-status="soldout">
-      <div class="prod-img" style="background:#2030A0">
-        <span class="prod-badge pb-red">Sold Out</span>
+    <!-- 11 — Mystical Mail Variant B -->
+    <div class="prod-card" data-series="mystical-stamp" data-status="available" data-sale="true">
+      <div class="prod-img">
+        <span class="prod-badge pb-gold">Sale</span>
         <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🐾
+        <img src="https://mystivault.com/cdn/shop/files/Photoroom_20260728_003739.jpg?v=1785225656&width=500" alt="Mystical Mail - LE 125 Sorcerer Mickey (Variant B)">
       </div>
       <div class="prod-body">
-        <div class="prod-series">Land of Lions</div>
-        <div class="prod-name">Simba's Journey — Coming of Age</div>
+        <div class="prod-series">Mystical Stamp Series</div>
+        <div class="prod-name">Mystical Mail — LE 125 Sorcerer Mickey Fantasy Pin (Variant B)</div>
         <div class="prod-footer">
-          <div><span class="prod-price">$46.00</span></div>
-          <button class="prod-add" disabled style="opacity:0.3;cursor:not-allowed">+</button>
-        </div>
-      </div>
-      <div class="quick-add" style="background:rgba(239,68,68,0.8)">Sold Out</div>
-    </div>
-
-    <!-- 16 -->
-    <div class="prod-card" data-series="wizard" data-status="available">
-      <div class="prod-img" style="background:#2830A8">
-        <span class="prod-badge pb-green">New</span>
-        <button class="prod-wish" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        🌀
-      </div>
-      <div class="prod-body">
-        <div class="prod-series">Wizard Series</div>
-        <div class="prod-name">The Vortex Portal — Dimensional Key</div>
-        <div class="prod-footer">
-          <div><span class="prod-price">$48.00</span></div>
+          <div><span class="prod-price">$60.00</span><span class="prod-compare">$75.00</span></div>
           <button class="prod-add">+</button>
         </div>
       </div>
@@ -651,13 +557,6 @@
   <!-- Pagination -->
   <div class="pagination">
     <button class="pg-btn active">1</button>
-    <button class="pg-btn">2</button>
-    <button class="pg-btn">3</button>
-    <span class="pg-dots">…</span>
-    <button class="pg-btn">8</button>
-    <button class="pg-btn" style="width:auto;padding:0 14px;gap:6px;display:flex;align-items:center;">
-      Next <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
   </div>
 </div>
 
@@ -695,7 +594,8 @@
     cards.forEach(card => {
       const match = series === 'all'
         || card.dataset.series === series
-        || (series === 'available' && card.dataset.status === 'available');
+        || (series === 'available' && card.dataset.status === 'available')
+        || (series === 'on-sale' && card.dataset.sale === 'true');
       card.style.display = match ? '' : 'none';
       if (match) count++;
     });
