@@ -5,1200 +5,1240 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MystiVault — Original Fantasy Pins Crafted for Collectors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --gold:       #C4A020;
-      --gold-light: #D4B435;
-      --gold-dim:   #9A7C18;
+      --gold:       #C9A84C;
+      --gold-l:     #DFC06A;
+      --gold-d:     #9A7A28;
+      --gold-pale:  #F0DFA0;
       --navy:       #0E0F2B;
-      --navy-mid:   #1C1D55;
-      --navy-hero:  #1A1B50;
-      --card-blue:  #3040C0;
-      --card-blue2: #3848C8;
+      --navy-mid:   #161740;
+      --navy-card:  #1E2060;
+      --royal:      #2830A8;
+      --royal-l:    #3040C0;
       --white:      #FFFFFF;
-      --off-white:  #F5F0E8;
+      --cream:      #F7F2E8;
+      --text-dim:   rgba(255,255,255,0.55);
     }
 
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--navy); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { cursor: pointer; font-family: inherit; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--navy); color:var(--white); font-family:'Inter',sans-serif; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    button { cursor:pointer; font-family:inherit; }
 
-    /* ══════════════════════════════════════
-       HEADER — Mustard gold bar
-    ══════════════════════════════════════ */
+    /* ─── Utilities ─── */
+    .eyebrow {
+      font-family:'Cinzel',serif;
+      font-size:10px; font-weight:500;
+      letter-spacing:0.3em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:12px;
+    }
+    .section-title {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(22px,2.6vw,34px);
+      font-weight:400; letter-spacing:0.02em;
+      line-height:1.2;
+    }
+    .divider-ornament {
+      display:flex; align-items:center; gap:16px;
+      padding:0 32px; max-width:1280px; margin:0 auto;
+    }
+    .divider-ornament .line { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent); }
+    .divider-ornament .glyph { font-family:'Cinzel',serif; color:rgba(201,168,76,0.4); font-size:16px; letter-spacing:6px; }
+
+    /* ════════════════════════════════
+       TOP ANNOUNCEMENT BAR
+    ════════════════════════════════ */
+    .ann-bar {
+      background: linear-gradient(90deg, var(--navy-mid) 0%, #1A1B50 50%, var(--navy-mid) 100%);
+      border-bottom:1px solid rgba(201,168,76,0.18);
+      padding:8px 24px;
+      display:flex; align-items:center; justify-content:center;
+      gap:32px; font-size:11.5px; font-weight:400; letter-spacing:0.06em;
+      color:rgba(255,255,255,0.6);
+    }
+    .ann-bar strong { color:var(--gold); }
+    .ann-sep { color:rgba(201,168,76,0.3); }
+
+    /* ════════════════════════════════
+       HEADER — Gold bar
+    ════════════════════════════════ */
     header {
-      background: var(--gold);
-      position: sticky; top: 0; z-index: 300;
+      background: linear-gradient(180deg, #C9A84C 0%, #B89438 100%);
+      position:sticky; top:0; z-index:300;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
     }
     .header-inner {
-      max-width: 1440px; margin: 0 auto;
-      padding: 0 32px;
-      height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
+      max-width:1440px; margin:0 auto;
+      padding:0 40px; height:58px;
+      display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
     }
-    .logo-link { display: flex; align-items: center; flex-shrink: 0; }
-    .logo-img {
-      height: 38px; width: auto;
-      /* Black logo on gold bar — no filter needed, keep natural */
+    .nav-left { display:flex; gap:32px; }
+    .nav-left a {
+      font-family:'Cinzel',serif;
+      font-size:11px; font-weight:500;
+      letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--navy); opacity:0.85; transition:opacity .2s;
+    }
+    .nav-left a:hover { opacity:1; }
+
+    .logo-center { display:flex; align-items:center; }
+    .logo-center img {
+      height:46px; width:auto;
+      /* Logo is gold on blue — invert for gold bar: need dark rendering */
     }
     .logo-fallback {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--navy); letter-spacing: 0.02em;
+      font-family:'Cinzel Decorative',serif;
+      font-size:20px; color:var(--navy); letter-spacing:0.04em;
     }
 
-    .nav-center {
-      display: flex; gap: 36px;
-      position: absolute; left: 50%; transform: translateX(-50%);
+    .nav-right { display:flex; align-items:center; justify-content:flex-end; gap:20px; }
+    .nav-icon-btn {
+      background:none; border:none; padding:6px;
+      color:var(--navy); opacity:0.8; transition:opacity .2s;
+      display:flex; align-items:center;
     }
-    .nav-center a {
-      font-size: 14px; font-weight: 400;
-      color: var(--navy);
-      letter-spacing: 0.03em;
-      transition: opacity .2s;
+    .nav-icon-btn:hover { opacity:1; }
+    .nav-icon-btn svg { width:18px; height:18px; }
+    .cart-wrap { position:relative; }
+    .cart-pip {
+      position:absolute; top:-2px; right:-4px;
+      width:15px; height:15px; border-radius:50%;
+      background:var(--navy); color:var(--gold-l);
+      font-size:8px; font-weight:700;
+      display:flex; align-items:center; justify-content:center;
     }
-    .nav-center a:hover { opacity: 0.6; }
-    .nav-center a.active { font-weight: 500; }
 
-    .nav-right { display: flex; align-items: center; gap: 22px; }
-    .nav-right button {
-      background: none; border: none; padding: 4px;
-      color: var(--navy); display: flex; align-items: center;
-      transition: opacity .2s;
-    }
-    .nav-right button:hover { opacity: 0.6; }
-    .nav-right button svg { width: 19px; height: 19px; }
-
-    /* ══════════════════════════════════════
-       COUNTDOWN BAR
-    ══════════════════════════════════════ */
-    .countdown-bar {
-      background: var(--navy);
-      padding: 12px 0;
-      display: flex; align-items: center; justify-content: center;
-      gap: 24px;
-      border-bottom: 1px solid rgba(196,160,32,0.15);
+    /* ════════════════════════════════
+       COUNTDOWN STRIP
+    ════════════════════════════════ */
+    .cd-strip {
+      background:var(--navy);
+      border-bottom:1px solid rgba(201,168,76,0.12);
+      padding:14px 32px;
+      display:flex; align-items:center; justify-content:center; gap:28px;
     }
     .cd-label {
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold);
+      font-family:'Cinzel',serif;
+      font-size:10px; letter-spacing:0.28em; text-transform:uppercase;
+      color:var(--gold);
     }
-    .cd-timer { display: flex; align-items: center; gap: 6px; }
-    .cd-unit { display: flex; flex-direction: column; align-items: center; }
+    .cd-timer { display:flex; align-items:center; gap:8px; }
+    .cd-block { display:flex; flex-direction:column; align-items:center; width:44px; }
     .cd-num {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--gold); line-height: 1;
-      min-width: 38px; text-align: center;
+      font-family:'Cinzel',serif;
+      font-size:24px; font-weight:600; color:var(--gold-l);
+      line-height:1; letter-spacing:0.04em;
     }
-    .cd-sub {
-      font-size: 8.5px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(255,255,255,0.45);
-      margin-top: 3px;
-    }
-    .cd-colon {
-      font-size: 20px; color: var(--gold);
-      font-weight: 700; line-height: 1;
-      margin-top: -6px; opacity: 0.9;
-    }
+    .cd-sub { font-size:8px; letter-spacing:0.22em; text-transform:uppercase; color:var(--text-dim); margin-top:4px; }
+    .cd-sep { font-family:'Cinzel',serif; font-size:20px; color:var(--gold); opacity:0.6; margin-top:-8px; }
 
-    /* ══════════════════════════════════════
-       HERO
-    ══════════════════════════════════════ */
+    /* ════════════════════════════════
+       HERO — Full image banner
+    ════════════════════════════════ */
     .hero {
-      position: relative;
-      width: 100%; height: min(88vh, 620px);
-      overflow: hidden;
-      display: flex; align-items: center;
+      position:relative; width:100%; overflow:hidden;
     }
-
-    /* Castle scene SVG background */
-    .hero-scene {
-      position: absolute; inset: 0; width: 100%; height: 100%;
+    .hero-img {
+      width:100%; display:block;
+      max-height:580px; object-fit:cover; object-position:center top;
     }
-
-    /* Left navy overlay gradient */
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        90deg,
-        #1A1B50 0%,
-        #1A1B50 38%,
-        rgba(26,27,80,0.82) 52%,
-        rgba(20,22,60,0.35) 70%,
-        rgba(14,16,45,0.05) 100%
-      );
-      z-index: 1;
+    /* Elegant bottom fade into navy */
+    .hero-fade {
+      position:absolute; bottom:0; left:0; right:0;
+      height:200px;
+      background:linear-gradient(to top, var(--navy) 0%, rgba(14,15,43,0.7) 50%, transparent 100%);
     }
-
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1440px; margin: 0 auto;
-      padding: 0 52px;
-      width: 100%;
+    /* Gold filigree border frame overlay */
+    .hero-frame {
+      position:absolute; inset:0; pointer-events:none;
+      border:1px solid rgba(201,168,76,0.12);
     }
-
-    .hero-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px; font-weight: 400;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      display: flex; align-items: center; gap: 14px;
+    /* Bottom text overlay on the hero */
+    .hero-text-overlay {
+      position:absolute; bottom:28px; left:0; right:0;
+      display:flex; align-items:flex-end; justify-content:space-between;
+      padding:0 52px;
+      z-index:2;
     }
-    .hero-eyebrow::after {
-      content: '◆';
-      font-size: 6px; color: var(--gold); opacity: 0.6;
+    .hero-tagline {
+      font-family:'EB Garamond',serif;
+      font-size:clamp(14px,1.6vw,20px);
+      font-style:italic; color:rgba(255,255,255,0.7);
+      letter-spacing:0.04em;
     }
-    .hero-eyebrow::before {
-      content: '';
-      width: 40px; height: 1px; background: var(--gold); opacity: 0.5;
-    }
-
-    .hero-title {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(32px, 4.5vw, 58px);
-      font-weight: 400; line-height: 1.15;
-      color: var(--white);
-      max-width: 480px;
-      margin-bottom: 20px;
-    }
-
-    .hero-body {
-      font-size: 13px; line-height: 1.75;
-      color: rgba(255,255,255,0.72);
-      max-width: 340px;
-      margin-bottom: 36px;
-    }
-
     .hero-cta {
-      display: inline-block;
-      padding: 13px 28px;
-      background: var(--gold);
-      border: none; border-radius: 3px;
-      color: var(--navy);
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      transition: all .25s;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 28px;
+      background:var(--gold);
+      border:none; border-radius:2px;
+      color:var(--navy);
+      font-family:'Cinzel',serif;
+      font-size:10px; font-weight:600;
+      letter-spacing:0.2em; text-transform:uppercase;
+      transition:all .25s; flex-shrink:0;
     }
-    .hero-cta:hover {
-      background: var(--gold-light);
-      box-shadow: 0 4px 24px rgba(196,160,32,0.45);
+    .hero-cta svg { width:12px; height:12px; transition:transform .25s; }
+    .hero-cta:hover { background:var(--gold-l); box-shadow:0 0 28px rgba(201,168,76,0.4); }
+    .hero-cta:hover svg { transform:translateX(3px); }
+
+    /* ════════════════════════════════
+       GOLD ORNAMENT DIVIDER
+    ════════════════════════════════ */
+    .orn-strip {
+      display:flex; align-items:center; justify-content:center;
+      padding:28px 0; gap:0;
+    }
+    .orn-line { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.25) 30%,rgba(201,168,76,0.45) 50%,rgba(201,168,76,0.25) 70%,transparent); }
+    .orn-center {
+      padding:0 24px; display:flex; align-items:center; gap:10px;
+      font-family:'Cinzel',serif; color:rgba(201,168,76,0.55);
+      font-size:14px; letter-spacing:6px;
     }
 
-    /* ══════════════════════════════════════
-       COLLECTIONS GRID
-    ══════════════════════════════════════ */
-    .collections-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      min-height: 420px;
+    /* ════════════════════════════════
+       COLLECTIONS GRID — 4 blue cards
+    ════════════════════════════════ */
+    .collections { width:100%; }
+    .coll-grid {
+      display:grid; grid-template-columns:repeat(4,1fr);
     }
-
     .coll-card {
-      position: relative; overflow: hidden;
-      cursor: pointer;
-      background: var(--card-blue);
+      position:relative; overflow:hidden; cursor:pointer;
+      aspect-ratio:3/4;
+      background:var(--royal);
     }
-    .coll-card:nth-child(even) { background: #3848C8; }
+    .coll-card:nth-child(2) { background:#2838B8; }
+    .coll-card:nth-child(3) { background:var(--royal-l); }
+    .coll-card:nth-child(4) { background:#2030A0; }
 
-    .card-art {
-      width: 100%; height: 100%;
-      min-height: 420px;
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
+    .coll-card-art {
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
     }
-    .card-art svg { width: 100%; height: 100%; }
+    .coll-card-art svg { width:85%; height:85%; }
 
-    /* Hover overlay */
-    .card-hover-overlay {
-      position: absolute; inset: 0;
-      background: rgba(26,27,80,0.0);
-      transition: background .35s;
-      display: flex; flex-direction: column;
-      justify-content: flex-end; align-items: center;
-      padding-bottom: 28px;
+    /* Gold filigree border on hover */
+    .coll-card::before {
+      content:'';
+      position:absolute; inset:8px;
+      border:1px solid transparent;
+      transition:border-color .4s;
+      z-index:2; pointer-events:none;
     }
-    .coll-card:hover .card-hover-overlay {
-      background: rgba(14,15,43,0.7);
+    .coll-card:hover::before { border-color:rgba(201,168,76,0.45); }
+
+    .coll-card-overlay {
+      position:absolute; inset:0; z-index:3;
+      background:linear-gradient(to top, rgba(10,11,34,0.88) 0%, rgba(10,11,34,0.15) 50%, transparent 100%);
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:28px 24px;
+      transition:background .35s;
     }
-    .card-hover-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px; letter-spacing: 0.12em;
-      color: var(--gold);
-      opacity: 0; transform: translateY(8px);
-      transition: all .3s .05s;
-      text-transform: uppercase;
-    }
-    .card-hover-sub {
-      font-size: 11px; color: rgba(255,255,255,0.6);
-      letter-spacing: 0.1em; text-transform: uppercase;
-      opacity: 0; transform: translateY(8px);
-      transition: all .3s .1s;
-      margin-top: 4px;
-    }
-    .coll-card:hover .card-hover-label,
-    .coll-card:hover .card-hover-sub {
-      opacity: 1; transform: translateY(0);
+    .coll-card:hover .coll-card-overlay {
+      background:linear-gradient(to top, rgba(10,11,34,0.95) 0%, rgba(10,11,34,0.55) 60%, rgba(10,11,34,0.1) 100%);
     }
 
-    /* ══════════════════════════════════════
-       ABOUT / BRAND STORY
-    ══════════════════════════════════════ */
-    .about-strip {
-      background: #f5f0e8;
-      padding: 80px 32px;
-      display: flex; align-items: center; justify-content: center;
-      gap: 80px;
-      flex-wrap: wrap;
+    .coll-cat {
+      font-family:'Cinzel',serif;
+      font-size:9px; letter-spacing:0.28em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:6px;
+      opacity:0; transform:translateY(6px); transition:all .3s .05s;
     }
-    .about-left { max-width: 480px; }
-    .about-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 12px; letter-spacing: 0.26em;
-      text-transform: uppercase; color: var(--gold-dim);
-      margin-bottom: 14px;
+    .coll-name {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(14px,1.4vw,18px);
+      font-weight:400; line-height:1.25;
+      color:var(--white);
     }
-    .about-title {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 400; color: var(--navy);
-      line-height: 1.25; margin-bottom: 20px;
+    .coll-arrow {
+      margin-top:10px; font-size:11px;
+      font-family:'Cinzel',serif; letter-spacing:0.14em;
+      color:var(--gold);
+      opacity:0; transform:translateX(-6px); transition:all .3s .08s;
+      display:flex; align-items:center; gap:6px;
     }
-    .about-body {
-      font-size: 14px; line-height: 1.8;
-      color: rgba(14,15,43,0.65);
-      margin-bottom: 28px;
-    }
-    .about-cta {
-      display: inline-block;
-      padding: 12px 26px;
-      border: 1.5px solid var(--gold-dim);
-      border-radius: 2px;
-      color: var(--gold-dim);
-      font-size: 11px; letter-spacing: 0.16em;
-      text-transform: uppercase; font-weight: 500;
-      transition: all .2s;
-    }
-    .about-cta:hover {
-      background: var(--gold); color: var(--navy);
-      border-color: var(--gold);
-    }
+    .coll-arrow svg { width:10px; height:10px; }
+    .coll-card:hover .coll-cat,
+    .coll-card:hover .coll-arrow { opacity:1; transform:none; }
 
-    .about-stats { display: flex; gap: 48px; }
-    .a-stat { text-align: center; }
-    .a-num {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 38px; font-weight: 700;
-      color: var(--navy); line-height: 1;
-    }
-    .a-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(14,15,43,0.5); margin-top: 6px; }
-
-    /* ══════════════════════════════════════
-       FEATURED PRODUCT SPOTLIGHT
-    ══════════════════════════════════════ */
+    /* ════════════════════════════════
+       FEATURED SPOTLIGHT
+    ════════════════════════════════ */
     .spotlight {
-      background: var(--navy-mid);
-      padding: 100px 32px;
+      background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy) 100%);
+      padding:100px 40px;
+      border-top:1px solid rgba(201,168,76,0.1);
     }
     .spotlight-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
-    }
-    .spot-img-wrap {
-      position: relative;
-      aspect-ratio: 1;
-      background: var(--card-blue);
-      border-radius: 4px; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .spot-img-wrap::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 40% 30%, rgba(196,160,32,0.12) 0%, transparent 65%);
-    }
-    .spot-pin { width: 78%; height: 78%; position: relative; z-index: 1; }
-
-    .spot-le-badge {
-      position: absolute; top: 16px; left: 16px;
-      border: 1px solid var(--gold); color: var(--gold);
-      font-size: 10px; letter-spacing: 0.2em;
-      text-transform: uppercase; padding: 5px 12px;
-      background: rgba(14,15,43,0.8);
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
     }
 
-    .spot-info { display: flex; flex-direction: column; gap: 22px; }
-    .spot-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 12px; letter-spacing: 0.24em;
-      text-transform: uppercase; color: var(--gold);
+    /* Image side */
+    .spot-visual { position:relative; }
+    .spot-frame {
+      position:relative; aspect-ratio:1;
+      background:var(--royal);
+      border-radius:4px; overflow:hidden;
     }
+    .spot-frame::before {
+      content:'';
+      position:absolute; inset:0;
+      background:radial-gradient(ellipse at 35% 25%, rgba(201,168,76,0.1) 0%, transparent 65%);
+      z-index:1;
+    }
+    .spot-pin-svg { width:80%; height:80%; position:relative; z-index:2; margin:10%; }
+    .spot-badge {
+      position:absolute; top:20px; left:20px; z-index:3;
+      background:rgba(14,15,43,0.9);
+      border:1px solid var(--gold);
+      color:var(--gold);
+      font-family:'Cinzel',serif;
+      font-size:9px; letter-spacing:0.22em; text-transform:uppercase;
+      padding:5px 14px;
+    }
+    .spot-stock-badge {
+      position:absolute; top:20px; right:20px; z-index:3;
+      background:rgba(239,68,68,0.12);
+      border:1px solid rgba(239,68,68,0.3);
+      color:#FC8181;
+      font-size:10px; padding:5px 12px; letter-spacing:0.06em;
+    }
+
+    /* Decorative corner rules */
+    .spot-frame::after {
+      content:'';
+      position:absolute; inset:10px;
+      border:1px solid rgba(201,168,76,0.12);
+      pointer-events:none; z-index:2;
+    }
+
+    /* Info side */
+    .spot-info { display:flex; flex-direction:column; gap:24px; }
     .spot-title {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(22px, 2.5vw, 34px);
-      font-weight: 400; line-height: 1.2;
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(22px,2.4vw,32px);
+      font-weight:400; line-height:1.2;
     }
-    .spot-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; }
-    .spot-price {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 28px; font-weight: 700; color: var(--gold);
+    .spot-desc {
+      font-family:'EB Garamond',serif;
+      font-size:16px; color:rgba(255,255,255,0.6);
+      line-height:1.8;
     }
-    .spot-price s { font-size: 18px; color: rgba(255,255,255,0.3); margin-left: 10px; font-weight: 400; }
-
-    .spot-stock { display: flex; flex-direction: column; gap: 7px; }
-    .spot-stock-label { font-size: 12px; color: rgba(255,255,255,0.45); display: flex; justify-content: space-between; }
-    .spot-stock-label strong { color: #F87171; }
-    .spot-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; }
-    .spot-fill { height: 100%; width: 17%; background: var(--gold); border-radius: 2px; }
-
-    .spot-variants { display: flex; gap: 8px; }
-    .spot-var {
-      padding: 8px 18px;
-      border: 1px solid rgba(196,160,32,0.3);
-      background: transparent; color: rgba(255,255,255,0.8);
-      font-size: 13px; border-radius: 2px;
-      transition: all .2s;
+    .spot-edition-row {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      border:1px solid rgba(201,168,76,0.14);
+      border-radius:3px; overflow:hidden;
     }
-    .spot-var.sel { border-color: var(--gold); color: var(--gold); background: rgba(196,160,32,0.08); }
-    .spot-var:hover { border-color: rgba(196,160,32,0.6); }
-
-    .spot-add {
-      width: 100%; padding: 16px;
-      background: var(--gold);
-      border: none; border-radius: 2px;
-      color: var(--navy);
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      transition: all .25s;
+    .spot-ed {
+      padding:14px 12px; text-align:center;
+      border-right:1px solid rgba(201,168,76,0.1);
     }
-    .spot-add:hover { background: var(--gold-light); box-shadow: 0 4px 24px rgba(196,160,32,0.4); }
+    .spot-ed:last-child { border-right:none; }
+    .spot-ed-label { font-size:8px; font-family:'Cinzel',serif; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:6px; }
+    .spot-ed-val { font-family:'Cinzel',serif; font-size:15px; font-weight:600; color:var(--gold-l); }
 
-    /* ══════════════════════════════════════
+    .spot-price-row { display:flex; align-items:baseline; gap:12px; }
+    .spot-price { font-family:'Cinzel',serif; font-size:32px; font-weight:600; color:var(--white); }
+    .spot-was { font-size:17px; color:var(--text-dim); text-decoration:line-through; }
+    .spot-save { font-size:10px; font-family:'Cinzel',serif; letter-spacing:0.1em; text-transform:uppercase; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.3); color:#FC8181; padding:3px 10px; border-radius:2px; }
+
+    .spot-stock { display:flex; flex-direction:column; gap:8px; }
+    .spot-stock-row { display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); }
+    .spot-stock-row strong { color:#FC8181; }
+    .spot-bar { height:2px; background:rgba(255,255,255,0.08); border-radius:2px; }
+    .spot-fill { height:100%; width:17%; background:linear-gradient(90deg,var(--gold-d),var(--gold)); }
+
+    .spot-variants { display:flex; gap:8px; flex-wrap:wrap; }
+    .spot-v {
+      padding:9px 20px;
+      border:1px solid rgba(201,168,76,0.25);
+      background:transparent; color:rgba(255,255,255,0.75);
+      font-family:'Cinzel',serif; font-size:10px;
+      letter-spacing:0.1em; text-transform:uppercase;
+      border-radius:2px; transition:all .2s;
+    }
+    .spot-v.sel { border-color:var(--gold); background:rgba(201,168,76,0.08); color:var(--gold-l); }
+    .spot-v:hover { border-color:rgba(201,168,76,0.5); color:var(--white); }
+
+    .spot-cta-row { display:flex; flex-direction:column; gap:10px; }
+    .btn-gold {
+      width:100%; padding:16px 24px;
+      background:var(--gold);
+      border:none; border-radius:2px;
+      color:var(--navy);
+      font-family:'Cinzel',serif; font-size:11px;
+      font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+      transition:all .25s; position:relative; overflow:hidden;
+    }
+    .btn-gold::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent);
+      transform:translateX(-100%); transition:transform .5s;
+    }
+    .btn-gold:hover::after { transform:translateX(100%); }
+    .btn-gold:hover { background:var(--gold-l); box-shadow:0 0 36px rgba(201,168,76,0.35); }
+
+    .btn-outline {
+      width:100%; padding:15px 24px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:2px; color:rgba(255,255,255,0.55);
+      font-family:'Cinzel',serif; font-size:11px;
+      letter-spacing:0.18em; text-transform:uppercase;
+      transition:all .2s;
+    }
+    .btn-outline:hover { border-color:rgba(201,168,76,0.4); color:var(--gold-l); }
+
+    .spot-trust {
+      display:flex; gap:20px; flex-wrap:wrap;
+      padding-top:16px; border-top:1px solid rgba(255,255,255,0.07);
+    }
+    .trust-item { display:flex; align-items:center; gap:7px; font-size:11px; color:var(--text-dim); }
+    .trust-icon { font-size:13px; }
+
+    /* ════════════════════════════════
        SHOP GRID
-    ══════════════════════════════════════ */
-    .shop-section {
-      background: var(--navy);
-      padding: 90px 32px;
-    }
-    .shop-inner { max-width: 1280px; margin: 0 auto; }
-    .sec-head { text-align: center; margin-bottom: 52px; }
-    .sec-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 12px; letter-spacing: 0.26em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .sec-title {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(24px, 2.8vw, 36px);
-      font-weight: 400; color: var(--white);
-    }
+    ════════════════════════════════ */
+    .shop-sec { background:var(--navy); padding:90px 40px; }
+    .shop-inner { max-width:1280px; margin:0 auto; }
+    .sec-head { text-align:center; margin-bottom:52px; }
 
-    .shop-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-    }
-
+    .shop-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(201,168,76,0.08); }
     .shop-card {
-      background: var(--card-blue);
-      border-radius: 3px; overflow: hidden;
-      cursor: pointer; transition: transform .3s, box-shadow .3s;
+      background:var(--navy-card);
+      cursor:pointer; transition:all .3s; overflow:hidden;
     }
-    .shop-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(14,15,43,0.8); }
+    .shop-card:hover { background:var(--royal); z-index:1; box-shadow:0 20px 60px rgba(0,0,0,0.6); transform:scale(1.02); }
 
-    .shop-card-img {
-      aspect-ratio: 1;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--card-blue);
-      position: relative; overflow: hidden;
+    .shop-img {
+      aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+      background:var(--royal); position:relative;
+      font-size:52px; line-height:1;
     }
-    .shop-card-img svg { width: 80%; height: 80%; }
+    .shop-badge {
+      position:absolute; top:10px; left:10px;
+      font-family:'Cinzel',serif; font-size:8px;
+      letter-spacing:0.16em; text-transform:uppercase; padding:3px 10px;
+    }
+    .sb-gold { background:rgba(201,168,76,0.18); border:1px solid rgba(201,168,76,0.4); color:var(--gold); }
+    .sb-red { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.28); color:#FC8181; }
+    .sb-green { background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.28); color:#86EFAC; }
 
-    .shop-card-body { padding: 16px; background: var(--navy-mid); }
-    .sc-series { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
-    .sc-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-weight: 600; color: var(--white);
-      line-height: 1.3; margin-bottom: 8px;
-    }
-    .sc-price { font-size: 15px; font-weight: 500; color: var(--gold); }
-    .sc-badge {
-      position: absolute; top: 10px; left: 10px;
-      font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 3px 9px;
-    }
-    .sb-le { background: rgba(196,160,32,0.18); border: 1px solid rgba(196,160,32,0.4); color: var(--gold); }
-    .sb-sold { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); color: #F87171; }
-    .sb-new { background: rgba(100,180,100,0.15); border: 1px solid rgba(100,180,100,0.3); color: #86EFAC; }
+    .shop-body { padding:18px 20px 22px; }
+    .shop-series { font-family:'Cinzel',serif; font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:5px; }
+    .shop-name { font-family:'EB Garamond',serif; font-size:17px; line-height:1.35; margin-bottom:10px; color:var(--white); }
+    .shop-price { font-family:'Cinzel',serif; font-size:15px; font-weight:500; color:var(--gold-l); }
 
-    /* ══════════════════════════════════════
-       NEWSLETTER
-    ══════════════════════════════════════ */
-    .newsletter {
-      background: var(--navy-hero);
-      border-top: 1px solid rgba(196,160,32,0.12);
-      border-bottom: 1px solid rgba(196,160,32,0.12);
-      padding: 80px 32px;
-      text-align: center;
+    /* ════════════════════════════════
+       ABOUT STRIP — Cream bg
+    ════════════════════════════════ */
+    .about-sec {
+      background:var(--cream);
+      padding:90px 40px;
+      border-top:1px solid rgba(201,168,76,0.3);
+      border-bottom:1px solid rgba(201,168,76,0.3);
     }
-    .nl-eyebrow { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .nl-title { font-family: 'Libre Baskerville', serif; font-size: clamp(24px, 2.8vw, 36px); font-weight: 400; margin-bottom: 12px; }
-    .nl-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 32px; }
-    .nl-form { display: flex; max-width: 440px; margin: 0 auto; border: 1px solid rgba(196,160,32,0.3); }
+    .about-inner {
+      max-width:1100px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+    }
+    .about-txt .eyebrow { color:var(--gold-d); }
+    .about-title {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(22px,2.4vw,30px);
+      font-weight:400; color:var(--navy);
+      line-height:1.3; margin-bottom:18px;
+    }
+    .about-body {
+      font-family:'EB Garamond',serif;
+      font-size:17px; color:rgba(14,15,43,0.65);
+      line-height:1.85; margin-bottom:28px;
+    }
+    .about-link {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Cinzel',serif; font-size:10px;
+      letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--gold-d);
+      border-bottom:1px solid rgba(154,122,40,0.4);
+      padding-bottom:4px; transition:all .2s;
+    }
+    .about-link:hover { color:var(--gold); border-color:var(--gold); gap:12px; }
+    .about-link svg { width:10px; height:10px; }
+    .about-stats { display:flex; flex-direction:column; gap:32px; }
+    .a-row { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+    .a-stat {
+      padding:28px 24px;
+      background:white;
+      border:1px solid rgba(201,168,76,0.2);
+      border-radius:3px;
+    }
+    .a-num {
+      font-family:'Cinzel Decorative',serif;
+      font-size:34px; font-weight:400;
+      color:var(--navy); line-height:1;
+    }
+    .a-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(14,15,43,0.45); margin-top:8px; }
+
+    /* ════════════════════════════════
+       NEWSLETTER + DROP CALENDAR
+    ════════════════════════════════ */
+    .bottom-sec {
+      background:var(--navy-mid);
+      border-top:1px solid rgba(201,168,76,0.12);
+      padding:90px 40px;
+    }
+    .bottom-inner {
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1px 1fr; gap:0; align-items:start;
+    }
+    .bottom-divider { background:rgba(201,168,76,0.15); }
+
+    /* Newsletter side */
+    .nl-side { padding-right:64px; }
+    .nl-title {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(22px,2.2vw,28px);
+      font-weight:400; line-height:1.25; margin-bottom:12px;
+    }
+    .nl-sub {
+      font-family:'EB Garamond',serif;
+      font-size:16px; color:rgba(255,255,255,0.55);
+      line-height:1.75; margin-bottom:32px;
+    }
+    .nl-form {
+      display:flex; gap:0;
+      border:1px solid rgba(201,168,76,0.28);
+      border-radius:2px; overflow:hidden;
+      margin-bottom:16px;
+    }
     .nl-input {
-      flex: 1; padding: 14px 18px;
-      background: rgba(255,255,255,0.04); border: none; outline: none;
-      color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px;
+      flex:1; padding:14px 18px;
+      background:rgba(255,255,255,0.03);
+      border:none; outline:none;
+      color:var(--white);
+      font-family:'EB Garamond',serif; font-size:15px;
     }
-    .nl-input::placeholder { color: rgba(255,255,255,0.3); }
+    .nl-input::placeholder { color:rgba(255,255,255,0.28); }
     .nl-btn {
-      padding: 14px 22px;
-      background: var(--gold); border: none;
-      color: var(--navy);
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      white-space: nowrap; transition: background .2s;
+      padding:14px 22px;
+      background:var(--gold); border:none;
+      color:var(--navy);
+      font-family:'Cinzel',serif; font-size:10px;
+      font-weight:600; letter-spacing:0.18em; text-transform:uppercase;
+      white-space:nowrap; transition:background .2s;
     }
-    .nl-btn:hover { background: var(--gold-light); }
+    .nl-btn:hover { background:var(--gold-l); }
+    .nl-note { font-size:11px; color:rgba(255,255,255,0.28); font-style:italic; font-family:'EB Garamond',serif; }
 
-    /* ══════════════════════════════════════
+    .nl-perks { display:flex; flex-direction:column; gap:10px; margin-top:28px; }
+    .nl-perk { display:flex; align-items:center; gap:10px; font-size:13px; color:rgba(255,255,255,0.5); font-family:'EB Garamond',serif; }
+    .nl-perk-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); opacity:0.7; flex-shrink:0; }
+
+    /* Drop Calendar side */
+    .cal-side { padding-left:64px; }
+    .cal-title {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(22px,2.2vw,28px);
+      font-weight:400; line-height:1.25; margin-bottom:12px;
+    }
+    .cal-sub {
+      font-family:'EB Garamond',serif;
+      font-size:16px; color:rgba(255,255,255,0.55);
+      line-height:1.75; margin-bottom:28px;
+    }
+
+    /* Calendar widget */
+    .cal-widget {
+      border:1px solid rgba(201,168,76,0.2);
+      border-radius:4px; overflow:hidden;
+      background:rgba(255,255,255,0.025);
+    }
+    .cal-header {
+      background:rgba(201,168,76,0.12);
+      border-bottom:1px solid rgba(201,168,76,0.15);
+      padding:14px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .cal-month {
+      font-family:'Cinzel',serif;
+      font-size:13px; font-weight:500;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-l);
+    }
+    .cal-nav { display:flex; gap:8px; }
+    .cal-nav button {
+      background:none; border:1px solid rgba(201,168,76,0.25);
+      width:26px; height:26px; border-radius:2px;
+      color:var(--gold); font-size:12px;
+      display:flex; align-items:center; justify-content:center;
+      transition:all .2s;
+    }
+    .cal-nav button:hover { background:rgba(201,168,76,0.15); border-color:rgba(201,168,76,0.5); }
+
+    .cal-days-row {
+      display:grid; grid-template-columns:repeat(7,1fr);
+      border-bottom:1px solid rgba(201,168,76,0.1);
+    }
+    .cal-day-head {
+      padding:8px 0; text-align:center;
+      font-family:'Cinzel',serif; font-size:8px;
+      letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3);
+    }
+
+    .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); }
+    .cal-cell {
+      aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+      font-size:12px; color:rgba(255,255,255,0.4);
+      cursor:default; position:relative;
+      transition:all .2s;
+    }
+    .cal-cell.empty { pointer-events:none; }
+    .cal-cell.today {
+      color:var(--white); font-weight:600;
+    }
+    .cal-cell.today::after {
+      content:''; position:absolute; bottom:6px; left:50%; transform:translateX(-50%);
+      width:4px; height:4px; border-radius:50%;
+      background:rgba(255,255,255,0.5);
+    }
+    .cal-cell.drop {
+      color:var(--gold-l); font-weight:600; cursor:pointer;
+    }
+    .cal-cell.drop::before {
+      content:''; position:absolute; inset:4px;
+      border:1px solid rgba(201,168,76,0.5); border-radius:2px;
+      background:rgba(201,168,76,0.08);
+    }
+    .cal-cell.drop:hover::before { background:rgba(201,168,76,0.18); }
+
+    /* Upcoming drops list */
+    .drop-list { display:flex; flex-direction:column; gap:0; margin-top:16px; }
+    .drop-item {
+      display:grid; grid-template-columns:60px 1fr auto;
+      align-items:center; gap:16px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(201,168,76,0.08);
+      transition:background .2s;
+    }
+    .drop-item:last-child { border-bottom:none; }
+    .drop-item:hover { background:rgba(201,168,76,0.05); }
+    .drop-date-block {
+      display:flex; flex-direction:column; align-items:center;
+      padding:6px 8px;
+      border:1px solid rgba(201,168,76,0.25);
+      border-radius:2px; background:rgba(201,168,76,0.06);
+    }
+    .drop-d { font-family:'Cinzel',serif; font-size:18px; font-weight:600; color:var(--gold-l); line-height:1; }
+    .drop-m { font-family:'Cinzel',serif; font-size:7px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:2px; }
+    .drop-info { display:flex; flex-direction:column; gap:2px; }
+    .drop-name { font-family:'EB Garamond',serif; font-size:14px; color:var(--white); }
+    .drop-tag {
+      font-family:'Cinzel',serif; font-size:8px;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim);
+    }
+    .drop-status {
+      font-family:'Cinzel',serif; font-size:9px;
+      letter-spacing:0.1em; text-transform:uppercase;
+      padding:3px 10px; border-radius:2px; white-space:nowrap;
+    }
+    .ds-soon { background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.3); color:var(--gold); }
+    .ds-notify { background:rgba(107,79,160,0.12); border:1px solid rgba(107,79,160,0.3); color:#B0A0E0; }
+    .ds-live { background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.3); color:#86EFAC; animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+
+    /* ════════════════════════════════
        FOOTER
-    ══════════════════════════════════════ */
-    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); }
-    .footer-top {
-      max-width: 1280px; margin: 0 auto;
-      padding: 64px 32px 48px;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    ════════════════════════════════ */
+    footer {
+      background:var(--navy);
+      border-top:1px solid rgba(201,168,76,0.1);
     }
-    .ft-brand { display: flex; flex-direction: column; gap: 18px; }
-    .ft-logo-wrap { display: flex; align-items: center; gap: 0; }
-    .ft-logo-img { height: 42px; width: auto; filter: invert(1) sepia(1) saturate(0.7) brightness(0.85); }
-    .ft-name { font-family: 'Libre Baskerville', serif; font-size: 20px; color: var(--off-white); }
-    .ft-tagline { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; font-style: italic; font-family: 'Cormorant Garamond', serif; max-width: 260px; }
-    .ft-socials { display: flex; gap: 10px; }
+    .footer-body {
+      max-width:1280px; margin:0 auto;
+      padding:64px 40px 48px;
+      display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:52px;
+    }
+    .ft-brand { display:flex; flex-direction:column; gap:16px; }
+    .ft-logo-img { height:44px; width:auto; filter:invert(1) sepia(1) saturate(0.6) brightness(0.88); }
+    .ft-logo-name { font-family:'Cinzel Decorative',serif; font-size:18px; color:rgba(255,255,255,0.85); }
+    .ft-tagline { font-family:'EB Garamond',serif; font-size:14px; font-style:italic; color:var(--text-dim); line-height:1.7; max-width:260px; }
+    .ft-socials { display:flex; gap:8px; }
     .ft-soc {
-      width: 34px; height: 34px;
-      border: 1px solid rgba(196,160,32,0.2);
-      background: transparent; border-radius: 2px;
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.4); transition: all .2s; text-decoration: none;
+      width:34px; height:34px; border:1px solid rgba(201,168,76,0.18);
+      border-radius:2px; background:transparent;
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,0.35); transition:all .2s; text-decoration:none;
     }
-    .ft-soc:hover { border-color: var(--gold); color: var(--gold); }
-    .ft-soc svg { width: 14px; height: 14px; }
-    .ft-col-head { font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .ft-links a { font-size: 13px; color: rgba(255,255,255,0.45); transition: color .2s; }
-    .ft-links a:hover { color: var(--off-white); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 18px 32px;
-    }
-    .fb-inner {
-      max-width: 1280px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: 12px; color: rgba(255,255,255,0.3);
-    }
-    .fb-legal { display: flex; gap: 20px; }
-    .fb-legal a { color: rgba(255,255,255,0.3); transition: color .2s; }
-    .fb-legal a:hover { color: var(--gold); }
+    .ft-soc:hover { border-color:var(--gold); color:var(--gold); }
+    .ft-soc svg { width:14px; height:14px; }
 
-    /* ══════════════════════════════════════
+    .ft-col { display:flex; flex-direction:column; }
+    .ft-col-head { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.26em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+    .ft-links { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .ft-links a { font-family:'EB Garamond',serif; font-size:15px; color:var(--text-dim); transition:color .2s; }
+    .ft-links a:hover { color:var(--white); }
+
+    .footer-base {
+      border-top:1px solid rgba(255,255,255,0.06);
+      padding:18px 40px;
+    }
+    .footer-base-inner {
+      max-width:1280px; margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:11px; color:rgba(255,255,255,0.25);
+    }
+    .ft-legal { display:flex; gap:20px; }
+    .ft-legal a { color:rgba(255,255,255,0.25); transition:color .2s; }
+    .ft-legal a:hover { color:var(--gold); }
+
+    /* ════════════════════════════════
        RESPONSIVE
-    ══════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .collections-grid { grid-template-columns: repeat(2, 1fr); }
-      .shop-grid { grid-template-columns: repeat(2, 1fr); }
-      .spotlight-inner { grid-template-columns: 1fr; gap: 48px; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    ════════════════════════════════ */
+    @media (max-width:1100px) {
+      .spotlight-inner { gap:52px; }
+      .about-inner { gap:52px; }
+      .bottom-inner { grid-template-columns:1fr; gap:64px; }
+      .bottom-divider { display:none; }
+      .nl-side, .cal-side { padding:0; }
+      .footer-body { grid-template-columns:1fr 1fr; gap:40px; }
     }
-    @media (max-width: 768px) {
-      .nav-center { display: none; }
-      .hero { height: auto; min-height: 520px; }
-      .hero-content { padding: 60px 24px; }
-      .collections-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-strip { flex-direction: column; gap: 48px; }
-      .shop-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .footer-top { grid-template-columns: 1fr; }
-      .fb-inner { flex-direction: column; gap: 12px; text-align: center; }
+    @media (max-width:900px) {
+      .coll-grid { grid-template-columns:repeat(2,1fr); }
+      .shop-grid { grid-template-columns:repeat(2,1fr); }
+      .spotlight-inner { grid-template-columns:1fr; }
+      .about-inner { grid-template-columns:1fr; }
+      .about-stats .a-row { grid-template-columns:repeat(4,1fr); }
     }
-    @media (max-width: 480px) {
-      .collections-grid { grid-template-columns: 1fr; }
-      .shop-grid { grid-template-columns: 1fr 1fr; }
-      .header-inner { padding: 0 16px; }
+    @media (max-width:640px) {
+      .nav-left { display:none; }
+      .header-inner { padding:0 20px; }
+      .coll-grid { grid-template-columns:repeat(2,1fr); }
+      .shop-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-body { grid-template-columns:1fr; }
+      .hero-text-overlay { flex-direction:column; align-items:flex-start; gap:16px; bottom:20px; padding:0 24px; }
+      .ann-bar { flex-wrap:wrap; gap:8px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════
-     HEADER
-══════════════════════════════════════ -->
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="ann-bar">
+  <span>Free US shipping on orders over $75</span>
+  <span class="ann-sep">◆</span>
+  <span><strong>LE 125 Sorcerer Mickey</strong> — only 22 remaining</span>
+  <span class="ann-sep">◆</span>
+  <span>New Mystery Mail drops every Friday</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
 <header>
   <div class="header-inner">
-    <!-- Logo — pull real MV logo from their CDN -->
-    <a href="#" class="logo-link">
-      <img src="https://mystivault.com/cdn/shop/files/MV_Black.png?v=1785137589&width=200"
-           alt="MystiVault" class="logo-img"
-           onerror="this.style.display='none';this.nextSibling.style.display='block'">
-      <span class="logo-fallback" style="display:none">MV</span>
-    </a>
-
-    <nav class="nav-center">
-      <a href="#" class="active">Home</a>
-      <a href="#shop">Shop All</a>
+    <nav class="nav-left">
+      <a href="#">Shop</a>
       <a href="#collections">Collections</a>
-      <a href="#">Contact Us</a>
+      <a href="#drops">Drops</a>
+      <a href="#">About</a>
     </nav>
 
+    <a href="#" class="logo-center">
+      <img src="https://mystivault.com/cdn/shop/files/MV_Black.png?v=1785137589&width=200"
+           alt="MystiVault" class="ft-logo-img" style="height:46px;filter:none;"
+           onerror="this.style.display='none';this.nextSibling.style.display='block'">
+      <span class="logo-fallback" style="display:none">MystiVault</span>
+    </a>
+
     <div class="nav-right">
-      <button aria-label="Search">
+      <button class="nav-icon-btn" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       </button>
-      <button aria-label="Account">
+      <button class="nav-icon-btn" aria-label="Account">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
-      <button aria-label="Cart">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      </button>
+      <div class="cart-wrap">
+        <button class="nav-icon-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </button>
+        <span class="cart-pip">1</span>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- ══════════════════════════════════════
-     COUNTDOWN TIMER BAR
-══════════════════════════════════════ -->
-<div class="countdown-bar">
+<!-- ═══ COUNTDOWN ═══ -->
+<div class="cd-strip">
   <span class="cd-label">Next Drop</span>
   <div class="cd-timer">
-    <div class="cd-unit">
-      <span class="cd-num" id="cd-days">00</span>
-      <span class="cd-sub">Days</span>
-    </div>
-    <span class="cd-colon">:</span>
-    <div class="cd-unit">
-      <span class="cd-num" id="cd-hours">13</span>
-      <span class="cd-sub">Hours</span>
-    </div>
-    <span class="cd-colon">:</span>
-    <div class="cd-unit">
-      <span class="cd-num" id="cd-mins">33</span>
-      <span class="cd-sub">Mins</span>
-    </div>
-    <span class="cd-colon">:</span>
-    <div class="cd-unit">
-      <span class="cd-num" id="cd-secs">38</span>
-      <span class="cd-sub">Secs</span>
-    </div>
+    <div class="cd-block"><span class="cd-num" id="cd-d">00</span><span class="cd-sub">Days</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><span class="cd-num" id="cd-h">13</span><span class="cd-sub">Hours</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><span class="cd-num" id="cd-m">33</span><span class="cd-sub">Mins</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><span class="cd-num" id="cd-s">38</span><span class="cd-sub">Secs</span></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     HERO
-══════════════════════════════════════ -->
+<!-- ═══ HERO — Full image ═══ -->
 <section class="hero">
-
-  <!-- Castle scene background SVG -->
-  <svg class="hero-scene" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#c5d8f0"/>
-        <stop offset="40%" stop-color="#a8c4e8"/>
-        <stop offset="100%" stop-color="#7aabcc"/>
-      </linearGradient>
-      <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#5c6870"/>
-        <stop offset="100%" stop-color="#3a4248"/>
-      </linearGradient>
-      <filter id="blur3"><feGaussianBlur stdDeviation="3"/></filter>
-      <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
-      <filter id="blur1"><feGaussianBlur stdDeviation="1.5"/></filter>
-    </defs>
-
-    <!-- Sky — right side where photo would show -->
-    <rect x="500" y="0" width="940" height="420" fill="url(#skyGrad)"/>
-    <!-- Soft clouds -->
-    <ellipse cx="1200" cy="80" rx="120" ry="40" fill="white" opacity="0.7" filter="url(#blur3)"/>
-    <ellipse cx="1320" cy="60" rx="80" ry="30" fill="white" opacity="0.6" filter="url(#blur3)"/>
-    <ellipse cx="1100" cy="100" rx="90" ry="35" fill="white" opacity="0.5" filter="url(#blur3)"/>
-    <ellipse cx="900" cy="70" rx="60" ry="25" fill="white" opacity="0.4" filter="url(#blur3)"/>
-    <!-- Sky haze -->
-    <rect x="500" y="0" width="940" height="420" fill="rgba(180,200,230,0.15)"/>
-
-    <!-- Distant trees (left of castle) -->
-    <rect x="700" y="290" width="18" height="80" fill="#4a5a4a" opacity="0.5" filter="url(#blur1)"/>
-    <ellipse cx="709" cy="285" rx="22" ry="30" fill="#3d6040" opacity="0.5" filter="url(#blur1)"/>
-    <rect x="740" y="300" width="14" height="70" fill="#4a5a4a" opacity="0.4" filter="url(#blur1)"/>
-    <ellipse cx="747" cy="296" rx="18" ry="24" fill="#3d6040" opacity="0.4" filter="url(#blur1)"/>
-
-    <!-- Castle — Sleeping Beauty style -->
-    <!-- Main castle body -->
-    <rect x="940" y="180" width="200" height="220" fill="#B8C8D8" opacity="0.75"/>
-    <!-- Castle center tower base -->
-    <rect x="990" y="140" width="100" height="260" fill="#C2D0DF" opacity="0.8"/>
-    <!-- Castle wings -->
-    <rect x="870" y="220" width="80" height="180" fill="#B0C0D0" opacity="0.7"/>
-    <rect x="1130" y="220" width="80" height="180" fill="#B0C0D0" opacity="0.7"/>
-
-    <!-- Windows (castle) -->
-    <rect x="1020" y="180" width="16" height="22" rx="8" fill="#8090A8" opacity="0.6"/>
-    <rect x="1050" y="180" width="16" height="22" rx="8" fill="#8090A8" opacity="0.6"/>
-    <rect x="1000" y="220" width="12" height="18" rx="6" fill="#8090A8" opacity="0.5"/>
-    <rect x="1070" y="220" width="12" height="18" rx="6" fill="#8090A8" opacity="0.5"/>
-
-    <!-- Castle spires/towers -->
-    <!-- Center main spire -->
-    <polygon points="1040,60 1060,140 1020,140" fill="#9BAFC5" opacity="0.85"/>
-    <rect x="1056" y="48" width="8" height="18" fill="#C4A020" opacity="0.7"/>
-    <!-- Left spires -->
-    <polygon points="895,155 910,220 880,220" fill="#9BAFC5" opacity="0.75"/>
-    <polygon points="920,140 933,210 907,210" fill="#A0B4C8" opacity="0.75"/>
-    <!-- Right spires -->
-    <polygon points="1165,155 1180,220 1150,220" fill="#9BAFC5" opacity="0.75"/>
-    <polygon points="1147,140 1160,210 1134,210" fill="#A0B4C8" opacity="0.75"/>
-    <!-- Small center spires -->
-    <polygon points="1000,115 1010,145 990,145" fill="#9BAFC5" opacity="0.7"/>
-    <polygon points="1078,115 1088,145 1068,145" fill="#9BAFC5" opacity="0.7"/>
-    <!-- Flag atop main -->
-    <line x1="1060" y1="48" x2="1060" y2="30" stroke="#8090A8" stroke-width="1.5" opacity="0.7"/>
-    <polygon points="1060,30 1074,36 1060,42" fill="#C4A020" opacity="0.7"/>
-
-    <!-- Archway / entrance -->
-    <rect x="1020" y="330" width="40" height="70" rx="20" fill="#6878A0" opacity="0.5"/>
-
-    <!-- Castle reflection/glow -->
-    <rect x="870" y="60" width="360" height="340" fill="rgba(180,195,220,0.08)" filter="url(#blur6)"/>
-
-    <!-- Ground / plaza cobblestones -->
-    <rect x="600" y="400" width="840" height="220" fill="url(#groundGrad)" opacity="0.65"/>
-    <!-- Stone texture lines -->
-    <line x1="600" y1="430" x2="1440" y2="430" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-    <line x1="600" y1="460" x2="1440" y2="460" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-    <line x1="600" y1="490" x2="1440" y2="490" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-    <!-- Vertical stone lines -->
-    <line x1="680" y1="400" x2="680" y2="620" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-    <line x1="780" y1="400" x2="780" y2="620" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-    <line x1="900" y1="400" x2="900" y2="620" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-    <line x1="1050" y1="400" x2="1050" y2="620" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-
-    <!-- Product on stone ledge -->
-    <!-- Stone pedestal base -->
-    <ellipse cx="1060" cy="440" rx="88" ry="22" fill="#4a5258" opacity="0.7"/>
-    <rect x="978" y="390" width="164" height="52" rx="4" fill="#565e66" opacity="0.65"/>
-    <!-- Small feet/legs -->
-    <rect x="1000" y="438" width="10" height="14" rx="2" fill="#7a6020" opacity="0.5"/>
-    <rect x="1112" y="438" width="10" height="14" rx="2" fill="#7a6020" opacity="0.5"/>
-
-    <!-- MV display disc (round dark navy velvet) -->
-    <circle cx="1060" cy="340" r="118" fill="#12134A" opacity="0.92"/>
-    <circle cx="1060" cy="340" r="116" fill="none" stroke="rgba(196,160,32,0.25)" stroke-width="1.5"/>
-    <!-- Velvet texture simulation -->
-    <circle cx="1060" cy="340" r="118" fill="radial-gradient(circle, rgba(30,32,100,0.8) 0%, rgba(10,10,40,0.9) 100%)" opacity="0.3"/>
-
-    <!-- MV ornate crest on the disc -->
-    <!-- Outer ornate frame border -->
-    <rect x="1016" y="298" width="88" height="84" rx="4" fill="none" stroke="rgba(196,160,32,0.7)" stroke-width="1.5"/>
-    <!-- Shield inner -->
-    <path d="M1030 308 L1090 308 L1090 358 Q1060 378 1030 358 Z" fill="none" stroke="rgba(196,160,32,0.85)" stroke-width="1.2"/>
-    <!-- Crown spires above crest -->
-    <line x1="1040" y1="308" x2="1040" y2="298" stroke="rgba(196,160,32,0.7)" stroke-width="1.2"/>
-    <line x1="1060" y1="308" x2="1060" y2="293" stroke="rgba(196,160,32,0.7)" stroke-width="1.5"/>
-    <line x1="1080" y1="308" x2="1080" y2="298" stroke="rgba(196,160,32,0.7)" stroke-width="1.2"/>
-    <circle cx="1040" cy="296" r="2.5" fill="rgba(196,160,32,0.8)"/>
-    <circle cx="1060" cy="291" r="3" fill="rgba(196,160,32,0.9)"/>
-    <circle cx="1080" cy="296" r="2.5" fill="rgba(196,160,32,0.8)"/>
-    <!-- MV text inside crest -->
-    <text x="1060" y="347" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="rgba(196,160,32,0.95)" letter-spacing="-2">MV</text>
-    <!-- Decorative scrollwork below crest -->
-    <path d="M1020 385 Q1040 375 1060 380 Q1080 375 1100 385" stroke="rgba(196,160,32,0.5)" stroke-width="1" fill="none"/>
-    <path d="M1025 390 Q1042 382 1060 386 Q1078 382 1095 390" stroke="rgba(196,160,32,0.35)" stroke-width="0.8" fill="none"/>
-    <!-- Laurel dots around -->
-    <circle cx="1016" cy="340" r="2" fill="rgba(196,160,32,0.4)"/>
-    <circle cx="1104" cy="340" r="2" fill="rgba(196,160,32,0.4)"/>
-    <circle cx="1060" cy="410" r="2.5" fill="rgba(196,160,32,0.4)"/>
-    <!-- Fleur-de-lis bottom -->
-    <path d="M1060 400 Q1055 392 1060 388 Q1065 392 1060 400" fill="rgba(196,160,32,0.6)"/>
-    <path d="M1055 395 Q1048 390 1052 386 Q1058 388 1055 395" fill="rgba(196,160,32,0.4)"/>
-    <path d="M1065 395 Q1072 390 1068 386 Q1062 388 1065 395" fill="rgba(196,160,32,0.4)"/>
-
-    <!-- Ambient glow on disc -->
-    <circle cx="1060" cy="340" r="120" fill="none" stroke="rgba(196,160,32,0.08)" stroke-width="8" filter="url(#blur6)"/>
-
-    <!-- Lamp posts far right -->
-    <line x1="1350" y1="200" x2="1350" y2="420" stroke="#6a7080" stroke-width="3" opacity="0.4"/>
-    <circle cx="1350" cy="195" r="6" fill="#b0b840" opacity="0.5"/>
-    <ellipse cx="1350" cy="195" rx="10" ry="4" fill="rgba(200,200,100,0.2)" filter="url(#blur3)"/>
-    <line x1="1400" y1="210" x2="1400" y2="420" stroke="#6a7080" stroke-width="3" opacity="0.35"/>
-    <circle cx="1400" cy="205" r="6" fill="#b0b840" opacity="0.45"/>
-  </svg>
-
-  <!-- Left gradient overlay -->
-  <div class="hero-overlay"></div>
-
-  <!-- Text content -->
-  <div class="hero-content">
-    <div class="hero-eyebrow">Welcome to MystiVault</div>
-    <h1 class="hero-title">
-      Original Fantasy Pins<br>
-      Crafted for Collectors.
-    </h1>
-    <p class="hero-body">
-      Every release from the vault is designed from the ground up as an
-      original fantasy collectible with premium materials, limited editions,
-      and storytelling in every detail.
-    </p>
-    <a href="#collections" class="hero-cta">Explore the Collections</a>
+  <img src="hero.png" alt="MystiVault — Original Fantasy Pins" class="hero-img">
+  <div class="hero-fade"></div>
+  <div class="hero-frame"></div>
+  <div class="hero-text-overlay">
+    <p class="hero-tagline">Original fantasy pins crafted for collectors.</p>
+    <a href="#collections" class="hero-cta">
+      Explore the Vault
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     COLLECTIONS GRID — 4 cards with pin art
-══════════════════════════════════════ -->
-<section id="collections">
-  <div class="collections-grid">
+<!-- ═══ ORNAMENT ═══ -->
+<div class="orn-strip">
+  <div class="orn-line"></div>
+  <div class="orn-center">◆ &nbsp; ◆ &nbsp; ◆</div>
+  <div class="orn-line"></div>
+</div>
 
-    <!-- Card 1: MV Crest — embossed blue on blue -->
+<!-- ═══ COLLECTIONS GRID ═══ -->
+<section class="collections" id="collections">
+  <div class="coll-grid">
+
+    <!-- 1: Heraldic MV Crest -->
     <div class="coll-card">
-      <div class="card-art">
-        <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="400" height="500" fill="#3040C0"/>
-          <!-- Subtle background texture -->
-          <circle cx="200" cy="250" r="220" fill="rgba(50,60,180,0.4)"/>
-          <!-- Ornate arch frame (embossed, very subtle) -->
-          <path d="M80 450 L80 180 Q80 60 200 60 Q320 60 320 180 L320 450 Z"
-                fill="none" stroke="rgba(100,130,220,0.5)" stroke-width="2"/>
-          <path d="M90 440 L90 185 Q90 75 200 75 Q310 75 310 185 L310 440 Z"
-                fill="none" stroke="rgba(90,120,210,0.3)" stroke-width="1"/>
-          <!-- Large M at center bottom (embossed) -->
-          <text x="200" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="160" font-weight="bold"
-                fill="rgba(60,80,200,0.45)" letter-spacing="-8">M</text>
-          <!-- Castle silhouette inside arch (subtle) -->
-          <rect x="172" y="160" width="56" height="80" fill="rgba(80,100,210,0.35)"/>
-          <rect x="156" y="190" width="28" height="50" fill="rgba(80,100,210,0.3)"/>
-          <rect x="216" y="190" width="28" height="50" fill="rgba(80,100,210,0.3)"/>
-          <polygon points="200,120 215,160 185,160" fill="rgba(90,110,215,0.4)"/>
-          <polygon points="170,155 180,190 160,190" fill="rgba(80,100,210,0.35)"/>
-          <polygon points="230,155 240,190 220,190" fill="rgba(80,100,210,0.35)"/>
-          <!-- Scrollwork / decorative sides -->
-          <path d="M100 300 Q120 270 100 240 Q130 260 120 300" fill="rgba(80,110,210,0.3)"/>
-          <path d="M300 300 Q280 270 300 240 Q270 260 280 300" fill="rgba(80,110,210,0.3)"/>
-          <!-- Diamond bottom ornament -->
-          <path d="M200 420 L215 440 L200 460 L185 440 Z" fill="rgba(90,120,215,0.4)"/>
-          <circle cx="200" cy="440" r="8" fill="rgba(90,120,215,0.3)"/>
+      <div class="coll-card-art">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="520" fill="#2830A8"/>
+          <!-- Background glow -->
+          <ellipse cx="200" cy="260" rx="180" ry="220" fill="rgba(201,168,76,0.04)"/>
+          <!-- Outer arch border -->
+          <path d="M60 480 L60 200 Q60 60 200 60 Q340 60 340 200 L340 480" fill="none" stroke="rgba(201,168,76,0.22)" stroke-width="2"/>
+          <path d="M72 472 L72 205 Q72 78 200 78 Q328 78 328 205 L328 472" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
+          <!-- Shield base -->
+          <path d="M110 240 L110 350 Q110 430 200 460 Q290 430 290 350 L290 240 Z" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
+          <!-- Inner shield line -->
+          <path d="M120 248 L120 348 Q120 422 200 450 Q280 422 280 348 L280 248 Z" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
+          <!-- Castle in top circle -->
+          <circle cx="200" cy="170" r="50" fill="rgba(30,35,100,0.8)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+          <!-- Castle silhouette inside circle -->
+          <rect x="182" y="152" width="36" height="28" fill="rgba(201,168,76,0.55)"/>
+          <rect x="176" y="158" width="12" height="22" fill="rgba(201,168,76,0.55)"/>
+          <rect x="212" y="158" width="12" height="22" fill="rgba(201,168,76,0.55)"/>
+          <polygon points="200,138 210,152 190,152" fill="rgba(201,168,76,0.7)"/>
+          <polygon points="182,148 188,158 176,158" fill="rgba(201,168,76,0.6)"/>
+          <polygon points="218,148 224,158 212,158" fill="rgba(201,168,76,0.6)"/>
+          <rect x="194" y="164" width="12" height="16" rx="6" fill="rgba(30,35,100,0.8)"/>
+          <!-- Ornate MV letters -->
+          <text x="200" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="80" font-weight="bold" fill="rgba(201,168,76,0.85)" letter-spacing="-4">MV</text>
+          <!-- Scrollwork top left -->
+          <path d="M80 220 Q95 200 80 185 Q100 195 95 215" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
+          <path d="M80 185 Q70 170 80 158 Q92 168 85 182" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.2"/>
+          <!-- Scrollwork top right -->
+          <path d="M320 220 Q305 200 320 185 Q300 195 305 215" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
+          <path d="M320 185 Q330 170 320 158 Q308 168 315 182" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.2"/>
+          <!-- Fleur de lis bottom -->
+          <path d="M200 460 Q195 448 200 442 Q205 448 200 460" fill="rgba(201,168,76,0.6)"/>
+          <path d="M194 452 Q186 445 190 438 Q197 442 194 452" fill="rgba(201,168,76,0.45)"/>
+          <path d="M206 452 Q214 445 210 438 Q203 442 206 452" fill="rgba(201,168,76,0.45)"/>
+          <!-- Diamond ornaments -->
+          <path d="M200 478 L206 488 L200 498 L194 488 Z" fill="rgba(201,168,76,0.35)"/>
+          <path d="M180 478 L184 486 L180 494 L176 486 Z" fill="rgba(201,168,76,0.2)"/>
+          <path d="M220 478 L224 486 L220 494 L216 486 Z" fill="rgba(201,168,76,0.2)"/>
         </svg>
-        <div class="card-hover-overlay">
-          <div class="card-hover-label">MV Vault</div>
-          <div class="card-hover-sub">Original Collection</div>
-        </div>
+      </div>
+      <div class="coll-card-overlay">
+        <div class="coll-cat">Original Collection</div>
+        <div class="coll-name">MV Vault<br>Signature Series</div>
+        <div class="coll-arrow">Browse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
-    <!-- Card 2: Mystical Mail postage stamp (gold on blue) -->
+    <!-- 2: Mystical Mail stamp -->
     <div class="coll-card">
-      <div class="card-art">
-        <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="400" height="500" fill="#3848C8"/>
-          <!-- Perforated stamp shape -->
-          <path d="
-            M80 100 Q88 100 88 108
-            L88 112 Q88 120 80 120
-            L80 130 Q88 130 88 138
-            L88 142 Q88 150 80 150
-            L80 160 Q88 160 88 168
-            L88 172 Q88 180 80 180
-            L80 190 Q88 190 88 198
-            L88 202 Q88 210 80 210
-            L80 220 Q88 220 88 228
-            L88 232 Q88 240 80 240
-            L80 250 Q88 250 88 258
-            L88 262 Q88 270 80 270
-            L80 280 Q88 280 88 288
-            L88 292 Q88 300 80 300
-            L80 310 Q88 310 88 318
-            L88 322 Q88 330 80 330
-            L80 340 Q88 340 88 348
-            L88 352 Q88 360 80 360
-            L80 370 Q88 370 88 378
-            L88 382 Q88 390 80 390
-            L80 400
-            L100 400 Q100 408 108 408 L112 408 Q120 408 120 400
-            L130 400 Q130 408 138 408 L142 408 Q150 408 150 400
-            L160 400 Q160 408 168 408 L172 408 Q180 408 180 400
-            L190 400 Q190 408 198 408 L202 408 Q210 408 210 400
-            L220 400 Q220 408 228 408 L232 408 Q240 408 240 400
-            L250 400 Q250 408 258 408 L262 408 Q270 408 270 400
-            L280 400 Q280 408 288 408 L292 408 Q300 408 300 400
-            L310 400 Q310 408 318 408 L322 408 Q330 408 330 400
-            L320 400
-            L320 390 Q312 390 312 382 L312 378 Q312 370 320 370
-            L320 360 Q312 360 312 352 L312 348 Q312 340 320 340
-            L320 330 Q312 330 312 322 L312 318 Q312 310 320 310
-            L320 300 Q312 300 312 292 L312 288 Q312 280 320 280
-            L320 270 Q312 270 312 262 L312 258 Q312 250 320 250
-            L320 240 Q312 240 312 232 L312 228 Q312 220 320 220
-            L320 210 Q312 210 312 202 L312 198 Q312 190 320 190
-            L320 180 Q312 180 312 172 L312 168 Q312 160 320 160
-            L320 150 Q312 150 312 142 L312 138 Q312 130 320 130
-            L320 120 Q312 120 312 112 L312 108 Q312 100 320 100
-            L300 100 Q300 92 292 92 L288 92 Q280 92 280 100
-            L270 100 Q270 92 262 92 L258 92 Q250 92 250 100
-            L240 100 Q240 92 232 92 L228 92 Q220 92 220 100
-            L210 100 Q210 92 202 92 L198 92 Q190 92 190 100
-            L180 100 Q180 92 172 92 L168 92 Q160 92 160 100
-            L150 100 Q150 92 142 92 L138 92 Q130 92 130 100
-            L120 100 Q120 92 112 92 L108 92 Q100 92 100 100 Z"
-            fill="#C4A020" opacity="0.92"/>
-          <!-- Inner stamp border -->
-          <rect x="95" y="115" width="210" height="272" fill="#C4A020" opacity="0.05"/>
-          <rect x="98" y="118" width="204" height="266" fill="none" stroke="rgba(26,27,80,0.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <!-- Ornate scrollwork frame inside stamp -->
-          <rect x="106" y="126" width="188" height="250" fill="none" stroke="rgba(26,27,80,0.4)" stroke-width="1"/>
-
-          <!-- "MYSTICAL" text -->
-          <text x="200" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="bold"
-                fill="rgba(26,27,80,0.85)" letter-spacing="3">MYSTICAL</text>
+      <div class="coll-card-art">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="520" fill="#2838B8"/>
+          <!-- Deep background glow -->
+          <ellipse cx="200" cy="260" rx="160" ry="190" fill="rgba(201,168,76,0.03)"/>
+          <!-- Stamp perforated outline (simplified cleaner version) -->
+          <rect x="55" y="80" width="290" height="360" rx="3" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.7)" stroke-width="2" stroke-dasharray="8 5"/>
+          <!-- Stamp inner frame -->
+          <rect x="72" y="97" width="256" height="326" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <rect x="80" y="105" width="240" height="310" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
+          <!-- Top ornament -->
+          <path d="M120 125 Q200 108 280 125" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" fill="none"/>
+          <circle cx="200" cy="115" r="5" fill="rgba(201,168,76,0.5)"/>
+          <!-- Corner diamonds -->
+          <path d="M84 109 L90 116 L84 123 L78 116 Z" fill="rgba(201,168,76,0.4)"/>
+          <path d="M316 109 L322 116 L316 123 L310 116 Z" fill="rgba(201,168,76,0.4)"/>
+          <path d="M84 393 L90 400 L84 407 L78 400 Z" fill="rgba(201,168,76,0.4)"/>
+          <path d="M316 393 L322 400 L316 407 L310 400 Z" fill="rgba(201,168,76,0.4)"/>
+          <!-- MYSTICAL text -->
+          <text x="200" y="228" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="rgba(201,168,76,0.88)" letter-spacing="5">MYSTICAL</text>
+          <!-- Decorative line pair -->
+          <line x1="88" y1="238" x2="312" y2="238" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <line x1="88" y1="242" x2="312" y2="242" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
           <!-- Script "Mail" -->
-          <text x="200" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="34" font-style="italic"
-                fill="rgba(26,27,80,0.85)" letter-spacing="1">Mail</text>
-
-          <!-- Diamond gem at bottom of stamp -->
-          <path d="M200 296 L215 308 L200 332 L185 308 Z" fill="rgba(26,27,80,0.6)"/>
-          <path d="M185 308 L200 296 L215 308 L200 308 Z" fill="rgba(26,27,80,0.4)"/>
-          <!-- Curved label scroll at top -->
-          <path d="M120 155 Q200 140 280 155" stroke="rgba(26,27,80,0.4)" stroke-width="1.5" fill="none"/>
-          <path d="M120 165 Q200 150 280 165" stroke="rgba(26,27,80,0.25)" stroke-width="1" fill="none"/>
-          <!-- Small corner ornaments -->
-          <circle cx="118" cy="138" r="4" fill="rgba(26,27,80,0.5)"/>
-          <circle cx="282" cy="138" r="4" fill="rgba(26,27,80,0.5)"/>
-          <circle cx="118" cy="358" r="4" fill="rgba(26,27,80,0.5)"/>
-          <circle cx="282" cy="358" r="4" fill="rgba(26,27,80,0.5)"/>
+          <text x="200" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-style="italic" fill="rgba(201,168,76,0.9)" letter-spacing="2">Mail</text>
+          <!-- Diamond gem -->
+          <path d="M200 330 L218 345 L200 378 L182 345 Z" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+          <path d="M182 345 L200 330 L218 345 L200 348 Z" fill="rgba(201,168,76,0.15)"/>
+          <!-- Stars side decoration -->
+          <text x="92" y="186" font-size="12" fill="rgba(201,168,76,0.5)" font-family="serif">✦</text>
+          <text x="296" y="186" font-size="12" fill="rgba(201,168,76,0.5)" font-family="serif">✦</text>
+          <!-- Bottom scroll -->
+          <path d="M110 392 Q200 380 290 392" stroke="rgba(201,168,76,0.35)" stroke-width="1" fill="none"/>
         </svg>
-        <div class="card-hover-overlay">
-          <div class="card-hover-label">Mystical Mail</div>
-          <div class="card-hover-sub">Monthly Mystery Subscription</div>
-        </div>
+      </div>
+      <div class="coll-card-overlay">
+        <div class="coll-cat">Monthly Subscription</div>
+        <div class="coll-name">Mystical Mail<br>Mystery Box</div>
+        <div class="coll-arrow">Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
-    <!-- Card 3: Ornate flowing gold character / sorcerer sigil -->
+    <!-- 3: Gold flowing sigil -->
     <div class="coll-card">
-      <div class="card-art">
-        <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="400" height="500" fill="#3040C0"/>
-          <!-- Background texture rings -->
-          <circle cx="200" cy="250" r="160" fill="none" stroke="rgba(196,160,32,0.08)" stroke-width="40"/>
-          <circle cx="200" cy="250" r="120" fill="none" stroke="rgba(196,160,32,0.05)" stroke-width="20"/>
-
-          <!-- Stylized ornate sorcerer numeral / sigil — large sweeping gold shape -->
-          <!-- Main sweeping tail (like the golden "6" shape seen in screenshot) -->
-          <path d="
-            M200 80
-            C240 80 270 100 270 130
-            C270 160 250 175 230 175
-            C200 175 185 155 195 135
-            C202 120 215 118 225 125
-            C235 132 232 148 220 150
-            C210 152 205 143 210 137
-          " stroke="#C4A020" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-
-          <!-- Long sweeping tail going down-left -->
-          <path d="
-            M200 80
-            C180 80 155 95 148 125
-            C140 158 148 200 165 240
-            C180 278 190 310 185 345
-            C180 375 165 400 145 420
-          " stroke="#C4A020" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.95"/>
-
-          <!-- Curl at bottom of tail -->
-          <path d="
-            M145 420
-            C125 435 115 450 120 460
-            C128 475 150 470 162 458
-            C172 448 168 435 158 432
-            C150 430 145 438 150 445
-          " stroke="#C4A020" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.9"/>
-
-          <!-- Small curling flourish at top right -->
-          <path d="M270 130 C285 128 295 135 292 148 C290 158 280 162 272 158" stroke="#C4A020" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.8"/>
-
-          <!-- Sparkle dots -->
-          <circle cx="295" cy="105" r="5" fill="#C4A020" opacity="0.6"/>
-          <circle cx="310" cy="90" r="3" fill="#C4A020" opacity="0.4"/>
-          <circle cx="280" cy="85" r="3.5" fill="#C4A020" opacity="0.5"/>
-          <circle cx="130" cy="380" r="4" fill="#C4A020" opacity="0.5"/>
-          <circle cx="110" cy="400" r="3" fill="#C4A020" opacity="0.3"/>
+      <div class="coll-card-art">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="520" fill="#3040C0"/>
+          <!-- Radial glow rings -->
+          <circle cx="200" cy="260" r="180" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="30"/>
+          <circle cx="200" cy="260" r="140" fill="none" stroke="rgba(201,168,76,0.04)" stroke-width="15"/>
+          <!-- Main sweeping numeral/sigil shape — like the real one in the screenshot -->
+          <!-- Top circle / loop of the number -->
+          <path d="M200 90 C248 90 284 118 284 155 C284 192 256 212 228 212 C192 212 174 186 186 161 C194 144 212 140 226 148 C240 156 237 176 221 179 C208 181 202 168 208 160"
+                stroke="rgba(201,168,76,0.92)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Long sweeping tail descending left -->
+          <path d="M200 90 C174 90 144 108 136 142 C126 180 136 226 156 268 C172 306 182 344 176 384 C170 416 152 444 128 468"
+                stroke="rgba(201,168,76,0.92)" stroke-width="24" fill="none" stroke-linecap="round"/>
+          <!-- Curling flourish at bottom -->
+          <path d="M128 468 C106 487 96 504 104 516 C113 528 140 522 154 506 C165 494 160 477 148 474 C138 471 130 482 136 492"
+                stroke="rgba(201,168,76,0.88)" stroke-width="20" fill="none" stroke-linecap="round"/>
+          <!-- Small curl at top right end -->
+          <path d="M284 155 C302 152 314 162 311 178 C308 191 295 197 284 192"
+                stroke="rgba(201,168,76,0.78)" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <!-- Sparkle constellation -->
+          <circle cx="310" cy="112" r="6" fill="rgba(201,168,76,0.65)"/>
+          <circle cx="328" cy="96" r="3.5" fill="rgba(201,168,76,0.45)"/>
+          <circle cx="294" cy="96" r="4" fill="rgba(201,168,76,0.5)"/>
+          <circle cx="340" cy="114" r="2.5" fill="rgba(201,168,76,0.35)"/>
+          <circle cx="112" cy="440" r="5" fill="rgba(201,168,76,0.55)"/>
+          <circle cx="96" cy="458" r="3" fill="rgba(201,168,76,0.35)"/>
+          <circle cx="100" cy="424" r="2.5" fill="rgba(201,168,76,0.35)"/>
+          <!-- Small star -->
+          <text x="318" y="104" font-size="14" fill="rgba(201,168,76,0.6)" font-family="serif">✦</text>
         </svg>
-        <div class="card-hover-overlay">
-          <div class="card-hover-label">Fantasy Series</div>
-          <div class="card-hover-sub">Limited Editions</div>
-        </div>
+      </div>
+      <div class="coll-card-overlay">
+        <div class="coll-cat">Limited Edition</div>
+        <div class="coll-name">Fantasy Series<br>Drop Collection</div>
+        <div class="coll-arrow">View Drops <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
-    <!-- Card 4: Flaming character — "Land of..." -->
+    <!-- 4: Land of Lions / fire character -->
     <div class="coll-card">
-      <div class="card-art">
-        <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="400" height="500" fill="#3848C8"/>
-
+      <div class="coll-card-art">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="520" fill="#2030A0"/>
           <!-- Flame base glow -->
-          <ellipse cx="200" cy="420" rx="130" ry="30" fill="rgba(196,160,32,0.15)"/>
-
-          <!-- Flames rising from bottom -->
-          <!-- Center large flame -->
-          <path d="M200 440 C200 420 215 400 205 375 C200 355 195 335 210 315 C220 300 215 280 200 265 C205 280 202 295 195 310 C185 330 178 350 188 375 C195 395 192 415 200 440 Z"
-                fill="#C4A020" opacity="0.9"/>
-          <!-- Left flame -->
-          <path d="M160 440 C158 420 168 405 162 385 C156 368 152 345 165 325 C172 312 168 295 158 282 C162 295 160 308 155 322 C147 340 145 362 155 382 C162 398 160 420 160 440 Z"
-                fill="#C4A020" opacity="0.8"/>
-          <!-- Right flame -->
-          <path d="M240 440 C242 420 232 405 238 385 C244 368 248 345 235 325 C228 312 232 295 242 282 C238 295 240 308 245 322 C253 340 255 362 245 382 C238 398 240 420 240 440 Z"
-                fill="#C4A020" opacity="0.8"/>
-          <!-- Outer left flame -->
-          <path d="M120 440 C120 418 128 402 122 382 C116 362 120 340 132 322 C118 335 112 355 120 378 C125 395 122 418 120 440 Z"
-                fill="#C4A020" opacity="0.6"/>
-          <!-- Outer right flame -->
-          <path d="M280 440 C280 418 272 402 278 382 C284 362 280 340 268 322 C282 335 288 355 280 378 C275 395 278 418 280 440 Z"
-                fill="#C4A020" opacity="0.6"/>
-
-          <!-- Character silhouette (lion/beast head emerging from flames) -->
-          <!-- Body -->
-          <ellipse cx="200" cy="200" rx="70" ry="80" fill="#C4A020" opacity="0.88"/>
-          <!-- Head -->
-          <circle cx="200" cy="140" r="55" fill="#C4A020" opacity="0.9"/>
-          <!-- Mane -->
-          <circle cx="200" cy="140" r="68" fill="none" stroke="#C4A020" stroke-width="12" opacity="0.6"/>
-          <circle cx="200" cy="140" r="75" fill="none" stroke="#C4A020" stroke-width="6" opacity="0.35"/>
-          <!-- Face features (dark cutouts) -->
-          <ellipse cx="184" cy="133" rx="9" ry="11" fill="rgba(26,27,80,0.8)"/>
-          <ellipse cx="216" cy="133" rx="9" ry="11" fill="rgba(26,27,80,0.8)"/>
-          <!-- Nose -->
-          <path d="M192 152 Q200 160 208 152 Q204 165 196 165 Z" fill="rgba(26,27,80,0.7)"/>
-          <!-- Mouth -->
-          <path d="M186 168 Q200 180 214 168" stroke="rgba(26,27,80,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="200" cy="460" rx="140" ry="28" fill="rgba(201,168,76,0.18)"/>
+          <ellipse cx="200" cy="460" rx="100" ry="18" fill="rgba(201,168,76,0.12)"/>
+          <!-- Outer flames -->
+          <path d="M112 480 C112 452 124 430 116 404 C108 378 116 350 130 328 C114 346 108 372 118 400 C126 422 118 452 112 480Z" fill="rgba(201,168,76,0.6)"/>
+          <path d="M288 480 C288 452 276 430 284 404 C292 378 284 350 270 328 C286 346 292 372 282 400 C274 422 282 452 288 480Z" fill="rgba(201,168,76,0.6)"/>
+          <!-- Inner flames -->
+          <path d="M148 480 C148 454 158 435 150 410 C142 386 150 358 166 336 C150 354 144 382 154 408 C162 428 154 456 148 480Z" fill="rgba(201,168,76,0.78)"/>
+          <path d="M252 480 C252 454 242 435 250 410 C258 386 250 358 234 336 C250 354 256 382 246 408 C238 428 246 456 252 480Z" fill="rgba(201,168,76,0.78)"/>
+          <!-- Center flame -->
+          <path d="M200 480 C200 455 212 432 202 404 C196 382 192 355 208 332 C214 350 212 370 204 390 C196 412 198 446 200 480Z" fill="rgba(201,168,76,0.9)"/>
+          <!-- Lion body -->
+          <ellipse cx="200" cy="240" rx="68" ry="78" fill="rgba(201,168,76,0.9)"/>
+          <!-- Mane rings -->
+          <circle cx="200" cy="180" r="78" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="14"/>
+          <circle cx="200" cy="180" r="90" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="8"/>
+          <!-- Lion head -->
+          <circle cx="200" cy="180" r="60" fill="rgba(201,168,76,0.92)"/>
+          <!-- Face -->
+          <ellipse cx="183" cy="171" rx="10" ry="12" fill="rgba(28,30,90,0.85)"/>
+          <ellipse cx="217" cy="171" rx="10" ry="12" fill="rgba(28,30,90,0.85)"/>
+          <circle cx="185" cy="172" r="5" fill="rgba(14,15,43,0.9)"/>
+          <circle cx="219" cy="172" r="5" fill="rgba(14,15,43,0.9)"/>
+          <circle cx="183" cy="170" r="2" fill="white" opacity="0.7"/>
+          <circle cx="217" cy="170" r="2" fill="white" opacity="0.7"/>
+          <ellipse cx="200" cy="191" rx="14" ry="9" fill="rgba(28,30,90,0.7)"/>
+          <path d="M186 204 Q200 216 214 204" stroke="rgba(28,30,90,0.65)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <!-- Ears -->
-          <polygon points="152,100 162,130 140,130" fill="#C4A020" opacity="0.85"/>
-          <polygon points="248,100 258,130 238,130" fill="#C4A020" opacity="0.85"/>
-
-          <!-- "LAND OF..." text banner at bottom -->
-          <rect x="80" y="448" width="240" height="36" fill="rgba(26,27,80,0.85)" rx="2"/>
-          <rect x="80" y="448" width="240" height="36" fill="none" stroke="rgba(196,160,32,0.4)" stroke-width="1" rx="2"/>
-          <text x="200" y="471" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold"
-                fill="#C4A020" letter-spacing="3.5">LAND OF LIONS</text>
+          <polygon points="152,136 164,166 140,166" fill="rgba(201,168,76,0.88)"/>
+          <polygon points="248,136 260,166 236,166" fill="rgba(201,168,76,0.88)"/>
+          <!-- Banner ribbon -->
+          <path d="M68 320 L332 320 L340 336 L332 352 L68 352 L60 336 Z" fill="rgba(28,30,90,0.88)"/>
+          <path d="M68 320 L332 320 L340 336 L332 352 L68 352 L60 336 Z" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+          <text x="200" y="341" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="rgba(201,168,76,0.92)" letter-spacing="4.5">LAND OF LIONS</text>
         </svg>
-        <div class="card-hover-overlay">
-          <div class="card-hover-label">Land of Lions</div>
-          <div class="card-hover-sub">New Collection</div>
-        </div>
+      </div>
+      <div class="coll-card-overlay">
+        <div class="coll-cat">New Collection</div>
+        <div class="coll-name">Land of Lions<br>Original Series</div>
+        <div class="coll-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     ABOUT / BRAND STORY
-══════════════════════════════════════ -->
-<section class="about-strip">
-  <div class="about-left">
-    <p class="about-eyebrow">The Vault</p>
-    <h2 class="about-title">
-      Fantasy collectibles born<br>from imagination.
-    </h2>
-    <p class="about-body">
-      MystiVault was built for collectors who believe a pin is more than metal and enamel —
-      it's a story, a memory, a piece of a world worth holding onto. Every release is
-      original, limited, and designed to stand the test of time.
-    </p>
-    <a href="#" class="about-cta">Our Story</a>
-  </div>
-  <div class="about-stats">
-    <div class="a-stat">
-      <div class="a-num">4.8K+</div>
-      <div class="a-label">Collectors</div>
-    </div>
-    <div class="a-stat">
-      <div class="a-num">125</div>
-      <div class="a-label">Max Edition</div>
-    </div>
-    <div class="a-stat">
-      <div class="a-num">100%</div>
-      <div class="a-label">Original Art</div>
-    </div>
-  </div>
-</section>
+<!-- ═══ DIVIDER ═══ -->
+<div class="orn-strip" style="padding:24px 0;">
+  <div class="orn-line"></div>
+  <div class="orn-center">◆ &nbsp; ◆ &nbsp; ◆</div>
+  <div class="orn-line"></div>
+</div>
 
-<!-- ══════════════════════════════════════
-     FEATURED PRODUCT SPOTLIGHT
-══════════════════════════════════════ -->
+<!-- ═══ FEATURED PRODUCT ═══ -->
 <section class="spotlight">
   <div class="spotlight-inner">
 
-    <div class="spot-img-wrap">
-      <span class="spot-le-badge">LE 125</span>
-      <svg class="spot-pin" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="spBase" cx="35%" cy="30%"><stop offset="0%" stop-color="#1e1048"/><stop offset="60%" stop-color="#0d0820"/><stop offset="100%" stop-color="#070512"/></radialGradient>
-          <radialGradient id="spGlow" cx="50%" cy="50%"><stop offset="0%" stop-color="#C4A020" stop-opacity="0.5"/><stop offset="100%" stop-color="#C4A020" stop-opacity="0"/></radialGradient>
-          <linearGradient id="spHat" x1="130" y1="38" x2="190" y2="130" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0860"/><stop offset="100%" stop-color="#2a1080"/></linearGradient>
-          <linearGradient id="spRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D4B435"/><stop offset="50%" stop-color="#C4A020"/><stop offset="100%" stop-color="#9A7C18"/></linearGradient>
-        </defs>
-        <circle cx="160" cy="160" r="142" fill="url(#spGlow)" opacity="0.45"/>
-        <circle cx="160" cy="160" r="132" fill="url(#spBase)" stroke="url(#spRing)" stroke-width="3.5"/>
-        <circle cx="160" cy="160" r="126" fill="none" stroke="rgba(196,160,32,0.2)" stroke-width="1"/>
-        <circle cx="55" cy="68" r="2" fill="#C4A020" opacity="0.7"/>
-        <circle cx="242" cy="82" r="1.5" fill="#fff" opacity="0.5"/>
-        <circle cx="76" cy="248" r="1.5" fill="#C4A020" opacity="0.4"/>
-        <circle cx="258" cy="232" r="2" fill="#fff" opacity="0.5"/>
-        <circle cx="112" cy="108" r="44" fill="#1a1a2e" stroke="#C4A020" stroke-width="2"/>
-        <circle cx="208" cy="108" r="44" fill="#1a1a2e" stroke="#C4A020" stroke-width="2"/>
-        <ellipse cx="160" cy="176" rx="68" ry="70" fill="#1a1a2e" stroke="#C4A020" stroke-width="2"/>
-        <ellipse cx="160" cy="185" rx="52" ry="45" fill="#2a1a0e"/>
-        <ellipse cx="143" cy="168" rx="10" ry="12" fill="white"/>
-        <ellipse cx="177" cy="168" rx="10" ry="12" fill="white"/>
-        <circle cx="146" cy="170" r="6" fill="#111"/>
-        <circle cx="180" cy="170" r="6" fill="#111"/>
-        <circle cx="148" cy="167" r="2" fill="white"/>
-        <circle cx="182" cy="167" r="2" fill="white"/>
-        <ellipse cx="160" cy="186" rx="13" ry="8.5" fill="#111"/>
-        <path d="M140 200 Q160 218 180 200" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <path d="M128 130 L160 36 L192 130 Z" fill="url(#spHat)" stroke="#C4A020" stroke-width="2"/>
-        <ellipse cx="160" cy="132" rx="36" ry="9" fill="#2a1060" stroke="#C4A020" stroke-width="1.5"/>
-        <polygon points="160,56 162,63 169,63 163,67 166,74 160,70 154,74 157,67 151,63 158,63" fill="#C4A020" opacity="0.95"/>
-        <circle cx="146" cy="80" r="3" fill="#9D7FCC" opacity="0.8"/>
-        <line x1="202" y1="154" x2="264" y2="102" stroke="#C4A020" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="264" cy="102" r="8" fill="#C4A020" opacity="0.95"/>
-        <path d="M80 222 Q95 195 75 180 Q55 165 72 147 Q85 135 102 143" stroke="#9D7FCC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
-        <text x="160" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C4A020" letter-spacing="2.5" opacity="0.9">MYSTICAL MAIL</text>
-        <text x="160" y="292" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="rgba(196,160,32,0.55)" letter-spacing="3.5">FANTASY SERIES</text>
-      </svg>
+    <div class="spot-visual">
+      <div class="spot-frame">
+        <span class="spot-badge">LE 125</span>
+        <span class="spot-stock-badge">22 of 125 remaining</span>
+        <svg class="spot-pin-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="sBase" cx="35%" cy="30%"><stop offset="0%" stop-color="#1e1048"/><stop offset="65%" stop-color="#0d0820"/><stop offset="100%" stop-color="#070512"/></radialGradient>
+            <radialGradient id="sGlow" cx="50%" cy="50%"><stop offset="0%" stop-color="#C9A84C" stop-opacity="0.55"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/></radialGradient>
+            <linearGradient id="sHat" x1="130" y1="38" x2="190" y2="130" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a0860"/><stop offset="100%" stop-color="#2a1080"/></linearGradient>
+            <linearGradient id="sRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#DFC06A"/><stop offset="50%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#9A7A28"/></linearGradient>
+          </defs>
+          <circle cx="160" cy="160" r="142" fill="url(#sGlow)" opacity="0.5"/>
+          <circle cx="160" cy="160" r="132" fill="url(#sBase)" stroke="url(#sRing)" stroke-width="3.5"/>
+          <circle cx="160" cy="160" r="126" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
+          <circle cx="55" cy="68" r="2" fill="#C9A84C" opacity="0.7"/>
+          <circle cx="242" cy="82" r="1.5" fill="#fff" opacity="0.5"/>
+          <circle cx="76" cy="248" r="1.5" fill="#C9A84C" opacity="0.4"/>
+          <circle cx="258" cy="232" r="2" fill="#fff" opacity="0.5"/>
+          <circle cx="112" cy="108" r="44" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="208" cy="108" r="44" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
+          <ellipse cx="160" cy="176" rx="68" ry="70" fill="#1a1a2e" stroke="#C9A84C" stroke-width="2"/>
+          <ellipse cx="160" cy="185" rx="52" ry="45" fill="#2a1a0e"/>
+          <ellipse cx="143" cy="168" rx="10" ry="12" fill="white"/>
+          <ellipse cx="177" cy="168" rx="10" ry="12" fill="white"/>
+          <circle cx="146" cy="170" r="6" fill="#111"/>
+          <circle cx="180" cy="170" r="6" fill="#111"/>
+          <circle cx="148" cy="167" r="2" fill="white"/>
+          <circle cx="182" cy="167" r="2" fill="white"/>
+          <ellipse cx="160" cy="186" rx="13" ry="8.5" fill="#111"/>
+          <path d="M140 200 Q160 218 180 200" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M128 130 L160 36 L192 130 Z" fill="url(#sHat)" stroke="#C9A84C" stroke-width="2"/>
+          <ellipse cx="160" cy="132" rx="36" ry="9" fill="#2a1060" stroke="#C9A84C" stroke-width="1.5"/>
+          <polygon points="160,56 162,63 169,63 163,67 166,74 160,70 154,74 157,67 151,63 158,63" fill="#C9A84C" opacity="0.95"/>
+          <circle cx="146" cy="80" r="3" fill="#9D7FCC" opacity="0.8"/>
+          <line x1="202" y1="154" x2="264" y2="102" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="264" cy="102" r="8" fill="#C9A84C"/>
+          <path d="M80 222 Q95 195 75 180 Q55 165 72 147 Q85 135 102 143" stroke="#9D7FCC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+          <text x="160" y="276" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C9A84C" letter-spacing="2.5" opacity="0.9">MYSTICAL MAIL</text>
+          <text x="160" y="292" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="rgba(201,168,76,0.5)" letter-spacing="3.5">FANTASY SERIES</text>
+        </svg>
+      </div>
     </div>
 
     <div class="spot-info">
-      <p class="spot-eyebrow">Featured Drop · Fantasy Series</p>
-      <h2 class="spot-title">Mystical Mail LE 125 —<br>Sorcerer Mickey Fantasy Pin</h2>
+      <p class="eyebrow">Featured Drop · Fantasy Series</p>
+      <h2 class="spot-title">Mystical Mail LE 125 —<br>Sorcerer Mickey</h2>
       <p class="spot-desc">Hard enamel with antique gold plating. Hand-numbered from an edition of 125. Glitter accent on the sorcerer hat stars, glow-in-the-dark magic swirl. Ships with collector card and certificate of authenticity.</p>
-      <div class="spot-price">$38.00 <s>$48.00</s></div>
+      <div class="spot-edition-row">
+        <div class="spot-ed"><div class="spot-ed-label">Edition</div><div class="spot-ed-val">LE 125</div></div>
+        <div class="spot-ed"><div class="spot-ed-label">Series</div><div class="spot-ed-val">Fantasy</div></div>
+        <div class="spot-ed"><div class="spot-ed-label">Year</div><div class="spot-ed-val">2024</div></div>
+        <div class="spot-ed"><div class="spot-ed-label">Finish</div><div class="spot-ed-val">Hard</div></div>
+      </div>
+      <div class="spot-price-row">
+        <span class="spot-price">$38.00</span>
+        <span class="spot-was">$48.00</span>
+        <span class="spot-save">Save 21%</span>
+      </div>
       <div class="spot-stock">
-        <div class="spot-stock-label"><span>In stock</span><strong>Only 22 remaining</strong></div>
+        <div class="spot-stock-row"><span>Availability</span><strong>Only 22 left — selling fast</strong></div>
         <div class="spot-bar"><div class="spot-fill"></div></div>
       </div>
       <div class="spot-variants">
-        <button class="spot-var sel">Standard</button>
-        <button class="spot-var">With Stand</button>
-        <button class="spot-var">Bundle</button>
+        <button class="spot-v sel" onclick="document.querySelectorAll('.spot-v').forEach(b=>b.classList.remove('sel'));this.classList.add('sel')">Standard</button>
+        <button class="spot-v" onclick="document.querySelectorAll('.spot-v').forEach(b=>b.classList.remove('sel'));this.classList.add('sel')">With Stand</button>
+        <button class="spot-v" onclick="document.querySelectorAll('.spot-v').forEach(b=>b.classList.remove('sel'));this.classList.add('sel')">Bundle</button>
       </div>
-      <button class="spot-add">Add to Cart</button>
+      <div class="spot-cta-row">
+        <button class="btn-gold">✦ &nbsp; Add to Cart</button>
+        <button class="btn-outline">Buy It Now</button>
+      </div>
+      <div class="spot-trust">
+        <div class="trust-item"><span class="trust-icon">🔒</span> Secure checkout</div>
+        <div class="trust-item"><span class="trust-icon">📦</span> Ships in 2–5 days</div>
+        <div class="trust-item"><span class="trust-icon">✨</span> Auth. guaranteed</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     SHOP ALL GRID
-══════════════════════════════════════ -->
-<section class="shop-section" id="shop">
+<!-- ═══ DIVIDER ═══ -->
+<div class="orn-strip" style="padding:0; background:var(--navy);">
+  <div class="orn-line"></div>
+  <div class="orn-center">◆ &nbsp; ◆ &nbsp; ◆</div>
+  <div class="orn-line"></div>
+</div>
+
+<!-- ═══ SHOP GRID ═══ -->
+<section class="shop-sec">
   <div class="shop-inner">
     <div class="sec-head">
-      <p class="sec-eyebrow">The Collection</p>
-      <h2 class="sec-title">Shop All Pins</h2>
+      <p class="eyebrow">The Collection</p>
+      <h2 class="section-title">Shop All Pins</h2>
     </div>
-
     <div class="shop-grid">
-      <!-- 1 -->
       <div class="shop-card">
-        <div class="shop-card-img" style="background:#3040C0">
-          <span class="sc-badge sb-le">LE 75</span>
-          <svg viewBox="0 0 200 200" fill="none">
-            <ellipse cx="100" cy="100" rx="70" ry="70" fill="#3848C8" stroke="#C4A020" stroke-width="2"/>
-            <text x="100" y="115" text-anchor="middle" font-size="54" fill="#C4A020" font-family="Georgia,serif" opacity="0.9">🌊</text>
-          </svg>
-        </div>
-        <div class="shop-card-body">
-          <div class="sc-series">Fantasy Series</div>
-          <div class="sc-name">Fantasia Waves — Hippo Ballerina</div>
-          <div class="sc-price">$44.00</div>
-        </div>
+        <div class="shop-img"><span class="shop-badge sb-gold">LE 75</span>🌊</div>
+        <div class="shop-body"><div class="shop-series">Fantasy Series</div><div class="shop-name">Fantasia Waves — Hippo Ballerina</div><div class="shop-price">$44.00</div></div>
       </div>
-      <!-- 2 -->
       <div class="shop-card">
-        <div class="shop-card-img" style="background:#2838B0">
-          <span class="sc-badge sb-sold">Sold Out</span>
-          <svg viewBox="0 0 200 200" fill="none">
-            <ellipse cx="100" cy="100" rx="70" ry="70" fill="#3040C0" stroke="#C4A020" stroke-width="2"/>
-            <text x="100" y="115" text-anchor="middle" font-size="50" fill="#C4A020" font-family="Georgia,serif" opacity="0.9">🧙</text>
-          </svg>
-        </div>
-        <div class="shop-card-body">
-          <div class="sc-series">Wizard Series</div>
-          <div class="sc-name">Merlin's Menagerie — Enchanted Forest</div>
-          <div class="sc-price">$42.00</div>
-        </div>
+        <div class="shop-img"><span class="shop-badge sb-red">Sold Out</span>🧙</div>
+        <div class="shop-body"><div class="shop-series">Wizard Series</div><div class="shop-name">Merlin's Menagerie — Enchanted Forest</div><div class="shop-price">$42.00</div></div>
       </div>
-      <!-- 3 -->
       <div class="shop-card">
-        <div class="shop-card-img" style="background:#3040C0">
-          <span class="sc-badge sb-new">New</span>
-          <svg viewBox="0 0 200 200" fill="none">
-            <ellipse cx="100" cy="100" rx="70" ry="70" fill="#3848C8" stroke="#C4A020" stroke-width="2"/>
-            <text x="100" y="115" text-anchor="middle" font-size="50" fill="#C4A020" font-family="Georgia,serif" opacity="0.9">🔮</text>
-          </svg>
-        </div>
-        <div class="shop-card-body">
-          <div class="sc-series">Haunted Series</div>
-          <div class="sc-name">Crystal Ball Oracle — Madame Leota</div>
-          <div class="sc-price">$52.00</div>
-        </div>
+        <div class="shop-img"><span class="shop-badge sb-green">New</span>🔮</div>
+        <div class="shop-body"><div class="shop-series">Haunted Series</div><div class="shop-name">Crystal Ball Oracle — Madame Leota</div><div class="shop-price">$52.00</div></div>
       </div>
-      <!-- 4 -->
       <div class="shop-card">
-        <div class="shop-card-img" style="background:#2838B0">
-          <span class="sc-badge sb-le">LE 50</span>
-          <svg viewBox="0 0 200 200" fill="none">
-            <ellipse cx="100" cy="100" rx="70" ry="70" fill="#3040C0" stroke="#C4A020" stroke-width="2"/>
-            <text x="100" y="115" text-anchor="middle" font-size="50" fill="#C4A020" font-family="Georgia,serif" opacity="0.9">🌙</text>
-          </svg>
-        </div>
-        <div class="shop-card-body">
-          <div class="sc-series">Mystery Mail</div>
-          <div class="sc-name">Midnight Enchantress — October Drop</div>
-          <div class="sc-price">$38.00</div>
-        </div>
+        <div class="shop-img"><span class="shop-badge sb-gold">LE 50</span>🌙</div>
+        <div class="shop-body"><div class="shop-series">Mystery Mail</div><div class="shop-name">Midnight Enchantress — October Drop</div><div class="shop-price">$38.00</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     NEWSLETTER
-══════════════════════════════════════ -->
-<section class="newsletter">
-  <p class="nl-eyebrow">Join the Inner Circle</p>
-  <h2 class="nl-title">Be first to the vault.</h2>
-  <p class="nl-sub">Early access to LE drops, mystery mail reveals, and collector news.<br>Never miss a release.</p>
-  <div class="nl-form">
-    <input type="email" class="nl-input" placeholder="your@email.com" />
-    <button class="nl-btn">Subscribe</button>
+<!-- ═══ ABOUT ═══ -->
+<section class="about-sec">
+  <div class="about-inner">
+    <div class="about-txt">
+      <p class="eyebrow" style="color:var(--gold-d)">The Vault</p>
+      <h2 class="about-title">Fantasy collectibles born<br>from imagination.</h2>
+      <p class="about-body">MystiVault was built for collectors who believe a pin is more than metal and enamel — it's a story, a memory, a piece of a world worth holding onto. Every release is original, limited, and designed with storytelling at its core.</p>
+      <a href="#" class="about-link">Our Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="about-stats">
+      <div class="a-row">
+        <div class="a-stat"><div class="a-num">4.8K+</div><div class="a-label">Collectors</div></div>
+        <div class="a-stat"><div class="a-num">LE 125</div><div class="a-label">Max Edition Size</div></div>
+        <div class="a-stat"><div class="a-num">100%</div><div class="a-label">Original Artwork</div></div>
+        <div class="a-stat"><div class="a-num">★ 4.9</div><div class="a-label">Avg. Rating</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
-<footer>
-  <div class="footer-top">
-    <div class="ft-brand">
-      <div class="ft-logo-wrap">
-        <img src="https://mystivault.com/cdn/shop/files/MV_Black.png?v=1785137589&width=200"
-             alt="MystiVault" class="ft-logo-img"
-             onerror="this.style.display='none'">
+<!-- ═══ NEWSLETTER + DROP CALENDAR ═══ -->
+<section class="bottom-sec" id="drops">
+  <div class="bottom-inner">
+
+    <!-- Newsletter -->
+    <div class="nl-side">
+      <p class="eyebrow">Inner Circle</p>
+      <h2 class="nl-title">Be First<br>to the Vault.</h2>
+      <p class="nl-sub">Early access to LE drops, mystery mail reveals, and collector news before anyone else. Never miss a release.</p>
+      <div class="nl-form">
+        <input type="email" class="nl-input" placeholder="your@email.com">
+        <button class="nl-btn">Subscribe</button>
       </div>
-      <span class="ft-name">MystiVault</span>
+      <p class="nl-note">No spam. Unsubscribe anytime. Your details are sacred.</p>
+      <div class="nl-perks">
+        <div class="nl-perk"><div class="nl-perk-dot"></div>Early access to every LE drop — 24hrs before public</div>
+        <div class="nl-perk"><div class="nl-perk-dot"></div>Mystery Mail reveal previews each month</div>
+        <div class="nl-perk"><div class="nl-perk-dot"></div>Collector community updates &amp; behind-the-scenes</div>
+        <div class="nl-perk"><div class="nl-perk-dot"></div>Exclusive subscriber-only discounts</div>
+      </div>
+    </div>
+
+    <!-- Vertical divider -->
+    <div class="bottom-divider"></div>
+
+    <!-- Drop Calendar -->
+    <div class="cal-side">
+      <p class="eyebrow">Drop Schedule</p>
+      <h2 class="cal-title">Upcoming<br>Releases.</h2>
+      <p class="cal-sub">Mark your calendar. Every drop is limited — once they're gone, they're gone.</p>
+
+      <!-- Mini calendar widget -->
+      <div class="cal-widget">
+        <div class="cal-header">
+          <span class="cal-month" id="cal-month-label">August 2025</span>
+          <div class="cal-nav">
+            <button onclick="changeMonth(-1)" aria-label="Previous">‹</button>
+            <button onclick="changeMonth(1)" aria-label="Next">›</button>
+          </div>
+        </div>
+        <div class="cal-days-row">
+          <div class="cal-day-head">Su</div>
+          <div class="cal-day-head">Mo</div>
+          <div class="cal-day-head">Tu</div>
+          <div class="cal-day-head">We</div>
+          <div class="cal-day-head">Th</div>
+          <div class="cal-day-head">Fr</div>
+          <div class="cal-day-head">Sa</div>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+
+      <!-- Upcoming drop list -->
+      <div class="drop-list">
+        <div class="drop-item">
+          <div class="drop-date-block"><div class="drop-d">1</div><div class="drop-m">Aug</div></div>
+          <div class="drop-info">
+            <div class="drop-name">Sorcerer Mickey Fantasy Pin</div>
+            <div class="drop-tag">Fantasy Series · LE 125</div>
+          </div>
+          <span class="drop-status ds-live">Live Now</span>
+        </div>
+        <div class="drop-item">
+          <div class="drop-date-block"><div class="drop-d">8</div><div class="drop-m">Aug</div></div>
+          <div class="drop-info">
+            <div class="drop-name">Mystical Mail — August Box</div>
+            <div class="drop-tag">Mystery Mail · Monthly</div>
+          </div>
+          <span class="drop-status ds-soon">Coming Soon</span>
+        </div>
+        <div class="drop-item">
+          <div class="drop-date-block"><div class="drop-d">15</div><div class="drop-m">Aug</div></div>
+          <div class="drop-info">
+            <div class="drop-name">Land of Lions — Lion King Series</div>
+            <div class="drop-tag">New Collection · LE 100</div>
+          </div>
+          <span class="drop-status ds-notify">Notify Me</span>
+        </div>
+        <div class="drop-item">
+          <div class="drop-date-block"><div class="drop-d">29</div><div class="drop-m">Aug</div></div>
+          <div class="drop-info">
+            <div class="drop-name">Haunted Mansion — Madame Leota</div>
+            <div class="drop-tag">Haunted Series · LE 75</div>
+          </div>
+          <span class="drop-status ds-notify">Notify Me</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-body">
+    <div class="ft-brand">
+      <img src="https://mystivault.com/cdn/shop/files/MV_Black.png?v=1785137589&width=200"
+           alt="MystiVault" class="ft-logo-img"
+           onerror="this.style.display='none'">
+      <span class="ft-logo-name">MystiVault</span>
       <p class="ft-tagline">"Delve into unseen realms of reality — your gateway to mysteries, alternate truths, and the collectible magic of the unknown."</p>
       <div class="ft-socials">
         <a href="#" class="ft-soc" aria-label="Instagram">
@@ -1212,8 +1252,7 @@
         </a>
       </div>
     </div>
-
-    <div>
+    <div class="ft-col">
       <div class="ft-col-head">Shop</div>
       <ul class="ft-links">
         <li><a href="#">New Arrivals</a></li>
@@ -1223,8 +1262,7 @@
         <li><a href="#">Sold Out Archive</a></li>
       </ul>
     </div>
-
-    <div>
+    <div class="ft-col">
       <div class="ft-col-head">The Vault</div>
       <ul class="ft-links">
         <li><a href="#">Our Story</a></li>
@@ -1234,23 +1272,21 @@
         <li><a href="#">Wholesale</a></li>
       </ul>
     </div>
-
-    <div>
+    <div class="ft-col">
       <div class="ft-col-head">Support</div>
       <ul class="ft-links">
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Shipping Info</a></li>
         <li><a href="#">Returns</a></li>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">Track Order</a></li>
       </ul>
     </div>
   </div>
-
-  <div class="footer-bottom">
-    <div class="fb-inner">
+  <div class="footer-base">
+    <div class="footer-base-inner">
       <span>© 2024 MystiVault. All rights reserved.</span>
-      <div class="fb-legal">
+      <div class="ft-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">Cookie Settings</a>
@@ -1259,52 +1295,71 @@
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════
-     COUNTDOWN TIMER JS
-══════════════════════════════════════ -->
 <script>
-  // Set target drop date — next Friday at midnight
-  function getNextDropDate() {
-    const now = new Date();
-    // Set to 13 hours 33 mins 38 secs from now as shown in screenshot
-    const target = new Date(now.getTime() + (13 * 3600 + 33 * 60 + 38) * 1000);
-    return target;
+  /* ── Countdown ── */
+  const dropTarget = new Date(Date.now() + (13*3600 + 33*60 + 38)*1000);
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    let d = Math.max(0, Math.floor((dropTarget - Date.now())/1000));
+    const days = Math.floor(d/86400); d -= days*86400;
+    const hrs  = Math.floor(d/3600);  d -= hrs*3600;
+    const mins = Math.floor(d/60);    d -= mins*60;
+    document.getElementById('cd-d').textContent = pad(days);
+    document.getElementById('cd-h').textContent = pad(hrs);
+    document.getElementById('cd-m').textContent = pad(mins);
+    document.getElementById('cd-s').textContent = pad(d);
   }
+  tick(); setInterval(tick, 1000);
 
-  const dropDate = getNextDropDate();
+  /* ── Drop Calendar ── */
+  // Drop dates (day numbers) to highlight
+  const DROP_DATES = {1: 'live', 8: 'soon', 15: 'notify', 29: 'notify'};
 
-  function pad(n) { return String(n).padStart(2, '0'); }
-
-  function updateCountdown() {
+  let calYear, calMonth;
+  function initCal(){
     const now = new Date();
-    let diff = Math.max(0, Math.floor((dropDate - now) / 1000));
-
-    const days  = Math.floor(diff / 86400); diff -= days  * 86400;
-    const hours = Math.floor(diff / 3600);  diff -= hours * 3600;
-    const mins  = Math.floor(diff / 60);    diff -= mins  * 60;
-    const secs  = diff;
-
-    document.getElementById('cd-days').textContent  = pad(days);
-    document.getElementById('cd-hours').textContent = pad(hours);
-    document.getElementById('cd-mins').textContent  = pad(mins);
-    document.getElementById('cd-secs').textContent  = pad(secs);
+    calYear = now.getFullYear();
+    calMonth = now.getMonth(); // 0-indexed
+    renderCal();
   }
+  function changeMonth(dir){
+    calMonth += dir;
+    if(calMonth > 11){ calMonth = 0; calYear++; }
+    if(calMonth < 0){ calMonth = 11; calYear--; }
+    renderCal();
+  }
+  function renderCal(){
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('cal-month-label').textContent = months[calMonth] + ' ' + calYear;
+    const grid = document.getElementById('cal-grid');
+    grid.innerHTML = '';
+    const today = new Date();
+    const firstDay = new Date(calYear, calMonth, 1).getDay();
+    const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+    // Empty cells before first day
+    for(let i = 0; i < firstDay; i++){
+      const cell = document.createElement('div');
+      cell.className = 'cal-cell empty';
+      grid.appendChild(cell);
+    }
+    for(let d = 1; d <= daysInMonth; d++){
+      const cell = document.createElement('div');
+      cell.className = 'cal-cell';
+      cell.textContent = d;
+      const isToday = d === today.getDate() && calMonth === today.getMonth() && calYear === today.getFullYear();
+      if(isToday) cell.classList.add('today');
+      if(DROP_DATES[d]) cell.classList.add('drop');
+      grid.appendChild(cell);
+    }
+  }
+  initCal();
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // Variant selector
-  document.querySelectorAll('.spot-var').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.spot-var').forEach(b => b.classList.remove('sel'));
-      btn.classList.add('sel');
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
     });
-  });
-
-  // Smooth scroll for CTA
-  document.querySelector('.hero-cta').addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
   });
 </script>
 
