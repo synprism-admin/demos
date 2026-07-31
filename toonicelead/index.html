@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Too Nice To Lead — Leadership for the Quiet Ones</title>
+  <meta name="description" content="Too Nice To Lead — a book about leadership principles from the perspective of the quiet, thoughtful, and overlooked. Discover the strength in stillness." />
+  <meta name="keywords" content="leadership book, quiet leadership, introverted leaders, leadership principles, Too Nice To Lead" />
+  <meta property="og:title" content="Too Nice To Lead" />
+  <meta property="og:description" content="Leadership principles from the perspective of the quiet ones." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #03121D;
+      --bronze:  #BA751E;
+      --bronze2: #D4892A;
+      --cream:   #F5EFE6;
+      --cream2:  #EDE4D6;
+      --gold-glow: rgba(186,117,30,0.35);
+      --text-light: #E8DDD0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--cream);
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar {
+      background: var(--bronze);
+      color: var(--navy);
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    /* ── STICKY HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(3,18,29,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(186,117,30,0.3);
+      padding: 0 40px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo-text {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.1rem;
+      color: var(--bronze);
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    .logo-text span { display: block; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--cream); font-family: 'Cinzel', serif; font-weight: 400; margin-top: 2px; }
+    nav { display: flex; gap: 36px; }
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    nav a:hover { color: var(--bronze); }
+    .nav-cta {
+      background: var(--bronze);
+      color: var(--navy) !important;
+      padding: 9px 22px;
+      border-radius: 2px;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-cta::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.45s ease;
+    }
+    .nav-cta:hover::after { left: 100%; }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 100px 40px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ── ORNAMENT DIVIDER ── */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 20px auto 48px;
+      max-width: 360px;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(186,117,30,0.7), transparent);
+    }
+    .ornament span {
+      color: var(--bronze);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--bronze);
+      text-align: center;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      text-align: center;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 40px 100px;
+    }
+
+    /* Layered radial light effect */
+    #home::before {
+      content: '';
+      position: absolute;
+      top: 30%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse at center, rgba(186,117,30,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Subtle grid texture */
+    #home::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(186,117,30,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(186,117,30,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 780px; }
+    .hero-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--bronze);
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .hero-title .bronze { color: var(--bronze); }
+    .hero-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      letter-spacing: 0.2em;
+      color: rgba(232,221,208,0.7);
+      margin-bottom: 32px;
+    }
+    .hero-quote {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-light);
+      max-width: 580px;
+      margin: 0 auto 52px;
+      border-left: 2px solid var(--bronze);
+      padding-left: 24px;
+      text-align: left;
+    }
+    .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--bronze);
+      color: var(--navy);
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      padding: 16px 42px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    .btn-primary:hover { box-shadow: 0 0 32px var(--gold-glow); }
+    .btn-primary:hover::after { left: 100%; }
+    .btn-secondary {
+      display: inline-block;
+      border: 1px solid rgba(186,117,30,0.6);
+      color: var(--bronze);
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      padding: 16px 42px;
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--bronze);
+      color: var(--cream);
+      box-shadow: 0 0 24px var(--gold-glow);
+    }
+
+    /* scroll indicator */
+    .scroll-hint {
+      margin-top: 64px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: rgba(186,117,30,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .scroll-hint svg { animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+    /* ═══════════════════════════════════════
+       ABOUT / BOOK INTRO
+    ═══════════════════════════════════════ */
+    #about { background: linear-gradient(180deg, var(--navy) 0%, #061928 100%); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .book-mockup {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .book-cover {
+      width: 260px;
+      height: 380px;
+      background: linear-gradient(145deg, #0a2033, #071522);
+      border: 1px solid rgba(186,117,30,0.5);
+      box-shadow:
+        8px 8px 0 rgba(0,0,0,0.4),
+        0 0 60px rgba(186,117,30,0.15),
+        inset 0 0 40px rgba(186,117,30,0.05);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(186,117,30,0.2);
+      pointer-events: none;
+    }
+    .book-cover-eye {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+    }
+    .book-cover-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.05rem;
+      color: var(--bronze);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .book-cover-rule { width: 60px; height: 1px; background: var(--bronze); margin: 0 auto 10px; }
+    .book-cover-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(232,221,208,0.6);
+    }
+    .about-text h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-bottom: 24px;
+      color: var(--cream);
+      line-height: 1.3;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-size: 1.08rem;
+    }
+    .about-text .highlight {
+      font-style: italic;
+      color: var(--bronze2);
+    }
+    .principle-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+    .principle-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .principle-list li::before {
+      content: '◆';
+      color: var(--bronze);
+      font-size: 0.55rem;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       SHOP / PRODUCT
+    ═══════════════════════════════════════ */
+    #shop { background: #030f1a; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .product-card {
+      background: linear-gradient(145deg, #06192a, #040f1c);
+      border: 1px solid rgba(186,117,30,0.2);
+      position: relative;
+      padding: 40px 32px 36px;
+      text-align: center;
+      transition: box-shadow 0.35s, border-color 0.35s;
+      cursor: pointer;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(186,117,30,0);
+      transition: border-color 0.35s;
+      pointer-events: none;
+    }
+    .product-card:hover { box-shadow: 0 0 36px rgba(186,117,30,0.35); border-color: rgba(186,117,30,0.5); }
+    .product-card:hover::before { border-color: rgba(186,117,30,0.3); }
+    .product-icon { font-size: 3rem; margin-bottom: 20px; }
+    .product-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--bronze);
+      color: var(--navy);
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      font-weight: 600;
+    }
+    .product-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 0.95rem;
+      color: rgba(232,221,208,0.7);
+      margin-bottom: 24px;
+      line-height: 1.55;
+    }
+    .product-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--bronze);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .btn-card {
+      display: inline-block;
+      border: 1px solid rgba(186,117,30,0.5);
+      color: var(--bronze);
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      padding: 11px 26px;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-card:hover { background: var(--bronze); color: var(--navy); }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════ */
+    #testimonials { background: linear-gradient(180deg, #040f1c 0%, var(--navy) 100%); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 36px;
+      margin-top: 60px;
+    }
+    .testimonial-card {
+      background: rgba(6,25,42,0.8);
+      border: 1px solid rgba(186,117,30,0.2);
+      padding: 40px 36px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(186,117,30,0);
+      transition: border-color 0.3s;
+      pointer-events: none;
+    }
+    .testimonial-card:hover::before { border-color: rgba(186,117,30,0.2); }
+    .quote-mark {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 4rem;
+      color: rgba(186,117,30,0.25);
+      line-height: 1;
+      margin-bottom: -12px;
+    }
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .testimonial-rule { width: 40px; height: 1px; background: var(--bronze); margin-bottom: 16px; }
+    .testimonial-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--bronze);
+    }
+    .testimonial-role {
+      font-size: 0.85rem;
+      color: rgba(232,221,208,0.5);
+      margin-top: 4px;
+    }
+    .stars { color: var(--bronze); font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 4px; }
+
+    /* ═══════════════════════════════════════
+       BOOKING
+    ═══════════════════════════════════════ */
+    #booking { background: #030f1a; }
+    .booking-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .booking-info h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--cream);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .booking-info p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 16px; }
+    .booking-offerings {
+      list-style: none;
+      margin-top: 28px;
+    }
+    .booking-offerings li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(186,117,30,0.12);
+      font-size: 0.98rem;
+      color: var(--text-light);
+    }
+    .booking-offerings li:last-child { border-bottom: none; }
+    .offering-icon { color: var(--bronze); font-size: 1.1rem; margin-top: 2px; }
+    .offering-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--bronze); display: block; margin-bottom: 4px; }
+
+    .booking-form {
+      background: linear-gradient(145deg, #06192a, #040f1c);
+      border: 1px solid rgba(186,117,30,0.25);
+      padding: 48px 40px;
+      position: relative;
+    }
+    .booking-form::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(186,117,30,0.1);
+      pointer-events: none;
+    }
+    .booking-form h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: var(--bronze);
+      margin-bottom: 28px;
+    }
+    .form-group { margin-bottom: 22px; }
+    .form-group label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: rgba(232,221,208,0.6);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(3,18,29,0.8);
+      border: 1px solid rgba(186,117,30,0.25);
+      color: var(--cream);
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(186,117,30,0.7);
+      box-shadow: 0 0 16px rgba(186,117,30,0.15);
+    }
+    .form-group select option { background: #06192a; }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit {
+      width: 100%;
+      background: var(--bronze);
+      color: var(--navy);
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      padding: 16px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .btn-submit::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    .btn-submit:hover { box-shadow: 0 0 32px var(--gold-glow); }
+    .btn-submit:hover::after { left: 100%; }
+
+    /* ═══════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════ */
+    #contact { background: linear-gradient(180deg, var(--navy) 0%, #020c14 100%); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--cream);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .contact-info p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 28px; }
+    .contact-links { list-style: none; margin-top: 16px; }
+    .contact-links li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.25s;
+    }
+    .contact-links a:hover { color: var(--bronze); }
+    .contact-icon {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(186,117,30,0.3);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .social-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .social-btn {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(186,117,30,0.35);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: var(--bronze);
+      transition: background 0.25s, box-shadow 0.25s;
+    }
+    .social-btn:hover { background: rgba(186,117,30,0.15); box-shadow: 0 0 18px rgba(186,117,30,0.25); }
+
+    .contact-form {
+      background: linear-gradient(145deg, #06192a, #040f1c);
+      border: 1px solid rgba(186,117,30,0.25);
+      padding: 48px 40px;
+      position: relative;
+    }
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(186,117,30,0.1);
+      pointer-events: none;
+    }
+    .contact-form h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: var(--bronze);
+      margin-bottom: 28px;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: #020c14;
+      border-top: 1px solid rgba(186,117,30,0.15);
+      padding: 60px 40px 30px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.3rem;
+      color: var(--bronze);
+      margin-bottom: 8px;
+    }
+    .footer-tagline {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: rgba(232,221,208,0.4);
+      margin-bottom: 36px;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .footer-nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: rgba(232,221,208,0.5);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .footer-nav a:hover { color: var(--bronze); }
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(232,221,208,0.3);
+    }
+    .footer-credit {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: rgba(232,221,208,0.2);
+    }
+    .footer-credit a { color: rgba(186,117,30,0.4); text-decoration: none; }
+    .footer-credit a:hover { color: var(--bronze); }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .about-grid,
+      .booking-inner,
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .book-mockup { justify-content: flex-start; }
+      nav { display: none; }
+      .header-inner { justify-content: space-between; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 70px 24px; }
+      header { padding: 0 24px; }
+      .hero-quote { padding-left: 16px; font-size: 1.1rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .booking-form, .contact-form { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">Now Available — Order Your Copy Today &nbsp;|&nbsp; Speaking Engagements Now Booking</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#home" class="logo-text">Too Nice To Lead<span>A Book for the Quiet Ones</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#shop">Shop</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#booking">Speaking</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <p class="hero-eyebrow">A NEW PERSPECTIVE ON LEADERSHIP</p>
+    <h1 class="hero-title">Too Nice<br><span class="bronze">To Lead</span></h1>
+    <p class="hero-subtitle">LEADERSHIP PRINCIPLES FROM THE QUIET ONES</p>
+
+    <div class="ornament"><span>◆ ◆ ◆</span></div>
+
+    <blockquote class="hero-quote">
+      The world will tell you that leadership belongs to the loudest voice in the room. This book is for those who know better.
+    </blockquote>
+
+    <div class="hero-btns">
+      <a href="#shop" class="btn-primary">GET THE BOOK</a>
+      <a href="#about" class="btn-secondary">LEARN MORE</a>
+    </div>
+
+    <div class="scroll-hint">
+      <span>DISCOVER MORE</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(186,117,30,0.5)" stroke-width="1.5">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <span class="section-label">THE BOOK</span>
+    <h2 class="section-title">What Is Too Nice To Lead?</h2>
+    <div class="ornament"><span>◆ ◆ ◆</span></div>
+
+    <div class="about-grid">
+      <!-- Book mockup SVG illustration -->
+      <div class="book-mockup">
+        <div class="book-cover">
+          <div class="book-cover-eye">🜁</div>
+          <div class="book-cover-title">Too Nice<br>To Lead</div>
+          <div class="book-cover-rule"></div>
+          <div class="book-cover-sub">Leadership Principles<br>for the Quiet Ones</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <h2>Leadership Was Never Only<br>for the Loudest</h2>
+        <p>
+          In a world that celebrates bold voices and dominant personalities, <span class="highlight">Too Nice To Lead</span> challenges the conventional narrative. This book is a guide for those who lead with thoughtfulness, empathy, and quiet conviction.
+        </p>
+        <p>
+          Whether you've been passed over, overlooked, or told you're "too nice" to lead — this book was written for you. Discover how the qualities the world often dismisses are actually your greatest leadership strengths.
+        </p>
+
+        <ul class="principle-list">
+          <li>Reframe "nice" as a leadership superpower, not a weakness</li>
+          <li>Build deep trust and loyalty through authentic connection</li>
+          <li>Navigate conflict without abandoning your values</li>
+          <li>Lead teams that perform because they want to — not because they have to</li>
+          <li>Silence the inner critic that says quiet means passive</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="section">
+  <div class="container">
+    <span class="section-label">SHOP</span>
+    <h2 class="section-title">Get Your Copy</h2>
+    <div class="ornament"><span>◆ ◆ ◆</span></div>
+    <p style="text-align:center; color:rgba(232,221,208,0.65); max-width:580px; margin:0 auto 0;">Choose the format that works best for you. Every edition carries the full depth of the message.</p>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-badge">BESTSELLER</div>
+        <div class="product-icon">📖</div>
+        <h3>Hardcover Edition</h3>
+        <p>The definitive physical edition. Premium binding, rich paper stock — built to sit on the shelf of every leader who's ever doubted themselves.</p>
+        <div class="product-price">$29.99</div>
+        <a href="#contact" class="btn-card">ORDER NOW</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">📱</div>
+        <h3>Digital Edition</h3>
+        <p>Instant access, anywhere. The full text optimized for e-readers, tablets, and phones — your leadership guide always in your pocket.</p>
+        <div class="product-price">$12.99</div>
+        <a href="#contact" class="btn-card">ORDER NOW</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">🎧</div>
+        <h3>Audiobook</h3>
+        <p>Narrated with intention and presence. Experience the principles during your commute, workout, or quiet moment of reflection.</p>
+        <div class="product-price">$19.99</div>
+        <a href="#contact" class="btn-card">ORDER NOW</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <span class="section-label">READER REVIEWS</span>
+    <h2 class="section-title">What Readers Are Saying</h2>
+    <div class="ornament"><span>◆ ◆ ◆</span></div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">This book gave language to something I've felt my entire career. I stopped apologizing for how I lead, and my team noticed within weeks.</p>
+        <div class="testimonial-rule"></div>
+        <div class="testimonial-author">MARCUS T.</div>
+        <div class="testimonial-role">Director of Operations</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">I've read dozens of leadership books. This is the first one that spoke directly to me — an introvert who leads without a megaphone. Essential reading.</p>
+        <div class="testimonial-rule"></div>
+        <div class="testimonial-author">PRIYA S.</div>
+        <div class="testimonial-role">VP of Product</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">Quiet, compelling, and transformative. The principles in this book don't just apply to work — they changed how I show up in every room I enter.</p>
+        <div class="testimonial-rule"></div>
+        <div class="testimonial-author">DEJA R.</div>
+        <div class="testimonial-role">Executive Coach</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="section">
+  <div class="container">
+    <span class="section-label">SPEAKING & APPEARANCES</span>
+    <h2 class="section-title">Book an Engagement</h2>
+    <div class="ornament"><span>◆ ◆ ◆</span></div>
+
+    <div class="booking-inner">
+      <div class="booking-info">
+        <h2>Bring the Message<br>to Your Organization</h2>
+        <p>Available for keynotes, workshops, corporate trainings, and panel discussions. The principles of quiet leadership translate into measurable results for teams of every size.</p>
+
+        <ul class="booking-offerings">
+          <li>
+            <span class="offering-icon">🎤</span>
+            <div>
+              <span class="offering-label">KEYNOTE SPEAKING</span>
+              Full keynote presentations for conferences and corporate events, 45–90 minutes.
+            </div>
+          </li>
+          <li>
+            <span class="offering-icon">🏛️</span>
+            <div>
+              <span class="offering-label">LEADERSHIP WORKSHOPS</span>
+              Half or full-day interactive sessions designed for leadership teams and managers.
+            </div>
+          </li>
+          <li>
+            <span class="offering-icon">🎙️</span>
+            <div>
+              <span class="offering-label">PODCAST & MEDIA</span>
+              Available for podcast interviews, panel appearances, and media features.
+            </div>
+          </li>
+          <li>
+            <span class="offering-icon">📚</span>
+            <div>
+              <span class="offering-label">BOOK CLUBS & GROUPS</span>
+              Virtual or in-person sessions for organizational book clubs and reading groups.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="booking-form">
+        <h3>REQUEST A BOOKING</h3>
+        <form>
+          <div class="form-group">
+            <label>YOUR NAME</label>
+            <input type="text" placeholder="Full Name" />
+          </div>
+          <div class="form-group">
+            <label>EMAIL ADDRESS</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>ORGANIZATION</label>
+            <input type="text" placeholder="Company or Event Name" />
+          </div>
+          <div class="form-group">
+            <label>EVENT TYPE</label>
+            <select>
+              <option value="">Select an option</option>
+              <option>Keynote Speaking</option>
+              <option>Leadership Workshop</option>
+              <option>Podcast / Media</option>
+              <option>Book Club / Group</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>EVENT DATE (APPROX.)</label>
+            <input type="text" placeholder="Month / Year" />
+          </div>
+          <div class="form-group">
+            <label>MESSAGE</label>
+            <textarea placeholder="Tell us about your event and audience..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">SUBMIT INQUIRY</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <span class="section-label">GET IN TOUCH</span>
+    <h2 class="section-title">Contact</h2>
+    <div class="ornament"><span>◆ ◆ ◆</span></div>
+
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h2>Let's Start a<br>Conversation</h2>
+        <p>Whether you have a question about the book, want to discuss a speaking engagement, or just want to connect — we'd love to hear from you.</p>
+
+        <ul class="contact-links">
+          <li>
+            <div class="contact-icon">✉</div>
+            <a href="mailto:hello@toonicelead.com">hello@toonicelead.com</a>
+          </li>
+          <li>
+            <div class="contact-icon">📍</div>
+            <span style="color:var(--text-light)">United States</span>
+          </li>
+        </ul>
+
+        <div style="margin-top:28px;">
+          <p style="font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.2em; color:rgba(186,117,30,0.7); margin-bottom:14px;">FOLLOW THE JOURNEY</p>
+          <div class="social-row">
+            <!-- Instagram -->
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="#" class="social-btn" aria-label="X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <!-- Amazon -->
+            <a href="#" class="social-btn" aria-label="Amazon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 16s1.5 2 7.5 2 9.5-2 9.5-2"/>
+                <circle cx="12" cy="9" r="5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>SEND A MESSAGE</h3>
+        <form>
+          <div class="form-group">
+            <label>YOUR NAME</label>
+            <input type="text" placeholder="Full Name" />
+          </div>
+          <div class="form-group">
+            <label>EMAIL ADDRESS</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>SUBJECT</label>
+            <input type="text" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label>MESSAGE</label>
+            <textarea placeholder="Your message..." style="min-height:140px;"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Too Nice To Lead</div>
+  <div class="footer-tagline">LEADERSHIP PRINCIPLES FOR THE QUIET ONES</div>
+  <nav class="footer-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#shop">Shop</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#booking">Speaking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <p class="footer-copy">© 2025 Too Nice To Lead. All rights reserved.</p>
+  <p class="footer-credit">Website designed by <a href="https://synprism.io" target="_blank">Synprism</a></p>
+</footer>
+
+</body>
+</html>

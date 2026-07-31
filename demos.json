@@ -249,5 +249,12 @@
     ],
     "accent": "gold-teal",
     "added": "2026-07-29"
+  },
+  {
+    "name": "Too Nice To Lead",
+    "slug": "toonicelead",
+    "description": "Book website \u2014 leadership for the quiet ones",
+    "industry": "Publishing / Leadership",
+    "palette": "Deep Navy #03121D + Bronze #BA751E"
   }
 ]
