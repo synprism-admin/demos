@@ -139,12 +139,19 @@
     inset: 0;
     background: linear-gradient(135deg, rgba(45,80,22,0.85) 0%, rgba(45,80,22,0.4) 60%, transparent 100%);
   }
-  .hero-content {
+  .hero-inner {
     position: relative;
     z-index: 2;
-    max-width: 760px;
-    padding: 40px 60px 52px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 60px 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
   }
+  .hero-content { }
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -165,7 +172,7 @@
   }
   .hero h1 {
     font-family: var(--font-serif);
-    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     color: #fff;
     line-height: 1.15;
@@ -176,14 +183,56 @@
     color: var(--gold-light);
   }
   .hero-tagline {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgba(255,255,255,0.82);
-    max-width: 540px;
-    margin-bottom: 38px;
+    max-width: 500px;
+    margin-bottom: 32px;
     font-weight: 300;
     line-height: 1.75;
   }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Pillars inside hero */
+  .hero-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+    width: 240px;
+  }
+  .hero-pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+    backdrop-filter: blur(4px);
+  }
+  .hero-pillar-icon {
+    width: 34px;
+    height: 34px;
+    background: rgba(196,150,42,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hero-pillar-icon svg { width: 17px; height: 17px; stroke: var(--gold-light); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-pillar-text h4 {
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-family: var(--font-serif);
+  }
+  .hero-pillar-text p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
   .btn-primary {
     background: var(--gold);
     color: #fff;
@@ -264,49 +313,7 @@
     margin-bottom: 50px;
   }
 
-  /* ── MISSION STRIP ── */
-  .mission-strip {
-    background: var(--forest);
-    padding: 60px 40px;
-  }
-  .mission-strip .section-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-  .mission-pillar {
-    text-align: center;
-    padding: 10px;
-  }
-  .pillar-icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 16px;
-    background: rgba(196,150,42,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .pillar-icon svg { width: 26px; height: 26px; stroke: var(--gold-light); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .mission-pillar h3 {
-    font-family: var(--font-serif);
-    color: #fff;
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-  }
-  .mission-pillar p {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-  .mission-divider {
-    width: 1px;
-    background: rgba(255,255,255,0.12);
-    align-self: stretch;
-    display: none;
-  }
+  /* ── MISSION STRIP — removed, pillars now in hero ── */
 
   /* ── ABOUT ── */
   .about-section { background: var(--cream); }
@@ -747,8 +754,18 @@
     .mobile-nav a:last-child { border-bottom: none; }
     .mobile-nav a.cta { color: var(--gold-light); font-weight: 600; }
 
-    .hero-content { padding: 60px 24px 80px; }
-    .mission-strip .section-inner { grid-template-columns: 1fr; gap: 30px; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding: 40px 24px 48px;
+      gap: 28px;
+    }
+    .hero-pillars {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .hero-pillar { flex: 1 1 140px; }
+    .mission-strip { display: none; }
     .about-grid { grid-template-columns: 1fr; }
     .about-image-wrap img { height: 280px; }
     .cards-grid { grid-template-columns: 1fr; }
@@ -819,47 +836,47 @@
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Seymour, Tennessee</div>
-    <h1>Educating with <em>Faith,</em> Raising Community</h1>
-    <p class="hero-tagline">The EDGE is a Christ-centered homeschool cooperative and community for families called to disciple their children — building knowledge, character, and connection together.</p>
-    <div class="hero-actions">
-      <a href="#get-involved" class="btn-primary">Explore Membership</a>
-      <a href="#schedule" class="btn-outline">2026–2027 Schedule</a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Seymour, Tennessee</div>
+      <h1>Educating with <em>Faith,</em> Raising Community</h1>
+      <p class="hero-tagline">The EDGE is a Christ-centered homeschool cooperative and community for families called to disciple their children — building knowledge, character, and connection together.</p>
+      <div class="hero-actions">
+        <a href="#get-involved" class="btn-primary">Explore Membership</a>
+        <a href="#schedule" class="btn-outline">2026–2027 Schedule</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <div class="scroll-line"></div>
-    Scroll to explore
+    <div class="hero-pillars">
+      <div class="hero-pillar">
+        <div class="hero-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="hero-pillar-text">
+          <h4>Faith-Centered</h4>
+          <p>Everything rooted in Christ — visible hands and feet of Jesus.</p>
+        </div>
+      </div>
+      <div class="hero-pillar">
+        <div class="hero-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="hero-pillar-text">
+          <h4>Family-Led</h4>
+          <p>Parents as primary educators, amplified by volunteer teachers.</p>
+        </div>
+      </div>
+      <div class="hero-pillar">
+        <div class="hero-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="hero-pillar-text">
+          <h4>Enrichment-Focused</h4>
+          <p>Three courses per student, supplementing your home curriculum.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- Mission Strip -->
-<div class="mission-strip">
-  <div class="section-inner">
-    <div class="mission-pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <h3>Faith-Centered</h3>
-      <p>Everything we do is rooted in Christ. We strive to be the visible hands and feet of Jesus in our community.</p>
-    </div>
-    <div class="mission-pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <h3>Family-Led</h3>
-      <p>Parents are the primary educators. Co-op amplifies your efforts with volunteer teachers who share your values.</p>
-    </div>
-    <div class="mission-pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      </div>
-      <h3>Enrichment-Focused</h3>
-      <p>Three courses per student each semester, carefully chosen to enrich and supplement your home curriculum.</p>
-    </div>
-  </div>
-</div>
 
 <!-- About -->
 <section class="about-section" id="about">
