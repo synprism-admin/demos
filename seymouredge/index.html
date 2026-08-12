@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDGE Homeschool Co-op — Seymour, TN</title>
+<meta name="description" content="EDGE is a Christ-centered homeschool cooperative and community group serving families in Seymour, Tennessee. Enrichment education rooted in faith.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest:    #2D5016;
+    --sage:      #5A7A3A;
+    --moss:      #7A9B5A;
+    --cream:     #FAF7F0;
+    --warm-white:#FFFEF9;
+    --gold:      #C4962A;
+    --gold-light:#E8C46A;
+    --charcoal:  #2C2C2C;
+    --mid-gray:  #666;
+    --light-gray:#E8E8E0;
+    --red-alert: #C0392B;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans:  'Inter', 'Lato', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--warm-white);
+    color: var(--charcoal);
+    line-height: 1.7;
+  }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announcement-bar {
+    background: var(--red-alert);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+  }
+  .announcement-bar span { display: block; }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(45, 80, 22, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .logo-text {
+    color: #fff;
+    font-family: var(--font-serif);
+  }
+  .logo-text .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+  .logo-text .sub {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  nav { display: flex; align-items: center; gap: 6px; }
+  nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: #fff; background: rgba(255,255,255,0.12); }
+  nav a.cta-btn {
+    background: var(--gold);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 7px 18px;
+    margin-left: 6px;
+  }
+  nav a.cta-btn:hover { background: var(--gold-light); color: var(--charcoal); }
+
+  /* hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+  .mobile-nav { display: none; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--forest);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
+    opacity: 0.28;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(45,80,22,0.85) 0%, rgba(45,80,22,0.4) 60%, transparent 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    padding: 60px 60px 80px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-light);
+  }
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.82);
+    max-width: 540px;
+    margin-bottom: 38px;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    transition: all 0.25s;
+    display: inline-block;
+    box-shadow: 0 4px 16px rgba(196,150,42,0.4);
+  }
+  .btn-primary:hover { background: var(--gold-light); color: var(--charcoal); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,150,42,0.45); }
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(255,255,255,0.5);
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 60px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .scroll-line { width: 40px; height: 1px; background: rgba(255,255,255,0.3); }
+
+  /* ── SECTION BASE ── */
+  section { padding: 90px 40px; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--sage);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 50px;
+    height: 1px;
+    background: var(--moss);
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--mid-gray);
+    max-width: 620px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+  }
+
+  /* ── MISSION STRIP ── */
+  .mission-strip {
+    background: var(--forest);
+    padding: 60px 40px;
+  }
+  .mission-strip .section-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .mission-pillar {
+    text-align: center;
+    padding: 10px;
+  }
+  .pillar-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    background: rgba(196,150,42,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pillar-icon svg { width: 26px; height: 26px; stroke: var(--gold-light); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .mission-pillar h3 {
+    font-family: var(--font-serif);
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+  .mission-pillar p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .mission-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+    align-self: stretch;
+    display: none;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  }
+  .about-image-wrap img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+  }
+  .about-image-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: var(--gold);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  .about-text .verse-block {
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    background: rgba(196,150,42,0.06);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 28px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--forest);
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .about-text .verse-block cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── INVOLVEMENT CARDS ── */
+  .involvement-section { background: var(--warm-white); }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .involvement-card {
+    background: #fff;
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 36px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .involvement-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sage), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .involvement-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); border-color: transparent; }
+  .involvement-card:hover::before { transform: scaleX(1); }
+  .card-badge {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--sage);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 1px solid var(--light-gray);
+  }
+  .involvement-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--forest);
+    margin-bottom: 12px;
+  }
+  .involvement-card p {
+    color: var(--mid-gray);
+    font-size: 0.93rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .card-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--forest);
+    font-family: var(--font-serif);
+    margin-bottom: 20px;
+  }
+  .card-price span { font-size: 0.85rem; font-weight: 400; color: var(--mid-gray); font-family: var(--font-sans); }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--sage);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .card-link:hover { color: var(--forest); }
+  .card-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+  .card-link:hover svg { transform: translateX(4px); }
+
+  /* ── ACTIVITIES ── */
+  .activities-section { background: var(--cream); }
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .activity-tile {
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 24px;
+    border: 1px solid var(--light-gray);
+    transition: all 0.25s;
+  }
+  .activity-tile:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .activity-tile .tile-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--cream);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .activity-tile .tile-icon svg { width: 22px; height: 22px; stroke: var(--sage); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .activity-tile h4 {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+  .activity-tile p {
+    color: var(--mid-gray);
+    font-size: 0.87rem;
+    line-height: 1.7;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule-section { background: var(--warm-white); }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+  .schedule-block h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--forest);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--light-gray);
+  }
+  .schedule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .schedule-item:last-child { border-bottom: none; }
+  .schedule-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .schedule-item-body .label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    margin-bottom: 2px;
+  }
+  .schedule-item-body .detail {
+    font-size: 0.83rem;
+    color: var(--mid-gray);
+  }
+  .fees-box {
+    background: var(--forest);
+    border-radius: 12px;
+    padding: 36px;
+    color: #fff;
+  }
+  .fees-box h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.9rem;
+  }
+  .fee-row:last-child { border-bottom: none; }
+  .fee-row .fee-label { color: rgba(255,255,255,0.75); }
+  .fee-row .fee-amount { font-weight: 700; color: var(--gold-light); font-size: 1rem; }
+  .fees-note {
+    margin-top: 18px;
+    padding: 14px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.65;
+  }
+
+  /* ── FAQ PREVIEW ── */
+  .faq-section { background: var(--cream); }
+  .faq-list { max-width: 720px; }
+  .faq-item {
+    border-bottom: 1px solid var(--light-gray);
+    padding: 20px 0;
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary svg { width: 18px; height: 18px; stroke: var(--sage); fill: none; stroke-width: 2.5; stroke-linecap: round; flex-shrink: 0; transition: transform 0.3s; }
+  details[open] summary svg { transform: rotate(45deg); }
+  .faq-answer {
+    padding-top: 12px;
+    font-size: 0.92rem;
+    color: var(--mid-gray);
+    line-height: 1.8;
+  }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: linear-gradient(135deg, var(--forest) 0%, #1e3a0d 100%);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .cta-band .section-inner { position: relative; z-index: 1; }
+  .cta-band h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .cta-band p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── LOCATION ── */
+  .location-section { background: var(--warm-white); }
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .location-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+    height: 320px;
+    background: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .location-details { }
+  .location-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+  .loc-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--cream);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .loc-icon svg { width: 20px; height: 20px; stroke: var(--sage); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .location-item h4 { font-weight: 600; font-size: 0.88rem; color: var(--charcoal); margin-bottom: 3px; }
+  .location-item p { font-size: 0.87rem; color: var(--mid-gray); line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.65);
+    padding: 60px 40px 30px;
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 30px;
+  }
+  .footer-brand .name {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .footer-brand p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+  .footer-col h5 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 14px;
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.87rem;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+  .synprism-credit {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+  }
+  .synprism-credit a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .synprism-credit a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header { padding: 0 24px; }
+    nav { display: none; }
+    .hamburger { display: flex; }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0; right: 0;
+      background: var(--forest);
+      padding: 20px 24px 30px;
+      z-index: 99;
+      border-bottom: 2px solid var(--gold);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a.cta { color: var(--gold-light); font-weight: 600; }
+
+    .hero-content { padding: 60px 24px 80px; }
+    .mission-strip .section-inner { grid-template-columns: 1fr; gap: 30px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image-wrap img { height: 280px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .activities-grid { grid-template-columns: 1fr 1fr; }
+    .schedule-grid { grid-template-columns: 1fr; }
+    .location-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
+    section { padding: 60px 24px; }
+  }
+
+  @media (max-width: 600px) {
+    .activities-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; }
+    .cta-actions { flex-direction: column; align-items: center; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <span>📣 Registration for Tuesday co-op classes is open! &nbsp;|&nbsp; 1st–4th grade classes are FULL &nbsp;|&nbsp; Limited space available in all other grades</span>
+  <span style="margin-top:4px; font-weight:400; font-size:0.78rem; color:rgba(255,255,255,0.85);">Community Group membership is open year-round — join anytime.</span>
+</div>
+
+<!-- Header -->
+<header>
+  <a href="#" class="logo-mark">
+    <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="21" fill="rgba(196,150,42,0.15)" stroke="#C4962A" stroke-width="1.5"/>
+      <path d="M22 8 L22 22 M16 14 L22 8 L28 14" stroke="#C4962A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 22 C14 28 18 32 22 34 C26 32 30 28 30 22" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M17 26 L22 30 L27 26" stroke="#C4962A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div class="logo-text">
+      <div class="name">EDGE</div>
+      <div class="sub">Homeschool Co-op</div>
+    </div>
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#get-involved">Get Involved</a>
+    <a href="#activities">Activities</a>
+    <a href="#schedule">Schedule & Fees</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.seymouredge.com/join" class="cta-btn">Join Now</a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#get-involved" onclick="closeMenu()">Get Involved</a>
+  <a href="#activities" onclick="closeMenu()">Activities</a>
+  <a href="#schedule" onclick="closeMenu()">Schedule & Fees</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://www.seymouredge.com/join" class="cta">→ Join the EDGE</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Seymour, Tennessee</div>
+    <h1>Educating with <em>Faith,</em> Raising Community</h1>
+    <p class="hero-tagline">The EDGE is a Christ-centered homeschool cooperative and community for families called to disciple their children — building knowledge, character, and connection together.</p>
+    <div class="hero-actions">
+      <a href="#get-involved" class="btn-primary">Explore Membership</a>
+      <a href="#schedule" class="btn-outline">2026–2027 Schedule</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- Mission Strip -->
+<div class="mission-strip">
+  <div class="section-inner">
+    <div class="mission-pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h3>Faith-Centered</h3>
+      <p>Everything we do is rooted in Christ. We strive to be the visible hands and feet of Jesus in our community.</p>
+    </div>
+    <div class="mission-pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Family-Led</h3>
+      <p>Parents are the primary educators. Co-op amplifies your efforts with volunteer teachers who share your values.</p>
+    </div>
+    <div class="mission-pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <h3>Enrichment-Focused</h3>
+      <p>Three courses per student each semester, carefully chosen to enrich and supplement your home curriculum.</p>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=80" alt="Families learning together" loading="lazy">
+        <div class="about-image-badge">Est. in Seymour, TN 🌿</div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">A Light in the Community</h2>
+        <div class="verse-block">
+          "Train up a child in the way he should go; even when he is old he will not depart from it."
+          <cite>— Proverbs 22:6</cite>
+        </div>
+        <p style="color:var(--mid-gray); font-size:0.97rem; line-height:1.85; margin-bottom:16px;">The EDGE exists to create a Christ-centered community for those who are called to disciple their children through homeschooling. We are a homeschool cooperative comprised of Christian families united voluntarily to meet the common goal of educating and tutoring children through enrichment opportunities.</p>
+        <p style="color:var(--mid-gray); font-size:0.97rem; line-height:1.85; margin-bottom:28px;">We believe it is our responsibility to teach our own children while finding ways to enhance the lives of others on the same journey. We strive to be a shining light in the community and be the visible hands and feet of Jesus Christ.</p>
+        <a href="#get-involved" class="btn-primary" style="font-size:0.88rem; padding:12px 24px;">Learn How to Join</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Get Involved -->
+<section class="involvement-section" id="get-involved">
+  <div class="section-inner">
+    <div class="section-label">Membership</div>
+    <h2 class="section-title">Two Ways to Get Involved</h2>
+    <p class="section-desc">Whether you're looking for a low-commitment way to build connections or want full co-op enrichment classes, the EDGE has a place for your family.</p>
+    <div class="cards-grid">
+      <div class="involvement-card">
+        <div class="card-badge">Open Year-Round</div>
+        <h3>Community Group</h3>
+        <p>A great first step for families new to the EDGE. Get to know other families, join field trips, attend events, and build meaningful connections — without the weekly co-op commitment.</p>
+        <div class="card-price">$20 <span>/ year (includes website access)</span></div>
+        <a href="https://www.seymouredge.com/join" class="card-link">
+          Join the Community Group
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="involvement-card">
+        <div class="card-badge">Registration in May</div>
+        <h3>Tuesday Co-op</h3>
+        <p>Full co-op experience — each student enrolls in three enrichment courses each semester taught by volunteer parent-teachers. Meets Tuesdays at Oak City Baptist Church, 9:00am–12:15pm.</p>
+        <div class="card-price">$190 <span>/ family per year (+ $20 website fee)</span></div>
+        <a href="#schedule" class="card-link">
+          See Schedule & Details
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Activities -->
+<section class="activities-section" id="activities">
+  <div class="section-inner">
+    <div class="section-label">Community Life</div>
+    <h2 class="section-title">More Than Academics</h2>
+    <p class="section-desc">Community Group membership brings your family into a rich calendar of events, outings, and fellowship opportunities throughout the year.</p>
+    <div class="activities-grid">
+      <div class="activity-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Field Trips</h4>
+        <p>At least one field trip per month — plays, museums, caverns, hiking, local ministries, and more. Always family-budget-friendly.</p>
+      </div>
+      <div class="activity-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Parent's Night Out</h4>
+        <p>Scheduled evenings for parents to recharge — dinners, coffee, craft nights, and hangouts. Parents who come never regret it!</p>
+      </div>
+      <div class="activity-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Teen Nights</h4>
+        <p>Monthly themed nights for 7th–12th graders to fellowship and build real friendships. Hosted by member families — always lots of fun.</p>
+      </div>
+      <div class="activity-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h4>Family Events</h4>
+        <p>Talent shows, field day, holiday dinner & market, mountain picnics — whole-family events several times each year.</p>
+      </div>
+      <div class="activity-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h4>Graduation Ceremony</h4>
+        <p>Seniors participate in a formal graduation organized by the EDGE. Cap, gown, and ceremony — a milestone worth celebrating together.</p>
+      </div>
+      <div class="activity-tile">
+        <div class="tile-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h4>Ministry Outreach</h4>
+        <p>Service-oriented field trips to local ministries. Teaching kids to be the hands and feet of Jesus in practical, memorable ways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule & Fees -->
+<section class="schedule-section" id="schedule">
+  <div class="section-inner">
+    <div class="section-label">2026–2027 School Year</div>
+    <h2 class="section-title">Schedule & Fees</h2>
+    <p class="section-desc">Co-op meets every Tuesday at Oak City Baptist Church. Here's what the upcoming school year looks like.</p>
+    <div class="schedule-grid">
+      <div class="schedule-block">
+        <h3>📅 Important Dates</h3>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-item-body">
+            <div class="label">Parent Meeting — August 10th, 6:00pm</div>
+            <div class="detail">One parent per family must attend. Mandatory.</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-item-body">
+            <div class="label">Orientation — August 11th, 10:00am</div>
+            <div class="detail">Mandatory for all co-op families before classes begin.</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-item-body">
+            <div class="label">Fall Semester — Aug 18th through Dec 8th</div>
+            <div class="detail">Oct 6th: Fall Break &nbsp;|&nbsp; Nov 24th: Thanksgiving Break</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-item-body">
+            <div class="label">Spring Semester — Jan 12th through Apr 27th</div>
+            <div class="detail">March 9th: Spring Break</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-dot"></div>
+          <div class="schedule-item-body">
+            <div class="label">Graduation — Saturday, April 24th</div>
+            <div class="detail">For all graduating seniors in the EDGE community.</div>
+          </div>
+        </div>
+        <div style="margin-top:20px; padding:16px; background:var(--cream); border-radius:8px; font-size:0.85rem; color:var(--mid-gray); line-height:1.65;">
+          <strong style="color:var(--forest);">Weekly hours:</strong> Tuesday 9:00am – 12:15pm at Oak City Baptist Church. Each student takes 3 courses aligned to their grade level.
+        </div>
+      </div>
+      <div>
+        <div class="fees-box">
+          <h3>💰 Fee Schedule</h3>
+          <div class="fee-row">
+            <span class="fee-label">Website / Community Group Membership</span>
+            <span class="fee-amount">$20</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-label">Co-op Fee (per family)</span>
+            <span class="fee-amount">$190</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-label">Book Fees (varies by course)</span>
+            <span class="fee-amount">See courses</span>
+          </div>
+          <div class="fees-note">
+            ALL FEES ARE NON-REFUNDABLE. We are a volunteer-based nonprofit — no one profits from our courses. All fees cover supplies, curriculum, copies, and building costs. We work hard to keep costs as low as possible.
+          </div>
+        </div>
+        <div style="margin-top:20px; padding:20px; border:1.5px solid var(--light-gray); border-radius:10px;">
+          <div style="font-weight:600; color:var(--forest); margin-bottom:8px; font-size:0.92rem;">📋 Registration Note</div>
+          <p style="font-size:0.85rem; color:var(--mid-gray); line-height:1.7;">Co-op registration opens in May and may remain open through June 30th if space is available. <strong style="color:var(--forest);">1st–4th grade classes are currently FULL.</strong> Limited spots remain in other grades for 2026–2027.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-desc">Quick answers to what families ask most. More questions? Reach out anytime.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          What is the difference between the Community Group and Co-op?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <p class="faq-answer">The Community Group ($20/year) is open year-round and offers field trips, family events, and connection — no weekly commitment. Co-op ($190/family + $20 website fee) adds Tuesdays of structured enrichment classes taught by parent volunteers, for the full academic year.</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Do I have to be a member to attend events?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <p class="faq-answer">Most activities are open to Community Group members. Co-op classes are reserved for co-op families. Joining the Community Group is a great low-commitment first step — you can join at any point during the school year.</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Are parents required to volunteer?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <p class="faq-answer">Yes — co-op parents are required to remain on campus and volunteer their time during the Tuesday sessions. All courses are taught by member-parents who donate their time and expertise. It truly is a community effort.</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          What grade levels does the co-op serve?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <p class="faq-answer">We serve K–12. Each student enrolls in three courses that align with their grade level. For 2026–2027, 1st–4th grade classes are currently full. Limited spots remain in other grades.</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Where does co-op meet?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <p class="faq-answer">Co-op meets every Tuesday, 9:00am–12:15pm, at Oak City Baptist Church in Seymour, TN. The EDGE's mailing address is 122 Boyd's Creek Highway, Seymour, TN 37865.</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Are the fees refundable?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <p class="faq-answer">All fees are non-refundable. We are a volunteer-based nonprofit and fees go entirely to cover curriculum, supplies, copies, and building costs. No one receives a salary from co-op fees.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<div class="cta-band">
+  <div class="section-inner">
+    <h2>Ready to Join the EDGE?</h2>
+    <p>Community Group membership is open year-round. Come find your people and raise your children in community, faith, and learning.</p>
+    <div class="cta-actions">
+      <a href="https://www.seymouredge.com/join" class="btn-primary">Join the Community Group</a>
+      <a href="#schedule" class="btn-outline">View Co-op Details</a>
+    </div>
+  </div>
+</div>
+
+<!-- Location -->
+<section class="location-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Where We Meet</h2>
+    <div class="location-grid">
+      <div class="location-map">
+        <iframe
+          src="https://maps.google.com/maps?q=122+Boyd%27s+Creek+Highway+Seymour+TN+37865&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          title="EDGE location map"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="location-details">
+        <div class="location-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Mailing Address</h4>
+            <p>122 Boyd's Creek Highway<br>Seymour, TN 37865</p>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <h4>Co-op Meets</h4>
+            <p>Every Tuesday, 9:00am–12:15pm<br>At Oak City Baptist Church, Seymour, TN</p>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Community Group</h4>
+            <p>Open year-round — join any time<br>Events across Seymour & the greater Knoxville area</p>
+          </div>
+        </div>
+        <a href="https://www.seymouredge.com/join" class="btn-primary" style="margin-top:10px; font-size:0.88rem; padding:12px 24px;">Register Your Family</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">EDGE Homeschool Co-op</div>
+        <p>A Christ-centered homeschool cooperative and community for families in Seymour, Tennessee — educating together in faith, friendship, and purpose.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="#about">About EDGE</a>
+        <a href="#get-involved">Get Involved</a>
+        <a href="#activities">Activities</a>
+        <a href="#schedule">Schedule & Fees</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h5>Membership</h5>
+        <a href="https://www.seymouredge.com/join">Join Community Group</a>
+        <a href="https://www.seymouredge.com/join">Co-op Registration</a>
+        <a href="https://www.seymouredge.com/">EDGE Handbook</a>
+        <a href="https://www.seymouredge.com/">Member Login</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>©2026 EDGE Homeschool Co-op — Seymour, TN 37865</span>
+      <span class="synprism-credit">Redesigned by <a href="https://synprism.io" target="_blank">Synprism</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#fff' : '';
+    });
+  });
+</script>
+</body>
+</html>

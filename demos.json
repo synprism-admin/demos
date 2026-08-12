@@ -253,8 +253,15 @@
   {
     "name": "Too Nice To Lead",
     "slug": "toonicelead",
-    "description": "Book website \u2014 leadership for the quiet ones",
+    "description": "Book website — leadership for the quiet ones",
     "industry": "Publishing / Leadership",
     "palette": "Deep Navy #03121D + Bronze #BA751E"
+  },
+  {
+    "name": "Seymour EDGE Co-op",
+    "slug": "seymouredge",
+    "description": "Christ-centered homeschool cooperative — Seymour, TN",
+    "industry": "Education / Nonprofit",
+    "palette": "Forest Green #2D5016 + Warm Gold #C4962A + Cream"
   }
 ]
