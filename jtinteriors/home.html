@@ -155,6 +155,50 @@
     }
     .dropdown-menu a:hover { background: rgba(0,151,172,0.08) !important; color: #0097AC !important; }
     .dropdown-menu a.active { color: #0097AC !important; font-weight: 600 !important; }
+
+    /* CATEGORY STRIP */
+    .cat-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cat-strip::-webkit-scrollbar { display: none; }
+    .cat-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.45);
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+    .cat-link:hover { color: var(--teal); }
+    .cat-link.active {
+      color: var(--teal);
+      border-bottom-color: var(--teal);
+    }
+    .cat-link svg {
+      width: 18px; height: 18px;
+      stroke: currentColor; fill: none;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    .cat-divider { width: 1px; height: 24px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .cat-strip { padding: 0 16px; }
+      .cat-link { padding: 14px 16px; font-size: 0.75rem; }
+    }
     @media (max-width: 900px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
@@ -195,6 +239,23 @@
 </nav>
 
 <div class="teal-bar"></div>
+
+<div class="cat-strip">
+  <a href="kitchen.html" class="cat-link">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Kitchen
+  </a>
+  <div class="cat-divider"></div>
+  <a href="bath.html" class="cat-link">
+    <svg viewBox="0 0 24 24"><path d="M4 12 Q4 4 12 4 Q20 4 20 12"/><rect x="2" y="12" width="20" height="6" rx="1"/><line x1="6" y1="18" x2="6" y2="21"/><line x1="18" y1="18" x2="18" y2="21"/></svg>
+    Bath
+  </a>
+  <div class="cat-divider"></div>
+  <a href="home.html" class="cat-link active">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+    Home Remodels
+  </a>
+</div>
 
 <div class="page-hero">
   <div class="page-hero-inner">
