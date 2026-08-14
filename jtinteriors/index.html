@@ -277,7 +277,7 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      padding: 96px 64px 56px;
+      padding: 56px 64px 40px;
       max-width: 780px;
       text-align: center;
       margin: 0 auto;
@@ -348,10 +348,10 @@
     /* ═══════════════════════════════════════════════
        PORTFOLIO MOSAIC — white bg
     ═══════════════════════════════════════════════ */
-    #portfolio { padding: 56px 0 0; background: var(--white); }
+    #portfolio { padding: 32px 0 0; background: var(--white); }
     .portfolio-header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
     }
     .mosaic {
       display: grid;
@@ -404,7 +404,7 @@
     ═══════════════════════════════════════════════ */
     #about {
       background: var(--charcoal);
-      padding: 56px 0;
+      padding: 48px 0;
       position: relative;
       overflow: hidden;
     }
@@ -420,7 +420,7 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 48px;
       align-items: center;
     }
     .about-text .subhead { color: #ffffff; }
@@ -473,13 +473,13 @@
     /* ═══════════════════════════════════════════════
        SERVICES — 2×2 card grid
     ═══════════════════════════════════════════════ */
-    #services { padding: 120px 0; background: var(--off-white); }
-    .services-intro { text-align: center; max-width: 680px; margin: 0 auto 64px; }
+    #services { padding: 48px 0; background: var(--off-white); }
+    .services-intro { text-align: center; max-width: 680px; margin: 0 auto 24px; }
     .services-intro .subhead { margin-top: 16px; }
     .services-grid-2x2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 12px;
     }
     .svc-card {
       background: var(--white);
@@ -496,12 +496,12 @@
     }
     .svc-card-img {
       width: 100%;
-      height: 260px;
+      height: 220px;
       object-fit: cover;
       display: block;
     }
     .svc-card-body {
-      padding: 36px 36px 32px;
+      padding: 24px 28px 24px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -610,7 +610,7 @@
     /* black panel on text side */
     .wayne-text-side {
       background: var(--charcoal);
-      padding: 80px 64px;
+      padding: 40px 48px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -638,14 +638,14 @@
        TESTIMONIALS — white bg
     ═══════════════════════════════════════════════ */
     #testimonials {
-      padding: 120px 0;
+      padding: 48px 0;
       background: var(--white);
     }
     .test-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 56px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
       gap: 24px;
     }
@@ -718,7 +718,7 @@
        PROCESS — true black bg
     ═══════════════════════════════════════════════ */
     #process {
-      padding: 120px 0;
+      padding: 48px 0;
       background: var(--charcoal);
       position: relative;
       overflow: hidden;
@@ -734,7 +734,7 @@
       pointer-events: none;
       letter-spacing: -0.02em;
     }
-    .process-header { margin-bottom: 72px; }
+    .process-header { margin-bottom: 28px; }
     .steps-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -784,7 +784,7 @@
     ═══════════════════════════════════════════════ */
     #cta-banner {
       position: relative;
-      min-height: 420px;
+      min-height: 280px;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -798,7 +798,7 @@
     .cta-content {
       position: relative; z-index: 1;
       text-align: center;
-      padding: 80px 32px;
+      padding: 48px 32px;
     }
     .cta-content .display {
       color: var(--white);
@@ -811,7 +811,7 @@
     /* ═══════════════════════════════════════════════
        CONTACT — white bg
     ═══════════════════════════════════════════════ */
-    #contact { padding: 120px 0; background: var(--white); }
+    #contact { padding: 48px 0; background: var(--white); }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.6fr;
@@ -899,7 +899,7 @@
     ═══════════════════════════════════════════════ */
     footer {
       background: var(--charcoal);
-      padding: 72px 0 32px;
+      padding: 36px 0 24px;
       color: #ffffff;
     }
     .footer-top {
@@ -1025,7 +1025,7 @@
     @media (max-width: 600px) {
       .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
       #hero { align-items: center; min-height: 100svh; }
-      .hero-content { padding: 80px 24px 40px; }
+      .hero-content { padding: 56px 24px 32px; }
       .hero-pre { font-size: 0.65rem; }
       .hero-h1 { font-size: 2rem; margin-bottom: 12px; }
       .hero-sub { font-size: 0.9rem; margin-bottom: 24px; }
@@ -1439,7 +1439,7 @@
 <!-- ██ CONTACT █████████████████████████████████████████████ -->
 <section id="contact">
   <div class="wrap">
-    <div class="reveal" style="margin-bottom:52px;">
+    <div class="reveal" style="margin-bottom:20px;">
       <div class="label">Get In Touch</div>
       <h2 class="display" style="margin-top:14px;">Let's Start Your<br><em>Project</em></h2>
       <p class="subhead" style="margin-top:14px;">Call, email, or fill out the form — we respond within one business day and are happy to answer any questions.</p>
