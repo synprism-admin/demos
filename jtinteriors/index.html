@@ -147,11 +147,16 @@
       justify-content: space-between;
       height: 72px;
       padding: 0 40px;
+      position: relative;
     }
-    .nav-left {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 2px;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .nav-logo-img {
       height: 38px;
@@ -175,11 +180,10 @@
       white-space: nowrap;
     }
     .nav-phone-left:hover { color: var(--teal-dark); }
-    .nav-links {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 2px;
-      list-style: none;
+      gap: 18px;
     }
     .nav-links a {
       font-size: 0.78rem;
