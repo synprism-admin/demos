@@ -565,7 +565,7 @@
     }
     .wayne-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
       min-height: 300px;
     }
     .wayne-img-side {
@@ -614,6 +614,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      text-align: center;
     }
     .wayne-text-side .label { color: var(--text); }
     .wayne-text-side .label::before { background: var(--teal); }
@@ -623,8 +625,10 @@
       font-style: italic;
       color: rgba(255,255,255,0.9);
       line-height: 1.45;
-      border-left: 3px solid var(--teal);
-      padding-left: 14px;
+      border-left: none;
+      border-top: 3px solid var(--teal);
+      padding-left: 0;
+      padding-top: 12px;
       margin: 12px 0 16px;
     }
     .wayne-bio p {
@@ -1337,7 +1341,7 @@
         <p>When he moved to the Pacific Northwest, he launched his own sheetrock company — then steadily expanded his expertise to tile, granite, hardwood flooring, cabinets, level-entry showers, glass shower doors, and eventually full kitchen, bathroom, and whole-home renovations.</p>
         <p>Wayne is part of every project at JT Interiors. He's well respected by fellow contractors and beloved by clients for his straightforward honesty, can-do attitude, and unwavering commitment to quality.</p>
       </div>
-      <a href="#contact" class="btn btn-teal" style="margin-top:14px; align-self:flex-start; font-size:0.72rem; padding:0.7rem 1.4rem;">Start Your Project with Wayne</a>
+      <a href="#contact" class="btn btn-teal" style="margin-top:14px; align-self:center; font-size:0.72rem; padding:0.7rem 1.4rem;">Start Your Project with Wayne</a>
     </div>
   </div>
 </section>
