@@ -566,11 +566,12 @@
     .wayne-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      min-height: 180px;
+      height: 200px;
     }
     .wayne-img-side {
       position: relative;
       overflow: hidden;
+      height: 200px;
     }
     .wayne-img {
       width: 100%; height: 100%;
@@ -610,7 +611,7 @@
     /* black panel on text side */
     .wayne-text-side {
       background: var(--charcoal);
-      padding: 24px 36px;
+      padding: 16px 32px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1013,7 +1014,7 @@
       .mosaic-item:first-child { grid-row: auto; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .wayne-grid { grid-template-columns: 1fr; }
-      .wayne-img { max-height: 160px; min-height: 0; }
+      .wayne-img { height: 160px; width: 100%; object-fit: cover; object-position: top center; }
       .service-row, .service-row.flip { direction: ltr; grid-template-columns: 1fr; }
       .service-img { height: 280px; }
       .service-body { padding: 40px 32px; }
