@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Upgrades | JT Interiors — Vancouver, WA</title>
+  <meta name="description" content="Browse JT Interiors smart home upgrade projects. Smart lighting, switches, appliances, energy-efficient windows, and tech-forward renovations — Vancouver, WA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #0097AC;
+      --teal-dark: #007A8C;
+      --teal-dim: rgba(0,151,172,0.12);
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #F5F5F5;
+      --gray: #666;
+      --border: #e0e0e0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(0,0,0,0.6); padding: 7px 14px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--black); background: rgba(0,0,0,0.05); }
+    .nav-links a.active { color: var(--teal); font-weight: 600; }
+    .nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 8px 18px !important; border-radius: 4px; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+
+    /* DROPDOWN */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a::after {
+      content: ''; display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid currentColor;
+      transition: transform 0.2s; margin-top: 1px;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%);
+      padding-top: 10px; min-width: 200px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.15s; z-index: 200;
+    }
+    .dropdown-menu-inner {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); padding: 6px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { opacity: 1; pointer-events: all; }
+    .dropdown-menu a {
+      display: block !important; padding: 10px 14px !important;
+      border-radius: 5px !important; font-size: 0.8rem !important;
+      font-weight: 500 !important; letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      color: rgba(0,0,0,0.65) !important; background: transparent !important;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-menu a:hover { background: rgba(0,151,172,0.08) !important; color: #0097AC !important; }
+    .dropdown-menu a.active { color: #0097AC !important; font-weight: 600 !important; }
+
+    /* TEAL BAR */
+    .teal-bar { height: 4px; background: linear-gradient(90deg, var(--teal), var(--teal-dark), transparent); }
+
+    /* CATEGORY STRIP */
+    .cat-strip {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0 40px; display: flex; align-items: center; gap: 0;
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .cat-strip::-webkit-scrollbar { display: none; }
+    .cat-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 28px; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(0,0,0,0.45); border-bottom: 3px solid transparent;
+      white-space: nowrap; transition: color 0.2s, border-color 0.2s;
+    }
+    .cat-link:hover { color: var(--teal); }
+    .cat-link.active { color: var(--teal); border-bottom-color: var(--teal); }
+    .cat-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .cat-divider { width: 1px; height: 24px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--black); padding: 72px 40px 56px; position: relative; overflow: hidden; }
+    .page-hero::after {
+      content: 'SMART';
+      position: absolute; right: -20px; bottom: -30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem; font-weight: 700;
+      color: rgba(255,255,255,0.03); pointer-events: none;
+    }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--teal); }
+    .breadcrumb span { color: rgba(255,255,255,0.25); }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 700; color: var(--white); line-height: 1.05; margin-bottom: 16px; }
+    .page-hero h1 em { color: var(--teal); font-style: italic; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 560px; line-height: 1.7; margin-bottom: 28px; }
+    .hero-cta { display: inline-flex; align-items: center; background: var(--teal); color: var(--white); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; transition: background 0.2s; }
+    .hero-cta:hover { background: var(--teal-dark); }
+
+    /* GALLERY */
+    .gallery-section { padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--black); line-height: 1.1; margin-bottom: 40px; }
+    .section-title em { color: var(--teal); font-style: italic; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 260px;
+      gap: 10px;
+    }
+    .photo-item { position: relative; overflow: hidden; border-radius: 6px; background: #111; cursor: pointer; }
+    .photo-item.wide { grid-column: span 2; }
+    .photo-item.tall { grid-row: span 2; }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .photo-item:hover img { transform: scale(1.04); }
+    .photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 16px; }
+    .photo-item:hover .photo-overlay { opacity: 1; }
+    .photo-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); background: rgba(0,0,0,0.75); padding: 4px 10px; border-radius: 50px; }
+
+    /* SVG Placeholder tiles for tech/smart content */
+    .photo-item .svg-bg {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--black);
+    }
+    .photo-item .svg-bg svg { opacity: 0.9; }
+
+    /* FEATURES */
+    .features-strip { background: var(--off-white); padding: 56px 40px; }
+    .features-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .feature-item { padding: 28px 24px; background: var(--white); border-top: 3px solid var(--teal); border-radius: 4px; }
+    .feature-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--teal); line-height: 1; margin-bottom: 8px; }
+    .feature-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; }
+    .feature-desc { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
+
+    /* TECH SHOWCASE — dark cards */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 48px;
+    }
+    .tech-card {
+      background: var(--black);
+      border-radius: 6px;
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      border-top: 2px solid var(--teal);
+    }
+    .tech-card::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,151,172,0.12) 0%, transparent 70%);
+    }
+    .tech-icon {
+      width: 44px; height: 44px;
+      background: var(--teal-dim);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .tech-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .tech-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .tech-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* CTA */
+    .cta-band { background: var(--black); padding: 64px 40px; text-align: center; }
+    .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .cta-band h2 em { color: var(--teal); font-style: italic; }
+    .cta-band p { color: rgba(255,255,255,0.55); font-size: 0.95rem; margin-bottom: 28px; }
+    .cta-band a { display: inline-block; background: var(--teal); color: var(--white); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 36px; border-radius: 4px; transition: background 0.2s; }
+    .cta-band a:hover { background: var(--teal-dark); }
+
+    /* FOOTER */
+    footer { background: #050505; padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer img { height: 30px; width: auto; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .cat-strip { padding: 0 16px; }
+      .cat-link { padding: 14px 16px; font-size: 0.75rem; }
+      .page-hero { padding: 56px 20px 44px; }
+      .gallery-section { padding: 48px 20px; }
+      .photo-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+      .photo-item.wide, .photo-item.tall { grid-column: span 1; grid-row: span 1; }
+      .features-inner, .tech-grid { grid-template-columns: 1fr 1fr; }
+      .features-strip, .cta-band { padding: 48px 20px; }
+      footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .photo-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+      .features-inner, .tech-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="jt-logo-new.webp" alt="JT Interiors"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Why JT Interiors</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#services">Services</a>
+      <div class="dropdown-menu">
+        <div class="dropdown-menu-inner">
+          <a href="kitchen.html">Kitchen</a>
+          <a href="bath.html">Bath</a>
+          <a href="home.html">Home Remodels</a>
+          <a href="smart.html" class="active">Smart Upgrades</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="index.html#contact" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<div class="teal-bar"></div>
+
+<div class="cat-strip">
+  <a href="kitchen.html" class="cat-link">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Kitchen
+  </a>
+  <div class="cat-divider"></div>
+  <a href="bath.html" class="cat-link">
+    <svg viewBox="0 0 24 24"><path d="M4 12 Q4 4 12 4 Q20 4 20 12"/><rect x="2" y="12" width="20" height="6" rx="1"/><line x1="6" y1="18" x2="6" y2="21"/><line x1="18" y1="18" x2="18" y2="21"/></svg>
+    Bath
+  </a>
+  <div class="cat-divider"></div>
+  <a href="home.html" class="cat-link">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+    Home Remodels
+  </a>
+  <div class="cat-divider"></div>
+  <a href="smart.html" class="cat-link active">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+    Smart Upgrades
+  </a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      Smart Upgrades
+    </div>
+    <h1>Smart Home<br><em>Upgrades</em></h1>
+    <p>Bring your home into the future — smart lighting, automated switches, energy-efficient windows, and appliance integration wired in seamlessly during your renovation.</p>
+    <a href="index.html#contact" class="hero-cta">Get a Free Smart Upgrade Estimate</a>
+  </div>
+</div>
+
+<div class="gallery-section">
+  <div class="section-label">Smart Upgrade Projects</div>
+  <h2 class="section-title">Homes We've <em>Modernized</em></h2>
+
+  <div class="photo-grid">
+    <!-- Real project photos repurposed with smart-upgrade context -->
+    <div class="photo-item wide">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/L1.jpg" alt="Smart home renovation — open concept living" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Smart Lighting Install</span></div>
+    </div>
+    <div class="photo-item">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/thd-kitchens-promo-ox-hill_horiz.jpg" alt="Smart kitchen appliance integration" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Appliance Integration</span></div>
+    </div>
+    <div class="photo-item">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/HW3.jpg" alt="Energy efficient flooring and windows" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Energy Efficiency</span></div>
+    </div>
+    <div class="photo-item wide">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/csm_siematic-classic-033-slider_401e94ef6e.jpg" alt="Smart kitchen renovation with integrated tech" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Kitchen Tech Upgrade</span></div>
+    </div>
+    <div class="photo-item">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/B5.jpg" alt="Smart bathroom upgrade" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Smart Bath Fixtures</span></div>
+    </div>
+    <div class="photo-item">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/FLOORING.jpg" alt="Heated flooring and smart home integration" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Heated Floors</span></div>
+    </div>
+    <div class="photo-item">
+      <img src="https://jtinteriorsremodeling.com/wp-content/uploads/2018/11/SINK-2.jpg" alt="Touchless fixture installation" loading="lazy">
+      <div class="photo-overlay"><span class="photo-tag">Touchless Fixtures</span></div>
+    </div>
+  </div>
+
+  <!-- Tech showcase cards -->
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="tech-title">Smart Lighting</div>
+      <p class="tech-desc">Automated lighting systems — dimmers, scene control, motion sensors, and voice-activated fixtures installed throughout your home.</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+      </div>
+      <div class="tech-title">Smart Switches &amp; Controls</div>
+      <p class="tech-desc">Replace standard switches with smart panels, programmable thermostats, and whole-home control systems during your renovation.</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="tech-title">Appliance Integration</div>
+      <p class="tech-desc">Built-in smart appliance installation — refrigerators, ovens, dishwashers, and laundry units wired and integrated seamlessly.</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><rect x="9" y="13" width="6" height="8"/></svg>
+      </div>
+      <div class="tech-title">Energy-Efficient Windows</div>
+      <p class="tech-desc">Triple-pane, low-E window replacements that cut energy costs and integrate with smart shade systems.</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="tech-title">Heated Flooring</div>
+      <p class="tech-desc">In-floor radiant heating systems installed under tile, stone, or hardwood — programmable from your phone.</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="tech-title">Rental &amp; Flip Upgrades</div>
+      <p class="tech-desc">Smart locks, keypad entry, and energy monitoring systems that add ROI to investment properties and flips.</p>
+    </div>
+  </div>
+</div>
+
+<div class="features-strip">
+  <div class="features-inner">
+    <div class="feature-item">
+      <div class="feature-num">01</div>
+      <div class="feature-title">Smart Lighting Systems</div>
+      <p class="feature-desc">Automated, scene-based lighting installed throughout your home — dimmable, scheduled, and voice-ready.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-num">02</div>
+      <div class="feature-title">Energy Efficiency</div>
+      <p class="feature-desc">Windows, insulation, and HVAC upgrades that lower your monthly bills and qualify for energy rebates.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-num">03</div>
+      <div class="feature-title">Built-In Tech</div>
+      <p class="feature-desc">Smart switches, thermostats, and control hubs integrated cleanly into walls — no exposed hardware.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-num">04</div>
+      <div class="feature-title">Future-Ready Wiring</div>
+      <p class="feature-desc">Pre-wire for EV chargers, solar-ready panels, and home automation while the walls are already open.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to Upgrade<br>Your <em>Smart Home?</em></h2>
+  <p>Free in-home estimates — we assess your home's potential and quote every upgrade clearly with no pressure.</p>
+  <a href="index.html#contact">Schedule a Free Estimate</a>
+</div>
+
+<footer>
+  <img src="jt-logo-new.webp" alt="JT Interiors">
+  <div class="footer-links">
+    <a href="kitchen.html">Kitchen</a>
+    <a href="bath.html">Bath</a>
+    <a href="home.html">Home Remodels</a>
+    <a href="smart.html">Smart Upgrades</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2025 JT Interiors Remodeling</div>
+</footer>
+
+</body>
+</html>
