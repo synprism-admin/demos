@@ -242,23 +242,29 @@
       transition: transform 0.2s; margin-top: 1px;
     }
     .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    /* Flush to link bottom — zero gap so mouse never leaves hover zone */
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%) translateY(6px);
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      /* invisible top padding bridges the nav bar → menu gap */
+      padding-top: 10px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.15s;
+      z-index: 200;
+      min-width: 180px;
+    }
+    /* The visible card sits inside the padding buffer */
+    .dropdown-menu-inner {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 8px;
       box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-      min-width: 180px; padding: 6px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.18s, transform 0.18s;
-      z-index: 200;
+      padding: 6px;
     }
     .nav-dropdown:hover .dropdown-menu,
     .nav-dropdown:focus-within .dropdown-menu {
       opacity: 1; pointer-events: all;
-      transform: translateX(-50%) translateY(0);
     }
     .dropdown-menu a {
       display: block !important; padding: 10px 14px !important;
@@ -298,9 +304,11 @@
     <li class="nav-dropdown">
       <a href="index.html#services">Services</a>
       <div class="dropdown-menu">
-        <a href="kitchen.html" class="active">Kitchen</a>
-        <a href="bath.html">Bath</a>
-        <a href="home.html">Home Remodels</a>
+        <div class="dropdown-menu-inner">
+          <a href="kitchen.html" class="active">Kitchen</a>
+          <a href="bath.html">Bath</a>
+          <a href="home.html">Home Remodels</a>
+        </div>
       </div>
     </li>
     <li><a href="index.html#contact" class="nav-cta">Free Estimate</a></li>

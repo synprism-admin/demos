@@ -970,25 +970,25 @@
     .nav-dropdown:hover > a::after { transform: rotate(180deg); }
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 8px);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      /* transparent top padding = invisible bridge, closes the hover gap */
+      padding-top: 10px;
+      min-width: 190px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.15s;
+      z-index: 200;
+    }
+    .dropdown-menu-inner {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 8px;
       box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-      min-width: 180px;
       padding: 6px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s, transform 0.18s;
-      z-index: 200;
     }
     .nav-dropdown:hover .dropdown-menu,
     .nav-dropdown:focus-within .dropdown-menu {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateX(-50%) translateY(0);
+      opacity: 1; pointer-events: all;
     }
     .dropdown-menu a {
       display: block !important;
@@ -1063,9 +1063,11 @@
       <li class="nav-dropdown">
         <a href="#services">Services</a>
         <div class="dropdown-menu">
-          <a href="kitchen.html">Kitchen</a>
-          <a href="bath.html">Bath</a>
-          <a href="home.html">Home Remodels</a>
+          <div class="dropdown-menu-inner">
+            <a href="kitchen.html">Kitchen</a>
+            <a href="bath.html">Bath</a>
+            <a href="home.html">Home Remodels</a>
+          </div>
         </div>
       </li>
       <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
