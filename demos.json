@@ -1,5 +1,31 @@
 [
   {
+    "slug": "valleyautoservice",
+    "name": "Valley Auto Service",
+    "category": "Auto Repair · Demo Site",
+    "icon": "🔧",
+    "path": "/valleyautoservice/",
+    "status": "live",
+    "location": "Knoxville, TN",
+    "phone": null,
+    "tags": ["Auto Repair", "Demo", "Contact Form", "Maps"],
+    "accent": "cyan-purp",
+    "added": "2026-08-24"
+  },
+  {
+    "slug": "sierrawellwater",
+    "name": "Sierra Well & Water",
+    "category": "Well Drilling · Demo Site",
+    "icon": "💧",
+    "path": "/sierrawellwater/",
+    "status": "live",
+    "location": "Auburn, CA",
+    "phone": null,
+    "tags": ["Well Drilling", "Water Services", "Demo", "Multi-page"],
+    "accent": "purple-mag",
+    "added": "2026-08-24"
+  },
+  {
     "slug": "capitalcitystatues",
     "name": "Capitol City Statues",
     "category": "E-Commerce \u00b7 Collectibles",
