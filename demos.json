@@ -289,5 +289,18 @@
     "description": "Christ-centered homeschool cooperative — Seymour, TN",
     "industry": "Education / Nonprofit",
     "palette": "Forest Green #2D5016 + Warm Gold #C4962A + Cream"
+  },
+  {
+    "slug": "egkochtravel",
+    "name": "EG Koch Travel",
+    "category": "Travel Advisory · Elk Grove, CA",
+    "icon": "✈️",
+    "path": "/egkochtravel/",
+    "status": "live",
+    "location": "Elk Grove, California",
+    "phone": "(916) 826-8754",
+    "tags": ["Travel", "Advisory", "Vacation Planning", "Cruises"],
+    "accent": "navy-gold",
+    "added": "2026-08-24"
   }
 ]

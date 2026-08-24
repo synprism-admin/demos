@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EG Koch Travel — Journeys. Memories. Made for You.</title>
+<meta name="description" content="EG Koch Travel is a California-based travel advisory service. Eric & Grace Koch — your personal travel advisors for family and friends — offering exclusive access to travel portals, discounts, and personalized trip planning.">
+<meta property="og:title" content="EG Koch Travel">
+<meta property="og:description" content="Journeys. Memories. Made for You.">
+<meta property="og:image" content="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1D3461;
+    --navy-dark: #142444;
+    --navy-light: #2a4a7f;
+    --gold: #C29A55;
+    --gold-light: #d4af6f;
+    --gold-dim: rgba(194,154,85,0.18);
+    --sky: #00d4ff;
+    --sky-dim: rgba(0,212,255,0.12);
+    --white: #ffffff;
+    --off-white: #f9f7f4;
+    --text: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #7a7a9a;
+    --border: rgba(29,52,97,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  /* ── NAV ── */
+  #nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(29,52,97,0.0);
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  #nav.solid {
+    background: var(--navy);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 72px; position: relative;
+  }
+  .nav-logo img { height: 52px; width: auto; }
+  .nav-links {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 4px; list-style: none; align-items: center;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.88); font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(194,154,85,0.12); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    padding: 9px 22px !important; border-radius: 24px !important;
+    font-weight: 700 !important; font-size: 0.82rem !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .burger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
+  .mobile-nav { display: none; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 45%, #1a4a7a 100%);
+    display: flex; align-items: center; overflow: hidden;
+  }
+  .hero-bg-svg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    opacity: 0.06; pointer-events: none;
+  }
+  .hero-waves {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+    opacity: 0.15;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 120px 40px 80px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-text {}
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-dim); border: 1px solid rgba(194,154,85,0.35);
+    color: var(--gold-light); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 24px;
+  }
+  .hero-badge svg { width: 12px; height: 12px; fill: var(--gold); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem; font-weight: 700; color: white; line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1.1rem; color: rgba(255,255,255,0.78); line-height: 1.7;
+    margin-bottom: 36px; font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 14px 32px; border-radius: 30px;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: white;
+    padding: 14px 32px; border-radius: 30px;
+    font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-logo-wrap {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-logo-wrap img {
+    width: 100%; max-width: 400px; height: auto;
+    filter: drop-shadow(0 8px 40px rgba(0,0,0,0.5));
+    animation: float 5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 40px;
+    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+  }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── DIVIDER ── */
+  .wave-divider { line-height: 0; }
+  .wave-divider svg { display: block; width: 100%; }
+
+  /* ── INTRO ── */
+  .intro { background: var(--off-white); padding: 80px 40px; text-align: center; }
+  .intro-inner { max-width: 760px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 20px; line-height: 1.2;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; }
+  .compass-ornament {
+    display: flex; align-items: center; gap: 16px;
+    justify-content: center; margin: 24px 0;
+    color: var(--gold);
+  }
+  .compass-ornament span { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--text-light); }
+  .compass-ornament::before, .compass-ornament::after {
+    content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--gold); opacity: 0.4;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: white; padding: 80px 40px; }
+  .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-img-wrap {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px; overflow: hidden; min-height: 340px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 16px 60px rgba(29,52,97,0.2);
+  }
+  .about-img-wrap img { width: 75%; height: auto; opacity: 0.92; }
+  .about-gold-border {
+    position: absolute; inset: 12px; border: 1px solid rgba(194,154,85,0.35); border-radius: 10px; pointer-events: none;
+  }
+  .about-text {}
+  .about-text p { font-size: 1rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 18px; }
+  .signature {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.5rem; color: var(--gold); margin-top: 28px;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--navy); padding: 80px 40px; }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+  .services .section-label { color: var(--gold-light); }
+  .services .section-title { color: white; text-align: center; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;
+  }
+  .svc-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 32px 24px; text-align: center;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .svc-card:hover {
+    border-color: rgba(194,154,85,0.45); background: rgba(194,154,85,0.06);
+    transform: translateY(-4px);
+  }
+  .svc-icon {
+    width: 56px; height: 56px; background: var(--gold-dim);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .svc-icon svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+  .svc-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.15rem; color: white;
+    margin-bottom: 12px;
+  }
+  .svc-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+
+  /* ── WHY US ── */
+  .why { background: var(--off-white); padding: 80px 40px; }
+  .why-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+  .why-item {}
+  .why-num {
+    font-family: 'Playfair Display', serif; font-size: 2.4rem;
+    color: var(--gold); font-weight: 700;
+  }
+  .why-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin: 8px 0 8px; }
+  .why-item p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: linear-gradient(135deg, var(--gold) 0%, #a0813d 100%);
+    padding: 64px 40px; text-align: center;
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .cta-band p { font-size: 1rem; color: rgba(29,52,97,0.8); margin-bottom: 32px; }
+  .btn-navy {
+    background: var(--navy); color: white;
+    padding: 14px 36px; border-radius: 30px;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em;
+    transition: background 0.2s; display: inline-block;
+  }
+  .btn-navy:hover { background: var(--navy-dark); }
+
+  /* ── CONTACT ── */
+  .contact-strip { background: var(--navy-dark); padding: 48px 40px; }
+  .contact-strip-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; text-align: center;
+  }
+  .ct-item {}
+  .ct-icon { color: var(--gold); margin-bottom: 10px; display: flex; justify-content: center; }
+  .ct-icon svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+  .ct-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+  .ct-val { font-size: 0.95rem; color: white; }
+  .ct-val a { color: var(--gold-light); }
+  .ct-val a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer { background: #0d1f3a; padding: 48px 40px 28px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px;
+    padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand img { height: 64px; width: auto; margin-bottom: 16px; }
+  .footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .footer-col h5 {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { font-size: 0.875rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 24px; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--gold-light); }
+  .footer-credit { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+  .footer-credit a { color: rgba(194,154,85,0.5); }
+  .footer-credit a:hover { color: var(--gold-light); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; padding: 100px 24px 60px; text-align: center; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero-btns { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-logo-wrap { order: -1; }
+    .hero-logo-wrap img { max-width: 260px; }
+    .nav-links { display: none; }
+    .burger { display: flex; }
+    .about-inner { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .contact-strip-inner { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 2rem; }
+  }
+
+  /* Mobile nav overlay */
+  .mobile-nav-overlay {
+    display: none; position: fixed; inset: 0; background: var(--navy-dark); z-index: 999;
+    flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  }
+  .mobile-nav-overlay.open { display: flex; }
+  .mobile-nav-overlay a {
+    color: white; font-size: 1.4rem; font-family: 'Playfair Display', serif; font-weight: 700;
+  }
+  .mobile-nav-overlay a:hover { color: var(--gold); }
+  .close-btn {
+    position: absolute; top: 20px; right: 24px;
+    background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta">Plan a Trip</a></li>
+    </ul>
+    <button class="burger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('open')" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+  <a href="booking.html">Plan a Trip</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-bg-svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="300" fill="white" opacity="0.3"/>
+    <circle cx="1300" cy="700" r="400" fill="white" opacity="0.2"/>
+    <path d="M0 600 Q360 450 720 550 Q1080 650 1440 500 L1440 900 L0 900Z" fill="white" opacity="0.4"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2L13.5 8H20L14.5 12L17 18L12 14L7 18L9.5 12L4 8H10.5L12 2Z" fill="currentColor"/></svg>
+        Gold Rush Getaways Affiliated Advisors
+      </div>
+      <h1>Your <em>Personal</em> Travel Advisors</h1>
+      <p class="hero-sub">Eric &amp; Grace Koch bring the world to family and friends — with exclusive access to travel portals, insider discounts, and trips crafted just for the people they love.</p>
+      <div class="hero-btns">
+        <a href="booking.html" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          Start Planning
+        </a>
+        <a href="about.html" class="btn-secondary">Meet Eric &amp; Grace</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Personalized</div>
+        </div>
+        <div>
+          <div class="stat-num">Exclusive</div>
+          <div class="stat-label">Portal Access</div>
+        </div>
+        <div>
+          <div class="stat-num">Family</div>
+          <div class="stat-label">&amp; Friends Only</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="logo.png" alt="EG Koch Travel — Journeys. Memories. Made for You.">
+    </div>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 720,0 1080,40 C1260,60 1350,20 1440,30 L1440,60 L0,60Z" fill="#f9f7f4"/>
+    <path d="M0,30 C360,60 720,0 1080,40 C1260,60 1350,20 1440,30" stroke="rgba(194,154,85,0.25)" stroke-width="1.5" fill="none"/>
+  </svg>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="section-label">About EG Koch Travel</div>
+    <h2 class="section-title">Travel Made <em>Personal</em></h2>
+    <div class="compass-ornament">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><polygon points="12,2 14.5,9.5 12,12 9.5,9.5" fill="currentColor"/><polygon points="12,22 9.5,14.5 12,12 14.5,14.5" fill="currentColor" opacity="0.4"/></svg>
+      <span>Journeys &middot; Memories &middot; Made for You</span>
+    </div>
+    <p class="section-sub">Eric and Grace Koch are Elk Grove, California-based travel advisors affiliated with Gold Rush Getaways. They don't book travel for strangers — they share their access, connections, and passion for travel with family and friends, making every trip feel like it was planned by someone who truly cares.</p>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<div class="wave-divider" style="background:#f9f7f4;">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C480,60 960,0 1440,30 L1440,60 L0,60Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ABOUT PREVIEW -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="logo.png" alt="EG Koch Travel Logo">
+      <div class="about-gold-border"></div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title">Meet <em>Eric &amp; Grace</em></h2>
+      <p>We're Eric and Grace Koch — a California couple with a love for travel and a desire to share that joy with the people closest to us. After joining Gold Rush Getaways as affiliate travel advisors, we gained access to professional booking tools, exclusive rates, and global travel portals.</p>
+      <p>Our goal has never been to run a big agency. It's simply to help our family and friends experience the world — without stress, overspending, or the feeling of going it alone. We handle the research, the bookings, and the details so you can focus on the memories.</p>
+      <a href="about.html" class="btn-primary" style="margin-top:8px;">Our Story</a>
+      <div class="signature">— Eric &amp; Grace</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER dark -->
+<div class="wave-divider" style="background:white;">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,60 1080,20 C1260,0 1350,50 1440,40 L1440,60 L0,60Z" fill="#1D3461"/>
+  </svg>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section class="services">
+  <div class="services-inner">
+    <div class="section-label" style="text-align:center;">What We Offer</div>
+    <h2 class="section-title">How We <em>Help You Travel</em></h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Vacation &amp; Trip Planning</h3>
+        <p>From beach getaways to international adventures — we plan it all, tailored to you.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0zm9-7v7l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Exclusive Rates &amp; Deals</h3>
+        <p>Access to travel portals and discounts that regular booking sites can't match.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Destination Guidance</h3>
+        <p>Honest recommendations on destinations, hotels, and experiences — from people who care about your trip.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Group &amp; Family Trips</h3>
+        <p>Coordinating travel for the whole family? We make sure everyone's covered and comfortable.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z M1 7l1-4h20l1 4 M1 17l1 4h20l1-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Cruise &amp; Resort Packages</h3>
+        <p>Luxury or budget — we find the best cruise lines and resort packages for your style.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Personal Consultation</h3>
+        <p>Just want to talk through ideas? Reach out — no obligation, just a friendly conversation about your dream trip.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="services.html" class="btn-primary">See All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<div class="wave-divider" style="background:#1D3461;">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,10 720,50 1080,20 C1260,10 1350,45 1440,30 L1440,60 L0,60Z" fill="#f9f7f4"/>
+  </svg>
+</div>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="why-inner">
+    <div class="section-label">Why EG Koch Travel</div>
+    <h2 class="section-title">Travel with <em>People Who Care</em></h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">&#10084;</div>
+        <h4>Personal Touch</h4>
+        <p>We're not an impersonal agency. We're Eric and Grace — and we know you.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">&#128273;</div>
+        <h4>Exclusive Access</h4>
+        <p>Gold Rush Getaways affiliation means we unlock portals and rates the public doesn't see.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">&#128170;</div>
+        <h4>Stress-Free</h4>
+        <p>We handle research, bookings, and logistics — you just pack your bags.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">&#127758;</div>
+        <h4>Any Destination</h4>
+        <p>Domestic road trips or international escapes — we can help plan just about anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>Ready to Start Planning?</h2>
+  <p>Reach out to Eric &amp; Grace — let's make your next trip something to remember.</p>
+  <a href="booking.html" class="btn-navy">Book a Consultation</a>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-strip-inner">
+    <div class="ct-item">
+      <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ct-label">Phone</div>
+      <div class="ct-val"><a href="tel:9168268754">(916) 826-8754</a></div>
+    </div>
+    <div class="ct-item">
+      <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ct-label">Email</div>
+      <div class="ct-val"><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></div>
+    </div>
+    <div class="ct-item">
+      <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ct-label">Location</div>
+      <div class="ct-val">Elk Grove, California</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.png" alt="EG Koch Travel">
+        <p>Eric &amp; Grace Koch — personal travel advisors based in Elk Grove, CA. Affiliated with Gold Rush Getaways. Serving family and friends with heart.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Book a Trip</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:9168268754">(916) 826-8754</a></li>
+          <li><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></li>
+          <li><span style="color:rgba(255,255,255,0.5)">Elk Grove, California</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+  });
+</script>
+</body>
+</html>

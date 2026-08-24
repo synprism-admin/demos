@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — EG Koch Travel</title>
+<meta name="description" content="EG Koch Travel services: vacation planning, exclusive rates, cruises, group trips, destination guidance, and personal consultation for family and friends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1D3461;--navy-dark:#142444;--navy-light:#2a4a7f;--gold:#C29A55;--gold-light:#d4af6f;--gold-dim:rgba(194,154,85,0.18);--white:#ffffff;--off-white:#f9f7f4;--text:#1a1a2e;--text-mid:#4a4a6a;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Lato',sans-serif;color:var(--text);background:var(--white);}
+  a{text-decoration:none;color:inherit;}img{display:block;max-width:100%;}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.25);}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;position:relative;}
+  .nav-logo img{height:52px;width:auto;}
+  .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:4px;list-style:none;align-items:center;}
+  .nav-links a{color:rgba(255,255,255,0.88);font-size:0.85rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(194,154,85,0.12);}
+  .nav-cta{background:var(--gold);color:var(--navy)!important;padding:9px 22px!important;border-radius:24px!important;font-weight:700!important;font-size:0.82rem!important;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .burger span{display:block;width:24px;height:2px;background:white;border-radius:2px;}
+  .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+  .mobile-nav-overlay.open{display:flex;}
+  .mobile-nav-overlay a{color:white;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:700;}
+  .mobile-nav-overlay a:hover{color:var(--gold);}
+  .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;}
+  .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);padding:120px 40px 72px;text-align:center;}
+  .page-hero .label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;color:white;font-weight:700;}
+  .page-hero h1 em{font-style:italic;color:var(--gold);}
+  .page-hero p{font-size:1rem;color:rgba(255,255,255,0.72);margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.75;}
+  .wave-divider{line-height:0;}
+  .wave-divider svg{display:block;width:100%;}
+  .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.2;}
+  .section-title em{font-style:italic;color:var(--gold);}
+  .services-list{background:var(--off-white);padding:72px 40px;}
+  .services-inner{max-width:1100px;margin:0 auto;}
+  .svc-row{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:start;background:white;border-radius:12px;padding:32px;margin-bottom:20px;border:1px solid rgba(29,52,97,0.08);transition:box-shadow 0.2s,border-color 0.2s;}
+  .svc-row:hover{box-shadow:0 8px 32px rgba(29,52,97,0.1);border-color:rgba(194,154,85,0.3);}
+  .svc-icon-wrap{width:60px;height:60px;background:var(--gold-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .svc-icon-wrap svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.8;}
+  .svc-content h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:10px;}
+  .svc-content p{font-size:0.95rem;color:var(--text-mid);line-height:1.8;}
+  .svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .svc-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);padding:4px 12px;border-radius:12px;}
+  .note-box{background:var(--navy);border-radius:12px;padding:36px;text-align:center;margin-top:40px;}
+  .note-box p{color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.8;}
+  .note-box strong{color:var(--gold);}
+  .cta-band{background:linear-gradient(135deg,var(--gold) 0%,#a0813d 100%);padding:64px 40px;text-align:center;}
+  .cta-band h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:14px;}
+  .cta-band p{font-size:1rem;color:rgba(29,52,97,0.8);margin-bottom:28px;}
+  .btn-navy{background:var(--navy);color:white;padding:14px 36px;border-radius:30px;font-size:0.9rem;font-weight:700;transition:background 0.2s;display:inline-block;}
+  .btn-navy:hover{background:var(--navy-dark);}
+  footer{background:#0d1f3a;padding:40px 40px 24px;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);max-width:1100px;margin:0 auto;}
+  .footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.35);}
+  .footer-legal{display:flex;gap:20px;}
+  .footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.4);transition:color 0.2s;}
+  .footer-legal a:hover{color:var(--gold-light);}
+  .footer-credit{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+  .footer-credit a{color:rgba(194,154,85,0.5);}
+  @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}.svc-row{grid-template-columns:1fr;}.page-hero h1{font-size:2rem;}}
+  @media(max-width:600px){.footer-bottom{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta">Plan a Trip</a></li>
+    </ul>
+    <button class="burger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav-overlay">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="booking.html">Plan a Trip</a>
+</div>
+
+<div class="page-hero">
+  <div class="label">What We Offer</div>
+  <h1>Travel <em>Services</em></h1>
+  <p>From a quick beach weekend to an international dream vacation — here's how Eric &amp; Grace can help.</p>
+</div>
+<div class="wave-divider" style="background:var(--navy-dark);"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,25 C480,50 960,0 1440,30 L1440,50 L0,50Z" fill="var(--off-white)"/></svg></div>
+
+<section class="services-list">
+  <div class="services-inner">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">Our Services</div>
+      <h2 class="section-title">Everything You Need for a <em>Perfect Trip</em></h2>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-content">
+        <h3>Full Vacation &amp; Trip Planning</h3>
+        <p>Tell us where you want to go (or let us suggest something), your budget, your travel style, and who's going — and we'll handle the rest. Flights, hotels, activities, transfers, dining recommendations — fully planned so you can just enjoy it.</p>
+        <div class="svc-tags"><span class="svc-tag">Domestic</span><span class="svc-tag">International</span><span class="svc-tag">All budgets</span></div>
+      </div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-content">
+        <h3>Exclusive Rates &amp; Insider Deals</h3>
+        <p>Through our Gold Rush Getaways affiliation, we have access to travel portals, supplier relationships, and negotiated rates that aren't available on Expedia, Google Flights, or any public booking site. You get better value — often significantly better.</p>
+        <div class="svc-tags"><span class="svc-tag">Hotels</span><span class="svc-tag">Flights</span><span class="svc-tag">Packages</span><span class="svc-tag">Resorts</span></div>
+      </div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-content">
+        <h3>Destination Guidance &amp; Recommendations</h3>
+        <p>Not sure where to go, or want honest advice on a destination you've been considering? We'll give you a real assessment — what's worth it, what to skip, what time of year is best, and what you might not have thought of. No sales pitch, just advice.</p>
+        <div class="svc-tags"><span class="svc-tag">Consultation</span><span class="svc-tag">Itinerary Ideas</span><span class="svc-tag">Honest Reviews</span></div>
+      </div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-content">
+        <h3>Group &amp; Family Trip Coordination</h3>
+        <p>Coordinating travel for a family reunion, a group of friends, or a multi-generational vacation? We handle the complexity — unified bookings, room coordination, group rates, and making sure everyone's needs are accounted for.</p>
+        <div class="svc-tags"><span class="svc-tag">Groups</span><span class="svc-tag">Families</span><span class="svc-tag">Reunions</span></div>
+      </div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z M1 7l1-4h20l1 4 M1 17l1 4h20l1-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-content">
+        <h3>Cruise &amp; All-Inclusive Packages</h3>
+        <p>Cruises are one of the best travel values out there — and we know how to find the best ones for your style and budget. From Caribbean sailings to Alaska cruises to all-inclusive resort packages, we'll match you with something you'll love.</p>
+        <div class="svc-tags"><span class="svc-tag">Cruises</span><span class="svc-tag">All-Inclusive</span><span class="svc-tag">Resorts</span></div>
+      </div>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="svc-content">
+        <h3>Honeymoon &amp; Anniversary Trips</h3>
+        <p>Special occasions deserve special planning. Whether it's a honeymoon, a milestone anniversary, or a romantic escape — we'll make sure every detail reflects how much the moment means.</p>
+        <div class="svc-tags"><span class="svc-tag">Honeymoons</span><span class="svc-tag">Anniversaries</span><span class="svc-tag">Romance</span></div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p><strong>A quick note from Eric &amp; Grace:</strong> Our services are offered to family and close friends — not the general public. If you've landed here, you probably already know us. If you're not sure whether we can help you, just reach out and ask — we're happy to have the conversation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to Plan Something?</h2>
+  <p>Reach out to Eric &amp; Grace — let's make your next trip unforgettable.</p>
+  <a href="booking.html" class="btn-navy">Book a Consultation</a>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+    <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
+  </div>
+</footer>
+</body>
+</html>

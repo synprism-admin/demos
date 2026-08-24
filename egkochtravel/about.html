@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — EG Koch Travel</title>
+<meta name="description" content="Meet Eric and Grace Koch — Elk Grove, CA travel advisors affiliated with Gold Rush Getaways. Learn their story and why they love helping family and friends travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#1D3461;--navy-dark:#142444;--navy-light:#2a4a7f;
+    --gold:#C29A55;--gold-light:#d4af6f;--gold-dim:rgba(194,154,85,0.18);
+    --white:#ffffff;--off-white:#f9f7f4;--text:#1a1a2e;--text-mid:#4a4a6a;--text-light:#7a7a9a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Lato',sans-serif;color:var(--text);background:var(--white);}
+  a{text-decoration:none;color:inherit;}
+  img{display:block;max-width:100%;}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.25);}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;position:relative;}
+  .nav-logo img{height:52px;width:auto;}
+  .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:4px;list-style:none;align-items:center;}
+  .nav-links a{color:rgba(255,255,255,0.88);font-size:0.85rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(194,154,85,0.12);}
+  .nav-cta{background:var(--gold);color:var(--navy)!important;padding:9px 22px!important;border-radius:24px!important;font-weight:700!important;font-size:0.82rem!important;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .burger span{display:block;width:24px;height:2px;background:white;border-radius:2px;}
+  .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+  .mobile-nav-overlay.open{display:flex;}
+  .mobile-nav-overlay a{color:white;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:700;}
+  .mobile-nav-overlay a:hover{color:var(--gold);}
+  .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;}
+  .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);padding:120px 40px 72px;text-align:center;}
+  .page-hero .label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;color:white;font-weight:700;}
+  .page-hero h1 em{font-style:italic;color:var(--gold);}
+  .page-hero p{font-size:1rem;color:rgba(255,255,255,0.72);margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.75;}
+  .wave-divider{line-height:0;}
+  .wave-divider svg{display:block;width:100%;}
+  section{padding:72px 40px;}
+  .inner{max-width:1100px;margin:0 auto;}
+  .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.2;}
+  .section-title em{font-style:italic;color:var(--gold);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .img-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:16px;padding:40px;display:flex;align-items:center;justify-content:center;min-height:320px;box-shadow:0 16px 60px rgba(29,52,97,0.2);position:relative;}
+  .img-card img{width:80%;height:auto;}
+  .img-card-border{position:absolute;inset:12px;border:1px solid rgba(194,154,85,0.35);border-radius:10px;pointer-events:none;}
+  .prose p{font-size:1rem;color:var(--text-mid);line-height:1.85;margin-bottom:16px;}
+  .signature{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:var(--gold);margin-top:20px;}
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+  .val-card{background:var(--off-white);border-radius:12px;padding:28px 24px;border-left:3px solid var(--gold);}
+  .val-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:10px;}
+  .val-card p{font-size:0.875rem;color:var(--text-mid);line-height:1.75;}
+  .btn-primary{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:30px;font-size:0.9rem;font-weight:700;letter-spacing:0.04em;transition:background 0.2s;display:inline-block;margin-top:12px;}
+  .btn-primary:hover{background:var(--gold-light);}
+  .cta-band{background:linear-gradient(135deg,var(--gold) 0%,#a0813d 100%);padding:64px 40px;text-align:center;}
+  .cta-band h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:14px;}
+  .cta-band p{font-size:1rem;color:rgba(29,52,97,0.8);margin-bottom:28px;}
+  .btn-navy{background:var(--navy);color:white;padding:14px 36px;border-radius:30px;font-size:0.9rem;font-weight:700;transition:background 0.2s;display:inline-block;}
+  .btn-navy:hover{background:var(--navy-dark);}
+  footer{background:#0d1f3a;padding:40px 40px 24px;}
+  .footer-inner{max-width:1100px;margin:0 auto;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);}
+  .footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.35);}
+  .footer-legal{display:flex;gap:20px;}
+  .footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.4);transition:color 0.2s;}
+  .footer-legal a:hover{color:var(--gold-light);}
+  .footer-credit{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+  .footer-credit a{color:rgba(194,154,85,0.5);}
+  @media(max-width:900px){
+    .two-col{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .page-hero h1{font-size:2rem;}
+    .footer-bottom{flex-direction:column;text-align:center;}
+  }
+  @media(max-width:600px){.values-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta">Plan a Trip</a></li>
+    </ul>
+    <button class="burger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav-overlay">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="booking.html">Plan a Trip</a>
+</div>
+
+<div class="page-hero">
+  <div class="label">Our Story</div>
+  <h1>About <em>EG Koch Travel</em></h1>
+  <p>Two people, a love for travel, and a desire to share that joy with family and friends.</p>
+</div>
+<div class="wave-divider" style="background:var(--navy-dark);">
+  <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,25 C480,50 960,0 1440,30 L1440,50 L0,50Z" fill="white"/></svg>
+</div>
+
+<section style="background:white;">
+  <div class="inner">
+    <div class="two-col">
+      <div class="img-card">
+        <img src="logo.png" alt="EG Koch Travel">
+        <div class="img-card-border"></div>
+      </div>
+      <div class="prose">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">Eric &amp; <em>Grace Koch</em></h2>
+        <p>We're Eric and Grace — a couple from Elk Grove, California who stumbled into travel advising and never looked back. After joining Gold Rush Getaways as affiliated advisors, we found ourselves with access to an incredible set of travel tools, portals, and industry discounts.</p>
+        <p>But here's the thing: we're not looking to build a giant agency or book trips for strangers. We decided from the start that we'd keep this personal — our services are for people we actually know. Family. Friends. People we care about.</p>
+        <p>We believe the best trips happen when someone is genuinely invested in making them special. That's what we bring — not just booking, but real thought, real care, and a personal touch that a big agency simply can't offer.</p>
+        <div class="signature">— Eric &amp; Grace, Elk Grove, CA</div>
+        <a href="booking.html" class="btn-primary">Start Planning Together</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,20 C360,50 720,0 1080,35 C1260,50 1350,15 1440,20 L1440,50 L0,50Z" fill="var(--off-white)"/></svg></div>
+
+<section style="background:var(--off-white);">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:8px;">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">What We <em>Stand For</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card">
+        <h4>Personal Relationships First</h4>
+        <p>We're not a faceless agency. When you reach out, you're talking to Eric or Grace — people who know you and genuinely want your trip to be great.</p>
+      </div>
+      <div class="val-card">
+        <h4>Honest Guidance</h4>
+        <p>We'll tell you what we actually think — whether a destination is right for you, if a deal is truly worth it, or what to skip. No upselling, no pressure.</p>
+      </div>
+      <div class="val-card">
+        <h4>Access You Can't Google</h4>
+        <p>Our Gold Rush Getaways affiliation gives us entry to portals, rates, and supplier relationships that regular travelers and most booking sites can't access.</p>
+      </div>
+      <div class="val-card">
+        <h4>Stress-Free from Start to Finish</h4>
+        <p>We handle the details — research, booking, coordination — so you can spend your energy on anticipation, not logistics.</p>
+      </div>
+      <div class="val-card">
+        <h4>Memories Over Transactions</h4>
+        <p>We care about the experience, not the commission. Our goal is that every trip we help plan becomes a memory you talk about for years.</p>
+      </div>
+      <div class="val-card">
+        <h4>Family &amp; Friends Only</h4>
+        <p>We made a choice to keep our circle tight. That means every trip gets our full attention — not just another booking in a queue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider" style="background:var(--off-white);"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,30 C480,10 960,50 1440,20 L1440,50 L0,50Z" fill="white"/></svg></div>
+
+<section style="background:white;padding:56px 40px;">
+  <div class="inner" style="text-align:center;max-width:700px;">
+    <div class="section-label">Gold Rush Getaways</div>
+    <h2 class="section-title">Our <em>Affiliation</em></h2>
+    <p style="font-size:1rem;color:var(--text-mid);line-height:1.85;">EG Koch Travel operates as affiliate advisors through <strong>Gold Rush Getaways</strong>, a California-based travel agency. This affiliation gives Eric and Grace access to professional travel booking tools, exclusive supplier portals, industry rates, and the credibility and backing of an established agency — all while keeping the service warm and personal.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to Plan Something Together?</h2>
+  <p>Reach out to Eric &amp; Grace — no obligation, just a friendly conversation.</p>
+  <a href="booking.html" class="btn-navy">Book a Consultation</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

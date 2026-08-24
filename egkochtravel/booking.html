@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Trip — EG Koch Travel</title>
+<meta name="description" content="Book a travel consultation with Eric and Grace Koch of EG Koch Travel. Tell us about your dream trip and we'll make it happen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1D3461;--navy-dark:#142444;--navy-light:#2a4a7f;--gold:#C29A55;--gold-light:#d4af6f;--gold-dim:rgba(194,154,85,0.18);--white:#ffffff;--off-white:#f9f7f4;--text:#1a1a2e;--text-mid:#4a4a6a;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Lato',sans-serif;color:var(--text);background:var(--white);}
+  a{text-decoration:none;color:inherit;}img{display:block;max-width:100%;}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.25);}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;position:relative;}
+  .nav-logo img{height:52px;width:auto;}
+  .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:4px;list-style:none;align-items:center;}
+  .nav-links a{color:rgba(255,255,255,0.88);font-size:0.85rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(194,154,85,0.12);}
+  .nav-cta{background:var(--gold);color:var(--navy)!important;padding:9px 22px!important;border-radius:24px!important;font-weight:700!important;font-size:0.82rem!important;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .burger span{display:block;width:24px;height:2px;background:white;border-radius:2px;}
+  .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+  .mobile-nav-overlay.open{display:flex;}
+  .mobile-nav-overlay a{color:white;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:700;}
+  .mobile-nav-overlay a:hover{color:var(--gold);}
+  .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;}
+  .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);padding:120px 40px 72px;text-align:center;}
+  .page-hero .label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;color:white;font-weight:700;}
+  .page-hero h1 em{font-style:italic;color:var(--gold);}
+  .page-hero p{font-size:1rem;color:rgba(255,255,255,0.72);margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.75;}
+  .wave-divider{line-height:0;}
+  .wave-divider svg{display:block;width:100%;}
+  .booking-section{background:var(--off-white);padding:72px 40px;}
+  .booking-inner{max-width:820px;margin:0 auto;}
+  .booking-form{background:white;border-radius:16px;padding:44px;border:1px solid rgba(29,52,97,0.1);box-shadow:0 8px 32px rgba(29,52,97,0.08);}
+  .booking-form h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:6px;}
+  .booking-form h2 em{font-style:italic;color:var(--gold);}
+  .booking-form .sub{font-size:0.95rem;color:var(--text-mid);margin-bottom:28px;line-height:1.7;}
+  .form-divider{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin:28px 0 18px;padding-bottom:8px;border-bottom:1px solid rgba(194,154,85,0.25);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-group{margin-bottom:18px;}
+  label{display:block;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
+  input,textarea,select{width:100%;padding:10px 14px;border:1.5px solid rgba(29,52,97,0.18);border-radius:8px;font-family:'Lato',sans-serif;font-size:0.95rem;color:var(--text);outline:none;transition:border-color 0.2s;background:white;}
+  input:focus,textarea:focus,select:focus{border-color:var(--gold);}
+  textarea{min-height:100px;resize:vertical;}
+  .btn-gold{background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:24px;font-size:0.9rem;font-weight:700;border:none;cursor:pointer;width:100%;font-family:'Lato',sans-serif;transition:background 0.2s;letter-spacing:0.04em;}
+  .btn-gold:hover{background:var(--gold-light);}
+  .form-note{font-size:0.78rem;color:var(--text-mid);text-align:center;margin-top:12px;line-height:1.6;}
+  .success-msg{display:none;background:#e8f5e9;border:1px solid #81c784;border-radius:8px;padding:16px;text-align:center;color:#2e7d32;font-size:0.9rem;margin-top:16px;}
+  footer{background:#0d1f3a;padding:40px 40px 24px;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);max-width:1100px;margin:0 auto;}
+  .footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.35);}
+  .footer-legal{display:flex;gap:20px;}
+  .footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.4);transition:color 0.2s;}
+  .footer-legal a:hover{color:var(--gold-light);}
+  .footer-credit{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+  .footer-credit a{color:rgba(194,154,85,0.5);}
+  @media(max-width:900px){.nav-links{display:none;}.burger{display:flex;}.form-row{grid-template-columns:1fr;}.page-hero h1{font-size:2rem;}.booking-form{padding:28px;}}
+  @media(max-width:600px){.footer-bottom{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta active">Plan a Trip</a></li>
+    </ul>
+    <button class="burger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav-overlay">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="booking.html">Plan a Trip</a>
+</div>
+
+<div class="page-hero">
+  <div class="label">Plan Your Trip</div>
+  <h1><em>Book</em> a Consultation</h1>
+  <p>Fill out the form below and Eric &amp; Grace will reach out personally to start planning your adventure.</p>
+</div>
+<div class="wave-divider" style="background:var(--navy-dark);"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,25 C480,50 960,0 1440,30 L1440,50 L0,50Z" fill="var(--off-white)"/></svg></div>
+
+<section class="booking-section">
+  <div class="booking-inner">
+    <div class="booking-form">
+      <h2>Let's Plan Your <em>Dream Trip</em></h2>
+      <p class="sub">The more details you share, the better we can help. Don't worry if you're not sure about everything — that's what the consultation is for.</p>
+      <form id="booking-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="52212c46-8eae-4fae-9515-1de276476a42">
+        <input type="hidden" name="subject" value="EG Koch Travel — New Trip Booking Request">
+
+        <div class="form-divider">Your Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="first_name" required placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="last_name" required placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="how_know">How do you know Eric &amp; Grace?</label>
+          <input type="text" id="how_know" name="how_know" placeholder="Family, friend, neighbor...">
+        </div>
+
+        <div class="form-divider">Your Trip</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="destination">Destination (if you know)</label>
+            <input type="text" id="destination" name="destination" placeholder="e.g. Hawaii, Europe, Caribbean...">
+          </div>
+          <div class="form-group">
+            <label for="trip_type">Type of Trip</label>
+            <select id="trip_type" name="trip_type">
+              <option value="">Select one...</option>
+              <option>Beach / Relaxation</option>
+              <option>Cruise</option>
+              <option>Family Vacation</option>
+              <option>Honeymoon / Anniversary</option>
+              <option>International Adventure</option>
+              <option>Group Trip</option>
+              <option>Road Trip</option>
+              <option>Not Sure Yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="depart_date">Approximate Departure Date</label>
+            <input type="text" id="depart_date" name="depart_date" placeholder="e.g. Summer 2025, March 15...">
+          </div>
+          <div class="form-group">
+            <label for="duration">Trip Length</label>
+            <input type="text" id="duration" name="duration" placeholder="e.g. 7 days, 2 weeks...">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="travelers">Number of Travelers</label>
+            <select id="travelers" name="travelers">
+              <option value="">Select...</option>
+              <option>Just me</option>
+              <option>2 people</option>
+              <option>3-4 people</option>
+              <option>5-8 people</option>
+              <option>9+ people</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget Range (per person)</label>
+            <select id="budget" name="budget">
+              <option value="">Select...</option>
+              <option>Under $500</option>
+              <option>$500 - $1,500</option>
+              <option>$1,500 - $3,000</option>
+              <option>$3,000 - $5,000</option>
+              <option>$5,000+</option>
+              <option>Not sure / flexible</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="details">Tell us more about your trip</label>
+          <textarea id="details" name="details" placeholder="Any other details, must-haves, dream experiences, or questions — share whatever you'd like us to know."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="contact_pref">Best way to reach you</label>
+          <select id="contact_pref" name="contact_preference">
+            <option value="">Select...</option>
+            <option>Email</option>
+            <option>Phone call</option>
+            <option>Text message</option>
+            <option>Any</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-gold">Submit Trip Request</button>
+        <div class="form-note">Eric &amp; Grace will reach out personally within 1–2 business days.<br>No commitment required — this is just the beginning of the conversation.</div>
+        <div class="success-msg" id="success-msg">Your request is in! Eric &amp; Grace will be in touch soon. Happy travels!</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+    <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
+  </div>
+</footer>
+<script>
+  document.getElementById('booking-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+    if (res.ok) {
+      document.getElementById('success-msg').style.display = 'block';
+      this.reset();
+    }
+  });
+</script>
+</body>
+</html>
