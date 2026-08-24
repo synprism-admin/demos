@@ -412,6 +412,7 @@ async function loadDemos() {
 
     grid.innerHTML = '';
     demos.forEach((d, i) => {
+      if (!d.path) return; // skip incomplete entries without a path
       const url    = 'https://demos.synprism.io' + d.path;
       const accent = d.accent || ACCENTS[i % ACCENTS.length];
       const tags   = (d.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
