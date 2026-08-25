@@ -12,17 +12,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:        #1A3FBB;
-      --blue-mid:    #152F99;
-      --blue-light:  #2E55D4;
-      --orange:      #FF6B1A;
-      --orange-light:#FF8C4B;
-      --orange-dim:  rgba(255,107,26,0.15);
-      --cream:       #F5F7FF;
-      --cream-mid:   #E6EAFF;
-      --text:        #0E1A3A;
-      --text-mid:    #334480;
-      --text-muted:  #6B7AAA;
+      --red:         #CC2200;
+      --red-mid:     #A81C00;
+      --red-light:   #E03318;
+      --yellow:      #FFD000;
+      --yellow-light:#FFE040;
+      --yellow-dim:  rgba(255,208,0,0.18);
+      --cream:       #FFFDF5;
+      --cream-mid:   #FFF3CC;
+      --text:        #1A0A00;
+      --text-mid:    #4A2A10;
+      --text-muted:  #8A6040;
       --white:       #ffffff;
       --radius:      6px;
       --transition:  0.22s ease;
@@ -42,8 +42,8 @@
 
     /* ── ANNOUNCEMENT BAR ── */
     .announce-bar {
-      background: var(--blue);
-      color: var(--orange-light);
+      background: var(--red);
+      color: var(--yellow-light);
       text-align: center;
       font-size: 0.78rem;
       font-weight: 600;
@@ -60,7 +60,7 @@
       border-bottom: 2px solid var(--cream-mid);
       transition: box-shadow 0.2s;
     }
-    nav.solid { box-shadow: 0 2px 18px rgba(26,63,187,0.12); }
+    nav.solid { box-shadow: 0 2px 18px rgba(204,34,0,0.1); }
     .nav-inner {
       display: flex;
       align-items: center;
@@ -84,10 +84,10 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.18rem;
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
       line-height: 1.1;
     }
-    .nav-logo-text span { color: var(--orange); }
+    .nav-logo-text span { color: var(--yellow); }
     .nav-links {
       display: flex;
       gap: 2px;
@@ -106,10 +106,10 @@
       border-radius: var(--radius);
       transition: color var(--transition), background var(--transition);
     }
-    .nav-links a:hover { color: var(--blue); background: var(--cream-mid); }
+    .nav-links a:hover { color: var(--red); background: var(--cream-mid); }
     .nav-cta {
-      background: var(--orange);
-      color: var(--blue);
+      background: var(--yellow);
+      color: var(--red);
       font-weight: 700;
       font-size: 0.82rem;
       letter-spacing: 0.03em;
@@ -118,7 +118,7 @@
       transition: background var(--transition), transform var(--transition);
       white-space: nowrap;
     }
-    .nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--yellow-light); transform: translateY(-1px); }
 
     /* Mobile nav */
     .burger {
@@ -134,7 +134,7 @@
       display: block;
       width: 24px;
       height: 2px;
-      background: var(--blue);
+      background: var(--red);
       border-radius: 2px;
       transition: var(--transition);
     }
@@ -158,7 +158,7 @@
 
     /* ── HERO ── */
     .hero {
-      background: var(--blue);
+      background: var(--red);
       color: var(--white);
       padding: 80px 32px 64px;
       position: relative;
@@ -172,7 +172,7 @@
       right: -80px;
       width: 420px;
       height: 200px;
-      background: var(--orange);
+      background: var(--yellow);
       opacity: 0.08;
       transform: rotate(-18deg);
       transform-origin: bottom right;
@@ -184,7 +184,7 @@
       right: 0;
       width: 5px;
       height: 100%;
-      background: var(--orange);
+      background: var(--yellow);
     }
     .hero-inner {
       max-width: 780px;
@@ -195,9 +195,9 @@
     }
     .hero-pill {
       display: inline-block;
-      background: var(--orange-dim);
-      border: 1px solid var(--orange);
-      color: var(--orange-light);
+      background: var(--yellow-dim);
+      border: 1px solid var(--yellow);
+      color: var(--yellow-light);
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.14em;
@@ -215,7 +215,7 @@
     }
     .hero h1 em {
       font-style: normal;
-      color: var(--orange-light);
+      color: var(--yellow-light);
     }
     .hero-sub {
       font-size: 1.08rem;
@@ -230,8 +230,8 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: var(--orange);
-      color: var(--blue);
+      background: var(--yellow);
+      color: var(--red);
       font-weight: 700;
       font-size: 0.92rem;
       padding: 14px 30px;
@@ -251,7 +251,7 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
       transition: left 0.4s ease;
     }
-    .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,26,0.35); }
+    .btn-primary:hover { background: var(--yellow-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,208,0,0.4); }
     .btn-primary:hover::after { left: 140%; }
     .btn-outline {
       border: 2px solid rgba(255,255,255,0.35);
@@ -262,12 +262,12 @@
       border-radius: var(--radius);
       transition: border-color var(--transition), background var(--transition);
     }
-    .btn-outline:hover { border-color: var(--orange); background: rgba(192,144,64,0.1); }
+    .btn-outline:hover { border-color: var(--yellow); background: rgba(192,144,64,0.1); }
 
     /* Trust bar */
     .trust-bar {
       background: var(--cream-mid);
-      border-bottom: 1px solid rgba(26,63,187,0.1);
+      border-bottom: 1px solid rgba(204,34,0,0.08);
       padding: 18px 32px;
     }
     .trust-bar-inner {
@@ -289,7 +289,7 @@
       letter-spacing: 0.03em;
     }
     .trust-icon {
-      color: var(--orange);
+      color: var(--yellow);
     }
 
     /* ── SECTIONS ── */
@@ -301,18 +301,18 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--yellow);
       margin-bottom: 10px;
     }
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.7rem, 3vw, 2.4rem);
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
       line-height: 1.2;
       margin-bottom: 14px;
     }
-    .section-title em { font-style: normal; color: var(--orange); }
+    .section-title em { font-style: normal; color: var(--yellow); }
     .section-sub {
       font-size: 1rem;
       color: var(--text-muted);
@@ -327,7 +327,7 @@
       justify-content: center;
       gap: 12px;
       margin: 8px 0 20px;
-      color: var(--orange);
+      color: var(--yellow);
       font-size: 0.65rem;
       letter-spacing: 0.2em;
     }
@@ -336,7 +336,7 @@
       flex: 1;
       max-width: 120px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+      background: linear-gradient(90deg, transparent, var(--yellow), transparent);
     }
 
     /* ── SERVICES ── */
@@ -363,12 +363,12 @@
       border-radius: 6px;
       transition: border-color var(--transition);
     }
-    .svc-card:hover { box-shadow: 0 8px 32px rgba(26,63,187,0.1); transform: translateY(-3px); }
-    .svc-card:hover::before { border-color: rgba(255,107,26,0.4); }
+    .svc-card:hover { box-shadow: 0 8px 32px rgba(204,34,0,0.08); transform: translateY(-3px); }
+    .svc-card:hover::before { border-color: rgba(255,208,0,0.45); }
     .svc-card-icon {
       width: 52px;
       height: 52px;
-      background: var(--blue);
+      background: var(--red);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -378,7 +378,7 @@
     .svc-card-icon svg {
       width: 26px;
       height: 26px;
-      stroke: var(--orange-light);
+      stroke: var(--yellow-light);
       fill: none;
       stroke-width: 1.8;
       stroke-linecap: round;
@@ -388,7 +388,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
       margin-bottom: 10px;
     }
     .svc-card p {
@@ -412,7 +412,7 @@
     }
     .svc-list li::before {
       content: '✓';
-      color: var(--orange);
+      color: var(--yellow);
       font-weight: 700;
       font-size: 0.78rem;
       margin-top: 1px;
@@ -432,7 +432,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       font-weight: 700;
-      color: var(--orange);
+      color: var(--yellow);
       line-height: 1;
       margin-bottom: 8px;
     }
@@ -441,7 +441,7 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--red);
       margin-bottom: 10px;
     }
     .why-desc {
@@ -464,7 +464,7 @@
     .about-portrait-frame {
       width: 100%;
       aspect-ratio: 4/5;
-      background: var(--blue);
+      background: var(--red);
       border-radius: 12px;
       overflow: hidden;
       display: flex;
@@ -481,12 +481,12 @@
       position: absolute;
       bottom: -18px;
       right: -18px;
-      background: var(--orange);
-      color: var(--blue);
+      background: var(--yellow);
+      color: var(--red);
       border-radius: 10px;
       padding: 16px 20px;
       text-align: center;
-      box-shadow: 0 6px 24px rgba(26,63,187,0.18);
+      box-shadow: 0 6px 24px rgba(204,34,0,0.14);
     }
     .about-badge-num {
       font-family: 'Playfair Display', serif;
@@ -523,7 +523,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
       margin-top: 28px;
       margin-bottom: 2px;
     }
@@ -532,7 +532,7 @@
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--yellow);
     }
     .about-values {
       display: grid;
@@ -551,7 +551,7 @@
     .about-value-dot {
       width: 7px;
       height: 7px;
-      background: var(--orange);
+      background: var(--yellow);
       border-radius: 50%;
       margin-top: 5px;
       flex-shrink: 0;
@@ -564,7 +564,7 @@
     }
 
     /* ── PROCESS ── */
-    #process { background: var(--blue); color: var(--white); }
+    #process { background: var(--red); color: var(--white); }
     #process .section-title { color: var(--white); }
     #process .section-sub { color: rgba(255,255,255,0.6); }
     .process-steps {
@@ -581,8 +581,8 @@
     .step-num {
       width: 52px;
       height: 52px;
-      background: var(--orange);
-      color: var(--blue);
+      background: var(--yellow);
+      color: var(--red);
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
       font-weight: 700;
@@ -596,7 +596,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--orange-light);
+      color: var(--yellow-light);
       margin-bottom: 8px;
     }
     .step p {
@@ -623,7 +623,7 @@
       content: '"';
       font-family: 'Playfair Display', serif;
       font-size: 5rem;
-      color: var(--orange);
+      color: var(--yellow);
       opacity: 0.2;
       position: absolute;
       top: 8px;
@@ -631,7 +631,7 @@
       line-height: 1;
     }
     .stars {
-      color: var(--orange);
+      color: var(--yellow);
       font-size: 0.85rem;
       letter-spacing: 2px;
       margin-bottom: 14px;
@@ -646,7 +646,7 @@
     .reviewer {
       font-size: 0.82rem;
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
     }
     .reviewer span {
       font-weight: 400;
@@ -656,7 +656,7 @@
 
     /* ── CTA BAND ── */
     .cta-band {
-      background: var(--orange);
+      background: var(--yellow);
       padding: 56px 32px;
       text-align: center;
     }
@@ -664,7 +664,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
       margin-bottom: 12px;
     }
     .cta-band p {
@@ -673,7 +673,7 @@
       margin-bottom: 28px;
     }
     .btn-dark {
-      background: var(--blue);
+      background: var(--red);
       color: var(--cream);
       font-weight: 700;
       font-size: 0.95rem;
@@ -682,7 +682,7 @@
       transition: background var(--transition), transform var(--transition);
       display: inline-block;
     }
-    .btn-dark:hover { background: var(--blue-mid); transform: translateY(-2px); }
+    .btn-dark:hover { background: var(--red-mid); transform: translateY(-2px); }
 
     /* ── CONTACT ── */
     #contact { background: var(--cream); }
@@ -696,7 +696,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
       font-weight: 700;
-      color: var(--blue);
+      color: var(--red);
       margin-bottom: 14px;
     }
     .contact-info p {
@@ -714,7 +714,7 @@
     .cd-icon {
       width: 40px;
       height: 40px;
-      background: var(--blue);
+      background: var(--red);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -724,7 +724,7 @@
     .cd-icon svg {
       width: 18px;
       height: 18px;
-      stroke: var(--orange-light);
+      stroke: var(--yellow-light);
       fill: none;
       stroke-width: 1.8;
       stroke-linecap: round;
@@ -735,13 +735,13 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--yellow);
       margin-bottom: 2px;
     }
     .cd-val {
       font-size: 0.92rem;
       font-weight: 600;
-      color: var(--blue);
+      color: var(--red);
     }
 
     /* Form */
@@ -750,7 +750,7 @@
       border-radius: 12px;
       padding: 36px;
       border: 1px solid var(--cream-mid);
-      box-shadow: 0 4px 24px rgba(26,63,187,0.06);
+      box-shadow: 0 4px 24px rgba(204,34,0,0.05);
     }
     .form-group { margin-bottom: 18px; }
     .form-group label {
@@ -778,12 +778,12 @@
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--orange); }
+    .form-group textarea:focus { border-color: var(--yellow); }
     .form-group textarea { min-height: 110px; resize: vertical; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .btn-submit {
       width: 100%;
-      background: var(--blue);
+      background: var(--red);
       color: var(--cream);
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
@@ -795,7 +795,7 @@
       letter-spacing: 0.04em;
       transition: background var(--transition), transform var(--transition);
     }
-    .btn-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-submit:hover { background: var(--red-mid); transform: translateY(-1px); }
     .form-note {
       text-align: center;
       font-size: 0.73rem;
@@ -805,7 +805,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--blue);
+      background: var(--red);
       color: rgba(255,255,255,0.55);
       padding: 48px 32px 28px;
     }
@@ -834,7 +834,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--yellow);
       margin-bottom: 16px;
     }
     .footer-col ul { list-style: none; }
@@ -844,7 +844,7 @@
       color: rgba(255,255,255,0.5);
       transition: color var(--transition);
     }
-    .footer-col a:hover { color: var(--orange-light); }
+    .footer-col a:hover { color: var(--yellow-light); }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.1);
       padding-top: 20px;
@@ -864,7 +864,7 @@
       color: rgba(255,255,255,0.4);
       transition: color var(--transition);
     }
-    .footer-legal a:hover { color: var(--orange-light); }
+    .footer-legal a:hover { color: var(--yellow-light); }
     .footer-synprism {
       font-size: 0.7rem;
       color: rgba(255,255,255,0.3);
@@ -872,7 +872,7 @@
       margin-top: 14px;
     }
     .footer-synprism a { color: rgba(255,255,255,0.45); }
-    .footer-synprism a:hover { color: var(--orange-light); }
+    .footer-synprism a:hover { color: var(--yellow-light); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
@@ -901,9 +901,9 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo" aria-label="Able Hands Handyman Home">
       <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="36" height="36" rx="8" fill="#1A3FBB"/>
-        <path d="M10 26L14 14L18 22L22 17L26 26" stroke="#FF6B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="18" cy="11" r="2.5" stroke="#FF6B1A" stroke-width="1.8"/>
+        <rect width="36" height="36" rx="8" fill="#CC2200"/>
+        <path d="M10 26L14 14L18 22L22 17L26 26" stroke="#FFD000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="18" cy="11" r="2.5" stroke="#FFD000" stroke-width="1.8"/>
       </svg>
       <span class="nav-logo-text">Able <span>Hands</span></span>
     </a>
@@ -1107,7 +1107,7 @@
 <section id="process">
   <div class="section-inner">
     <div class="section-header">
-      <p class="section-label" style="color: var(--orange);">Simple Process</p>
+      <p class="section-label" style="color: var(--yellow);">Simple Process</p>
       <h2 class="section-title">How It Works</h2>
       <div class="ornament">◆ ◆ ◆</div>
       <p class="section-sub">Three steps and your to-do list is done.</p>
@@ -1265,7 +1265,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="nav-logo-text">Able <span style="color:var(--orange)">Hands</span> Handyman</div>
+        <div class="nav-logo-text">Able <span style="color:var(--yellow)">Hands</span> Handyman</div>
         <p style="margin-top:12px;">Reliable home repairs and installations. No hidden fees, no missed appointments, no stress. Just quality work done right.</p>
       </div>
       <div class="footer-col">
