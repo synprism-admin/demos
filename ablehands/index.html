@@ -448,6 +448,119 @@
       line-height: 1.5;
     }
 
+    /* ── ABOUT ── */
+    #about { background: var(--cream-mid); }
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-portrait {
+      position: relative;
+    }
+    .about-portrait-frame {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--brown);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    /* SVG placeholder silhouette */
+    .about-portrait-frame svg {
+      width: 60%;
+      opacity: 0.18;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: var(--brass);
+      color: var(--brown);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(44,31,21,0.18);
+    }
+    .about-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+    }
+    .about-badge-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 2px;
+    }
+    .about-content .section-label { text-align: left; }
+    .about-content .section-title { text-align: left; }
+    .about-content .ornament { justify-content: flex-start; }
+    .about-content .ornament::before { display: none; }
+    .about-lead {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .about-body {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .about-owner-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-top: 28px;
+      margin-bottom: 2px;
+    }
+    .about-owner-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .about-value {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.84rem;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+    .about-value-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--brass);
+      border-radius: 50%;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 860px) {
+      .about-wrap { grid-template-columns: 1fr; gap: 48px; }
+      .about-portrait-frame { aspect-ratio: 3/2; max-height: 280px; }
+      .about-values { grid-template-columns: 1fr; }
+    }
+
     /* ── PROCESS ── */
     #process { background: var(--brown); color: var(--white); }
     #process .section-title { color: var(--white); }
@@ -794,6 +907,7 @@
     </a>
 
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#why">Why Us</a></li>
       <li><a href="#process">How It Works</a></li>
@@ -806,6 +920,7 @@
     </button>
   </div>
   <div class="mobile-nav" id="mobile-nav" role="menu">
+    <a href="#about" role="menuitem">About</a>
     <a href="#services" role="menuitem">Services</a>
     <a href="#why" role="menuitem">Why Us</a>
     <a href="#process" role="menuitem">How It Works</a>
@@ -852,6 +967,50 @@
     </div>
   </div>
 </div>
+
+<!-- About -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-wrap">
+
+      <!-- Portrait column -->
+      <div class="about-portrait">
+        <div class="about-portrait-frame" aria-hidden="true">
+          <!-- Placeholder silhouette until real photo is provided -->
+          <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="72" rx="44" ry="44" fill="white"/>
+            <path d="M20 240 C20 175 40 155 100 155 C160 155 180 175 180 240" fill="white"/>
+          </svg>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">10+</span>
+          <span class="about-badge-label">Years Experience</span>
+        </div>
+      </div>
+
+      <!-- Content column -->
+      <div class="about-content">
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">Local Craftsmanship, <em>Personal Service</em></h2>
+        <div class="ornament">◆ ◆ ◆</div>
+        <p class="about-lead">Hi, I'm Mike — founder of Able Hands Handyman and the person who shows up at your door, tools in hand, ready to get things done right.</p>
+        <p class="about-body">After spending over a decade in residential construction and property maintenance, I started Able Hands to offer homeowners something they couldn't always find: a skilled, honest tradesperson who treats your home like their own and tells you exactly what they're going to charge before lifting a finger.</p>
+        <p class="about-body">No bait-and-switch. No subcontractors you've never met. Just me — licensed, insured, and fully accountable for every job I take on. Whether it's a squeaky hinge or a full furniture assembly, I bring the same level of care and attention to detail.</p>
+        <div class="about-owner-name">Mike Reynolds</div>
+        <div class="about-owner-title">Owner &amp; Lead Technician — Able Hands Handyman</div>
+        <div class="about-values">
+          <div class="about-value"><div class="about-value-dot"></div>Licensed &amp; fully insured</div>
+          <div class="about-value"><div class="about-value-dot"></div>Flat-rate, upfront pricing</div>
+          <div class="about-value"><div class="about-value-dot"></div>No subcontractors — ever</div>
+          <div class="about-value"><div class="about-value-dot"></div>Same-week scheduling</div>
+          <div class="about-value"><div class="about-value-dot"></div>200+ jobs completed locally</div>
+          <div class="about-value"><div class="about-value-dot"></div>Satisfaction guaranteed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- Services -->
 <section id="services">
