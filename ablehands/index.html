@@ -69,12 +69,12 @@
       margin: 0 auto;
       padding: 0 32px;
       height: 68px;
-      position: relative;
     }
     .nav-logo {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-shrink: 0;
     }
     .nav-logo-icon {
       width: 36px;
@@ -89,13 +89,13 @@
     }
     .nav-logo-text span { color: var(--brass); }
     .nav-links {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
-      gap: 4px;
+      gap: 2px;
       list-style: none;
       align-items: center;
+      flex: 1;
+      justify-content: center;
+      flex-wrap: nowrap;
     }
     .nav-links a {
       font-size: 0.82rem;
@@ -109,14 +109,16 @@
     .nav-links a:hover { color: var(--brown); background: var(--cream-mid); }
     .nav-cta {
       background: var(--brass);
-      color: var(--brown) !important;
-      padding: 8px 20px !important;
-      border-radius: var(--radius) !important;
-      font-weight: 700 !important;
+      color: var(--brown);
+      font-weight: 700;
+      font-size: 0.82rem;
       letter-spacing: 0.03em;
-      transition: background var(--transition), transform var(--transition) !important;
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      transition: background var(--transition), transform var(--transition);
+      white-space: nowrap;
     }
-    .nav-cta:hover { background: var(--brass-light) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--brass-light); transform: translateY(-1px); }
 
     /* Mobile nav */
     .burger {
@@ -912,8 +914,8 @@
       <li><a href="#why">Why Us</a></li>
       <li><a href="#process">How It Works</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
     </ul>
+    <a href="#contact" class="nav-cta" style="flex-shrink:0;">Free Estimate</a>
 
     <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
