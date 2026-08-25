@@ -2,26 +2,36 @@
   {
     "slug": "valleyautoservice",
     "name": "Valley Auto Service",
-    "category": "Auto Repair · Demo Site",
-    "icon": "🔧",
+    "category": "Auto Repair \u00b7 Demo Site",
+    "icon": "\ud83d\udd27",
     "path": "/valleyautoservice/",
     "status": "live",
     "location": "Knoxville, TN",
     "phone": null,
-    "tags": ["Auto Repair", "Demo", "Contact Form", "Maps"],
+    "tags": [
+      "Auto Repair",
+      "Demo",
+      "Contact Form",
+      "Maps"
+    ],
     "accent": "cyan-purp",
     "added": "2026-08-24"
   },
   {
     "slug": "sierrawellwater",
     "name": "Sierra Well & Water",
-    "category": "Well Drilling · Demo Site",
-    "icon": "💧",
+    "category": "Well Drilling \u00b7 Demo Site",
+    "icon": "\ud83d\udca7",
     "path": "/sierrawellwater/",
     "status": "live",
     "location": "Auburn, CA",
     "phone": null,
-    "tags": ["Well Drilling", "Water Services", "Demo", "Multi-page"],
+    "tags": [
+      "Well Drilling",
+      "Water Services",
+      "Demo",
+      "Multi-page"
+    ],
     "accent": "purple-mag",
     "added": "2026-08-24"
   },
@@ -279,28 +289,41 @@
   {
     "name": "Too Nice To Lead",
     "slug": "toonicelead",
-    "description": "Book website — leadership for the quiet ones",
+    "description": "Book website \u2014 leadership for the quiet ones",
     "industry": "Publishing / Leadership",
     "palette": "Deep Navy #03121D + Bronze #BA751E"
   },
   {
     "name": "Seymour EDGE Co-op",
     "slug": "seymouredge",
-    "description": "Christ-centered homeschool cooperative — Seymour, TN",
+    "description": "Christ-centered homeschool cooperative \u2014 Seymour, TN",
     "industry": "Education / Nonprofit",
     "palette": "Forest Green #2D5016 + Warm Gold #C4962A + Cream"
   },
   {
     "slug": "egkochtravel",
     "name": "EG Koch Travel",
-    "category": "Travel Advisory · Elk Grove, CA",
-    "icon": "✈️",
+    "category": "Travel Advisory \u00b7 Elk Grove, CA",
+    "icon": "\u2708\ufe0f",
     "path": "/egkochtravel/",
     "status": "live",
     "location": "Elk Grove, California",
     "phone": "(916) 826-8754",
-    "tags": ["Travel", "Advisory", "Vacation Planning", "Cruises"],
+    "tags": [
+      "Travel",
+      "Advisory",
+      "Vacation Planning",
+      "Cruises"
+    ],
     "accent": "navy-gold",
     "added": "2026-08-24"
+  },
+  {
+    "name": "Able Hands Handyman",
+    "slug": "ablehands",
+    "path": "/ablehands/",
+    "description": "Home repair & handyman services demo",
+    "industry": "Home Services",
+    "palette": "Deep Brown #2C1F15 + Brass #C09040 + Cream"
   }
 ]
