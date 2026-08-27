@@ -306,20 +306,7 @@ img { display: block; max-width: 100%; }
 .chip-icon { font-size: 1.4rem; margin-bottom: 4px; }
 .chip-label { font-size: 0.7rem; color: rgba(255,255,255,0.65); font-weight: 500; letter-spacing: 0.06em; }
 
-/* Scroll indicator */
-.scroll-hint {
-  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  opacity: 0; animation: reveal-up 0.6s 1.4s ease forwards;
-  cursor: default;
-}
-.scroll-hint span { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-.scroll-mouse {
-  width: 22px; height: 34px; border: 1.5px solid rgba(255,255,255,0.25);
-  border-radius: 11px; display: flex; justify-content: center; padding-top: 6px;
-}
-.scroll-wheel { width: 3px; height: 6px; background: rgba(255,255,255,0.4); border-radius: 2px; animation: scroll-wheel 1.8s ease infinite; }
-@keyframes scroll-wheel { 0%,100% { opacity: 1; transform: translateY(0); } 80% { opacity: 0; transform: translateY(8px); } }
+
 
 
 
@@ -706,10 +693,7 @@ footer { background: var(--navy-dark); padding: 56px 32px 28px; }
       </div>
     </div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-  </div>
+
 </section>
 
 
