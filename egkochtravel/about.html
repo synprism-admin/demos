@@ -6,195 +6,654 @@
 <title>About — EG Koch Travel</title>
 <meta name="description" content="Meet Eric and Grace Koch — Elk Grove, CA travel advisors affiliated with Gold Rush Getaways. Learn their story and why they love helping family and friends travel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy:#1D3461;--navy-dark:#142444;--navy-light:#2a4a7f;
-    --gold:#C29A55;--gold-light:#d4af6f;--gold-dim:rgba(194,154,85,0.18);
-    --white:#ffffff;--off-white:#f9f7f4;--text:#1a1a2e;--text-mid:#4a4a6a;--text-light:#7a7a9a;
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Lato',sans-serif;color:var(--text);background:var(--white);}
-  a{text-decoration:none;color:inherit;}
-  img{display:block;max-width:100%;}
-  #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.25);}
-  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;position:relative;}
-  .nav-logo img{height:52px;width:auto;}
-  .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:4px;list-style:none;align-items:center;}
-  .nav-links a{color:rgba(255,255,255,0.88);font-size:0.85rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
-  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(194,154,85,0.12);}
-  .nav-cta{background:var(--gold);color:var(--navy)!important;padding:9px 22px!important;border-radius:24px!important;font-weight:700!important;font-size:0.82rem!important;}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-  .burger span{display:block;width:24px;height:2px;background:white;border-radius:2px;}
-  .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
-  .mobile-nav-overlay.open{display:flex;}
-  .mobile-nav-overlay a{color:white;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:700;}
-  .mobile-nav-overlay a:hover{color:var(--gold);}
-  .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;}
-  .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);padding:120px 40px 72px;text-align:center;}
-  .page-hero .label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;color:white;font-weight:700;}
-  .page-hero h1 em{font-style:italic;color:var(--gold);}
-  .page-hero p{font-size:1rem;color:rgba(255,255,255,0.72);margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.75;}
-  .wave-divider{line-height:0;}
-  .wave-divider svg{display:block;width:100%;}
-  section{padding:72px 40px;}
-  .inner{max-width:1100px;margin:0 auto;}
-  .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-  .section-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.2;}
-  .section-title em{font-style:italic;color:var(--gold);}
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-  .img-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:16px;padding:40px;display:flex;align-items:center;justify-content:center;min-height:320px;box-shadow:0 16px 60px rgba(29,52,97,0.2);position:relative;}
-  .img-card img{width:80%;height:auto;}
-  .img-card-border{position:absolute;inset:12px;border:1px solid rgba(194,154,85,0.35);border-radius:10px;pointer-events:none;}
-  .prose p{font-size:1rem;color:var(--text-mid);line-height:1.85;margin-bottom:16px;}
-  .signature{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:var(--gold);margin-top:20px;}
-  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
-  .val-card{background:var(--off-white);border-radius:12px;padding:28px 24px;border-left:3px solid var(--gold);}
-  .val-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:10px;}
-  .val-card p{font-size:0.875rem;color:var(--text-mid);line-height:1.75;}
-  .btn-primary{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:30px;font-size:0.9rem;font-weight:700;letter-spacing:0.04em;transition:background 0.2s;display:inline-block;margin-top:12px;}
-  .btn-primary:hover{background:var(--gold-light);}
-  .cta-band{background:linear-gradient(135deg,var(--gold) 0%,#a0813d 100%);padding:64px 40px;text-align:center;}
-  .cta-band h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:14px;}
-  .cta-band p{font-size:1rem;color:rgba(29,52,97,0.8);margin-bottom:28px;}
-  .btn-navy{background:var(--navy);color:white;padding:14px 36px;border-radius:30px;font-size:0.9rem;font-weight:700;transition:background 0.2s;display:inline-block;}
-  .btn-navy:hover{background:var(--navy-dark);}
-  footer{background:#0d1f3a;padding:40px 40px 24px;}
-  .footer-inner{max-width:1100px;margin:0 auto;}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);}
-  .footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.35);}
-  .footer-legal{display:flex;gap:20px;}
-  .footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.4);transition:color 0.2s;}
-  .footer-legal a:hover{color:var(--gold-light);}
-  .footer-credit{font-size:0.72rem;color:rgba(255,255,255,0.25);}
-  .footer-credit a{color:rgba(194,154,85,0.5);}
-  @media(max-width:900px){
-    .two-col{grid-template-columns:1fr;}
-    .values-grid{grid-template-columns:1fr 1fr;}
-    .nav-links{display:none;}
-    .burger{display:flex;}
-    .page-hero h1{font-size:2rem;}
-    .footer-bottom{flex-direction:column;text-align:center;}
-  }
-  @media(max-width:600px){.values-grid{grid-template-columns:1fr;}}
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --navy:        #1D3461;
+  --navy-dark:   #0f1f3d;
+  --navy-mid:    #253f72;
+  --gold:        #C29A55;
+  --gold-lt:     #d9b76a;
+  --gold-dim:    rgba(194,154,85,0.15);
+  --sky:         #00d4ff;
+  --white:       #ffffff;
+  --cream:       #f9f7f3;
+  --text:        #111827;
+  --text-mid:    #4b5563;
+  --text-soft:   #9ca3af;
+  --border:      rgba(29,52,97,0.1);
+  --glass-bg:    rgba(255,255,255,0.07);
+  --glass-border:rgba(255,255,255,0.14);
+  --radius-lg:   20px;
+  --radius-md:   12px;
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lift: 0 16px 48px rgba(0,0,0,0.14);
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  transition: background 0.4s var(--ease-out), box-shadow 0.4s;
+}
+#nav.scrolled {
+  background: rgba(15,31,61,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+.nav-wrap {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center;
+  padding: 0 32px; height: 70px;
+  position: relative;
+}
+.nav-logo img { height: 48px; width: auto; }
+.nav-links {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 2px; list-style: none; align-items: center;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.82); font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 30px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); background: var(--gold-dim); }
+.nav-cta-btn {
+  margin-left: auto;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%);
+  color: var(--navy-dark) !important; font-weight: 700 !important;
+  font-size: 0.82rem !important; letter-spacing: 0.05em !important;
+  padding: 9px 22px !important; border-radius: 30px !important;
+  box-shadow: 0 0 0 0 rgba(194,154,85,0.4);
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta-btn:hover { transform: translateY(-1px) !important; box-shadow: 0 4px 20px rgba(194,154,85,0.4) !important; }
+.burger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 6px; margin-left: auto;
+}
+.burger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile drawer */
+.mobile-drawer {
+  display: none; position: fixed; inset: 0; z-index: 950;
+}
+.drawer-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+  opacity: 0; transition: opacity 0.3s;
+}
+.drawer-panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(320px, 90vw);
+  background: var(--navy-dark);
+  border-left: 1px solid var(--glass-border);
+  display: flex; flex-direction: column;
+  padding: 80px 32px 40px;
+  transform: translateX(100%); transition: transform 0.35s var(--ease-out);
+}
+.drawer-panel a {
+  color: rgba(255,255,255,0.85); font-size: 1.25rem;
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: color 0.2s;
+}
+.drawer-panel a:hover { color: var(--gold); }
+.drawer-panel .drawer-cta {
+  margin-top: 28px; background: var(--gold);
+  color: var(--navy-dark); font-family: 'Inter', sans-serif;
+  font-size: 0.9rem; font-weight: 700; padding: 14px 28px;
+  border-radius: 30px; text-align: center; border: none;
+}
+.drawer-close {
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; color: white;
+  font-size: 1.6rem; cursor: pointer; line-height: 1;
+}
+.mobile-drawer.open { display: block; }
+.mobile-drawer.open .drawer-overlay { opacity: 1; }
+.mobile-drawer.open .drawer-panel { transform: translateX(0); }
+
+/* ═══════════════════════════════════════════
+   MESH / PAGE HERO
+═══════════════════════════════════════════ */
+.page-hero {
+  min-height: 55vh;
+  background: linear-gradient(-45deg, var(--navy-dark), #1a3a6e, #0c2d5c, #162847);
+  background-size: 400% 400%;
+  animation: mesh 14s ease infinite;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+@keyframes mesh {
+  0%,100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; will-change: transform;
+}
+.orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 70%);
+  top: -120px; right: -80px;
+  animation: float-1 18s ease-in-out infinite;
+}
+.orb-2 {
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(194,154,85,0.1) 0%, transparent 70%);
+  bottom: -60px; left: 8%;
+  animation: float-2 14s ease-in-out infinite;
+}
+.orb-3 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  top: 40%; left: 38%;
+  animation: float-1 22s ease-in-out infinite reverse;
+}
+@keyframes float-1 {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%     { transform: translate(30px,-40px) scale(1.05); }
+  66%     { transform: translate(-20px,20px) scale(0.97); }
+}
+@keyframes float-2 {
+  0%,100% { transform: translate(0,0); }
+  50%     { transform: translate(-30px,-25px); }
+}
+.page-hero-inner {
+  position: relative; z-index: 2;
+  max-width: 800px; margin: 0 auto;
+  padding: 110px 32px 80px;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0; animation: reveal-up 0.7s 0.2s var(--ease-out) forwards;
+}
+.hero-eyebrow::before {
+  content: ''; width: 28px; height: 1.5px; background: var(--gold); border-radius: 2px;
+}
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700; color: white; line-height: 1.12; margin-bottom: 22px;
+  opacity: 0; animation: reveal-up 0.8s 0.4s var(--ease-out) forwards;
+}
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+.page-hero-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,0.7);
+  line-height: 1.8; font-weight: 300; max-width: 560px; margin: 0 auto;
+  opacity: 0; animation: reveal-up 0.8s 0.6s var(--ease-out) forwards;
+}
+
+/* ═══════════════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+.reveal-d6 { transition-delay: 0.6s; }
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════
+   SECTION SHELLS
+═══════════════════════════════════════════ */
+.section { padding: 96px 32px; }
+.section-sm { padding: 72px 32px; }
+.inner { max-width: 1200px; margin: 0 auto; }
+.inner-md { max-width: 800px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-eyebrow::before {
+  content: ''; width: 28px; height: 1.5px; background: var(--gold); border-radius: 2px;
+}
+.section-eyebrow.center {
+  justify-content: center;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 18px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-sub { font-size: 1rem; color: var(--text-mid); line-height: 1.8; max-width: 620px; }
+
+/* ═══════════════════════════════════════════
+   ABOUT / INTRO SECTION
+═══════════════════════════════════════════ */
+.about-section { background: var(--cream); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: center;
+}
+.about-visual { position: relative; }
+.intro-logo-wrap {
+  background: linear-gradient(140deg, var(--navy), var(--navy-mid));
+  border-radius: var(--radius-lg); padding: 52px 44px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-lift);
+  position: relative; overflow: hidden;
+}
+.intro-logo-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 70% 70%, rgba(0,212,255,0.08), transparent 60%);
+}
+.intro-logo-wrap img { width: 80%; height: auto; position: relative; z-index: 1; }
+.intro-accent-card {
+  position: absolute; bottom: -16px; right: -16px;
+  background: white; border-radius: var(--radius-md);
+  padding: 16px 20px; box-shadow: var(--shadow-card);
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid var(--border);
+}
+.accent-icon { font-size: 1.5rem; }
+.accent-text-sm { font-size: 0.7rem; color: var(--text-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.accent-text-lg { font-size: 0.95rem; color: var(--navy); font-weight: 700; }
+
+.about-text p { font-size: 1rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 18px; }
+.signature { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: var(--gold); margin-top: 24px; margin-bottom: 28px; }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+  color: var(--navy-dark); padding: 14px 32px; border-radius: 30px;
+  font-size: 0.9rem; font-weight: 700; letter-spacing: 0.03em;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.btn-gold::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+  transform: translateX(-100%); transition: transform 0.5s;
+}
+.btn-gold:hover::after { transform: translateX(100%); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(194,154,85,0.45); }
+.btn-ghost {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px); color: white;
+  padding: 14px 28px; border-radius: 30px;
+  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.btn-ghost:hover { border-color: rgba(194,154,85,0.5); color: var(--gold); background: var(--gold-dim); }
+
+/* ═══════════════════════════════════════════
+   VALUES SECTION
+═══════════════════════════════════════════ */
+.values-section { background: var(--white); }
+.values-header { text-align: center; margin-bottom: 56px; }
+.values-header .section-eyebrow { justify-content: center; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.val-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  cursor: default;
+}
+.val-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+.val-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+.val-card:hover::after { transform: scaleX(1); }
+.val-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: var(--gold-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+.val-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; color: var(--navy);
+  margin-bottom: 10px; line-height: 1.3;
+}
+.val-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.8; }
+
+/* ═══════════════════════════════════════════
+   AFFILIATION SECTION
+═══════════════════════════════════════════ */
+.affiliation-section { background: var(--cream); }
+.affiliation-inner { text-align: center; max-width: 720px; margin: 0 auto; }
+.affiliation-inner .section-title { color: var(--navy); }
+.affiliation-inner .section-sub { margin: 0 auto; color: var(--text-mid); font-size: 1rem; line-height: 1.85; max-width: 640px; }
+.affil-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: white; border: 1px solid var(--border);
+  border-radius: 30px; padding: 12px 24px;
+  box-shadow: var(--shadow-card);
+  margin-top: 36px;
+}
+.affil-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.affil-badge span { font-size: 0.82rem; font-weight: 600; color: var(--navy); letter-spacing: 0.06em; }
+
+/* ═══════════════════════════════════════════
+   CTA BAND
+═══════════════════════════════════════════ */
+.cta-band {
+  background: linear-gradient(-45deg, var(--navy-dark), #1a3a6e, #0c2d5c, #162847);
+  background-size: 400% 400%;
+  animation: mesh 14s ease infinite;
+  position: relative; overflow: hidden;
+  padding: 96px 32px; text-align: center;
+}
+.cta-band .hero-grid { opacity: 0.6; }
+.cta-band-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+.cta-band h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: white; font-weight: 700; line-height: 1.2; margin-bottom: 16px;
+}
+.cta-band p {
+  font-size: 1rem; color: rgba(255,255,255,0.68);
+  line-height: 1.8; margin-bottom: 36px;
+}
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--navy-dark);
+  padding: 72px 32px 0;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px; padding-bottom: 52px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.f-brand img { height: 44px; width: auto; margin-bottom: 18px; }
+.f-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.75; max-width: 280px; }
+.f-col h5 {
+  font-family: 'Playfair Display', serif; font-size: 0.95rem;
+  color: white; font-weight: 600; margin-bottom: 18px;
+}
+.f-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.f-col ul li a {
+  font-size: 0.875rem; color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+.f-col ul li a:hover { color: var(--gold); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+  padding: 24px 0 28px;
+}
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+.footer-legal a:hover { color: var(--gold-lt); }
+.footer-credit { font-size: 0.72rem; color: rgba(255,255,255,0.22); }
+.footer-credit a { color: rgba(194,154,85,0.5); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-cta-btn.nav-links { display: none !important; }
+  .burger { display: flex; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .intro-accent-card { bottom: -12px; right: -8px; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .f-brand { grid-column: span 2; }
+}
+@media (max-width: 640px) {
+  .section { padding: 72px 20px; }
+  .section-sm { padding: 56px 20px; }
+  .page-hero-inner { padding: 90px 20px 64px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .f-brand { grid-column: span 1; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-legal { flex-wrap: wrap; justify-content: center; }
+  .cta-btns { flex-direction: column; align-items: center; }
+}
 </style>
 </head>
 <body>
+
+<!-- ═══ NAV ═══ -->
 <nav id="nav">
-  <div class="nav-inner">
+  <div class="nav-wrap">
     <a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="booking.html" class="nav-cta">Plan a Trip</a></li>
     </ul>
-    <button class="burger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="booking.html" class="nav-cta-btn nav-links" style="position:static;transform:none;display:flex;align-items:center;">Plan a Trip</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<div class="mobile-nav-overlay">
-  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="booking.html">Plan a Trip</a>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer-panel">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html" class="drawer-cta">Plan a Trip ✈</a>
+  </div>
 </div>
 
-<div class="page-hero">
-  <div class="label">Our Story</div>
-  <h1>About <em>EG Koch Travel</em></h1>
-  <p>Two people, a love for travel, and a desire to share that joy with family and friends.</p>
-</div>
-<div class="wave-divider" style="background:var(--navy-dark);">
-  <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,25 C480,50 960,0 1440,30 L1440,50 L0,50Z" fill="white"/></svg>
-</div>
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Our Story</div>
+    <h1>About <em>EG Koch Travel</em></h1>
+    <p class="page-hero-sub">Two people, a love for travel, and a desire to share that joy with family and friends.</p>
+  </div>
+</section>
 
-<section style="background:white;">
+<!-- ═══ ABOUT / ERIC & GRACE ═══ -->
+<section class="section about-section">
   <div class="inner">
-    <div class="two-col">
-      <div class="img-card">
-        <img src="logo.png" alt="EG Koch Travel">
-        <div class="img-card-border"></div>
+    <div class="about-grid">
+      <!-- Visual side -->
+      <div class="about-visual reveal">
+        <div class="intro-logo-wrap">
+          <img src="logo.png" alt="EG Koch Travel">
+        </div>
+        <div class="intro-accent-card">
+          <div class="accent-icon">🏅</div>
+          <div>
+            <div class="accent-text-sm">Affiliated with</div>
+            <div class="accent-text-lg">Gold Rush Getaways</div>
+          </div>
+        </div>
       </div>
-      <div class="prose">
-        <div class="section-label">Who We Are</div>
-        <h2 class="section-title">Eric &amp; <em>Grace Koch</em></h2>
-        <p>We're Eric and Grace — a couple from Elk Grove, California who stumbled into travel advising and never looked back. After joining Gold Rush Getaways as affiliated advisors, we found ourselves with access to an incredible set of travel tools, portals, and industry discounts.</p>
-        <p>But here's the thing: we're not looking to build a giant agency or book trips for strangers. We decided from the start that we'd keep this personal — our services are for people we actually know. Family. Friends. People we care about.</p>
-        <p>We believe the best trips happen when someone is genuinely invested in making them special. That's what we bring — not just booking, but real thought, real care, and a personal touch that a big agency simply can't offer.</p>
-        <div class="signature">— Eric &amp; Grace, Elk Grove, CA</div>
-        <a href="booking.html" class="btn-primary">Start Planning Together</a>
+
+      <!-- Text side -->
+      <div class="about-text">
+        <div class="section-eyebrow reveal">Who We Are</div>
+        <h2 class="section-title reveal reveal-d1">Eric &amp; <em>Grace Koch</em></h2>
+        <div class="reveal reveal-d2">
+          <p>We're Eric and Grace — a couple from Elk Grove, California who stumbled into travel advising and never looked back. After joining Gold Rush Getaways as affiliated advisors, we found ourselves with access to an incredible set of travel tools, portals, and industry discounts.</p>
+          <p>But here's the thing: we're not looking to build a giant agency or book trips for strangers. We decided from the start that we'd keep this personal — our services are for people we actually know. Family. Friends. People we care about.</p>
+          <p>We believe the best trips happen when someone is genuinely invested in making them special. That's what we bring — not just booking, but real thought, real care, and a personal touch that a big agency simply can't offer.</p>
+          <div class="signature">— Eric &amp; Grace, Elk Grove, CA</div>
+          <a href="booking.html" class="btn-gold">Start Planning Together ✈</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-divider"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,20 C360,50 720,0 1080,35 C1260,50 1350,15 1440,20 L1440,50 L0,50Z" fill="var(--off-white)"/></svg></div>
-
-<section style="background:var(--off-white);">
+<!-- ═══ VALUES ═══ -->
+<section class="section values-section">
   <div class="inner">
-    <div style="text-align:center;margin-bottom:8px;">
-      <div class="section-label">Our Approach</div>
+    <div class="values-header reveal">
+      <div class="section-eyebrow center">Our Principles</div>
       <h2 class="section-title">What We <em>Stand For</em></h2>
     </div>
     <div class="values-grid">
-      <div class="val-card">
+
+      <div class="val-card reveal reveal-d1">
+        <div class="val-icon">🤝</div>
         <h4>Personal Relationships First</h4>
         <p>We're not a faceless agency. When you reach out, you're talking to Eric or Grace — people who know you and genuinely want your trip to be great.</p>
       </div>
-      <div class="val-card">
+
+      <div class="val-card reveal reveal-d2">
+        <div class="val-icon">💬</div>
         <h4>Honest Guidance</h4>
         <p>We'll tell you what we actually think — whether a destination is right for you, if a deal is truly worth it, or what to skip. No upselling, no pressure.</p>
       </div>
-      <div class="val-card">
+
+      <div class="val-card reveal reveal-d3">
+        <div class="val-icon">🔑</div>
         <h4>Access You Can't Google</h4>
         <p>Our Gold Rush Getaways affiliation gives us entry to portals, rates, and supplier relationships that regular travelers and most booking sites can't access.</p>
       </div>
-      <div class="val-card">
+
+      <div class="val-card reveal reveal-d4">
+        <div class="val-icon">✅</div>
         <h4>Stress-Free from Start to Finish</h4>
         <p>We handle the details — research, booking, coordination — so you can spend your energy on anticipation, not logistics.</p>
       </div>
-      <div class="val-card">
+
+      <div class="val-card reveal reveal-d5">
+        <div class="val-icon">📸</div>
         <h4>Memories Over Transactions</h4>
         <p>We care about the experience, not the commission. Our goal is that every trip we help plan becomes a memory you talk about for years.</p>
       </div>
-      <div class="val-card">
+
+      <div class="val-card reveal reveal-d6">
+        <div class="val-icon">❤️</div>
         <h4>Family &amp; Friends Only</h4>
         <p>We made a choice to keep our circle tight. That means every trip gets our full attention — not just another booking in a queue.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AFFILIATION ═══ -->
+<section class="section-sm affiliation-section">
+  <div class="inner">
+    <div class="affiliation-inner">
+      <div class="section-eyebrow center reveal">Gold Rush Getaways</div>
+      <h2 class="section-title reveal reveal-d1">Our <em>Affiliation</em></h2>
+      <p class="section-sub reveal reveal-d2">EG Koch Travel operates as affiliate advisors through <strong>Gold Rush Getaways</strong>, a California-based travel agency. This affiliation gives Eric and Grace access to professional travel booking tools, exclusive supplier portals, industry rates, and the credibility and backing of an established agency — all while keeping the service warm and personal.</p>
+      <div class="affil-badge reveal reveal-d3">
+        <div class="affil-badge-dot"></div>
+        <span>Proudly Affiliated · Gold Rush Getaways · California</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-divider" style="background:var(--off-white);"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,30 C480,10 960,50 1440,20 L1440,50 L0,50Z" fill="white"/></svg></div>
-
-<section style="background:white;padding:56px 40px;">
-  <div class="inner" style="text-align:center;max-width:700px;">
-    <div class="section-label">Gold Rush Getaways</div>
-    <h2 class="section-title">Our <em>Affiliation</em></h2>
-    <p style="font-size:1rem;color:var(--text-mid);line-height:1.85;">EG Koch Travel operates as affiliate advisors through <strong>Gold Rush Getaways</strong>, a California-based travel agency. This affiliation gives Eric and Grace access to professional travel booking tools, exclusive supplier portals, industry rates, and the credibility and backing of an established agency — all while keeping the service warm and personal.</p>
+<!-- ═══ CTA BAND ═══ -->
+<section class="cta-band">
+  <div class="hero-grid"></div>
+  <div class="orb orb-2" style="opacity:0.5;"></div>
+  <div class="cta-band-inner">
+    <h2 class="reveal">Ready to Plan Something <em style="color:var(--gold);font-style:italic;">Together?</em></h2>
+    <p class="reveal reveal-d1">Reach out to Eric &amp; Grace — no obligation, just a friendly conversation.</p>
+    <div class="cta-btns reveal reveal-d2">
+      <a href="booking.html" class="btn-gold">Book a Consultation</a>
+      <a href="contact.html" class="btn-ghost">Send a Message</a>
+    </div>
   </div>
 </section>
 
-<section class="cta-band">
-  <h2>Ready to Plan Something Together?</h2>
-  <p>Reach out to Eric &amp; Grace — no obligation, just a friendly conversation.</p>
-  <a href="booking.html" class="btn-navy">Book a Consultation</a>
-</section>
-
+<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
+    <div class="footer-top">
+      <div class="f-brand"><img src="logo.png" alt="EG Koch Travel"><p>Eric &amp; Grace Koch — personal travel advisors in Elk Grove, CA. Affiliated with Gold Rush Getaways. Serving family and friends with heart.</p></div>
+      <div class="f-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html">Plan a Trip</a></li></ul></div>
+      <div class="f-col"><h5>Get in Touch</h5><ul><li><a href="tel:9168268754">(916) 826-8754</a></li><li><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></li><li><span style="color:rgba(255,255,255,0.5)">Elk Grove, California</span></li></ul></div>
+    </div>
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div>
-      <div class="footer-legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-        <a href="accessibility.html">Accessibility</a>
-      </div>
+      <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="accessibility.html">Accessibility</a></div>
       <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
     </div>
   </div>
 </footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+const burger = document.getElementById('burgerBtn');
+const drawer = document.getElementById('mobileDrawer');
+const drawerClose = document.getElementById('drawerClose');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const openDrawer = () => { drawer.classList.add('open'); burger.classList.add('open'); document.body.style.overflow = 'hidden'; };
+const closeDrawer = () => { drawer.classList.remove('open'); burger.classList.remove('open'); document.body.style.overflow = ''; };
+burger.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawerOverlay.addEventListener('click', closeDrawer);
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+</script>
 </body>
 </html>

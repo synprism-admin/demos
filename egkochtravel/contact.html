@@ -1,196 +1,813 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — EG Koch Travel</title>
-<meta name="description" content="Get in touch with Eric and Grace Koch at EG Koch Travel. Based in Elk Grove, California.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{--navy:#1D3461;--navy-dark:#142444;--navy-light:#2a4a7f;--gold:#C29A55;--gold-light:#d4af6f;--gold-dim:rgba(194,154,85,0.18);--white:#ffffff;--off-white:#f9f7f4;--text:#1a1a2e;--text-mid:#4a4a6a;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Lato',sans-serif;color:var(--text);background:var(--white);}
-  a{text-decoration:none;color:inherit;}img{display:block;max-width:100%;}
-  #nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.25);}
-  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;position:relative;}
-  .nav-logo img{height:52px;width:auto;}
-  .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:4px;list-style:none;align-items:center;}
-  .nav-links a{color:rgba(255,255,255,0.88);font-size:0.85rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
-  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(194,154,85,0.12);}
-  .nav-cta{background:var(--gold);color:var(--navy)!important;padding:9px 22px!important;border-radius:24px!important;font-weight:700!important;font-size:0.82rem!important;}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-  .burger span{display:block;width:24px;height:2px;background:white;border-radius:2px;}
-  .mobile-nav-overlay{display:none;position:fixed;inset:0;background:var(--navy-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
-  .mobile-nav-overlay.open{display:flex;}
-  .mobile-nav-overlay a{color:white;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:700;}
-  .mobile-nav-overlay a:hover{color:var(--gold);}
-  .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;}
-  .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);padding:120px 40px 72px;text-align:center;}
-  .page-hero .label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;color:white;font-weight:700;}
-  .page-hero h1 em{font-style:italic;color:var(--gold);}
-  .page-hero p{font-size:1rem;color:rgba(255,255,255,0.72);margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.75;}
-  .wave-divider{line-height:0;}
-  .wave-divider svg{display:block;width:100%;}
-  .contact-section{background:var(--off-white);padding:72px 40px;}
-  .contact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-  .contact-info h2{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);font-weight:700;margin-bottom:16px;}
-  .contact-info h2 em{font-style:italic;color:var(--gold);}
-  .contact-info p{font-size:0.95rem;color:var(--text-mid);line-height:1.8;margin-bottom:28px;}
-  .ct-list{display:flex;flex-direction:column;gap:20px;}
-  .ct-item{display:flex;align-items:flex-start;gap:16px;}
-  .ct-icon{width:44px;height:44px;background:var(--gold-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .ct-icon svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.8;}
-  .ct-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
-  .ct-val{font-size:0.95rem;color:var(--text-mid);}
-  .ct-val a{color:var(--navy);}
-  .ct-val a:hover{color:var(--gold);}
-  .contact-form{background:white;border-radius:16px;padding:36px;border:1px solid rgba(29,52,97,0.1);box-shadow:0 8px 32px rgba(29,52,97,0.08);}
-  .contact-form h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:24px;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .form-group{margin-bottom:18px;}
-  label{display:block;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
-  input,textarea,select{width:100%;padding:10px 14px;border:1.5px solid rgba(29,52,97,0.18);border-radius:8px;font-family:'Lato',sans-serif;font-size:0.95rem;color:var(--text);outline:none;transition:border-color 0.2s;}
-  input:focus,textarea:focus,select:focus{border-color:var(--gold);}
-  textarea{min-height:110px;resize:vertical;}
-  .btn-gold{background:var(--gold);color:var(--navy);padding:12px 28px;border-radius:24px;font-size:0.9rem;font-weight:700;border:none;cursor:pointer;width:100%;font-family:'Lato',sans-serif;transition:background 0.2s;letter-spacing:0.04em;}
-  .btn-gold:hover{background:var(--gold-light);}
-  .form-note{font-size:0.78rem;color:var(--text-mid);text-align:center;margin-top:12px;}
-  .success-msg{display:none;background:#e8f5e9;border:1px solid #81c784;border-radius:8px;padding:16px;text-align:center;color:#2e7d32;font-size:0.9rem;margin-top:16px;}
-  footer{background:#0d1f3a;padding:40px 40px 24px;}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);max-width:1100px;margin:0 auto;}
-  .footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.35);}
-  .footer-legal{display:flex;gap:20px;}
-  .footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.4);transition:color 0.2s;}
-  .footer-legal a:hover{color:var(--gold-light);}
-  .footer-credit{font-size:0.72rem;color:rgba(255,255,255,0.25);}
-  .footer-credit a{color:rgba(194,154,85,0.5);}
-  @media(max-width:900px){.contact-inner{grid-template-columns:1fr;}.nav-links{display:none;}.burger{display:flex;}.form-row{grid-template-columns:1fr;}.page-hero h1{font-size:2rem;}}
-  @media(max-width:600px){.footer-bottom{flex-direction:column;text-align:center;}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | EG Koch Travel</title>
+  <meta name="description" content="Get in touch with Eric and Grace Koch — your personal travel advisors in Elk Grove, CA. We're real people, not a call center.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --navy: #1D3461; --navy-dark: #0f1f3d; --navy-mid: #253f72;
+      --gold: #C29A55; --gold-lt: #d9b76a; --gold-dim: rgba(194,154,85,0.15);
+      --white: #ffffff; --cream: #f9f7f3;
+      --text: #111827; --text-mid: #4b5563; --text-soft: #9ca3af;
+      --border: rgba(29,52,97,0.1);
+      --glass-bg: rgba(255,255,255,0.07); --glass-border: rgba(255,255,255,0.14);
+      --radius-lg: 20px; --radius-md: 12px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.08); --shadow-lift: 0 16px 48px rgba(0,0,0,0.14);
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── NAV ── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      transition: background 0.4s var(--ease-out), backdrop-filter 0.4s, box-shadow 0.4s;
+    }
+    #nav.scrolled {
+      background: rgba(15,31,61,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.22);
+    }
+    .nav-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-logo img { height: 42px; width: auto; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+    .nav-links li a,
+    .nav-links > a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.82);
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: var(--gold-lt);
+      background: var(--glass-bg);
+    }
+    .nav-cta-btn {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy-dark) !important;
+      background: var(--gold) !important;
+      padding: 9px 20px !important;
+      border-radius: 10px !important;
+      transition: background 0.2s, transform 0.2s !important;
+      white-space: nowrap;
+    }
+    .nav-cta-btn:hover {
+      background: var(--gold-lt) !important;
+      transform: translateY(-1px) !important;
+    }
+    .burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px; height: 40px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .burger span {
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer { display: none; }
+    .drawer-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 950;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .drawer-panel {
+      position: fixed;
+      top: 0; right: 0;
+      width: min(320px, 85vw);
+      height: 100dvh;
+      background: var(--navy-dark);
+      z-index: 960;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 24px 40px;
+      gap: 8px;
+      transform: translateX(100%);
+      transition: transform 0.35s var(--ease-out);
+    }
+    .drawer-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .drawer-panel a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.82);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--glass-border);
+      transition: color 0.2s;
+    }
+    .drawer-panel a:hover { color: var(--gold-lt); }
+    .drawer-cta {
+      margin-top: auto;
+      background: var(--gold) !important;
+      color: var(--navy-dark) !important;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 700 !important;
+      padding: 14px !important;
+      border-bottom: none !important;
+    }
+    .mobile-drawer.open { display: block; }
+    .mobile-drawer.open .drawer-overlay { opacity: 1; }
+    .mobile-drawer.open .drawer-panel { transform: translateX(0); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--navy-dark);
+    }
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(37,63,114,0.9) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 30%, rgba(29,52,97,0.7) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 70% at 50% 100%, rgba(15,31,61,0.95) 0%, transparent 60%);
+      animation: meshShift 12s ease-in-out infinite alternate;
+    }
+    @keyframes meshShift {
+      0%   { filter: hue-rotate(0deg) brightness(1); }
+      50%  { filter: hue-rotate(8deg) brightness(1.07); }
+      100% { filter: hue-rotate(-4deg) brightness(0.96); }
+    }
+
+    /* Grid overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.35;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, rgba(194,154,85,0.5), transparent 70%);
+      top: -80px; left: -60px;
+      animation-duration: 9s;
+    }
+    .orb-2 {
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(37,63,114,0.8), transparent 70%);
+      bottom: -40px; right: 10%;
+      animation-duration: 11s;
+      animation-delay: -3s;
+    }
+    .orb-3 {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(194,154,85,0.3), transparent 70%);
+      top: 30%; right: -40px;
+      animation-duration: 7s;
+      animation-delay: -5s;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-28px) scale(1.06); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 24px 80px;
+      max-width: 640px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(194,154,85,0.12);
+      border: 1px solid rgba(194,154,85,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section {
+      background: var(--cream);
+      padding: 100px 24px;
+    }
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Left col */
+    .contact-left {}
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .contact-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy-dark);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .personal-note {
+      font-size: 0.975rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      padding: 18px 20px;
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-cards { display: flex; flex-direction: column; gap: 16px; }
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lift);
+    }
+    .info-icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold);
+      stroke-width: 1.8;
+      fill: none;
+    }
+    .info-text {}
+    .info-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+    .info-value {
+      font-size: 0.975rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .info-value a {
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .info-value a:hover { color: var(--gold); }
+
+    /* Right col — Form card */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lift);
+      padding: 44px 40px;
+    }
+    .form-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 6px;
+    }
+    .form-card .form-sub {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 28px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      letter-spacing: 0.02em;
+    }
+    .form-group label .opt {
+      font-weight: 400;
+      color: var(--text-soft);
+      margin-left: 4px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      resize: vertical;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-soft);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(194,154,85,0.12);
+    }
+    .form-group textarea { min-height: 130px; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-top: 4px;
+    }
+    .submit-btn:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(194,154,85,0.3);
+    }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 24px;
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: var(--radius-md);
+      margin-top: 20px;
+    }
+    .form-success.visible { display: flex; }
+    .success-icon {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #22c55e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-icon svg {
+      width: 18px; height: 18px;
+      stroke: #fff;
+      stroke-width: 2.5;
+      fill: none;
+    }
+    .success-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #15803d;
+      margin-bottom: 3px;
+    }
+    .success-text p {
+      font-size: 0.85rem;
+      color: #166534;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.75);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 24px 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .f-brand img { height: 38px; margin-bottom: 16px; }
+    .f-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.5); max-width: 280px; }
+    .f-col h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .f-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .f-col ul li a,
+    .f-col ul li span {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+    .f-col ul li a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 28px;
+    }
+    .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+    .footer-legal { display: flex; gap: 16px; }
+    .footer-legal a { font-size: 0.82rem; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--gold-lt); }
+    .footer-credit { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+    .footer-credit a { color: var(--gold); transition: color 0.2s; }
+    .footer-credit a:hover { color: var(--gold-lt); }
+
+    /* ── Reveal animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+      .f-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .mobile-drawer { display: block; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 32px 24px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content { padding: 100px 20px 60px; }
+      .contact-section { padding: 72px 20px; }
+    }
+  </style>
 </head>
 <body>
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="booking.html" class="nav-cta">Plan a Trip</a></li>
-    </ul>
-    <button class="burger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-nav-overlay">
-  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&times;</button>
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="booking.html">Plan a Trip</a>
-</div>
 
-<div class="page-hero">
-  <div class="label">Get in Touch</div>
-  <h1><em>Contact</em> Us</h1>
-  <p>Have a destination in mind? Just want to chat about travel? We'd love to hear from you.</p>
-</div>
-<div class="wave-divider" style="background:var(--navy-dark);"><svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none"><path d="M0,25 C480,50 960,0 1440,30 L1440,50 L0,50Z" fill="var(--off-white)"/></svg></div>
+  <!-- NAV -->
+  <nav id="nav"><div class="nav-wrap"><a href="index.html" class="nav-logo"><img src="logo.png" alt="EG Koch Travel"></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html" class="active">Contact</a></li></ul><a href="booking.html" class="nav-cta-btn nav-links" style="position:static;transform:none;display:flex;align-items:center;">Plan a Trip</a><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
+  <div class="mobile-drawer" id="mobileDrawer"><div class="drawer-overlay" id="drawerOverlay"></div><div class="drawer-panel"><button class="drawer-close" id="drawerClose">&times;</button><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="booking.html" class="drawer-cta">Plan a Trip ✈</a></div></div>
 
-<section class="contact-section">
-  <div class="contact-inner">
-    <div class="contact-info">
-      <h2>Let's <em>Talk Travel</em></h2>
-      <p>We're real people — not a call center. Reach out to Eric and Grace directly and we'll get back to you personally, usually within a day or two.</p>
-      <div class="ct-list">
-        <div class="ct-item">
-          <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div>
-            <div class="ct-label">Phone</div>
-            <div class="ct-val"><a href="tel:9168268754">(916) 826-8754</a></div>
-          </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-mesh"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Get in Touch</div>
+      <h1>Contact <em>Us</em></h1>
+      <p class="hero-subtitle">Have a destination in mind — or just dreaming? We'd love to hear from you and start planning your perfect journey.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-inner">
+
+      <!-- Left: Info -->
+      <div class="contact-left">
+        <div class="section-label reveal">Contact Information</div>
+        <h2 class="reveal reveal-delay-1">Let's start<br>a conversation.</h2>
+
+        <div class="personal-note reveal reveal-delay-2">
+          We're real people — not a call center. Reach out to Eric and Grace directly, and you'll hear back from us personally.
         </div>
-        <div class="ct-item">
-          <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div>
-            <div class="ct-label">Email</div>
-            <div class="ct-val"><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></div>
+
+        <div class="info-cards">
+          <div class="info-card reveal reveal-delay-2">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.06 2.18 2 2 0 012.03 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div class="info-text">
+              <div class="info-label">Phone</div>
+              <div class="info-value"><a href="tel:9168268754">(916) 826-8754</a></div>
+            </div>
           </div>
-        </div>
-        <div class="ct-item">
-          <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div>
-            <div class="ct-label">Location</div>
-            <div class="ct-val">Elk Grove, California</div>
+
+          <div class="info-card reveal reveal-delay-3">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="info-text">
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></div>
+            </div>
           </div>
-        </div>
-        <div class="ct-item">
-          <div class="ct-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div>
-            <div class="ct-label">Response Time</div>
-            <div class="ct-val">Usually within 1–2 business days</div>
+
+          <div class="info-card reveal reveal-delay-4">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="info-text">
+              <div class="info-label">Location</div>
+              <div class="info-value">Elk Grove, California</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="contact-form">
-      <h3>Send a Message</h3>
-      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="52212c46-8eae-4fae-9515-1de276476a42">
-        <input type="hidden" name="subject" value="EG Koch Travel — New Contact Form Submission">
-        <input type="hidden" name="redirect" value="">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="first_name" placeholder="Your first name" required>
-          </div>
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="last_name" placeholder="Your last name" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone (optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
-        </div>
-        <div class="form-group">
-          <label for="message">How can we help?</label>
-          <textarea id="message" name="message" placeholder="Tell us about where you want to go, when, or any questions you have..." required></textarea>
-        </div>
-        <button type="submit" class="btn-gold">Send Message</button>
-        <div class="form-note">We'll get back to you personally, usually within 1–2 days.</div>
-        <div class="success-msg" id="success-msg">Thank you! We'll be in touch soon.</div>
-      </form>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="footer-bottom">
-    <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div>
-    <div class="footer-legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
-      <a href="accessibility.html">Accessibility</a>
+      <!-- Right: Form -->
+      <div class="form-card reveal reveal-delay-1">
+        <h3>Send Us a Message</h3>
+        <p class="form-sub">We'll get back to you within one business day.</p>
+
+        <form id="contactForm" novalidate>
+          <!-- Web3Forms hidden fields -->
+          <input type="hidden" name="access_key" value="52212c46-8eae-4fae-9515-1de276476a42">
+          <input type="hidden" name="subject" value="EG Koch Travel — New Contact Form Submission">
+          <input type="hidden" name="from_name" value="EG Koch Travel Website">
+          <input type="checkbox" name="botcheck" style="display:none;">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone <span class="opt">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(916) 555-0100">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your dream trip — destination, travel dates, group size, or anything else on your mind…" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Send Message ✈</button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="success-text">
+            <h4>Message sent!</h4>
+            <p>Thanks for reaching out. Eric and Grace will be in touch with you soon.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
-  </div>
-</footer>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
-    if (res.ok) {
-      document.getElementById('success-msg').style.display = 'block';
-      this.reset();
+  </section>
+
+  <!-- FOOTER -->
+  <footer><div class="footer-inner"><div class="footer-top"><div class="f-brand"><img src="logo.png" alt="EG Koch Travel"><p>Eric &amp; Grace Koch — personal travel advisors in Elk Grove, CA. Affiliated with Gold Rush Getaways.</p></div><div class="f-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html">Plan a Trip</a></li></ul></div><div class="f-col"><h5>Get in Touch</h5><ul><li><a href="tel:9168268754">(916) 826-8754</a></li><li><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></li><li><span style="color:rgba(255,255,255,0.5)">Elk Grove, California</span></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved.</div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="accessibility.html">Accessibility</a></div><div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div></div></div></footer>
+
+  <script>
+    /* ── Nav scroll ── */
+    const nav = document.getElementById('nav');
+    function updateNav() {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
     }
-  });
-</script>
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ── Mobile drawer ── */
+    const drawer  = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const burger  = document.getElementById('burgerBtn');
+    const close   = document.getElementById('drawerClose');
+
+    function openDrawer()  { drawer.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { drawer.classList.remove('open'); document.body.style.overflow = ''; }
+
+    burger.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    /* ── IntersectionObserver reveals ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ── Web3Forms AJAX submit ── */
+    const form       = document.getElementById('contactForm');
+    const submitBtn  = document.getElementById('submitBtn');
+    const successDiv = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const data = new FormData(form);
+      const json = Object.fromEntries(data.entries());
+
+      try {
+        const res  = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(json)
+        });
+        const body = await res.json();
+
+        if (body.success) {
+          form.style.display = 'none';
+          successDiv.classList.add('visible');
+        } else {
+          throw new Error(body.message || 'Submission failed');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message ✈';
+        alert('Something went wrong. Please try again or email us directly at ericandgrace@egkochtravel.com');
+        console.error(err);
+      }
+    });
+  </script>
 </body>
 </html>
