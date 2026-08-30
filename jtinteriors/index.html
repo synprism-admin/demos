@@ -656,7 +656,7 @@
     }
     .test-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .test-card {
@@ -1030,7 +1030,7 @@
       .svc-actions .btn { font-size: 0.7rem; padding: 8px 10px; }
       .steps-row { grid-template-columns: 1fr 1fr; gap: 40px; }
       .steps-row::before { display: none; }
-      .test-grid { grid-template-columns: 1fr; }
+      .test-grid { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .footer-top { grid-template-columns: 1fr; gap: 36px; }
       .hero-content { padding: 0 32px 80px; }
@@ -1038,6 +1038,7 @@
     }
     @media (max-width: 600px) {
       .mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
+      .test-grid { grid-template-columns: 1fr; }
       #hero { align-items: center; min-height: 100svh; }
       .hero-content { padding: 56px 24px 32px; }
       .hero-pre { font-size: 0.65rem; }
@@ -1394,6 +1395,22 @@
         <div class="test-author">
           <div class="test-avatar">JC</div>
           <div><div class="test-name">J. Carlisle</div><div class="test-loc">Vancouver, WA</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal up">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Wayne at JT Interiors is awesome! He helped make our vision come true, making great suggestions along the way. He was very flexible and trustworthy. Prices are reasonable for high-quality work that really shines. His experience really shows in his work. We will work with Wayne again for sure!"</p>
+        <div class="test-author">
+          <div class="test-avatar">MR</div>
+          <div><div class="test-name">M. Reynolds</div><div class="test-loc">Vancouver, WA</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal up">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Wayne (the owner) came by that night to meet us and hear about the project. Our project was turning our garage into a bedroom. Wayne graciously measured and worked around our belongings, listening to our needs and wants and offering suggestions and ideas. Wayne and his team were very professional, on time, great with communication and amazing with attention to detail. Everyday they cleaned up and organized, sometimes even cleaner than before they got here. The project was done on time and on budget. Wayne and his team went above and beyond our expectations. Later, Wayne suggested adding a pantry during our kitchen remodel — I cannot stress how much I love it. We got amazing countertops, a new sink, faucet, garbage disposal, and Wayne even took the time to show me how to paint the cabinets myself. We were treated like family. I have gladly recommended JT Interiors to friends and family. Wayne and his team have a passion for the work that they do!"</p>
+        <div class="test-author">
+          <div class="test-avatar">TB</div>
+          <div><div class="test-name">T. Bailey</div><div class="test-loc">Vancouver, WA</div></div>
         </div>
       </div>
     </div>
