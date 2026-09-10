@@ -41,27 +41,24 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: var(--white);
-    border-bottom: 1px solid var(--rule);
+    background: var(--ink);
+    border-bottom: none;
     height: 68px;
     display: flex;
     align-items: center;
-    padding: 0 48px 0 0;
+    padding: 0 48px;
     justify-content: space-between;
   }
 
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 14px;
     text-decoration: none;
     flex-shrink: 0;
   }
 
   .nav-logo-icon {
-    background: var(--ink);
-    height: 68px;
-    padding: 0 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,23 +66,22 @@
   }
 
   .nav-logo-icon img {
-    height: 36px;
+    height: 38px;
     width: auto;
   }
 
   .nav-logo-text {
-    padding-left: 18px;
     display: flex;
     flex-direction: column;
   }
 
   .nav-logo-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-weight: 800;
     font-size: 15px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--white);
     line-height: 1.1;
   }
 
@@ -94,7 +90,7 @@
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: rgba(255,255,255,0.45);
   }
 
   .nav-links {
@@ -107,7 +103,7 @@
   .nav-links a {
     font-size: 13px;
     font-weight: 600;
-    color: var(--muted);
+    color: rgba(255,255,255,0.6);
     text-decoration: none;
     padding: 8px 14px;
     border-radius: 4px;
@@ -115,10 +111,10 @@
     letter-spacing: 0.02em;
   }
 
-  .nav-links a:hover { color: var(--ink); background: var(--bg); }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
 
   .nav-cta {
-    background: var(--cyan);
+    background: var(--cyan) !important;
     color: var(--ink) !important;
     font-weight: 700 !important;
     padding: 9px 22px !important;
