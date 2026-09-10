@@ -325,5 +325,13 @@
     "description": "Home repair & handyman services demo",
     "industry": "Home Services",
     "palette": "Deep Brown #2C1F15 + Brass #C09040 + Cream"
+  },
+  {
+    "name": "Capitol City Design Inc.",
+    "slug": "capcitydesign",
+    "path": "/capcitydesign/",
+    "description": "Full-service electrical engineering & lighting design - West Sacramento, CA",
+    "industry": "Electrical Engineering / Contractor",
+    "palette": "Deep Navy #07090f + Cyan #00d4ff"
   }
 ]

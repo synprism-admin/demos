@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capitol City Design Inc. | Electrical Engineering &amp; Lighting Design | West Sacramento</title>
+<meta name="description" content="Capitol City Design Inc. is a full-service electrical engineering and lighting design firm in West Sacramento, CA. Serving commercial, industrial, and institutional clients across 11 states for 30+ years.">
+<meta name="robots" content="index, follow">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cyan: #00d4ff;
+    --cyan-dim: rgba(0,212,255,0.12);
+    --cyan-mid: rgba(0,212,255,0.4);
+    --bg: #07090f;
+    --surface: #0c1220;
+    --card: #101828;
+    --border: rgba(0,212,255,0.18);
+    --text: #f0f4ff;
+    --muted: #7a90b8;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── CIRCUIT PATTERN ── */
+  .circuit-bg {
+    background-image:
+      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 70px;
+    background: rgba(7,9,15,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1) sepia(1) saturate(10) hue-rotate(170deg);
+  }
+
+  .nav-brand {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .nav-brand span { color: var(--cyan); display: block; font-weight: 400; font-size: 10px; letter-spacing: 0.2em; }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cyan); }
+
+  .nav-cta {
+    background: var(--cyan);
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+  }
+  .nav-cta:hover { background: #33ddff !important; color: #000 !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.035) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 70%);
+    top: 50%; right: 10%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .hero-left { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow-line {
+    width: 40px; height: 2px;
+    background: var(--cyan);
+  }
+  .hero-eyebrow span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .hero-title .line1 { color: var(--white); display: block; }
+  .hero-title .line2 {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--cyan);
+    display: block;
+    font-style: italic;
+  }
+  .hero-title .line3 { color: var(--white); display: block; }
+
+  .hero-inc {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .hero-inc span {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .hero-inc-line { flex: 1; max-width: 200px; height: 1px; background: var(--border); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--cyan);
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.3); }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 15px 36px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* HERO RIGHT - Capitol dome visual */
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .dome-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dome-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid;
+    animation: pulse-ring 3s ease-in-out infinite;
+  }
+  .dome-ring:nth-child(1) { width: 240px; height: 240px; border-color: rgba(0,212,255,0.3); animation-delay: 0s; }
+  .dome-ring:nth-child(2) { width: 340px; height: 340px; border-color: rgba(0,212,255,0.18); animation-delay: 0.8s; }
+  .dome-ring:nth-child(3) { width: 440px; height: 440px; border-color: rgba(0,212,255,0.08); animation-delay: 1.6s; }
+
+  @keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.04); opacity: 0.6; }
+  }
+
+  .dome-svg-wrap {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 24px rgba(0,212,255,0.5));
+  }
+
+  .hero-stat-strip {
+    position: absolute;
+    bottom: 40px;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    z-index: 3;
+  }
+
+  .hero-stat {
+    padding: 20px 48px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat strong {
+    display: block;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--cyan);
+    line-height: 1;
+  }
+  .hero-stat span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 48px; }
+
+  .section-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-tag span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+  .section-tag-line { width: 32px; height: 2px; background: var(--cyan); }
+
+  .section-title {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .section-title em {
+    font-style: normal;
+    color: var(--cyan);
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--surface); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .about-body p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .about-body p:last-child { margin-bottom: 0; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .stat-box {
+    background: var(--card);
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+  }
+
+  .stat-box strong {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--cyan);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-box p {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--bg); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .service-card:hover { border-color: var(--cyan-mid); }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 0;
+    background: var(--cyan-dim);
+    transition: height 0.3s;
+  }
+  .service-card:hover::after { height: 100%; }
+
+  .service-icon {
+    width: 56px; height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cyan-dim);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    position: relative; z-index: 1;
+  }
+
+  /* ── PORTFOLIO ── */
+  .portfolio { background: var(--surface); }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    gap: 4px;
+    margin-top: 60px;
+  }
+
+  .project-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .project-item:nth-child(1) { grid-column: 1 / 8; grid-row: 1; }
+  .project-item:nth-child(2) { grid-column: 8 / 13; grid-row: 1; }
+  .project-item:nth-child(3) { grid-column: 1 / 5; grid-row: 2; }
+  .project-item:nth-child(4) { grid-column: 5 / 9; grid-row: 2; }
+  .project-item:nth-child(5) { grid-column: 9 / 13; grid-row: 2; }
+
+  .project-img {
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .project-item:nth-child(1) .project-img { height: 420px; }
+  .project-item:nth-child(2) .project-img { height: 420px; }
+  .project-item:nth-child(3) .project-img,
+  .project-item:nth-child(4) .project-img,
+  .project-item:nth-child(5) .project-img { height: 280px; }
+
+  .project-item:hover .project-img { transform: scale(1.04); }
+
+  .project-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 32px 28px 28px;
+    background: linear-gradient(transparent, rgba(7,9,15,0.92));
+    transform: translateY(4px);
+    transition: transform 0.3s;
+  }
+  .project-item:hover .project-overlay { transform: translateY(0); }
+
+  .project-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 6px;
+  }
+  .project-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .project-meta { font-size: 12px; color: var(--muted); }
+
+  /* ── CREDENTIALS ── */
+  .credentials { background: var(--bg); }
+
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .cred-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px 32px;
+    position: relative;
+  }
+
+  .cred-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+  }
+
+  .cred-panel h3 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 20px;
+  }
+
+  .cred-panel ul {
+    list-style: none;
+  }
+
+  .cred-panel ul li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cred-panel ul li::before {
+    content: '';
+    width: 4px; height: 4px;
+    background: var(--cyan);
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .cred-panel ul li:last-child { border-bottom: none; }
+
+  .awards-badge {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--cyan-dim);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .awards-badge strong { color: var(--cyan); }
+
+  /* ── CLIENTS ── */
+  .clients { background: var(--surface); padding: 60px 48px; }
+
+  .clients-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .clients-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .clients-line { flex: 0 0 1px; height: 40px; background: var(--border); }
+
+  .clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .client-pill {
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    background: var(--card);
+  }
+  .client-pill:hover { border-color: var(--cyan-mid); color: var(--text); }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--bg); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    margin-top: 60px;
+  }
+
+  .contact-info h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    background: var(--cyan-dim);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+  }
+
+  .contact-detail-body strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 4px;
+  }
+  .contact-detail-body p, .contact-detail-body a {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    line-height: 1.6;
+  }
+  .contact-detail-body a:hover { color: var(--cyan); }
+
+  .contact-license-strip {
+    margin-top: 40px;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+  }
+  .contact-license-strip p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .contact-license-strip strong { color: var(--text); }
+
+  /* FORM */
+  .contact-form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 48px;
+    position: relative;
+  }
+  .contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--cyan); }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-group select option { background: var(--card); }
+
+  .form-submit {
+    width: 100%;
+    background: var(--cyan);
+    color: #000;
+    border: none;
+    padding: 16px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    font-family: inherit;
+    margin-top: 4px;
+  }
+  .form-submit:hover { background: #33ddff; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,212,255,0.25); }
+
+  #form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  #form-success svg { margin-bottom: 16px; }
+  #form-success h4 { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+  #form-success p { font-size: 14px; color: var(--muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-logo-img {
+    height: 28px;
+    filter: brightness(0) invert(1) sepia(1) saturate(10) hue-rotate(170deg);
+    opacity: 0.6;
+  }
+
+  .footer-brand {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  footer p {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .footer-credit {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+  }
+  .footer-credit a { color: var(--cyan); text-decoration: none; }
+  .footer-credit a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 20px; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 200px; }
+    .hero-right { display: none; }
+    .hero-stat-strip { flex-wrap: wrap; justify-content: flex-start; left: 24px; right: 24px; }
+    .hero-stat { padding: 16px 32px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .project-item { grid-column: auto !important; grid-row: auto !important; }
+    .project-item .project-img { height: 260px !important; }
+    .cred-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-form { padding: 32px 24px; }
+    section { padding: 80px 24px; }
+    .clients { padding: 48px 24px; }
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    .footer-credit { text-align: center; }
+  }
+
+  @media (max-width: 640px) {
+    .hero-title { font-size: 52px; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="images/logo.png" alt="Capitol City Design Inc. Logo">
+    <div class="nav-brand">
+      Capitol City Design
+      <span>Electrical Engineering</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-glow"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>West Sacramento, California</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line1">CAPITOL</span>
+      <span class="line2">CITY</span>
+      <span class="line3">DESIGN</span>
+    </h1>
+
+    <div class="hero-inc">
+      <span>Inc.</span>
+      <div class="hero-inc-line"></div>
+      <span>Est. 1990s</span>
+    </div>
+
+    <p class="hero-sub">
+      Full-service electrical engineering and certified lighting design for commercial,
+      institutional, and industrial projects across the Greater Sacramento region and 11 states.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn-primary">View Our Work</a>
+      <a href="#contact" class="btn-outline">Start a Project</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="dome-wrap">
+      <div class="dome-ring"></div>
+      <div class="dome-ring"></div>
+      <div class="dome-ring"></div>
+      <div class="dome-svg-wrap">
+        <!-- Capitol Dome SVG - stylized -->
+        <svg width="160" height="180" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Lantern / Cupola top -->
+          <rect x="71" y="18" width="18" height="14" rx="1" fill="none" stroke="#00d4ff" stroke-width="2"/>
+          <line x1="80" y1="8" x2="80" y2="18" stroke="#00d4ff" stroke-width="2"/>
+          <!-- Dome -->
+          <path d="M32 70 Q35 30 80 22 Q125 30 128 70" fill="none" stroke="#00d4ff" stroke-width="2.5"/>
+          <!-- Drum / collar below dome -->
+          <rect x="40" y="68" width="80" height="14" rx="1" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+          <!-- Peristyle columns -->
+          <line x1="50" y1="82" x2="50" y2="124" stroke="#00d4ff" stroke-width="2"/>
+          <line x1="62" y1="82" x2="62" y2="124" stroke="#00d4ff" stroke-width="2"/>
+          <line x1="74" y1="82" x2="74" y2="124" stroke="#00d4ff" stroke-width="2"/>
+          <line x1="86" y1="82" x2="86" y2="124" stroke="#00d4ff" stroke-width="2"/>
+          <line x1="98" y1="82" x2="98" y2="124" stroke="#00d4ff" stroke-width="2"/>
+          <line x1="110" y1="82" x2="110" y2="124" stroke="#00d4ff" stroke-width="2"/>
+          <!-- Entablature -->
+          <rect x="36" y="122" width="88" height="8" rx="1" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+          <!-- Upper steps -->
+          <rect x="30" y="130" width="100" height="6" rx="1" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.8"/>
+          <rect x="22" y="136" width="116" height="6" rx="1" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.6"/>
+          <rect x="14" y="142" width="132" height="6" rx="1" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+          <!-- Glow accent dots -->
+          <circle cx="80" cy="8" r="3" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="50" cy="82" r="2" fill="#00d4ff" opacity="0.5"/>
+          <circle cx="110" cy="82" r="2" fill="#00d4ff" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stat strip -->
+  <div class="hero-stat-strip">
+    <div class="hero-stat">
+      <strong>30+</strong>
+      <span>Years Experience</span>
+    </div>
+    <div class="hero-stat">
+      <strong>11</strong>
+      <span>State Licenses</span>
+    </div>
+    <div class="hero-stat">
+      <strong>IES</strong>
+      <span>Award-Winning</span>
+    </div>
+    <div class="hero-stat">
+      <strong>LC</strong>
+      <span>Lighting Certified</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="section-tag">
+    <div class="section-tag-line"></div>
+    <span>Who We Are</span>
+  </div>
+  <h2 class="section-title">Built on trust.<br><em>Driven by precision.</em></h2>
+
+  <div class="about-grid">
+    <div class="about-body">
+      <p>Capitol City Design, Inc. is a full-service Electrical Engineering firm serving the Greater Sacramento area and beyond. Founded by Tony C. Baker, LC, our reputation is built on trust, integrity, and long-lasting client relationships spanning more than three decades.</p>
+      <p>Tony's exceptional 30-plus year career in electrical engineering drives our commitment to quality work and excellent service. We are a dedicated, motivated, and responsive firm - customer-centric at our core, continuously advancing our knowledge of codes, regulations, and innovative design.</p>
+      <p>Our award-winning team delivers budget-conscious solutions while maintaining the highest standards of quality control. We support continuing education and promote achievement from within, ensuring our clients always benefit from the latest expertise in electrical engineering and lighting design.</p>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat-box">
+        <strong>30+</strong>
+        <p>Years of Service</p>
+      </div>
+      <div class="stat-box">
+        <strong>11</strong>
+        <p>State Licenses</p>
+      </div>
+      <div class="stat-box">
+        <strong>IES</strong>
+        <p>International Awards</p>
+      </div>
+      <div class="stat-box">
+        <strong>LC</strong>
+        <p>NCQLP Certified</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-tag">
+    <div class="section-tag-line"></div>
+    <span>What We Do</span>
+  </div>
+  <h2 class="section-title">Comprehensive <em>engineering</em><br>solutions.</h2>
+  <p class="section-sub">From initial design through construction administration, our team delivers superior results across all project types.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Bolt icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <h3>Electrical Engineering</h3>
+      <p>Full-scope electrical design for commercial, industrial, residential, and institutional construction. Field investigations, specifications, schematic and construction drawings for all project types.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Sun/light icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </div>
+      <h3>Lighting Design</h3>
+      <p>NCQLP-certified Lighting Certified (LC) professionals delivering cost-effective, energy-efficient, high-performance lighting systems. Expert in interior and exterior illumination for any facility type.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Leaf/energy icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 8C8 10 5.9 16.17 3.82 19.34L5.71 21c1.14-1.67 5.46-7.23 11.29-9.26V8z"/>
+          <path d="M19 5c-1.5 2-3 3-8 4"/>
+        </svg>
+      </div>
+      <h3>Energy Compliance</h3>
+      <p>Title 24 energy compliance reports and sustainable systems engineering. We design projects that are more energy efficient and cost effective, incorporating building sustainable systems for long-term savings.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Clipboard/admin icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </div>
+      <h3>Construction Administration</h3>
+      <p>Selected staff oversee every project from conception through completion and beyond. We pride ourselves on continuing client relationships and being responsive when questions or challenges arise.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Building icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="15" rx="2"/>
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+          <line x1="12" y1="12" x2="12" y2="17"/>
+          <line x1="8" y1="12" x2="8" y2="17"/>
+          <line x1="16" y1="12" x2="16" y2="17"/>
+        </svg>
+      </div>
+      <h3>Commercial &amp; Industrial</h3>
+      <p>Extensive experience across retail, office, healthcare, hospitality, automotive, municipal, and institutional projects. Our adaptability across facility types is one of our greatest strengths.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <!-- Shield icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h3>Code &amp; Regulation Compliance</h3>
+      <p>Ongoing education ensures current knowledge of all applicable electrical codes and regulations. We deliver innovative designs that meet or exceed all local, state, and national compliance requirements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+  <div class="section-tag">
+    <div class="section-tag-line"></div>
+    <span>Our Work</span>
+  </div>
+  <h2 class="section-title">Projects that <em>define</em><br>the region.</h2>
+  <p class="section-sub">From civic institutions to luxury commercial developments, our work spans the full spectrum of built environments.</p>
+
+  <div class="portfolio-grid">
+
+    <div class="project-item">
+      <img src="images/p1.jpg" alt="Rocklin Police Department - Electrical Engineering by Capitol City Design" class="project-img">
+      <div class="project-overlay">
+        <div class="project-label">Civic / Municipal</div>
+        <div class="project-name">Rocklin Police Department</div>
+        <div class="project-meta">Rocklin, California &nbsp;|&nbsp; 40,000 Sq. Ft.</div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <img src="images/p2.jpg" alt="El Dorado Hills Fire Station #85 - Electrical Engineering by Capitol City Design" class="project-img">
+      <div class="project-overlay">
+        <div class="project-label">Civic / Emergency Services</div>
+        <div class="project-name">El Dorado Hills Fire Station #85</div>
+        <div class="project-meta">El Dorado Hills, California &nbsp;|&nbsp; 24,000 Sq. Ft.</div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <img src="images/p3.jpg" alt="Nugget Markets - Commercial Electrical Engineering by Capitol City Design" class="project-img">
+      <div class="project-overlay">
+        <div class="project-label">Commercial / Retail</div>
+        <div class="project-name">Nugget Markets</div>
+        <div class="project-meta">Sacramento Region</div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <img src="images/p4.jpg" alt="Niello Porsche - Automotive Electrical Engineering by Capitol City Design" class="project-img">
+      <div class="project-overlay">
+        <div class="project-label">Automotive / Luxury Retail</div>
+        <div class="project-name">Niello Porsche</div>
+        <div class="project-meta">Sacramento, California</div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <img src="images/p5.jpg" alt="Niello Porsche Showroom Interior - Lighting Design by Capitol City Design" class="project-img">
+      <div class="project-overlay">
+        <div class="project-label">Interior Lighting Design</div>
+        <div class="project-name">Niello Porsche - Showroom</div>
+        <div class="project-meta">Sacramento, California</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials" class="credentials">
+  <div class="section-tag">
+    <div class="section-tag-line"></div>
+    <span>Our Credentials</span>
+  </div>
+  <h2 class="section-title">Licensed. Certified.<br><em>Award-winning.</em></h2>
+
+  <div class="cred-grid">
+
+    <div class="cred-panel">
+      <h3>Licenses</h3>
+      <ul>
+        <li>Arizona</li>
+        <li>California</li>
+        <li>Colorado</li>
+        <li>Florida</li>
+        <li>Iowa</li>
+        <li>Missouri</li>
+        <li>Nevada</li>
+        <li>New Mexico</li>
+        <li>Oregon</li>
+        <li>Texas</li>
+        <li>Washington</li>
+      </ul>
+    </div>
+
+    <div class="cred-panel">
+      <h3>Certifications</h3>
+      <ul>
+        <li>NCQLP - National Council on Qualifications for Lighting Professions (LC Credential)</li>
+        <li>Illuminating Engineering Society of North America</li>
+      </ul>
+      <div class="awards-badge">
+        <strong>International Illumination Design Awards</strong><br>
+        Multiple IES international awards for lighting design excellence.
+      </div>
+    </div>
+
+    <div class="cred-panel">
+      <h3>Affiliations</h3>
+      <ul>
+        <li>IEEE - Institute of Electrical and Electronics Engineers, Inc.</li>
+        <li>IES - Illuminating Engineering Society of North America</li>
+        <li>ILAD - International Association of Lighting Designers</li>
+        <li>NCQLP - National Council on Qualifications for Lighting Professions</li>
+      </ul>
+    </div>
+
+    <div class="cred-panel">
+      <h3>Leadership</h3>
+      <ul>
+        <li>Tony C. Baker, LC - President &amp; Founder</li>
+        <li>30+ years in Electrical Engineering</li>
+        <li>NCQLP Lighting Certified Professional</li>
+        <li>Specialist in commercial, institutional, and industrial systems</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<div class="clients">
+  <div class="clients-inner">
+    <span class="clients-label">Notable Clients</span>
+    <div class="clients-line"></div>
+    <div class="clients-list">
+      <div class="client-pill">Rocklin Police Department</div>
+      <div class="client-pill">El Dorado Hills Fire Station #85</div>
+      <div class="client-pill">Mercedes-Benz Sacramento</div>
+      <div class="client-pill">Niello Porsche</div>
+      <div class="client-pill">Nugget Markets</div>
+      <div class="client-pill">Taro's by Mikuni</div>
+      <div class="client-pill">Benicia High School</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-tag">
+    <div class="section-tag-line"></div>
+    <span>Get In Touch</span>
+  </div>
+  <h2 class="section-title">Let's discuss<br>your <em>next project.</em></h2>
+  <p class="section-sub">We look forward to learning about your project's needs and delivering a solution built on precision, experience, and trust.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Capitol City Design, Inc.</h3>
+
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="contact-detail-body">
+          <strong>Address</strong>
+          <p>1751 Cebrian Street<br>West Sacramento, CA 95691</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/>
+          </svg>
+        </div>
+        <div class="contact-detail-body">
+          <strong>Phone</strong>
+          <a href="tel:9163750135">916.375.0135</a>
+          <p style="margin-top:2px;">Fax: 916.375.0773</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="contact-detail-body">
+          <strong>Email</strong>
+          <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a>
+        </div>
+      </div>
+
+      <div class="contact-license-strip">
+        <p><strong>Licensed in 11 states:</strong> Arizona, California, Colorado, Florida, Iowa, Missouri, Nevada, New Mexico, Oregon, Texas and Washington.</p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div id="form-fields">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Tony Baker" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="916.000.0000">
+          </div>
+          <div class="form-group">
+            <label for="project-type">Project Type</label>
+            <select id="project-type" name="project_type">
+              <option value="">Select one...</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+              <option>Institutional / Civic</option>
+              <option>Residential</option>
+              <option>Lighting Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Project / Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Brief project description">
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project, location, timeline, and any specific requirements..." required></textarea>
+        </div>
+        <button type="button" class="form-submit" onclick="submitForm()">Send Message</button>
+      </div>
+
+      <div id="form-success">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h4>Message Sent!</h4>
+        <p>Thank you for reaching out. We'll be in touch shortly to discuss your project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="images/logo.png" alt="Capitol City Design logo" class="footer-logo-img">
+    <span class="footer-brand">Capitol City Design, Inc.</span>
+  </div>
+  <p>&copy; 2025 Capitol City Design, Inc. All rights reserved. West Sacramento, CA &nbsp;|&nbsp; 916.375.0135</p>
+  <p class="footer-credit">
+    <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Use</a> &middot; <a href="accessibility.html">Accessibility</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp; Site by <a href="https://synprism.io" target="_blank">Synprism</a>
+  </p>
+</footer>
+
+<script>
+  async function submitForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const formData = {
+      access_key: '393febfe-46c0-4453-8523-3c67eee8a12f',
+      name: name,
+      email: email,
+      phone: document.getElementById('phone').value,
+      project_type: document.getElementById('project-type').value,
+      subject: document.getElementById('subject').value || 'Capitol City Design Inquiry',
+      message: message,
+      from_name: 'Capitol City Design Website',
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        document.getElementById('form-fields').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us at 916.375.0135.');
+    }
+  }
+
+  // Smooth active nav state
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--cyan)' : '';
+    });
+  });
+</script>
+</body>
+</html>
