@@ -58,8 +58,19 @@
     flex-shrink: 0;
   }
 
-  .nav-logo img {
-    height: 34px;
+  .nav-logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--ink);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-icon img {
+    height: 28px;
     width: auto;
   }
 
@@ -1010,7 +1021,9 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="images/logo.png" alt="Capitol City Design Inc.">
+    <div class="nav-logo-icon">
+      <img src="images/logo.png" alt="Capitol City Design Inc.">
+    </div>
     <div class="nav-logo-text">
       <span class="nav-logo-name">Capitol City Design</span>
       <span class="nav-logo-sub">Electrical Engineering</span>
