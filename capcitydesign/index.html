@@ -66,6 +66,211 @@
     .footer-top { flex-direction: column; }
     .footer-bottom { flex-direction: column; }
   }
+
+/* ── MOBILE OVERRIDES ─────────────────────────────────────────────── */
+
+/* Hero split */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 68px);
+}
+.hero-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.9;
+}
+
+/* Generic responsive grids */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.grid-content-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 72px;
+  align-items: start;
+}
+.grid-contact {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 72px;
+  align-items: start;
+}
+.grid-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.grid-feat-cats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.grid-proj-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Portfolio mosaic */
+.port-mosaic {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 380px 280px;
+  gap: 4px;
+  margin-bottom: 64px;
+}
+.port-mosaic .pt1 { grid-column: 1/8; grid-row: 1; }
+.port-mosaic .pt2 { grid-column: 8/13; grid-row: 1; }
+.port-mosaic .pt3 { grid-column: 1/5; grid-row: 2; }
+.port-mosaic .pt4 { grid-column: 5/9; grid-row: 2; }
+.port-mosaic .pt5 { grid-column: 9/13; grid-row: 2; }
+.port-tile {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+.port-tile img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.port-tile:hover img { transform: scale(1.04); }
+.port-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 36px 24px 24px;
+  background: linear-gradient(transparent, rgba(20,23,31,0.88));
+}
+.port-overlay .po-cat {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 4px;
+}
+.port-overlay .po-name {
+  font-weight: 800; color: var(--white); margin-bottom: 2px;
+}
+.port-overlay .po-meta {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+}
+
+/* Hamburger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.burger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--white); border-radius: 2px;
+  transition: all 0.2s;
+}
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 68px; left: 0; right: 0;
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  z-index: 99;
+  flex-direction: column;
+  padding: 16px 0;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-size: 15px; font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  letter-spacing: 0.02em;
+}
+.mobile-nav a.active, .mobile-nav a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+.mobile-nav a.nav-cta { color: var(--cyan); font-weight: 700; }
+
+/* ── TABLET ── */
+@media (max-width: 960px) {
+  .hero-split { grid-template-columns: 1fr; min-height: auto; }
+  .hero-photo { height: 320px; }
+  .grid-content-sidebar { grid-template-columns: 1fr; gap: 48px; }
+  .grid-content-sidebar > div:last-child { position: static !important; }
+  .grid-3col { grid-template-columns: 1fr 1fr; }
+  .grid-contact { grid-template-columns: 1fr; gap: 40px; }
+  nav { padding: 0 24px; }
+  .content-wrap, .content-wrap.wide { padding: 48px 24px; }
+  .page-hero { padding: 40px 24px 36px; }
+  footer { padding: 36px 24px; }
+  .footer-top { flex-direction: column; gap: 16px; }
+  .footer-bottom { flex-direction: column; gap: 10px; }
+  .hero-left-pad { padding: 52px 32px !important; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .nav-links { display: none !important; }
+  .burger { display: flex; }
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-left-pad { padding: 44px 24px 40px !important; }
+  .hero-photo { height: 260px; }
+  .hero-title { font-size: 52px !important; }
+  .stat-strip { gap: 24px !important; flex-wrap: wrap; }
+  .grid-2col, .grid-proj-list, .grid-feat-cats, .grid-form-row { grid-template-columns: 1fr !important; }
+  .grid-3col { grid-template-columns: 1fr !important; }
+  .grid-content-sidebar { grid-template-columns: 1fr; gap: 32px; }
+  .grid-contact { grid-template-columns: 1fr; gap: 32px; }
+  .port-mosaic {
+    display: flex !important;
+    flex-direction: column;
+    grid-template-rows: none !important;
+    margin-bottom: 40px;
+  }
+  .port-mosaic .pt1,
+  .port-mosaic .pt2,
+  .port-mosaic .pt3,
+  .port-mosaic .pt4,
+  .port-mosaic .pt5 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 220px !important;
+  }
+  .port-overlay { padding: 28px 18px 18px; }
+  .content-wrap, .content-wrap.wide { padding: 36px 20px; }
+  .page-hero { padding: 32px 20px 28px; }
+  .page-hero h1 { font-size: 36px !important; }
+  footer { padding: 28px 20px; }
+  .footer-nav { gap: 14px; }
+  .btn-primary, .btn-cyan, .btn-outline { padding: 12px 24px; font-size: 12px; }
+  nav { padding: 0 20px; }
+  .hero-badge { left: 16px !important; bottom: 16px !important; right: 16px; }
+  .sidebar-sticky { position: static !important; top: auto !important; }
+}
+
 </style>
 </head><body><nav>
   <a href="index.html" class="nav-logo">
@@ -73,14 +278,30 @@
     <span><span class="nav-logo-name">Capitol City Design</span><span class="nav-logo-sub">Electrical Engineering</span></span>
   </a>
   <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="experience.html" class="">Experience</a></li><li><a href="portfolio.html" class="">Portfolio</a></li><li><a href="featured-projects.html" class="">Featured Projects</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li></ul>
+<button class="burger" onclick="toggleNav()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html" class="active">Home</a>
+<a href="experience.html" class="">Experience</a>
+<a href="portfolio.html" class="">Portfolio</a>
+<a href="featured-projects.html" class="">Featured Projects</a>
+<a href="contact.html" class="nav-cta">Contact</a>
+</div>
+<script>
+function toggleNav(){
+  var n=document.getElementById('mobileNav');
+  n.classList.toggle('open');
+}
+</script>
 </nav>
-<div style="display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);" class="two-col">
-  <div style="padding:80px 64px 80px 48px;display:flex;flex-direction:column;justify-content:center;background:var(--white);">
+<div class="hero-split">
+  <div class="hero-left-pad" style="display:flex;flex-direction:column;justify-content:center;background:var(--white);padding:80px 64px 80px 48px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:28px;">
       <div style="width:8px;height:8px;background:var(--cyan);border-radius:50%;"></div>
       <span style="font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);">West Sacramento, California</span>
     </div>
-    <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,6vw,84px);font-weight:900;line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;color:var(--ink);margin-bottom:24px;">
+    <h1 class="hero-title" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,6vw,84px);font-weight:900;line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;color:var(--ink);margin-bottom:24px;">
       Full-Service<br><span style="color:var(--cyan);">Electrical</span><br>Engineering<br>+ Lighting
     </h1>
     <p style="font-size:17px;color:var(--muted);line-height:1.7;max-width:440px;margin-bottom:40px;">Capitol City Design Inc. brings 30-plus years of trusted expertise to commercial, institutional, and industrial projects across California and 11 states.</p>
@@ -88,7 +309,7 @@
       <a href="portfolio.html" class="btn-primary">View Our Work</a>
       <a href="contact.html" class="btn-outline">Start a Project</a>
     </div>
-    <div style="display:flex;gap:36px;padding-top:40px;border-top:1px solid var(--rule);flex-wrap:wrap;">
+    <div class="stat-strip" style="display:flex;gap:36px;padding-top:40px;border-top:1px solid var(--rule);flex-wrap:wrap;">
       <div>
   <strong style="font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--ink);line-height:1;display:block;">30<span style='color:var(--cyan);'>+</span></strong>
   <span style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Years Experience</span>
@@ -103,9 +324,9 @@
 </div>
     </div>
   </div>
-  <div style="position:relative;overflow:hidden;background:var(--ink);">
+  <div class="hero-photo">
     <img src="images/p1.jpg" alt="Rocklin Police Department - Capitol City Design project" style="width:100%;height:100%;object-fit:cover;opacity:0.9;">
-    <div style="position:absolute;bottom:28px;left:28px;background:var(--white);padding:14px 18px;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;align-items:center;gap:12px;">
+    <div class="hero-badge" style="position:absolute;bottom:28px;left:28px;background:var(--white);padding:14px 18px;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;align-items:center;gap:12px;">
       <div style="width:36px;height:36px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
       <div>
         <strong style="display:block;font-size:13px;font-weight:800;color:var(--ink);line-height:1.2;">NCQLP Lighting Certified</strong>
@@ -119,7 +340,7 @@
   <div style="max-width:1200px;margin:0 auto;">
     <div class="section-label">What We Do</div>
     <h2 class="section-title">Comprehensive Engineering Services</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;" class="three-col">
+    <div class="grid-3col">
       <div style="background:var(--white);padding:36px 32px;">
   <div style="font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;color:var(--rule);line-height:1;margin-bottom:16px;">01</div>
   <h3 style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:10px;">Electrical Engineering</h3>
