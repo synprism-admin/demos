@@ -94,7 +94,27 @@
     .cookie-btn-accept, .cookie-btn-decline { flex: 1; }
   }
 
+
+  /* Focus-visible styles */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid var(--cyan, #00d4ff);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  /* Footer link contrast fix - raise from 0.4 to 0.7 opacity */
+  .footer-nav a { color: rgba(255,255,255,0.7); }
+  .footer-legal a { color: rgba(255,255,255,0.7); }
+  .footer-copy { color: rgba(255,255,255,0.55); }
+
 </style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="canonical" href="https://capcitydesign.com/privacy">
+<meta name="robots" content="noindex">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
