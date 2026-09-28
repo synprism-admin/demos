@@ -33,10 +33,74 @@
   footer p { font-size: 12px; color: var(--muted); }
   footer a { color: var(--cyan); text-decoration: none; }
   @media (max-width: 768px) { nav { padding: 0 24px; } .nav-links { display: none; } .legal-hero { padding: 120px 24px 60px; } .legal-body { padding: 48px 24px; } footer { flex-direction: column; text-align: center; padding: 24px; } }
+
+  /* Skip nav */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--cyan, #00d4ff);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 0 0 4px 4px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.15s;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* Cookie banner */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #14171f;
+    border-top: 2px solid #00d4ff;
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    z-index: 9998;
+    flex-wrap: wrap;
+  }
+  #cookie-banner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 700px;
+  }
+  #cookie-banner a { color: #00d4ff; }
+  #cookie-banner-btns { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btn-accept {
+    background: #00d4ff; color: #000;
+    border: none; padding: 9px 22px;
+    font-family: inherit; font-size: 13px; font-weight: 700;
+    cursor: pointer; border-radius: 4px; white-space: nowrap;
+  }
+  .cookie-btn-decline {
+    background: transparent; color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.2); padding: 8px 22px;
+    font-family: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer; border-radius: 4px; white-space: nowrap;
+  }
+  .cookie-btn-accept:hover { background: #009bbf; }
+  .cookie-btn-decline:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+  @media (max-width: 640px) {
+    #cookie-banner { padding: 16px 20px; }
+    #cookie-banner-btns { width: 100%; }
+    .cookie-btn-accept, .cookie-btn-decline { flex: 1; }
+  }
+
 </style>
 </head>
 <body>
-<nav>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header role="banner">
+<nav aria-label="Primary navigation">
   <a href="index.html" class="nav-logo">
     <img src="images/logo.png" alt="Capitol City Design">
     <div class="nav-brand">Capitol City Design<span>Electrical Engineering</span></div>
@@ -49,10 +113,12 @@
     <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
   </ul>
 </nav>
+</header>
+<main id="main-content">
 
 <div class="legal-hero">
   <h1>Terms <span>of Use</span></h1>
-  <p>Last updated: September 2025</p>
+  <p>Last updated: September 2026</p>
 </div>
 
 <div class="legal-body">
@@ -68,22 +134,26 @@
   <h2>4. Accuracy of Information</h2>
   <p>Capitol City Design Inc. strives to keep all website information current and accurate. However, we make no representations or warranties about the completeness or accuracy of the information provided. Project details, certifications, and licensing information are subject to change.</p>
 
-  <h2>5. Limitation of Liability</h2>
-  <p>Capitol City Design Inc. shall not be liable for any damages arising from the use of or inability to use this website or its content. All engineering services are governed by separate professional agreements.</p>
+  <h2>5. Disclaimer of Warranties</h2>
+  <p>THIS WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. Capitol City Design Inc. does not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components. We make no warranty regarding the accuracy, completeness, or reliability of any content on this website.</p>
 
-  <h2>6. External Links</h2>
+  <h2>6. Limitation of Liability</h2>
+  <p>TO THE FULLEST EXTENT PERMITTED BY LAW, CAPITOL CITY DESIGN INC. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING FROM YOUR USE OF OR INABILITY TO USE THIS WEBSITE. IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU EXCEED ONE HUNDRED DOLLARS ($100). All professional engineering services are governed by separate written agreements.</p>
+
+  <h2>7. External Links</h2>
   <p>This website may contain links to third-party websites. Capitol City Design Inc. is not responsible for the content or practices of any linked sites.</p>
 
-  <h2>7. Changes to Terms</h2>
+  <h2>8. Changes to Terms</h2>
   <p>We reserve the right to update these terms at any time. Continued use of the website after changes constitutes acceptance of the updated terms.</p>
 
-  <h2>8. Governing Law</h2>
+  <h2>9. Governing Law</h2>
   <p>These terms are governed by the laws of the State of California. Any disputes shall be resolved in Sacramento County, California.</p>
 
-  <h2>9. Contact</h2>
+  <h2>10. Contact</h2>
   <p>Capitol City Design Inc.<br>1751 Cebrian Street, West Sacramento, CA 95691<br>Phone: 916.375.0135<br>Email: <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
 </div>
 
+</main>
 <footer>
   <div style="display:flex;align-items:center;">
     <img src="images/logo.png" alt="" class="footer-logo-img">
@@ -91,11 +161,33 @@
   </div>
   <p>&copy; 2025 Capitol City Design, Inc. All rights reserved.</p>
   <p>
-    <a href="privacy.html">Privacy Policy</a> &middot;
+    <a href="privacy.html">Privacy Policy</a>
+      <a href="privacy.html#do-not-sell">Do Not Sell My Info</a> &middot;
     <a href="terms.html">Terms of Use</a> &middot;
     <a href="accessibility.html">Accessibility</a>
     &nbsp;|&nbsp; Site by <a href="https://synprism.io" target="_blank">Synprism</a>
   </p>
 </footer>
+
+<div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;">
+  <p>We use Cloudflare Web Analytics to understand how visitors use our site. No personal data is sold. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+  <div id="cookie-banner-btns">
+    <button class="cookie-btn-accept" onclick="cookieConsent(true)">Accept</button>
+    <button class="cookie-btn-decline" onclick="cookieConsent(false)">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('ccd_cookie_consent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+})();
+function cookieConsent(accepted) {
+  localStorage.setItem('ccd_cookie_consent', accepted ? 'accepted' : 'declined');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
 </body>
 </html>

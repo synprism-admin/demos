@@ -33,10 +33,74 @@
   footer p { font-size: 12px; color: var(--muted); }
   footer a { color: var(--cyan); text-decoration: none; }
   @media (max-width: 768px) { nav { padding: 0 24px; } .nav-links { display: none; } .legal-hero { padding: 120px 24px 60px; } .legal-body { padding: 48px 24px; } footer { flex-direction: column; text-align: center; padding: 24px; } }
+
+  /* Skip nav */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--cyan, #00d4ff);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 0 0 4px 4px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.15s;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* Cookie banner */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #14171f;
+    border-top: 2px solid #00d4ff;
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    z-index: 9998;
+    flex-wrap: wrap;
+  }
+  #cookie-banner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 700px;
+  }
+  #cookie-banner a { color: #00d4ff; }
+  #cookie-banner-btns { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btn-accept {
+    background: #00d4ff; color: #000;
+    border: none; padding: 9px 22px;
+    font-family: inherit; font-size: 13px; font-weight: 700;
+    cursor: pointer; border-radius: 4px; white-space: nowrap;
+  }
+  .cookie-btn-decline {
+    background: transparent; color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.2); padding: 8px 22px;
+    font-family: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer; border-radius: 4px; white-space: nowrap;
+  }
+  .cookie-btn-accept:hover { background: #009bbf; }
+  .cookie-btn-decline:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+  @media (max-width: 640px) {
+    #cookie-banner { padding: 16px 20px; }
+    #cookie-banner-btns { width: 100%; }
+    .cookie-btn-accept, .cookie-btn-decline { flex: 1; }
+  }
+
 </style>
 </head>
 <body>
-<nav>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header role="banner">
+<nav aria-label="Primary navigation">
   <a href="index.html" class="nav-logo">
     <img src="images/logo.png" alt="Capitol City Design">
     <div class="nav-brand">Capitol City Design<span>Electrical Engineering</span></div>
@@ -49,6 +113,8 @@
     <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
   </ul>
 </nav>
+</header>
+<main id="main-content">
 
 <div class="legal-hero">
   <h1>Accessibility <span>Statement</span></h1>
@@ -88,6 +154,7 @@
   <p>If you are not satisfied with our response, you may contact the California Department of Rehabilitation, which oversees web accessibility compliance for businesses in California.</p>
 </div>
 
+</main>
 <footer>
   <div style="display:flex;align-items:center;">
     <img src="images/logo.png" alt="" class="footer-logo-img">
@@ -95,11 +162,33 @@
   </div>
   <p>&copy; 2025 Capitol City Design, Inc. All rights reserved.</p>
   <p>
-    <a href="privacy.html">Privacy Policy</a> &middot;
+    <a href="privacy.html">Privacy Policy</a>
+      <a href="privacy.html#do-not-sell">Do Not Sell My Info</a> &middot;
     <a href="terms.html">Terms of Use</a> &middot;
     <a href="accessibility.html">Accessibility</a>
     &nbsp;|&nbsp; Site by <a href="https://synprism.io" target="_blank">Synprism</a>
   </p>
 </footer>
+
+<div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;">
+  <p>We use Cloudflare Web Analytics to understand how visitors use our site. No personal data is sold. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+  <div id="cookie-banner-btns">
+    <button class="cookie-btn-accept" onclick="cookieConsent(true)">Accept</button>
+    <button class="cookie-btn-decline" onclick="cookieConsent(false)">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('ccd_cookie_consent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+})();
+function cookieConsent(accepted) {
+  localStorage.setItem('ccd_cookie_consent', accepted ? 'accepted' : 'declined');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
