@@ -452,6 +452,16 @@ footer { background: var(--navy-dark); padding: 56px 32px 28px; }
   .form-divider { margin: 20px 0 0; }
 }
 </style>
+<!-- Consent Mode v2 default: deny analytics until user accepts -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLL7M7M75Z"></script>
 <script>
@@ -620,6 +630,12 @@ footer { background: var(--navy-dark); padding: 56px 32px 28px; }
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
             Send My Trip Request
           </button>
+        <p style="font-size:0.75rem;color:var(--text-soft,#9ca3af);margin-top:12px;line-height:1.6;text-align:center;">
+          By submitting this form, you agree to our 
+          <a href="privacy.html" style="color:var(--gold,#C29A55);">Privacy Policy</a> and 
+          <a href="terms.html" style="color:var(--gold,#C29A55);">Terms of Use</a>. 
+          We will only use your information to respond to your inquiry.
+        </p>
         </div>
 
       </form>
@@ -656,8 +672,11 @@ footer { background: var(--navy-dark); padding: 56px 32px 28px; }
   </div>
 </div>
 
+<main id="main-content">
 <!-- FOOTER -->
-<footer><div class="footer-inner"><div class="footer-top"><div class="f-brand"><img src="logo.png" alt="EG Koch Travel"><p>Eric &amp; Grace Koch — personal travel advisors in Elk Grove, CA. Affiliated with Gold Rush Getaways.</p></div><div class="f-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html">Plan a Trip</a></li></ul></div><div class="f-col"><h5>Get in Touch</h5><ul><li><a href="tel:9168268754">(916) 826-8754</a></li><li><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></li><li><span style="color:rgba(255,255,255,0.5)">Elk Grove, California</span></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved. &nbsp;|&nbsp; License: LLIC26-001541</div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="accessibility.html">Accessibility</a></div><div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div></div></div></footer>
+</main>
+<footer><div class="footer-inner"><div class="footer-top"><div class="f-brand"><img src="logo.png" alt="EG Koch Travel"><p>Eric &amp; Grace Koch — personal travel advisors in Elk Grove, CA. Affiliated with Gold Rush Getaways.</p></div><div class="f-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html">Plan a Trip</a></li></ul></div><div class="f-col"><h5>Get in Touch</h5><ul><li><a href="tel:9168268754">(916) 826-8754</a></li><li><a href="mailto:ericandgrace@egkochtravel.com">ericandgrace@egkochtravel.com</a></li><li><span style="color:rgba(255,255,255,0.5)">Elk Grove, California</span></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved. &nbsp;|&nbsp; License: LLIC26-001541</div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html#do-not-sell">Do Not Sell My Info</a><a href="terms.html">Terms of Use</a><a href="accessibility.html">Accessibility</a></div><div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div></div></div></footer>
 
 <script>
 // ── Nav scroll state ──
@@ -715,5 +734,43 @@ form.addEventListener('submit', async (e) => {
 });
 </script>
 <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#0f1f3d;border-top:1px solid rgba(194,154,85,0.3);padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  font-family:'Inter',sans-serif;box-shadow:0 -4px 24px rgba(0,0,0,0.3);">
+  <p style="margin:0;font-size:0.85rem;color:rgba(255,255,255,0.8);max-width:700px;line-height:1.6;">
+    We use Google Analytics to understand how visitors use our site. By clicking <strong style="color:#C29A55;">Accept</strong>, 
+    you consent to our use of analytics cookies. See our <a href="/privacy.html" style="color:#C29A55;text-decoration:underline;">Privacy Policy</a> for details.
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="egkochConsent('denied')" style="background:transparent;border:1px solid rgba(255,255,255,0.3);
+      color:rgba(255,255,255,0.7);padding:8px 20px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-family:'Inter',sans-serif;">
+      Decline
+    </button>
+    <button onclick="egkochConsent('granted')" style="background:linear-gradient(135deg,#C29A55,#d9b76a);
+      border:none;color:#0f1f3d;padding:8px 22px;border-radius:20px;cursor:pointer;font-size:0.82rem;
+      font-weight:700;font-family:'Inter',sans-serif;">
+      Accept
+    </button>
+  </div>
+</div>
+<script>
+(function(){
+  var b = document.getElementById('cookie-banner');
+  var choice = localStorage.getItem('egkoch_consent');
+  if (!choice) {
+    setTimeout(function(){ b.style.display='flex'; }, 800);
+  } else if (choice === 'granted') {
+    gtag('consent','update',{'analytics_storage':'granted'});
+  }
+})();
+function egkochConsent(val){
+  localStorage.setItem('egkoch_consent', val);
+  gtag('consent','update',{'analytics_storage':val,'ad_storage':'denied'});
+  document.getElementById('cookie-banner').style.display='none';
+}
+</script>
 </body>
 </html>

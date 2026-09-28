@@ -467,6 +467,16 @@ footer {
   .cta-btns { flex-direction: column; align-items: center; }
 }
 </style>
+<!-- Consent Mode v2 default: deny analytics until user accepts -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLL7M7M75Z"></script>
 <script>
@@ -504,6 +514,7 @@ footer {
   </div>
 </div>
 
+<main id="main-content">
 <!-- ═══ PAGE HERO ═══ -->
 <section class="page-hero">
   <div class="hero-grid"></div>
@@ -630,6 +641,7 @@ footer {
 </section>
 
 <!-- ═══ FOOTER ═══ -->
+</main>
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -639,7 +651,8 @@ footer {
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2025 EG Koch Travel. All rights reserved. &nbsp;|&nbsp; License: LLIC26-001541</div>
-      <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="accessibility.html">Accessibility</a></div>
+      <div class="footer-legal"><a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html#do-not-sell">Do Not Sell My Info</a><a href="terms.html">Terms of Use</a><a href="accessibility.html">Accessibility</a></div>
       <div class="footer-credit">Site by <a href="https://synprism.io" target="_blank">Synprism</a></div>
     </div>
   </div>
@@ -662,6 +675,44 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
 revealEls.forEach(el => io.observe(el));
+</script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#0f1f3d;border-top:1px solid rgba(194,154,85,0.3);padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  font-family:'Inter',sans-serif;box-shadow:0 -4px 24px rgba(0,0,0,0.3);">
+  <p style="margin:0;font-size:0.85rem;color:rgba(255,255,255,0.8);max-width:700px;line-height:1.6;">
+    We use Google Analytics to understand how visitors use our site. By clicking <strong style="color:#C29A55;">Accept</strong>, 
+    you consent to our use of analytics cookies. See our <a href="/privacy.html" style="color:#C29A55;text-decoration:underline;">Privacy Policy</a> for details.
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="egkochConsent('denied')" style="background:transparent;border:1px solid rgba(255,255,255,0.3);
+      color:rgba(255,255,255,0.7);padding:8px 20px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-family:'Inter',sans-serif;">
+      Decline
+    </button>
+    <button onclick="egkochConsent('granted')" style="background:linear-gradient(135deg,#C29A55,#d9b76a);
+      border:none;color:#0f1f3d;padding:8px 22px;border-radius:20px;cursor:pointer;font-size:0.82rem;
+      font-weight:700;font-family:'Inter',sans-serif;">
+      Accept
+    </button>
+  </div>
+</div>
+<script>
+(function(){
+  var b = document.getElementById('cookie-banner');
+  var choice = localStorage.getItem('egkoch_consent');
+  if (!choice) {
+    setTimeout(function(){ b.style.display='flex'; }, 800);
+  } else if (choice === 'granted') {
+    gtag('consent','update',{'analytics_storage':'granted'});
+  }
+})();
+function egkochConsent(val){
+  localStorage.setItem('egkoch_consent', val);
+  gtag('consent','update',{'analytics_storage':val,'ad_storage':'denied'});
+  document.getElementById('cookie-banner').style.display='none';
+}
 </script>
 </body>
 </html>
