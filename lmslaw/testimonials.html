@@ -1,14 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client Testimonials | LMS Law Firm San Francisco</title>
-  <meta name="description" content="Read real testimonials from LMS Law Firm's personal injury clients across the Bay Area. Hear firsthand experiences from people we have helped." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Testimonials | LMS Law San Francisco Personal Injury Attorneys</title>
+<meta name="description" content="Read what LMS Law clients say about their experience with our San Francisco personal injury attorneys. Real stories, real results since 2003.">
 <link rel="stylesheet" href="./shared.css">
+<style>
+
+/* ── Hero intro strip ── */
+.testi-hero {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.testi-hero .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.testi-hero h2 {
+  font-size: clamp(22px, 3vw, 34px);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.testi-hero h2 em {
+  color: var(--crimson);
+  font-style: normal;
+}
+.testi-hero p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+.testi-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 2px solid var(--border);
+}
+.testi-stat {
+  background: #fff;
+  padding: 24px 20px;
+  text-align: center;
+}
+.testi-stat-num {
+  font-family: 'Merriweather', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--crimson);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.testi-stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 600;
+}
+
+/* ── Testimonial cards ── */
+.testi-section {
+  padding: 72px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.testi-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--crimson);
+  padding: 36px 32px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.testi-card::before {
+  content: '\201C';
+  font-family: 'Merriweather', serif;
+  font-size: 80px;
+  color: var(--crimson);
+  opacity: .1;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  line-height: 1;
+  pointer-events: none;
+}
+.testi-stars {
+  color: #D4A017;
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+.testi-quote {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.85;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.testi-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--crimson);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.testi-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+.testi-location {
+  font-size: 12px;
+  color: var(--muted);
+}
+.testi-attorney {
+  font-size: 11px;
+  color: var(--crimson);
+  font-weight: 700;
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Featured section with team photo ── */
+.testi-featured {
+  background: var(--crimson);
+  padding: 64px 24px;
+}
+.testi-featured .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.testi-featured-text h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.testi-featured-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.testi-featured-img {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+}
+.testi-featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(.7) sepia(.15);
+}
+
+/* ── Awards section ── */
+.testi-awards {
+  background: var(--off-white);
+  padding: 64px 24px;
+}
+.testi-awards .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.awards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 32px;
+  background: #fff;
+  border: 1px solid var(--border);
+  margin-top: 36px;
+}
+.award-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: grayscale(10%);
+  transition: filter .2s, transform .2s;
+}
+.award-img:hover { filter: none; transform: scale(1.05); }
+
+/* ── CTA ── */
+.testi-cta {
+  padding: 64px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testi-cta-inner {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--crimson);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.testi-cta h2 { font-size: clamp(20px, 2.5vw, 30px); margin-bottom: 12px; }
+.testi-cta p { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 24px; }
+
+/* Contact form reuse */
+.testi-cta-form .fgroup { margin-bottom: 12px; }
+.testi-cta-form .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+@media (max-width: 900px) {
+  .testi-hero .inner,
+  .testi-featured .inner,
+  .testi-cta-inner { grid-template-columns: 1fr; gap: 32px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi-featured-img { height: 220px; }
+  .testi-stats { grid-template-columns: repeat(3, 1fr); }
+  .testi-cta-form .frow { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -30,7 +272,7 @@
   <div class="lms-nav-inner">
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./why-lms/index.html">Our Approach</a>
           <a href="./why-lms/prepare.html">Prepare For Your Case</a>
@@ -38,7 +280,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./attorneys/index.html">Our Team</a>
           <a href="./attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +293,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./practice-areas/construction.html">Construction Injuries</a>
           <a href="./practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -70,15 +312,13 @@
   </div>
 </nav>
 
-
-
+<!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="container">
+  <div class="inner">
+    <div class="breadcrumb"><a href="./index.html">Home</a><span>&#8250;</span> Testimonials</div>
     <h1>Client Testimonials</h1>
-    <p>Our clients share their firsthand experiences working with LMS Law Firm's dedicated legal team.</p>
   </div>
 </div>
-
 
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
@@ -89,78 +329,205 @@
     <div class="lms-g-item"><span class="lms-gcheck">&#10003;</span> YOU ALWAYS COME FIRST</div>
   </div>
 </div>
-<!-- INTRO -->
-<section class="section-pad">
-  <div class="container" style="max-width:820px;text-align:center;">
-    <h2 class="section-title center">Real People. Real Results. Real Stories.</h2>
-    <p style="color:#555;font-size:.95rem;line-height:1.85;">At LMS Law Firm, we measure our success not just by the verdicts we win, but by the lives we improve. Our clients have entrusted us with their most difficult moments, and we are honored to share their words. These are their experiences — in their own voices.</p>
-  </div>
-</section>
 
-<!-- TESTIMONIALS GRID -->
-<section class="section-pad-sm bg-light">
-  <div class="container">
-    <div class="card-grid card-grid-2" style="gap:30px;max-width:980px;margin:0 auto;">
-
-      <!-- C.A. -->
-      <div class="testimonial-card" style="padding:36px;">
-        <div class="stars">★★★★★</div>
-        <p>"My experience with David was intelligent and professional. Before this litigation, I had never gone through a lawsuit, so it was a positive learning experience. At first, I had hesitations since you have to put your trust and faith in a stranger to represent you. Still, David quickly put these thoughts to rest as they carried themselves professionally and with the highest integrity. David gave me the utmost attention and complete access to them throughout the entire process. I can't thank them enough."</p>
-        <div class="t-author">C.A. — Berkeley, CA</div>
-      </div>
-
-      <!-- Pat M. -->
-      <div class="testimonial-card" style="padding:36px;">
-        <div class="stars">★★★★★</div>
-        <p>"I have been meaning to write this review for many years. I just came across Frank Liuzzi's business card and figured better late than never. We hired the services of LMS (Frank Liuzzi) for two personal injury accidents. When we first met Frank, my husband and I automatically knew that he was our guy! One for myself (car accident in 2008) and one for my husband, who had fallen 23 ft. off a faulty built wood deck in 2011 and had multiple injuries. Both experiences were like I was dealing with a friend more than a lawyer. We could not have been in better hands with Frank and the rest of the firm. I would recommend Frank to my family and best of friends with full trust that he would take extraordinary care of their attorney needs."</p>
-        <div class="t-author">Pat M. — Belmont, CA</div>
-      </div>
-
-      <!-- Rebecca W. -->
-      <div class="testimonial-card" style="padding:36px;">
-        <div class="stars">★★★★★</div>
-        <p>"Frank Liuzzi took wonderful care of my personal injury case. I was hit by a car which broke my back, and Frank came to my home and handled it all for me. I was also probably an annoying client — impatient, always wanting to know what was happening — but he always treated me with respect and kindness. Beyond that, he got me the maximum settlement possible, and all within under a year. I have recommended him to friends in the Bay Area who have had positive experiences likewise."</p>
-        <div class="t-author">Rebecca W. — Shasta Lake, CA</div>
-      </div>
-
-      <!-- Scotty G. -->
-      <div class="testimonial-card" style="padding:36px;">
-        <div class="stars">★★★★★</div>
-        <p>"I was referred to see Martin Murphy by another attorney who would not take my case. Before losing, I thought I would meet with Martin and see if anything can be done for me. He was very understanding, accommodating and honest with me. Without him, I would have been without a paddle. He restored hope in me and my case and is a down-to-earth good person. He truly gives LMS a great name!"</p>
-        <div class="t-author">Scotty G. — Palo Alto, CA</div>
-      </div>
-
+<!-- INTRO STRIP -->
+<div class="testi-hero">
+  <div class="inner">
+    <div>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>Real People. <em>Real Results.</em><br>Real Stories.</h2>
+      <p>At LMS Law, we measure our success not just by the verdicts we win, but by the lives we improve. Our clients have entrusted us with their most difficult moments — and we are honored to share their words. These are their experiences, in their own voices.</p>
     </div>
-  </div>
-</section>
-
-<!-- AWARDS STRIP -->
-<section class="section-pad-sm">
-  <div class="container">
-    <h2 class="section-title center text-center" style="margin-bottom:28px;">Trusted &amp; Recognized</h2>
-    <div class="awards-grid">
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/1.jpg" alt="Award" />
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/2.jpg" alt="Award" />
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/3.jpg" alt="Award" />
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/4.jpg" alt="Award" />
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/5.jpg" alt="Award" />
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/6.jpg" alt="Award" />
-      <img src="https://lmslaw.com/wp-content/uploads/2023/06/best-lawyer-new.jpg" alt="Best Lawyers" />
-      <img src="https://lmslaw.com/wp-content/uploads/2022/05/super-layers-homepage-150x150.jpg" alt="Super Lawyers" />
+    <div class="testi-stats">
+      <div class="testi-stat">
+        <div class="testi-stat-num">20+</div>
+        <div class="testi-stat-label">Years in Practice</div>
+      </div>
+      <div class="testi-stat">
+        <div class="testi-stat-num">$6.5M</div>
+        <div class="testi-stat-label">Largest Settlement</div>
+      </div>
+      <div class="testi-stat">
+        <div class="testi-stat-num">5&#9733;</div>
+        <div class="testi-stat-label">Client Satisfaction</div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-block">
-  <div class="container">
-    <h2>Start Your Free Case Review Today</h2>
-    <p>Join hundreds of Bay Area clients who have trusted LMS Law Firm to fight for the compensation they deserve. Your consultation is free, confidential, and carries no obligation.</p>
-    <a class="btn btn-white" href="contact.html">Free Case Review</a>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- TESTIMONIAL CARDS -->
+<section class="testi-section">
+  <div style="text-align:center; margin-bottom:40px;">
+    <div style="width:48px;height:3px;background:var(--crimson);margin:0 auto 16px;"></div>
+    <h2 style="font-family:'Merriweather',serif; font-size:clamp(20px,2.5vw,30px);">What Our Clients Say</h2>
+    <p style="font-size:15px;color:var(--mid);max-width:600px;margin:12px auto 0;line-height:1.75;">These testimonials reflect more than just legal victories — they speak to the compassionate and tenacious approach our team brings to every single case.</p>
+  </div>
+
+  <div class="testi-grid">
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"My experience with David was intelligent and professional. Before this litigation, I had never gone through a lawsuit, so it was a positive learning experience. At first, I had hesitations since you have to put your trust and faith in a stranger to represent you. Still, David quickly put these thoughts to rest as they carried themselves professionally and with the highest integrity. David gave me the utmost attention and complete access to them throughout the entire process. I can't thank them enough."</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">C</div>
+        <div>
+          <div class="testi-name">C.A.</div>
+          <div class="testi-location">Berkeley, CA</div>
+        </div>
+        <div class="testi-attorney">David L. Winnett</div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"I have been meaning to write this review for many years. I just came across Frank Liuzzi's business card and figured better late than never. We hired the services of LMS (Frank Liuzzi) for two personal injury accidents. When we first met Frank, my husband and I automatically knew that he was our guy! Both experiences were like I was dealing with a friend more than a lawyer. We could not have been in better hands with Frank and the rest of the firm. I would recommend Frank to my family and best of friends with full trust that he would take extraordinary care of their attorney needs."</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Pat M.</div>
+          <div class="testi-location">Belmont, CA</div>
+        </div>
+        <div class="testi-attorney">Frank C. Liuzzi</div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"Frank Liuzzi took wonderful care of my personal injury case. I was hit by a car which broke my back, and Frank came to my home and handled it all for me. I was also probably an annoying client — impatient, always wanting to know what was happening — but he always treated me with respect and kindness. Beyond that, he got me the maximum settlement possible, and all within under a year. I've recommended him to friends in the Bay Area who have had positive experiences likewise, and honestly, even from LA, I would have him handle anything that, God forbid, I might need a personal injury lawyer for."</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rebecca W.</div>
+          <div class="testi-location">Shasta Lake, CA</div>
+        </div>
+        <div class="testi-attorney">Frank C. Liuzzi</div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"I was referred to see Martin Murphy by another attorney who wouldn't take my case. Before losing, I thought I would meet with Martin and see if anything can be done for me. He was very understanding, accommodating and honest with me. Without him, I would have been without a paddle. He restored hope in me and my case and is a down-to-earth good person. He truly gives LMS a great name!"</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Scotty G.</div>
+          <div class="testi-location">Palo Alto, CA</div>
+        </div>
+        <div class="testi-attorney">Martin D. Murphy</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURED BAND — crimson with team photo -->
+<div class="testi-featured">
+  <div class="inner">
+    <div class="testi-featured-text">
+      <div style="width:48px;height:3px;background:rgba(255,255,255,.4);margin-bottom:18px;"></div>
+      <h2>Humble Warriors, Committed To Putting People First</h2>
+      <p>Our clients share their firsthand experiences highlighting the personalized attention, unwavering support, and successful outcomes they received. Every case is personal to us — because you are.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.88);">
+          <span style="font-size:15px;">&#10003;</span> You are never just a case number — you are a person with unique needs
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.88);">
+          <span style="font-size:15px;">&#10003;</span> You won't be passed from attorney to attorney
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.88);">
+          <span style="font-size:15px;">&#10003;</span> We take the time to understand your goals, family, and needs
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.88);">
+          <span style="font-size:15px;">&#10003;</span> When it gets hard, we fight for you
+        </div>
+      </div>
+      <a href="./contact.html" class="btn-outline-white">GET YOUR FREE CASE REVIEW</a>
+    </div>
+    <div class="testi-featured-img">
+      <img src="https://lmslaw.com/wp-content/uploads/2022/04/team-page-img.jpg" alt="LMS Law Team">
+    </div>
+  </div>
+</div>
+
+<!-- AWARDS & ACCREDITATIONS -->
+<div class="testi-awards">
+  <div class="inner">
+    <div style="text-align:center;">
+      <div style="width:48px;height:3px;background:var(--crimson);margin:0 auto 16px;"></div>
+      <h2 style="font-family:'Merriweather',serif; font-size:clamp(20px,2.5vw,30px); margin-bottom:8px;">Trusted &amp; Recognized</h2>
+      <p style="font-size:15px;color:var(--mid);max-width:560px;margin:0 auto;line-height:1.75;">LMS Law attorneys are recognized by the most respected legal organizations in California and across the country.</p>
+    </div>
+    <div class="awards-flex">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/8-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2023/06/mtla.jpg" alt="MTLA">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/6-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/2-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/05/super-layers-homepage-150x150.jpg" alt="Super Lawyers">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/5-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/4-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/7-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/1-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2024/01/iaba-nc.png" alt="Italian American Bar Association of Northern California">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/9-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/3-150x150.jpg" alt="Award">
+      <img class="award-img" src="https://lmslaw.com/wp-content/uploads/2023/06/best-lawyer-new.jpg" alt="Best Lawyers">
+    </div>
+  </div>
+</div>
+
+<!-- CTA + FORM -->
+<div class="testi-cta">
+  <div class="testi-cta-inner">
+    <div>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>Ready to Start Your Free Case Review?</h2>
+      <p>Join hundreds of Bay Area clients who have trusted LMS Law to fight for the compensation they deserve. Your consultation is free, confidential, and carries no obligation.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:32px;height:32px;background:var(--crimson);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">&#128222;</div>
+          <div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700;margin-bottom:2px;">Call Us Directly</div>
+            <a href="tel:4154007000" style="font-size:18px;font-weight:700;color:var(--crimson);">415-400-7000</a>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <div style="width:32px;height:32px;background:var(--crimson);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px;">&#128205;</div>
+          <div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700;margin-bottom:4px;">Our Offices</div>
+            <div style="font-size:13px;color:var(--mid);line-height:1.7;">235 Montgomery St Suite #440, San Francisco CA 94104<br>7200 Redwood Blvd #300, Novato CA 94945</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-box testi-cta-form">
+      <h3>Free Case Review</h3>
+      <p class="subtext">No fee unless we win. Confidential &amp; no obligation.</p>
+      <div class="frow">
+        <div class="fgroup"><label>First Name *</label><input type="text" placeholder="First name"></div>
+        <div class="fgroup"><label>Last Name *</label><input type="text" placeholder="Last name"></div>
+      </div>
+      <div class="fgroup"><label>Phone *</label><input type="tel" placeholder="415-555-0000"></div>
+      <div class="fgroup"><label>Email *</label><input type="email" placeholder="you@email.com"></div>
+      <div class="fgroup">
+        <label>Type of Case</label>
+        <select>
+          <option value="">Select a practice area...</option>
+          <option>Construction / Worksite Injury</option>
+          <option>Slip, Trip &amp; Fall</option>
+          <option>Motor Vehicle Crash</option>
+          <option>Dangerous Premises</option>
+          <option>Defective Products</option>
+          <option>Wrongful Death</option>
+          <option>Real Estate / Commercial Tenant</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fgroup"><label>Tell Us What Happened *</label><textarea placeholder="Briefly describe your situation..."></textarea></div>
+      <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
+      <p class="form-disclaimer">Your information is 100% confidential. We will contact you within 24 hours.</p>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -197,47 +564,17 @@
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 </body>
 </html>
