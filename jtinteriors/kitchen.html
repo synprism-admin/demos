@@ -418,8 +418,13 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;background:#0097AC;color:#fff;padding:8px 16px;z-index:9999;font-size:0.9rem;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
+<div id="demo-banner" style="background:#0097AC;color:#fff;text-align:center;padding:10px 16px;font-size:0.82rem;font-family:Inter,sans-serif;z-index:9999;position:relative;">
+  <strong>Demo Site</strong> — This is a proposal website created by <a href="https://synprism.io" style="color:#fff;text-decoration:underline;" target="_blank">Synprism</a> for JT Interiors Remodeling. Not a live business website.
+</div>
 
-<nav>
+
+<header role="banner"><nav aria-label="Main navigation">
     <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="jt-logo-new.webp" alt="JT Interiors"></a>
     <ul class="nav-links">
@@ -438,7 +443,8 @@
     </ul>
     <a href="index.html#contact" class="nav-cta-btn">Free Estimate</a>
   </div>
-</nav>
+</nav></header>
+<main id="main-content">
 
 <div class="teal-bar"></div>
 
@@ -566,6 +572,7 @@
   <a href="index.html#contact">Schedule a Free Estimate</a>
 </div>
 
+</main>
 <footer>
   <img src="jt-logo-new.webp" alt="JT Interiors">
   <div class="footer-links">
@@ -574,7 +581,13 @@
     <a href="home.html">Home Remodels</a>
     <a href="index.html#contact">Contact</a>
   </div>
-  <div class="footer-copy">&copy; 2025 JT Interiors Remodeling</div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:24px;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:center;font-size:0.78rem;">
+      <a href="privacy.html" style="color:rgba(255,255,255,0.5);">Privacy Policy</a>
+      <a href="terms.html" style="color:rgba(255,255,255,0.5);">Terms of Service</a>
+      <a href="accessibility.html" style="color:rgba(255,255,255,0.5);">Accessibility</a>
+      <a href="privacy.html#ccpa" style="color:rgba(255,255,255,0.5);">Your Privacy Choices</a>
+    </div>
+  <div class="footer-copy">&copy; 2026 JT Interiors Remodeling</div>
 </footer>
 
 </body>
