@@ -619,7 +619,27 @@ ul { list-style: none; padding: 0; margin: 0; }
 .lms-footer-bottom-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
 .lms-footer-bottom-links a { font-size: 11px; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .8px; transition: color .15s; }
 .lms-footer-bottom-links a:hover { color: #fff; }
+.lms-footer-sep { font-size: 13px; color: rgba(255,255,255,.3); padding: 0 2px; user-select: none; }
 .lms-footer-disclaimer { font-size: 11px; color: rgba(255,255,255,.32); max-width: 1200px; margin: 16px auto 0; line-height: 1.6; text-align: center; padding: 0 24px; }
+
+/* ── Legal pages ── */
+.lms-legal-page { background: #faf9f7; padding: 56px 24px 80px; }
+.lms-legal-inner { max-width: 900px; margin: 0 auto; }
+.lms-legal-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #e8e2d8; }
+.lms-legal-section:last-of-type { border-bottom: none; }
+.lms-legal-section h2 { font-family: 'Merriweather', serif; font-size: 22px; color: #8b1a1a; margin-bottom: 14px; }
+.lms-legal-section h3 { font-family: 'Merriweather', serif; font-size: 17px; color: #3a2a1a; margin-bottom: 12px; }
+.lms-legal-section p { font-size: 15px; color: #4a4035; line-height: 1.8; margin-bottom: 14px; }
+.lms-legal-section p:last-child { margin-bottom: 0; }
+.lms-legal-list { margin: 14px 0 14px 20px; }
+.lms-legal-list li { font-size: 15px; color: #4a4035; line-height: 1.75; margin-bottom: 8px; }
+.lms-legal-address { font-size: 15px; color: #4a4035; line-height: 1.9; margin-top: 14px; padding: 20px 24px; background: #fff; border-left: 4px solid #8b1a1a; border-radius: 0 6px 6px 0; }
+.lms-legal-address a { color: #8b1a1a; }
+.lms-legal-cta { margin-top: 48px; padding: 36px; background: #8b1a1a; border-radius: 8px; text-align: center; }
+.lms-legal-cta p { color: rgba(255,255,255,.85); font-size: 16px; margin-bottom: 20px; }
+.lms-legal-cta .lms-btn-primary { background: #fff; color: #8b1a1a; padding: 12px 28px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-decoration: none; display: inline-block; margin: 0 8px; }
+.lms-legal-cta .lms-btn-outline { border: 2px solid rgba(255,255,255,.6); color: #fff; padding: 10px 28px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-decoration: none; display: inline-block; margin: 0 8px; }
+.lms-legal-cta .lms-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
 
 /* Footer responsive */
 @media (max-width: 900px) {
