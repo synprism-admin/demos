@@ -1,14 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Clients' Victories | LMS Law Firm San Francisco</title>
-  <meta name="description" content="LMS Law Firm has recovered millions for Bay Area clients since 2003. View our case victories across construction, motor vehicle, slip/fall, and more." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Clients' Victories | LMS Law San Francisco Personal Injury Attorneys</title>
+<meta name="description" content="LMS Law has recovered millions for injured Bay Area clients since 2003. View our multi-million dollar verdicts and settlements across all practice areas.">
 <link rel="stylesheet" href="./shared.css">
+<style>
+
+/* ── Intro hero band ── */
+.vic-hero {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.vic-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.vic-hero h2 {
+  font-size: clamp(22px, 3vw, 34px);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.vic-hero h2 em { color: var(--crimson); font-style: normal; }
+.vic-hero p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.vic-total-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: var(--border);
+  border: 2px solid var(--border);
+}
+.vic-total-cell {
+  background: #fff;
+  padding: 22px 16px;
+  text-align: center;
+}
+.vic-total-num {
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--crimson);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.vic-total-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ── Featured 4 big cards ── */
+.vic-featured {
+  background: var(--crimson);
+  padding: 64px 24px;
+}
+.vic-featured-inner { max-width: 1200px; margin: 0 auto; }
+.vic-featured-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.vic-featured-header h2 {
+  font-family: 'Merriweather', serif;
+  color: #fff;
+  font-size: clamp(22px, 3vw, 34px);
+  margin-bottom: 8px;
+}
+.vic-featured-header p {
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.vic-big-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-bottom: 3px;
+}
+.vic-big-card {
+  background: rgba(0,0,0,.28);
+  padding: 36px 22px;
+  text-align: center;
+  border-bottom: 4px solid rgba(255,255,255,.2);
+  transition: background .2s;
+}
+.vic-big-card:hover { background: rgba(0,0,0,.4); }
+.vic-big-amount {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+}
+.vic-big-type {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: rgba(255,255,255,.65);
+  display: block;
+  margin-bottom: 8px;
+}
+.vic-big-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.5;
+  display: block;
+}
+
+/* ── Category sections ── */
+.vic-categories {
+  padding: 72px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.vic-cat {
+  margin-bottom: 56px;
+}
+.vic-cat:last-child { margin-bottom: 0; }
+.vic-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--crimson);
+}
+.vic-cat-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--crimson);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+.vic-cat-header h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin: 0;
+}
+.vic-cat-link {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color .15s;
+  white-space: nowrap;
+}
+.vic-cat-link:hover { color: var(--crimson); }
+.vic-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vic-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: box-shadow .15s;
+}
+.vic-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+.vic-row-amount {
+  background: var(--crimson);
+  color: #fff;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 12px;
+  line-height: 1.2;
+}
+.vic-row-detail {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.vic-row-case {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+.vic-row-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── Disclaimer band ── */
+.vic-disclaimer {
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  text-align: center;
+}
+.vic-disclaimer p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── CTA ── */
+.vic-cta {
+  background: var(--crimson);
+  padding: 64px 24px;
+}
+.vic-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 56px;
+  align-items: center;
+}
+.vic-cta h2 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(22px, 3vw, 32px);
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.vic-cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.vic-cta-form {
+  background: #fff;
+  padding: 32px 28px;
+}
+.vic-cta-form h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 19px;
+  color: var(--crimson);
+  text-align: center;
+  border-bottom: 2px solid var(--crimson);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+.vic-cta-form .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+@media (max-width: 1024px) {
+  .vic-big-grid { grid-template-columns: repeat(2, 1fr); }
+  .vic-cta-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .vic-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .vic-total-grid { grid-template-columns: repeat(3, 1fr); }
+  .vic-big-grid { grid-template-columns: repeat(2, 1fr); }
+  .vic-row { grid-template-columns: 110px 1fr; }
+  .vic-row-amount { font-size: 14px; }
+  .vic-cta-form .frow { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .vic-big-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -30,7 +314,7 @@
   <div class="lms-nav-inner">
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./why-lms/index.html">Our Approach</a>
           <a href="./why-lms/prepare.html">Prepare For Your Case</a>
@@ -38,7 +322,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./attorneys/index.html">Our Team</a>
           <a href="./attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +335,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./practice-areas/construction.html">Construction Injuries</a>
           <a href="./practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -70,13 +354,13 @@
   </div>
 </nav>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="container">
+  <div class="inner">
+    <div class="breadcrumb"><a href="./index.html">Home</a><span>&#8250;</span> Clients' Victories</div>
     <h1>Our Clients' Victories</h1>
-    <p>A track record of results that speaks for itself — millions recovered for injured Bay Area families.</p>
   </div>
 </div>
-
 
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
@@ -87,174 +371,338 @@
     <div class="lms-g-item"><span class="lms-gcheck">&#10003;</span> YOU ALWAYS COME FIRST</div>
   </div>
 </div>
+
 <!-- INTRO -->
-<section class="section-pad">
-  <div class="container" style="max-width:860px;text-align:center;">
-    <h2 class="section-title center">Fighting for Maximum Compensation Since 2003</h2>
-    <p style="color:#555;font-size:.95rem;line-height:1.85;">For over two decades, LMS Law Firm has been San Francisco's trusted personal injury advocates. Our attorneys have a proven track record of securing significant verdicts and settlements for clients who have suffered construction accidents, motor vehicle crashes, slip-and-fall injuries, dangerous premises incidents, defective product injuries, and wrongful death. We are proud to present the following results on behalf of our clients — because their victories are our victories.</p>
-    <p style="color:#8B1A2A;font-weight:700;margin-top:18px;font-size:.88rem;">Prior results do not guarantee similar outcomes.</p>
-  </div>
-</section>
-
-<!-- FEATURED VERDICTS -->
-<section class="section-pad bg-crimson">
-  <div class="container">
-    <h2 class="section-title center text-white text-center" style="color:#fff;margin-bottom:36px;">Featured Verdicts &amp; Settlements</h2>
-    <div class="card-grid card-grid-4">
-      <div class="verdict-card" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);">
-        <span class="amount">$6.5M</span>
-        <span class="type">Construction Accident</span>
-        <span class="desc">Worker's foot completely degloved in a catastrophic construction site accident in San Francisco.</span>
+<div class="vic-hero">
+  <div class="vic-hero-inner">
+    <div>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>Fighting for <em>Maximum Compensation</em> Since 2003</h2>
+      <p>For over two decades, LMS Law has been San Francisco's trusted personal injury advocates. Our attorneys have a proven track record of securing significant verdicts and settlements for clients who have suffered construction accidents, motor vehicle crashes, slip-and-fall injuries, defective product injuries, and wrongful death.</p>
+      <p>We are proud to present the following results on behalf of our clients — because their victories are our victories.</p>
+    </div>
+    <div class="vic-total-grid">
+      <div class="vic-total-cell">
+        <div class="vic-total-num">$6.5M</div>
+        <div class="vic-total-label">Largest Single Settlement</div>
       </div>
-      
-
-
-
-<div class="verdict-card" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);">
-        <span class="amount">$750K</span>
-        <span class="type">Slip &amp; Fall</span>
-        <span class="desc">Client sustained severe injuries after slipping on a wet floor at a well-known SF landmark.</span>
+      <div class="vic-total-cell">
+        <div class="vic-total-num">20+</div>
+        <div class="vic-total-label">Years Fighting for Clients</div>
       </div>
-      <div class="verdict-card" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);">
-        <span class="amount">$1.5M</span>
-        <span class="type">Dangerous Premises</span>
-        <span class="desc">Serious hot water burns sustained at a car dealership due to hazardous property conditions.</span>
+      <div class="vic-total-cell">
+        <div class="vic-total-num">7</div>
+        <div class="vic-total-label">Practice Areas</div>
       </div>
-      <div class="verdict-card" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);">
-        <span class="amount">$2.6M</span>
-        <span class="type">Motor Vehicle</span>
-        <span class="desc">Delivery van collided with motorcyclist, causing life-altering injuries. Full damages recovered.</span>
+      <div class="vic-total-cell">
+        <div class="vic-total-num">$0</div>
+        <div class="vic-total-label">Upfront Cost to You</div>
+      </div>
+      <div class="vic-total-cell">
+        <div class="vic-total-num">$0</div>
+        <div class="vic-total-label">Fee Unless We Win</div>
+      </div>
+      <div class="vic-total-cell">
+        <div class="vic-total-num">Free</div>
+        <div class="vic-total-label">Case Review</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CATEGORIZED VICTORIES -->
-<section class="section-pad">
-  <div class="container">
-
-    <!-- Construction -->
-    <div class="victory-section">
-      <h3>🏗 Construction &amp; Worksite Injuries</h3>
-      <div class="victory-item">
-        <div class="v-amount">$6,500,000</div>
-        <div class="v-desc">Worker's foot completely degloved in a construction site accident — one of the largest single construction injury verdicts in San Francisco.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,200,000</div>
-        <div class="v-desc">Client struck by falling sheetrock on a construction site, resulting in Complex Regional Pain Syndrome (CRPS).</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,200,000</div>
-        <div class="v-desc">Falling window on a construction site caused severe head injuries requiring extensive medical treatment.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,200,000</div>
-        <div class="v-desc">Client fell from scaffolding on a construction site, sustaining multiple fractures and long-term disability.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$950,000</div>
-        <div class="v-desc">Worker's hand crushed by a forklift on a worksite due to improper safety protocols and equipment maintenance failures.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$750,000</div>
-        <div class="v-desc">Client fell from scaffolding while painting, sustaining serious injuries due to inadequate fall protection equipment.</div>
-      </div>
-    </div>
-
-    <!-- Slip/Fall -->
-    <div class="victory-section">
-      <h3>⚠️ Slip, Trip &amp; Fall</h3>
-      <div class="victory-item">
-        <div class="v-amount">$2,100,000</div>
-        <div class="v-desc">Client fell down an improperly maintained staircase, suffering devastating injuries requiring surgical intervention.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$625,000</div>
-        <div class="v-desc">Client slipped on a wet floor at a well-known San Francisco landmark, sustaining serious injuries due to property owner's negligence.</div>
-      </div>
-    </div>
-
-    <!-- Dangerous Premises -->
-    <div class="victory-section">
-      <h3>🏚 Dangerous Premises</h3>
-      <div class="victory-item">
-        <div class="v-amount">$1,500,000</div>
-        <div class="v-desc">Client sustained severe hot water burns at a car dealership due to dangerous and improperly maintained property conditions.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,200,000</div>
-        <div class="v-desc">Medical malpractice claim arising from dangerous premises conditions that led to patient harm and long-term injury.</div>
-      </div>
-    </div>
-
-    <!-- Motor Vehicle -->
-    <div class="victory-section">
-      <h3>🚗 Motor Vehicle Accidents</h3>
-      <div class="victory-item">
-        <div class="v-amount">$2,600,000</div>
-        <div class="v-desc">Delivery van collided with a motorcyclist, causing life-altering injuries. Full compensation recovered including future medical costs and lost earnings.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,500,000</div>
-        <div class="v-desc">Motor vehicle collision with a rideshare vehicle resulted in serious injuries; settlement covered all medical expenses and ongoing care needs.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,000,000</div>
-        <div class="v-desc">Wrongful death arising from ejection from a vehicle in a high-speed collision; family received full compensation for loss of life.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,000,000</div>
-        <div class="v-desc">Good Samaritan injured while assisting at an accident scene; negligent driver held fully liable for all resulting damages.</div>
-      </div>
-    </div>
-
-    <!-- Defective Products -->
-    <div class="victory-section">
-      <h3>⚙️ Defective Products</h3>
-      <div class="victory-item">
-        <div class="v-amount">$2,710,000</div>
-        <div class="v-desc">Woman fell off defective workout equipment at a fitness facility, suffering catastrophic injuries due to a product design defect.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$2,500,000</div>
-        <div class="v-desc">Defective seat back collapsed during a rear-end collision, causing severe spinal injuries that could have been prevented with a properly designed product.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,150,000</div>
-        <div class="v-desc">Worker suffered severe injuries when a conveyor belt malfunctioned due to a manufacturing defect and lack of proper safety guards.</div>
-      </div>
-    </div>
-
-    <!-- Wrongful Death -->
-    <div class="victory-section">
-      <h3>⚖️ Wrongful Death</h3>
-      <div class="victory-item">
-        <div class="v-amount">$2,920,000</div>
-        <div class="v-desc">Tree trimmer killed when a defective bucket truck malfunctioned. LMS Law Firm secured a landmark settlement for the surviving family.</div>
-      </div>
-      <div class="victory-item">
-        <div class="v-amount">$1,000,000</div>
-        <div class="v-desc">Stairway fall resulting in wrongful death; property owner held liable for failure to maintain safe premises conditions.</div>
-      </div>
-    </div>
-
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong> Prior results do not guarantee a similar outcome. Every case is unique and must be evaluated on its own facts. Results shown are not representative of all cases handled by LMS Law Firm.
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-block">
-  <div class="container">
-    <h2>Ready to Fight for Your Victory?</h2>
-    <p>Our attorneys have recovered millions for injured Bay Area clients. Let us review your case — free of charge, with no obligation.</p>
-    <a class="btn btn-white" href="contact.html">Get Your Free Case Review</a>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- FEATURED 4 BIG VERDICTS -->
+<div class="vic-featured">
+  <div class="vic-featured-inner">
+    <div class="vic-featured-header">
+      <h2>Featured Verdicts &amp; Settlements</h2>
+      <p>Our most significant results — representing the dedication, skill, and tenacity our attorneys bring to every case.</p>
+    </div>
+    <div class="vic-big-grid">
+      <div class="vic-big-card">
+        <span class="vic-big-amount">$6,500,000</span>
+        <span class="vic-big-type">Construction Injuries</span>
+        <span class="vic-big-desc">Worker's foot completely degloved and traumatically amputated on a San Francisco construction site</span>
+      </div>
+      <div class="vic-big-card">
+        <span class="vic-big-amount">$2,920,000</span>
+        <span class="vic-big-type">Wrongful Death</span>
+        <span class="vic-big-desc">Tree trimmer killed when a defective bucket truck malfunctioned; landmark settlement for surviving family</span>
+      </div>
+      <div class="vic-big-card">
+        <span class="vic-big-amount">$2,710,000</span>
+        <span class="vic-big-type">Defective Products</span>
+        <span class="vic-big-desc">Woman falls off defective workout equipment at a fitness facility, suffering catastrophic injuries</span>
+      </div>
+      <div class="vic-big-card">
+        <span class="vic-big-amount">$2,600,000</span>
+        <span class="vic-big-type">Motor Vehicle</span>
+        <span class="vic-big-desc">Delivery van collided with motorcyclist, causing life-altering injuries requiring extensive ongoing care</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="vic-disclaimer">
+  <p><strong>Disclaimer:</strong> Prior results do not guarantee a similar outcome. Every case is unique and must be evaluated on its own facts. Results shown are not representative of all cases handled by LMS Law LLP.</p>
+</div>
+
+<!-- ALL VICTORIES BY CATEGORY -->
+<section class="vic-categories">
+
+  <!-- Construction -->
+  <div class="vic-cat">
+    <div class="vic-cat-header">
+      <div class="vic-cat-icon">&#127959;</div>
+      <h3>Construction &amp; Worksite Injuries</h3>
+      <a href="./practice-areas/construction.html" class="vic-cat-link">Learn More &#8250;</a>
+    </div>
+    <div class="vic-rows">
+      <div class="vic-row">
+        <div class="vic-row-amount">$6,500,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Foot Degloved &amp; Traumatic Amputation</div>
+          <div class="vic-row-desc">Worker's foot completely degloved and traumatically amputated on a construction site in San Francisco</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,200,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Falling Sheetrock — CRPS</div>
+          <div class="vic-row-desc">Falling sheetrock injures construction worker, resulting in Complex Regional Pain Syndrome (CRPS)</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,200,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Falling Window — Head Injuries</div>
+          <div class="vic-row-desc">Falling window on a construction site caused severe head injuries requiring extensive medical treatment</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,200,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Scaffold Fall</div>
+          <div class="vic-row-desc">Client fell from scaffolding, sustaining multiple fractures and long-term disability</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$950,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Hand Crushed by Forklift</div>
+          <div class="vic-row-desc">Worker's hand crushed by a forklift due to improper safety protocols and equipment maintenance failures</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$750,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Fall While Painting — Inadequate Fall Protection</div>
+          <div class="vic-row-desc">Client fell from scaffolding while painting due to inadequate fall protection equipment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slip & Fall -->
+  <div class="vic-cat">
+    <div class="vic-cat-header">
+      <div class="vic-cat-icon">&#9888;</div>
+      <h3>Slip / Trip &amp; Fall Accidents</h3>
+      <a href="./practice-areas/slip-fall.html" class="vic-cat-link">Learn More &#8250;</a>
+    </div>
+    <div class="vic-rows">
+      <div class="vic-row">
+        <div class="vic-row-amount">$2,100,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Fall Down Staircase</div>
+          <div class="vic-row-desc">Client fell down an improperly maintained staircase, suffering devastating injuries requiring surgical intervention</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$625,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Slip on Wet Floor — SF Landmark</div>
+          <div class="vic-row-desc">Client slipped on a wet floor at a well-known San Francisco landmark, sustaining serious injuries due to property owner's negligence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dangerous Premises -->
+  <div class="vic-cat">
+    <div class="vic-cat-header">
+      <div class="vic-cat-icon">&#127968;</div>
+      <h3>Dangerous Premises</h3>
+      <a href="./practice-areas/dangerous-premises.html" class="vic-cat-link">Learn More &#8250;</a>
+    </div>
+    <div class="vic-rows">
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,500,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Hot Water Burn at Car Dealership</div>
+          <div class="vic-row-desc">Client sustained severe hot water burns at a car dealership due to dangerous and improperly maintained property conditions</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,200,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Medical Malpractice</div>
+          <div class="vic-row-desc">Medical malpractice claim arising from dangerous premises conditions that led to patient harm and long-term injury</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Motor Vehicle -->
+  <div class="vic-cat">
+    <div class="vic-cat-header">
+      <div class="vic-cat-icon">&#128663;</div>
+      <h3>Motor Vehicle Crashes</h3>
+      <a href="./practice-areas/motor-vehicle.html" class="vic-cat-link">Learn More &#8250;</a>
+    </div>
+    <div class="vic-rows">
+      <div class="vic-row">
+        <div class="vic-row-amount">$2,600,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Delivery Van vs. Motorcyclist</div>
+          <div class="vic-row-desc">Delivery van collided with motorcyclist, causing life-altering injuries — full compensation recovered including future medical costs and lost earnings</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,500,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Motor Vehicle vs. Rideshare Company</div>
+          <div class="vic-row-desc">Motor vehicle collision with a rideshare vehicle resulted in serious injuries; settlement covered all medical expenses and ongoing care needs</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,000,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Ejection From Moving Vehicle — Wrongful Death</div>
+          <div class="vic-row-desc">Wrongful death arising from ejection from a vehicle in a high-speed collision; family received full compensation for loss of life</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,000,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Good Samaritan</div>
+          <div class="vic-row-desc">Good Samaritan injured while assisting at an accident scene; negligent driver held fully liable for all resulting damages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Defective Products -->
+  <div class="vic-cat">
+    <div class="vic-cat-header">
+      <div class="vic-cat-icon">&#9881;</div>
+      <h3>Defective Products</h3>
+      <a href="./practice-areas/defective-products.html" class="vic-cat-link">Learn More &#8250;</a>
+    </div>
+    <div class="vic-rows">
+      <div class="vic-row">
+        <div class="vic-row-amount">$2,710,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Defective Workout Equipment</div>
+          <div class="vic-row-desc">Woman fell off defective workout equipment at a fitness facility, suffering catastrophic injuries due to a product design defect</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$2,500,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Defective Seat Back</div>
+          <div class="vic-row-desc">Defective seat back collapsed during a rear-end collision, causing severe spinal injuries that could have been prevented with a properly designed product</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,150,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Conveyor Belt Injury</div>
+          <div class="vic-row-desc">Worker suffered severe injuries when a conveyor belt malfunctioned due to a manufacturing defect and lack of proper safety guards</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wrongful Death -->
+  <div class="vic-cat">
+    <div class="vic-cat-header">
+      <div class="vic-cat-icon">&#9878;</div>
+      <h3>Wrongful Death</h3>
+      <a href="./practice-areas/wrongful-death.html" class="vic-cat-link">Learn More &#8250;</a>
+    </div>
+    <div class="vic-rows">
+      <div class="vic-row">
+        <div class="vic-row-amount">$2,920,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Tree Trimmer — Defective Bucket Truck</div>
+          <div class="vic-row-desc">Tree trimmer killed when a defective bucket truck malfunctioned; LMS Law secured a landmark settlement for the surviving family</div>
+        </div>
+      </div>
+      <div class="vic-row">
+        <div class="vic-row-amount">$1,000,000</div>
+        <div class="vic-row-detail">
+          <div class="vic-row-case">Stairway Fall</div>
+          <div class="vic-row-desc">Stairway fall resulting in wrongful death; property owner held liable for failure to maintain safe premises conditions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<div class="vic-cta">
+  <div class="vic-cta-inner">
+    <div>
+      <div style="width:48px;height:3px;background:rgba(255,255,255,.4);margin-bottom:18px;"></div>
+      <h2>Ready to Fight for Your Victory?</h2>
+      <p>Our attorneys have recovered millions for injured Bay Area clients. Let us review your case — free of charge, with no obligation and no upfront costs.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.9);">
+          <span style="font-size:16px;">&#10003;</span> Free, confidential case review
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.9);">
+          <span style="font-size:16px;">&#10003;</span> No fee unless we win your case
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.9);">
+          <span style="font-size:16px;">&#10003;</span> No upfront payments — ever
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.9);">
+          <span style="font-size:16px;">&#10003;</span> Personalized attention from day one
+        </div>
+      </div>
+      <a href="tel:4154007000" class="btn-outline-white" style="margin-right:14px;">CALL 415-400-7000</a>
+      <a href="./contact.html" class="btn-outline-white">CONTACT US</a>
+    </div>
+    <div class="vic-cta-form">
+      <h3>Free Case Review</h3>
+      <div class="vic-cta-form frow" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+        <div class="fgroup" style="margin-bottom:0;"><label>First Name *</label><input type="text" placeholder="First name"></div>
+        <div class="fgroup" style="margin-bottom:0;"><label>Last Name *</label><input type="text" placeholder="Last name"></div>
+      </div>
+      <div class="fgroup"><label>Phone *</label><input type="tel" placeholder="415-555-0000"></div>
+      <div class="fgroup"><label>Email *</label><input type="email" placeholder="you@email.com"></div>
+      <div class="fgroup">
+        <label>Type of Case</label>
+        <select>
+          <option value="">Select a practice area...</option>
+          <option>Construction / Worksite Injury</option>
+          <option>Slip, Trip &amp; Fall</option>
+          <option>Motor Vehicle Crash</option>
+          <option>Dangerous Premises</option>
+          <option>Defective Products</option>
+          <option>Wrongful Death</option>
+          <option>Real Estate / Commercial Tenant</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fgroup"><label>Tell Us What Happened *</label><textarea placeholder="Briefly describe your situation..." style="min-height:80px;"></textarea></div>
+      <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
+      <p class="form-disclaimer">100% confidential. We will contact you within 24 hours.</p>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -291,47 +739,17 @@
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 </body>
 </html>
