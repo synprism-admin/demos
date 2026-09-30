@@ -4,11 +4,301 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why LMS Law | Personal Injury Attorneys San Francisco</title>
-<meta name="description" content="Six reasons to choose LMS Law for your personal injury case. Humble warriors committed to putting people first since 2003.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Six reasons to choose LMS Law for your personal injury case. Founded in 2003, humble warriors committed to putting people first in San Francisco and the Bay Area.">
 <link rel="stylesheet" href="../shared.css">
+<style>
+
+/* ── Intro 2-col ── */
+.wl-intro {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 24px;
+}
+.wl-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.wl-intro h2 {
+  font-size: clamp(22px, 3vw, 34px);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.wl-intro h2 em { color: var(--crimson); font-style: normal; }
+.wl-intro p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.wl-intro-img {
+  position: relative;
+  overflow: hidden;
+  height: 360px;
+}
+.wl-intro-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.wl-intro-img::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: var(--crimson);
+}
+
+/* ── 6 Reason cards ── */
+.wl-reasons {
+  padding: 72px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wl-reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.wl-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--crimson);
+  padding: 32px 26px;
+  position: relative;
+  transition: box-shadow .2s, transform .2s;
+}
+.wl-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,.1);
+  transform: translateY(-2px);
+}
+.wl-card-num {
+  font-family: 'Merriweather', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--crimson);
+  opacity: .12;
+  line-height: 1;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+}
+.wl-card h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.wl-card p {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* ── Humble Warriors crimson band ── */
+.wl-cta-band {
+  background: var(--crimson);
+  padding: 56px 24px;
+}
+.wl-cta-band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.wl-cta-band h2 {
+  font-size: clamp(22px, 2.8vw, 32px);
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.wl-cta-band p {
+  font-size: 15px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.wl-cta-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: rgba(255,255,255,.15);
+  border: 2px solid rgba(255,255,255,.15);
+}
+.wl-cta-stat {
+  background: rgba(0,0,0,.25);
+  padding: 22px 18px;
+  text-align: center;
+}
+.wl-cta-stat-num {
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.wl-cta-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ── Philosophy 2-col ── */
+.wl-philosophy {
+  padding: 72px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 56px;
+  align-items: start;
+}
+.wl-phi-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 24px;
+}
+.wl-pillar {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.wl-pillar:last-of-type { border-bottom: none; }
+.wl-pillar h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wl-pillar h4::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: var(--crimson);
+  flex-shrink: 0;
+}
+.wl-pillar p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.75;
+}
+
+/* ── Mini testimonial callout ── */
+.wl-testi-strip {
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.wl-testi-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.wl-mini-testi {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--crimson);
+  padding: 24px 24px 20px;
+}
+.wl-mini-stars { color: #D4A017; font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
+.wl-mini-quote {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.wl-mini-author { font-size: 12px; font-weight: 700; color: #1a1a1a; }
+.wl-mini-loc { font-size: 11px; color: var(--muted); }
+
+/* ── Awards ── */
+.wl-awards {
+  padding: 64px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wl-awards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  margin-top: 32px;
+}
+.wl-award-img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  filter: grayscale(10%);
+  transition: filter .2s, transform .2s;
+}
+.wl-award-img:hover { filter: none; transform: scale(1.05); }
+
+/* ── Sub-page nav strip ── */
+.wl-sub-nav {
+  background: var(--crimson);
+  padding: 0 24px;
+}
+.wl-sub-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+}
+.wl-sub-nav a {
+  display: block;
+  padding: 14px 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.75);
+  border-right: 1px solid rgba(255,255,255,.2);
+  transition: background .15s, color .15s;
+}
+.wl-sub-nav a:hover, .wl-sub-nav a.active {
+  background: rgba(0,0,0,.2);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .wl-intro-inner,
+  .wl-cta-band-inner,
+  .wl-philosophy { grid-template-columns: 1fr; gap: 32px; }
+  .wl-intro-img { height: 260px; }
+  .wl-reasons-grid { grid-template-columns: repeat(2, 1fr); }
+  .wl-testi-strip-inner { grid-template-columns: 1fr; }
+  .wl-sub-nav-inner { flex-wrap: wrap; }
+}
+@media (max-width: 560px) {
+  .wl-reasons-grid { grid-template-columns: 1fr; }
+  .wl-cta-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -30,15 +320,15 @@
   <div class="lms-nav-inner">
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="../why-lms/index.html" class="lms-active">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="index.html" class="lms-active">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
-          <a href="../why-lms/index.html">Our Approach</a>
-          <a href="../why-lms/prepare.html">Prepare For Your Case</a>
-          <a href="../why-lms/faqs.html">FAQs</a>
+          <a href="index.html">Our Approach</a>
+          <a href="prepare.html">Prepare For Your Case</a>
+          <a href="faqs.html">FAQs</a>
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../attorneys/index.html">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="../attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../attorneys/index.html">Our Team</a>
           <a href="../attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +341,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../practice-areas/construction.html">Construction Injuries</a>
           <a href="../practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -70,18 +360,13 @@
   </div>
 </nav>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
   <div class="inner">
-    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span> Why LMS Law</div>
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>&#8250;</span> Why LMS Law</div>
     <h1>Why LMS Law?</h1>
   </div>
 </div>
-
-
-
-</div>
-</div>
-
 
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
@@ -92,174 +377,233 @@
     <div class="lms-g-item"><span class="lms-gcheck">&#10003;</span> YOU ALWAYS COME FIRST</div>
   </div>
 </div>
-<!-- WHY HIRE LMS — 6 CARD GRID -->
-<section class="section">
-  <div class="section-rule"></div>
-  <h2 class="section-title">Why Hire LMS Law?</h2>
-  <p class="section-subtitle">Hiring a Personal Injury Law Firm like LMS Law can help you get the care and attention you deserve. Our firm and attorneys operate differently than other Personal Injury Law Firms in the Bay Area.</p>
 
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-num">01</div>
-      <h4>You Have Been Hurt</h4>
-      <p>If you have been injured, you need representation to ensure that you are protected and receive the compensation and care that is due to you.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">02</div>
-      <h4>Feeling Overwhelmed</h4>
-      <p>If you don't know your legal options, you need experienced counsel to guide you to the best possible outcome for your unique situation.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">03</div>
-      <h4>Fault Is Disputed</h4>
-      <p>If the other side doesn't accept responsibility for your injuries, you need a legal team to defend you and advocate on your behalf.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">04</div>
-      <h4>Proven Track Record</h4>
-      <p>If your case needs expert representation, you deserve the best lawyers on your side, with a proven history of successful outcomes in California courts.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">05</div>
-      <h4>Navigate the System</h4>
-      <p>We can navigate the complicated legal system for you so you can go back to living your life, with all eyes and focus on your case.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">06</div>
-      <h4>Need to Go to Trial</h4>
-      <p>If you need to go to trial, it can be an overwhelming experience — but we can expertly navigate your trial and defend your case for the best possible outcome.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CRIMSON CTA BANNER -->
-<div style="background:var(--crimson); padding:56px 24px; text-align:center;">
-  <div style="max-width:700px; margin:0 auto;">
-    <h2 style="color:#fff; font-size:clamp(20px,2.5vw,30px); margin-bottom:16px;">Humble Warriors, Committed To Putting People First</h2>
-    <p style="color:rgba(255,255,255,.82); font-size:15px; line-height:1.75; margin-bottom:28px;">Our team of personal injury lawyers brings compassion and tenacity to every case. When it gets hard, we fight for you.</p>
-    <a href="../contact.html" class="btn-outline-white">FREE CASE REVIEW</a>
+<!-- SUB-PAGE NAV -->
+<div class="wl-sub-nav">
+  <div class="wl-sub-nav-inner">
+    <a href="index.html" class="active">Why Hire LMS</a>
+    <a href="prepare.html">Prepare For Your Case</a>
+    <a href="faqs.html">FAQs</a>
   </div>
 </div>
 
-<!-- OUR PHILOSOPHY — 2-col: text left, form right -->
-<section class="section">
-  <div style="display:grid; grid-template-columns:1fr 340px; gap:56px; align-items:start;">
-
-    <!-- Left: text content -->
+<!-- INTRO -->
+<div class="wl-intro">
+  <div class="wl-intro-inner">
     <div>
-      <div class="section-rule"></div>
-      <h2 class="section-title">Our Philosophy</h2>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>A Law Firm That Operates <em>Differently</em></h2>
+      <p>Hiring a Personal Injury Law Firm like LMS Law can help you get the care and attention you deserve. Our firm and attorneys operate differently than other Personal Injury Law Firms in the Bay Area.</p>
+      <p>Since 2003, we have been committed to one simple principle: <strong>you are a person with unique needs, not a case number.</strong> When you choose LMS, your dedicated attorneys stay with you from the first call to final resolution — no handoffs, no runaround.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+        <a href="../contact.html" class="btn-crimson">FREE CASE REVIEW</a>
+        <a href="../attorneys/index.html" class="btn-outline">MEET OUR ATTORNEYS</a>
+      </div>
+    </div>
+    <div class="wl-intro-img">
+      <img src="https://lmslaw.com/wp-content/uploads/2022/04/team-page-img.jpg" alt="LMS Law Team">
+    </div>
+  </div>
+</div>
 
-      <h3 style="font-size:17px; margin-bottom:10px; margin-top:28px;">Our Approach</h3>
-      <p style="font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:20px;">At LMS, we believe in a humble yet firm approach to personal injury law. Unlike larger firms, we promise specialized attention. When you choose us, you're not just a case number but a person with unique needs. We prioritize your journey, ensuring you won't be passed from attorney to attorney. Our humble warriors are dedicated to your case, offering the close attention that sets us apart.</p>
+<!-- 6 REASONS -->
+<section class="wl-reasons">
+  <div style="text-align:center; margin-bottom:0;">
+    <div style="width:48px;height:3px;background:var(--crimson);margin:0 auto 16px;"></div>
+    <h2 style="font-family:'Merriweather',serif;font-size:clamp(22px,3vw,34px);margin-bottom:10px;">Why Hire LMS Law?</h2>
+    <p style="font-size:15px;color:var(--mid);max-width:600px;margin:0 auto;line-height:1.75;">There are many personal injury firms in the Bay Area. Here are six reasons why injured clients choose LMS Law — and why that choice makes all the difference.</p>
+  </div>
+  <div class="wl-reasons-grid">
 
-      <h3 style="font-size:17px; margin-bottom:10px;">You Always Come First</h3>
-      <p style="font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:20px;">At LMS, you always come first. Our San Francisco Personal Injury attorneys are not just legal experts — they're partners in your pursuit of justice. We understand the emotional and physical toll personal injuries take, and we are here to ease your burden and fight your battles for you. We take the time to get to know you, your family, your situation, your goals, and your needs.</p>
+    <div class="wl-card">
+      <div class="wl-card-num">01</div>
+      <h4>You Have Been Hurt</h4>
+      <p>If you've been injured, you need representation to ensure you are protected and receive the compensation and care that is due to you. Don't face insurance companies alone.</p>
+    </div>
 
-      <h3 style="font-size:17px; margin-bottom:10px;">Expert Collaboration &amp; Out-of-the-Box Thinking</h3>
-      <p style="font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:32px;">Our Personal Injury Attorneys set themselves apart through expert collaboration and innovative thinking. We don't just follow the conventional path — we carve new avenues to secure the best possible outcome for your unique situation. Our humble warriors use their collective knowledge and innovative strategies to navigate the complexities of personal injury cases.</p>
+    <div class="wl-card">
+      <div class="wl-card-num">02</div>
+      <h4>Feeling Overwhelmed</h4>
+      <p>If you don't know your legal options, you need experienced counsel to guide you to the best possible outcome. We simplify the process so you can focus on healing.</p>
+    </div>
 
+    <div class="wl-card">
+      <div class="wl-card-num">03</div>
+      <h4>Fault Is Disputed</h4>
+      <p>If the other side doesn't accept responsibility for your injuries, you need a proven legal team to defend you, gather evidence, and fight for what you deserve.</p>
+    </div>
+
+    <div class="wl-card">
+      <div class="wl-card-num">04</div>
+      <h4>Proven Track Record</h4>
+      <p>If your case needs expert representation, you deserve the best lawyers on your side — attorneys with a proven history of successful outcomes in California courts, including verdicts up to $6.5M.</p>
+    </div>
+
+    <div class="wl-card">
+      <div class="wl-card-num">05</div>
+      <h4>Navigate the System</h4>
+      <p>We navigate the complicated legal system for you so you can go back to living your life. Our team handles everything — filings, negotiations, depositions, and trial preparation.</p>
+    </div>
+
+    <div class="wl-card">
+      <div class="wl-card-num">06</div>
+      <h4>Need to Go to Trial</h4>
+      <p>If you need to go to trial, it can be an overwhelming experience. Our experienced trial attorneys will expertly defend your case and pursue the best possible outcome in the courtroom.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HUMBLE WARRIORS CTA BAND -->
+<div class="wl-cta-band">
+  <div class="wl-cta-band-inner">
+    <div>
+      <div style="width:48px;height:3px;background:rgba(255,255,255,.35);margin-bottom:18px;"></div>
+      <h2>Humble Warriors, Committed To Putting People First</h2>
+      <p>Our team of personal injury lawyers brings compassion and tenacity to every case. We understand the emotional and physical toll personal injuries take — and we are here to ease your burden and fight your battles.</p>
+      <a href="../contact.html" class="btn-outline-white">FREE CASE REVIEW</a>
+    </div>
+    <div class="wl-cta-stats">
+      <div class="wl-cta-stat">
+        <div class="wl-cta-stat-num">2003</div>
+        <div class="wl-cta-stat-label">Founded in San Francisco</div>
+      </div>
+      <div class="wl-cta-stat">
+        <div class="wl-cta-stat-num">$6.5M</div>
+        <div class="wl-cta-stat-label">Largest Settlement</div>
+      </div>
+      <div class="wl-cta-stat">
+        <div class="wl-cta-stat-num">7</div>
+        <div class="wl-cta-stat-label">Expert Attorneys</div>
+      </div>
+      <div class="wl-cta-stat">
+        <div class="wl-cta-stat-num">$0</div>
+        <div class="wl-cta-stat-label">Fee Unless We Win</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OUR PHILOSOPHY + FORM -->
+<section class="wl-philosophy">
+  <!-- Left: philosophy pillars -->
+  <div>
+    <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+    <h2 style="font-family:'Merriweather',serif;font-size:clamp(22px,3vw,34px);margin-bottom:6px;">Our Philosophy</h2>
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:0;">Founded in 2003 by Frank C. Liuzzi, Martin D. Murphy, and Michael R. Solomon — three USF Law School alumni who shared a vision of what a great personal injury firm could be.</p>
+    <div class="wl-phi-pillars">
+      <div class="wl-pillar">
+        <h4>Our Approach</h4>
+        <p>At LMS, we believe in a humble yet firm approach to personal injury law. Unlike larger firms, we promise specialized attention. When you choose us, you're not just a case number but a person with unique needs. We prioritize your journey, ensuring you won't be passed from attorney to attorney.</p>
+      </div>
+      <div class="wl-pillar">
+        <h4>You Always Come First</h4>
+        <p>Our attorneys are not just legal experts — they're partners in your pursuit of justice. We understand the emotional and physical toll personal injuries take, and we are here to ease your burden. We take the time to get to know you, your family, your situation, your goals, and your needs.</p>
+      </div>
+      <div class="wl-pillar">
+        <h4>Expert Collaboration &amp; Out-of-the-Box Thinking</h4>
+        <p>We don't just follow the conventional path — we carve new avenues to secure the best possible outcome for your unique situation. Our humble warriors use their collective knowledge and innovative strategies to navigate the complexities of personal injury cases.</p>
+      </div>
+      <div class="wl-pillar">
+        <h4>Realistic, Direct Communication</h4>
+        <p>No pretense. No empty promises. We give you the straight scoop on your case at every step — because you deserve honest counsel, not false hope. Our founding partner Frank Liuzzi calls it pragmatism: finding practical solutions that achieve real results.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
       <a href="../attorneys/index.html" class="btn-outline">MEET OUR ATTORNEYS</a>
     </div>
+  </div>
 
-    <!-- Right: contact form -->
-    <div>
-      <div class="form-box">
-        <h3>Free Case Review</h3>
-        <p class="subtext">No fee unless we win. Confidential &amp; no obligation.</p>
-        <div class="fgroup">
-          <label>Full Name *</label>
-          <input type="text" placeholder="Your full name">
-        </div>
-        <div class="fgroup">
-          <label>Phone *</label>
-          <input type="tel" placeholder="415-555-0000">
-        </div>
-        <div class="fgroup">
-          <label>Email *</label>
-          <input type="email" placeholder="you@email.com">
-        </div>
-        <div class="fgroup">
-          <label>Case Type</label>
-          <select>
-            <option value="">Select a practice area...</option>
-            <option>Construction / Worksite Injury</option>
-            <option>Slip, Trip &amp; Fall</option>
-            <option>Motor Vehicle Crash</option>
-            <option>Dangerous Premises</option>
-            <option>Defective Product</option>
-            <option>Wrongful Death</option>
-            <option>Real Estate / Commercial Tenant</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="fgroup">
-          <label>Tell Us What Happened</label>
-          <textarea placeholder="Briefly describe your situation..."></textarea>
-        </div>
-        <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
-        <p class="form-disclaimer">Your information is 100% confidential. We will contact you within 24 hours.</p>
+  <!-- Right: form -->
+  <div>
+    <div class="form-box">
+      <h3>Free Case Review</h3>
+      <p class="subtext">No fee unless we win. Confidential &amp; no obligation.</p>
+      <div class="fgroup"><label>Full Name *</label><input type="text" placeholder="Your full name"></div>
+      <div class="fgroup"><label>Phone *</label><input type="tel" placeholder="415-555-0000"></div>
+      <div class="fgroup"><label>Email *</label><input type="email" placeholder="you@email.com"></div>
+      <div class="fgroup">
+        <label>Case Type</label>
+        <select>
+          <option value="">Select a practice area...</option>
+          <option>Construction / Worksite Injury</option>
+          <option>Slip, Trip &amp; Fall</option>
+          <option>Motor Vehicle Crash</option>
+          <option>Dangerous Premises</option>
+          <option>Defective Products</option>
+          <option>Wrongful Death</option>
+          <option>Real Estate / Commercial Tenant</option>
+          <option>Other</option>
+        </select>
       </div>
-
-      <!-- Contact info beneath form -->
-      <div style="margin-top:16px; padding:20px; background:var(--off-white); border:1px solid var(--border);">
-        <div class="contact-detail">
-          <div class="cd-icon">📞</div>
-          <div><div class="cd-label">Phone</div><div class="cd-value"><a href="tel:4154007000" style="color:var(--crimson);">415-400-7000</a></div></div>
-        </div>
-        <div class="contact-detail">
-          <div class="cd-icon">📍</div>
-          <div><div class="cd-label">San Francisco</div><div class="cd-value" style="font-size:13px;font-weight:400;">235 Montgomery St Suite #440<br>San Francisco, CA 94104</div></div>
-        </div>
-        <div class="contact-detail" style="margin-bottom:0;">
-          <div class="cd-icon">📍</div>
-          <div><div class="cd-label">Novato</div><div class="cd-value" style="font-size:13px;font-weight:400;">7200 Redwood Blvd #300<br>Novato, CA 94945</div></div>
-        </div>
-      </div>
+      <div class="fgroup"><label>Tell Us What Happened</label><textarea placeholder="Briefly describe your situation..."></textarea></div>
+      <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
+      <p class="form-disclaimer">100% confidential. We will contact you within 24 hours.</p>
     </div>
 
+    <!-- Quick contact beneath form -->
+    <div style="background:var(--off-white);border:1px solid var(--border);padding:20px;margin-top:16px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div style="width:32px;height:32px;background:var(--crimson);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">&#128222;</div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:2px;">Call Us</div>
+          <a href="tel:4154007000" style="font-size:17px;font-weight:700;color:var(--crimson);">415-400-7000</a>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+        <strong style="color:#1a1a1a;display:block;margin-bottom:2px;">San Francisco</strong>
+        235 Montgomery St Suite #440, San Francisco CA 94104
+        <strong style="color:#1a1a1a;display:block;margin:8px 0 2px;">Novato</strong>
+        7200 Redwood Blvd #300, Novato CA 94945
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- AWARDS & ACCREDITATIONS -->
-<div class="section-full bg-off" style="padding:56px 24px;">
-  <div class="inner">
-    <div style="text-align:center;">
-      <div class="section-rule centered"></div>
-      <h2 class="section-title">Our Awards &amp; Accreditations</h2>
-      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">LMS Law attorneys are recognized by the most respected legal organizations in the country.</p>
+<!-- MINI TESTIMONIALS -->
+<div class="wl-testi-strip">
+  <div class="wl-testi-strip-inner" style="max-width:1200px;margin:0 auto;">
+    <div class="wl-mini-testi">
+      <div class="wl-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="wl-mini-quote">"Both experiences were like I was dealing with a friend more than a lawyer. We could not have been in better hands with Frank and the rest of the firm. I would recommend LMS to my family with full trust."</p>
+      <div class="wl-mini-author">Pat M.</div>
+      <div class="wl-mini-loc">Belmont, CA &nbsp;&#183;&nbsp; Client of Frank C. Liuzzi</div>
     </div>
-    <div class="awards-grid">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/8-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2023/06/mtla.jpg" alt="MTLA">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/6-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/2-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/05/super-layers-homepage-150x150.jpg" alt="Super Lawyers">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/5-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/4-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/7-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/1-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2024/01/iaba-nc.png" alt="Italian American Bar Association of Northern California">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/9-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2022/04/3-150x150.jpg" alt="Award">
-      <img class="award-badge" src="https://lmslaw.com/wp-content/uploads/2023/06/best-lawyer-new.jpg" alt="Best Lawyers">
+    <div class="wl-mini-testi">
+      <div class="wl-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="wl-mini-quote">"He restored hope in me and my case and is a down-to-earth good person. Martin was very understanding, accommodating and honest with me. Without him, I would have been without a paddle."</p>
+      <div class="wl-mini-author">Scotty G.</div>
+      <div class="wl-mini-loc">Palo Alto, CA &nbsp;&#183;&nbsp; Client of Martin D. Murphy</div>
     </div>
+  </div>
+  <div style="text-align:center;margin-top:28px;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 24px;">
+    <a href="../testimonials.html" class="btn-outline">READ ALL CLIENT TESTIMONIALS</a>
   </div>
 </div>
 
-<!-- FOOTER -->
-
-
-<script>
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
+<!-- AWARDS -->
+<section class="wl-awards">
+  <div style="text-align:center;">
+    <div style="width:48px;height:3px;background:var(--crimson);margin:0 auto 16px;"></div>
+    <h2 style="font-family:'Merriweather',serif;font-size:clamp(20px,2.5vw,30px);margin-bottom:8px;">Our Awards &amp; Accreditations</h2>
+    <p style="font-size:15px;color:var(--mid);max-width:560px;margin:0 auto;line-height:1.75;">LMS Law attorneys are recognized by the most respected legal organizations in California and across the country.</p>
+  </div>
+  <div class="wl-awards-flex">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/8-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2023/06/mtla.jpg" alt="MTLA">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/6-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/2-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/05/super-layers-homepage-150x150.jpg" alt="Super Lawyers">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/5-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/4-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/7-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/1-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2024/01/iaba-nc.png" alt="Italian American Bar Association">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/9-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2022/04/3-150x150.jpg" alt="Award">
+    <img class="wl-award-img" src="https://lmslaw.com/wp-content/uploads/2023/06/best-lawyer-new.jpg" alt="Best Lawyers">
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -271,72 +615,36 @@
         <p>San Francisco's personal injury law firm since 2003. Humble warriors committed to putting people first.</p>
       </div>
       <div class="lms-footer-col">
+        <h4>Why LMS</h4>
+        <ul>
+          <li><a href="index.html">Why Hire LMS</a></li>
+          <li><a href="prepare.html">Prepare For Your Case</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="lms-footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="../why-lms/index.html">Why LMS Law</a></li>
           <li><a href="../attorneys/index.html">Our Team</a></li>
           <li><a href="../practice-areas/index.html">Practice Areas</a></li>
           <li><a href="../testimonials.html">Testimonials</a></li>
           <li><a href="../victories.html">Clients' Victories</a></li>
-          <li><a href="../why-lms/faqs.html">FAQs</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="lms-footer-col">
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="../practice-areas/construction.html">Construction Injuries</a></li>
-          <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
-          <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle</a></li>
-          <li><a href="../practice-areas/real-estate.html">Real Estate</a></li>
-          <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
-          <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
-          <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
         </ul>
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 </body>
 </html>
