@@ -13,36 +13,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
-.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .port-item { background: #fff; border: 1px solid #ddd; overflow: hidden; cursor: pointer; }
 .port-item-thumb { position: relative; overflow: hidden; }
-.port-item-thumb img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.25s, opacity 0.25s; }
-.port-item:hover .port-item-thumb img { transform: scale(1.03); opacity: 0.9; }
-.port-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.45); padding: 8px 12px; opacity: 0; transition: opacity 0.2s; }
+.port-item-thumb img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.25s, opacity 0.2s; }
+.port-item:hover .port-item-thumb img { transform: scale(1.04); opacity: 0.88; }
+.port-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(74,124,165,0.82); padding: 6px 10px; opacity: 0; transition: opacity 0.2s; }
 .port-item:hover .port-overlay { opacity: 1; }
-.port-overlay span { color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-.port-caption { padding: 14px 16px; }
-.port-caption h3 { font-size: 14px; color: #333; margin: 0 0 5px; text-transform: none; }
-.port-caption p { font-size: 12px; color: #777; margin: 0; }
+.port-overlay span { color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.port-caption { padding: 10px 12px; }
+.port-caption h3 { font-size: 12px; color: #333; margin: 0 0 3px; text-transform: none; font-family: 'Open Sans', Arial, sans-serif; font-weight: 700; }
+.port-caption p { font-size: 11px; color: #888; margin: 0; }
 
 /* LIGHTBOX */
-.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9000; align-items: center; justify-content: center; flex-direction: column; }
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9000; align-items: center; justify-content: center; flex-direction: column; }
 .lightbox.active { display: flex; }
-.lightbox-header { width: 100%; max-width: 900px; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
+.lightbox-header { width: 100%; max-width: 960px; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
 .lightbox-title { color: #fff; font-family: 'Open Sans', Arial, sans-serif; font-size: 16px; font-weight: 700; }
-.lightbox-close { background: none; border: none; color: #aaa; font-size: 28px; cursor: pointer; line-height: 1; padding: 4px 8px; }
+.lightbox-close { background: none; border: none; color: #aaa; font-size: 30px; cursor: pointer; line-height: 1; padding: 4px 8px; }
 .lightbox-close:hover { color: #fff; }
-.lightbox-stage { position: relative; width: 100%; max-width: 900px; display: flex; align-items: center; justify-content: center; padding: 0 16px; }
-.lightbox-img-wrap { flex: 1; text-align: center; }
-.lightbox-img-wrap img { max-height: 70vh; max-width: 100%; object-fit: contain; display: inline-block; }
-.lb-btn { background: rgba(255,255,255,0.12); border: none; color: #fff; font-size: 28px; cursor: pointer; padding: 12px 16px; border-radius: 4px; flex-shrink: 0; transition: background 0.15s; }
-.lb-btn:hover { background: rgba(255,255,255,0.25); }
-.lightbox-thumbs { display: flex; gap: 8px; margin-top: 12px; padding: 0 16px; overflow-x: auto; max-width: 900px; width: 100%; }
-.lightbox-thumbs img { height: 60px; width: 80px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; flex-shrink: 0; }
+.lightbox-stage { position: relative; width: 100%; max-width: 960px; display: flex; align-items: center; justify-content: center; padding: 0 8px; }
+.lightbox-img-wrap { flex: 1; text-align: center; min-height: 200px; }
+.lightbox-img-wrap img { max-height: 68vh; max-width: 100%; object-fit: contain; display: inline-block; }
+.lb-btn { background: rgba(255,255,255,0.1); border: none; color: #fff; font-size: 32px; cursor: pointer; padding: 10px 14px; border-radius: 3px; flex-shrink: 0; transition: background 0.15s; line-height: 1; }
+.lb-btn:hover { background: rgba(255,255,255,0.22); }
+.lightbox-thumbs { display: flex; gap: 6px; margin-top: 10px; padding: 0 16px; overflow-x: auto; max-width: 960px; width: 100%; }
+.lightbox-thumbs img { height: 56px; width: 75px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.55; flex-shrink: 0; transition: opacity 0.15s; }
 .lightbox-thumbs img.active, .lightbox-thumbs img:hover { border-color: #4a7ca5; opacity: 1; }
-.lightbox-counter { color: #aaa; font-size: 12px; margin-top: 8px; }
+.lightbox-counter { color: #888; font-size: 12px; margin-top: 6px; }
 
-@media (max-width: 600px) { .portfolio-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .portfolio-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -51,7 +52,7 @@
 <header role="banner">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="Capitol City Design Inc. - Home">
-      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="140" height="45" style="height:45px;width:auto;">
+      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" style="height:45px;width:auto;">
       <div class="header-logo-text">
         <strong>Capitol City Design, Inc.</strong>
         <span>Electrical Engineering Consultants</span>
@@ -84,7 +85,7 @@
     <div class="main-col">
       <div class="panel">
         <h2>Our Work</h2>
-        <p>Capitol City Design has delivered electrical engineering and lighting design solutions for a wide range of clients and facility types throughout Northern California and beyond. Click any project to view photos.</p>
+        <p>Capitol City Design has delivered electrical engineering and lighting design solutions for clients throughout Northern California and beyond. Click any project to view the full photo gallery.</p>
       </div>
 
       <div class="portfolio-grid">
@@ -94,32 +95,15 @@
             <img src="/images/rocklin-police/rocklin-police-1.jpg" alt="Rocklin Police Department" loading="lazy">
             <div class="port-overlay"><span>View Photos</span></div>
           </div>
-          <div class="port-caption">
-            <h3>Rocklin Police Department</h3>
-            <p>Rocklin, California &mdash; 40,000 Sq. Ft.</p>
-          </div>
+          <div class="port-caption"><h3>Rocklin Police Department</h3><p>Rocklin, CA &mdash; 40,000 Sq. Ft.</p></div>
         </div>
 
-        <div class="port-item" onclick="openLightbox('el-dorado-hills')" role="button" tabindex="0" aria-label="View El Dorado Hills Fire Station photos">
+        <div class="port-item" onclick="openLightbox('el-dorado-hills')" role="button" tabindex="0" aria-label="View El Dorado Hills FS photos">
           <div class="port-item-thumb">
             <img src="/images/el-dorado-hills/el-dorado-hills-1.jpg" alt="El Dorado Hills Fire Station #85" loading="lazy">
             <div class="port-overlay"><span>View Photos</span></div>
           </div>
-          <div class="port-caption">
-            <h3>El Dorado Hills FS #85</h3>
-            <p>El Dorado Hills, CA &mdash; 24,000 Sq. Ft.</p>
-          </div>
-        </div>
-
-        <div class="port-item" onclick="openLightbox('nugget-markets')" role="button" tabindex="0" aria-label="View Nugget Markets photos">
-          <div class="port-item-thumb">
-            <img src="/images/nugget-market-davis/nugget-market-davis-1.jpg" alt="Nugget Markets" loading="lazy">
-            <div class="port-overlay"><span>View Photos</span></div>
-          </div>
-          <div class="port-caption">
-            <h3>Nugget Markets</h3>
-            <p>Northern California &mdash; Retail</p>
-          </div>
+          <div class="port-caption"><h3>El Dorado Hills FS #85</h3><p>El Dorado Hills, CA &mdash; 24,000 Sq. Ft.</p></div>
         </div>
 
         <div class="port-item" onclick="openLightbox('niello-porsche')" role="button" tabindex="0" aria-label="View Niello Porsche photos">
@@ -127,27 +111,171 @@
             <img src="/images/niello-porsche/niello-porsche-1.jpg" alt="Niello Porsche Sacramento" loading="lazy">
             <div class="port-overlay"><span>View Photos</span></div>
           </div>
-          <div class="port-caption">
-            <h3>Niello Porsche Sacramento</h3>
-            <p>Sacramento, California &mdash; Automotive</p>
-          </div>
+          <div class="port-caption"><h3>Niello Porsche Sacramento</h3><p>Sacramento, CA &mdash; Automotive</p></div>
         </div>
 
-      </div>
+        <div class="port-item" onclick="openLightbox('nugget-market-davis')" role="button" tabindex="0" aria-label="View Nugget Market Davis photos">
+          <div class="port-item-thumb">
+            <img src="/images/nugget-market-davis/nugget-market-davis-1.jpg" alt="Nugget Market - Davis" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Nugget Market - Davis</h3><p>Davis, CA &mdash; Retail</p></div>
+        </div>
 
-      <div class="panel" style="margin-top:20px;">
-        <h2>Additional Projects</h2>
-        <ul style="list-style:disc; padding-left:18px; columns:2; column-gap:30px;">
-          <li style="margin-bottom:6px;">Mercedes Benz Sacramento (16,622 Sq. Ft.)</li>
-          <li style="margin-bottom:6px;">Taro's by Mikuni - Sacramento</li>
-          <li style="margin-bottom:6px;">Benicia High School</li>
-          <li style="margin-bottom:6px;">Ceres Fire Station No. 1</li>
-          <li style="margin-bottom:6px;">Folsom Lake State Recreation Area</li>
-        </ul>
-        <p style="margin-top:12px;">Contact us for a complete project list.</p>
-        <a href="/contact.html" class="btn-blue">Contact Us</a>
-      </div>
-    </div>
+        <div class="port-item" onclick="openLightbox('nugget-market-florin')" role="button" tabindex="0" aria-label="View Nugget Market Florin photos">
+          <div class="port-item-thumb">
+            <img src="/images/nugget-market-florin/nugget-market-florin-1.jpg" alt="Nugget Market - Florin" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Nugget Market - Florin</h3><p>Sacramento, CA &mdash; Retail</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('nugget-market-westsac')" role="button" tabindex="0" aria-label="View Nugget Market West Sacramento photos">
+          <div class="port-item-thumb">
+            <img src="/images/nugget-market-westsac/nugget-market-westsac-1.jpg" alt="Nugget Market - West Sacramento" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Nugget Market - West Sac</h3><p>West Sacramento, CA &mdash; Retail</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('benicia-high-school')" role="button" tabindex="0" aria-label="View Benicia High School photos">
+          <div class="port-item-thumb">
+            <img src="/images/benicia-high-school/benicia-high-school-1.jpg" alt="Benicia High School" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Benicia High School</h3><p>Benicia, CA &mdash; Institutional</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('ceres-fire-station')" role="button" tabindex="0" aria-label="View Ceres Fire Station photos">
+          <div class="port-item-thumb">
+            <img src="/images/ceres-fire-station/ceres-fire-station-1.jpg" alt="Ceres Fire Station" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Ceres Fire Station</h3><p>Ceres, CA &mdash; Public Safety</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('mercedes-benz')" role="button" tabindex="0" aria-label="View Mercedes-Benz Sacramento photos">
+          <div class="port-item-thumb">
+            <img src="/images/mercedes-benz/mercedes-benz-1.jpg" alt="Mercedes-Benz Sacramento" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Mercedes-Benz Sacramento</h3><p>Sacramento, CA &mdash; Automotive</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('jaguar-sacramento')" role="button" tabindex="0" aria-label="View Jaguar Sacramento photos">
+          <div class="port-item-thumb">
+            <img src="/images/jaguar-sacramento/jaguar-sacramento-1.jpg" alt="Jaguar Sacramento" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Jaguar Sacramento</h3><p>Sacramento, CA &mdash; Automotive</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('taros-mikuni')" role="button" tabindex="0" aria-label="View Taro's by Mikuni photos">
+          <div class="port-item-thumb">
+            <img src="/images/taros-mikuni/taros-mikuni-1.jpg" alt="Taro's by Mikuni" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Taro's by Mikuni</h3><p>Sacramento, CA &mdash; Restaurant</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('bel-air-528')" role="button" tabindex="0" aria-label="View Bel-Air 528 photos">
+          <div class="port-item-thumb">
+            <img src="/images/bel-air-528/bel-air-528-1.jpg" alt="Bel-Air 528" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Bel-Air 528</h3><p>Commercial</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('food4less')" role="button" tabindex="0" aria-label="View Food4Less Cameron Park photos">
+          <div class="port-item-thumb">
+            <img src="/images/food4less/food4less-1.jpg" alt="Food4Less Cameron Park" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Food4Less - Cameron Park</h3><p>Cameron Park, CA &mdash; Retail</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('george-mark')" role="button" tabindex="0" aria-label="View George Mark Children's House photos">
+          <div class="port-item-thumb">
+            <img src="/images/george-mark/george-mark-1.jpg" alt="George Mark Children's House" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>George Mark Children's House</h3><p>San Leandro, CA &mdash; Healthcare</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('harper-junior-high')" role="button" tabindex="0" aria-label="View Harper Junior High photos">
+          <div class="port-item-thumb">
+            <img src="/images/harper-junior-high/harper-junior-high-1.jpg" alt="Harper Junior High" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Harper Junior High</h3><p>Institutional</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('lathrop-fire-station')" role="button" tabindex="0" aria-label="View Lathrop Fire Station photos">
+          <div class="port-item-thumb">
+            <img src="/images/lathrop-fire-station/lathrop-fire-station-1.jpg" alt="Lathrop Fire Station" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Lathrop Fire Station</h3><p>Lathrop, CA &mdash; Public Safety</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('okizu')" role="button" tabindex="0" aria-label="View Camp Okizu photos">
+          <div class="port-item-thumb">
+            <img src="/images/okizu/okizu-1.jpg" alt="Camp Okizu" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Camp Okizu</h3><p>Institutional / Non-Profit</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('parkstone-center')" role="button" tabindex="0" aria-label="View Parkstone Center photos">
+          <div class="port-item-thumb">
+            <img src="/images/parkstone-center/parkstone-center-1.jpg" alt="Parkstone Center West Sacramento" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Parkstone Center</h3><p>West Sacramento, CA &mdash; Commercial</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('rea-starbucks')" role="button" tabindex="0" aria-label="View REA Building / Starbucks photos">
+          <div class="port-item-thumb">
+            <img src="/images/rea-starbucks/rea-starbucks-1.jpg" alt="REA Building / Starbucks" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>REA Building / Starbucks</h3><p>Commercial / Retail</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('r-st-safeway')" role="button" tabindex="0" aria-label="View R Street Safeway photos">
+          <div class="port-item-thumb">
+            <img src="/images/r-st-safeway/r-st-safeway-1.jpg" alt="R Street Safeway" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>R Street Safeway</h3><p>Sacramento, CA &mdash; Retail</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('sanger-high-school')" role="button" tabindex="0" aria-label="View Sanger High School photos">
+          <div class="port-item-thumb">
+            <img src="/images/sanger-high-school/sanger-high-school-1.jpg" alt="Sanger High School" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Sanger High School</h3><p>Sanger, CA &mdash; Institutional</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('west-sac-fire-station')" role="button" tabindex="0" aria-label="View West Sacramento Fire Station photos">
+          <div class="port-item-thumb">
+            <img src="/images/west-sac-fire-station/west-sac-fire-station-1.jpg" alt="West Sacramento Fire Station" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>West Sacramento Fire Station</h3><p>West Sacramento, CA &mdash; Public Safety</p></div>
+        </div>
+
+        <div class="port-item" onclick="openLightbox('yuba-college')" role="button" tabindex="0" aria-label="View Yuba College photos">
+          <div class="port-item-thumb">
+            <img src="/images/yuba-college/yuba-college-1.jpg" alt="Yuba College Adaptive Physical Therapy" loading="lazy">
+            <div class="port-overlay"><span>View Photos</span></div>
+          </div>
+          <div class="port-caption"><h3>Yuba College - Adaptive PT</h3><p>Marysville, CA &mdash; Institutional</p></div>
+        </div>
+
+      </div><!-- /.portfolio-grid -->
+    </div><!-- /.main-col -->
 
     <div class="sidebar-col">
       <div class="widget">
@@ -196,9 +324,7 @@
   </div>
   <div class="lightbox-stage">
     <button class="lb-btn" onclick="lbPrev()" aria-label="Previous photo">&#8249;</button>
-    <div class="lightbox-img-wrap">
-      <img id="lb-img" src="" alt="">
-    </div>
+    <div class="lightbox-img-wrap"><img id="lb-img" src="" alt=""></div>
     <button class="lb-btn" onclick="lbNext()" aria-label="Next photo">&#8250;</button>
   </div>
   <div class="lightbox-thumbs" id="lb-thumbs"></div>
@@ -276,157 +402,73 @@ function toggleNav(btn) {
 })();
 
 var projects = {
-  'rocklin-police': {
-    title: 'Rocklin Police Department',
-    photos: ['/images/rocklin-police/rocklin-police-1.jpg', '/images/rocklin-police/rocklin-police-2.jpg', '/images/rocklin-police/rocklin-police-3.jpg', '/images/rocklin-police/rocklin-police-4.jpg']
-  },
-  'el-dorado-hills': {
-    title: 'El Dorado Hills Fire Station #85',
-    photos: ['/images/el-dorado-hills/el-dorado-hills-1.jpg', '/images/el-dorado-hills/el-dorado-hills-2.jpg', '/images/el-dorado-hills/el-dorado-hills-3.jpg', '/images/el-dorado-hills/el-dorado-hills-4.jpg', '/images/el-dorado-hills/el-dorado-hills-5.jpg', '/images/el-dorado-hills/el-dorado-hills-6.jpg', '/images/el-dorado-hills/el-dorado-hills-7.jpg', '/images/el-dorado-hills/el-dorado-hills-8.jpg']
-  },
-  'niello-porsche': {
-    title: 'Niello Porsche Sacramento',
-    photos: ['/images/niello-porsche/niello-porsche-1.jpg', '/images/niello-porsche/niello-porsche-2.jpg', '/images/niello-porsche/niello-porsche-3.jpg', '/images/niello-porsche/niello-porsche-4.jpg', '/images/niello-porsche/niello-porsche-5.jpg', '/images/niello-porsche/niello-porsche-6.jpg', '/images/niello-porsche/niello-porsche-7.jpg', '/images/niello-porsche/niello-porsche-8.jpg']
-  },
-  'nugget-market-davis': {
-    title: 'Nugget Market - Davis',
-    photos: ['/images/nugget-market-davis/nugget-market-davis-1.jpg', '/images/nugget-market-davis/nugget-market-davis-2.jpg', '/images/nugget-market-davis/nugget-market-davis-3.jpg', '/images/nugget-market-davis/nugget-market-davis-4.jpg', '/images/nugget-market-davis/nugget-market-davis-5.jpg', '/images/nugget-market-davis/nugget-market-davis-6.jpg', '/images/nugget-market-davis/nugget-market-davis-7.jpg', '/images/nugget-market-davis/nugget-market-davis-8.jpg']
-  },
-  'nugget-market-florin': {
-    title: 'Nugget Market - Florin',
-    photos: ['/images/nugget-market-florin/nugget-market-florin-1.jpg', '/images/nugget-market-florin/nugget-market-florin-2.jpg', '/images/nugget-market-florin/nugget-market-florin-3.jpg', '/images/nugget-market-florin/nugget-market-florin-4.jpg']
-  },
-  'nugget-market-westsac': {
-    title: 'Nugget Market - West Sacramento',
-    photos: ['/images/nugget-market-westsac/nugget-market-westsac-1.jpg']
-  },
-  'benicia-high-school': {
-    title: 'Benicia High School',
-    photos: ['/images/benicia-high-school/benicia-high-school-1.jpg', '/images/benicia-high-school/benicia-high-school-2.jpg', '/images/benicia-high-school/benicia-high-school-3.jpg', '/images/benicia-high-school/benicia-high-school-4.jpg', '/images/benicia-high-school/benicia-high-school-5.jpg']
-  },
-  'ceres-fire-station': {
-    title: 'Ceres Fire Station',
-    photos: ['/images/ceres-fire-station/ceres-fire-station-1.jpg', '/images/ceres-fire-station/ceres-fire-station-2.jpg', '/images/ceres-fire-station/ceres-fire-station-3.jpg']
-  },
-  'mercedes-benz': {
-    title: 'Mercedes-Benz Sacramento',
-    photos: ['/images/mercedes-benz/mercedes-benz-1.jpg', '/images/mercedes-benz/mercedes-benz-2.jpg', '/images/mercedes-benz/mercedes-benz-3.jpg', '/images/mercedes-benz/mercedes-benz-4.jpg', '/images/mercedes-benz/mercedes-benz-5.jpg', '/images/mercedes-benz/mercedes-benz-6.jpg', '/images/mercedes-benz/mercedes-benz-7.jpg']
-  },
-  'jaguar-sacramento': {
-    title: 'Jaguar Sacramento',
-    photos: ['/images/jaguar-sacramento/jaguar-sacramento-1.jpg', '/images/jaguar-sacramento/jaguar-sacramento-2.jpg', '/images/jaguar-sacramento/jaguar-sacramento-3.jpg', '/images/jaguar-sacramento/jaguar-sacramento-4.jpg', '/images/jaguar-sacramento/jaguar-sacramento-5.jpg', '/images/jaguar-sacramento/jaguar-sacramento-6.jpg', '/images/jaguar-sacramento/jaguar-sacramento-7.jpg', '/images/jaguar-sacramento/jaguar-sacramento-8.jpg', '/images/jaguar-sacramento/jaguar-sacramento-9.jpg', '/images/jaguar-sacramento/jaguar-sacramento-10.jpg', '/images/jaguar-sacramento/jaguar-sacramento-11.jpg', '/images/jaguar-sacramento/jaguar-sacramento-12.jpg', '/images/jaguar-sacramento/jaguar-sacramento-13.jpg', '/images/jaguar-sacramento/jaguar-sacramento-14.jpg', '/images/jaguar-sacramento/jaguar-sacramento-15.jpg', '/images/jaguar-sacramento/jaguar-sacramento-16.jpg', '/images/jaguar-sacramento/jaguar-sacramento-17.jpg']
-  },
-  'taros-mikuni': {
-    title: "Taro's by Mikuni",
-    photos: ['/images/taros-mikuni/taros-mikuni-1.jpg', '/images/taros-mikuni/taros-mikuni-2.jpg', '/images/taros-mikuni/taros-mikuni-3.jpg', '/images/taros-mikuni/taros-mikuni-4.jpg', '/images/taros-mikuni/taros-mikuni-5.jpg']
-  },
-  'bel-air-528': {
-    title: 'Bel-Air 528',
-    photos: ['/images/bel-air-528/bel-air-528-1.jpg', '/images/bel-air-528/bel-air-528-2.jpg', '/images/bel-air-528/bel-air-528-3.jpg', '/images/bel-air-528/bel-air-528-4.jpg', '/images/bel-air-528/bel-air-528-5.jpg', '/images/bel-air-528/bel-air-528-6.jpg', '/images/bel-air-528/bel-air-528-7.jpg', '/images/bel-air-528/bel-air-528-8.jpg', '/images/bel-air-528/bel-air-528-9.jpg', '/images/bel-air-528/bel-air-528-10.jpg', '/images/bel-air-528/bel-air-528-11.jpg', '/images/bel-air-528/bel-air-528-12.jpg', '/images/bel-air-528/bel-air-528-13.jpg', '/images/bel-air-528/bel-air-528-14.jpg', '/images/bel-air-528/bel-air-528-15.jpg', '/images/bel-air-528/bel-air-528-16.jpg', '/images/bel-air-528/bel-air-528-17.jpg', '/images/bel-air-528/bel-air-528-18.jpg', '/images/bel-air-528/bel-air-528-19.jpg', '/images/bel-air-528/bel-air-528-20.jpg', '/images/bel-air-528/bel-air-528-21.jpg', '/images/bel-air-528/bel-air-528-22.jpg', '/images/bel-air-528/bel-air-528-23.jpg', '/images/bel-air-528/bel-air-528-24.jpg', '/images/bel-air-528/bel-air-528-25.jpg', '/images/bel-air-528/bel-air-528-26.jpg', '/images/bel-air-528/bel-air-528-27.jpg', '/images/bel-air-528/bel-air-528-28.jpg', '/images/bel-air-528/bel-air-528-29.jpg', '/images/bel-air-528/bel-air-528-30.jpg', '/images/bel-air-528/bel-air-528-31.jpg', '/images/bel-air-528/bel-air-528-32.jpg', '/images/bel-air-528/bel-air-528-33.jpg', '/images/bel-air-528/bel-air-528-34.jpg', '/images/bel-air-528/bel-air-528-35.jpg', '/images/bel-air-528/bel-air-528-36.jpg', '/images/bel-air-528/bel-air-528-37.jpg', '/images/bel-air-528/bel-air-528-38.jpg', '/images/bel-air-528/bel-air-528-39.jpg', '/images/bel-air-528/bel-air-528-40.jpg', '/images/bel-air-528/bel-air-528-41.jpg', '/images/bel-air-528/bel-air-528-42.jpg', '/images/bel-air-528/bel-air-528-43.jpg', '/images/bel-air-528/bel-air-528-44.jpg', '/images/bel-air-528/bel-air-528-45.jpg', '/images/bel-air-528/bel-air-528-46.jpg', '/images/bel-air-528/bel-air-528-47.jpg', '/images/bel-air-528/bel-air-528-48.jpg', '/images/bel-air-528/bel-air-528-49.jpg', '/images/bel-air-528/bel-air-528-50.jpg', '/images/bel-air-528/bel-air-528-51.jpg', '/images/bel-air-528/bel-air-528-52.jpg', '/images/bel-air-528/bel-air-528-53.jpg', '/images/bel-air-528/bel-air-528-54.jpg', '/images/bel-air-528/bel-air-528-55.jpg', '/images/bel-air-528/bel-air-528-56.jpg']
-  },
-  'food4less': {
-    title: 'Food4Less - Cameron Park',
-    photos: ['/images/food4less/food4less-1.jpg', '/images/food4less/food4less-2.jpg', '/images/food4less/food4less-3.jpg', '/images/food4less/food4less-4.jpg', '/images/food4less/food4less-5.jpg', '/images/food4less/food4less-6.jpg', '/images/food4less/food4less-7.jpg', '/images/food4less/food4less-8.jpg', '/images/food4less/food4less-9.jpg']
-  },
-  'george-mark': {
-    title: "George Mark Children's House",
-    photos: ['/images/george-mark/george-mark-1.jpg', '/images/george-mark/george-mark-2.jpg', '/images/george-mark/george-mark-3.jpg', '/images/george-mark/george-mark-4.jpg', '/images/george-mark/george-mark-5.jpg']
-  },
-  'harper-junior-high': {
-    title: 'Harper Junior High',
-    photos: ['/images/harper-junior-high/harper-junior-high-1.jpg', '/images/harper-junior-high/harper-junior-high-2.jpg']
-  },
-  'lathrop-fire-station': {
-    title: 'Lathrop Fire Station',
-    photos: ['/images/lathrop-fire-station/lathrop-fire-station-1.jpg']
-  },
-  'okizu': {
-    title: 'Camp Okizu',
-    photos: ['/images/okizu/okizu-1.jpg']
-  },
-  'parkstone-center': {
-    title: 'Parkstone Center - West Sacramento',
-    photos: ['/images/parkstone-center/parkstone-center-1.jpg', '/images/parkstone-center/parkstone-center-2.jpg', '/images/parkstone-center/parkstone-center-3.jpg']
-  },
-  'rea-starbucks': {
-    title: 'REA Building / Starbucks',
-    photos: ['/images/rea-starbucks/rea-starbucks-1.jpg', '/images/rea-starbucks/rea-starbucks-2.jpg', '/images/rea-starbucks/rea-starbucks-3.jpg']
-  },
-  'r-st-safeway': {
-    title: 'R Street Safeway',
-    photos: ['/images/r-st-safeway/r-st-safeway-1.jpg', '/images/r-st-safeway/r-st-safeway-2.jpg', '/images/r-st-safeway/r-st-safeway-3.jpg', '/images/r-st-safeway/r-st-safeway-4.jpg', '/images/r-st-safeway/r-st-safeway-5.jpg']
-  },
-  'sanger-high-school': {
-    title: 'Sanger High School',
-    photos: ['/images/sanger-high-school/sanger-high-school-1.jpg', '/images/sanger-high-school/sanger-high-school-2.jpg']
-  },
-  'west-sac-fire-station': {
-    title: 'West Sacramento Fire Station',
-    photos: ['/images/west-sac-fire-station/west-sac-fire-station-1.jpg', '/images/west-sac-fire-station/west-sac-fire-station-2.jpg']
-  },
-  'yuba-college': {
-    title: 'Yuba College - Adaptive Physical Therapy',
-    photos: ['/images/yuba-college/yuba-college-1.jpg', '/images/yuba-college/yuba-college-2.jpg', '/images/yuba-college/yuba-college-3.jpg']
-  }
+  'rocklin-police': { title: 'Rocklin Police Department', photos: ['/images/rocklin-police/rocklin-police-1.jpg','/images/rocklin-police/rocklin-police-2.jpg','/images/rocklin-police/rocklin-police-3.jpg','/images/rocklin-police/rocklin-police-4.jpg'] },
+  'el-dorado-hills': { title: 'El Dorado Hills Fire Station #85', photos: ['/images/el-dorado-hills/el-dorado-hills-1.jpg','/images/el-dorado-hills/el-dorado-hills-2.jpg','/images/el-dorado-hills/el-dorado-hills-3.jpg','/images/el-dorado-hills/el-dorado-hills-4.jpg','/images/el-dorado-hills/el-dorado-hills-5.jpg','/images/el-dorado-hills/el-dorado-hills-6.jpg','/images/el-dorado-hills/el-dorado-hills-7.jpg','/images/el-dorado-hills/el-dorado-hills-8.jpg'] },
+  'niello-porsche': { title: 'Niello Porsche Sacramento', photos: ['/images/niello-porsche/niello-porsche-1.jpg','/images/niello-porsche/niello-porsche-2.jpg','/images/niello-porsche/niello-porsche-3.jpg','/images/niello-porsche/niello-porsche-4.jpg','/images/niello-porsche/niello-porsche-5.jpg','/images/niello-porsche/niello-porsche-6.jpg','/images/niello-porsche/niello-porsche-7.jpg','/images/niello-porsche/niello-porsche-8.jpg'] },
+  'nugget-market-davis': { title: 'Nugget Market - Davis', photos: ['/images/nugget-market-davis/nugget-market-davis-1.jpg','/images/nugget-market-davis/nugget-market-davis-2.jpg','/images/nugget-market-davis/nugget-market-davis-3.jpg','/images/nugget-market-davis/nugget-market-davis-4.jpg','/images/nugget-market-davis/nugget-market-davis-5.jpg','/images/nugget-market-davis/nugget-market-davis-6.jpg','/images/nugget-market-davis/nugget-market-davis-7.jpg','/images/nugget-market-davis/nugget-market-davis-8.jpg'] },
+  'nugget-market-florin': { title: 'Nugget Market - Florin', photos: ['/images/nugget-market-florin/nugget-market-florin-1.jpg','/images/nugget-market-florin/nugget-market-florin-2.jpg','/images/nugget-market-florin/nugget-market-florin-3.jpg','/images/nugget-market-florin/nugget-market-florin-4.jpg'] },
+  'nugget-market-westsac': { title: 'Nugget Market - West Sacramento', photos: ['/images/nugget-market-westsac/nugget-market-westsac-1.jpg'] },
+  'benicia-high-school': { title: 'Benicia High School', photos: ['/images/benicia-high-school/benicia-high-school-1.jpg','/images/benicia-high-school/benicia-high-school-2.jpg'] },
+  'ceres-fire-station': { title: 'Ceres Fire Station', photos: ['/images/ceres-fire-station/ceres-fire-station-1.jpg','/images/ceres-fire-station/ceres-fire-station-2.jpg','/images/ceres-fire-station/ceres-fire-station-3.jpg'] },
+  'mercedes-benz': { title: 'Mercedes-Benz Sacramento', photos: ['/images/mercedes-benz/mercedes-benz-1.jpg','/images/mercedes-benz/mercedes-benz-2.jpg','/images/mercedes-benz/mercedes-benz-3.jpg','/images/mercedes-benz/mercedes-benz-4.jpg','/images/mercedes-benz/mercedes-benz-5.jpg','/images/mercedes-benz/mercedes-benz-6.jpg','/images/mercedes-benz/mercedes-benz-7.jpg'] },
+  'jaguar-sacramento': { title: 'Jaguar Sacramento', photos: ['/images/jaguar-sacramento/jaguar-sacramento-1.jpg','/images/jaguar-sacramento/jaguar-sacramento-2.jpg','/images/jaguar-sacramento/jaguar-sacramento-3.jpg','/images/jaguar-sacramento/jaguar-sacramento-4.jpg','/images/jaguar-sacramento/jaguar-sacramento-5.jpg','/images/jaguar-sacramento/jaguar-sacramento-6.jpg','/images/jaguar-sacramento/jaguar-sacramento-7.jpg','/images/jaguar-sacramento/jaguar-sacramento-8.jpg','/images/jaguar-sacramento/jaguar-sacramento-9.jpg','/images/jaguar-sacramento/jaguar-sacramento-10.jpg','/images/jaguar-sacramento/jaguar-sacramento-11.jpg','/images/jaguar-sacramento/jaguar-sacramento-12.jpg','/images/jaguar-sacramento/jaguar-sacramento-13.jpg','/images/jaguar-sacramento/jaguar-sacramento-14.jpg','/images/jaguar-sacramento/jaguar-sacramento-15.jpg','/images/jaguar-sacramento/jaguar-sacramento-16.jpg','/images/jaguar-sacramento/jaguar-sacramento-17.jpg'] },
+  'taros-mikuni': { title: "Taro's by Mikuni", photos: ['/images/taros-mikuni/taros-mikuni-1.jpg','/images/taros-mikuni/taros-mikuni-2.jpg','/images/taros-mikuni/taros-mikuni-3.jpg','/images/taros-mikuni/taros-mikuni-4.jpg','/images/taros-mikuni/taros-mikuni-5.jpg'] },
+  'bel-air-528': { title: 'Bel-Air 528', photos: ['/images/bel-air-528/bel-air-528-1.jpg','/images/bel-air-528/bel-air-528-2.jpg','/images/bel-air-528/bel-air-528-3.jpg','/images/bel-air-528/bel-air-528-4.jpg','/images/bel-air-528/bel-air-528-5.jpg','/images/bel-air-528/bel-air-528-6.jpg','/images/bel-air-528/bel-air-528-7.jpg','/images/bel-air-528/bel-air-528-8.jpg','/images/bel-air-528/bel-air-528-9.jpg','/images/bel-air-528/bel-air-528-10.jpg','/images/bel-air-528/bel-air-528-11.jpg','/images/bel-air-528/bel-air-528-12.jpg','/images/bel-air-528/bel-air-528-13.jpg','/images/bel-air-528/bel-air-528-14.jpg','/images/bel-air-528/bel-air-528-15.jpg','/images/bel-air-528/bel-air-528-16.jpg','/images/bel-air-528/bel-air-528-17.jpg','/images/bel-air-528/bel-air-528-18.jpg','/images/bel-air-528/bel-air-528-19.jpg','/images/bel-air-528/bel-air-528-20.jpg'] },
+  'food4less': { title: 'Food4Less - Cameron Park', photos: ['/images/food4less/food4less-1.jpg','/images/food4less/food4less-2.jpg','/images/food4less/food4less-3.jpg','/images/food4less/food4less-4.jpg','/images/food4less/food4less-5.jpg','/images/food4less/food4less-6.jpg','/images/food4less/food4less-7.jpg','/images/food4less/food4less-8.jpg','/images/food4less/food4less-9.jpg'] },
+  'george-mark': { title: "George Mark Children's House", photos: ['/images/george-mark/george-mark-1.jpg','/images/george-mark/george-mark-2.jpg','/images/george-mark/george-mark-3.jpg','/images/george-mark/george-mark-4.jpg','/images/george-mark/george-mark-5.jpg'] },
+  'harper-junior-high': { title: 'Harper Junior High', photos: ['/images/harper-junior-high/harper-junior-high-1.jpg','/images/harper-junior-high/harper-junior-high-2.jpg'] },
+  'lathrop-fire-station': { title: 'Lathrop Fire Station', photos: ['/images/lathrop-fire-station/lathrop-fire-station-1.jpg'] },
+  'okizu': { title: 'Camp Okizu', photos: ['/images/okizu/okizu-1.jpg'] },
+  'parkstone-center': { title: 'Parkstone Center - West Sacramento', photos: ['/images/parkstone-center/parkstone-center-1.jpg','/images/parkstone-center/parkstone-center-2.jpg','/images/parkstone-center/parkstone-center-3.jpg'] },
+  'rea-starbucks': { title: 'REA Building / Starbucks', photos: ['/images/rea-starbucks/rea-starbucks-1.jpg','/images/rea-starbucks/rea-starbucks-2.jpg','/images/rea-starbucks/rea-starbucks-3.jpg'] },
+  'r-st-safeway': { title: 'R Street Safeway', photos: ['/images/r-st-safeway/r-st-safeway-1.jpg','/images/r-st-safeway/r-st-safeway-2.jpg','/images/r-st-safeway/r-st-safeway-3.jpg','/images/r-st-safeway/r-st-safeway-4.jpg','/images/r-st-safeway/r-st-safeway-5.jpg'] },
+  'sanger-high-school': { title: 'Sanger High School', photos: ['/images/sanger-high-school/sanger-high-school-1.jpg','/images/sanger-high-school/sanger-high-school-2.jpg'] },
+  'west-sac-fire-station': { title: 'West Sacramento Fire Station', photos: ['/images/west-sac-fire-station/west-sac-fire-station-1.jpg','/images/west-sac-fire-station/west-sac-fire-station-2.jpg'] },
+  'yuba-college': { title: 'Yuba College - Adaptive Physical Therapy', photos: ['/images/yuba-college/yuba-college-1.jpg','/images/yuba-college/yuba-college-2.jpg','/images/yuba-college/yuba-college-3.jpg'] }
 };
 
 var lbProject = null, lbIndex = 0;
-
 function openLightbox(key) {
   lbProject = projects[key];
+  if (!lbProject) return;
   lbIndex = 0;
   document.getElementById('lb-title').textContent = lbProject.title;
-  buildThumbs();
-  showPhoto();
+  buildThumbs(); showPhoto();
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
   document.body.style.overflow = '';
 }
-
 function buildThumbs() {
-  var wrap = document.getElementById('lb-thumbs');
-  wrap.innerHTML = '';
+  var wrap = document.getElementById('lb-thumbs'); wrap.innerHTML = '';
   lbProject.photos.forEach(function(src, i) {
-    var img = document.createElement('img');
-    img.src = src;
-    img.alt = lbProject.title + ' photo ' + (i + 1);
+    var img = document.createElement('img'); img.src = src;
+    img.alt = lbProject.title + ' ' + (i+1);
     img.onclick = function() { lbIndex = i; showPhoto(); };
     wrap.appendChild(img);
   });
 }
-
 function showPhoto() {
-  var photos = lbProject.photos;
-  document.getElementById('lb-img').src = photos[lbIndex];
-  document.getElementById('lb-img').alt = lbProject.title + ' photo ' + (lbIndex + 1);
-  document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + photos.length;
-  var thumbs = document.getElementById('lb-thumbs').children;
-  for (var i = 0; i < thumbs.length; i++) {
-    thumbs[i].classList.toggle('active', i === lbIndex);
-  }
+  var p = lbProject.photos;
+  document.getElementById('lb-img').src = p[lbIndex];
+  document.getElementById('lb-img').alt = lbProject.title + ' photo ' + (lbIndex+1);
+  document.getElementById('lb-counter').textContent = (lbIndex+1) + ' / ' + p.length;
+  var th = document.getElementById('lb-thumbs').children;
+  for (var i=0; i<th.length; i++) th[i].classList.toggle('active', i===lbIndex);
 }
-
-function lbPrev() { lbIndex = (lbIndex - 1 + lbProject.photos.length) % lbProject.photos.length; showPhoto(); }
-function lbNext() { lbIndex = (lbIndex + 1) % lbProject.photos.length; showPhoto(); }
-
+function lbPrev() { lbIndex = (lbIndex-1+lbProject.photos.length)%lbProject.photos.length; showPhoto(); }
+function lbNext() { lbIndex = (lbIndex+1)%lbProject.photos.length; showPhoto(); }
 document.addEventListener('keydown', function(e) {
   if (!document.getElementById('lightbox').classList.contains('active')) return;
-  if (e.key === 'ArrowLeft') lbPrev();
-  if (e.key === 'ArrowRight') lbNext();
-  if (e.key === 'Escape') closeLightbox();
+  if (e.key==='ArrowLeft') lbPrev();
+  if (e.key==='ArrowRight') lbNext();
+  if (e.key==='Escape') closeLightbox();
 });
-
-document.getElementById('lightbox').addEventListener('click', function(e) {
-  if (e.target === this) closeLightbox();
-});
-
-// keyboard on port-items
+document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target===this) closeLightbox(); });
 document.querySelectorAll('.port-item[role="button"]').forEach(function(el) {
-  el.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') el.click(); });
+  el.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') el.click(); });
 });
 </script>
 </body>

@@ -13,12 +13,9 @@
 <meta property="og:title" content="Capitol City Design Inc. | Electrical Engineering & Lighting Design">
 <meta property="og:description" content="Full-service electrical engineering and NCQLP-certified lighting design firm in West Sacramento, CA. 30+ years experience. Licensed in 11 states.">
 <meta property="og:url" content="https://capcitydesign.com/">
-<meta property="og:image" content="https://capcitydesign.com/images/rocklin-police/rocklin-1.jpg">
+<meta property="og:image" content="https://capcitydesign.com/images/rocklin-police/rocklin-police-1.jpg">
 <meta property="og:site_name" content="Capitol City Design Inc.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Capitol City Design Inc. | Electrical Engineering & Lighting Design">
-<meta name="twitter:description" content="Full-service electrical engineering and NCQLP-certified lighting design firm in West Sacramento, CA. 30+ years experience. Licensed in 11 states.">
-<meta name="twitter:image" content="https://capcitydesign.com/images/rocklin-police/rocklin-1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,38 +36,205 @@
     "addressRegion": "CA",
     "postalCode": "95691",
     "addressCountry": "US"
-  },
-  "areaServed": "California"
+  }
 }
 </script>
 <style>
-/* ---- HERO FEATURE ---- */
-.featured-wrap { background: #fff; border-bottom: 3px solid #ccc; }
-.featured-inner { max-width: 1000px; margin: 0 auto; display: flex; }
-.featured-photo { flex: 0 0 65%; overflow: hidden; }
-.featured-photo img { width: 100%; height: 380px; object-fit: cover; object-position: center center; display: block; }
-.featured-info { flex: 1; padding: 32px 28px; background: #fff; display: flex; flex-direction: column; justify-content: center; }
-.featured-info h3 { font-size: 22px; color: #333; margin: 0 0 8px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 700; }
-.featured-info .feat-loc { font-size: 12px; color: #888; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
-.featured-info p { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 16px; }
-.btn-readmore { display: inline-block; background: #4a7ca5; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 18px; text-decoration: none; align-self: flex-start; }
-.btn-readmore:hover { background: #3a6285; text-decoration: none; }
+/* ======== FULL-BLEED HERO ======== */
+.hero-fullbleed {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 108px); /* viewport minus header */
+  min-height: 520px;
+  max-height: 900px;
+  overflow: hidden;
+  display: flex;
+}
 
-/* ---- INFO BAND ---- */
-.info-band { background: #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+/* Three-panel strip like CHD */
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: flex 0.5s ease;
+}
+.hero-panel-main {
+  flex: 5;
+}
+.hero-panel-side {
+  flex: 1;
+  cursor: pointer;
+}
+.hero-panel-side:hover {
+  flex: 1.4;
+}
+.hero-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Dark overlay on side panels */
+.hero-panel-side::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  transition: background 0.3s;
+}
+.hero-panel-side:hover::after {
+  background: rgba(0,0,0,0.15);
+}
+
+/* Text overlay on main panel */
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+  padding: 40px 40px 36px;
+  z-index: 2;
+}
+.hero-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+}
+.hero-title {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: clamp(22px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 20px;
+}
+.hero-cta {
+  display: inline-block;
+  background: #4a7ca5;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 22px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.hero-cta:hover { background: #3a6285; text-decoration: none; color: #fff; }
+
+/* Side panel label */
+.side-label {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+/* ======== PROJECT STRIP ======== */
+.project-strip {
+  display: flex;
+  gap: 0;
+  background: #2d4f6e;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.project-strip::-webkit-scrollbar { display: none; }
+.strip-item {
+  flex: 1;
+  min-width: 140px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+}
+.strip-item:last-child { border-right: none; }
+.strip-item img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.55;
+  transition: opacity 0.2s, transform 0.3s;
+}
+.strip-item:hover img { opacity: 0.85; transform: scale(1.04); }
+.strip-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 8px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ======== CONTENT SECTIONS ======== */
+.home-content { max-width: 1000px; margin: 0 auto; padding: 32px 20px 0; }
+.home-two-col { display: flex; gap: 32px; }
+.home-main { flex: 1; }
+.home-side { flex: 0 0 300px; }
+
+/* INFO BAND */
+.info-band { background: #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin: 24px 0; }
 .info-band-inner { max-width: 1000px; margin: 0 auto; display: flex; }
-.info-band-left { flex: 0 0 260px; background: #4a7ca5; padding: 22px 18px; display: flex; align-items: center; }
-.info-band-left p { color: #fff; font-family: 'Open Sans', Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.5; margin: 0; white-space: nowrap; }
-.info-band-right { flex: 1; padding: 22px 28px; display: flex; gap: 40px; }
-.info-section h2 { margin-top: 0; font-size: 17px; }
+.info-band-left {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  background: #4a7ca5;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+}
+.info-band-left p { color: #fff; font-family: 'Open Sans', Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.5; margin: 0; }
+.info-band-right { flex: 1; padding: 22px 28px; display: flex; gap: 40px; flex-wrap: wrap; }
+.info-section h2 { margin-top: 0; font-size: 16px; }
 .info-section p { font-size: 12px; color: #555; margin: 0; }
 
 @media (max-width: 768px) {
-  .featured-inner { flex-direction: column; }
-  .featured-photo { flex: none; }
-  .featured-photo img { height: 240px; }
+  .hero-fullbleed { height: 60vw; min-height: 300px; }
+  .hero-panel-side { display: none; }
+  .hero-overlay { padding: 20px; }
+  .home-two-col { flex-direction: column; }
+  .home-side { flex: none; width: 100%; }
   .info-band-inner { flex-direction: column; }
-  .info-band-left { flex: none; }
+  .info-band-left { white-space: normal; flex: none; }
   .info-band-right { flex-direction: column; gap: 20px; }
 }
 </style>
@@ -81,7 +245,7 @@
 <header role="banner">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="Capitol City Design Inc. - Home">
-      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="140" height="45" style="height:45px;width:auto;">
+      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" style="height:45px;width:auto;">
       <div class="header-logo-text">
         <strong>Capitol City Design, Inc.</strong>
         <span>Electrical Engineering Consultants</span>
@@ -100,38 +264,107 @@
   </div>
 </header>
 
-<!-- HERO: ROCKLIN POLICE DEPARTMENT -->
-<div class="featured-wrap">
-  <div class="featured-inner">
-    <div class="featured-photo">
-      <img src="/images/rocklin-police/rocklin-police-1.jpg" alt="Rocklin Police Department - Capitol City Design featured project" loading="eager">
-    </div>
-    <div class="featured-info">
-      <h3>Rocklin Police Department</h3>
-      <p class="feat-loc">Rocklin, California &mdash; 40,000 Sq. Ft.</p>
-      <p>Capitol City Design provided full electrical engineering and lighting design services for the Rocklin Police Department's 40,000 square foot facility - delivering code-compliant, efficient systems built for decades of public service.</p>
-      <a href="/featured-projects.html" class="btn-readmore">View Featured Projects &rarr;</a>
+<!-- FULL-BLEED HERO: THREE-PANEL CHD STYLE -->
+<div class="hero-fullbleed" aria-label="Featured project: Rocklin Police Department">
+  <!-- Left side panel -->
+  <a href="/featured-projects.html" class="hero-panel hero-panel-side" aria-label="View El Dorado Hills Fire Station">
+    <img src="/images/el-dorado-hills/el-dorado-hills-1.jpg" alt="El Dorado Hills Fire Station #85" loading="eager">
+    <span class="side-label">El Dorado Hills FS</span>
+  </a>
+
+  <!-- Main center panel -->
+  <div class="hero-panel hero-panel-main">
+    <img src="/images/rocklin-police/rocklin-police-1.jpg" alt="Rocklin Police Department" loading="eager">
+    <div class="hero-overlay">
+      <p class="hero-label">Featured Project</p>
+      <h1 class="hero-title">Rocklin Police<br>Department</h1>
+      <p class="hero-sub">Rocklin, California &mdash; 40,000 Sq. Ft.</p>
+      <a href="/featured-projects.html#rocklin" class="hero-cta">View Project &rarr;</a>
     </div>
   </div>
+
+  <!-- Right side panel -->
+  <a href="/featured-projects.html" class="hero-panel hero-panel-side" aria-label="View Niello Porsche Sacramento">
+    <img src="/images/niello-porsche/niello-porsche-1.jpg" alt="Niello Porsche Sacramento" loading="eager">
+    <span class="side-label">Niello Porsche</span>
+  </a>
 </div>
 
-<!-- MAIN CONTENT - SINGLE COLUMN, SIMPLIFIED -->
+<!-- PROJECT STRIP -->
+<div class="project-strip" aria-label="Project navigation">
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/niello-porsche/niello-porsche-2.jpg" alt="Niello Porsche" loading="lazy">
+    <span class="strip-caption">Niello Porsche</span>
+  </a>
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/nugget-market-davis/nugget-market-davis-1.jpg" alt="Nugget Market" loading="lazy">
+    <span class="strip-caption">Nugget Market</span>
+  </a>
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/mercedes-benz/mercedes-benz-1.jpg" alt="Mercedes-Benz Sacramento" loading="lazy">
+    <span class="strip-caption">Mercedes-Benz</span>
+  </a>
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/jaguar-sacramento/jaguar-sacramento-1.jpg" alt="Jaguar Sacramento" loading="lazy">
+    <span class="strip-caption">Jaguar Sacramento</span>
+  </a>
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/benicia-high-school/benicia-high-school-1.jpg" alt="Benicia High School" loading="lazy">
+    <span class="strip-caption">Benicia High School</span>
+  </a>
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/taros-mikuni/taros-mikuni-1.jpg" alt="Taro's by Mikuni" loading="lazy">
+    <span class="strip-caption">Taro's by Mikuni</span>
+  </a>
+  <a href="/portfolio.html" class="strip-item">
+    <img src="/images/ceres-fire-station/ceres-fire-station-1.jpg" alt="Ceres Fire Station" loading="lazy">
+    <span class="strip-caption">Ceres Fire Station</span>
+  </a>
+</div>
+
+<!-- MAIN CONTENT -->
 <main id="main-content">
-<div class="page-wrap">
-  <div class="panel">
-    <h4 style="color:#4a7ca5; font-size:13px; text-transform:none; font-weight:normal; margin-bottom:4px; font-family:Arial,sans-serif;">Welcome to</h4>
-    <h2 style="margin-top:0;">Capitol City Design, Inc.</h2>
+<div class="home-content">
+  <div class="home-two-col">
+    <div class="home-main">
+      <div class="panel">
+        <h4 style="color:#4a7ca5; font-size:13px; text-transform:none; font-weight:normal; margin-bottom:4px; font-family:Arial,sans-serif;">Welcome to</h4>
+        <h2 style="margin-top:0;">Capitol City Design, Inc.</h2>
 
-    <h2>Electrical Engineering</h2>
-    <p>At Capitol City Design Inc., we maintain industry specific certifications and affiliations to help propel and motivate our team to be the best in the area. Our Electrical Engineering accolades are built on a long lasting and trustworthy relationship with our clients and our future clients. As an electrical engineering firm, we have experience in all types of construction, including industrial, commercial, residential and institutional projects. We strive to make our projects more energy efficient and cost effective incorporating building sustainable systems.</p>
+        <h2>Electrical Engineering</h2>
+        <p>At Capitol City Design Inc., we maintain industry specific certifications and affiliations to help propel and motivate our team to be the best in the area. Our Electrical Engineering accolades are built on a long lasting and trustworthy relationship with our clients and our future clients. As an electrical engineering firm, we have experience in all types of construction, including industrial, commercial, residential and institutional projects. We strive to make our projects more energy efficient and cost effective incorporating building sustainable systems.</p>
 
-    <h2>Lighting Design</h2>
-    <p>Tony C. Baker, president and founder of Capitol City Design Inc., is certified with the National Council on Qualifications for the Lighting Professionals (NCQLP). The professional credential (LC, Lighting Certified) process for lighting professionals will promote the implementation cost-effective, energy effective and high performance lighting systems and equipment to every project. Capitol City Design Inc. assures that all lighting design projects meet NCQLP's strict standards and principals during every phase of the project.</p>
+        <h2>Lighting Design</h2>
+        <p>Tony C. Baker, president and founder of Capitol City Design Inc., is certified with the National Council on Qualifications for the Lighting Professionals (NCQLP). The professional credential (LC, Lighting Certified) promotes cost-effective, energy effective and high performance lighting systems for every project. Capitol City Design Inc. assures that all lighting design projects meet NCQLP's strict standards during every phase of the project.</p>
 
-    <p style="margin-top:8px;">
-      <a href="/portfolio.html" class="btn-blue" style="margin-right:10px;">View Portfolio</a>
-      <a href="/contact.html" class="btn-blue">Contact Us</a>
-    </p>
+        <p style="margin-top:8px;">
+          <a href="/portfolio.html" class="btn-blue" style="margin-right:10px;">View Portfolio</a>
+          <a href="/contact.html" class="btn-blue">Contact Us</a>
+        </p>
+      </div>
+    </div>
+    <div class="home-side">
+      <div class="widget">
+        <div class="widget-header"><h4>Contact Us</h4></div>
+        <div class="widget-body contact-widget">
+          <p>1751 Cebrian St<br>West Sacramento, CA 95691</p>
+          <p>Phone: <a href="tel:+191****0135">916.375.0135</a></p>
+          <p>Email: <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
+          <p style="margin-top:10px;"><a href="/contact.html" class="btn-blue">Send a Message</a></p>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget-header"><h4>Quick Links</h4></div>
+        <div class="widget-body">
+          <ul>
+            <li><a href="/experience.html">Experience &amp; Credentials</a></li>
+            <li><a href="/portfolio.html">Project Portfolio</a></li>
+            <li><a href="/featured-projects.html">Featured Projects</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -139,7 +372,7 @@
 <div class="info-band">
   <div class="info-band-inner">
     <div class="info-band-left">
-      <p>Capitol City Design, Inc. &mdash; A Full-Service Electrical Engineering Firm</p>
+      <p>Capitol City Design, Inc.<br>A Full-Service Electrical Engineering Firm</p>
     </div>
     <div class="info-band-right">
       <div class="info-section">
@@ -154,10 +387,10 @@
   </div>
 </div>
 
-<div class="page-wrap" style="padding-top:0;">
+<div class="home-content" style="padding-bottom:32px;">
   <div class="panel">
     <h2 style="margin-top:0;">Affiliations</h2>
-    <ul style="list-style:disc; padding-left:18px;">
+    <ul style="list-style:disc; padding-left:18px; columns:2; column-gap:30px;">
       <li style="margin-bottom:5px;">IEEE - Institute of Electrical and Electronics Engineers, Inc.</li>
       <li style="margin-bottom:5px;">IES - Illuminating Engineering Society of North America</li>
       <li style="margin-bottom:5px;">ILAD - International Association of Lighting Designers</li>
@@ -189,7 +422,7 @@
     <div class="footer-contact-col">
       <h4>Contact Us</h4>
       <p>1751 Cebrian St<br>West Sacramento, CA 95691</p>
-      <p>Phone: <a href="tel:+19163750135">916.375.0135</a></p>
+      <p>Phone: <a href="tel:+191****0135">916.375.0135</a></p>
       <p>Email: <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
     </div>
     <div>
