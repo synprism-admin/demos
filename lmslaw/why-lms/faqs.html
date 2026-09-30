@@ -1,14 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Injury FAQs | LMS Law San Francisco</title>
-  <meta name="description" content="Frequently asked questions about personal injury law from the experienced attorneys at LMS Law in San Francisco and Novato, CA." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Injury FAQs | LMS Law San Francisco</title>
+<meta name="description" content="Answers to the most common personal injury questions from LMS Law's experienced San Francisco attorneys. Free case review — no fee unless we win.">
 <link rel="stylesheet" href="../shared.css">
+<style>
+
+/* ── Sub-page nav strip ── */
+.wl-sub-nav { background: var(--crimson); padding: 0 24px; }
+.wl-sub-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; }
+.wl-sub-nav a {
+  display: block;
+  padding: 14px 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  border-right: 1px solid rgba(255,255,255,.18);
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.wl-sub-nav a:hover, .wl-sub-nav a.active { background: rgba(0,0,0,.2); color: #fff; }
+
+/* ── Intro band ── */
+.faq-intro {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.faq-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.faq-intro h2 { font-size: clamp(20px,2.8vw,32px); margin-bottom: 14px; line-height: 1.25; }
+.faq-intro h2 em { color: var(--crimson); font-style: normal; }
+.faq-intro p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 12px; }
+.faq-category-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.faq-cat-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--crimson);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mid);
+  transition: background .15s, color .15s;
+  cursor: pointer;
+}
+.faq-cat-link:hover { background: var(--off-white); color: var(--crimson); }
+.faq-cat-num {
+  width: 24px;
+  height: 24px;
+  background: var(--crimson);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Main layout ── */
+.faq-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── FAQ categories ── */
+.faq-cat-section { margin-bottom: 48px; }
+.faq-cat-section:last-child { margin-bottom: 0; }
+.faq-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--crimson);
+}
+.faq-cat-header h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--crimson);
+  margin: 0;
+}
+.faq-cat-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--crimson);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Accordion items ── */
+.faq-accordion { display: flex; flex-direction: column; gap: 2px; }
+.faq-item { border: 1px solid var(--border); background: #fff; overflow: hidden; }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  user-select: none;
+  transition: background .15s, color .15s;
+  border-left: 3px solid transparent;
+}
+.faq-q:hover { background: var(--off-white); color: var(--crimson); }
+.faq-item.open .faq-q { background: var(--off-white); color: var(--crimson); border-left-color: var(--crimson); }
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--crimson);
+  font-weight: 300;
+  transition: transform .25s, border-color .15s;
+  line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--crimson); }
+.faq-a {
+  display: none;
+  padding: 0 22px 22px 22px;
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+}
+.faq-item.open .faq-a { display: block; padding-top: 18px; }
+
+/* ── Still have questions callout ── */
+.faq-still {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--crimson);
+  padding: 24px 24px 20px;
+  margin-top: 40px;
+}
+.faq-still h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+.faq-still p { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 16px; }
+
+@media (max-width: 1024px) {
+  .faq-body { grid-template-columns: 1fr; }
+  .faq-intro-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 560px) {
+  .wl-sub-nav-inner { flex-wrap: wrap; }
+}
+</style>
 </head>
 <body>
 
@@ -30,15 +212,15 @@
   <div class="lms-nav-inner">
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="../why-lms/index.html" class="lms-active">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="index.html" class="lms-active">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
-          <a href="../why-lms/index.html">Our Approach</a>
-          <a href="../why-lms/prepare.html">Prepare For Your Case</a>
-          <a href="../why-lms/faqs.html">FAQs</a>
+          <a href="index.html">Our Approach</a>
+          <a href="prepare.html">Prepare For Your Case</a>
+          <a href="faqs.html">FAQs</a>
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../attorneys/index.html">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="../attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../attorneys/index.html">Our Team</a>
           <a href="../attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +233,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../practice-areas/construction.html">Construction Injuries</a>
           <a href="../practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -70,31 +252,17 @@
   </div>
 </nav>
 
-<main class="page-body">
-    <div class="container">
-      <div class="sidebar-layout">
-
-        <!-- ── Left: FAQ Accordion ── -->
-        <div class="faqs-section" style="padding:0;">
-
-          <h2 class="section-title">Personal Injury Questions &amp; Answers</h2>
-          <div class="section-divider"></div>
-          <p style="color:#555; margin-bottom:36px;">Have questions about your personal injury case? Our experienced attorneys answer the most commonly asked questions below. For personalized guidance, <a href="../contact.html">contact us</a> for a free case review.</p>
-
-          <!-- FAQ 1 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Why do I need a Personal Injury Lawyer?
-            </button>
-            <div class="faq-answer">
-              <p>When you have been injured, the company, brand, person, or employer responsible wants the easy way out. Insurance companies and their legal teams are focused on minimizing what they pay you — not on making you whole. A personal injury lawyer levels the playing field. We understand the legal process, know how to properly value your claim, and have the experience to fight for the full compensation you deserve for your medical bills, lost wages, pain and suffering, and future expenses. Without experienced counsel, you risk settling for far less than you are entitled to, or missing critical deadlines that could cost you your case entirely.</p>
-            </div>
-          </div>
-
-          
-
-
-
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>&#8250;</span>
+      <a href="index.html">Why LMS</a><span>&#8250;</span>
+      FAQs
+    </div>
+    <h1>Frequently Asked Questions</h1>
+  </div>
+</div>
 
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
@@ -105,165 +273,327 @@
     <div class="lms-g-item"><span class="lms-gcheck">&#10003;</span> YOU ALWAYS COME FIRST</div>
   </div>
 </div>
-<!-- FAQ 2 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              How long will my case take?
-            </button>
-            <div class="faq-answer">
-              <p>Each case is different, but on average if your case is resolved at the claim stage before a lawsuit is filed, it is typically resolved within two years after the incident occurred. Once a lawsuit is filed, it usually takes 12 to 18 months either to settle the case or go to trial. Factors that affect the timeline include the complexity of the injury, the number of parties involved, the availability of evidence, and the willingness of the other side to negotiate in good faith.</p>
-            </div>
+
+<!-- SUB-PAGE NAV -->
+<div class="wl-sub-nav">
+  <div class="wl-sub-nav-inner">
+    <a href="index.html">Why Hire LMS</a>
+    <a href="prepare.html">Prepare For Your Case</a>
+    <a href="faqs.html" class="active">FAQs</a>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="faq-intro">
+  <div class="faq-intro-inner">
+    <div>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>Personal Injury <em>Questions &amp; Answers</em></h2>
+      <p>Have questions about your personal injury case? Our experienced attorneys answer the most commonly asked questions below.</p>
+      <p>Don't see your question here? <a href="../contact.html" style="color:var(--crimson);font-weight:700;">Contact us</a> for a free, confidential case review with no obligation.</p>
+      <div style="margin-top:20px;">
+        <a href="../contact.html" class="btn-crimson">FREE CASE REVIEW</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">Jump to a Category</p>
+      <div class="faq-category-links">
+        <div class="faq-cat-link" onclick="document.getElementById('cat-fees').scrollIntoView({behavior:'smooth'})">
+          <div class="faq-cat-num">6</div> Fees &amp; Payment Questions
+        </div>
+        <div class="faq-cat-link" onclick="document.getElementById('cat-process').scrollIntoView({behavior:'smooth'})">
+          <div class="faq-cat-num">5</div> Case Process &amp; Timeline
+        </div>
+        <div class="faq-cat-link" onclick="document.getElementById('cat-evidence').scrollIntoView({behavior:'smooth'})">
+          <div class="faq-cat-num">4</div> Evidence &amp; Documentation
+        </div>
+        <div class="faq-cat-link" onclick="document.getElementById('cat-settlement').scrollIntoView({behavior:'smooth'})">
+          <div class="faq-cat-num">4</div> Settlement &amp; Compensation
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ BODY + SIDEBAR -->
+<div class="faq-body">
+
+  <!-- MAIN FAQ CONTENT -->
+  <div>
+
+    <!-- FEES & PAYMENT -->
+    <div class="faq-cat-section" id="cat-fees">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon">$</div>
+        <h3>Fees &amp; Payment</h3>
+      </div>
+      <div class="faq-accordion">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>How do I pay you?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">In a typical personal injury case, the attorney is not paid until the case settles or a judgment is received from the court. This is called a contingent fee — the attorney receives a fee based on a percentage of the settlement or judgment amount. This means you pay nothing upfront. There are no hourly fees, no retainers, and no out-of-pocket legal costs. If we do not win your case, you owe us nothing.</div>
+        </div>
 
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              How do I pay you?
-            </button>
-            <div class="faq-answer">
-              <p>In a typical personal injury case, the attorney is not paid until the case settles or a judgment is received from the court. This is called a contingent fee, where the attorney receives a fee based on a percentage of the settlement or judgment amount. This means you pay nothing upfront — there are no hourly fees, no retainers, and no out-of-pocket legal costs. If we do not win your case, you owe us nothing.</p>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>How does a contingency fee work?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">A contingency fee means that a personal injury attorney only gets paid attorney fees if they can successfully resolve your case. The fee is calculated as an agreed-upon percentage of the final settlement or court award. Because your attorney's pay is tied directly to your outcome, you can be confident that we are always working hard to maximize your recovery.</div>
+        </div>
 
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              How long until I receive my money after settlement?
-            </button>
-            <div class="faq-answer">
-              <p>It depends on your case, but typically after settlement, signing, and disbursement you can expect to receive your compensation about six weeks after settlement. During this period, the settlement funds are placed in a trust account, medical liens and other obligations are resolved, and the final disbursement is calculated. Our team keeps you informed throughout this process so there are no surprises.</p>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>When do you get paid?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">We are paid only if and when we win your case or settlement. After the settlement has been won, we receive a percentage to cover litigation fees and our work on the case. Until that point, our firm advances all costs necessary to build and litigate your case — including investigation costs, expert fees, and court filing fees — so that you never have to worry about paying for legal services out of pocket while you are recovering.</div>
+        </div>
 
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              How does a contingency fee work?
-            </button>
-            <div class="faq-answer">
-              <p>A contingency fee means that a personal injury attorney only gets paid attorney fees if they can successfully resolve your case. With a contingency fee, your lawyer has a financial incentive to help you get the case resolved as quickly and successfully as possible. The fee is calculated as an agreed-upon percentage of the final settlement or court award. Because your attorney's pay is tied directly to your outcome, you can be confident that we are always working hard to maximize your recovery.</p>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Are there any upfront costs or hidden fees?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">No. There are absolutely no upfront costs to you. LMS Law advances all case expenses — including investigation, expert witnesses, court filings, and deposition costs — out of our own pocket. These costs are only reimbursed from your settlement if we win. If we don't win, you owe nothing.</div>
+        </div>
 
-          <!-- FAQ 6 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              When do you guys get paid?
-            </button>
-            <div class="faq-answer">
-              <p>Ultimately we are paid if and when we win your case or settlement. After the settlement has been won, we receive a percentage to cover litigation fees and our work on the case. Until that point, our firm advances all costs necessary to build and litigate your case — including investigation costs, expert fees, and court filing fees — so that you never have to worry about paying for legal services out of pocket while you are recovering from your injuries.</p>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Is the initial consultation really free?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">Yes — completely free and confidential. Our initial case review is always free with no obligation. We will listen to your situation, answer your questions honestly, and give you a realistic assessment of your case. If we don't think we can help you, we'll tell you that too.</div>
+        </div>
 
-          <!-- FAQ 7 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What should I bring to my case review?
-            </button>
-            <div class="faq-answer">
-              <p>Helpful items include medical records and bills, accident reports, photos of the scene and injuries, witness contact information, insurance information, records of missed work, and any prior attorney correspondence. Don't worry if you don't have everything — our team can help you identify and gather the evidence needed to build your case. The most important thing is to schedule your free consultation as soon as possible, because time-sensitive evidence can disappear quickly.</p>
-            </div>
+      </div>
+    </div>
+
+    <!-- CASE PROCESS -->
+    <div class="faq-cat-section" id="cat-process">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon">&#9878;</div>
+        <h3>Case Process &amp; Timeline</h3>
+      </div>
+      <div class="faq-accordion">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Why do I need a Personal Injury Lawyer?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">When you have been injured, the company, brand, person, or employer responsible wants the easy way out. Insurance companies and their legal teams are focused on minimizing what they pay you — not on making you whole. A personal injury lawyer levels the playing field. We understand the legal process, know how to properly value your claim, and have the experience to fight for the full compensation you deserve for medical bills, lost wages, pain and suffering, and future expenses. Without experienced counsel, you risk settling for far less than you are entitled to — or missing critical deadlines that could cost you your case entirely.</div>
+        </div>
 
-        </div><!-- /.faqs-section -->
-
-        <!-- ── Right: Sidebar ── -->
-        <aside>
-
-          <!-- Free Case Review Form -->
-          <div class="sidebar-box">
-            <div class="sidebar-box-title">Free Case Review</div>
-            <div class="sidebar-box-body">
-              <form action="../contact.html" method="get">
-                <div class="form-group">
-                  <label for="fq-name">Full Name</label>
-                  <input type="text" id="fq-name" name="name" placeholder="Your full name" required />
-                </div>
-                <div class="form-group">
-                  <label for="fq-phone">Phone Number</label>
-                  <input type="tel" id="fq-phone" name="phone" placeholder="(415) 000-0000" />
-                </div>
-                <div class="form-group">
-                  <label for="fq-email">Email Address</label>
-                  <input type="email" id="fq-email" name="email" placeholder="you@example.com" required />
-                </div>
-                <div class="form-group">
-                  <label for="fq-type">Case Type</label>
-                  <select id="fq-type" name="case_type">
-                    <option value="">Select case type…</option>
-                    <option>Construction Accident</option>
-                    <option>Slip &amp; Fall</option>
-                    <option>Motor Vehicle</option>
-                    <option>Real Estate</option>
-                    <option>Dangerous Premises</option>
-                    <option>Defective Products</option>
-                    <option>Wrongful Death</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="fq-message">Brief Description</label>
-                  <textarea id="fq-message" name="message" placeholder="Briefly describe your situation…"></textarea>
-                </div>
-                <button type="submit" class="form-submit">Submit My Case</button>
-              </form>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>How long will my case take?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">Each case is different. On average, if your case is resolved at the claim stage before a lawsuit is filed, it is typically resolved within two years after the incident occurred. Once a lawsuit is filed, it usually takes 12 to 18 months either to settle the case or go to trial. Factors that affect the timeline include the complexity of the injury, the number of parties involved, the availability of evidence, and the willingness of the other side to negotiate in good faith.</div>
+        </div>
 
-          <!-- Contact Info -->
-          <div class="sidebar-box">
-            <div class="sidebar-box-title">Contact Us</div>
-            <div class="sidebar-box-body">
-              <a href="tel:4154007000" class="phone-link">415-400-7000</a>
-              <address>
-                <strong>Novato Office</strong>
-                7200 Redwood Blvd #300<br>
-                Novato, CA 94945
-
-                <strong>San Francisco Office</strong>
-                235 Montgomery St Suite #440<br>
-                San Francisco, CA 94104
-              </address>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What is the statute of limitations in California?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">In most personal injury cases in California, you have <strong>2 years from the date of injury</strong> to file a lawsuit. However, important exceptions apply: claims against government entities must be filed within <strong>6 months</strong>, and claims involving minors may have different rules. Missing your deadline permanently bars your right to compensation — contact LMS Law as soon as possible after your injury.</div>
+        </div>
 
-          <!-- Still have questions? -->
-          <div class="sidebar-box">
-            <div class="sidebar-box-title">Still Have Questions?</div>
-            <div class="sidebar-box-body">
-              <p style="font-size:.9rem; color:#444; margin-bottom:14px;">Our attorneys are available to answer any questions you have about your personal injury case — with no obligation.</p>
-              <a href="../contact.html" class="btn btn-crimson" style="width:100%; text-align:center; display:block;">Schedule a Consultation</a>
-            </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Do I have to go to court?</span>
+            <span class="faq-icon">+</span>
           </div>
+          <div class="faq-a">Most personal injury cases are resolved through settlement before ever going to trial. However, if the other side refuses to offer fair compensation, we are fully prepared to take your case to trial and fight for the outcome you deserve. Our attorneys have extensive courtroom experience and are not afraid to go to trial when it is in your best interest.</div>
+        </div>
 
-        </aside>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What should I bring to my free case review?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Helpful items include medical records and bills, accident reports, photos of the scene and injuries, witness contact information, insurance information, records of missed work, and any prior attorney correspondence. Don't worry if you don't have everything — our team can help you identify and gather what's needed. The most important thing is to schedule your consultation as soon as possible, because time-sensitive evidence can disappear quickly.</div>
+        </div>
 
-      </div><!-- /.sidebar-layout -->
-    </div><!-- /.container -->
-  </main>
+      </div>
+    </div>
 
-  <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
-  
+    <!-- EVIDENCE -->
+    <div class="faq-cat-section" id="cat-evidence">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon">&#128247;</div>
+        <h3>Evidence &amp; Documentation</h3>
+      </div>
+      <div class="faq-accordion">
 
-  <!-- ══ ACCORDION JS ══════════════════════════════════════════ -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.faq-item.open').forEach(el => {
-          el.classList.remove('open');
-          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-        // Open clicked if it was closed
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  </script>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What evidence do I need for my case?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Key evidence includes: photos of the accident scene and your injuries, medical records and bills, police or incident reports, witness names and contact information, insurance information, records of missed work, and any correspondence with the other party or their insurer. Visit our <a href="prepare.html" style="color:var(--crimson);font-weight:700;">Prepare For Your Case</a> page for a complete checklist.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Can I hurt my case by talking to the other party's insurance company?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Yes — you should be very careful about what you say to the opposing party's insurance adjuster. Insurance companies often use recorded statements to minimize or deny your claim. We strongly recommend speaking with an attorney before giving any statements to another party's insurer. Anything you say can be used to reduce your compensation.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Will social media affect my case?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Absolutely. Defense attorneys and insurance adjusters routinely monitor social media accounts of injury claimants. A photo of you at a social event, a casual comment about your activities, or even a check-in at a restaurant can be used to undermine your injury claims. We advise all clients to avoid posting on social media until their case is resolved.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What if I didn't seek medical treatment right away?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Gaps in medical treatment can make it harder to prove the extent of your injuries, and insurance companies often use delayed treatment as a reason to reduce settlements. That said, a delay does not automatically destroy your case. Our attorneys have successfully handled cases where treatment was delayed, and we can help present your situation in the strongest possible light.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SETTLEMENT -->
+    <div class="faq-cat-section" id="cat-settlement">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon">&#128184;</div>
+        <h3>Settlement &amp; Compensation</h3>
+      </div>
+      <div class="faq-accordion">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>How long until I receive my settlement money?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">After settlement is reached, documents are signed, and disbursement is processed, you can typically expect to receive your compensation about <strong>six weeks after settlement</strong>. During this period, settlement funds are placed in a trust account, medical liens and other obligations are resolved, and the final disbursement is calculated. Our team keeps you fully informed throughout so there are no surprises.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Should I accept the first settlement offer?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">In almost every case — no. The first offer from an insurance company is typically far below the true value of your claim. Insurers are profit-driven businesses that make money by settling claims for as little as possible. Once you accept a settlement, you typically waive your right to seek additional compensation. Let us evaluate any offer before you decide — our attorneys know what your case is truly worth.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What types of compensation can I recover?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Depending on your case, you may be entitled to recover: <strong>Medical expenses</strong> (past and future), <strong>lost wages and lost earning capacity</strong>, <strong>pain and suffering</strong> (physical and emotional), <strong>property damage</strong>, <strong>out-of-pocket expenses</strong>, and in some cases <strong>punitive damages</strong> if the defendant's conduct was particularly egregious. Our attorneys will identify every category of damages available in your specific case.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What if I was partially at fault for the accident?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">California follows a "pure comparative negligence" rule, which means you can still recover compensation even if you were partially at fault — your award is simply reduced by your percentage of fault. For example, if you were 20% at fault and your damages were $100,000, you could still recover $80,000. Do not assume that partial fault eliminates your claim — contact us to understand your rights.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Still have questions -->
+    <div class="faq-still">
+      <h4>Still Have Questions?</h4>
+      <p>Our attorneys are happy to answer any questions you have about your personal injury case — with no obligation and no cost to you. Every case is unique and we're here to help you understand your specific situation.</p>
+      <a href="../contact.html" class="btn-crimson">SCHEDULE A FREE CONSULTATION</a>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div>
+    <!-- Form -->
+    <div class="form-box" style="margin-bottom:20px;">
+      <h3>Free Case Review</h3>
+      <p class="subtext">No fee unless we win. Confidential &amp; no obligation.</p>
+      <div class="fgroup"><label>Full Name *</label><input type="text" placeholder="Your full name"></div>
+      <div class="fgroup"><label>Phone *</label><input type="tel" placeholder="415-555-0000"></div>
+      <div class="fgroup"><label>Email *</label><input type="email" placeholder="you@email.com"></div>
+      <div class="fgroup">
+        <label>Case Type</label>
+        <select>
+          <option value="">Select a practice area...</option>
+          <option>Construction / Worksite Injury</option>
+          <option>Slip, Trip &amp; Fall</option>
+          <option>Motor Vehicle Crash</option>
+          <option>Dangerous Premises</option>
+          <option>Defective Products</option>
+          <option>Wrongful Death</option>
+          <option>Real Estate / Commercial Tenant</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fgroup"><label>Tell Us What Happened</label><textarea placeholder="Briefly describe your situation..."></textarea></div>
+      <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
+      <p class="form-disclaimer">100% confidential. We will contact you within 24 hours.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="sidebar-box">
+      <h4>Contact Us Directly</h4>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div style="width:30px;height:30px;background:var(--crimson);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">&#128222;</div>
+        <a href="tel:4154007000" style="font-size:18px;font-weight:700;color:var(--crimson);">415-400-7000</a>
+      </div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+        <strong style="color:#1a1a1a;display:block;margin-bottom:2px;">San Francisco Office</strong>
+        235 Montgomery St Suite #440<br>San Francisco, CA 94104
+        <strong style="color:#1a1a1a;display:block;margin:10px 0 2px;">Novato Office</strong>
+        7200 Redwood Blvd #300<br>Novato, CA 94945
+      </div>
+    </div>
+
+    <!-- Related links -->
+    <div class="sidebar-box">
+      <h4>Related Pages</h4>
+      <ul class="sidebar-nav">
+        <li><a href="index.html">Why Hire LMS Law</a></li>
+        <li><a href="prepare.html">Prepare For Your Case</a></li>
+        <li><a href="../victories.html">Our Client Victories</a></li>
+        <li><a href="../testimonials.html">Client Testimonials</a></li>
+        <li><a href="../practice-areas/index.html">Our Practice Areas</a></li>
+        <li><a href="../attorneys/index.html">Meet Our Attorneys</a></li>
+      </ul>
+    </div>
+
+    <!-- Guarantee block -->
+    <div style="background:var(--crimson);padding:22px;">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span>&#10003;</span> Free Case Review
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span>&#10003;</span> No Fee Unless We Win
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span>&#10003;</span> No Upfront Payments
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span>&#10003;</span> You Always Come First
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -275,72 +605,46 @@
         <p>San Francisco's personal injury law firm since 2003. Humble warriors committed to putting people first.</p>
       </div>
       <div class="lms-footer-col">
+        <h4>Why LMS</h4>
+        <ul>
+          <li><a href="index.html">Why Hire LMS</a></li>
+          <li><a href="prepare.html">Prepare For Your Case</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="lms-footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="../why-lms/index.html">Why LMS Law</a></li>
           <li><a href="../attorneys/index.html">Our Team</a></li>
           <li><a href="../practice-areas/index.html">Practice Areas</a></li>
           <li><a href="../testimonials.html">Testimonials</a></li>
           <li><a href="../victories.html">Clients' Victories</a></li>
-          <li><a href="../why-lms/faqs.html">FAQs</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="lms-footer-col">
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="../practice-areas/construction.html">Construction Injuries</a></li>
-          <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
-          <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle</a></li>
-          <li><a href="../practice-areas/real-estate.html">Real Estate</a></li>
-          <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
-          <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
-          <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
         </ul>
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  // Close all in same accordion group
+  const group = item.closest('.faq-accordion');
+  group.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
 </script>
 </body>
 </html>
