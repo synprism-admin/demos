@@ -70,7 +70,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   align-items: center;
   gap: 16px;
 }
-.lms-logo img { height: 60px; width: auto; }
+.lms-logo { display: flex; align-items: center; flex-shrink: 0; }
+.lms-logo img { height: 68px; width: auto; display: block; }
 .lms-tb-right {
   display: flex;
   align-items: center;
@@ -459,7 +460,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255,255,255,.18);
 }
-.lms-footer-brand img { height:68px; width:auto; margin-bottom:14px; }
+.lms-footer-brand img { height:72px; width:auto; margin-bottom:14px; display:block; }
 .lms-footer-phone { font-size:17px; font-weight:700; margin-bottom:8px; }
 .lms-footer-phone a { color:#fff; }
 .lms-footer-brand p { font-size:13px; color:rgba(255,255,255,.68); line-height:1.65; }
