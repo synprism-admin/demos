@@ -7,187 +7,34 @@
 <meta name="description" content="Personal injury legal news, tips, and resources from the attorneys at LMS Law in San Francisco. Stay informed about California injury law.">
 <link rel="stylesheet" href="./shared.css">
 <style>
-
-/* ── Blog grid ── */
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 48px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 64px 24px;
-  align-items: start;
-}
-
-/* ── Post cards ── */
-.post-list { display: flex; flex-direction: column; gap: 28px; }
-.post-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: box-shadow .2s;
-}
-.post-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); }
-.post-card-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  background: var(--off-white);
-}
-.post-card-img-placeholder {
-  width: 100%;
-  height: 220px;
-  background: linear-gradient(135deg, var(--off-white) 0%, #e8e4df 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
-}
-.post-card-img-placeholder span {
-  font-family: 'Merriweather', serif;
-  font-size: 40px;
-  color: var(--crimson);
-  opacity: .3;
-}
-.post-card-body { padding: 28px 28px 24px; }
-.post-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-.post-cat {
-  background: var(--crimson);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-}
-.post-date {
-  font-size: 12px;
-  color: var(--muted);
-}
-.post-card h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  line-height: 1.3;
-  color: #1a1a1a;
-}
+.blog-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; max-width: 1200px; margin: 0 auto; padding: 56px 24px; align-items: start; }
+.post-list { display: flex; flex-direction: column; gap: 0; }
+.post-card { background: #fff; border: 1px solid var(--border); border-top: 3px solid transparent; display: flex; gap: 0; overflow: hidden; margin-bottom: 20px; transition: box-shadow .2s, border-top-color .2s; }
+.post-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); border-top-color: var(--crimson); }
+.post-card-img { width: 200px; flex-shrink: 0; overflow: hidden; }
+.post-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.post-card:hover .post-card-img img { transform: scale(1.03); }
+.post-card-body { padding: 22px 24px; display: flex; flex-direction: column; justify-content: center; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.post-cat { background: var(--crimson); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; }
+.post-card h2 { font-family: 'Merriweather', serif; font-size: 17px; margin-bottom: 8px; line-height: 1.35; color: #1a1a1a; }
 .post-card h2 a { color: inherit; transition: color .15s; }
 .post-card h2 a:hover { color: var(--crimson); }
-.post-excerpt {
-  font-size: 14px;
-  color: var(--mid);
-  line-height: 1.75;
-  margin-bottom: 18px;
-}
-.post-read-more {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  color: var(--crimson);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border-bottom: 2px solid transparent;
-  transition: border-color .15s, gap .15s;
-}
-.post-read-more:hover { border-color: var(--crimson); gap: 10px; }
-
-/* ── Coming soon state ── */
-.blog-coming-soon {
-  background: var(--off-white);
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--crimson);
-  padding: 48px 36px;
-  text-align: center;
-}
-.blog-coming-soon h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: #1a1a1a;
-}
-.blog-coming-soon p {
-  font-size: 15px;
-  color: var(--mid);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Sidebar ── */
+.post-excerpt { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.post-read-more { font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--crimson); display: inline-flex; align-items: center; gap: 4px; border-bottom: 2px solid transparent; transition: border-color .15s, gap .15s; align-self: flex-start; }
+.post-read-more:hover { border-color: var(--crimson); gap: 8px; }
 .blog-sidebar { display: flex; flex-direction: column; gap: 20px; }
-
-.blog-sidebar-box {
-  background: var(--off-white);
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--crimson);
-  padding: 22px;
-}
-.blog-sidebar-box h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--muted);
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-
-/* ── Category pills ── */
-.blog-cats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.blog-cat-pill {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--mid);
-  background: #fff;
-  border: 1px solid var(--border);
-  padding: 6px 12px;
-  transition: background .15s, color .15s, border-color .15s;
-  cursor: default;
-}
+.blog-cat-pill { display: inline-block; font-size: 12px; font-weight: 600; color: var(--mid); background: #fff; border: 1px solid var(--border); padding: 6px 12px; margin: 4px; cursor: default; transition: background .15s, color .15s, border-color .15s; }
 .blog-cat-pill:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
-
-/* ── Related links ── */
-.blog-related { list-style: none; }
-.blog-related li { border-bottom: 1px solid var(--border); }
-.blog-related li:last-child { border-bottom: none; }
-.blog-related a {
-  display: block;
-  padding: 9px 0;
-  font-size: 13px;
-  color: var(--mid);
-  transition: color .15s, padding-left .15s;
-}
-.blog-related a::before { content: '> '; color: var(--crimson); }
-.blog-related a:hover { color: var(--crimson); padding-left: 4px; }
-
-@media (max-width: 1024px) {
-  .blog-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 1024px) { .blog-layout { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .post-card { flex-direction: column; } .post-card-img { width: 100%; height: 180px; } }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="lms-topbar">
   <div class="lms-tb-inner">
-    <a class="lms-logo" href="./index.html">
-      <img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Header-Logo.png" alt="LMS Law">
-    </a>
+    <a class="lms-logo" href="./index.html"><img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Header-Logo.png" alt="LMS Law"></a>
     <div class="lms-tb-right">
       <a class="lms-phone" href="tel:4154007000">415-400-7000</a>
       <a class="lms-tb-cta" href="./contact.html">FREE CASE REVIEW</a>
@@ -195,43 +42,12 @@
   </div>
 </div>
 
-<!-- NAV -->
 <nav class="lms-nav">
   <div class="lms-nav-inner">
     <ul class="lms-menu">
-      <li class="lms-has-drop">
-        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a>
-        <div class="lms-drop">
-          <a href="./why-lms/index.html">Our Approach</a>
-          <a href="./why-lms/prepare.html">Prepare For Your Case</a>
-          <a href="./why-lms/faqs.html">FAQs</a>
-        </div>
-      </li>
-      <li class="lms-has-drop">
-        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
-        <div class="lms-drop">
-          <a href="./attorneys/index.html">Our Team</a>
-          <a href="./attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
-          <a href="./attorneys/michael-solomon.html">Michael R. Solomon</a>
-          <a href="./attorneys/deborah-churton.html">Deborah A. Churton</a>
-          <a href="./attorneys/michael-hale.html">Michael E. Hale</a>
-          <a href="./attorneys/david-winnett.html">David L. Winnett</a>
-          <a href="./attorneys/martin-murphy.html">Martin D. Murphy</a>
-          <a href="./attorneys/frank-moore.html">Frank S. Moore</a>
-        </div>
-      </li>
-      <li class="lms-has-drop">
-        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
-        <div class="lms-drop">
-          <a href="./practice-areas/construction.html">Construction Injuries</a>
-          <a href="./practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
-          <a href="./practice-areas/motor-vehicle.html">Motor Vehicle</a>
-          <a href="./practice-areas/real-estate.html">Real Estate</a>
-          <a href="./practice-areas/dangerous-premises.html">Dangerous Premises</a>
-          <a href="./practice-areas/defective-products.html">Defective Products</a>
-          <a href="./practice-areas/wrongful-death.html">Wrongful Death</a>
-        </div>
-      </li>
+      <li class="lms-has-drop"><a href="./why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a><div class="lms-drop"><a href="./why-lms/index.html">Our Approach</a><a href="./why-lms/prepare.html">Prepare For Your Case</a><a href="./why-lms/faqs.html">FAQs</a></div></li>
+      <li class="lms-has-drop"><a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a><div class="lms-drop"><a href="./attorneys/index.html">Our Team</a><a href="./attorneys/frank-liuzzi.html">Frank C. Liuzzi</a><a href="./attorneys/michael-solomon.html">Michael R. Solomon</a><a href="./attorneys/deborah-churton.html">Deborah A. Churton</a><a href="./attorneys/michael-hale.html">Michael E. Hale</a><a href="./attorneys/david-winnett.html">David L. Winnett</a><a href="./attorneys/martin-murphy.html">Martin D. Murphy</a><a href="./attorneys/frank-moore.html">Frank S. Moore</a></div></li>
+      <li class="lms-has-drop"><a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a><div class="lms-drop"><a href="./practice-areas/construction.html">Construction Injuries</a><a href="./practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a><a href="./practice-areas/motor-vehicle.html">Motor Vehicle</a><a href="./practice-areas/real-estate.html">Real Estate</a><a href="./practice-areas/dangerous-premises.html">Dangerous Premises</a><a href="./practice-areas/defective-products.html">Defective Products</a><a href="./practice-areas/wrongful-death.html">Wrongful Death</a></div></li>
       <li><a href="./testimonials.html">TESTIMONIALS</a></li>
       <li><a href="./victories.html">VICTORIES</a></li>
       <li><a href="./blog.html" class="lms-active">BLOG</a></li>
@@ -240,7 +56,6 @@
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
 <div class="page-header">
   <div class="inner">
     <div class="breadcrumb"><a href="./index.html">Home</a><span>&#8250;</span> Blog</div>
@@ -248,7 +63,6 @@
   </div>
 </div>
 
-<!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
   <div class="lms-g-inner">
     <div class="lms-g-item"><span class="lms-gcheck">&#10003;</span> FREE CASE REVIEWS</div>
@@ -258,77 +72,113 @@
   </div>
 </div>
 
-<!-- BLOG GRID -->
-<div class="blog-grid">
-
-  <!-- MAIN CONTENT -->
+<div class="blog-layout">
   <div>
-    <div style="margin-bottom:32px;">
-      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:16px;"></div>
-      <h2 style="font-family:'Merriweather',serif;font-size:clamp(20px,2.5vw,28px);margin-bottom:10px;">From Our Attorneys</h2>
-      <p style="font-size:15px;color:var(--mid);line-height:1.75;">Legal insights, case updates, and practical guidance from the personal injury attorneys at LMS Law. Content coming soon - in the meantime, explore our resources below.</p>
+    <div style="margin-bottom:28px;">
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:14px;"></div>
+      <h2 style="font-family:'Merriweather',serif;font-size:clamp(20px,2.5vw,28px);margin-bottom:8px;">From Our Attorneys</h2>
+      <p style="font-size:15px;color:var(--mid);line-height:1.75;">Legal insights, case updates, and practical guidance from the personal injury attorneys at LMS Law.</p>
     </div>
 
-    <!-- Coming Soon State -->
-    <div class="blog-coming-soon">
-      <div style="font-size:48px;margin-bottom:16px;opacity:.35;">&#128196;</div>
-      <h3>Articles Coming Soon</h3>
-      <p>Our attorneys are preparing informative articles on personal injury law, client rights, and how to navigate the claims process. Check back soon for the latest updates from the LMS Law team.</p>
-      <a href="./contact.html" class="btn-crimson">SPEAK WITH AN ATTORNEY TODAY</a>
-    </div>
-
-    <!-- Sample post cards (placeholder content) -->
-    <div class="post-list" style="margin-top:36px;">
+    <div class="post-list">
 
       <div class="post-card">
-        <div class="post-card-img-placeholder"><span>&#9878;</span></div>
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/06/iStock-1183001120.jpg" alt="Nursing Home Neglect"></div>
         <div class="post-card-body">
-          <div class="post-meta">
-            <span class="post-cat">Personal Injury</span>
-            <span class="post-date">Coming Soon</span>
-          </div>
-          <h2><a href="./contact.html">What to Do in the First 24 Hours After an Accident</a></h2>
-          <p class="post-excerpt">The steps you take immediately after an accident can have a significant impact on your ability to recover compensation. Our attorneys walk you through exactly what to do - and what to avoid - in the critical hours following an injury.</p>
-          <a href="./contact.html" class="post-read-more">READ MORE &#8250;</a>
+          <div class="post-meta"><span class="post-cat">Personal Injury</span></div>
+          <h2><a href="./blog/nursing-homes-neglect.html">How Understaffing and Poor Training in Nursing Homes Lead to Patient Harm</a></h2>
+          <p class="post-excerpt">When placing a loved one in a nursing home, most families expect compassionate care and safety. Unfortunately, understaffing in many nursing homes turns that hope into a nightmare.</p>
+          <a href="./blog/nursing-homes-neglect.html" class="post-read-more">READ MORE &#8250;</a>
         </div>
       </div>
 
       <div class="post-card">
-        <div class="post-card-img-placeholder"><span>&#127959;</span></div>
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/06/iStock-1332162803.jpg" alt="Construction Accident"></div>
         <div class="post-card-body">
-          <div class="post-meta">
-            <span class="post-cat">Construction Law</span>
-            <span class="post-date">Coming Soon</span>
-          </div>
-          <h2><a href="./contact.html">Understanding Your Rights After a Construction Site Injury in California</a></h2>
-          <p class="post-excerpt">Construction accidents often involve multiple liable parties - the property owner, general contractor, subcontractors, and equipment manufacturers. Here is what California law says about your rights as an injured worker or bystander.</p>
-          <a href="./contact.html" class="post-read-more">READ MORE &#8250;</a>
+          <div class="post-meta"><span class="post-cat">Construction Law</span></div>
+          <h2><a href="./blog/third-party-liability-construction-accidents.html">Third-Party Liability in Construction Accidents: Who Else Can Be Held Responsible?</a></h2>
+          <p class="post-excerpt">When someone gets hurt on a construction site, workers' compensation doesn't always tell the whole story - especially when someone other than your direct employer is partly to blame.</p>
+          <a href="./blog/third-party-liability-construction-accidents.html" class="post-read-more">READ MORE &#8250;</a>
         </div>
       </div>
 
       <div class="post-card">
-        <div class="post-card-img-placeholder"><span>&#128663;</span></div>
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/05/iStock-499261529.jpg" alt="Amusement Park Injury"></div>
         <div class="post-card-body">
-          <div class="post-meta">
-            <span class="post-cat">Motor Vehicle</span>
-            <span class="post-date">Coming Soon</span>
-          </div>
-          <h2><a href="./contact.html">Rideshare Accidents in San Francisco: Who Is Liable - Uber, Lyft, or the Driver?</a></h2>
-          <p class="post-excerpt">Rideshare accidents present unique legal challenges. The answer to who pays for your injuries depends on whether the driver was logged in to the app, carrying a passenger, or offline at the time of the crash.</p>
-          <a href="./contact.html" class="post-read-more">READ MORE &#8250;</a>
+          <div class="post-meta"><span class="post-cat">Personal Injury</span></div>
+          <h2><a href="./blog/theme-park-injuries.html">What Happens If You're Injured at an Amusement Park in California</a></h2>
+          <p class="post-excerpt">Amusement parks promise fun, thrills, and memorable moments. But when a ride malfunctions or a walkway isn't maintained, the consequences can be serious.</p>
+          <a href="./blog/theme-park-injuries.html" class="post-read-more">READ MORE &#8250;</a>
         </div>
       </div>
 
       <div class="post-card">
-        <div class="post-card-img-placeholder"><span>&#128184;</span></div>
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/05/iStock-2180107642.jpg" alt="Airline Injury"></div>
         <div class="post-card-body">
-          <div class="post-meta">
-            <span class="post-cat">Settlements</span>
-            <span class="post-date">Coming Soon</span>
-          </div>
-          <h2><a href="./contact.html">Why You Should Never Accept the First Settlement Offer From an Insurance Company</a></h2>
-          <p class="post-excerpt">Insurance companies are not on your side. Initial settlement offers are almost always far below the true value of your claim. Here is why patience - and the right attorney - can make a major difference in your final recovery.</p>
-          <a href="./contact.html" class="post-read-more">READ MORE &#8250;</a>
+          <div class="post-meta"><span class="post-cat">Personal Injury</span></div>
+          <h2><a href="./blog/airline-injuries.html">Injured at the Airport or During Boarding? Here's When Airlines May Be Liable</a></h2>
+          <p class="post-excerpt">Airline injuries at airports or during boarding happen more often than most travelers realize. Finding out who's responsible isn't always straightforward.</p>
+          <a href="./blog/airline-injuries.html" class="post-read-more">READ MORE &#8250;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/04/iStock-2126191473.jpg" alt="Multi-Car Accident"></div>
+        <div class="post-card-body">
+          <div class="post-meta"><span class="post-cat">Motor Vehicle</span></div>
+          <h2><a href="./blog/multi-car-accidents-comparative-negligence.html">How California's Comparative Negligence Law Impacts Multi-Car Accidents</a></h2>
+          <p class="post-excerpt">Multi-car accidents happen in an instant, but sorting out who is responsible can take months. California's comparative negligence rules directly affect how much compensation you can recover.</p>
+          <a href="./blog/multi-car-accidents-comparative-negligence.html" class="post-read-more">READ MORE &#8250;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/04/iStock-1511466481.jpg" alt="E-Scooter Injury"></div>
+        <div class="post-card-body">
+          <div class="post-meta"><span class="post-cat">Personal Injury</span></div>
+          <h2><a href="./blog/e-scooter-injuries-san-francisco.html">The Increasing Dangers of E-Scooters: Legal Recourse for Injuries in San Francisco</a></h2>
+          <p class="post-excerpt">E-scooters have become a common sight on San Francisco streets, but their rise in popularity has been accompanied by a concerning increase in injuries.</p>
+          <a href="./blog/e-scooter-injuries-san-francisco.html" class="post-read-more">READ MORE &#8250;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/04/iStock-893176234.jpg" alt="Apartment Fire"></div>
+        <div class="post-card-body">
+          <div class="post-meta"><span class="post-cat">Dangerous Premises</span></div>
+          <h2><a href="./blog/apartment-fire-faulty-wiring.html">Injured in an Apartment Fire Due to Faulty Wiring? You Deserve Justice</a></h2>
+          <p class="post-excerpt">When an apartment fire stems from faulty wiring or a landlord's failure to follow building codes, it isn't just bad luck - it can be considered negligence.</p>
+          <a href="./blog/apartment-fire-faulty-wiring.html" class="post-read-more">READ MORE &#8250;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/04/iStock-1428833207.jpg" alt="Pregnancy Car Crash"></div>
+        <div class="post-card-body">
+          <div class="post-meta"><span class="post-cat">Motor Vehicle</span></div>
+          <h2><a href="./blog/pregnancy-complications-car-crash.html">Pregnancy Complications After a Car Crash? What You Need to Know</a></h2>
+          <p class="post-excerpt">Car accidents are traumatic for anyone, but for a pregnant woman the risks are much higher. Even minor accidents can lead to serious complications affecting both mother and unborn child.</p>
+          <a href="./blog/pregnancy-complications-car-crash.html" class="post-read-more">READ MORE &#8250;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/04/iStock-893176234.jpg" alt="Amazon Defective Products"></div>
+        <div class="post-card-body">
+          <div class="post-meta"><span class="post-cat">Defective Products</span></div>
+          <h2><a href="./blog/amazon-defective-products-california.html">Can You Sue Amazon for Defective Products? Understanding Your Legal Rights</a></h2>
+          <p class="post-excerpt">Recent changes in U.S. law have clarified Amazon's responsibilities for the safety of products sold on its platform. Here's what California consumers need to know.</p>
+          <a href="./blog/amazon-defective-products-california.html" class="post-read-more">READ MORE &#8250;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-img"><img src="https://lmslaw.com/wp-content/uploads/2025/02/iStock-1441405028.jpg" alt="Motorcycle Accident"></div>
+        <div class="post-card-body">
+          <div class="post-meta"><span class="post-cat">Motor Vehicle</span></div>
+          <h2><a href="./blog/motorcycle-injury-attorney.html">Motorcycle Injuries in San Francisco: Holding Negligent Drivers Accountable</a></h2>
+          <p class="post-excerpt">Motorcycle accidents in San Francisco are often severe, leaving victims with long-term injuries and financial burdens. Understanding your rights can make all the difference.</p>
+          <a href="./blog/motorcycle-injury-attorney.html" class="post-read-more">READ MORE &#8250;</a>
         </div>
       </div>
 
@@ -337,78 +187,46 @@
 
   <!-- SIDEBAR -->
   <div class="blog-sidebar">
-
-    <!-- Free Case Review Form -->
     <div class="form-box">
       <h3>Free Case Review</h3>
       <p class="subtext">No fee unless we win. Confidential &amp; no obligation.</p>
       <div class="fgroup"><label>Full Name *</label><input type="text" placeholder="Your full name"></div>
       <div class="fgroup"><label>Phone *</label><input type="tel" placeholder="415-555-0000"></div>
       <div class="fgroup"><label>Email *</label><input type="email" placeholder="you@email.com"></div>
-      <div class="fgroup">
-        <label>Case Type</label>
-        <select>
-          <option value="">Select a practice area...</option>
-          <option>Construction / Worksite Injury</option>
-          <option>Slip, Trip &amp; Fall</option>
-          <option>Motor Vehicle Crash</option>
-          <option>Dangerous Premises</option>
-          <option>Defective Products</option>
-          <option>Wrongful Death</option>
-          <option>Real Estate / Commercial Tenant</option>
-          <option>Other</option>
-        </select>
-      </div>
+      <div class="fgroup"><label>Case Type</label><select><option value="">Select a practice area...</option><option>Construction / Worksite Injury</option><option>Slip, Trip &amp; Fall</option><option>Motor Vehicle Crash</option><option>Dangerous Premises</option><option>Defective Products</option><option>Wrongful Death</option><option>Real Estate / Commercial Tenant</option><option>Other</option></select></div>
       <div class="fgroup"><label>Tell Us What Happened</label><textarea placeholder="Briefly describe your situation..."></textarea></div>
       <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
       <p class="form-disclaimer">100% confidential. We will contact you within 24 hours.</p>
     </div>
 
-    <!-- Categories -->
-    <div class="blog-sidebar-box">
+    <div class="sidebar-box">
       <h4>Categories</h4>
-      <div class="blog-cats">
+      <div style="padding:4px 0;">
         <span class="blog-cat-pill">Personal Injury</span>
         <span class="blog-cat-pill">Construction Law</span>
         <span class="blog-cat-pill">Motor Vehicle</span>
-        <span class="blog-cat-pill">Slip &amp; Fall</span>
-        <span class="blog-cat-pill">Wrongful Death</span>
-        <span class="blog-cat-pill">Settlements</span>
+        <span class="blog-cat-pill">Dangerous Premises</span>
         <span class="blog-cat-pill">Defective Products</span>
-        <span class="blog-cat-pill">Real Estate</span>
-        <span class="blog-cat-pill">Client Stories</span>
       </div>
     </div>
 
-    <!-- Contact info -->
-    <div class="blog-sidebar-box">
+    <div class="sidebar-box">
       <h4>Contact Us</h4>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-        <div style="width:30px;height:30px;background:var(--crimson);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">&#128222;</div>
-        <a href="tel:4154007000" style="font-size:18px;font-weight:700;color:var(--crimson);">415-400-7000</a>
-      </div>
-      <div style="font-size:12px;color:var(--muted);line-height:1.7;">
-        <strong style="color:#1a1a1a;display:block;margin-bottom:2px;">San Francisco</strong>
-        235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        <strong style="color:#1a1a1a;display:block;margin:10px 0 2px;">Novato</strong>
-        7200 Redwood Blvd #300<br>Novato, CA 94945
-      </div>
+      <div style="margin-bottom:12px;"><a href="tel:4154007000" style="font-size:18px;font-weight:700;color:var(--crimson);">415-400-7000</a></div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.7;"><strong style="color:#1a1a1a;display:block;margin-bottom:2px;">San Francisco</strong>235 Montgomery St Suite #440<br>San Francisco, CA 94104<strong style="color:#1a1a1a;display:block;margin:8px 0 2px;">Novato</strong>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
     </div>
 
-    <!-- Related resources -->
-    <div class="blog-sidebar-box">
+    <div class="sidebar-box">
       <h4>Helpful Resources</h4>
-      <ul class="blog-related">
+      <ul class="sidebar-nav">
         <li><a href="./why-lms/prepare.html">Prepare For Your Case</a></li>
         <li><a href="./why-lms/faqs.html">Frequently Asked Questions</a></li>
-        <li><a href="./victories.html">Our Client Victories</a></li>
-        <li><a href="./testimonials.html">Client Testimonials</a></li>
-        <li><a href="./practice-areas/index.html">Our Practice Areas</a></li>
+        <li><a href="./victories.html">Client Victories</a></li>
+        <li><a href="./practice-areas/index.html">Practice Areas</a></li>
         <li><a href="./attorneys/index.html">Meet Our Attorneys</a></li>
       </ul>
     </div>
 
-    <!-- Guarantee -->
     <div style="background:var(--crimson);padding:22px;">
       <div style="display:flex;flex-direction:column;gap:10px;">
         <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;"><span>&#10003;</span> Free Case Review</div>
@@ -417,56 +235,20 @@
         <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;"><span>&#10003;</span> You Always Come First</div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="lms-footer">
   <div class="lms-footer-inner">
     <div class="lms-footer-top">
-      <div class="lms-footer-brand">
-        <a href="./index.html"><img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Footer-Logo.png" alt="LMS Law"></a>
-        <div class="lms-footer-phone"><a href="tel:4154007000">415-400-7000</a></div>
-        <p>San Francisco's personal injury law firm since 2003. Humble warriors committed to putting people first.</p>
-      </div>
-      <div class="lms-footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="./why-lms/index.html">Why LMS Law</a></li>
-          <li><a href="./attorneys/index.html">Our Team</a></li>
-          <li><a href="./practice-areas/index.html">Practice Areas</a></li>
-          <li><a href="./testimonials.html">Testimonials</a></li>
-          <li><a href="./victories.html">Clients' Victories</a></li>
-          <li><a href="./why-lms/faqs.html">FAQs</a></li>
-          <li><a href="./contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="lms-footer-col">
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="./practice-areas/construction.html">Construction Injuries</a></li>
-          <li><a href="./practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
-          <li><a href="./practice-areas/motor-vehicle.html">Motor Vehicle</a></li>
-          <li><a href="./practice-areas/real-estate.html">Real Estate</a></li>
-          <li><a href="./practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
-          <li><a href="./practice-areas/defective-products.html">Defective Products</a></li>
-          <li><a href="./practice-areas/wrongful-death.html">Wrongful Death</a></li>
-        </ul>
-      </div>
-      <div class="lms-footer-offices">
-        <h4>Our Offices</h4>
-        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
-        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
-      </div>
+      <div class="lms-footer-brand"><a href="./index.html"><img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Footer-Logo.png" alt="LMS Law"></a><div class="lms-footer-phone"><a href="tel:4154007000">415-400-7000</a></div><p>San Francisco's personal injury law firm since 2003. Humble warriors committed to putting people first.</p></div>
+      <div class="lms-footer-col"><h4>Quick Links</h4><ul><li><a href="./why-lms/index.html">Why LMS Law</a></li><li><a href="./attorneys/index.html">Our Team</a></li><li><a href="./practice-areas/index.html">Practice Areas</a></li><li><a href="./testimonials.html">Testimonials</a></li><li><a href="./victories.html">Clients' Victories</a></li><li><a href="./blog.html">Blog</a></li><li><a href="./contact.html">Contact Us</a></li></ul></div>
+      <div class="lms-footer-col"><h4>Practice Areas</h4><ul><li><a href="./practice-areas/construction.html">Construction Injuries</a></li><li><a href="./practice-areas/slip-fall.html">Slip &amp; Fall</a></li><li><a href="./practice-areas/motor-vehicle.html">Motor Vehicle</a></li><li><a href="./practice-areas/real-estate.html">Real Estate</a></li><li><a href="./practice-areas/dangerous-premises.html">Dangerous Premises</a></li><li><a href="./practice-areas/defective-products.html">Defective Products</a></li><li><a href="./practice-areas/wrongful-death.html">Wrongful Death</a></li></ul></div>
+      <div class="lms-footer-offices"><h4>Our Offices</h4><div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div><div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div></div>
     </div>
-    <div class="lms-footer-bottom">
-      <p>COPYRIGHT &copy; 2026 - LMS LAW LLP</p>
-      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
-    </div>
+    <div class="lms-footer-bottom"><p>COPYRIGHT &copy; 2026 - LMS LAW LLP</p><div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div></div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
-
 </body>
 </html>
