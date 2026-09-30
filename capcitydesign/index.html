@@ -13,15 +13,16 @@
 <meta property="og:title" content="Capitol City Design Inc. | Electrical Engineering & Lighting Design">
 <meta property="og:description" content="Full-service electrical engineering and NCQLP-certified lighting design firm in West Sacramento, CA. 30+ years experience. Licensed in 11 states.">
 <meta property="og:url" content="https://capcitydesign.com/">
-<meta property="og:image" content="https://capcitydesign.com/images/p1.jpg">
+<meta property="og:image" content="https://capcitydesign.com/images/rocklin-police/rocklin-1.jpg">
 <meta property="og:site_name" content="Capitol City Design Inc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Capitol City Design Inc. | Electrical Engineering & Lighting Design">
 <meta name="twitter:description" content="Full-service electrical engineering and NCQLP-certified lighting design firm in West Sacramento, CA. 30+ years experience. Licensed in 11 states.">
-<meta name="twitter:image" content="https://capcitydesign.com/images/p1.jpg">
+<meta name="twitter:image" content="https://capcitydesign.com/images/rocklin-police/rocklin-1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,7 +30,7 @@
   "name": "Capitol City Design Inc.",
   "description": "Full-service electrical engineering and NCQLP-certified lighting design firm in West Sacramento, CA.",
   "url": "https://capcitydesign.com",
-  "telephone": "+19163750135",
+  "telephone": "916-375-0135",
   "email": "sondrag@capcitydesign.com",
   "address": {
     "@type": "PostalAddress",
@@ -43,206 +44,44 @@
 }
 </script>
 <style>
-/* ========== RESET ========== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: Arial, Helvetica, sans-serif; font-size: 13px; background: #ebebeb; color: #333; line-height: 1.65; }
-img { display: block; max-width: 100%; }
-a { color: #4a7ca5; text-decoration: none; }
-a:hover { text-decoration: underline; }
-h2 { font-family: 'Open Sans', Arial, sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; color: #333; margin: 18px 0 10px; letter-spacing: 0.03em; }
-h3 { font-family: 'Open Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #333; margin: 14px 0 8px; }
-h4 { font-family: 'Open Sans', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #fff; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-p { margin-bottom: 12px; font-size: 13px; line-height: 1.65; }
-
-/* ========== SKIP NAV ========== */
-.skip-nav { position: absolute; top: -100px; left: 0; background: #000; color: #fff; padding: 8px 14px; z-index: 9999; font-size: 13px; }
-.skip-nav:focus { top: 0; }
-
-/* ========== HEADER ========== */
-header { background: #65696e; }
-.header-inner { max-width: 1000px; margin: 0 auto; padding: 16px 20px 0; display: flex; flex-direction: column; }
-.header-logo { display: flex; align-items: center; gap: 14px; padding-bottom: 14px; text-decoration: none; }
-.header-logo img { height: 72px; width: auto; }
-.header-logo-text { color: #fff; }
-.header-logo-text strong { display: block; font-family: 'Open Sans', Arial, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.2; }
-.header-logo-text span { display: block; font-size: 11px; color: #d0d3d6; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
-
-/* ========== NAV ========== */
-nav { background: transparent; }
-nav ul { display: flex; list-style: none; gap: 0; }
-nav ul li a {
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #d0d3d6;
-  padding: 10px 16px;
-  background: rgba(0,0,0,0.15);
-  border-right: 1px solid rgba(255,255,255,0.08);
-  transition: background 0.15s, color 0.15s;
-  text-decoration: none;
-}
-nav ul li a:hover,
-nav ul li a.active {
-  background: rgba(0,0,0,0.35);
-  color: #fff;
-}
-.nav-mobile-btn { display: none; background: rgba(0,0,0,0.25); border: none; color: #d0d3d6; padding: 10px 16px; font-size: 13px; cursor: pointer; width: 100%; text-align: left; font-weight: 700; letter-spacing: 0.05em; }
-
-/* ========== FEATURED SLIDER (static) ========== */
+/* ---- HERO FEATURE ---- */
 .featured-wrap { background: #fff; border-bottom: 3px solid #ccc; }
 .featured-inner { max-width: 1000px; margin: 0 auto; display: flex; }
-.featured-photo { flex: 0 0 62%; overflow: hidden; max-height: 340px; }
-.featured-photo img { width: 100%; height: 340px; object-fit: cover; display: block; }
-.featured-info { flex: 1; padding: 30px 28px; background: #fff; display: flex; flex-direction: column; justify-content: center; }
-.featured-info h3 { font-size: 20px; color: #333; margin-bottom: 6px; text-transform: none; }
-.featured-info .feat-loc { font-size: 12px; color: #888; margin-bottom: 14px; }
-.featured-info p { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 14px; }
-.btn-readmore {
-  display: inline-block;
-  background: #4a7ca5;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 8px 18px;
-  text-decoration: none;
-  transition: background 0.15s;
-  align-self: flex-start;
-}
+.featured-photo { flex: 0 0 65%; overflow: hidden; }
+.featured-photo img { width: 100%; height: 380px; object-fit: cover; object-position: center center; display: block; }
+.featured-info { flex: 1; padding: 32px 28px; background: #fff; display: flex; flex-direction: column; justify-content: center; }
+.featured-info h3 { font-size: 22px; color: #333; margin: 0 0 8px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 700; }
+.featured-info .feat-loc { font-size: 12px; color: #888; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+.featured-info p { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 16px; }
+.btn-readmore { display: inline-block; background: #4a7ca5; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 18px; text-decoration: none; align-self: flex-start; }
 .btn-readmore:hover { background: #3a6285; text-decoration: none; }
 
-/* ========== PAGE WRAPPER ========== */
-.page-wrap { max-width: 1000px; margin: 0 auto; padding: 20px; }
-
-/* ========== TWO COLUMN ========== */
-.two-col-wrap { display: flex; gap: 24px; }
-.main-col { flex: 1; min-width: 0; }
-.sidebar-col { flex: 0 0 280px; }
-
-/* ========== CONTENT PANELS ========== */
-.panel { background: #fff; padding: 20px 22px; margin-bottom: 20px; border: 1px solid #ddd; }
-.panel h2 { margin-top: 0; }
-.welcome-thumb { float: left; margin: 0 16px 12px 0; width: 130px; }
-.welcome-thumb img { width: 130px; height: 100px; object-fit: cover; }
-
-/* ========== SIDEBAR - CLIENTS ========== */
-.sidebar-heading { font-size: 14px; font-weight: 700; font-family: 'Open Sans', Arial, sans-serif; color: #333; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #4a7ca5; }
-.client-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; align-items: flex-start; }
-.client-item:last-child { border-bottom: none; }
-.client-thumb { flex: 0 0 72px; }
-.client-thumb img { width: 72px; height: 52px; object-fit: cover; }
-.client-info h6 { font-size: 12px; font-weight: 700; color: #333; margin-bottom: 3px; }
-.client-info p { font-size: 11px; color: #666; margin: 0; }
-.client-info a { font-size: 11px; color: #4a7ca5; word-break: break-all; }
-
-/* ========== INFO BAND ========== */
+/* ---- INFO BAND ---- */
 .info-band { background: #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
-.info-band-inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; }
-.info-band-left { flex: 0 0 240px; background: #4a7ca5; padding: 24px 22px; color: #fff; }
-.info-band-left h4 { color: #fff; font-size: 14px; margin-bottom: 0; }
-.info-band-right { flex: 1; padding: 24px 28px; display: flex; gap: 40px; }
+.info-band-inner { max-width: 1000px; margin: 0 auto; display: flex; }
+.info-band-left { flex: 0 0 260px; background: #4a7ca5; padding: 22px 18px; display: flex; align-items: center; }
+.info-band-left p { color: #fff; font-family: 'Open Sans', Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.5; margin: 0; white-space: nowrap; }
+.info-band-right { flex: 1; padding: 22px 28px; display: flex; gap: 40px; }
 .info-section h2 { margin-top: 0; font-size: 17px; }
-.info-section p { font-size: 12px; color: #555; }
+.info-section p { font-size: 12px; color: #555; margin: 0; }
 
-/* ========== AFFIL + AWARDS ========== */
-.affil-band { max-width: 1000px; margin: 0 auto; padding: 0 20px 20px; display: flex; gap: 24px; }
-.affil-col { flex: 1; }
-.affil-col h2 { font-size: 17px; margin-top: 0; }
-.affil-col ul { list-style: disc; padding-left: 18px; }
-.affil-col ul li { font-size: 13px; color: #555; margin-bottom: 5px; }
-.awards-col { flex: 0 0 280px; }
-.awards-box { background: #fff; border: 1px solid #ddd; padding: 18px; text-align: center; }
-.awards-box img { margin: 0 auto 12px; max-height: 90px; }
-.awards-box p { font-size: 12px; color: #555; margin-bottom: 12px; }
-.btn-moreinfo {
-  display: inline-block;
-  background: #4a7ca5;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 7px 16px;
-  text-decoration: none;
-}
-.btn-moreinfo:hover { background: #3a6285; text-decoration: none; }
-
-/* ========== FOOTER ========== */
-footer { background: #2d4f6e; color: #c8d0d8; padding: 30px 20px 0; }
-.footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-footer h4 { font-size: 12px; color: #fff; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.15); }
-footer ul { list-style: none; }
-footer ul li { margin-bottom: 6px; font-size: 12px; }
-footer ul li a { color: #c8d0d8; text-decoration: none; }
-footer ul li a:hover { color: #fff; text-decoration: underline; }
-.footer-contact p { font-size: 12px; margin-bottom: 6px; display: flex; gap: 6px; align-items: flex-start; }
-.footer-contact a { color: #c8d0d8; }
-.btn-pdf {
-  display: inline-block;
-  background: #4a7ca5;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 7px 14px;
-  text-decoration: none;
-  margin-top: 8px;
-}
-.btn-pdf:hover { background: #3a6285; text-decoration: none; }
-.footer-bottom { max-width: 1000px; margin: 0 auto; padding: 12px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,0.4); }
-.footer-legal { display: flex; gap: 14px; }
-.footer-legal a { font-size: 11px; color: rgba(255,255,255,0.4); text-decoration: none; }
-.footer-legal a:hover { color: rgba(255,255,255,0.7); }
-.synprism-credit { font-size: 11px; color: rgba(255,255,255,0.3); }
-.synprism-credit a { color: rgba(255,255,255,0.4); }
-
-/* ========== COOKIE BANNER ========== */
-#cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #ccc; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; z-index: 9999; font-size: 12px; flex-wrap: wrap; }
-#cookie-banner a { color: #7ec8e3; }
-.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
-.cookie-btns button { font-size: 11px; font-weight: 700; padding: 6px 14px; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; }
-#cookie-accept { background: #4a7ca5; color: #fff; }
-#cookie-decline { background: #555; color: #fff; }
-
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .two-col-wrap { flex-direction: column; }
-  .sidebar-col { flex: none; width: 100%; }
   .featured-inner { flex-direction: column; }
   .featured-photo { flex: none; }
-  .featured-photo img { height: 220px; }
+  .featured-photo img { height: 240px; }
   .info-band-inner { flex-direction: column; }
   .info-band-left { flex: none; }
   .info-band-right { flex-direction: column; gap: 20px; }
-  .affil-band { flex-direction: column; }
-  .awards-col { flex: none; width: 100%; }
-  .footer-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
-  nav ul { display: none; flex-direction: column; }
-  nav ul.open { display: flex; }
-  .nav-mobile-btn { display: block; }
 }
-@media (max-width: 480px) {
-  .footer-inner { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-}
-:focus-visible { outline: 2px solid #4a7ca5; outline-offset: 2px; }
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-<!-- HEADER -->
 <header role="banner">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="Capitol City Design Inc. - Home">
-      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="72" height="72">
+      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="140" height="45" style="height:45px;width:auto;">
       <div class="header-logo-text">
         <strong>Capitol City Design, Inc.</strong>
         <span>Electrical Engineering Consultants</span>
@@ -261,94 +100,46 @@ footer ul li a:hover { color: #fff; text-decoration: underline; }
   </div>
 </header>
 
-<!-- FEATURED PROJECT BANNER -->
+<!-- HERO: ROCKLIN POLICE DEPARTMENT -->
 <div class="featured-wrap">
   <div class="featured-inner">
     <div class="featured-photo">
-      <img src="/images/p1.jpg" alt="Ceres Fire Station No. 1 - Capitol City Design featured project" loading="eager">
+      <img src="/images/rocklin-police/rocklin-1.jpg" alt="Rocklin Police Department - Capitol City Design featured project" loading="eager">
     </div>
     <div class="featured-info">
-      <h3>Ceres Fire Station No. 1</h3>
-      <p class="feat-loc">Ceres, California</p>
-      <p>Capitol City Design provided full electrical engineering and lighting design services for Ceres Fire Station No. 1 - delivering efficient, code-compliant systems built to serve the community for decades.</p>
-      <a href="/featured-projects.html" class="btn-readmore">Read More &rarr;</a>
+      <h3>Rocklin Police Department</h3>
+      <p class="feat-loc">Rocklin, California &mdash; 40,000 Sq. Ft.</p>
+      <p>Capitol City Design provided full electrical engineering and lighting design services for the Rocklin Police Department's 40,000 square foot facility - delivering code-compliant, efficient systems built for decades of public service.</p>
+      <a href="/featured-projects.html" class="btn-readmore">View Featured Projects &rarr;</a>
     </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN CONTENT - SINGLE COLUMN, SIMPLIFIED -->
 <main id="main-content">
 <div class="page-wrap">
-  <div class="two-col-wrap">
+  <div class="panel">
+    <h4 style="color:#4a7ca5; font-size:13px; text-transform:none; font-weight:normal; margin-bottom:4px; font-family:Arial,sans-serif;">Welcome to</h4>
+    <h2 style="margin-top:0;">Capitol City Design, Inc.</h2>
 
-    <!-- LEFT: MAIN CONTENT -->
-    <div class="main-col">
-      <div class="panel">
-        <div class="welcome-thumb">
-          <img src="/images/p2.jpg" alt="Capitol City Design project" loading="lazy">
-        </div>
-        <h4 style="color:#4a7ca5; font-size:13px; text-transform:none; font-weight:normal; margin-bottom:4px;">Welcome to</h4>
-        <h2 style="margin-top:0;">Capitol City Design, Inc.</h2>
+    <h2>Electrical Engineering</h2>
+    <p>At Capitol City Design Inc., we maintain industry specific certifications and affiliations to help propel and motivate our team to be the best in the area. Our Electrical Engineering accolades are built on a long lasting and trustworthy relationship with our clients and our future clients. As an electrical engineering firm, we have experience in all types of construction, including industrial, commercial, residential and institutional projects. We strive to make our projects more energy efficient and cost effective incorporating building sustainable systems.</p>
 
-        <h2>Electrical Engineering</h2>
-        <p>At Capitol City Design Inc., we maintain industry specific certifications and affiliations to help propel and motivate our team to be the best in the area. Our Electrical Engineering accolades are built on a long lasting and trustworthy relationship with our clients and our future clients. As an electrical engineering firm, we have experience in all types of construction, including industrial, commercial, residential and institutional projects. We strive to make our projects more energy efficient and cost effective incorporating building sustainable systems.</p>
+    <h2>Lighting Design</h2>
+    <p>Tony C. Baker, president and founder of Capitol City Design Inc., is certified with the National Council on Qualifications for the Lighting Professionals (NCQLP). The professional credential (LC, Lighting Certified) process for lighting professionals will promote the implementation cost-effective, energy effective and high performance lighting systems and equipment to every project. Capitol City Design Inc. assures that all lighting design projects meet NCQLP's strict standards and principals during every phase of the project.</p>
 
-        <h2>Lighting Design</h2>
-        <p>Tony C. Baker, president and founder of Capitol City Design Inc., is certified with the National Council on Qualifications for the Lighting Professionals (NCQLP). The professional credential (LC, Lighting Certified) process for lighting professionals will promote the implementation cost-effective, energy effective and high performance lighting systems and equipment to every project. Capitol City Design Inc. assures that all lighting design projects meet NCQLP's strict standards and principals during every phase of the project.</p>
-      </div>
-    </div>
+    <p style="margin-top:8px;">
+      <a href="/portfolio.html" class="btn-blue" style="margin-right:10px;">View Portfolio</a>
+      <a href="/contact.html" class="btn-blue">Contact Us</a>
+    </p>
+  </div>
+</div>
 
-    <!-- RIGHT: SIDEBAR -->
-    <div class="sidebar-col">
-      <div class="panel">
-        <p class="sidebar-heading">Our Projects</p>
-        <div class="client-item">
-          <div class="client-thumb">
-            <img src="/images/p3.jpg" alt="Nugget Markets" loading="lazy">
-          </div>
-          <div class="client-info">
-            <h6>Nugget Markets</h6>
-            <p>Northern California<br>Retail</p>
-          </div>
-        </div>
-        <div class="client-item">
-          <div class="client-thumb">
-            <img src="/images/p4.jpg" alt="Niello Porsche Sacramento" loading="lazy">
-          </div>
-          <div class="client-info">
-            <h6>Niello Porsche Sacramento</h6>
-            <p>Sacramento, California<br>Automotive</p>
-          </div>
-        </div>
-        <div class="client-item">
-          <div class="client-thumb">
-            <img src="/images/p1.jpg" alt="Ceres Fire Station No. 1" loading="lazy">
-          </div>
-          <div class="client-info">
-            <h6>Ceres Fire Station No. 1</h6>
-            <p>Ceres, California<br>Public Safety</p>
-          </div>
-        </div>
-        <div class="client-item">
-          <div class="client-thumb">
-            <img src="/images/p2.jpg" alt="El Dorado Hills Fire Station #85" loading="lazy">
-          </div>
-          <div class="client-info">
-            <h6>El Dorado Hills FS #85</h6>
-            <p>El Dorado Hills, California<br>24,000 Sq. Ft.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /.two-col-wrap -->
-</div><!-- /.page-wrap -->
-
-<!-- INFO BAND: Licenses / Certs -->
+<!-- INFO BAND -->
 <div class="info-band">
   <div class="info-band-inner">
     <div class="info-band-left">
-      <h4>Capitol City Design, Inc.<br>a full-service<br>Electrical Engineering firm</h4>
+      <p>Capitol City Design, Inc. &mdash; A Full-Service Electrical Engineering Firm</p>
     </div>
     <div class="info-band-right">
       <div class="info-section">
@@ -363,24 +154,15 @@ footer ul li a:hover { color: #fff; text-decoration: underline; }
   </div>
 </div>
 
-<!-- AFFILIATIONS + AWARDS -->
-<div class="affil-band">
-  <div class="affil-col">
-    <h2>Affiliations</h2>
-    <ul>
-      <li>IEEE - Institute of Electrical and Electronics Engineers, Inc.</li>
-      <li>IES - Illuminating Engineering Society of North America</li>
-      <li>ILAD - International Association of Lighting Designers</li>
-      <li>NCQLP - National Council on Qualifications for Lighting Professions</li>
+<div class="page-wrap" style="padding-top:0;">
+  <div class="panel">
+    <h2 style="margin-top:0;">Affiliations</h2>
+    <ul style="list-style:disc; padding-left:18px;">
+      <li style="margin-bottom:5px;">IEEE - Institute of Electrical and Electronics Engineers, Inc.</li>
+      <li style="margin-bottom:5px;">IES - Illuminating Engineering Society of North America</li>
+      <li style="margin-bottom:5px;">ILAD - International Association of Lighting Designers</li>
+      <li style="margin-bottom:5px;">NCQLP - National Council on Qualifications for Lighting Professions</li>
     </ul>
-  </div>
-  <div class="awards-col">
-    <div class="awards-box">
-      <img src="/images/logo.png" alt="Capitol City Design Inc." style="max-height:80px; opacity:0.85;">
-      <h4 style="color:#333; font-size:12px; margin-bottom:8px;">Design Awards</h4>
-      <p>Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
-      <a href="/experience.html" class="btn-moreinfo">More Info &rarr;</a>
-    </div>
   </div>
 </div>
 
@@ -392,7 +174,7 @@ footer ul li a:hover { color: #fff; text-decoration: underline; }
     <div>
       <h4>Company Profile</h4>
       <p style="font-size:12px; color:#c8d0d8; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
-      <a href="/experience.html" class="btn-pdf">Download Our PDF</a>
+      <a href="/experience.html" class="btn-blue">More Info</a>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -404,7 +186,7 @@ footer ul li a:hover { color: #fff; text-decoration: underline; }
         <li><a href="/contact.html">Contact Us</a></li>
       </ul>
     </div>
-    <div class="footer-contact">
+    <div class="footer-contact-col">
       <h4>Contact Us</h4>
       <p>1751 Cebrian St<br>West Sacramento, CA 95691</p>
       <p>Phone: <a href="tel:+19163750135">916.375.0135</a></p>
@@ -436,7 +218,6 @@ footer ul li a:hover { color: #fff; text-decoration: underline; }
   </div>
 </footer>
 
-<!-- COOKIE BANNER -->
 <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;">
   <span>We use cookies to improve your experience. See our <a href="/privacy.html">Privacy Policy</a>.</span>
   <div class="cookie-btns">

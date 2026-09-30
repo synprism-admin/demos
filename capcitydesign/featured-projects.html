@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Featured Projects | Capitol City Design Inc.</title>
-<meta name="description" content="Capitol City Design featured electrical engineering and lighting design projects including fire stations, schools, police departments, and commercial facilities.">
+<meta name="description" content="Capitol City Design featured electrical engineering and lighting design projects including police departments, fire stations, schools, and commercial facilities.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://capcitydesign.com/featured-projects.html">
 <meta name="robots" content="index, follow">
@@ -13,17 +13,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
-.project-entry { display: flex; gap: 20px; margin-bottom: 0; padding-bottom: 24px; border-bottom: 1px solid #eee; margin-bottom: 24px; }
+.project-entry { display: flex; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid #eee; margin-bottom: 24px; }
 .project-entry:last-child { border-bottom: none; margin-bottom: 0; }
-.project-img { flex: 0 0 200px; }
-.project-img img { width: 200px; height: 150px; object-fit: cover; display: block; }
-.project-content h3 { margin-top: 0; font-size: 16px; color: #333; }
+.project-img { flex: 0 0 220px; cursor: pointer; position: relative; overflow: hidden; }
+.project-img img { width: 220px; height: 160px; object-fit: cover; display: block; transition: transform 0.25s, opacity 0.2s; }
+.project-img:hover img { transform: scale(1.04); opacity: 0.9; }
+.project-img-badge { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(74,124,165,0.85); padding: 5px 8px; opacity: 0; transition: opacity 0.2s; }
+.project-img:hover .project-img-badge { opacity: 1; }
+.project-img-badge span { color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.project-content h3 { margin-top: 0; font-size: 17px; color: #333; }
 .project-meta { font-size: 11px; color: #888; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
 .project-content p { font-size: 13px; color: #555; }
+.view-photos-link { display: inline-block; font-size: 11px; font-weight: 700; color: #4a7ca5; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 8px; cursor: pointer; }
+.view-photos-link:hover { text-decoration: underline; }
+
+/* LIGHTBOX */
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9000; align-items: center; justify-content: center; flex-direction: column; }
+.lightbox.active { display: flex; }
+.lightbox-header { width: 100%; max-width: 900px; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
+.lightbox-title { color: #fff; font-family: 'Open Sans', Arial, sans-serif; font-size: 16px; font-weight: 700; }
+.lightbox-close { background: none; border: none; color: #aaa; font-size: 28px; cursor: pointer; line-height: 1; padding: 4px 8px; }
+.lightbox-close:hover { color: #fff; }
+.lightbox-stage { position: relative; width: 100%; max-width: 900px; display: flex; align-items: center; justify-content: center; padding: 0 16px; }
+.lightbox-img-wrap { flex: 1; text-align: center; }
+.lightbox-img-wrap img { max-height: 70vh; max-width: 100%; object-fit: contain; display: inline-block; }
+.lb-btn { background: rgba(255,255,255,0.12); border: none; color: #fff; font-size: 28px; cursor: pointer; padding: 12px 16px; border-radius: 4px; flex-shrink: 0; transition: background 0.15s; }
+.lb-btn:hover { background: rgba(255,255,255,0.25); }
+.lightbox-thumbs { display: flex; gap: 8px; margin-top: 12px; padding: 0 16px; overflow-x: auto; max-width: 900px; width: 100%; }
+.lightbox-thumbs img { height: 60px; width: 80px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; flex-shrink: 0; }
+.lightbox-thumbs img.active, .lightbox-thumbs img:hover { border-color: #4a7ca5; opacity: 1; }
+.lightbox-counter { color: #aaa; font-size: 12px; margin-top: 8px; }
+
 @media (max-width: 600px) {
   .project-entry { flex-direction: column; }
   .project-img { flex: none; }
-  .project-img img { width: 100%; height: 180px; }
+  .project-img img { width: 100%; height: 200px; }
 }
 </style>
 </head>
@@ -33,7 +57,7 @@
 <header role="banner">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="Capitol City Design Inc. - Home">
-      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="72" height="72">
+      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="140" height="45" style="height:45px;width:auto;">
       <div class="header-logo-text">
         <strong>Capitol City Design, Inc.</strong>
         <span>Electrical Engineering Consultants</span>
@@ -66,53 +90,67 @@
     <div class="main-col">
       <div class="panel">
         <h2>Selected Projects</h2>
-        <p>Capitol City Design brings decades of experience to every project. Below is a selection of featured work demonstrating our range of expertise across public safety, commercial, institutional, and automotive facility types.</p>
+        <p>Capitol City Design brings decades of experience to every project. Below is a selection of featured work demonstrating our range of expertise across public safety, commercial, institutional, and automotive facility types. Click any photo to view the full project gallery.</p>
       </div>
 
       <div class="panel">
-        <div class="project-entry">
-          <div class="project-img">
-            <img src="/images/p1.jpg" alt="Ceres Fire Station No. 1" loading="lazy">
-          </div>
-          <div class="project-content">
-            <h3>Ceres Fire Station No. 1</h3>
-            <p class="project-meta">Ceres, California &mdash; Public Safety</p>
-            <p>Capitol City Design provided electrical engineering and design of all lighting and electrical systems for Ceres Fire Station No. 1. Our team delivered a fully code-compliant, operationally reliable facility built to serve the community and first responders for decades to come.</p>
-          </div>
-        </div>
 
-        <div class="project-entry">
-          <div class="project-img">
-            <img src="/images/p2.jpg" alt="El Dorado Hills Fire Station #85" loading="lazy">
-          </div>
-          <div class="project-content">
-            <h3>El Dorado Hills Fire Station #85</h3>
-            <p class="project-meta">El Dorado Hills, California &mdash; 24,000 Sq. Ft.</p>
-            <p>A full-service electrical engineering engagement covering power distribution, emergency systems, lighting design, and energy compliance reporting for this 24,000 square foot public safety facility in El Dorado Hills, California.</p>
-          </div>
-        </div>
-
-        <div class="project-entry">
-          <div class="project-img">
-            <img src="/images/p4.jpg" alt="Rocklin Police Department" loading="lazy">
+        <!-- ROCKLIN POLICE DEPARTMENT -->
+        <div class="project-entry" id="rocklin">
+          <div class="project-img" onclick="openLightbox('rocklin-police')" role="button" tabindex="0" aria-label="View Rocklin Police Department photos">
+            <img src="/images/rocklin-police/rocklin-1.jpg" alt="Rocklin Police Department">
+            <div class="project-img-badge"><span>View Photos</span></div>
           </div>
           <div class="project-content">
             <h3>Rocklin Police Department</h3>
-            <p class="project-meta">Rocklin, California &mdash; 40,000 Sq. Ft.</p>
-            <p>Capitol City Design provided complete electrical engineering and lighting design services for the Rocklin Police Department's 40,000 square foot facility. The project included coordination with city officials and general contractors to ensure timely, within-budget delivery.</p>
+            <p class="project-meta">Rocklin, California &mdash; 40,000 Sq. Ft. &mdash; Public Safety</p>
+            <p>Capitol City Design provided complete electrical engineering and lighting design services for the Rocklin Police Department's 40,000 square foot facility. The project included coordination with city officials and general contractors to ensure timely, within-budget delivery of all power distribution, emergency systems, and lighting throughout the building.</p>
+            <span class="view-photos-link" onclick="openLightbox('rocklin-police')">View Photo Gallery &rarr;</span>
           </div>
         </div>
 
-        <div class="project-entry">
-          <div class="project-img">
-            <img src="/images/p3.jpg" alt="Benicia High School" loading="lazy">
+        <!-- EL DORADO HILLS FIRE STATION #85 -->
+        <div class="project-entry" id="edh">
+          <div class="project-img" onclick="openLightbox('el-dorado-hills')" role="button" tabindex="0" aria-label="View El Dorado Hills Fire Station photos">
+            <img src="/images/el-dorado-hills/edh-1.jpg" alt="El Dorado Hills Fire Station #85">
+            <div class="project-img-badge"><span>View Photos</span></div>
+          </div>
+          <div class="project-content">
+            <h3>El Dorado Hills Fire Station #85</h3>
+            <p class="project-meta">El Dorado Hills, California &mdash; 24,000 Sq. Ft. &mdash; Public Safety</p>
+            <p>A full-service electrical engineering engagement covering power distribution, emergency systems, lighting design, and energy compliance reporting for this 24,000 square foot public safety facility in El Dorado Hills, California.</p>
+            <span class="view-photos-link" onclick="openLightbox('el-dorado-hills')">View Photo Gallery &rarr;</span>
+          </div>
+        </div>
+
+        <!-- NUGGET MARKETS -->
+        <div class="project-entry" id="nugget">
+          <div class="project-img" onclick="openLightbox('nugget-markets')" role="button" tabindex="0" aria-label="View Nugget Markets photos">
+            <img src="/images/nugget-markets/nugget-1.jpg" alt="Nugget Markets">
+            <div class="project-img-badge"><span>View Photos</span></div>
+          </div>
+          <div class="project-content">
+            <h3>Nugget Markets</h3>
+            <p class="project-meta">Northern California &mdash; Retail</p>
+            <p>Capitol City Design provided electrical engineering and NCQLP-certified lighting design for Nugget Markets retail locations throughout Northern California. Our team delivered energy-efficient, high-performance lighting systems that meet NCQLP standards while enhancing the customer shopping environment.</p>
+            <span class="view-photos-link" onclick="openLightbox('nugget-markets')">View Photo Gallery &rarr;</span>
+          </div>
+        </div>
+
+        <!-- BENICIA HIGH SCHOOL -->
+        <div class="project-entry" id="benicia">
+          <div class="project-img" onclick="openLightbox('benicia-high-school')" role="button" tabindex="0" aria-label="View Benicia High School photos">
+            <img src="/images/benicia-high-school/benicia-1.jpg" alt="Benicia High School" onerror="this.src='/images/el-dorado-hills/edh-1.jpg'">
+            <div class="project-img-badge"><span>View Photos</span></div>
           </div>
           <div class="project-content">
             <h3>Benicia High School</h3>
             <p class="project-meta">Benicia, California &mdash; Institutional</p>
             <p>Capitol City Design provided electrical engineering and design of all lighting and electrical systems for the new 40,500 square foot additions at Benicia High School in Benicia, California. The project included 3 classroom wings, a 10,500 square foot addition to the existing kitchen and cafeteria, and a 10,000 square foot two-story addition to the existing Gymnasium. We worked closely with the school principal and IT staff to create a customized learning environment specific to the district's needs.</p>
+            <span class="view-photos-link" onclick="openLightbox('benicia-high-school')">View Photo Gallery &rarr;</span>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -130,7 +168,7 @@
         <div class="widget-header"><h4>Company Profile</h4></div>
         <div class="widget-body">
           <p style="font-size:12px; color:#555; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
-          <a href="/contact.html" class="btn-blue">Download Our PDF</a>
+          <a href="/experience.html" class="btn-blue">More Info</a>
         </div>
       </div>
       <div class="widget">
@@ -151,12 +189,29 @@
 </div>
 </main>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Project photos">
+  <div class="lightbox-header">
+    <span class="lightbox-title" id="lb-title"></span>
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  </div>
+  <div class="lightbox-stage">
+    <button class="lb-btn" onclick="lbPrev()" aria-label="Previous photo">&#8249;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <button class="lb-btn" onclick="lbNext()" aria-label="Next photo">&#8250;</button>
+  </div>
+  <div class="lightbox-thumbs" id="lb-thumbs"></div>
+  <div class="lightbox-counter" id="lb-counter"></div>
+</div>
+
 <footer>
   <div class="footer-inner">
     <div>
       <h4>Company Profile</h4>
       <p style="font-size:12px; color:#c8d0d8; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
-      <a href="/contact.html" class="btn-blue">Download Our PDF</a>
+      <a href="/experience.html" class="btn-blue">More Info</a>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -220,6 +275,88 @@ function toggleNav(btn) {
   document.getElementById('cookie-accept').onclick = function() { localStorage.setItem('cookie_consent','accepted'); document.getElementById('cookie-banner').style.display = 'none'; };
   document.getElementById('cookie-decline').onclick = function() { localStorage.setItem('cookie_consent','declined'); document.getElementById('cookie-banner').style.display = 'none'; };
 })();
+
+var projects = {
+  'rocklin-police': {
+    title: 'Rocklin Police Department',
+    photos: ['/images/rocklin-police/rocklin-1.jpg']
+  },
+  'el-dorado-hills': {
+    title: 'El Dorado Hills Fire Station #85',
+    photos: ['/images/el-dorado-hills/edh-1.jpg']
+  },
+  'nugget-markets': {
+    title: 'Nugget Markets',
+    photos: ['/images/nugget-markets/nugget-1.jpg', '/images/nugget-markets/nugget-2.jpg']
+  },
+  'niello-porsche': {
+    title: 'Niello Porsche Sacramento',
+    photos: ['/images/niello-porsche/porsche-1.jpg']
+  },
+  'benicia-high-school': {
+    title: 'Benicia High School',
+    photos: ['/images/benicia-high-school/benicia-1.jpg']
+  }
+};
+
+var lbProject = null, lbIndex = 0;
+
+function openLightbox(key) {
+  lbProject = projects[key];
+  if (!lbProject || !lbProject.photos.length) return;
+  lbIndex = 0;
+  document.getElementById('lb-title').textContent = lbProject.title;
+  buildThumbs();
+  showPhoto();
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function buildThumbs() {
+  var wrap = document.getElementById('lb-thumbs');
+  wrap.innerHTML = '';
+  lbProject.photos.forEach(function(src, i) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = lbProject.title + ' photo ' + (i + 1);
+    img.onclick = function() { lbIndex = i; showPhoto(); };
+    wrap.appendChild(img);
+  });
+}
+
+function showPhoto() {
+  var photos = lbProject.photos;
+  document.getElementById('lb-img').src = photos[lbIndex];
+  document.getElementById('lb-img').alt = lbProject.title + ' photo ' + (lbIndex + 1);
+  document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + photos.length;
+  var thumbs = document.getElementById('lb-thumbs').children;
+  for (var i = 0; i < thumbs.length; i++) {
+    thumbs[i].classList.toggle('active', i === lbIndex);
+  }
+}
+
+function lbPrev() { lbIndex = (lbIndex - 1 + lbProject.photos.length) % lbProject.photos.length; showPhoto(); }
+function lbNext() { lbIndex = (lbIndex + 1) % lbProject.photos.length; showPhoto(); }
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'ArrowLeft') lbPrev();
+  if (e.key === 'ArrowRight') lbNext();
+  if (e.key === 'Escape') closeLightbox();
+});
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+document.querySelectorAll('.project-img[role="button"]').forEach(function(el) {
+  el.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') el.click(); });
+});
 </script>
 </body>
 </html>
