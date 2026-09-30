@@ -1,512 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us | Capitol City Design Inc.</title>
-<meta name="description" content="Contact Capitol City Design Inc. - Electrical Engineering Consultants. West Sacramento, CA. 916.375.0135.">
+<meta name="description" content="Contact Capitol City Design Inc. for electrical engineering and lighting design services in West Sacramento, CA. Call 916.375.0135.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="canonical" href="https://capcitydesign.com/contact">
+<link rel="canonical" href="https://capcitydesign.com/contact.html">
 <meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Contact Us | Capitol City Design Inc.">
-<meta property="og:description" content="Contact Capitol City Design Inc. - West Sacramento electrical engineering consultants. Call 916.375.0135 or send us a message about your project.">
-<meta property="og:url" content="https://capcitydesign.com/contact">
-<meta property="og:image" content="https://capcitydesign.com/images/p1.jpg">
-<meta property="og:site_name" content="Capitol City Design Inc.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact Us | Capitol City Design Inc.">
-<meta name="twitter:description" content="Contact Capitol City Design Inc. - West Sacramento electrical engineering consultants. Call 916.375.0135 or send us a message about your project.">
-<meta name="twitter:image" content="https://capcitydesign.com/images/p1.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --cyan: #00d4ff; --cyan-dark: #009bbf; --ink: #14171f; --ink-mid: #3a3f4f; --muted: #6b7280; --rule: #e4e7ec; --bg: #f7f8fa; --white: #ffffff; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Barlow', system-ui, sans-serif; background: var(--white); color: var(--ink); line-height: 1.6; }
-  img { display: block; max-width: 100%; }
-  a { color: inherit; text-decoration: none; }
-  nav { position: sticky; top: 0; z-index: 100; background: var(--ink); height: 68px; display: flex; align-items: center; padding: 0 48px; justify-content: space-between; }
-  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; flex-shrink: 0; }
-  .nav-logo img { height: 38px; width: auto; }
-  .nav-logo-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); line-height: 1.1; display: block; }
-  .nav-logo-sub { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); display: block; }
-  .nav-links { display: flex; list-style: none; gap: 2px; align-items: center; }
-  .nav-links a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); padding: 8px 14px; border-radius: 4px; transition: color 0.15s, background 0.15s; letter-spacing: 0.02em; }
-  .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.1); }
-  .nav-links .nav-cta { background: var(--cyan); color: var(--ink); font-weight: 700; border-radius: 4px; }
-  .nav-links .nav-cta:hover { background: var(--cyan-dark); color: var(--white); }
-  .page-hero { background: var(--ink); padding: 52px 48px 48px; border-bottom: 3px solid var(--cyan); }
-  .page-hero-label { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-  .page-hero-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--cyan); }
-  .page-hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px, 5vw, 68px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--white); line-height: 1; }
-  .page-hero p { font-size: 16px; color: rgba(255,255,255,0.55); margin-top: 12px; max-width: 600px; }
-  .content-wrap { max-width: 1200px; margin: 0 auto; padding: 72px 48px; }
-  .content-wrap.wide { max-width: 100%; padding: 72px 48px; }
-  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .section-label::before { content: ''; display: block; width: 20px; height: 2px; background: var(--cyan); }
-  h2.section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(30px, 3.5vw, 48px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 24px; }
-  footer { background: var(--ink); padding: 40px 48px; }
-  .footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; gap: 20px; }
-  .footer-logo { display: flex; align-items: center; gap: 12px; }
-  .footer-logo img { height: 28px; opacity: 0.6; }
-  .footer-logo-name { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); }
-  .footer-nav { display: flex; gap: 24px; flex-wrap: wrap; }
-  .footer-nav a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.4); transition: color 0.15s; }
-  .footer-nav a:hover { color: rgba(255,255,255,0.8); }
-  .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
-  .footer-legal { display: flex; gap: 16px; align-items: center; }
-  .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.25); transition: color 0.15s; }
-  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
-  .btn-primary { display: inline-block; background: var(--ink); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; border: 2px solid var(--ink); }
-  .btn-cyan { display: inline-block; background: var(--cyan); color: var(--ink); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; }
-  .btn-cyan:hover { background: var(--cyan-dark); color: var(--white); }
-  .btn-outline { display: inline-block; border: 2px solid var(--rule); color: var(--ink); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 32px; border-radius: 4px; }
-  .btn-outline:hover { border-color: var(--ink); }
-  .divider { border: none; border-top: 1px solid var(--rule); margin: 48px 0; }
-  @media (max-width: 960px) {
-    nav { padding: 0 24px; }
-    .content-wrap, .content-wrap.wide { padding: 48px 24px; }
-    .page-hero { padding: 40px 24px 36px; }
-    footer { padding: 36px 24px; }
-    .two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
-    .three-col { grid-template-columns: 1fr !important; }
-    .port-grid { display: flex !important; flex-direction: column; }
-    .port-grid > div { height: 240px !important; }
-  }
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-    .footer-top { flex-direction: column; }
-    .footer-bottom { flex-direction: column; }
-  }
-
-/* ── MOBILE OVERRIDES ─────────────────────────────────────────────── */
-
-/* Hero split */
-.hero-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 68px);
+.contact-form label { display: block; font-size: 12px; font-weight: 700; color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%; padding: 9px 12px; border: 1px solid #ccc; font-family: Arial, sans-serif; font-size: 13px; color: #333; background: #fafafa; margin-bottom: 14px; transition: border-color 0.15s;
 }
-.hero-photo {
-  position: relative;
-  overflow: hidden;
-  background: var(--ink);
-}
-.hero-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover; opacity: 0.9;
-}
-
-/* Generic responsive grids */
-.grid-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.grid-3col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.grid-content-sidebar {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 72px;
-  align-items: start;
-}
-.grid-contact {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 72px;
-  align-items: start;
-}
-.grid-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.grid-feat-cats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.grid-proj-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* Portfolio mosaic */
-.port-mosaic {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 380px 280px;
-  gap: 4px;
-  margin-bottom: 64px;
-}
-.port-mosaic .pt1 { grid-column: 1/8; grid-row: 1; }
-.port-mosaic .pt2 { grid-column: 8/13; grid-row: 1; }
-.port-mosaic .pt3 { grid-column: 1/5; grid-row: 2; }
-.port-mosaic .pt4 { grid-column: 5/9; grid-row: 2; }
-.port-mosaic .pt5 { grid-column: 9/13; grid-row: 2; }
-.port-tile {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg);
-}
-.port-tile img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-.port-tile:hover img { transform: scale(1.04); }
-.port-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 36px 24px 24px;
-  background: linear-gradient(transparent, rgba(20,23,31,0.88));
-}
-.port-overlay .po-cat {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--cyan); margin-bottom: 4px;
-}
-.port-overlay .po-name {
-  font-weight: 800; color: var(--white); margin-bottom: 2px;
-}
-.port-overlay .po-meta {
-  font-size: 13px; color: rgba(255,255,255,0.6);
-}
-
-/* Hamburger */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-.burger span {
-  display: block; width: 24px; height: 2px;
-  background: var(--white); border-radius: 2px;
-  transition: all 0.2s;
-}
-.mobile-nav {
-  display: none;
-  position: fixed;
-  top: 68px; left: 0; right: 0;
-  background: var(--ink);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  z-index: 99;
-  flex-direction: column;
-  padding: 16px 0;
-}
-.mobile-nav.open { display: flex; }
-.mobile-nav a {
-  font-size: 15px; font-weight: 600;
-  color: rgba(255,255,255,0.75);
-  padding: 14px 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  letter-spacing: 0.02em;
-}
-.mobile-nav a.active, .mobile-nav a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
-.mobile-nav a.nav-cta { color: var(--cyan); font-weight: 700; }
-
-/* ── TABLET ── */
-@media (max-width: 960px) {
-  .hero-split { grid-template-columns: 1fr; min-height: auto; }
-  .hero-photo { height: 320px; }
-  .grid-content-sidebar { grid-template-columns: 1fr; gap: 48px; }
-  .grid-content-sidebar > div:last-child { position: static !important; }
-  .grid-3col { grid-template-columns: 1fr 1fr; }
-  .grid-contact { grid-template-columns: 1fr; gap: 40px; }
-  nav { padding: 0 24px; }
-  .content-wrap, .content-wrap.wide { padding: 48px 24px; }
-  .page-hero { padding: 40px 24px 36px; }
-  footer { padding: 36px 24px; }
-  .footer-top { flex-direction: column; gap: 16px; }
-  .footer-bottom { flex-direction: column; gap: 10px; }
-  .hero-left-pad { padding: 52px 32px !important; }
-}
-
-/* ── MOBILE ── */
-@media (max-width: 640px) {
-  .nav-links { display: none !important; }
-  .burger { display: flex; }
-  .hero-split { grid-template-columns: 1fr; }
-  .hero-left-pad { padding: 44px 24px 40px !important; }
-  .hero-photo { height: 260px; }
-  .hero-title { font-size: 52px !important; }
-  .stat-strip { gap: 24px !important; flex-wrap: wrap; }
-  .grid-2col, .grid-proj-list, .grid-feat-cats, .grid-form-row { grid-template-columns: 1fr !important; }
-  .grid-3col { grid-template-columns: 1fr !important; }
-  .grid-content-sidebar { grid-template-columns: 1fr; gap: 32px; }
-  .grid-contact { grid-template-columns: 1fr; gap: 32px; }
-  .port-mosaic {
-    display: flex !important;
-    flex-direction: column;
-    grid-template-rows: none !important;
-    margin-bottom: 40px;
-  }
-  .port-mosaic .pt1,
-  .port-mosaic .pt2,
-  .port-mosaic .pt3,
-  .port-mosaic .pt4,
-  .port-mosaic .pt5 {
-    grid-column: auto !important;
-    grid-row: auto !important;
-    height: 220px !important;
-  }
-  .port-overlay { padding: 28px 18px 18px; }
-  .content-wrap, .content-wrap.wide { padding: 36px 20px; }
-  .page-hero { padding: 32px 20px 28px; }
-  .page-hero h1 { font-size: 36px !important; }
-  footer { padding: 28px 20px; }
-  .footer-nav { gap: 14px; }
-  .btn-primary, .btn-cyan, .btn-outline { padding: 12px 24px; font-size: 12px; }
-  nav { padding: 0 20px; }
-  .hero-badge { left: 16px !important; bottom: 16px !important; right: 16px; }
-  .sidebar-sticky { position: static !important; top: auto !important; }
-}
-
-
-  /* Skip nav */
-  .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 16px;
-    background: var(--cyan, #00d4ff);
-    color: #000;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 10px 20px;
-    border-radius: 0 0 4px 4px;
-    z-index: 9999;
-    text-decoration: none;
-    transition: top 0.15s;
-  }
-  .skip-link:focus { top: 0; }
-
-  /* Cookie banner */
-  #cookie-banner {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: #14171f;
-    border-top: 2px solid #00d4ff;
-    padding: 16px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    z-index: 9998;
-    flex-wrap: wrap;
-  }
-  #cookie-banner p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.5;
-    margin: 0;
-    max-width: 700px;
-  }
-  #cookie-banner a { color: #00d4ff; }
-  #cookie-banner-btns { display: flex; gap: 10px; flex-shrink: 0; }
-  .cookie-btn-accept {
-    background: #00d4ff; color: #000;
-    border: none; padding: 9px 22px;
-    font-family: inherit; font-size: 13px; font-weight: 700;
-    cursor: pointer; border-radius: 4px; white-space: nowrap;
-  }
-  .cookie-btn-decline {
-    background: transparent; color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.2); padding: 8px 22px;
-    font-family: inherit; font-size: 13px; font-weight: 600;
-    cursor: pointer; border-radius: 4px; white-space: nowrap;
-  }
-  .cookie-btn-accept:hover { background: #009bbf; }
-  .cookie-btn-decline:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
-  @media (max-width: 640px) {
-    #cookie-banner { padding: 16px 20px; }
-    #cookie-banner-btns { width: 100%; }
-    .cookie-btn-accept, .cookie-btn-decline { flex: 1; }
-  }
-
-
-  /* Focus-visible styles */
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible,
-  textarea:focus-visible {
-    outline: 3px solid var(--cyan, #00d4ff);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-  /* Footer link contrast fix - raise from 0.4 to 0.7 opacity */
-  .footer-nav a { color: rgba(255,255,255,0.7); }
-  .footer-legal a { color: rgba(255,255,255,0.7); }
-  .footer-copy { color: rgba(255,255,255,0.55); }
-
+.contact-form input:focus, .contact-form textarea:focus { border-color: #4a7ca5; outline: none; background: #fff; }
+.contact-form textarea { height: 130px; resize: vertical; }
+.contact-form .consent-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
+.contact-form .consent-row input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; width: auto; }
+.contact-form .consent-row label { text-transform: none; font-weight: 400; font-size: 12px; color: #666; margin-bottom: 0; }
+.contact-form button[type="submit"] { background: #4a7ca5; color: #fff; border: none; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 24px; cursor: pointer; transition: background 0.15s; }
+.contact-form button[type="submit"]:hover { background: #3a6285; }
+.form-success { display: none; background: #e6f4ea; border: 1px solid #b2dfbb; color: #276031; padding: 14px 16px; font-size: 13px; margin-bottom: 14px; }
+.contact-info-row { display: flex; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+.contact-info-block { flex: 1; min-width: 160px; }
+.contact-info-block h3 { font-size: 13px; margin-bottom: 6px; text-transform: uppercase; color: #4a7ca5; }
+.contact-info-block p { font-size: 13px; color: #555; margin: 0; }
+.contact-info-block a { color: #4a7ca5; }
 </style>
-</head><body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<header role="banner">
-<nav aria-label="Primary navigation">
-  <a href="index.html" class="nav-logo">
-    <img src="data:image/png;base64,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" alt="Capitol City Design Inc.">
-    <span><span class="nav-logo-name">Capitol City Design</span><span class="nav-logo-sub">Electrical Engineering</span></span>
-  </a>
-  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="experience.html" class="">Experience</a></li><li><a href="portfolio.html" class="">Portfolio</a></li><li><a href="featured-projects.html" class="">Featured Projects</a></li><li><a href="contact.html" class="active nav-cta" aria-current="page">Contact</a></li></ul>
-<button class="burger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
-  <span></span><span></span><span></span>
-</button>
-<div class="mobile-nav" id="mobileNav">
-<a href="index.html" class="">Home</a>
-<a href="experience.html" class="">Experience</a>
-<a href="portfolio.html" class="">Portfolio</a>
-<a href="featured-projects.html" class="">Featured Projects</a>
-<a href="contact.html" class="active nav-cta" aria-current="page">Contact</a>
-</div>
-<script>
-function toggleNav(){
-  var n=document.getElementById('mobileNav');
-  var btn=document.querySelector('.burger');
-  var open=n.classList.toggle('open');
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-}
-</script>
-</nav>
-</header><div class="page-hero">
-  <div class="page-hero-label">Get In Touch</div>
-  <h1>Contact Us</h1>
-  <p>Please call or email us today. We look forward to discussing your project's needs.</p>
-</div>
-<div class="content-wrap" class="grid-contact">
-  <div>
-    <h2 class="section-title" style="font-size:28px;">Capitol City Design, Inc.</h2>
-    <p style="font-size:14px;font-weight:600;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:32px;">Electrical Engineering Consultants</p>
-    <div style="display:flex;flex-direction:column;gap:24px;margin-bottom:36px;">
-      <div style="display:flex;gap:14px;align-items:flex-start;">
-  <div style="width:40px;height:40px;background:var(--bg);border:1px solid var(--rule);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#009bbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-  <div><strong style="display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Address</strong><p style="font-size:15px;color:var(--ink-mid);">1751 Cebrian Street<br>West Sacramento, CA 95691</p></div>
-</div>
-      <div style="display:flex;gap:14px;align-items:flex-start;">
-  <div style="width:40px;height:40px;background:var(--bg);border:1px solid var(--rule);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#009bbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg></div>
-  <div><strong style="display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Phone</strong><a href="tel:9163750135" style="font-size:15px;color:var(--ink-mid);">916.375.0135</a><p style="font-size:13px;color:var(--muted);margin-top:2px;">Fax: 916.375.0773</p></div>
-</div>
-      <div style="display:flex;gap:14px;align-items:flex-start;">
-  <div style="width:40px;height:40px;background:var(--bg);border:1px solid var(--rule);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#009bbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-  <div><strong style="display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Email</strong><a href="mailto:sondrag@capcitydesign.com" style="font-size:15px;color:var(--ink-mid);">sondrag@capcitydesign.com</a></div>
-</div>
-    </div>
-    <div style="padding:18px 22px;background:var(--bg);border-left:3px solid var(--cyan);border-radius:0 4px 4px 0;">
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;"><strong style="color:var(--ink-mid);">Licensed in 11 states:</strong> Arizona, California, Colorado, Florida, Iowa, Missouri, Nevada, New Mexico, Oregon, Texas and Washington.</p>
-    </div>
-  </div>
-  <div style="background:var(--bg);border:1px solid var(--rule);border-radius:4px;padding:40px;">
-  <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink);margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--rule);">Send Us a Message</h3>
-  <div id="form-fields">
-    <div class="grid-form-row">
-      <div style="margin-bottom:18px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:7px;">Full Name *</label><input type="text" id="fname" placeholder="Your name" required style="width:100%;background:var(--white);border:1px solid var(--rule);color:var(--ink);padding:11px 14px;font-size:15px;font-family:'Barlow',sans-serif;border-radius:4px;outline:none;" onfocus="this.style.borderColor='#009bbf'" onblur="this.style.borderColor='#e4e7ec'"></div>
-      <div style="margin-bottom:18px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:7px;">Email *</label><input type="email" id="femail" placeholder="you@company.com" required style="width:100%;background:var(--white);border:1px solid var(--rule);color:var(--ink);padding:11px 14px;font-size:15px;font-family:'Barlow',sans-serif;border-radius:4px;outline:none;" onfocus="this.style.borderColor='#009bbf'" onblur="this.style.borderColor='#e4e7ec'"></div>
-    </div>
-    <div class="grid-form-row">
-      <div style="margin-bottom:18px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:7px;">Phone</label><input type="tel" id="fphone" placeholder="916.000.0000"  style="width:100%;background:var(--white);border:1px solid var(--rule);color:var(--ink);padding:11px 14px;font-size:15px;font-family:'Barlow',sans-serif;border-radius:4px;outline:none;" onfocus="this.style.borderColor='#009bbf'" onblur="this.style.borderColor='#e4e7ec'"></div>
-      <div style="margin-bottom:18px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:7px;">Project Type</label><select id="ftype" style="width:100%;background:var(--white);border:1px solid var(--rule);color:var(--ink);padding:11px 14px;font-size:15px;font-family:'Barlow',sans-serif;border-radius:4px;outline:none;cursor:pointer;"><option value="">Select one...</option><option>Commercial</option><option>Industrial</option><option>Institutional / Civic</option><option>Residential</option><option>Lighting Design</option><option>Other</option></select></div>
-    </div>
-    <div style="margin-bottom:18px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:7px;">Subject</label><input type="text" id="fsubject" placeholder="Brief description of your project"  style="width:100%;background:var(--white);border:1px solid var(--rule);color:var(--ink);padding:11px 14px;font-size:15px;font-family:'Barlow',sans-serif;border-radius:4px;outline:none;" onfocus="this.style.borderColor='#009bbf'" onblur="this.style.borderColor='#e4e7ec'"></div>
-    <div style="margin-bottom:22px;"><label style="display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:7px;">Message *</label><textarea id="fmessage" placeholder="Tell us about your project - location, scale, timeline, and specific needs..." required rows="5" style="width:100%;background:var(--white);border:1px solid var(--rule);color:var(--ink);padding:11px 14px;font-size:15px;font-family:'Barlow',sans-serif;border-radius:4px;outline:none;resize:vertical;" onfocus="this.style.borderColor='#009bbf'" onblur="this.style.borderColor='#e4e7ec'"></textarea></div>
-    <div style="margin-bottom:18px;display:flex;align-items:flex-start;gap:10px;">
-        <input type="checkbox" id="consent-check" required style="margin-top:3px;flex-shrink:0;accent-color:var(--cyan-dark);">
-        <label for="consent-check" style="font-size:13px;color:var(--muted);line-height:1.5;">
-          I agree to the <a href="/privacy" style="color:var(--cyan-dark);">Privacy Policy</a> and <a href="/terms" style="color:var(--cyan-dark);">Terms of Use</a>. I consent to Capitol City Design contacting me regarding my inquiry. *
-        </label>
-      </div>
-      <button type="button" onclick="submitForm()" style="width:100%;background:var(--ink);color:var(--white);border:none;padding:14px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:4px;" onmouseover="this.style.background='#3a3f4f'" onmouseout="this.style.background='#14171f'">Send Message</button>
-  </div>
-  <div id="form-success" style="display:none;text-align:center;padding:48px 24px;">
-    <svg aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#009bbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-    <h4 style="font-size:22px;font-weight:800;color:var(--ink);margin-bottom:8px;">Message Sent</h4>
-    <p style="font-size:15px;color:var(--muted);">Thank you. We will be in touch shortly to discuss your project.</p>
-  </div>
-</div>
-</div>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
 
-<script>
-async function submitForm(){
-  var name=document.getElementById('fname').value.trim(),email=document.getElementById('femail').value.trim(),msg=document.getElementById('fmessage').value.trim();
-  var consent=document.getElementById('consent-check');
-  if(!name||!email||!msg){alert('Please fill in all required fields.');return;}
-  if(!consent.checked){alert('Please agree to the Privacy Policy and Terms of Use to continue.');return;}
-  var btn=document.querySelector('button[onclick]');btn.textContent='Sending...';btn.disabled=true;
-  try{
-    var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'393febfe-46c0-4453-8523-3c67eee8a12f',name:name,email:email,phone:document.getElementById('fphone').value,project_type:document.getElementById('ftype').value,subject:document.getElementById('fsubject').value||'Capitol City Design Inquiry',message:msg,from_name:'Capitol City Design Website'})});
-    var data=await res.json();
-    if(data.success){document.getElementById('form-fields').style.display='none';document.getElementById('form-success').style.display='block';}
-    else{throw new Error();}
-  }catch(e){btn.textContent='Send Message';btn.disabled=false;alert('Something went wrong. Please call us at 916.375.0135.');}
-}
-</script>
-</main>
-<footer>
-  <div class="footer-top">
-    <div class="footer-logo">
-      <img src="data:image/png;base64,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" alt="Capitol City Design">
-      <span class="footer-logo-name">Capitol City Design, Inc.</span>
-    </div>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="featured-projects.html">Featured Projects</a>
-      <a href="contact.html">Contact</a>
+<header role="banner">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="Capitol City Design Inc. - Home">
+      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="72" height="72">
+      <div class="header-logo-text">
+        <strong>Capitol City Design, Inc.</strong>
+        <span>Electrical Engineering Consultants</span>
+      </div>
+    </a>
+    <nav aria-label="Primary navigation">
+      <button class="nav-mobile-btn" aria-expanded="false" aria-controls="nav-menu" onclick="toggleNav(this)">&#9776; Menu</button>
+      <ul id="nav-menu" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/experience.html">Experience</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/featured-projects.html">Featured Projects</a></li>
+        <li><a href="/contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
     </nav>
   </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">&copy; 2025 Capitol City Design, Inc. All rights reserved. &nbsp;|&nbsp; 1751 Cebrian Street, West Sacramento, CA 95691 &nbsp;|&nbsp; 916.375.0135</p>
-    <div class="footer-legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="privacy.html#do-not-sell">Do Not Sell My Info</a>
-      <a href="terms.html">Terms of Use</a>
-      <a href="accessibility.html">Accessibility</a>
-      <span style="font-size:12px;color:rgba(255,255,255,.2);">Site by <a href="https://synprism.io" target="_blank" style="color:#00d4ff;">Synprism</a></span>
+</header>
+
+<div class="page-title-bar">
+  <div class="page-title-bar-inner">
+    <h1>Contact Us</h1>
+    <span class="breadcrumb"><a href="/">Home</a> &rsaquo; Contact</span>
+  </div>
+</div>
+
+<main id="main-content">
+<div class="page-wrap">
+  <div class="two-col-wrap">
+
+    <div class="main-col">
+      <div class="panel">
+        <h2>Get In Touch</h2>
+        <div class="contact-info-row">
+          <div class="contact-info-block">
+            <h3>Address</h3>
+            <p>1751 Cobrian Street<br>West Sacramento, CA 95691</p>
+          </div>
+          <div class="contact-info-block">
+            <h3>Phone</h3>
+            <p><a href="tel:+191****0135">916.375.0135</a></p>
+          </div>
+          <div class="contact-info-block">
+            <h3>Email</h3>
+            <p><a href="mailto:tcbaker@capcitydesign.com">tcbaker@capcitydesign.com</a></p>
+          </div>
+        </div>
+
+        <h2>Send a Message</h2>
+        <div id="form-success" class="form-success" role="alert">Thank you! Your message has been sent. We will be in touch shortly.</div>
+        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="393febfe-46c0-4453-8523-3c67eee8a12f">
+          <input type="hidden" name="subject" value="New Contact Form Submission - Capitol City Design">
+          <input type="hidden" name="from_name" value="Capitol City Design Website">
+          <input type="hidden" name="redirect" value="">
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <label for="name">Full Name <span style="color:#c00;">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Your full name">
+
+          <label for="email">Email Address <span style="color:#c00;">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(916) 555-0000">
+
+          <label for="message">Message <span style="color:#c00;">*</span></label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+
+          <div class="consent-row">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to Capitol City Design's <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Use</a>, and consent to being contacted regarding my inquiry.</label>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
+
+    <div class="sidebar-col">
+      <div class="widget">
+        <div class="widget-header"><h4>Contact Information</h4></div>
+        <div class="widget-body contact-widget">
+          <p>1751 Cobrian Street<br>West Sacramento, CA 95691</p>
+          <p>Phone: <a href="tel:+191****0135">916.375.0135</a></p>
+          <p>Email: <a href="mailto:tcbaker@capcitydesign.com">tcbaker@capcitydesign.com</a></p>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget-header"><h4>Company Profile</h4></div>
+        <div class="widget-body">
+          <p style="font-size:12px; color:#555; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
+          <a href="/experience.html" class="btn-blue">More Info</a>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget-header"><h4>Resources</h4></div>
+        <div class="widget-body">
+          <ul>
+            <li><a href="/experience.html">General Information</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/featured-projects.html">Featured Projects</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Company Profile</h4>
+      <p style="font-size:12px; color:#c8d0d8; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
+      <a href="/experience.html" class="btn-blue">Download Our PDF</a>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/experience.html">Experience</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/featured-projects.html">Featured Projects</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact-col">
+      <h4>Contact Us</h4>
+      <p>1751 Cobrian Street<br>West Sacramento, CA 95691</p>
+      <p>Phone: <a href="tel:+191****0135">916.375.0135</a></p>
+      <p>Email: <a href="mailto:tcbaker@capcitydesign.com">tcbaker@capcitydesign.com</a></p>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/experience.html">General Information</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/featured-projects.html">Featured Projects</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 Capitol City Design Inc. All Rights Reserved.</span>
+    <div class="footer-legal">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/accessibility.html">Accessibility</a>
+      <a href="/privacy.html#ccpa">Do Not Sell My Info</a>
+    </div>
+  </div>
+  <div style="max-width:1000px; margin:0 auto; padding:8px 0 12px; text-align:right;">
+    <span class="synprism-credit">Website by <a href="https://synprism.io" target="_blank" rel="noopener">Synprism</a></span>
   </div>
 </footer>
 
 <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;">
-  <p>We use Cloudflare Web Analytics to understand how visitors use our site. No personal data is sold. See our <a href="/privacy">Privacy Policy</a> for details.</p>
-  <div id="cookie-banner-btns">
-    <button class="cookie-btn-accept" onclick="cookieConsent(true)">Accept</button>
-    <button class="cookie-btn-decline" onclick="cookieConsent(false)">Decline</button>
+  <span>We use cookies to improve your experience. See our <a href="/privacy.html">Privacy Policy</a>.</span>
+  <div class="cookie-btns">
+    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline">Decline</button>
   </div>
 </div>
-<script>
-(function(){
-  var consent = localStorage.getItem('ccd_cookie_consent');
-  if (!consent) {
-    document.getElementById('cookie-banner').style.display = 'flex';
-  }
-})();
-function cookieConsent(accepted) {
-  localStorage.setItem('ccd_cookie_consent', accepted ? 'accepted' : 'declined');
-  document.getElementById('cookie-banner').style.display = 'none';
-}
-</script>
 
-</body></html>
+<script>
+function toggleNav(btn) {
+  var menu = document.getElementById('nav-menu');
+  var open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+(function() {
+  var consent = localStorage.getItem('cookie_consent');
+  if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
+  document.getElementById('cookie-accept').onclick = function() { localStorage.setItem('cookie_consent','accepted'); document.getElementById('cookie-banner').style.display = 'none'; };
+  document.getElementById('cookie-decline').onclick = function() { localStorage.setItem('cookie_consent','declined'); document.getElementById('cookie-banner').style.display = 'none'; };
+})();
+
+// Contact form AJAX
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var data = new FormData(form);
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+    .then(function(r) { return r.json(); })
+    .then(function(res) {
+      if (res.success) {
+        document.getElementById('form-success').style.display = 'block';
+        form.reset();
+      } else {
+        alert('There was an issue sending your message. Please try again or call us directly at 916.375.0135.');
+      }
+    })
+    .catch(function() {
+      alert('There was an issue sending your message. Please try again or call us directly at 916.375.0135.');
+    });
+});
+</script>
+</body>
+</html>
