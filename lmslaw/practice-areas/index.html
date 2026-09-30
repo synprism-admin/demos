@@ -1,14 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Practice Areas | LMS Law Firm San Francisco Personal Injury</title>
-  <meta name="description" content="LMS Law Firm handles construction accidents, motor vehicle crashes, slip and fall, dangerous premises, defective products, wrongful death, and real estate law in San Francisco." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Areas | LMS Law San Francisco Personal Injury Attorneys</title>
+<meta name="description" content="LMS Law handles construction injuries, motor vehicle crashes, slip and fall, dangerous premises, defective products, wrongful death, and real estate law in San Francisco.">
 <link rel="stylesheet" href="../shared.css">
+<style>
+.pa-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pa-overview-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--crimson);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .2s, transform .2s;
+}
+.pa-overview-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,.12);
+  transform: translateY(-3px);
+}
+.pa-overview-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(139,26,42,.08);
+  border: 2px solid rgba(139,26,42,.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.pa-overview-card h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.pa-overview-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.pa-overview-link {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--crimson);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .15s, gap .15s;
+  align-self: flex-start;
+}
+.pa-overview-link:hover { border-color: var(--crimson); gap: 10px; }
+
+.pa-promo-card {
+  background: var(--crimson);
+  border-top-color: rgba(0,0,0,.2);
+}
+.pa-promo-card .pa-overview-icon { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.3); }
+.pa-promo-card h3 { color: #fff; }
+.pa-promo-card p { color: rgba(255,255,255,.82); }
+.pa-promo-card .pa-overview-link { color: #fff; border-bottom-color: rgba(255,255,255,.4); }
+
+.pa-philosophy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-bottom: 0;
+}
+.pa-phi-rule { width: 48px; height: 3px; background: var(--crimson); margin-bottom: 18px; }
+
+@media (max-width: 1024px) {
+  .pa-overview-grid { grid-template-columns: repeat(2, 1fr); }
+  .pa-philosophy { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .pa-overview-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -51,15 +136,15 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../practice-areas/index.html" class="lms-active">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="index.html" class="lms-active">PRACTICE AREAS <span class="lms-caret">▾</span></a>
         <div class="lms-drop">
-          <a href="../practice-areas/construction.html">Construction Injuries</a>
-          <a href="../practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
-          <a href="../practice-areas/motor-vehicle.html">Motor Vehicle</a>
-          <a href="../practice-areas/real-estate.html">Real Estate</a>
-          <a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a>
-          <a href="../practice-areas/defective-products.html">Defective Products</a>
-          <a href="../practice-areas/wrongful-death.html">Wrongful Death</a>
+          <a href="construction.html">Construction Injuries</a>
+          <a href="slip-fall.html">Slip / Trip &amp; Fall</a>
+          <a href="motor-vehicle.html">Motor Vehicle</a>
+          <a href="real-estate.html">Real Estate</a>
+          <a href="dangerous-premises.html">Dangerous Premises</a>
+          <a href="defective-products.html">Defective Products</a>
+          <a href="wrongful-death.html">Wrongful Death</a>
         </div>
       </li>
       <li><a href="../testimonials.html">TESTIMONIALS</a></li>
@@ -70,13 +155,13 @@
   </div>
 </nav>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="container">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span> Practice Areas</div>
     <h1>Our Practice Areas</h1>
-    <p>Experienced personal injury representation across a wide range of cases in San Francisco and throughout the Bay Area.</p>
   </div>
 </div>
-
 
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
@@ -87,94 +172,116 @@
     <div class="lms-g-item"><span class="lms-gcheck">&#10003;</span> YOU ALWAYS COME FIRST</div>
   </div>
 </div>
-<!-- INTRO -->
-<section class="section-pad">
-  <div class="container" style="max-width:860px;text-align:center;">
-    <h2 class="section-title center">Our Philosophy: Your Injury Deserves Personal Attention</h2>
-    <p style="color:#555;font-size:.95rem;line-height:1.85;margin-bottom:16px;">At LMS Law Firm, we believe that every personal injury case is unique and deserves individualized attention. Since 2003, our seasoned attorneys have fought tirelessly for clients across San Francisco, Marin, Napa, Sonoma, Alameda, Solano, and beyond — recovering millions in verdicts and settlements.</p>
-    <p style="color:#555;font-size:.95rem;line-height:1.85;">We represent clients on a <strong>contingency fee basis</strong> — meaning you pay nothing unless we win your case. Our initial consultations are always free and confidential. Explore our practice areas below to learn how we can help you.</p>
+
+<!-- PHILOSOPHY INTRO -->
+<section style="padding: 64px 24px; max-width: 1200px; margin: 0 auto;">
+  <div class="pa-philosophy">
+    <div>
+      <div class="pa-phi-rule"></div>
+      <h2 style="font-family:'Merriweather',serif; font-size:clamp(22px,3vw,34px); margin-bottom:18px; line-height:1.25;">Your Injury Deserves Personal Attention</h2>
+      <p style="font-size:15px; color:var(--mid); line-height:1.85; margin-bottom:16px;">At LMS Law, we believe that every personal injury case is unique and deserves individualized attention. Since 2003, our seasoned attorneys have fought tirelessly for clients across San Francisco, Marin, Napa, Sonoma, Alameda, Solano, and beyond — recovering millions in verdicts and settlements.</p>
+      <p style="font-size:15px; color:var(--mid); line-height:1.85; margin-bottom:28px;">We represent clients on a <strong>contingency fee basis</strong> — meaning you pay nothing unless we win your case. Our initial consultations are always free and confidential.</p>
+      <a href="../contact.html" class="btn-crimson">GET A FREE CASE REVIEW</a>
+    </div>
+    <div style="background:var(--off-white); border:1px solid var(--border); border-top:4px solid var(--crimson); padding:32px;">
+      <h3 style="font-family:'Open Sans',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:18px;">What You Can Recover</h3>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 14px; background:#fff; border-left:3px solid var(--crimson); font-size:13px; font-weight:600; color:#1a1a1a;">
+          <span style="color:var(--crimson); font-size:16px;">&#10003;</span> Medical Treatments (Past &amp; Future)
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 14px; background:#fff; border-left:3px solid var(--crimson); font-size:13px; font-weight:600; color:#1a1a1a;">
+          <span style="color:var(--crimson); font-size:16px;">&#10003;</span> Pain &amp; Suffering (Past &amp; Future)
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 14px; background:#fff; border-left:3px solid var(--crimson); font-size:13px; font-weight:600; color:#1a1a1a;">
+          <span style="color:var(--crimson); font-size:16px;">&#10003;</span> Loss of Earnings (Past &amp; Future)
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 14px; background:#fff; border-left:3px solid var(--crimson); font-size:13px; font-weight:600; color:#1a1a1a;">
+          <span style="color:var(--crimson); font-size:16px;">&#10003;</span> Out of Pocket Expenses
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- PRACTICE AREA CARDS -->
-<section class="section-pad-sm bg-light">
-  <div class="container">
-    <div class="card-grid card-grid-3" style="gap:28px;">
+<section style="background:var(--off-white); padding:64px 24px;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <div style="width:48px;height:3px;background:var(--crimson);margin:0 auto 16px;"></div>
+      <h2 style="font-family:'Merriweather',serif; font-size:clamp(22px,3vw,34px);">How We Can Help You</h2>
+      <p style="font-size:15px; color:var(--mid); max-width:620px; margin:14px auto 0; line-height:1.75;">LMS Law provides personal attention to every case. We utilize expert collaboration and out-of-the-box thinking to help our clients achieve the best possible outcome.</p>
+    </div>
+    <div class="pa-overview-grid">
 
-      <div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">🏗</div>
-        <h3>Construction &amp; Worksite Injury</h3>
-        <p>Construction accident injuries are unfortunately common and often catastrophic. We represent workers and bystanders injured by falls, equipment failures, electrocution, falling objects, and more. If a defective product or unsafe worksite was involved, we fight for full compensation.</p>
-        <a class="read-more" href="construction.html">Read More →</a>
-      </div>
+      <a href="construction.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#127959;</div>
+        <h3>Construction &amp; Worksite Injuries</h3>
+        <p>Falls, equipment failures, electrocution, and struck-by-object injuries. If a defective product caused your injury, you may have additional claims against manufacturers.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
-      
+      <a href="slip-fall.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#9888;</div>
+        <h3>Slip / Trip &amp; Fall Accidents</h3>
+        <p>Wet floors, tripping hazards, and poorly maintained property can cause life-altering injuries. When property owners fail in their duty of care, we hold them accountable.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
+      <a href="motor-vehicle.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#128663;</div>
+        <h3>Crashes (Motor Vehicle)</h3>
+        <p>Car crashes, truck collisions, motorcycle accidents, rideshare incidents, and MUNI accidents. We fight to recover full damages including medical costs and lost wages.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
-
-<div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">🚗</div>
-        <h3>Motor Vehicle Accidents</h3>
-        <p>With millions of auto accidents occurring each year in the U.S., LMS Law Firm has extensive experience representing victims of car crashes, truck collisions, motorcycle accidents, rideshare incidents, and more. We fight to recover full damages — medical costs, lost wages, and pain and suffering.</p>
-        <a class="read-more" href="motor-vehicle.html">Read More →</a>
-      </div>
-
-      <div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">⚠️</div>
-        <h3>Slip, Trip &amp; Fall</h3>
-        <p>Wet floors, tripping hazards, poorly maintained property, and inadequate safety measures can result in devastating injuries. Property owners have a legal duty to maintain safe premises. When they fail, LMS Law Firm holds them accountable.</p>
-        <a class="read-more" href="slip-fall.html">Read More →</a>
-      </div>
-
-      <div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">🏚</div>
+      <a href="dangerous-premises.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#127968;</div>
         <h3>Dangerous Premises</h3>
-        <p>Property owners are legally obligated to maintain safe conditions for visitors. Broken flooring, inadequate lighting, no smoke alarms, unsafe stairs, and other hazardous conditions can all form the basis of a dangerous premises claim. LMS Law Firm is your advocate.</p>
-        <a class="read-more" href="dangerous-premises.html">Read More →</a>
-      </div>
+        <p>Broken flooring, inadequate lighting, no smoke alarms, and unsafe stairs. Property owners must maintain safe conditions — when they fail, we fight for you.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
-      <div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">⚙️</div>
+      <a href="defective-products.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#9881;</div>
         <h3>Defective Products</h3>
-        <p>Consumers have a right to safe products. When defective design, manufacturing defects, or inadequate warnings cause injury, manufacturers and sellers can be held liable. We fight for victims of unsafe consumer goods, tools, equipment, and more.</p>
-        <a class="read-more" href="defective-products.html">Read More →</a>
-      </div>
+        <p>Manufacturers, designers, and sellers can be held liable when a dangerous or defective product causes injury. We fight for victims of unsafe consumer goods and equipment.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
-      <div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">⚖️</div>
+      <a href="wrongful-death.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#9878;</div>
         <h3>Wrongful Death</h3>
-        <p>Losing a loved one due to someone else's negligence is devastating. California law allows surviving family members to pursue compensation for funeral expenses, lost income, loss of companionship, and more. LMS Law Firm handles these cases with the utmost compassion.</p>
-        <a class="read-more" href="wrongful-death.html">Read More →</a>
-      </div>
+        <p>Losing a loved one due to negligence is devastating. California law allows families to pursue compensation for funeral costs, lost income, and loss of companionship.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
-      <div class="pa-card" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">🏢</div>
-        <h3>Real Estate Law</h3>
-        <p>LMS Law Firm provides sophisticated tenant and commercial real estate counsel to companies throughout San Francisco, Silicon Valley, and the Bay Area — from startup leases to multi-million square foot portfolio negotiations.</p>
-        <a class="read-more" href="real-estate.html">Read More →</a>
-      </div>
+      <a href="real-estate.html" class="pa-overview-card">
+        <div class="pa-overview-icon">&#127970;</div>
+        <h3>Real Estate (Commercial &amp; Tenant)</h3>
+        <p>Sophisticated tenant and commercial real estate counsel for Bay Area companies — from startup leases to multi-million square foot portfolio negotiations throughout the US.</p>
+        <span class="pa-overview-link">READ MORE &#8250;</span>
+      </a>
 
-      <div class="pa-card promo" style="text-align:left;align-items:flex-start;">
-        <div class="pa-icon">❓</div>
+      <a href="../contact.html" class="pa-overview-card pa-promo-card">
+        <div class="pa-overview-icon">&#128222;</div>
         <h3>Not Sure Which Area Applies?</h3>
-        <p>Call us today for a free consultation. Our attorneys will evaluate your situation and let you know the best path forward — with no pressure and no obligation.</p>
-        <a class="read-more" href="../contact.html">Get Free Consultation →</a>
-      </div>
+        <p>Call us for a free consultation. Our attorneys will evaluate your situation and point you in the right direction — no pressure, no obligation.</p>
+        <span class="pa-overview-link">CONTACT US TODAY &#8250;</span>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-block">
-  <div class="container">
-    <h2>Ready to Discuss Your Case?</h2>
-    <p>Our consultations are always free and confidential. No fees unless we win your case.</p>
-    <a class="btn btn-white" href="../contact.html">Contact Us Today</a>
+<!-- CTA BANNER -->
+<div style="background:var(--crimson); padding:56px 24px; text-align:center;">
+  <div style="max-width:700px; margin:0 auto;">
+    <h2 style="font-family:'Merriweather',serif; color:#fff; font-size:clamp(20px,2.5vw,30px); margin-bottom:14px;">Ready to Discuss Your Case?</h2>
+    <p style="color:rgba(255,255,255,.82); font-size:15px; line-height:1.75; margin-bottom:28px;">Our consultations are always free and confidential. No fees unless we win your case. Call us or submit your information online and we'll get back to you within 24 hours.</p>
+    <a href="../contact.html" class="btn-outline-white" style="margin-right:16px;">CONTACT US TODAY</a>
+    <a href="tel:4154007000" class="btn-outline-white">CALL 415-400-7000</a>
   </div>
 </div>
-
-<!-- FOOTER -->
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -190,7 +297,7 @@
         <ul>
           <li><a href="../why-lms/index.html">Why LMS Law</a></li>
           <li><a href="../attorneys/index.html">Our Team</a></li>
-          <li><a href="../practice-areas/index.html">Practice Areas</a></li>
+          <li><a href="index.html">Practice Areas</a></li>
           <li><a href="../testimonials.html">Testimonials</a></li>
           <li><a href="../victories.html">Clients' Victories</a></li>
           <li><a href="../why-lms/faqs.html">FAQs</a></li>
@@ -200,58 +307,28 @@
       <div class="lms-footer-col">
         <h4>Practice Areas</h4>
         <ul>
-          <li><a href="../practice-areas/construction.html">Construction Injuries</a></li>
-          <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
-          <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle</a></li>
-          <li><a href="../practice-areas/real-estate.html">Real Estate</a></li>
-          <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
-          <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
-          <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
+          <li><a href="construction.html">Construction Injuries</a></li>
+          <li><a href="slip-fall.html">Slip &amp; Fall</a></li>
+          <li><a href="motor-vehicle.html">Motor Vehicle</a></li>
+          <li><a href="real-estate.html">Real Estate</a></li>
+          <li><a href="dangerous-premises.html">Dangerous Premises</a></li>
+          <li><a href="defective-products.html">Defective Products</a></li>
+          <li><a href="wrongful-death.html">Wrongful Death</a></li>
         </ul>
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 </body>
 </html>
