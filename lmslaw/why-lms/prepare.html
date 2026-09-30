@@ -1,14 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prepare For Your Case | LMS Law</title>
-  <meta name="description" content="Prepare for your personal injury case with this checklist from LMS Law attorneys. Learn what evidence to gather and mistakes to avoid." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prepare For Your Personal Injury Case | LMS Law San Francisco</title>
+<meta name="description" content="A complete guide to preparing your personal injury case from LMS Law. Evidence checklist, common mistakes to avoid, and a free case review from San Francisco's trusted attorneys.">
 <link rel="stylesheet" href="../shared.css">
+<style>
+
+/* ── Sub-page nav strip ── */
+.wl-sub-nav {
+  background: var(--crimson);
+  padding: 0 24px;
+}
+.wl-sub-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.wl-sub-nav a {
+  display: block;
+  padding: 14px 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  border-right: 1px solid rgba(255,255,255,.18);
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.wl-sub-nav a:hover,
+.wl-sub-nav a.active { background: rgba(0,0,0,.2); color: #fff; }
+
+/* ── Intro banner ── */
+.prep-intro {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.prep-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.prep-intro h2 {
+  font-size: clamp(20px, 2.8vw, 32px);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.prep-intro h2 em { color: var(--crimson); font-style: normal; }
+.prep-intro p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 14px; }
+.prep-tip-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--crimson);
+  padding: 20px 22px;
+}
+.prep-tip-box strong {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--crimson);
+  display: block;
+  margin-bottom: 6px;
+}
+.prep-tip-box p { font-size: 13px; color: var(--mid); line-height: 1.7; margin: 0; }
+
+/* ── Main content area ── */
+.prep-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Checklist cards ── */
+.prep-section-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--crimson);
+}
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.checklist-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--crimson);
+  padding: 22px 20px;
+}
+.checklist-card-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(139,26,42,.08);
+  border: 1px solid rgba(139,26,42,.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: var(--crimson);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+}
+.checklist-card h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.checklist-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.checklist-card ul li {
+  font-size: 13px;
+  color: var(--mid);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+.checklist-card ul li::before {
+  content: '&#10003;';
+  position: absolute;
+  left: 0;
+  color: var(--crimson);
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* ── Mistakes section ── */
+.mistakes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0;
+}
+.mistake-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  transition: box-shadow .15s;
+}
+.mistake-row:hover { box-shadow: 0 3px 12px rgba(0,0,0,.08); }
+.mistake-num {
+  width: 36px;
+  height: 36px;
+  background: var(--crimson);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.mistake-content h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+.mistake-content p {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ── Timeline callout ── */
+.prep-timeline {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--crimson);
+  padding: 24px 24px 20px;
+  margin: 32px 0;
+}
+.prep-timeline h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.prep-timeline p { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 8px; }
+.prep-timeline p:last-child { margin-bottom: 0; }
+.prep-timeline strong { color: #1a1a1a; }
+
+@media (max-width: 1024px) {
+  .prep-body { grid-template-columns: 1fr; }
+  .prep-intro-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 640px) {
+  .checklist-grid { grid-template-columns: 1fr; }
+  .wl-sub-nav-inner { flex-wrap: wrap; }
+}
+</style>
 </head>
 <body>
 
@@ -30,15 +248,15 @@
   <div class="lms-nav-inner">
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="../why-lms/index.html" class="lms-active">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="index.html" class="lms-active">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
-          <a href="../why-lms/index.html">Our Approach</a>
-          <a href="../why-lms/prepare.html">Prepare For Your Case</a>
-          <a href="../why-lms/faqs.html">FAQs</a>
+          <a href="index.html">Our Approach</a>
+          <a href="prepare.html">Prepare For Your Case</a>
+          <a href="faqs.html">FAQs</a>
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../attorneys/index.html">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="../attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../attorneys/index.html">Our Team</a>
           <a href="../attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +269,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../practice-areas/construction.html">Construction Injuries</a>
           <a href="../practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -69,6 +287,19 @@
     </ul>
   </div>
 </nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>&#8250;</span>
+      <a href="index.html">Why LMS</a><span>&#8250;</span>
+      Prepare For Your Case
+    </div>
+    <h1>Prepare For Your Personal Injury Case</h1>
+  </div>
+</div>
+
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
   <div class="lms-g-inner">
@@ -79,260 +310,283 @@
   </div>
 </div>
 
+<!-- SUB-PAGE NAV -->
+<div class="wl-sub-nav">
+  <div class="wl-sub-nav-inner">
+    <a href="index.html">Why Hire LMS</a>
+    <a href="prepare.html" class="active">Prepare For Your Case</a>
+    <a href="faqs.html">FAQs</a>
+  </div>
+</div>
 
-<main class="page-body">
-    <div class="container">
-      <div class="sidebar-layout">
+<!-- INTRO -->
+<div class="prep-intro">
+  <div class="prep-intro-inner">
+    <div>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>Building a <em>Strong Case</em> Starts Here</h2>
+      <p>When building your personal injury case, the evidence and documentation you gather can make a significant difference in the outcome. Our attorneys have compiled this guide to help you understand what to collect, what mistakes to avoid, and how to protect your rights from day one.</p>
+      <p>Don't worry if you don't have everything — we can help you identify and gather what's needed. The most important first step is to <strong>contact an attorney as soon as possible.</strong></p>
+      <div style="margin-top:20px;">
+        <a href="../contact.html" class="btn-crimson">GET YOUR FREE CASE REVIEW</a>
+      </div>
+    </div>
+    <div class="prep-tip-box">
+      <strong>Important: California Statute of Limitations</strong>
+      <p>In most personal injury cases in California, you have <strong>2 years from the date of injury</strong> to file a lawsuit. For claims against government entities, the deadline is as short as <strong>6 months</strong>. Missing this deadline can permanently bar your right to compensation — contact us today.</p>
+    </div>
+  </div>
+</div>
 
-        <!-- ── Left: Main Content ── -->
-        <div class="main-content">
+<!-- MAIN CONTENT + SIDEBAR -->
+<div class="prep-body">
 
-          <!-- Intro -->
-          <p style="font-size:1.05rem; color:#333; margin-bottom:36px; line-height:1.8;">
-            When building your personal injury case, there are several types of evidence and documentation that can significantly strengthen your claim. Our attorneys have compiled this checklist to help you prepare.
-          </p>
+  <!-- MAIN CONTENT -->
+  <div>
 
-          <!-- Checklist Grid -->
-          <section class="checklist-section" style="padding:0 0 56px;">
-            <h2 class="section-title">Evidence &amp; Documentation Checklist</h2>
-            <div class="section-divider"></div>
+    <!-- CHECKLIST -->
+    <p class="prep-section-title">Evidence &amp; Documentation Checklist</p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:28px;">Gather as much of the following evidence as possible after your injury. Even partial documentation significantly strengthens your case.</p>
 
-            
+    <div class="checklist-grid">
 
+      <div class="checklist-card">
+        <div class="checklist-card-icon">1</div>
+        <h4>Medical Records</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Doctor&rsquo;s reports detailing injuries &amp; treatment</li>
+          <li style="padding-left:16px;position:relative;">Hospital bills and receipts for all expenses</li>
+          <li style="padding-left:16px;position:relative;">Prescription receipts for injury-related medication</li>
+          <li style="padding-left:16px;position:relative;">Rehabilitation and therapy records</li>
+        </ul>
+      </div>
 
+      <div class="checklist-card">
+        <div class="checklist-card-icon">2</div>
+        <h4>Accident Reports</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Police or law enforcement reports</li>
+          <li style="padding-left:16px;position:relative;">Incident reports from the property where injury occurred</li>
+          <li style="padding-left:16px;position:relative;">Supervisor or manager reports (workplace injuries)</li>
+          <li style="padding-left:16px;position:relative;">Any OSHA investigation or citation records</li>
+        </ul>
+      </div>
 
-<div class="checklist-grid">
+      <div class="checklist-card">
+        <div class="checklist-card-icon">3</div>
+        <h4>Witness Statements</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Full name and contact information for all witnesses</li>
+          <li style="padding-left:16px;position:relative;">Written or recorded statements taken at the scene</li>
+          <li style="padding-left:16px;position:relative;">Contact details of first responders if applicable</li>
+        </ul>
+      </div>
 
-              <!-- 1 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">🏥</div>
-                  <h3>Medical Records</h3>
-                </div>
-                <ul>
-                  <li>Doctor's reports and diagnoses</li>
-                  <li>Hospital bills and statements</li>
-                  <li>Prescription receipts</li>
-                  <li>Rehabilitation records</li>
-                </ul>
-              </div>
+      <div class="checklist-card">
+        <div class="checklist-card-icon">4</div>
+        <h4>Photographic Evidence</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Photos of the accident scene before anything is changed</li>
+          <li style="padding-left:16px;position:relative;">Close-up photos of the hazard or cause of injury</li>
+          <li style="padding-left:16px;position:relative;">Photos of injuries at different stages of recovery</li>
+          <li style="padding-left:16px;position:relative;">Photos of any property or vehicle damage</li>
+        </ul>
+      </div>
 
-              <!-- 2 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">📋</div>
-                  <h3>Accident Reports</h3>
-                </div>
-                <ul>
-                  <li>Police reports</li>
-                  <li>Incident reports from the property</li>
-                </ul>
-              </div>
+      <div class="checklist-card">
+        <div class="checklist-card-icon">5</div>
+        <h4>Insurance Information</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Copies of your own insurance policies</li>
+          <li style="padding-left:16px;position:relative;">Insurance information from the at-fault party</li>
+          <li style="padding-left:16px;position:relative;">All correspondence with any insurance company</li>
+          <li style="padding-left:16px;position:relative;">Any claim numbers or adjuster contact info</li>
+        </ul>
+      </div>
 
-              <!-- 3 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">👥</div>
-                  <h3>Witness Statements</h3>
-                </div>
-                <ul>
-                  <li>Contact information for all witnesses</li>
-                  <li>Written or recorded statements</li>
-                </ul>
-              </div>
+      <div class="checklist-card">
+        <div class="checklist-card-icon">6</div>
+        <h4>Employment Records</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Records of all missed work days due to injury</li>
+          <li style="padding-left:16px;position:relative;">Pay stubs or income statements showing lost wages</li>
+          <li style="padding-left:16px;position:relative;">Employer verification letters if applicable</li>
+        </ul>
+      </div>
 
-              <!-- 4 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">📷</div>
-                  <h3>Photographic Evidence</h3>
-                </div>
-                <ul>
-                  <li>Photos of the accident scene</li>
-                  <li>Photos of injuries at different stages of healing</li>
-                </ul>
-              </div>
+      <div class="checklist-card">
+        <div class="checklist-card-icon">7</div>
+        <h4>Legal Correspondence</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Letters or emails from any previous attorneys</li>
+          <li style="padding-left:16px;position:relative;">Copies of demand letters sent or received</li>
+          <li style="padding-left:16px;position:relative;">Any settlement offers made by the other party</li>
+          <li style="padding-left:16px;position:relative;">Court documents if a lawsuit has been filed</li>
+        </ul>
+      </div>
 
-              <!-- 5 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">🛡️</div>
-                  <h3>Insurance Information</h3>
-                </div>
-                <ul>
-                  <li>Copies of all insurance policies</li>
-                  <li>All correspondence with insurers</li>
-                </ul>
-              </div>
+      <div class="checklist-card">
+        <div class="checklist-card-icon">8</div>
+        <h4>Miscellaneous</h4>
+        <ul>
+          <li style="padding-left:16px;position:relative;">Vehicle or property repair estimates</li>
+          <li style="padding-left:16px;position:relative;">Receipts for any out-of-pocket expenses incurred</li>
+          <li style="padding-left:16px;position:relative;">Journal or diary documenting your pain and recovery</li>
+          <li style="padding-left:16px;position:relative;">Any other documents related to the incident</li>
+        </ul>
+      </div>
 
-              <!-- 6 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">💼</div>
-                  <h3>Employment Records</h3>
-                </div>
-                <ul>
-                  <li>Records of missed work days</li>
-                  <li>Pay stubs or income statements</li>
-                </ul>
-              </div>
+    </div>
 
-              <!-- 7 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">⚖️</div>
-                  <h3>Legal Correspondence</h3>
-                </div>
-                <ul>
-                  <li>Letters from previous attorneys</li>
-                  <li>Demand letters</li>
-                  <li>Settlement offers</li>
-                </ul>
-              </div>
+    <!-- TIMELINE CALLOUT -->
+    <div class="prep-timeline">
+      <h4>What to Do Immediately After an Accident</h4>
+      <p><strong>1. Seek medical attention</strong> — Even if you feel fine, some injuries don't show symptoms for hours or days. A medical record created on the day of the incident is valuable evidence.</p>
+      <p><strong>2. Document everything at the scene</strong> — Take photos, get witness names, and request copies of any official reports before leaving.</p>
+      <p><strong>3. Do not admit fault or make statements</strong> — Anything you say to the other party or their insurance company can be used against you.</p>
+      <p><strong>4. Contact LMS Law</strong> — The sooner you speak with an attorney, the better we can protect your rights and preserve critical evidence.</p>
+    </div>
 
-              <!-- 8 -->
-              <div class="checklist-card">
-                <div class="checklist-card-header">
-                  <div class="checklist-icon">📁</div>
-                  <h3>Miscellaneous</h3>
-                </div>
-                <ul>
-                  <li>Repair estimates</li>
-                  <li>Any other relevant documents</li>
-                </ul>
-              </div>
+    <!-- MISTAKES -->
+    <p class="prep-section-title" style="margin-top:48px;">8 Common Mistakes That Hurt Your Case</p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;">Avoiding these common pitfalls can protect your claim and maximize the compensation you receive.</p>
 
-            </div>
-          </section>
+    <div class="mistakes-list">
+      <div class="mistake-row">
+        <div class="mistake-num">1</div>
+        <div class="mistake-content">
+          <h4>Delaying Medical Treatment</h4>
+          <p>Seek medical attention immediately after any accident, even if you feel fine. Gaps in treatment give insurers grounds to argue your injuries weren't serious.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">2</div>
+        <div class="mistake-content">
+          <h4>Failing to Document the Scene</h4>
+          <p>Take photos and notes at the scene before anything is moved, repaired, or cleaned up. Visual evidence is often the strongest proof of negligence.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">3</div>
+        <div class="mistake-content">
+          <h4>Not Preserving Evidence</h4>
+          <p>Save damaged clothing, vehicles, or property — do not repair or discard them. Physical evidence can be critical to proving liability.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">4</div>
+        <div class="mistake-content">
+          <h4>Not Tracking Expenses</h4>
+          <p>Document every out-of-pocket cost related to your injury — no matter how small. Medical co-pays, parking fees, and transportation costs all add up and are recoverable.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">5</div>
+        <div class="mistake-content">
+          <h4>Ignoring Your Attorney&rsquo;s Advice</h4>
+          <p>Follow your attorney&rsquo;s guidance closely — it protects your claim at every stage. Decisions that seem minor can have major consequences for your case outcome.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">6</div>
+        <div class="mistake-content">
+          <h4>Posting on Social Media</h4>
+          <p>Anything you post publicly can be used against you by the defense. A photo of you at a party or a casual status update can undermine your injury claims.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">7</div>
+        <div class="mistake-content">
+          <h4>Accepting Early Settlement Offers</h4>
+          <p>Early offers from insurance companies are almost always far below what you actually deserve. Once you accept, you typically waive your right to seek additional compensation.</p>
+        </div>
+      </div>
+      <div class="mistake-row">
+        <div class="mistake-num">8</div>
+        <div class="mistake-content">
+          <h4>Waiting Too Long to Take Legal Action</h4>
+          <p>California has strict statutes of limitations. Missing your deadline can permanently bar your right to compensation — contact LMS Law as soon as possible.</p>
+        </div>
+      </div>
+    </div>
 
-          <!-- Common Mistakes to Avoid -->
-          <section class="mistakes-section" style="background:none; padding:0 0 40px;">
-            <h2 class="section-title">Common Mistakes to Avoid</h2>
-            <div class="section-divider"></div>
-            <p style="color:#555; margin-bottom:28px;">Avoiding these common pitfalls can protect your case and maximize your compensation.</p>
+  </div>
 
-            <div class="mistakes-list">
+  <!-- SIDEBAR -->
+  <div>
+    <!-- Form -->
+    <div class="form-box" style="margin-bottom:20px;">
+      <h3>Free Case Review</h3>
+      <p class="subtext">No fee unless we win. Confidential &amp; no obligation.</p>
+      <div class="fgroup"><label>Full Name *</label><input type="text" placeholder="Your full name"></div>
+      <div class="fgroup"><label>Phone *</label><input type="tel" placeholder="415-555-0000"></div>
+      <div class="fgroup"><label>Email *</label><input type="email" placeholder="you@email.com"></div>
+      <div class="fgroup">
+        <label>Case Type</label>
+        <select>
+          <option value="">Select a practice area...</option>
+          <option>Construction / Worksite Injury</option>
+          <option>Slip, Trip &amp; Fall</option>
+          <option>Motor Vehicle Crash</option>
+          <option>Dangerous Premises</option>
+          <option>Defective Products</option>
+          <option>Wrongful Death</option>
+          <option>Real Estate / Commercial Tenant</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fgroup"><label>Tell Us What Happened</label><textarea placeholder="Briefly describe your situation..."></textarea></div>
+      <button class="form-submit" type="button">SUBMIT FOR FREE REVIEW</button>
+      <p class="form-disclaimer">100% confidential. We will contact you within 24 hours.</p>
+    </div>
 
-              <div class="mistake-item">
-                <div class="mistake-num">1</div>
-                <div><p>Delaying Medical Treatment</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Seek medical attention immediately after any accident, even if you feel fine.</span></div>
-              </div>
+    <!-- Contact info -->
+    <div class="sidebar-box">
+      <h4>Contact Us Directly</h4>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div style="width:30px;height:30px;background:var(--crimson);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">&#128222;</div>
+        <a href="tel:4154007000" style="font-size:18px;font-weight:700;color:var(--crimson);">415-400-7000</a>
+      </div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+        <strong style="color:#1a1a1a;display:block;margin-bottom:2px;">San Francisco Office</strong>
+        235 Montgomery St Suite #440<br>San Francisco, CA 94104
+        <strong style="color:#1a1a1a;display:block;margin:10px 0 2px;">Novato Office</strong>
+        7200 Redwood Blvd #300<br>Novato, CA 94945
+      </div>
+    </div>
 
-              <div class="mistake-item">
-                <div class="mistake-num">2</div>
-                <div><p>Failing to Document the Accident Scene</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Take photos and notes at the scene before anything is moved or cleaned up.</span></div>
-              </div>
+    <!-- Related links -->
+    <div class="sidebar-box">
+      <h4>Related Pages</h4>
+      <ul class="sidebar-nav">
+        <li><a href="index.html">Why Hire LMS Law</a></li>
+        <li><a href="faqs.html">Frequently Asked Questions</a></li>
+        <li><a href="../victories.html">Our Client Victories</a></li>
+        <li><a href="../testimonials.html">Client Testimonials</a></li>
+        <li><a href="../practice-areas/index.html">Our Practice Areas</a></li>
+      </ul>
+    </div>
 
-              <div class="mistake-item">
-                <div class="mistake-num">3</div>
-                <div><p>Neglecting to Preserve Evidence</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Save damaged clothing, vehicles, or property — do not repair or discard them.</span></div>
-              </div>
+    <!-- Quick guarantee reminder -->
+    <div style="background:var(--crimson);padding:24px;">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span style="font-size:14px;">&#10003;</span> Free Case Review
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span style="font-size:14px;">&#10003;</span> No Fee Unless We Win
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span style="font-size:14px;">&#10003;</span> No Upfront Payments
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff;font-weight:600;">
+          <span style="font-size:14px;">&#10003;</span> You Always Come First
+        </div>
+      </div>
+    </div>
 
-              <div class="mistake-item">
-                <div class="mistake-num">4</div>
-                <div><p>Not Keeping Track of Expenses</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Document every out-of-pocket cost related to your injury, no matter how small.</span></div>
-              </div>
-
-              <div class="mistake-item">
-                <div class="mistake-num">5</div>
-                <div><p>Ignoring Legal Advice</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Follow your attorney's guidance closely — it protects your claim at every stage.</span></div>
-              </div>
-
-              <div class="mistake-item">
-                <div class="mistake-num">6</div>
-                <div><p>Discussing the Case on Social Media</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Anything you post publicly can be used against you. Stay off social media.</span></div>
-              </div>
-
-              <div class="mistake-item">
-                <div class="mistake-num">7</div>
-                <div><p>Accepting Early Settlement Offers</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">Early offers from insurers are almost always far below what you actually deserve.</span></div>
-              </div>
-
-              <div class="mistake-item">
-                <div class="mistake-num">8</div>
-                <div><p>Delaying Legal Action</p>
-                <span style="font-size:.85rem;color:#666;font-weight:400;">California has strict statutes of limitations. Contact an attorney right away.</span></div>
-              </div>
-
-            </div>
-          </section>
-
-        </div><!-- /.main-content -->
-
-        <!-- ── Right: Sidebar ── -->
-        <aside>
-
-          <!-- Free Case Review Form -->
-          <div class="sidebar-box">
-            <div class="sidebar-box-title">Free Case Review</div>
-            <div class="sidebar-box-body">
-              <form action="../contact.html" method="get">
-                <div class="form-group">
-                  <label for="pr-name">Full Name</label>
-                  <input type="text" id="pr-name" name="name" placeholder="Your full name" required />
-                </div>
-                <div class="form-group">
-                  <label for="pr-phone">Phone Number</label>
-                  <input type="tel" id="pr-phone" name="phone" placeholder="(415) 000-0000" />
-                </div>
-                <div class="form-group">
-                  <label for="pr-email">Email Address</label>
-                  <input type="email" id="pr-email" name="email" placeholder="you@example.com" required />
-                </div>
-                <div class="form-group">
-                  <label for="pr-type">Case Type</label>
-                  <select id="pr-type" name="case_type">
-                    <option value="">Select case type…</option>
-                    <option>Construction Accident</option>
-                    <option>Slip &amp; Fall</option>
-                    <option>Motor Vehicle</option>
-                    <option>Real Estate</option>
-                    <option>Dangerous Premises</option>
-                    <option>Defective Products</option>
-                    <option>Wrongful Death</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="pr-message">Brief Description</label>
-                  <textarea id="pr-message" name="message" placeholder="Briefly describe your situation…"></textarea>
-                </div>
-                <button type="submit" class="form-submit">Submit My Case</button>
-              </form>
-            </div>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="sidebar-box">
-            <div class="sidebar-box-title">Contact Us</div>
-            <div class="sidebar-box-body">
-              <a href="tel:4154007000" class="phone-link">415-400-7000</a>
-              <address>
-                <strong>Novato Office</strong>
-                7200 Redwood Blvd #300<br>
-                Novato, CA 94945
-
-                <strong>San Francisco Office</strong>
-                235 Montgomery St Suite #440<br>
-                San Francisco, CA 94104
-              </address>
-            </div>
-          </div>
-
-        </aside>
-
-      </div><!-- /.sidebar-layout -->
-    </div><!-- /.container -->
-  </main>
-
-  <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -344,72 +598,36 @@
         <p>San Francisco's personal injury law firm since 2003. Humble warriors committed to putting people first.</p>
       </div>
       <div class="lms-footer-col">
+        <h4>Why LMS</h4>
+        <ul>
+          <li><a href="index.html">Why Hire LMS</a></li>
+          <li><a href="prepare.html">Prepare For Your Case</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="lms-footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="../why-lms/index.html">Why LMS Law</a></li>
           <li><a href="../attorneys/index.html">Our Team</a></li>
           <li><a href="../practice-areas/index.html">Practice Areas</a></li>
           <li><a href="../testimonials.html">Testimonials</a></li>
           <li><a href="../victories.html">Clients' Victories</a></li>
-          <li><a href="../why-lms/faqs.html">FAQs</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="lms-footer-col">
-        <h4>Practice Areas</h4>
-        <ul>
-          <li><a href="../practice-areas/construction.html">Construction Injuries</a></li>
-          <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
-          <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle</a></li>
-          <li><a href="../practice-areas/real-estate.html">Real Estate</a></li>
-          <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
-          <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
-          <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
         </ul>
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 </body>
 </html>
