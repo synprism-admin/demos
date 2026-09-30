@@ -1,14 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact LMS Law Firm | San Francisco Personal Injury Attorneys</title>
-  <meta name="description" content="Contact LMS Law Firm's personal injury attorneys in San Francisco. Free case review, no fees unless you win. Call 415-400-7000 or submit online." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Free Case Review | LMS Law San Francisco</title>
+<meta name="description" content="Contact LMS Law for a free, confidential personal injury case review. No fee unless we win. Serving San Francisco, Marin, Napa, Sonoma and the Bay Area since 2003.">
 <link rel="stylesheet" href="./shared.css">
+<style>
+
+/* ── Intro band ── */
+.ct-intro {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 24px;
+}
+.ct-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.ct-intro h2 { font-size: clamp(20px,2.8vw,32px); margin-bottom: 14px; line-height: 1.25; }
+.ct-intro h2 em { color: var(--crimson); font-style: normal; }
+.ct-intro p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 12px; }
+
+.ct-contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ct-contact-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--crimson);
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.ct-card-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--crimson);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.ct-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.ct-card-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+.ct-card-value a { color: var(--crimson); }
+.ct-card-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ── Main form section ── */
+.ct-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ── Full form box ── */
+.ct-form-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--crimson);
+  padding: 40px 36px;
+}
+.ct-form-box h2 {
+  font-size: clamp(20px,2.5vw,28px);
+  margin-bottom: 6px;
+}
+.ct-form-box .tagline {
+  font-size: 14px;
+  color: var(--crimson);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.ct-form-box .subline {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.ct-frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ct-fgroup { margin-bottom: 14px; }
+.ct-fgroup label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.ct-fgroup input,
+.ct-fgroup select,
+.ct-fgroup textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color .15s;
+}
+.ct-fgroup input:focus,
+.ct-fgroup select:focus,
+.ct-fgroup textarea:focus { border-color: var(--crimson); }
+.ct-fgroup textarea { min-height: 120px; resize: vertical; }
+.ct-fgroup select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.ct-submit {
+  width: 100%;
+  background: var(--crimson);
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background .15s;
+  margin-top: 4px;
+}
+.ct-submit:hover { background: var(--crimson-dk); }
+.ct-disclaimer {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ── Sidebar info ── */
+.ct-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+.ct-info-box {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--crimson);
+  padding: 24px;
+}
+.ct-info-box h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.ct-office {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.ct-office:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.ct-office-name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 4px;
+}
+.ct-office p { font-size: 13px; color: var(--mid); line-height: 1.65; }
+.ct-office a { color: var(--crimson); font-weight: 600; }
+
+.ct-hours-box {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  padding: 20px 22px;
+}
+.ct-hours-box h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.ct-hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--mid);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ct-hours-row:last-child { border-bottom: none; }
+.ct-hours-row strong { color: #1a1a1a; }
+
+.ct-guarantee {
+  background: var(--crimson);
+  padding: 22px 24px;
+}
+.ct-g-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.ct-g-item:last-child { margin-bottom: 0; }
+
+/* ── Map section ── */
+.ct-maps {
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 64px 24px;
+}
+.ct-maps-inner { max-width: 1200px; margin: 0 auto; }
+.ct-maps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+.ct-map-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.ct-map-header {
+  background: var(--crimson);
+  padding: 16px 20px;
+}
+.ct-map-header h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.ct-map-header p { font-size: 12px; color: rgba(255,255,255,.8); }
+.ct-map-embed {
+  position: relative;
+  padding-bottom: 60%;
+  background: #e8e8e8;
+  overflow: hidden;
+}
+.ct-map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.ct-map-footer {
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+.ct-map-footer p { font-size: 13px; color: var(--mid); }
+.ct-map-footer a {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--crimson);
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s;
+}
+.ct-map-footer a:hover { border-bottom-color: var(--crimson); }
+
+@media (max-width: 1024px) {
+  .ct-main { grid-template-columns: 1fr; }
+  .ct-intro-inner { grid-template-columns: 1fr; gap: 32px; }
+  .ct-maps-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .ct-frow { grid-template-columns: 1fr; }
+  .ct-form-box { padding: 28px 20px; }
+}
+</style>
 </head>
 <body>
 
@@ -30,7 +338,7 @@
   <div class="lms-nav-inner">
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="./why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./why-lms/index.html">Our Approach</a>
           <a href="./why-lms/prepare.html">Prepare For Your Case</a>
@@ -38,7 +346,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./attorneys/index.html">Our Team</a>
           <a href="./attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +359,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="./practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="./practice-areas/construction.html">Construction Injuries</a>
           <a href="./practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -69,6 +377,15 @@
     </ul>
   </div>
 </nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb"><a href="./index.html">Home</a><span>&#8250;</span> Contact Us</div>
+    <h1>Contact Our Personal Injury Attorneys Today!</h1>
+  </div>
+</div>
+
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
   <div class="lms-g-inner">
@@ -79,165 +396,200 @@
   </div>
 </div>
 
-
-<div class="page-header">
-  <div class="container">
-    <h1>Contact Our Personal Injury Attorneys Today!</h1>
-    <p class="section-subhead">Humble Warriors, Committed To Putting You First</p>
+<!-- INTRO -->
+<div class="ct-intro">
+  <div class="ct-intro-inner">
+    <div>
+      <div style="width:48px;height:3px;background:var(--crimson);margin-bottom:18px;"></div>
+      <h2>Humble Warriors, <em>Committed To Putting You First</em></h2>
+      <p>Our attorneys are ready to listen. Tell us what happened and we will help you understand your options with no obligation and no upfront cost. Your first consultation is always free and completely confidential.</p>
+      <p style="font-size:14px;color:var(--muted);">We respond to all inquiries within one business day. For urgent matters, please call us directly.</p>
+    </div>
+    <div class="ct-contact-cards">
+      <div class="ct-contact-card">
+        <div class="ct-card-icon">&#128222;</div>
+        <div>
+          <div class="ct-card-label">Main Phone</div>
+          <div class="ct-card-value"><a href="tel:4154007000">415-400-7000</a></div>
+          <div class="ct-card-sub">Monday - Friday, 9:00am - 5:00pm</div>
+        </div>
+      </div>
+      <div class="ct-contact-card">
+        <div class="ct-card-icon">&#128205;</div>
+        <div>
+          <div class="ct-card-label">San Francisco Office</div>
+          <div class="ct-card-value">235 Montgomery Street Suite #440</div>
+          <div class="ct-card-sub">San Francisco, CA 94104</div>
+        </div>
+      </div>
+      <div class="ct-contact-card">
+        <div class="ct-card-icon">&#128205;</div>
+        <div>
+          <div class="ct-card-label">Novato Office</div>
+          <div class="ct-card-value">7200 Redwood Blvd #300</div>
+          <div class="ct-card-sub">Novato, CA 94945</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- FORM + SIDEBAR -->
+<div class="ct-main">
 
+  <!-- FORM -->
+  <div class="ct-form-box">
+    <h2>Free Case Review</h2>
+    <div class="tagline">Humble Warriors, Committed To Putting You First</div>
+    <div class="subline">Free Case Review &nbsp;|&nbsp; No Fees Unless You Win &nbsp;|&nbsp; No Upfront Payments &nbsp;|&nbsp; You Always Come First</div>
 
-<div>
-            <span class="ci-label">Phone</span>
-            <span class="ci-value"><a href="tel:4154007000" style="font-weight:700;font-size:1.1rem;">415-400-7000</a></span>
-          </div>
-        </div>
-
-        <div class="contact-info-item">
-          <div class="ci-icon">📍</div>
-          <div>
-            <span class="ci-label">San Francisco Office</span>
-            <span class="ci-value">
-              One Sansome Street, Suite 3500<br />
-              San Francisco, CA 94104
-            </span>
-          </div>
-        </div>
-
-        <div class="contact-info-item">
-          <div class="ci-icon">📍</div>
-          <div>
-            <span class="ci-label">Marin County Office</span>
-            <span class="ci-value">
-              100 Smith Ranch Road, Suite 125<br />
-              San Rafael, CA 94903
-            </span>
-          </div>
-        </div>
-
-        <div class="contact-info-item">
-          <div class="ci-icon">🕐</div>
-          <div>
-            <span class="ci-label">Office Hours</span>
-            <span class="ci-value">Monday – Friday: 9:00am – 5:00pm<br />After-hours &amp; emergency available by appointment</span>
-          </div>
-        </div>
-
-        <div class="team-photo-wrap">
-          <img src="https://lmslaw.com/wp-content/uploads/2022/04/team-page-img.jpg" alt="LMS Law Firm Team" />
-        </div>
-
-        <p style="font-weight:700;font-size:.88rem;margin-bottom:10px;color:#1a1a1a;">Follow Us</p>
-        <div class="social-links">
-          <a href="#" title="Facebook">f</a>
-          <a href="#" title="Twitter">𝕏</a>
-          <a href="#" title="LinkedIn">in</a>
-          <a href="#" title="Instagram">📸</a>
-          <a href="#" title="YouTube">▶</a>
-        </div>
+    <div class="ct-frow">
+      <div class="ct-fgroup">
+        <label>First Name *</label>
+        <input type="text" placeholder="First name">
       </div>
-
-      <!-- RIGHT: Contact Form -->
-      <div>
-        <div style="background:#f7f5f2;border-radius:5px;padding:38px;">
-          <h2 style="font-size:1.5rem;color:#8B1A2A;margin-bottom:6px;">Send Us a Message</h2>
-          <p style="font-size:.88rem;color:#666;margin-bottom:24px;">Your consultation is free and confidential. We will respond within one business day.</p>
-          <form action="#" method="post">
-            <div class="form-row">
-              <div class="form-group">
-                <label>First Name *</label>
-                <input class="form-control" type="text" name="first_name" required />
-              </div>
-              <div class="form-group">
-                <label>Last Name *</label>
-                <input class="form-control" type="text" name="last_name" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Email Address *</label>
-              <input class="form-control" type="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input class="form-control" type="tel" name="phone" />
-            </div>
-            <div class="form-group">
-              <label>Type of Injury *</label>
-              <select class="form-control" name="injury_type" required>
-                <option value="">Select Injury Type</option>
-                <option>Construction &amp; Worksite Injury</option>
-                <option>Motor Vehicle Accident</option>
-                <option>Slip, Trip &amp; Fall</option>
-                <option>Dangerous Premises</option>
-                <option>Defective Products</option>
-                <option>Wrongful Death</option>
-                <option>Real Estate Matter</option>
-                <option>Medical Malpractice</option>
-                <option>Other Personal Injury</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Date of Incident</label>
-              <input class="form-control" type="date" name="incident_date" />
-            </div>
-            <div class="form-group">
-              <label>Tell Us About Your Case *</label>
-              <textarea class="form-control" name="message" style="min-height:140px;" placeholder="Please describe what happened, including any injuries, medical treatment, and other relevant details..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-crimson" style="width:100%;font-size:.95rem;padding:15px;">Submit Free Case Review</button>
-            <p class="form-disclaimer" style="margin-top:16px;text-align:center;">By submitting this form, you acknowledge that no attorney-client relationship is formed until a written agreement is signed. Information shared is protected and confidential. We respect your privacy.</p>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- OFFICE MAPS -->
-<section class="maps-section" style="background:#f7f5f2;">
-  <div class="container">
-    <h2 class="section-title center text-center" style="margin-bottom:32px;">Our Office Locations</h2>
-    <div class="maps-grid">
-      <div>
-        <div class="office-box" style="margin-bottom:16px;">
-          <h4>🏢 San Francisco Office</h4>
-          <p>
-            One Sansome Street, Suite 3500<br />
-            San Francisco, CA 94104<br />
-            <a href="tel:4154007000">415-400-7000</a>
-          </p>
-        </div>
-        <div class="map-placeholder">
-          <div class="map-icon">📍</div>
-          <strong>San Francisco</strong>
-          <span>One Sansome Street, Suite 3500</span>
-          <a href="https://maps.google.com/?q=One+Sansome+Street+San+Francisco+CA" target="_blank" class="btn btn-crimson" style="margin-top:10px;font-size:.8rem;padding:8px 16px;">Open in Google Maps</a>
-        </div>
-      </div>
-      <div>
-        <div class="office-box" style="margin-bottom:16px;">
-          <h4>🏢 Marin County Office</h4>
-          <p>
-            100 Smith Ranch Road, Suite 125<br />
-            San Rafael, CA 94903<br />
-            <a href="tel:4154007000">415-400-7000</a>
-          </p>
-        </div>
-        <div class="map-placeholder">
-          <div class="map-icon">📍</div>
-          <strong>Marin County</strong>
-          <span>100 Smith Ranch Road, San Rafael</span>
-          <a href="https://maps.google.com/?q=100+Smith+Ranch+Road+San+Rafael+CA" target="_blank" class="btn btn-crimson" style="margin-top:10px;font-size:.8rem;padding:8px 16px;">Open in Google Maps</a>
-        </div>
+      <div class="ct-fgroup">
+        <label>Last Name *</label>
+        <input type="text" placeholder="Last name">
       </div>
     </div>
+    <div class="ct-frow">
+      <div class="ct-fgroup">
+        <label>Email Address *</label>
+        <input type="email" placeholder="you@email.com">
+      </div>
+      <div class="ct-fgroup">
+        <label>Phone Number *</label>
+        <input type="tel" placeholder="415-555-0000">
+      </div>
+    </div>
+    <div class="ct-frow">
+      <div class="ct-fgroup">
+        <label>Type of Injury / Case *</label>
+        <select>
+          <option value="">Select a practice area...</option>
+          <option>Construction / Worksite Injury</option>
+          <option>Slip, Trip &amp; Fall</option>
+          <option>Motor Vehicle Crash</option>
+          <option>Dangerous Premises</option>
+          <option>Defective Products</option>
+          <option>Wrongful Death</option>
+          <option>Real Estate / Commercial Tenant</option>
+          <option>Medical Malpractice</option>
+          <option>Tourist Accident</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="ct-fgroup">
+        <label>Date of Incident</label>
+        <input type="date">
+      </div>
+    </div>
+    <div class="ct-fgroup">
+      <label>Tell Us What Happened *</label>
+      <textarea placeholder="Please describe what happened, including any injuries, medical treatment received, and other relevant details..."></textarea>
+    </div>
+    <button class="ct-submit" type="button">SUBMIT FREE CASE REVIEW</button>
+    <p class="ct-disclaimer">By submitting this form, you acknowledge that no attorney-client relationship is formed until a written agreement is signed. Information shared is protected and confidential.</p>
   </div>
-</section>
 
-<!-- FOOTER -->
+  <!-- SIDEBAR -->
+  <div class="ct-sidebar">
+
+    <div class="ct-info-box">
+      <h4>Our Offices</h4>
+      <div class="ct-office">
+        <div class="ct-office-name">San Francisco Office</div>
+        <p>
+          235 Montgomery Street Suite #440<br>
+          San Francisco, CA 94104<br>
+          <a href="tel:4154007000">415-400-7000</a>
+        </p>
+      </div>
+      <div class="ct-office">
+        <div class="ct-office-name">Novato Office</div>
+        <p>
+          7200 Redwood Blvd #300<br>
+          Novato, CA 94945<br>
+          <a href="tel:4154007000">415-400-7000</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="ct-hours-box">
+      <h4>Office Hours</h4>
+      <div class="ct-hours-row"><strong>Monday - Friday</strong><span>9:00am - 5:00pm</span></div>
+      <div class="ct-hours-row"><strong>Saturday</strong><span>By Appointment</span></div>
+      <div class="ct-hours-row"><strong>Sunday</strong><span>Closed</span></div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5;">After-hours and emergency consultations available by appointment. Call 415-400-7000.</p>
+    </div>
+
+    <div class="ct-guarantee">
+      <div class="ct-g-item"><span>&#10003;</span> Free Case Review</div>
+      <div class="ct-g-item"><span>&#10003;</span> No Fee Unless We Win</div>
+      <div class="ct-g-item"><span>&#10003;</span> No Upfront Payments</div>
+      <div class="ct-g-item"><span>&#10003;</span> You Always Come First</div>
+    </div>
+
+    <div class="ct-info-box">
+      <h4>Quick Links</h4>
+      <ul class="sidebar-nav">
+        <li><a href="./why-lms/index.html">Why Hire LMS Law</a></li>
+        <li><a href="./why-lms/prepare.html">Prepare For Your Case</a></li>
+        <li><a href="./why-lms/faqs.html">FAQs</a></li>
+        <li><a href="./practice-areas/index.html">Our Practice Areas</a></li>
+        <li><a href="./attorneys/index.html">Meet Our Attorneys</a></li>
+        <li><a href="./victories.html">Client Victories</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+<div class="ct-maps">
+  <div class="ct-maps-inner">
+    <div style="text-align:center;">
+      <div style="width:48px;height:3px;background:var(--crimson);margin:0 auto 16px;"></div>
+      <h2 style="font-family:'Merriweather',serif;font-size:clamp(20px,2.5vw,30px);margin-bottom:8px;">Our Office Locations</h2>
+      <p style="font-size:15px;color:var(--mid);max-width:560px;margin:0 auto;line-height:1.75;">We serve clients throughout San Francisco, Marin, Napa, Sonoma, Alameda, Solano, and all of California from our two Bay Area offices.</p>
+    </div>
+    <div class="ct-maps-grid">
+      <div class="ct-map-card">
+        <div class="ct-map-header">
+          <h3>San Francisco Office</h3>
+          <p>235 Montgomery Street Suite #440, San Francisco, CA 94104</p>
+        </div>
+        <div class="ct-map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.9185641803!2d-122.40264492357!3d37.79126097197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f5b2b4b5d%3A0x5c1a9f0e8e0a0000!2s235%20Montgomery%20St%20%23440%2C%20San%20Francisco%2C%20CA%2094104!5e0!3m2!1sen!2sus!4v1700000000000"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LMS Law San Francisco Office">
+          </iframe>
+        </div>
+        <div class="ct-map-footer">
+          <p>415-400-7000</p>
+          <a href="https://maps.google.com/?q=235+Montgomery+Street+Suite+440+San+Francisco+CA+94104" target="_blank" rel="noopener">Open in Google Maps &#8250;</a>
+        </div>
+      </div>
+      <div class="ct-map-card">
+        <div class="ct-map-header">
+          <h3>Novato Office</h3>
+          <p>7200 Redwood Blvd #300, Novato, CA 94945</p>
+        </div>
+        <div class="ct-map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3134.8!2d-122.5731!3d38.1074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085!2s7200+Redwood+Blvd+Novato!5e0!3m2!1sen!2sus!4v1700000000001"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LMS Law Novato Office">
+          </iframe>
+        </div>
+        <div class="ct-map-footer">
+          <p>415-400-7000</p>
+          <a href="https://maps.google.com/?q=7200+Redwood+Blvd+300+Novato+CA+94945" target="_blank" rel="noopener">Open in Google Maps &#8250;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="lms-footer">
@@ -274,47 +626,17 @@
       </div>
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; Novato Office</div>
-          7200 Redwood Blvd #300<br>Novato, CA 94945
-        </div>
-        <div class="lms-office">
-          <div class="lms-office-label">&#128205; San Francisco</div>
-          235 Montgomery St Suite #440<br>San Francisco, CA 94104
-        </div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; Novato Office</div>7200 Redwood Blvd #300<br>Novato, CA 94945</div>
+        <div class="lms-office"><div class="lms-office-label">&#128205; San Francisco</div>235 Montgomery St Suite #440<br>San Francisco, CA 94104</div>
       </div>
     </div>
     <div class="lms-footer-bottom">
-      <p>COPYRIGHT &copy; 2026 &mdash; LMS LAW LLP</p>
-      <div class="lms-footer-links">
-        <a href="#">DISCLAIMER</a>
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">ADA</a>
-      </div>
+      <p>COPYRIGHT &copy; 2026 - LMS LAW LLP</p>
+      <div class="lms-footer-links"><a href="#">DISCLAIMER</a><a href="#">PRIVACY POLICY</a><a href="#">ADA</a></div>
     </div>
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 </body>
 </html>

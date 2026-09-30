@@ -1,5 +1,5 @@
 /* ============================================================
-   LMS LAW — Master Stylesheet v5
+   LMS LAW - Master Stylesheet v5
    Crimson nav bar, white topbar, consistent across all pages
    ============================================================ */
 
@@ -54,7 +54,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .btn-outline-white:hover { border-color:#fff; background:rgba(255,255,255,.1); color:#fff; }
 
 /* ══════════════════════════════════════════
-   TOPBAR — white, logo left, phone + CTA right
+   TOPBAR - white, logo left, phone + CTA right
 ══════════════════════════════════════════ */
 .lms-topbar {
   background: #fff;
@@ -98,7 +98,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .lms-tb-cta:hover { background: var(--crimson-dk); color: #fff; }
 
 /* ══════════════════════════════════════════
-   NAV — full crimson bar, white text, ALL CAPS
+   NAV - full crimson bar, white text, ALL CAPS
 ══════════════════════════════════════════ */
 .lms-nav {
   background: var(--crimson);
@@ -147,7 +147,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .lms-caret { font-size: 9px; margin-left: 3px; }
 
-/* CONTACT US button — white outlined on crimson bar */
+/* CONTACT US button - white outlined on crimson bar */
 .lms-contact-btn {
   margin-left: auto; /* push to far right */
 }
@@ -216,7 +216,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .page-header .breadcrumb span { margin: 0 7px; }
 
 /* ══════════════════════════════════════════
-   GUARANTEE STRIP — crimson bg, white text
+   GUARANTEE STRIP - crimson bg, white text
 ══════════════════════════════════════════ */
 .lms-guarantee {
   background: var(--crimson);
