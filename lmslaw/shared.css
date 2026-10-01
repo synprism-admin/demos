@@ -106,6 +106,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   top: 0;
   z-index: 200;
   box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  /* needed for mobile dropdown absolute positioning */
+  overflow: visible;
 }
 .lms-nav-inner {
   max-width: 1200px;
@@ -614,7 +616,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 @media (max-width: 768px) {
   .lms-logo img { height:44px; }
-  .lms-phone { font-size:18px; }
+  .lms-phone { font-size:13px; }
   .lms-tb-cta { font-size:11px; padding:10px 14px; }
   .lms-menu { display:none; }
   .attorney-grid { grid-template-columns:repeat(2,1fr); }
@@ -628,6 +630,104 @@ ul { list-style: none; padding: 0; margin: 0; }
   .frow { grid-template-columns:1fr; }
   .lms-g-inner { gap:16px; }
   .victories-table { grid-template-columns:1fr; }
+
+  /* ── Mobile hamburger button ── */
+  .lms-mob-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+    height: 50px;
+    width: 44px;
+    flex-shrink: 0;
+  }
+  .lms-mob-btn span {
+    display: block;
+    height: 2px;
+    width: 24px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform .25s, opacity .25s;
+  }
+  .lms-mob-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .lms-mob-btn.open span:nth-child(2) { opacity: 0; }
+  .lms-mob-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── Mobile panel ── */
+  .lms-mob-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #7a1220;
+    z-index: 999;
+    box-shadow: 0 6px 18px rgba(0,0,0,.35);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .lms-mob-panel.open { display: block; }
+
+  .lms-mob-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .lms-mob-row a {
+    flex: 1;
+    display: block;
+    padding: 14px 20px;
+    color: rgba(255,255,255,.9);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .lms-mob-row a.lms-active,
+  .lms-mob-row a:hover { color: #fff; }
+
+  .lms-mob-tog {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,.7);
+    font-size: 11px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: transform .2s;
+  }
+  .lms-mob-tog.open { transform: rotate(180deg); }
+
+  .lms-mob-sub {
+    display: none;
+    background: rgba(0,0,0,.2);
+  }
+  .lms-mob-sub.open { display: block; }
+  .lms-mob-sub a {
+    display: block;
+    padding: 11px 20px 11px 32px;
+    color: rgba(255,255,255,.78);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .lms-mob-sub a:hover { color: #fff; background: rgba(255,255,255,.07); }
+
+  /* sticky nav: keep hamburger visible when scrolled */
+  .lms-nav--scrolled .lms-mob-btn { display: flex; }
+  .lms-nav--scrolled .lms-mob-panel.open { display: block; }
+}
+
+@media (min-width: 769px) {
+  .lms-mob-btn { display: none; }
+  .lms-mob-panel { display: none !important; }
 }
 @media (max-width:480px) {
   .attorney-grid { grid-template-columns:repeat(2,1fr); }

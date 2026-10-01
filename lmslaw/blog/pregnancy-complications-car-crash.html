@@ -346,18 +346,7 @@
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
-<script>
-(function(){
-  var nav = document.querySelector('.lms-nav');
-  var topbar = document.querySelector('.lms-topbar');
-  if(!nav) return;
-  function check(){
-    var threshold = topbar ? topbar.offsetHeight : 60;
-    nav.classList.toggle('lms-nav--scrolled', window.scrollY > threshold);
-  }
-  window.addEventListener('scroll', check, {passive:true});
-  check();
-})();
-</script>
+
+<script src="../shared.js"></script>
 </body>
 </html>
