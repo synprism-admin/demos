@@ -178,15 +178,18 @@ ul { list-style: none; padding: 0; margin: 0; }
   flex-shrink: 0;
 }
 .lms-nav-logo img {
-  height: 36px;
+  height: 72px;
   width: auto;
   display: block;
 }
 .lms-nav--scrolled .lms-nav-logo {
   opacity: 1;
   pointer-events: auto;
-  width: 120px;
+  width: 200px;
   margin-right: 16px;
+}
+.lms-nav--scrolled .lms-nav-inner {
+  height: 80px;
 }
 
 /* ── Dropdowns ── */
