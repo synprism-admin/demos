@@ -426,7 +426,7 @@ ul { list-style: none; padding: 0; margin: 0; }
    ATTORNEY HERO BAND
 ══════════════════════════════════════════ */
 .atty-hero {
-  background: var(--crimson);
+  background: #c9b89c;
   overflow: hidden;
 }
 .atty-hero-inner {
@@ -434,10 +434,10 @@ ul { list-style: none; padding: 0; margin: 0; }
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
-  min-height: 340px;
+  min-height: 380px;
 }
 .atty-hero-photo {
-  flex: 0 0 260px;
+  flex: 0 0 340px;
   align-self: stretch;
   overflow: hidden;
 }
@@ -450,37 +450,37 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .atty-hero-info {
   flex: 1;
-  padding: 48px 60px;
+  padding: 56px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .atty-hero-info h1 {
-  color: #fff;
+  color: #2a1a10;
   font-size: clamp(26px, 3.5vw, 42px);
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   font-family: 'Merriweather', serif;
 }
 .atty-hero-info .atty-title {
-  color: rgba(255,255,255,0.85);
+  color: #5a4030;
   font-size: 17px;
   font-style: italic;
   margin: 0 0 14px;
 }
 .atty-hero-info .atty-phone {
-  color: rgba(255,255,255,0.9);
+  color: #3a2a1a;
   font-size: 15px;
   margin: 0 0 28px;
 }
 .atty-hero-info .atty-phone a {
-  color: rgba(255,255,255,0.9);
+  color: #3a2a1a;
   text-decoration: none;
 }
-.atty-hero-info .atty-phone a:hover { color: #fff; }
+.atty-hero-info .atty-phone a:hover { color: var(--crimson); }
 .atty-cta {
   display: inline-block;
-  background: #fff;
-  color: var(--crimson);
+  background: var(--crimson);
+  color: #fff;
   padding: 12px 28px;
   font-size: 13px;
   font-weight: 700;
@@ -489,7 +489,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-radius: 2px;
   align-self: flex-start;
 }
-.atty-cta:hover { background: #f0f0f0; color: var(--crimson); }
+.atty-cta:hover { background: var(--crimson-dk); color: #fff; }
 
 .bio-grid { display:grid; grid-template-columns:260px 1fr; gap:48px; align-items:start; }
 .bio-photo { width:100%; border:3px solid var(--border); display:block; }
