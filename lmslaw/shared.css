@@ -127,7 +127,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   overflow: hidden;
   max-width: 0;
 }
-.lms-nav-logo img { height: 64px; width: auto; display: block; }
+.lms-nav-logo img { height: 64px; width: auto; display: block; padding: 8px 0; }
 .lms-nav--scrolled .lms-nav-logo {
   opacity: 1;
   pointer-events: auto;
