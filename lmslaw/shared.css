@@ -113,7 +113,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 0 24px;
   display: flex;
   align-items: stretch;
-  height: 50px;
+  height: 70px;
 }
 /* Nav logo — hidden until topbar scrolls away */
 .lms-nav-logo {
@@ -127,11 +127,11 @@ ul { list-style: none; padding: 0; margin: 0; }
   overflow: hidden;
   max-width: 0;
 }
-.lms-nav-logo img { height: 32px; width: auto; display: block; }
+.lms-nav-logo img { height: 64px; width: auto; display: block; }
 .lms-nav--scrolled .lms-nav-logo {
   opacity: 1;
   pointer-events: auto;
-  max-width: 160px;
+  max-width: 220px;
 }
 .lms-menu {
   display: flex;
