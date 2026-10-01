@@ -167,6 +167,10 @@
   margin-top: 12px;
   line-height: 1.6;
 }
+.ct-check-group { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 6px; }
+.ct-check-group label { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--dark); font-weight: 400; text-transform: none; letter-spacing: 0; cursor: pointer; }
+.ct-check-group input[type="checkbox"] { accent-color: var(--crimson); width: 15px; height: 15px; cursor: pointer; }
+.ct-fgroup-full { grid-column: 1 / -1; }
 
 /* ── Sidebar info ── */
 .ct-sidebar { display: flex; flex-direction: column; gap: 20px; }
@@ -445,49 +449,95 @@
     <div class="ct-frow">
       <div class="ct-fgroup">
         <label>First Name *</label>
-        <input type="text" placeholder="First name">
+        <input type="text" name="first_name" placeholder="First name" required>
       </div>
       <div class="ct-fgroup">
         <label>Last Name *</label>
-        <input type="text" placeholder="Last name">
+        <input type="text" name="last_name" placeholder="Last name" required>
       </div>
     </div>
     <div class="ct-frow">
       <div class="ct-fgroup">
-        <label>Email Address *</label>
-        <input type="email" placeholder="you@email.com">
+        <label>Email *</label>
+        <input type="email" name="email" placeholder="you@email.com" required>
       </div>
       <div class="ct-fgroup">
-        <label>Phone Number *</label>
-        <input type="tel" placeholder="415-555-0000">
+        <label>Phone *</label>
+        <input type="tel" name="phone" placeholder="415-555-0000" required>
       </div>
     </div>
     <div class="ct-frow">
       <div class="ct-fgroup">
-        <label>Type of Injury / Case *</label>
-        <select>
-          <option value="">Select a practice area...</option>
-          <option>Construction / Worksite Injury</option>
-          <option>Slip, Trip &amp; Fall</option>
-          <option>Motor Vehicle Crash</option>
-          <option>Dangerous Premises</option>
-          <option>Defective Products</option>
-          <option>Wrongful Death</option>
-          <option>Real Estate / Commercial Tenant</option>
-          <option>Medical Malpractice</option>
-          <option>Tourist Accident</option>
+        <label>Zip Code *</label>
+        <input type="number" name="zip" placeholder="94104" required>
+      </div>
+      <div class="ct-fgroup">
+        <label>Date of Incident</label>
+        <input type="date" name="incident_date">
+      </div>
+    </div>
+
+    <div class="ct-fgroup ct-fgroup-full">
+      <label>Please provide a brief description of your legal issue or accident *</label>
+      <textarea name="description" placeholder="Please describe what happened, including any injuries, medical treatment received, and other relevant details..." required></textarea>
+    </div>
+
+    <div class="ct-fgroup ct-fgroup-full">
+      <label>How would you like to be contacted? *</label>
+      <div class="ct-check-group">
+        <label><input type="checkbox" name="contact_method" value="Phone"> Phone</label>
+        <label><input type="checkbox" name="contact_method" value="Email"> Email</label>
+      </div>
+    </div>
+
+    <div class="ct-fgroup ct-fgroup-full">
+      <label>Which have you been affected by? *</label>
+      <div class="ct-check-group">
+        <label><input type="checkbox" name="case_type" value="Construction"> Construction (Worksite Injuries)</label>
+        <label><input type="checkbox" name="case_type" value="Slip Fall"> Slip / Trip &amp; Fall Accidents</label>
+        <label><input type="checkbox" name="case_type" value="Motor Vehicle"> Crashes (Motor Vehicle)</label>
+        <label><input type="checkbox" name="case_type" value="Real Estate"> Real Estate (Commercial)</label>
+        <label><input type="checkbox" name="case_type" value="Dangerous Premises"> Dangerous Premises</label>
+        <label><input type="checkbox" name="case_type" value="Defective Products"> Defective Products</label>
+        <label><input type="checkbox" name="case_type" value="Wrongful Death"> Wrongful Death</label>
+      </div>
+    </div>
+
+    <div class="ct-frow">
+      <div class="ct-fgroup">
+        <label>How did you find us? *</label>
+        <select name="referral_source" required>
+          <option value="">Select...</option>
+          <option>Direct Referral</option>
+          <option>Search Engine</option>
+          <option>Social Media</option>
+          <option>Advertisement</option>
           <option>Other</option>
         </select>
       </div>
       <div class="ct-fgroup">
-        <label>Date of Incident</label>
-        <input type="date">
+        <label>Who referred you?</label>
+        <input type="text" name="referred_by" placeholder="Name of referral">
       </div>
     </div>
-    <div class="ct-fgroup">
-      <label>Tell Us What Happened *</label>
-      <textarea placeholder="Please describe what happened, including any injuries, medical treatment received, and other relevant details..."></textarea>
+
+    <div class="ct-fgroup ct-fgroup-full">
+      <label>Who would you like to speak to? *</label>
+      <select name="attorney" required>
+        <option value="">Select an attorney...</option>
+        <option>Michael R. Solomon</option>
+        <option>Deborah A. Churton</option>
+        <option>Michael E. Hale</option>
+        <option>David L. Winnett</option>
+      </select>
     </div>
+
+    <div class="ct-fgroup ct-fgroup-full">
+      <div class="ct-check-group">
+        <label><input type="checkbox" name="disclaimer" required> I have read and understand the <a href="./disclaimer.html" target="_blank" style="color:var(--crimson);">disclaimer</a> and <a href="./privacy-policy.html" target="_blank" style="color:var(--crimson);">privacy policy</a> *</label>
+      </div>
+    </div>
+
     <button class="ct-submit" type="button">SUBMIT FREE CASE REVIEW</button>
     <p class="ct-disclaimer">By submitting this form, you acknowledge that no attorney-client relationship is formed until a written agreement is signed. Information shared is protected and confidential.</p>
   </div>

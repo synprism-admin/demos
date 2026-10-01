@@ -358,24 +358,46 @@
     <div class="hp-form-card">
       <h3>Get a Free Case Review</h3>
       <div class="form-row">
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
       </div>
-      <input type="tel" placeholder="Phone Number">
-      <input type="email" placeholder="Email Address">
-      <select>
-        <option value="">Type of Case</option>
-        <option>Construction / Worksite Injury</option>
-        <option>Slip, Trip &amp; Fall</option>
-        <option>Motor Vehicle Crash</option>
-        <option>Dangerous Premises</option>
-        <option>Defective Products</option>
-        <option>Wrongful Death</option>
-        <option>Real Estate / Commercial Tenant</option>
+      <input type="tel" name="phone" placeholder="Phone Number *" required>
+      <input type="email" name="email" placeholder="Email Address *" required>
+      <input type="number" name="zip" placeholder="Zip Code *" required>
+      <select name="referral_source">
+        <option value="">How did you find us?</option>
+        <option>Direct Referral</option>
+        <option>Search Engine</option>
+        <option>Social Media</option>
+        <option>Advertisement</option>
         <option>Other</option>
       </select>
-      <textarea placeholder="Tell us about your case..."></textarea>
+      <select name="attorney">
+        <option value="">Who would you like to speak to?</option>
+        <option>Michael R. Solomon</option>
+        <option>Deborah A. Churton</option>
+        <option>Michael E. Hale</option>
+        <option>David L. Winnett</option>
+      </select>
+      <textarea name="description" placeholder="Brief description of your case..." style="min-height:70px;resize:vertical;"></textarea>
+      <div style="margin:6px 0 10px;">
+        <div style="font-size:11px;color:rgba(255,255,255,.7);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Affected by:</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px 12px;">
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Construction" style="accent-color:#8b1a1a;"> Construction</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Slip Fall" style="accent-color:#8b1a1a;"> Slip / Fall</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Motor Vehicle" style="accent-color:#8b1a1a;"> Motor Vehicle</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Dangerous Premises" style="accent-color:#8b1a1a;"> Dangerous Premises</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Defective Products" style="accent-color:#8b1a1a;"> Defective Products</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Wrongful Death" style="accent-color:#8b1a1a;"> Wrongful Death</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Real Estate" style="accent-color:#8b1a1a;"> Real Estate</label>
+        </div>
+      </div>
+      <label style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:rgba(255,255,255,.7);cursor:pointer;margin-bottom:8px;">
+        <input type="checkbox" name="disclaimer" required style="accent-color:#8b1a1a;margin-top:2px;flex-shrink:0;">
+        I have read and understand the <a href="./disclaimer.html" target="_blank" style="color:rgba(255,255,255,.9);text-decoration:underline;margin-left:3px;">disclaimer</a>
+      </label>
       <button class="hp-form-submit" type="button">SUBMIT - IT'S FREE</button>
+      <p class="form-disclaimer">Your information is 100% confidential. By submitting, you agree to be contacted by LMS Law LLP regarding your inquiry.</p>
     </div>
   </div>
 </section>
