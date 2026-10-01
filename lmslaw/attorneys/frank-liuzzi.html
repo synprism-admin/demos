@@ -8,6 +8,165 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared.css">
+<style>
+/* ── Attorney Hero ── */
+.atty-hero {
+  background: #5a4e3a;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: stretch;
+  min-height: 320px;
+}
+.atty-hero-photo {
+  overflow: hidden;
+}
+.atty-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.atty-hero-info {
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.atty-hero-info h1 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(26px, 3.5vw, 42px);
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.atty-hero-info h1 span {
+  display: block;
+  color: rgba(255,255,255,.55);
+  font-weight: 400;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-style: italic;
+}
+.atty-hero-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,.8);
+  font-size: 15px;
+  margin: 18px 0 22px;
+  text-decoration: none;
+}
+.atty-hero-phone:hover { color: #fff; }
+.atty-hero-phone svg { flex-shrink: 0; }
+.atty-contact-btn {
+  display: inline-block;
+  background: var(--crimson);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 10px 24px;
+  border: 2px solid var(--crimson);
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background .2s, color .2s;
+}
+.atty-contact-btn:hover { background: transparent; color: #fff; }
+
+/* ── Bio Body ── */
+.atty-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 40px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 56px;
+  align-items: start;
+}
+.atty-bio-lead {
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  color: var(--crimson);
+  line-height: 1.85;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.atty-bio-text p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+/* ── Accordion sections ── */
+.atty-accordion { margin-top: 32px; border-top: 1px solid var(--border); }
+.atty-acc-item { border-bottom: 1px solid var(--border); }
+.atty-acc-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  user-select: none;
+  gap: 12px;
+}
+.atty-acc-q .plus {
+  font-size: 22px;
+  color: var(--crimson);
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+.atty-acc-item.open .plus { transform: rotate(45deg); }
+.atty-acc-a {
+  display: none;
+  padding: 0 4px 18px;
+}
+.atty-acc-item.open .atty-acc-a { display: block; }
+.atty-acc-a ul { margin: 0; padding-left: 18px; }
+.atty-acc-a ul li { font-size: 14px; color: var(--mid); line-height: 1.8; margin-bottom: 4px; }
+.atty-acc-a ul li a { color: var(--crimson); }
+
+/* ── Sidebar ── */
+.atty-sidebar { display: flex; flex-direction: column; gap: 24px; }
+.atty-award-box {
+  text-align: center;
+  padding: 20px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.atty-award-box .recognition-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.atty-award-box img { max-width: 180px; width: 100%; display: block; margin: 0 auto; }
+
+@media (max-width: 900px) {
+  .atty-hero { grid-template-columns: 200px 1fr; }
+  .atty-hero-info { padding: 32px 28px; }
+  .atty-body { grid-template-columns: 1fr; }
+  .atty-sidebar { order: -1; flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .atty-hero { grid-template-columns: 1fr; }
+  .atty-hero-photo { height: 280px; }
+}
+</style>
 </head>
 <body>
 
@@ -30,7 +189,7 @@
     <a href="../index.html" class="lms-nav-logo"><img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Footer-Logo.png" alt="LMS Law"></a>
     <ul class="lms-menu">
       <li class="lms-has-drop">
-        <a href="../why-lms/index.html">WHY LMS <span class="lms-caret">▾</span></a>
+        <a href="../why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../why-lms/index.html">Our Approach</a>
           <a href="../why-lms/prepare.html">Prepare For Your Case</a>
@@ -38,7 +197,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../attorneys/index.html" class="lms-active">ATTORNEYS <span class="lms-caret">▾</span></a>
+        <a href="../attorneys/index.html" class="lms-active">ATTORNEYS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../attorneys/index.html">Our Team</a>
           <a href="../attorneys/frank-liuzzi.html">Frank C. Liuzzi</a>
@@ -51,7 +210,7 @@
         </div>
       </li>
       <li class="lms-has-drop">
-        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">▾</span></a>
+        <a href="../practice-areas/index.html">PRACTICE AREAS <span class="lms-caret">&#9662;</span></a>
         <div class="lms-drop">
           <a href="../practice-areas/construction.html">Construction Injuries</a>
           <a href="../practice-areas/slip-fall.html">Slip / Trip &amp; Fall</a>
@@ -69,6 +228,7 @@
     </ul>
   </div>
 </nav>
+
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
   <div class="lms-g-inner">
@@ -79,159 +239,139 @@
   </div>
 </div>
 
-
-<div class="page-header">
-  <div class="inner">
-    <h1>Frank C. Liuzzi</h1>
+<!-- ATTORNEY HERO -->
+<div class="atty-hero">
+  <div class="atty-hero-photo">
+    <img src="https://lmslaw.com/wp-content/uploads/2022/04/frank-l.jpg" alt="Frank C. Liuzzi">
+  </div>
+  <div class="atty-hero-info">
+    <h1>Frank C. Liuzzi, <span>Founding Partner</span></h1>
+    <a href="tel:4154007001" class="atty-hero-phone">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.47 11.47 0 0 0 3.58.57 1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.47 11.47 0 0 0 .57 3.58 1 1 0 0 1-.24 1.01z"/></svg>
+      415.400.7001
+    </a>
+    <a href="../contact.html" class="atty-contact-btn">CONTACT ME</a>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="section">
+<!-- BIO BODY -->
+<div class="atty-body">
+  <div class="atty-bio-text">
+    <p class="atty-bio-lead">After graduating from the University of San Francisco School of Law in 1991, I worked in a large defense firm before shifting to plaintiff's work. In 2003, I founded Liuzzi, Murphy, Solomon, LLP with two other USF alumni. Together, we were driven to establish a firm that draws on our collective expertise in law with the values and standards we expect in a top personal injury law firm. Since our founding, we have welcomed additional top-tier partners, and we all take pride in our firm and providing exceptional representation to our clients.</p>
 
-  <!-- Bio grid: photo left, details right -->
-  <div class="bio-grid" style="margin-bottom:56px;">
-    <div>
-      <img class="bio-photo" src="https://lmslaw.com/wp-content/uploads/2022/04/frank-l.jpg" alt="Frank C. Liuzzi">
-      <div class="bio-info" style="margin-top:16px;">
-        <div class="label">Title</div>
-        <div class="value">Founding Partner</div>
+    <p>I became a personal injury lawyer for the challenging work and the ability to change lives profoundly for the better. I, and we as a firm, offer a realistic approach to clients and their cases, with a down-to-earth, no-pretense energy that helps support and represent them most effectively. If you ask me the secret to my success, I would tell you that my philosophy of pragmatism allows me to find truth in beliefs and practical solutions to help my clients achieve the best possible outcome.</p>
+
+    <p>I am a hard-working family man who values direct information and emphasizes realistic goals. At LMS Law, our core values of integrity, transparency, advocacy, honesty, and commitment, are at the center of our practice. Over these last 20+ years, our firm has become like a family. Our collective work ethic strengthens our skills at litigating cases that inspire and engage while our firm pursues innovative endeavors. We do not rush files; instead, we curate the best possible results.</p>
+
+    <p>I take pride in our work at LMS Law not only because of my prodigious colleagues, but for our ability, as a whole, to chart our destiny. The values and codes we uphold are significant for everyone, even the little league baseball players I have had the privilege of coaching.</p>
+
+    <!-- Accordion -->
+    <div class="atty-accordion">
+      <div class="atty-acc-item">
+        <div class="atty-acc-q"><span>Areas of Practice</span><span class="plus">+</span></div>
+        <div class="atty-acc-a">
+          <ul>
+            <li><a href="../practice-areas/construction.html">Construction Accidents</a></li>
+            <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
+            <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
+            <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle Accidents</a></li>
+            <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
+            <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="bio-info">
-        <div class="label">Phone</div>
-        <div class="value"><a href="tel:4154007001" style="color:var(--crimson);">415.400.7001</a></div>
+      <div class="atty-acc-item">
+        <div class="atty-acc-q"><span>Bar Admissions</span><span class="plus">+</span></div>
+        <div class="atty-acc-a">
+          <ul><li>State Bar of California, 1992</li></ul>
+        </div>
       </div>
-      <div class="bio-info">
-        <div class="label">Bar Admission</div>
-        <div class="value">State Bar of California, 1992</div>
+      <div class="atty-acc-item">
+        <div class="atty-acc-q"><span>Education</span><span class="plus">+</span></div>
+        <div class="atty-acc-a">
+          <ul>
+            <li>Santa Clara University, 1988</li>
+            <li>University of San Francisco School of Law, 1991</li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <div class="bio-content">
-      <p>After graduating from the University of San Francisco School of Law in 1991, I worked in a large defense firm before shifting to plaintiff's work. In 2003, I founded Liuzzi, Murphy, Solomon, LLP with two other USF alumni. Together, we were driven to establish a firm that draws on our collective expertise in law with the values and standards we expect in a top personal injury law firm.</p>
-
-      <p>Since our founding, we have welcomed additional top-tier partners, and we all take pride in our firm and providing exceptional representation to our clients. I became a personal injury lawyer for the challenging work and the ability to change lives profoundly for the better. I, and we as a firm, offer a realistic approach to clients and their cases, with a down-to-earth, no-pretense energy that helps support and represent them most effectively.</p>
-
-      <p>If you ask me the secret to my success, I would tell you that my philosophy of pragmatism allows me to find truth in beliefs and practical solutions to help my clients achieve the best possible outcome. I am a hard-working family man who values direct information and emphasizes realistic goals. At LMS Law, our core values of integrity, transparency, advocacy, honesty, and commitment, are at the center of our practice.</p>
-
-      <div class="bio-section-title">Areas of Practice</div>
-      <ul class="bio-list">
-        <li><a href="../practice-areas/construction.html">Construction Accidents</a></li>
-        <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
-        <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
-        <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle Accidents</a></li>
-        <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
-        <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
-      </ul>
-
-      <div class="bio-section-title">Education</div>
-      <ul class="bio-list">
-        <li>Santa Clara University, 1988</li>
-        <li>University of San Francisco School of Law, 1991</li>
-      </ul>
-
-      <div class="bio-section-title">Bar Admissions</div>
-      <ul class="bio-list">
-        <li>State Bar of California, 1992</li>
-      </ul>
-
-      <div class="bio-section-title">Record Verdicts &amp; Settlements</div>
-      <ul class="bio-list">
-        <li>Motor vehicle strikes pedestrian - 7-figure verdict</li>
-        <li>Worker slips in hotel lobby - 7-figure settlement</li>
-        <li>Construction worker falls from ladder - 6-figure</li>
-        <li>Helicopter blade separation crash - 7-figure</li>
-        <li>Helicopter tail boom collapse - 7-figure</li>
-        <li>Multiple fatality SUV crash - 8-figure</li>
-        <li>Fall from scaffold - 7-figure</li>
-        <li>Slip at SF Landmark - 6-figure</li>
-      </ul>
-
-      <div class="bio-section-title">Awards &amp; Honors</div>
-      <ul class="bio-list">
-        <li>Super Lawyer 2015-2022, 2024</li>
-        <li>Honoree, IABA Judges Luncheon 2017</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Content + Sidebar -->
-  <div class="content-sidebar">
-    <div>
-      <div class="callout">
-        <h3>Ready to discuss your case?</h3>
-        <p>Frank C. Liuzzi offers a free, no-obligation case review. There is no fee unless you win.</p>
-        <a href="../contact.html" class="btn-outline-white">Schedule a Free Consultation</a>
+      <div class="atty-acc-item">
+        <div class="atty-acc-q"><span>Record Verdicts &amp; Settlements</span><span class="plus">+</span></div>
+        <div class="atty-acc-a">
+          <ul>
+            <li>Motor vehicle strikes pedestrian - 7-figure verdict</li>
+            <li>Worker slips in hotel lobby - 7-figure settlement</li>
+            <li>Construction worker falls from ladder - 6-figure</li>
+            <li>Helicopter blade separation crash - 7-figure</li>
+            <li>Helicopter tail boom collapse - 7-figure</li>
+            <li>Multiple fatality SUV crash - 8-figure</li>
+            <li>Fall from scaffold - 7-figure</li>
+            <li>Slip at SF Landmark - 6-figure</li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <div>
-      <div class="form-box">
-        <h3>Free Case Review</h3>
-        <p class="subtext">Speak with Frank directly - confidential &amp; no obligation.</p>
-        <form action="../contact.html" method="get">
-          <div class="frow">
-            <div class="fgroup"><label>First Name</label><input type="text" name="first" placeholder="Jane"></div>
-            <div class="fgroup"><label>Last Name</label><input type="text" name="last" placeholder="Doe"></div>
-          </div>
-          <div class="fgroup"><label>Phone</label><input type="tel" name="phone" placeholder="(415) 555-0100"></div>
-          <div class="fgroup"><label>Email</label><input type="email" name="email" placeholder="jane@email.com"></div>
-          <div class="fgroup"><label>Brief Description of Your Case</label><textarea name="message" placeholder="Tell us what happened..."></textarea></div>
-          <button class="form-submit" type="submit">Send My Case Details</button>
-        </form>
-        <p class="form-disclaimer">By submitting you agree to our privacy policy. Attorney-client relationship is not formed until a written agreement is signed.</p>
-      </div>
-
-      <div class="sidebar-box" style="margin-top:24px;">
-        <h4>Our Attorneys</h4>
-        <ul class="sidebar-nav">
-          <li><a href="frank-liuzzi.html" class="active">Frank C. Liuzzi</a></li>
-          <li><a href="michael-solomon.html">Michael R. Solomon</a></li>
-          <li><a href="deborah-churton.html">Deborah A. Churton</a></li>
-          <li><a href="michael-hale.html">Michael E. Hale</a></li>
-          <li><a href="david-winnett.html">David L. Winnett</a></li>
-          <li><a href="martin-murphy.html">Martin D. Murphy</a></li>
-          <li><a href="frank-moore.html">Frank S. Moore</a></li>
-        </ul>
+      <div class="atty-acc-item">
+        <div class="atty-acc-q"><span>Special Awards</span><span class="plus">+</span></div>
+        <div class="atty-acc-a">
+          <ul>
+            <li>Super Lawyer 2015-2022, 2024</li>
+            <li>Honoree, IABA Judges Luncheon 2017</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Sidebar -->
+  <div class="atty-sidebar">
+    <div class="atty-award-box">
+      <div class="recognition-label">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b1a1a" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        Recognition
+      </div>
+      <img src="https://lmslaw.com/wp-content/uploads/2022/04/Frank_L_SuperLawyers_Lawyer_award.png" alt="Frank C. Liuzzi - Rated by Super Lawyers">
+    </div>
+
+    <div class="form-box">
+      <h3>Free Case Review</h3>
+      <p class="subtext">Speak with Frank directly - confidential &amp; no obligation.</p>
+      <form action="../contact.html" method="get">
+        <div class="frow">
+          <div class="fgroup"><label>First Name</label><input type="text" name="first" placeholder="Jane"></div>
+          <div class="fgroup"><label>Last Name</label><input type="text" name="last" placeholder="Doe"></div>
+        </div>
+        <div class="fgroup"><label>Phone</label><input type="tel" name="phone" placeholder="(415) 555-0100"></div>
+        <div class="fgroup"><label>Email</label><input type="email" name="email" placeholder="jane@email.com"></div>
+        <div class="fgroup"><label>Brief Description</label><textarea name="message" placeholder="Tell us what happened..."></textarea></div>
+        <button class="form-submit" type="submit">Send My Case Details</button>
+      </form>
+      <p class="form-disclaimer">By submitting you agree to our privacy policy. Attorney-client relationship is not formed until a written agreement is signed.</p>
+    </div>
+
+    <div class="sidebar-box">
+      <h4>Our Attorneys</h4>
+      <ul class="sidebar-nav">
+        <li><a href="frank-liuzzi.html" class="active">Frank C. Liuzzi</a></li>
+        <li><a href="michael-solomon.html">Michael R. Solomon</a></li>
+        <li><a href="deborah-churton.html">Deborah A. Churton</a></li>
+        <li><a href="michael-hale.html">Michael E. Hale</a></li>
+        <li><a href="david-winnett.html">David L. Winnett</a></li>
+        <li><a href="martin-murphy.html">Martin D. Murphy</a></li>
+        <li><a href="frank-moore.html">Frank S. Moore</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 <!-- FOOTER -->
 <footer class="lms-footer">
   <div class="lms-footer-inner">
     <div class="lms-footer-top">
-
-      <!-- Col 1: Brand -->
       <div class="lms-footer-brand">
         <a href="../index.html">
-          <img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Footer-Logo.png" alt="LMS Law - Liuzzi Murphy Solomon Churton Hale Winnett">
+          <img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Footer-Logo.png" alt="LMS Law">
         </a>
-        <div class="lms-footer-phone">
-          <a href="tel:4154007000">415-400-7000</a>
-        </div>
+        <div class="lms-footer-phone"><a href="tel:4154007000">415-400-7000</a></div>
         <p>San Francisco's personal injury law firm since 2003. Humble warriors committed to putting people first.</p>
         <div class="lms-footer-socials">
           <a href="https://www.linkedin.com/company/liuzzi-murphy-solomon-churton-&-hale-llp/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -245,8 +385,6 @@
           </a>
         </div>
       </div>
-
-      <!-- Col 2: Quick Links (split 2-col like the reference) -->
       <div class="lms-footer-links-col">
         <h4>Quick Links</h4>
         <div class="lms-footer-links-2col">
@@ -264,27 +402,18 @@
           </ul>
         </div>
       </div>
-
-      <!-- Col 3: Offices -->
       <div class="lms-footer-offices">
         <h4>Our Offices</h4>
         <div class="lms-office">
           <div class="lms-office-label">&#128205; Novato Office</div>
-          <a href="https://www.google.com/maps/place/LMS+Law+Personal+Injury+Law+Firm/@38.093588,-122.552432,12z" target="_blank" rel="noopener">
-            7200 Redwood Blvd #300<br>Novato, CA 94945
-          </a>
+          <a href="https://www.google.com/maps/place/LMS+Law+Personal+Injury+Law+Firm/@38.093588,-122.552432,12z" target="_blank" rel="noopener">7200 Redwood Blvd #300<br>Novato, CA 94945</a>
         </div>
         <div class="lms-office">
           <div class="lms-office-label">&#128205; San Francisco Office</div>
-          <a href="https://maps.app.goo.gl/yEfcNK58jmEe9bRg9" target="_blank" rel="noopener">
-            235 Montgomery Street Suite #440<br>San Francisco, CA 94104
-          </a>
+          <a href="https://maps.app.goo.gl/yEfcNK58jmEe9bRg9" target="_blank" rel="noopener">235 Montgomery Street Suite #440<br>San Francisco, CA 94104</a>
         </div>
       </div>
-
     </div>
-
-    <!-- Bottom bar -->
     <div class="lms-footer-bottom">
       <p>COPYRIGHT &copy; 2026 - LMS LAW LLP</p>
       <div class="lms-footer-bottom-links">
@@ -298,6 +427,18 @@
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
+
+<script>
+// Accordion
+document.querySelectorAll('.atty-acc-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.atty-acc-item.open').forEach(x => x.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
 <script>
 (function(){
   var nav = document.querySelector('.lms-nav');
