@@ -44,6 +44,7 @@
 
 <nav class="lms-nav">
   <div class="lms-nav-inner">
+    <a href="index.html" class="lms-nav-logo"><img src="https://lmslaw.com/wp-content/uploads/2022/04/LMS-Law-Footer-Logo.png" alt="LMS Law"></a>
     <ul class="lms-menu">
       <li class="lms-has-drop"><a href="./why-lms/index.html">WHY LMS <span class="lms-caret">&#9662;</span></a><div class="lms-drop"><a href="./why-lms/index.html">Our Approach</a><a href="./why-lms/prepare.html">Prepare For Your Case</a><a href="./why-lms/faqs.html">FAQs</a></div></li>
       <li class="lms-has-drop"><a href="./attorneys/index.html">ATTORNEYS <span class="lms-caret">&#9662;</span></a><div class="lms-drop"><a href="./attorneys/index.html">Our Team</a><a href="./attorneys/frank-liuzzi.html">Frank C. Liuzzi</a><a href="./attorneys/michael-solomon.html">Michael R. Solomon</a><a href="./attorneys/deborah-churton.html">Deborah A. Churton</a><a href="./attorneys/michael-hale.html">Michael E. Hale</a><a href="./attorneys/david-winnett.html">David L. Winnett</a><a href="./attorneys/martin-murphy.html">Martin D. Murphy</a><a href="./attorneys/frank-moore.html">Frank S. Moore</a></div></li>
@@ -318,5 +319,18 @@
   </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
+<script>
+(function(){
+  var nav = document.querySelector('.lms-nav');
+  var topbar = document.querySelector('.lms-topbar');
+  if(!nav) return;
+  function check(){
+    var threshold = topbar ? topbar.offsetHeight : 60;
+    nav.classList.toggle('lms-nav--scrolled', window.scrollY > threshold);
+  }
+  window.addEventListener('scroll', check, {passive:true});
+  check();
+})();
+</script>
 </body>
 </html>
