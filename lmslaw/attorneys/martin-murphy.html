@@ -8,6 +8,217 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared.css">
+<style>
+/* -- Attorney Hero -- */
+.atty-hero {
+  background: #7a7262;
+  overflow: hidden;
+}
+.atty-hero-inner {
+  display: flex;
+  align-items: stretch;
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: 400px;
+}
+.atty-hero-photo {
+  flex: 0 0 300px;
+  overflow: hidden;
+}
+.atty-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.atty-hero-info {
+  flex: 1;
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.atty-hero-info h1 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(26px, 3.5vw, 44px);
+  color: #fff;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.atty-hero-info .atty-role {
+  font-size: 16px;
+  color: rgba(255,255,255,.75);
+  font-style: italic;
+  margin: 0 0 20px;
+  font-family: 'Merriweather', serif;
+}
+.atty-hero-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--crimson);
+  margin-bottom: 20px;
+}
+.atty-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin-bottom: 32px;
+}
+.atty-hero-meta span {
+  font-size: 13px;
+  color: rgba(255,255,255,.82);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.atty-hero-meta a {
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+.atty-hero-meta a:hover { color: #fff; }
+.atty-hero-cta {
+  display: inline-block;
+  background: var(--crimson);
+  color: #fff;
+  padding: 13px 32px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: flex-start;
+}
+.atty-hero-cta:hover { background: var(--crimson-dk); color: #fff; }
+
+/* -- Bio layout -- */
+.atty-body {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+.atty-main {}
+.atty-main h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+}
+.atty-main .atty-role-tag {
+  display: inline-block;
+  background: var(--crimson);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+}
+.atty-main p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #444;
+  margin-bottom: 16px;
+}
+.atty-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--crimson);
+  margin: 32px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--crimson);
+  display: inline-block;
+}
+.atty-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+.atty-list li {
+  font-size: 14px;
+  color: #444;
+  padding: 5px 0 5px 16px;
+  border-bottom: 1px solid #f0ede8;
+  position: relative;
+}
+.atty-list li::before {
+  content: '›';
+  color: var(--crimson);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+.atty-list a { color: #444; text-decoration: none; }
+.atty-list a:hover { color: var(--crimson); }
+
+/* verdicts */
+.atty-verdicts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+.atty-verdict-item {
+  background: #f7f5f2;
+  border-left: 3px solid var(--crimson);
+  padding: 10px 14px;
+}
+.atty-verdict-item .v-amount {
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--crimson);
+}
+.atty-verdict-item .v-case {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* sidebar */
+.atty-sidebar {}
+.atty-sidebar .form-box {
+  margin-bottom: 24px;
+}
+.atty-award-badge {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--crimson);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.atty-award-badge h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--crimson);
+  margin: 0 0 8px;
+}
+.atty-award-badge p {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .atty-hero-inner { flex-direction: column; min-height: auto; }
+  .atty-hero-photo { flex: none; height: 300px; width: 100%; }
+  .atty-hero-info { padding: 36px 24px; }
+  .atty-body { grid-template-columns: 1fr; }
+  .atty-verdicts { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -69,6 +280,7 @@
     </ul>
   </div>
 </nav>
+
 <!-- GUARANTEE STRIP -->
 <div class="lms-guarantee">
   <div class="lms-g-inner">
@@ -79,128 +291,109 @@
   </div>
 </div>
 
-
-<div class="page-header">
-  <div class="inner">
-    <h1>Martin D. Murphy</h1>
+<!-- ATTORNEY HERO -->
+<div class="atty-hero">
+  <div class="atty-hero-inner">
+    <div class="atty-hero-photo">
+      <img src="https://lmslaw.com/wp-content/uploads/2022/04/martin.jpg" alt="Martin D. Murphy - Of Counsel">
+    </div>
+    <div class="atty-hero-info">
+      <h1>Martin D. Murphy</h1>
+      <p class="atty-role">Of Counsel</p>
+      <div class="atty-hero-divider"></div>
+      <div class="atty-hero-meta">
+        <span>&#9990; <a href="tel:4154007005">415.400.7005</a></span>
+        <span>&#9878; State Bar of California, 1992</span>
+      </div>
+      <a href="../contact.html" class="atty-hero-cta">Request a Free Consultation</a>
+    </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="section">
+<!-- BODY: bio + sidebar -->
+<div class="atty-body">
 
-  <div class="bio-grid" style="margin-bottom:56px;">
-    <div>
-      <img class="bio-photo" src="https://lmslaw.com/wp-content/uploads/2022/04/martin.jpg" alt="Martin D. Murphy">
-      <div class="bio-info" style="margin-top:16px;">
-        <div class="label">Title</div>
-        
+  <!-- MAIN BIO -->
+  <div class="atty-main">
+    <h2>Martin D. Murphy</h2>
+    <div class="atty-role-tag">Of Counsel</div>
 
+    <p>I started my legal career working as an applicant attorney in workers compensation cases because I enjoyed helping others in bad situations get their lives back on track and receive the compensation they deserve. Preparation is the foundation of my work. I always aim to have a solid understanding of potential outcomes and remain straightforward and approachable with my clients throughout the process.</p>
 
+    <div class="atty-section-title">Areas of Practice</div>
+    <ul class="atty-list">
+      <li><a href="../practice-areas/construction.html">Construction Accidents</a></li>
+      <li><a href="../practice-areas/slip-fall.html">Slip &amp; Fall</a></li>
+      <li><a href="../practice-areas/dangerous-premises.html">Dangerous Premises</a></li>
+      <li><a href="../practice-areas/motor-vehicle.html">Motor Vehicle Accidents</a></li>
+      <li><a href="../practice-areas/defective-products.html">Defective Products</a></li>
+      <li><a href="../practice-areas/wrongful-death.html">Wrongful Death</a></li>
+    </ul>
 
-<div class="value">Of Counsel</div>
-      </div>
-      <div class="bio-info">
-        <div class="label">Phone</div>
-        <div class="value"><a href="tel:4154007005" style="color:var(--crimson);">415.400.7005</a></div>
-      </div>
-      <div class="bio-info">
-        <div class="label">Notable Result</div>
-        <div class="value">Over 7 figures in personal injury resolutions</div>
-      </div>
-    </div>
+    <div class="atty-section-title">Education</div>
+    <ul class="atty-list">
+      <li>St. Ignatius College Preparatory, 1984</li>
+      <li>Santa Clara University, 1988</li>
+      <li>University of San Francisco School of Law, 1991</li>
+    </ul>
 
-    <div class="bio-content">
-      <h2>Martin D. Murphy</h2>
-      <div class="role-tag">Of Counsel</div>
+    <div class="atty-section-title">Bar Admissions</div>
+    <ul class="atty-list">
+      <li>State Bar of California, 1992</li>
+    </ul>
 
-      <p>I started my legal career working as an applicant attorney in workers compensation cases because I enjoyed helping others in bad situations get their lives back on track and receive the compensation they deserve. Preparation is the foundation of my work. I always aim to have a solid understanding of potential outcomes and remain straightforward and approachable with my clients throughout the process.</p>
-
-      <p>I enjoy working at LMS Law because there is a collegial atmosphere of peers where we take pleasure in serving our clients, in our camaraderie, and in maintaining a healthy work/life balance. If you asked me what my secret to success is, I would say relentless preparation and attention to detail, strong work ethic, the ability to communicate and connect with all types of personalities, and devising creative ways to resolve issues.</p>
-
-      <div class="bio-section-title">Education</div>
-      <ul class="bio-list">
-        <li>St. Ignatius College Preparatory, 1984</li>
-        <li>Santa Clara University, 1988</li>
-        <li>University of San Francisco School of Law, 1991</li>
-      </ul>
-
-      <div class="bio-section-title">Professional Associations</div>
-      <ul class="bio-list">
-        <li>Consumer Attorneys of California (CAOC)</li>
-        <li>San Francisco Trial Lawyers Association (SFTLA)</li>
-        <li>American Association of Justice (AAJ)</li>
-        <li>The Olympic Club</li>
-      </ul>
-    </div>
+    <div class="atty-section-title">Professional Associations</div>
+    <ul class="atty-list">
+      <li>Consumer Attorneys of California (CAOC)</li>
+      <li>San Francisco Trial Lawyers Association (SFTLA)</li>
+      <li>American Association of Justice (AAJ)</li>
+      <li>The Olympic Club</li>
+    </ul>
   </div>
 
-  <!-- Content + Sidebar -->
-  <div class="content-sidebar">
-    <div>
-      <div class="callout">
-        <h3>Ready to discuss your case?</h3>
-        <p>Martin D. Murphy offers a free, no-obligation case review. No fee unless you win.</p>
-        <a href="../contact.html" class="btn-outline-white">Schedule a Free Consultation</a>
-      </div>
+  <!-- SIDEBAR -->
+  <div class="atty-sidebar">
+
+    <!-- Award badge -->
+    <div class="atty-award-badge">
+      <h4>Notable Results</h4>
+      <p>Over 7 figures in personal injury resolutions. Decades of experience in workers compensation and personal injury.</p>
     </div>
 
-    <div>
-      <div class="form-box">
-        <h3>Free Case Review</h3>
-        <p class="subtext">Speak with Martin directly - confidential &amp; no obligation.</p>
-        <form action="../contact.html" method="get">
-          <div class="frow">
-            <div class="fgroup"><label>First Name</label><input type="text" name="first" placeholder="Jane"></div>
-            <div class="fgroup"><label>Last Name</label><input type="text" name="last" placeholder="Doe"></div>
-          </div>
-          <div class="fgroup"><label>Phone</label><input type="tel" name="phone" placeholder="(415) 555-0100"></div>
-          <div class="fgroup"><label>Email</label><input type="email" name="email" placeholder="jane@email.com"></div>
-          <div class="fgroup"><label>Brief Description of Your Case</label><textarea name="message" placeholder="Tell us what happened…"></textarea></div>
-          <button class="form-submit" type="submit">Send My Case Details</button>
-        </form>
-        <p class="form-disclaimer">By submitting you agree to our privacy policy. Attorney-client relationship is not formed until a written agreement is signed.</p>
-      </div>
-
-      <div class="sidebar-box" style="margin-top:24px;">
-        <h4>Our Attorneys</h4>
-        <ul class="sidebar-nav">
-          <li><a href="frank-liuzzi.html">Frank C. Liuzzi</a></li>
-          <li><a href="michael-solomon.html">Michael R. Solomon</a></li>
-          <li><a href="deborah-churton.html">Deborah A. Churton</a></li>
-          <li><a href="michael-hale.html">Michael E. Hale</a></li>
-          <li><a href="david-winnett.html">David L. Winnett</a></li>
-          <li><a href="martin-murphy.html" class="active">Martin D. Murphy</a></li>
-          <li><a href="frank-moore.html">Frank S. Moore</a></li>
-        </ul>
-      </div>
+    <!-- Case review form -->
+    <div class="form-box">
+      <h3>Free Case Review</h3>
+      <p class="subtext">Speak with Martin directly - confidential &amp; no obligation.</p>
+      <form action="../contact.html" method="get">
+        <div class="frow">
+          <div class="fgroup"><label>First Name</label><input type="text" name="first" placeholder="Jane"></div>
+          <div class="fgroup"><label>Last Name</label><input type="text" name="last" placeholder="Doe"></div>
+        </div>
+        <div class="fgroup"><label>Phone</label><input type="tel" name="phone" placeholder="(415) 555-0100"></div>
+        <div class="fgroup"><label>Email</label><input type="email" name="email" placeholder="jane@email.com"></div>
+        <div class="fgroup"><label>Brief Description of Your Case</label><textarea name="message" placeholder="Tell us what happened..."></textarea></div>
+        <button class="form-submit" type="submit">SEND MY CASE DETAILS</button>
+      </form>
+      <p class="form-disclaimer">By submitting you agree to our privacy policy. Attorney-client relationship is not formed until a written agreement is signed.</p>
     </div>
+
+    <!-- Attorney nav -->
+    <div class="sidebar-box">
+      <h4>Our Attorneys</h4>
+      <ul class="sidebar-nav">
+        <li><a href="frank-liuzzi.html">Frank C. Liuzzi</a></li>
+        <li><a href="michael-solomon.html">Michael R. Solomon</a></li>
+        <li><a href="deborah-churton.html">Deborah A. Churton</a></li>
+        <li><a href="michael-hale.html">Michael E. Hale</a></li>
+        <li><a href="david-winnett.html">David L. Winnett</a></li>
+        <li><a href="martin-murphy.html" class="active">Martin D. Murphy</a></li>
+        <li><a href="frank-moore.html">Frank S. Moore</a></li>
+      </ul>
+    </div>
+
   </div>
-
 </div>
 
-<p class="footer-disclaimer">The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.</p>
-
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.lms-faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.lms-faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Legacy FAQ class support
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(x => x.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
 <!-- FOOTER -->
 <footer class="lms-footer">
   <div class="lms-footer-inner">
@@ -228,7 +421,7 @@
         </div>
       </div>
 
-      <!-- Col 2: Quick Links (split 2-col like the reference) -->
+      <!-- Col 2: Quick Links -->
       <div class="lms-footer-links-col">
         <h4>Quick Links</h4>
         <div class="lms-footer-links-2col">
@@ -278,9 +471,9 @@
       </div>
     </div>
   </div>
-  </div>
   <p class="lms-footer-disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Prior results do not guarantee similar outcomes. LMS Law LLP is licensed to practice law in the State of California.</p>
 </footer>
+
 <script>
 (function(){
   var nav = document.querySelector('.lms-nav');
