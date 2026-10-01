@@ -13,13 +13,17 @@
 .atty-hero {
   background: #5a4e3a;
   display: grid;
-  grid-template-columns: 320px 1fr;
-  height: 380px;
+  grid-template-columns: 300px 1fr;
+  align-items: stretch;
+  min-height: 380px;
 }
 .atty-hero-photo {
   overflow: hidden;
+  position: relative;
 }
 .atty-hero-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -27,7 +31,7 @@
   display: block;
 }
 .atty-hero-info {
-  padding: 0 56px;
+  padding: 0 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
