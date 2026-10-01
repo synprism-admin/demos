@@ -364,12 +364,15 @@
       <input type="tel" name="phone" placeholder="Phone Number *" required>
       <input type="email" name="email" placeholder="Email Address *" required>
       <input type="number" name="zip" placeholder="Zip Code *" required>
-      <select name="referral_source">
-        <option value="">How did you find us?</option>
-        <option>Direct Referral</option>
-        <option>Search Engine</option>
-        <option>Social Media</option>
-        <option>Advertisement</option>
+      <select name="case_type">
+        <option value="">Type of Case</option>
+        <option>Construction / Worksite Injury</option>
+        <option>Slip, Trip &amp; Fall</option>
+        <option>Motor Vehicle Crash</option>
+        <option>Dangerous Premises</option>
+        <option>Defective Products</option>
+        <option>Wrongful Death</option>
+        <option>Real Estate / Commercial Tenant</option>
         <option>Other</option>
       </select>
       <select name="attorney">
@@ -379,23 +382,7 @@
         <option>Michael E. Hale</option>
         <option>David L. Winnett</option>
       </select>
-      <textarea name="description" placeholder="Brief description of your case..." style="min-height:70px;resize:vertical;"></textarea>
-      <div style="margin:6px 0 10px;">
-        <div style="font-size:11px;color:rgba(255,255,255,.7);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Affected by:</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px 12px;">
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Construction" style="accent-color:#8b1a1a;"> Construction</label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Slip Fall" style="accent-color:#8b1a1a;"> Slip / Fall</label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Motor Vehicle" style="accent-color:#8b1a1a;"> Motor Vehicle</label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Dangerous Premises" style="accent-color:#8b1a1a;"> Dangerous Premises</label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Defective Products" style="accent-color:#8b1a1a;"> Defective Products</label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Wrongful Death" style="accent-color:#8b1a1a;"> Wrongful Death</label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);cursor:pointer;"><input type="checkbox" name="case_type" value="Real Estate" style="accent-color:#8b1a1a;"> Real Estate</label>
-        </div>
-      </div>
-      <label style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:rgba(255,255,255,.7);cursor:pointer;margin-bottom:8px;">
-        <input type="checkbox" name="disclaimer" required style="accent-color:#8b1a1a;margin-top:2px;flex-shrink:0;">
-        I have read and understand the <a href="./disclaimer.html" target="_blank" style="color:rgba(255,255,255,.9);text-decoration:underline;margin-left:3px;">disclaimer</a>
-      </label>
+      <textarea name="description" placeholder="Brief description of your case..."></textarea>
       <button class="hp-form-submit" type="button">SUBMIT - IT'S FREE</button>
       <p class="form-disclaimer">Your information is 100% confidential. By submitting, you agree to be contacted by LMS Law LLP regarding your inquiry.</p>
     </div>
@@ -494,29 +481,7 @@
       <a href="./victories.html" class="btn-crimson">WHAT WINNING LOOKS LIKE</a>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;padding:24px 0;">
-      <!-- Satisfaction Guarantee Stamp -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="280" height="280" aria-label="Satisfaction Guarantee">
-        <!-- Outer scalloped ring -->
-        <path d="M130,8 L138,22 L154,18 L158,33 L175,33 L174,49 L190,53 L185,68 L199,76 L190,89 L201,100 L189,110 L197,123 L183,129 L186,144 L172,147 L170,162 L156,161 L149,175 L136,170 L126,183 L116,170 L103,175 L96,161 L82,162 L80,147 L66,144 L69,129 L55,123 L63,110 L51,100 L62,89 L53,76 L67,68 L62,53 L78,49 L77,33 L94,33 L98,18 L114,22 Z" fill="none" stroke="#8b1a1a" stroke-width="3"/>
-        <!-- Inner circle -->
-        <circle cx="130" cy="130" r="88" fill="none" stroke="#8b1a1a" stroke-width="2.5"/>
-        <circle cx="130" cy="130" r="82" fill="none" stroke="#8b1a1a" stroke-width="1"/>
-        <!-- SATISFACTION top arc text -->
-        <path id="topArc" d="M 58,130 A 72,72 0 0,1 202,130" fill="none"/>
-        <text font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8b1a1a" letter-spacing="3">
-          <textPath href="#topArc" startOffset="50%" text-anchor="middle">SATISFACTION</textPath>
-        </text>
-        <!-- GUARANTEE center -->
-        <text x="130" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8b1a1a" letter-spacing="1">· · · · · · · · · · ·</text>
-        <rect x="52" y="122" width="156" height="38" fill="#8b1a1a" rx="3"/>
-        <text x="130" y="147" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#fff" letter-spacing="2">GUARANTEE</text>
-        <text x="130" y="165" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8b1a1a" letter-spacing="1">· · · · · · · · · · ·</text>
-        <!-- SATISFACTION bottom arc text -->
-        <path id="botArc" d="M 58,130 A 72,72 0 0,0 202,130" fill="none"/>
-        <text font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#8b1a1a" letter-spacing="3">
-          <textPath href="#botArc" startOffset="50%" text-anchor="middle">SATISFACTION</textPath>
-        </text>
-      </svg>
+      <img src="https://lmslaw.com/wp-content/uploads/2024/08/Blog-Images-2.png" alt="Satisfaction Guarantee" style="max-width:280px;width:100%;display:block;">
     </div>
   </div>
 </section>
