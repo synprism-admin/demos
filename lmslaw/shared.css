@@ -440,8 +440,12 @@ ul { list-style: none; padding: 0; margin: 0; }
 /* ══════════════════════════════════════════
    BIO PAGE
 ══════════════════════════════════════════ */
+.section { max-width:1200px; margin:0 auto; padding:56px 40px; }
 .bio-grid { display:grid; grid-template-columns:260px 1fr; gap:48px; align-items:start; }
-.bio-photo { width:100%; border:3px solid var(--border); display:block; }
+.bio-photo { width:100%; border:3px solid var(--border); display:block; border-radius:4px; }
+.bio-info { margin-bottom:12px; }
+.bio-info .label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:3px; }
+.bio-info .value { font-size:14px; color:#1a1a1a; font-weight:600; }
 .bio-info-box { background:var(--off-white); border:1px solid var(--border); padding:16px 18px; margin-bottom:12px; }
 .bio-info-box .label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:3px; }
 .bio-info-box .value { font-size:14px; color:#1a1a1a; font-weight:600; }
