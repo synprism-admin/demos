@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Capitol City Design Inc.</title>
+<title>Contact | Capitol City Design Inc.</title>
 <meta name="description" content="Contact Capitol City Design Inc. for electrical engineering and lighting design services in West Sacramento, CA. Call 916.375.0135.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://capcitydesign.com/contact.html">
@@ -12,109 +12,88 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-<style>
-.contact-form label { display: block; font-size: 12px; font-weight: 700; color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
-  width: 100%; padding: 9px 12px; border: 1px solid #ccc; font-family: Arial, sans-serif; font-size: 13px; color: #333; background: #fafafa; margin-bottom: 14px; transition: border-color 0.15s;
-}
-.contact-form input:focus, .contact-form textarea:focus { border-color: #4a7ca5; outline: none; background: #fff; }
-.contact-form textarea { height: 130px; resize: vertical; }
-.contact-form .consent-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
-.contact-form .consent-row input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; width: auto; }
-.contact-form .consent-row label { text-transform: none; font-weight: 400; font-size: 12px; color: #666; margin-bottom: 0; }
-.contact-form button[type="submit"] { background: #4a7ca5; color: #fff; border: none; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 24px; cursor: pointer; transition: background 0.15s; }
-.contact-form button[type="submit"]:hover { background: #3a6285; }
-.form-success { display: none; background: #e6f4ea; border: 1px solid #b2dfbb; color: #276031; padding: 14px 16px; font-size: 13px; margin-bottom: 14px; }
-.contact-info-row { display: flex; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
-.contact-info-block { flex: 1; min-width: 160px; }
-.contact-info-block h3 { font-size: 13px; margin-bottom: 6px; text-transform: uppercase; color: #4a7ca5; }
-.contact-info-block p { font-size: 13px; color: #555; margin: 0; }
-.contact-info-block a { color: #4a7ca5; }
-</style>
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
 
 <header role="banner">
-  <div class="header-inner">
-    <a href="/" class="header-logo" aria-label="Capitol City Design Inc. - Home">
-      <img src="/images/logo.png" alt="Capitol City Design Inc. logo" width="72" height="72">
-      <div class="header-logo-text">
-        <strong>Capitol City Design, Inc.</strong>
-        <span>Electrical Engineering Consultants</span>
-      </div>
-    </a>
-    <nav aria-label="Primary navigation">
-      <button class="nav-mobile-btn" aria-expanded="false" aria-controls="nav-menu" onclick="toggleNav(this)">&#9776; Menu</button>
-      <ul id="nav-menu" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/company.html">Company</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/contact.html" class="active" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  <a href="/" class="header-logo" aria-label="Capitol City Design Inc.">
+    <img src="/images/logo.png" alt="Capitol City Design Inc. logo">
+    <div class="header-logo-text">
+      <strong>Capitol City Design, Inc.</strong>
+      <span>Electrical Engineering Consultants</span>
+    </div>
+  </a>
+  <nav aria-label="Primary navigation">
+    <button class="nav-mobile-btn" aria-expanded="false" aria-controls="nav-menu" onclick="toggleNav(this)">&#9776;</button>
+    <ul id="nav-menu" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/company.html">Company</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/contact.html" class="active" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div class="page-title-bar">
-  <div class="page-title-bar-inner">
+<div class="page-hero">
+  <div class="page-hero-inner">
     <h1>Contact Us</h1>
-    <span class="breadcrumb"><a href="/">Home</a> &rsaquo; Contact</span>
+    <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Contact</p>
   </div>
 </div>
 
 <main id="main-content">
-<div class="page-wrap">
-  <div class="two-col-wrap">
+<div class="content-outer">
+  <div class="two-col">
 
     <div class="main-col">
-      <div class="panel">
+      <div class="card">
         <h2>Get In Touch</h2>
-        <div class="contact-info-row">
-          <div class="contact-info-block">
+        <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:24px;">
+          <div>
             <h3>Address</h3>
             <p>1751 Cebrian St<br>West Sacramento, CA 95691</p>
           </div>
-          <div class="contact-info-block">
+          <div>
             <h3>Phone</h3>
             <p><a href="tel:+191****0135">916.375.0135</a></p>
           </div>
-          <div class="contact-info-block">
+          <div>
             <h3>Email</h3>
             <p><a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
           </div>
         </div>
 
         <h2>Send a Message</h2>
-        <div id="form-success" class="form-success" role="alert">Thank you! Your message has been sent. We will be in touch shortly.</div>
-        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <div id="form-success" class="form-success">Thank you! Your message has been sent. We will be in touch shortly.</div>
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
           <input type="hidden" name="access_key" value="393febfe-46c0-4453-8523-3c67eee8a12f">
           <input type="hidden" name="subject" value="New Contact Form Submission - Capitol City Design">
           <input type="hidden" name="from_name" value="Capitol City Design Website">
           <input type="hidden" name="redirect" value="">
           <input type="checkbox" name="botcheck" style="display:none">
 
-          <label for="name">Full Name <span style="color:#c00;">*</span></label>
-          <input type="text" id="name" name="name" required placeholder="Your full name">
-
-          <label for="email">Email Address <span style="color:#c00;">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="your@email.com">
-
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(916) 555-0000">
-
-          <label for="message">Message <span style="color:#c00;">*</span></label>
-          <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
-
+          <div class="form-group">
+            <label for="name">Full Name <span style="color:#c00">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span style="color:#c00">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(916) 555-0000">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span style="color:#c00">*</span></label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+          </div>
           <div class="consent-row">
             <input type="checkbox" id="consent" name="consent" required>
             <label for="consent">I agree to Capitol City Design's <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Use</a>, and consent to being contacted regarding my inquiry.</label>
           </div>
-
-          <button type="submit">Send Message</button>
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
     </div>
@@ -122,28 +101,19 @@
     <div class="sidebar-col">
       <div class="widget">
         <div class="widget-header"><h4>Contact Information</h4></div>
-        <div class="widget-body contact-widget">
+        <div class="widget-body">
           <p>1751 Cebrian St<br>West Sacramento, CA 95691</p>
           <p>Phone: <a href="tel:+191****0135">916.375.0135</a></p>
           <p>Email: <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
         </div>
       </div>
       <div class="widget">
-        <div class="widget-header"><h4>Company Profile</h4></div>
-        <div class="widget-body">
-          <p style="font-size:12px; color:#555; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
-          <a href="/company.html" class="btn-blue">More Info</a>
-        </div>
-      </div>
-      <div class="widget">
-        <div class="widget-header"><h4>Resources</h4></div>
+        <div class="widget-header"><h4>Navigation</h4></div>
         <div class="widget-body">
           <ul>
-            <li><a href="/company.html">General Information</a></li>
-            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/company.html">Company</a></li>
             <li><a href="/portfolio.html">Portfolio</a></li>
-            <li><a href="/portfolio.html">Portfolio</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -156,9 +126,8 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <h4>Company Profile</h4>
-      <p style="font-size:12px; color:#c8d0d8; margin-bottom:10px;">Capitol City Design has won numerous International Illumination design awards from the Illuminating Engineering Society of North America (IES).</p>
-      <a href="/company.html" class="btn-blue">Download Our PDF</a>
+      <h4>About</h4>
+      <p class="footer-contact-p">Full-service electrical engineering and NCQLP-certified lighting design firm serving Northern California and beyond since 1990.</p>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -166,25 +135,22 @@
         <li><a href="/">Home</a></li>
         <li><a href="/company.html">Company</a></li>
         <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
         <li><a href="/contact.html">Contact Us</a></li>
       </ul>
     </div>
-    <div class="footer-contact-col">
-      <h4>Contact Us</h4>
-      <p>1751 Cebrian St<br>West Sacramento, CA 95691</p>
-      <p>Phone: <a href="tel:+191****0135">916.375.0135</a></p>
-      <p>Email: <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
+    <div>
+      <h4>Contact</h4>
+      <p class="footer-contact-p">1751 Cebrian St<br>West Sacramento, CA 95691</p>
+      <p class="footer-contact-p">Phone: <a href="tel:+191****0135">916.375.0135</a></p>
+      <p class="footer-contact-p">Email: <a href="mailto:sondrag@capcitydesign.com">sondrag@capcitydesign.com</a></p>
     </div>
     <div>
-      <h4>Resources</h4>
+      <h4>Legal</h4>
       <ul>
-        <li><a href="/company.html">General Information</a></li>
         <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
         <li><a href="/accessibility.html">Accessibility</a></li>
+        <li><a href="/privacy.html#ccpa">Do Not Sell My Info</a></li>
       </ul>
     </div>
   </div>
@@ -197,51 +163,18 @@
       <a href="/privacy.html#ccpa">Do Not Sell My Info</a>
     </div>
   </div>
-  <div style="max-width:1000px; margin:0 auto; padding:8px 0 12px; text-align:right;">
-    <span class="synprism-credit">Website by <a href="https://synprism.io" target="_blank" rel="noopener">Synprism</a></span>
-  </div>
+  <div class="synprism-credit"><span>Website by <a href="https://synprism.io" target="_blank" rel="noopener">Synprism</a></span></div>
 </footer>
 
 <div id="cookie-banner" role="region" aria-label="Cookie consent" style="display:none;">
   <span>We use cookies to improve your experience. See our <a href="/privacy.html">Privacy Policy</a>.</span>
-  <div class="cookie-btns">
-    <button id="cookie-accept">Accept</button>
-    <button id="cookie-decline">Decline</button>
-  </div>
+  <div class="cookie-btns"><button id="cookie-accept">Accept</button><button id="cookie-decline">Decline</button></div>
 </div>
 
 <script>
-function toggleNav(btn) {
-  var menu = document.getElementById('nav-menu');
-  var open = menu.classList.toggle('open');
-  btn.setAttribute('aria-expanded', open);
-}
-(function() {
-  var consent = localStorage.getItem('cookie_consent');
-  if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
-  document.getElementById('cookie-accept').onclick = function() { localStorage.setItem('cookie_consent','accepted'); document.getElementById('cookie-banner').style.display = 'none'; };
-  document.getElementById('cookie-decline').onclick = function() { localStorage.setItem('cookie_consent','declined'); document.getElementById('cookie-banner').style.display = 'none'; };
-})();
-
-// Contact form AJAX
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = this;
-  var data = new FormData(form);
-  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-    .then(function(r) { return r.json(); })
-    .then(function(res) {
-      if (res.success) {
-        document.getElementById('form-success').style.display = 'block';
-        form.reset();
-      } else {
-        alert('There was an issue sending your message. Please try again or call us directly at 916.375.0135.');
-      }
-    })
-    .catch(function() {
-      alert('There was an issue sending your message. Please try again or call us directly at 916.375.0135.');
-    });
-});
+function toggleNav(btn){var menu=document.getElementById('nav-menu');var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open);}
+(function(){var c=localStorage.getItem('cookie_consent');if(!c)document.getElementById('cookie-banner').style.display='flex';document.getElementById('cookie-accept').onclick=function(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';};document.getElementById('cookie-decline').onclick=function(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';};})();
+document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var form=this;var data=new FormData(form);fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(res){if(res.success){document.getElementById('form-success').style.display='block';form.reset();}else{alert('There was an issue. Please call us at 916.375.0135.');}}).catch(function(){alert('There was an issue. Please call us at 916.375.0135.');});});
 </script>
 </body>
 </html>
