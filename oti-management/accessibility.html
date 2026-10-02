@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Statement - OTI Management LLC</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #4A7A50; --navy: #1E3566; --navy-dark: #131f3e;
+      --gray: #6B7280; --gray-light: #E5E7EB; --text: #1A2530; --off-white: #F7F9F7;
+    }
+    body { font-family: 'Open Sans', system-ui, sans-serif; color: var(--text); background: var(--off-white); line-height: 1.7; }
+
+    header {
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo .brand { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: 0.03em; display: block; }
+    .nav-logo .sub { font-size: 0.6rem; color: #8aaac8; letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+    .nav-back { color: #c8d8e8; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
+    .nav-back:hover { color: #fff; }
+
+    .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #162a50 60%, #1a3d28 100%); color: #fff; padding: 3rem 2rem 2.5rem; text-align: center; }
+    .page-hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.5rem; }
+    .page-hero p { color: #a0b8cc; font-size: 0.88rem; }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+    .content h2 { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--navy); margin: 2rem 0 0.5rem; padding-bottom: 0.3rem; border-bottom: 2px solid var(--gray-light); }
+    .content p { margin-bottom: 0.9rem; font-size: 0.95rem; color: #374151; }
+    .content ul { margin: 0.5rem 0 0.9rem 1.5rem; font-size: 0.95rem; color: #374151; }
+    .content ul li { margin-bottom: 0.4rem; }
+    .highlight-box { background: #EBF3EC; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.92rem; color: #2d4a30; }
+    .status-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.88rem; }
+    .status-table th { background: var(--navy); color: #fff; padding: 0.6rem 0.9rem; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .status-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--gray-light); color: #374151; vertical-align: top; }
+    .status-table tr:nth-child(even) td { background: #f3f7f3; }
+    .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+    .badge-pass { background: #D1FAE5; color: #065F46; }
+    .badge-partial { background: #FEF3C7; color: #92400E; }
+    .contact-box { background: #fff; border: 1px solid var(--gray-light); border-radius: 8px; padding: 1.5rem; margin-top: 2rem; }
+    .contact-box h3 { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; color: var(--navy); margin-bottom: 0.5rem; }
+    .contact-box p { margin: 0.2rem 0; font-size: 0.92rem; }
+    .contact-box a { color: var(--green); }
+
+    footer {
+      background: var(--navy-dark);
+      color: #8aa0bc;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: #a0b8d0; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-legal { margin-top: 0.5rem; display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+    .footer-legal a { font-size: 0.78rem; }
+    .synprism-credit { margin-top: 0.4rem; font-size: 0.72rem; opacity: 0.4; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="nav-logo">
+    <img src="oti-logo.jpeg" alt="OTI Management LLC" />
+    <span>
+      <span class="brand">OTI Management LLC</span>
+      <span class="sub">Mobile Home Park Management</span>
+    </span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Back to Home
+  </a>
+</header>
+
+<main>
+<div class="page-hero">
+  <h1>Accessibility Statement</h1>
+  <p>Last Reviewed: July 28, 2025</p>
+</div>
+
+<div class="content">
+
+  <div class="highlight-box">
+    OTI Management LLC is committed to ensuring that our website is accessible to everyone, including people with disabilities. We strive to meet the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA standard.
+  </div>
+
+  <h2>Our Commitment</h2>
+  <p>OTI Management LLC believes that all people should have equal access to information and functionality on our website. We are actively working to increase the accessibility and usability of our website and to ensure that we provide an equal experience for all visitors.</p>
+
+  <h2>Conformance Status</h2>
+  <p>We are working toward conformance with WCAG 2.2 Level AA. The current conformance status of our website is as follows:</p>
+
+  <table class="status-table">
+    <thead>
+      <tr>
+        <th>Standard</th>
+        <th>Requirement</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Semantic HTML landmarks (header, main, nav, footer)</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Images have descriptive alt text</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Form fields have associated labels</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Keyboard navigation</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Color contrast (4.5:1 minimum for body text)</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>No auto-playing or flashing content</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Responsive design for mobile/tablet</td>
+        <td><span class="badge badge-pass">Meets</span></td>
+      </tr>
+      <tr>
+        <td>WCAG 2.2 AA</td>
+        <td>Full screen reader testing</td>
+        <td><span class="badge badge-partial">In Progress</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Known Limitations</h2>
+  <p>While we strive for full accessibility, we are aware of the following current limitations:</p>
+  <ul>
+    <li>Individual community property websites linked from this page are managed by third parties and may not meet the same accessibility standards. We encourage those operators to also prioritize accessibility.</li>
+    <li>We are continuing to perform formal screen reader testing with assistive technology such as NVDA and VoiceOver and will update this page as improvements are made.</li>
+  </ul>
+
+  <h2>Technical Specifications</h2>
+  <p>Our website uses the following technologies to support accessibility:</p>
+  <ul>
+    <li>HTML5 semantic markup</li>
+    <li>CSS3 with sufficient color contrast ratios</li>
+    <li>ARIA labels where native HTML semantics are insufficient</li>
+    <li>Responsive design that works across devices and zoom levels up to 200%</li>
+  </ul>
+
+  <h2>Feedback & Contact</h2>
+  <p>We welcome your feedback on the accessibility of our website. If you experience any barriers or difficulty accessing any part of our site, please contact us so we can address the issue.</p>
+
+  <div class="contact-box">
+    <h3>Accessibility Feedback</h3>
+    <p>OTI Management LLC</p>
+    <p>122 W Imperial Ave, El Segundo, CA 90245</p>
+    <p>Phone: <a href="tel:+131****8400">(310) 442-8400</a></p>
+    <p>Email: <a href="mailto:info@otimgmt.com">info@otimgmt.com</a></p>
+    <p style="margin-top:0.6rem;font-size:0.85rem;color:var(--gray);">We aim to respond to accessibility feedback within 5 business days.</p>
+  </div>
+
+  <h2>Formal Complaints</h2>
+  <p>If you are not satisfied with our response to your accessibility concern, you may contact the California Civil Rights Department:</p>
+  <ul>
+    <li><strong>California Civil Rights Department</strong> - <a href="https://calcivilrights.ca.gov" target="_blank" rel="noopener" style="color:var(--green);">calcivilrights.ca.gov</a></li>
+    <li>Phone: (800) 884-1684</li>
+  </ul>
+
+  <h2>Assessment Approach</h2>
+  <p>OTI Management LLC assessed the accessibility of this website using the following approaches:</p>
+  <ul>
+    <li>Self-evaluation using browser developer tools and accessibility auditing</li>
+    <li>Manual keyboard navigation testing</li>
+    <li>Color contrast verification against WCAG 2.2 AA thresholds</li>
+  </ul>
+  <p>This statement was last reviewed on <strong>July 28, 2025</strong>. We will review and update this statement at least annually.</p>
+
+</div>
+</main>
+
+<footer>
+  <div style="font-family:'Montserrat',sans-serif;font-weight:800;color:#fff;font-size:0.85rem;margin-bottom:0.3rem;">OTI MANAGEMENT LLC</div>
+  <div>122 W Imperial Ave, El Segundo, CA 90245 &nbsp;|&nbsp; <a href="tel:+131****8400">(310) 442-8400</a> &nbsp;|&nbsp; <a href="mailto:info@otimgmt.com">info@otimgmt.com</a></div>
+  <div class="footer-legal">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="cookies.html">Cookie Policy</a>
+    <a href="accessibility.html">Accessibility</a>
+    <a href="privacy.html#ccpa">Your Privacy Choices</a>
+  </div>
+  <div class="synprism-credit">Website by <a href="https://synprism.io" target="_blank" rel="noopener">Synprism</a></div>
+</footer>
+
+</body>
+</html>
