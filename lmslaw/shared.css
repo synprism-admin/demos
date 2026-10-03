@@ -598,6 +598,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 .lms-footer-links a { font-size:11px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.8px; transition:color .15s; }
 .lms-footer-links a:hover { color:#fff; }
 .lms-footer-disclaimer { font-size:11px; color:rgba(255,255,255,.32); max-width:1200px; margin:18px auto 0; line-height:1.6; text-align:center; padding:0 24px; }
+.lms-footer-credit { font-size:11px; color:rgba(255,255,255,.35); text-align:center; padding:10px 24px 4px; margin:0; }
+.lms-footer-credit a { color:rgba(255,255,255,.55); text-decoration:none; }
+.lms-footer-credit a:hover { color:#fff; }
 
 /* ══════════════════════════════════════════
    RESPONSIVE
