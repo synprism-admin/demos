@@ -62,7 +62,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 10px 0;
 }
 @media (max-width: 768px) {
-  .lms-topbar { padding-top: 18px; }
+  .lms-topbar { padding-top: 18px; padding-bottom: 18px; }
 }
 .lms-tb-inner {
   max-width: 1200px;
